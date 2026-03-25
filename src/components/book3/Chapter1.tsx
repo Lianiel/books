@@ -30,6 +30,27 @@ export default function Chapter1() {
           </div>
         </section>
 
+        <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
+          <div className="flex items-center mb-4 text-amber-700">
+            <span className="w-6 h-6 mr-2 text-lg">ℹ</span>
+            <h2 className="text-xl font-bold">【延伸探討：現代教會的實用主義危機】</h2>
+          </div>
+          <div className="prose prose-slate max-w-none text-slate-700 space-y-4">
+            <p>
+              現代教會面臨的一個重大危機是「實用主義」（Pragmatism）與「消費主義」（Consumerism）的雙重夾擊。自二十世紀中葉「教會增長運動」（Church Growth Movement）興起以來，許多教會在制定宣教策略時，過度依賴社會學、市場行銷學或企業管理學。他們將焦點放在「如何滿足目標客群的需求」（Felt-needs），追求人數的快速增長與事工的表面成效。
+            </p>
+            <blockquote className="border-l-4 border-amber-400 pl-4 italic text-slate-600 my-4">
+              「當教會將『信徒』轉變為『消費者』，將『教會』轉變為『宗教服務提供者』，將『福音』包裝成解決人生困境的『產品』時，福音那呼召人『捨己、背起十字架跟從主』的顛覆性與代價便蕩然無存。」
+            </blockquote>
+            <p className="text-sm text-amber-700 font-medium">
+              📚 延伸內容來源：參考自大衛·博許 (David J. Bosch)《更新變化的宣教》對實用主義的批判，以及大衛·威爾斯 (David F. Wells)《孤立無援的福音》對教會消費主義的反思。
+            </p>
+            <p>
+              因此，我們必須大聲疾呼「回歸聖經的宣教思考」。聖經不僅是我們信仰的最高準則，也是我們實踐宣教的唯一權威指南。我們需要從聖經中重新發掘宣教的本質、動力與方法。這意味著我們不能僅僅從聖經中尋找支持我們既定計畫的經文（斷章取義的解經），而是要讓聖經的宏大敘事——從創造、墮落、救贖到成全——來塑造我們的宣教觀。
+            </p>
+          </div>
+        </section>
+
         <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
           <div className="flex items-center mb-4 text-indigo-700">
             <Target className="w-6 h-6 mr-2" />
@@ -37,7 +58,7 @@ export default function Chapter1() {
           </div>
           <div className="prose prose-slate max-w-none text-slate-700 space-y-4">
             <p>
-              對於這樣多元的宣教模式，正如宣教學者大衛．博許 (David J. Bosch) 在其鉅著《更新變化的宣教》中所言，在教會發展的過去兩千年歷史長河裡，從來沒有一個時代只擁有單一的「宣教神學」，甚至在初代教會時期，耶路撒冷教會與安提阿教會的宣教模式便已展現出不同的風貌。時至今日，各地教會對於「宣教」的認知和執行方式仍有許多不同看法與實踐：有些教會堅持在本土深耕，致力於開拓在地教會；有些教會則認為，必須效法亞伯拉罕「離開本地、本族、父家」，跨越地理與文化的疆界，才能算是真正的「跨文化宣教」；亦有些教會主張，在目前全球化與移民社會的多元處境下，不用買機票離開本地，在教會所在的社區內，面對不同族群、移工或新住民，就可以進行實質的「跨文化宣教」。從這些紛陳的宣教理念來看，顯示當今一些地區教會（特別是台灣地區的許多教會）出現了學者賈榮禮所指出的對宣教的狹隘誤解，其中最常見的兩大迷思是：「宣教等同於國外宣教」以及「誤以為非信徒的心靈自然會對福音充滿渴慕」。這些誤解往往導致教會在制定宣教策略時，忽略了近處的需要，或是對傳福音的困難度缺乏現實的評估。
+              對於這樣多元的宣教模式，正如宣教學者大衛．博許 (David J. Bosch) 在其鉅著《更新變化的宣教》中所言，在教會發展的過去兩千年歷史長河裡，從來沒有一個時代只擁有單一的「宣教神學」，甚至在初代教會時期，耶路撒冷教會與安提阿教會的宣教模式便已展現出不同的風貌。時至今日，各地教會對於「宣教」的認知和執行方式仍有許多不同看法與實踐：有些教會堅持在本土深耕，致力於開拓在地教會；有些教會則認為，必須效法亞伯拉罕「離開本地、本族、父家」，跨越地理與文化的疆界，才能算是真正的「跨文化宣教」；亦有些教會主張，在目前全球化與移民社會的多元處境下，不用買機票離開本地，在教會所在的社區內，面對不同族群、移工或新住民，就可以進行實質的「跨文化宣教」。
               <span className="inline-block ml-2 text-xs font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">p. 015</span>
             </p>
             <p>
@@ -48,6 +69,25 @@ export default function Chapter1() {
               進一步追溯這個概念的發展，宣教學家卡爾．哈頓斯坦 (Karl Hartenstein) 創造了 Missio Dei 這個新詞彙，用來總括並延伸神學家卡爾．巴特 (Karl Barth) 的教導。巴特在 1932 年的一場宣教演講中，破天荒地把宣教與三一神論緊密關聯起來。巴特和哈頓斯坦想要向當代教會闡明一個核心真理：宣教是依據上帝內在的三一活動（聖父差遣聖子，聖父與聖子差遣聖靈，三一神共同差遣教會進入世界），並強烈表達了上帝主導人類歷史與救贖計畫的絕對權柄。在這樣的神學框架下，教會不再是宣教的「主體」或「發起人」，而是受邀參與在上帝已經正在進行的工作中。對此，教會唯一恰當的回應，就是謙卑的順服與跟隨。
               <span className="inline-block ml-2 text-xs font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">p. 017</span>
             </p>
+          </div>
+
+          {/* 延伸探討：Missio Dei 的神學翻轉 */}
+          <div className="mt-6 bg-amber-50 p-5 rounded-lg border border-amber-200">
+            <div className="flex items-center mb-3 text-amber-700">
+              <span className="mr-2 text-lg">ℹ</span>
+              <h3 className="font-bold text-lg">【延伸探討：Missio Dei 的神學翻轉】</h3>
+            </div>
+            <div className="text-slate-700 space-y-3">
+              <p>
+                在神學家卡爾·巴特（Karl Barth）的啟發下，近代宣教神學（特別是自1952年國際宣教協會的威靈根宣教大會 Willingen Conference 以來）以這個用語強調，在創世之初神已經開始宣教的工作。
+              </p>
+              <p>
+                「上帝的宣教」這一概念徹底翻轉了傳統以「教會為中心」（Ecclesiocentric）的宣教觀。傳統觀念認為教會是主體，宣教是客體。然而，Missio Dei 強調，宣教的源頭是三一上帝：聖父差遣聖子，聖父與聖子共同差遣聖靈，而三一上帝共同差遣教會進入世界。這意味著，不是教會擁有一個宣教使命，而是<strong>「宣教的上帝擁有一個教會」</strong>。教會是上帝宣教的果子，也是上帝宣教的器皿。
+              </p>
+              <p className="text-sm text-amber-700 font-medium">
+                📚 延伸內容來源：參考自 1952 年威靈根宣教大會 (Willingen Conference) 歷史文獻，以及卡爾·巴特 (Karl Barth) 的三一宣教神學論述。
+              </p>
+            </div>
           </div>
         </section>
 
