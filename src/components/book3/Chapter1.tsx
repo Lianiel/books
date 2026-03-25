@@ -125,11 +125,11 @@ export default function Chapter1() {
             <MessageCircle className="w-6 h-6 mr-2" />
             <h2 className="text-xl font-bold">延伸探討：回歸聖經的宣教反思</h2>
           </div>
-          <div className="bg-indigo-50 p-5 rounded-lg border border-indigo-100 text-slate-700">
-            <div className="mb-4 text-sm font-medium text-indigo-700 bg-indigo-100/50 p-3 rounded border border-indigo-200">
+          <div className="bg-amber-50 p-5 rounded-lg border border-amber-200 text-slate-700">
+            <div className="mb-4 text-sm font-medium text-amber-700 bg-amber-100/50 p-3 rounded border border-amber-200">
               【延伸探討來源：參照萊特 (C. H. Wright)《宣教中的上帝》與博許 (D. Bosch)《更新變化的宣教》之宣教神學觀點】
             </div>
-            <h3 className="font-bold text-indigo-900 mb-4 text-lg">反思與應用：從「教會的宣教」到「上帝的宣教」</h3>
+            <h3 className="font-bold text-amber-900 mb-4 text-lg">反思與應用：從「教會的宣教」到「上帝的宣教」</h3>
             
             <div className="space-y-6">
               <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeartHandshake, Star, ShieldCheck, Users } from 'lucide-react';
+import { HeartHandshake, Star, ShieldCheck, Users, BookOpen } from 'lucide-react';
 
 export default function Chapter4() {
   return (
