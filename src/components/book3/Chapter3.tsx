@@ -113,7 +113,7 @@ export default function Chapter3() {
               <span className="inline-block ml-2 text-xs font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">p. 110</span>
             </p>
 
-            <h3 className="text-lg font-bold text-slate-800 mt-6 mb-2">εξουσια (自由/權柄) 在希臘文化中的含意</h3>
+            <h3 className="text-lg font-bold text-slate-800 mt-6 mb-2">{'εξουσια'} (自由/權柄) 在希臘文化中的含意</h3>
             <p>
               保羅在處理哥林多教會「吃祭偶像之物」的問題時，於第八章使用了一個極具時代背景的重要字眼 εξουσια (exousia)（林前八9），這個字可以翻譯為「自由」、「權利」或「權柄」。這個字在當時的希臘哲學思想（特別是斯多亞學派與犬儒學派）中是一個極為核心的概念。當時的哲學家與受希臘文化薰陶的哥林多信徒普遍認為，既然「偶像算不得什麼」，他們擁有絕對的「知識」，因此「凡事」都是他們的。他們自認擁有屬靈的自由與權力，可以按著自己的喜好去行，甚至大方地坐在廟裡吃祭肉，而不顧忌這會對其他人造成什麼影響。
               <span className="inline-block ml-2 text-xs font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">p. 113</span>
