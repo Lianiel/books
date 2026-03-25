@@ -1,73 +1,113 @@
 import React from 'react';
+import { BookOpen, Compass, Heart, MessageCircle } from 'lucide-react';
 
 export default function Chapter6() {
   return (
-    <div className="space-y-8 pb-16">
-      <div className="border-b border-slate-200 pb-6">
-        <h1 className="text-3xl font-bold text-slate-900 mb-4 tracking-tight">
-          第五章：宣教實踐者與導師 <span className="text-2xl text-slate-500 font-normal ml-2">p135</span>
-        </h1>
-      </div>
+    <div className="max-w-4xl mx-auto pb-12">
+      <h1 className="text-3xl font-extrabold text-slate-900 mb-8 border-b-2 border-indigo-100 pb-4">
+        第五章：宣教實踐者與導師
+      </h1>
 
-      <div className="prose prose-slate max-w-none prose-p:leading-loose prose-p:text-slate-700">
-        <p className="lead text-xl text-slate-700 mb-8 font-medium leading-relaxed border-l-4 border-slate-300 pl-4">
-          總結保羅的一生，他不僅是一位將福音傳遍地中海世界的偉大宣教實踐者，更是一位為後世教會留下深遠影響的宣教導師。他的生命與事奉，為現代教會提供了一面檢視自身宣教動機與策略的明鏡。
-        </p>
-
-        <h2 className="text-2xl font-bold text-slate-800 mt-12 mb-6 flex items-center">
-          <span className="bg-indigo-600 text-white w-8 h-8 rounded-lg flex items-center justify-center mr-3 text-sm font-bold shadow-sm">1</span>
-          理論與實踐的完美結合 <span className="text-xl text-slate-500 font-normal ml-2">p137</span>
-        </h2>
-        <p>
-          在保羅的身上，我們看不到「神學」（正統信仰 Orthodoxy）與「實踐」（正確行動 Orthopraxy）的割裂。現代教會常常陷入一種二元對立的迷思：要麼過度強調學術性的神學研究，要麼過度追求佈道的技巧、活動的熱鬧與數字的增長（所謂的「實用主義」）。
-        </p>
-        <p>
-          然而，保羅的神學是在宣教的熔爐中鍛造出來的。他的《羅馬書》和《加拉太書》是為了解決外邦人如何因信稱義的實際宣教問題而寫的；他的《哥林多前書》是為了解決教會內部的道德與恩賜混亂而寫的。保羅向我們展示了，最深奧的神學必須能夠轉化為最實際的宣教動力，而最有效的宣教實踐必須建立在最純正的神學根基之上。
-        </p>
-
-        <h2 className="text-2xl font-bold text-slate-800 mt-12 mb-6 flex items-center">
-          <span className="bg-indigo-600 text-white w-8 h-8 rounded-lg flex items-center justify-center mr-3 text-sm font-bold shadow-sm">2</span>
-          聖靈引導與策略規劃的平衡 <span className="text-xl text-slate-500 font-normal ml-2">p142</span>
-        </h2>
-        <p>
-          保羅的宣教旅程展現了「聖靈的超然引導」與「人為的策略規劃」之間完美的平衡。一方面，保羅是一位極具策略眼光的規劃者。他有明確的目標，有清晰的路線，有精準的目標群體，他也有建立據點城市的策略。
-        </p>
-        <p>
-          另一方面，保羅對聖靈的引導保持著極高的敏銳度與順服。當聖靈禁止他在亞細亞講道，又耶穌的靈不許他們往庇推尼去時，他沒有固執己見，也沒有因為計畫被打亂而抱怨，而是順服地來到特羅亞。在那裡，他領受了「馬其頓的呼聲」（徒十六 6-10），果斷地改變計畫，將福音的版圖跨越愛琴海，帶入了歐洲。保羅的典範告訴我們，宣教需要周密的策略規劃，但更需要隨時準備讓聖靈來打斷和重定向我們的計畫。
-        </p>
-
-        <h2 className="text-2xl font-bold text-slate-800 mt-12 mb-6 flex items-center">
-          <span className="bg-indigo-600 text-white w-8 h-8 rounded-lg flex items-center justify-center mr-3 text-sm font-bold shadow-sm">3</span>
-          對現代教會宣教的挑戰 <span className="text-xl text-slate-500 font-normal ml-2">p148</span>
-        </h2>
-        <p>
-          保羅的宣教模式對當今的教會提出了嚴峻的挑戰與反思：
-        </p>
-
-        {/* 延伸探討區塊 */}
-        <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl my-8 shadow-sm">
-          <div className="flex items-center mb-3">
-            <svg className="w-5 h-5 text-amber-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <h4 className="font-bold text-amber-800 text-lg m-0">【延伸探討：現代教會的三大挑戰】</h4>
+      <div className="space-y-8">
+        <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+          <div className="flex items-center mb-4 text-indigo-700">
+            <BookOpen className="w-6 h-6 mr-2" />
+            <h2 className="text-xl font-bold">保羅：宣教神學家</h2>
           </div>
-          <div className="text-amber-900 text-sm leading-relaxed space-y-4">
-            <div>
-              <strong className="block text-amber-950">差遣式 (Missional) vs. 吸引式 (Attractional)</strong>
-              現代許多教會傾向於「吸引式」的模式（Come and See），花費大量資源建造豪華的會堂、舉辦精彩的節目，試圖將非信徒「吸引」進教會的四面牆內。然而，保羅的模式是「差遣式」的（Go and Be），是主動走入人群、走入市集、走入不同的文化處境中去傳揚福音。
+          <div className="prose prose-slate max-w-none text-slate-700 space-y-4">
+            <p>
+              我們在前面探討了保羅的宣教事工，從他的成長背景、蒙召經歷、傳講信息、團隊建立到牧養關顧，我們看到一個豐富而立體的保羅。若要對保羅這個人有概括的描述，或許我們可以形容他是一名「宣教神學家」。
+              <span className="inline-block ml-2 text-xs font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">p. 185</span>
+            </p>
+            <p>
+              保羅在跨文化的環境中成長及受教育，他同時受到傳統猶太文化和當時熱門的希臘文化雙重影響。他深諳猶太律法，卻也熟稔希臘哲學與修辭。這種獨特的雙重背景，加上大馬色路上與復活之主的相遇，使他成為初代教會中最具影響力的神學思想家。他不僅建構了深邃的基督論、救恩論和教會論，更將這些神學理念化為實際的宣教行動。
+              <span className="inline-block ml-2 text-xs font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">p. 185-186</span>
+            </p>
+            <p>
+              他的神學不是在象牙塔裡空想出來的，而是在宣教的火線、在建立教會的掙扎、在面對異端挑戰的過程中淬鍊而成的。因此，他的神學充滿了實踐的動力，他的宣教也始終有著堅實的神學根基。
+              <span className="inline-block ml-2 text-xs font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">p. 186</span>
+            </p>
+          </div>
+        </section>
+
+        <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+          <div className="flex items-center mb-4 text-indigo-700">
+            <Compass className="w-6 h-6 mr-2" />
+            <h2 className="text-xl font-bold">保羅宣教模式的現代價值</h2>
+          </div>
+          <div className="prose prose-slate max-w-none text-slate-700 space-y-4">
+            <p>
+              保羅的宣教歷程和他所建立的宣教模式，對現今的教會極具參考價值。他所展現的跨文化適應力、團隊建立的智慧、對核心真理的堅持，以及為父為母的牧養心腸，都是跨越時代的屬靈資產。
+              <span className="inline-block ml-2 text-xs font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">p. 187</span>
+            </p>
+            <p>
+              保羅為我們提供了一些宣教的基本原則，而這些原則應該放在更宏觀的宣教故事中來檢視。我們必須認識到，整個宣教事工就是「上帝的宣教」(Missio Dei)。保羅深知自己不過是神手中的器皿，是與神同工的。他栽種了，亞波羅澆灌了，惟有神叫他生長（林前三6）。這種對神主權的降服，是所有宣教事工的基石。
+              <span className="inline-block ml-2 text-xs font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">p. 188</span>
+            </p>
+          </div>
+        </section>
+
+        <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+          <div className="flex items-center mb-4 text-indigo-700">
+            <Heart className="w-6 h-6 mr-2" />
+            <h2 className="text-xl font-bold">福音的大能</h2>
+          </div>
+          <div className="prose prose-slate max-w-none text-slate-700 space-y-4">
+            <p>
+              使徒保羅教導我們一種值得參考的宣教模式，但我們必須謹記，模式和策略固然重要，卻不能取代福音本身的能力。保羅在面對哥林多教會的各樣問題，或是面對雅典哲學家的辯論時，他最大的倚靠乃是：「這福音本是神的大能，要救一切相信的。」（羅一16）
+              <span className="inline-block ml-2 text-xs font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">p. 189</span>
+            </p>
+            <p>
+              保羅的生命本身就是這福音大能的最佳見證。一個曾經極力逼迫教會的狂熱法利賽人，竟被神的愛折服，成為將福音傳向外邦的偉大宣教士，甚至為此殉道。他的轉變、他的事奉、他的書信，都在在證明了福音改變生命、翻轉世界的無比力量。
+              <span className="inline-block ml-2 text-xs font-mono bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">p. 189</span>
+            </p>
+          </div>
+        </section>
+
+        <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+          <div className="flex items-center mb-4 text-indigo-700">
+            <MessageCircle className="w-6 h-6 mr-2" />
+            <h2 className="text-xl font-bold">延伸探討：回歸聖經的宣教反思</h2>
+          </div>
+          <div className="bg-indigo-50 p-5 rounded-lg border border-indigo-100 text-slate-700">
+            <div className="mb-4 text-sm font-medium text-indigo-700 bg-indigo-100/50 p-3 rounded border border-indigo-200">
+              【延伸探討來源：綜合參照范榮真《上帝宣教之民》與博許《更新變化的宣教》對當代教會之挑戰】
             </div>
-            <div>
-              <strong className="block text-amber-950">十字架神學 (Theologia Crucis) vs. 成功神學 (Theology of Glory)</strong>
-              保羅的「受苦神學」強烈挑戰了現代教會中潛藏的「成功神學」（Prosperity Gospel）。成功神學暗示信耶穌就能保證健康、財富與順遂。但保羅的宣教伴隨著逼迫、貧困與監禁。他認為這些苦難是「補滿基督患難的缺欠」（西一24），是福音大能得以彰顯的途徑。
-            </div>
-            <div>
-              <strong className="block text-amber-950">成全聖徒 vs. 明星牧者</strong>
-              保羅對人才培育的重視，挑戰了現代教會過度依賴「明星牧者」（Celebrity Pastors）的現象。保羅致力於建立團隊、成全聖徒、傳承領袖。現代教會若要實現可持續的宣教發展，就必須效法保羅，將資源與精力投入到門徒訓練與下一代領袖的栽培中。
+            <h3 className="font-bold text-indigo-900 mb-4 text-lg">回歸聖經的宣教反思與當代挑戰</h3>
+            
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-bold text-indigo-800 mb-2">一、 神學與實踐的動態結合</h4>
+                <p className="mb-2">
+                  范榮真（Charles Van Engen）在《上帝宣教之民》中強烈提醒我們，教會的本質就是「上帝宣教之民」（Missionary People of God）。教會的存在不是為了維持自身的組織運作，而是為了參與上帝在世上的宣教行動。保羅的一生完美詮釋了這一點：他的神學指導了他的宣教策略，而他在宣教前線所面臨的跨文化挑戰與牧養危機，又反過來豐富並深化了他的神學論述。兩者之間形成了一種充滿活力的動態循環。
+                </p>
+                <p>
+                  反觀現代教會，我們時常面臨「神學」與「實踐」脫節的危機。有些教會過度強調學術性的神學探討，卻失去了對失喪靈魂的熱忱與福音行動力，淪為象牙塔內的清談；另一些教會則盲目追求事工的果效與教會增長，卻忽略了扎實的神學根基，導致信仰世俗化或在異端邪說面前毫無招架之力。保羅的典範呼籲我們，必須在「追求深邃的神學知識」與「保持熱切的福音行動」之間取得平衡，讓神學成為宣教的引擎，讓宣教成為神學的試金石。
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-indigo-800 mb-2">二、 對福音大能的絕對確信</h4>
+                <p className="mb-2">
+                  在當代教會界，各種宣教策略、教會增長學、行銷模式與管理學理論推陳出新。雖然這些工具在某種程度上有其參考價值，但我們必須警惕，是否在不知不覺中，我們已經將教會復興的盼望寄託在這些「方法」上，而忘記了福音的本質。保羅在面對哥林多教會的道德敗壞、雅典哲學家的雄辯，或是猶太律法主義的攻擊時，他最大的倚靠從來不是高超的修辭或精密的策略，而是堅信：「這福音本是神的大能，要救一切相信的。」（羅一16）
+                </p>
+                <p>
+                  博許（David J. Bosch）在其鉅著《更新變化的宣教》中指出，真正的宣教必須回歸到十字架的中心性。如果我們的方法喧賓奪主，掩蓋了基督並他釘十字架的道理；如果我們試圖用迎合世俗價值觀的方式來包裝福音，以換取表面的成功，那麼我們就失去了福音真正改變生命的大能。現代教會必須重新找回對福音本質的敬畏與確信，深信唯有聖靈的工作與真理的道，才能帶來人心真正的翻轉。
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-indigo-800 mb-2">三、 效法保羅：以生命為祭的宣教典範</h4>
+                <p className="mb-2">
+                  博許也詳細論述了宣教神學的典範（Paradigm）是如何隨著歷史與時代變遷而轉移的。從初代教會、中世紀、宗教改革到啟蒙運動後的現代宣教，外在的形式與策略不斷在改變。然而，保羅宣教典範中最核心的精神——為福音受苦的心志、跨越文化界線的勇氣、以及對基督絕對的委身——卻是超越時代、永遠適用的。
+                </p>
+                <p>
+                  保羅的宣教不僅僅是傳遞一套教義，更是將自己的生命傾倒出來。他經歷了鞭打、監禁、海難、飢寒交迫，卻依然宣告：「我卻不以性命為念，也不看為寶貴，只要行完我的路程，成就我從主耶穌所領受的職事。」（徒二十24）作為生活在相對安逸環境中的現代基督徒，我們面臨的挑戰或許不再是肉體的逼迫，而是世俗主義的誘惑與安逸文化的侵蝕。我們是否預備好，像保羅一樣，以我們真實的生活、職場的見證、以及願意為他人捨己的愛，作為活生生的宣教見證？
+                </p>
+              </div>
             </div>
           </div>
-          <div className="mt-4 pt-3 border-t border-amber-200 text-amber-700 text-xs font-medium">
-            <span className="font-bold">📚 延伸內容來源：</span> 參考自 Alan Hirsch《被遺忘的途徑》(The Forgotten Ways) 與 Michael Goheen《成為萬國的光》對當代「差遣式教會」(Missional Church) 運動的論述。
-          </div>
-        </div>
+        </section>
       </div>
     </div>
   );
