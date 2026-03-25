@@ -239,7 +239,7 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans flex flex-col">
 
       {/* Header */}
-      <div className="bg-white shadow-sm sticky top-0 z-50 border-b border-slate-200 px-4 h-14 flex items-center justify-between flex-shrink-0">
+      <div className="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-slate-100 px-4 py-3 flex items-center justify-between flex-shrink-0" style={{marginTop: '56px'}}>
         <div className="flex items-center gap-1">
           <button
             onClick={() => setSelectedBook(null)}
@@ -252,10 +252,20 @@ export default function App() {
         </div>
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="p-2 rounded-md text-slate-500 hover:text-slate-800 focus:outline-none"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold transition-all"
+          style={{
+            background: isSidebarOpen
+              ? 'linear-gradient(135deg,#6366f1,#4338ca)'
+              : 'linear-gradient(135deg,#f1f5f9,#e2e8f0)',
+            color: isSidebarOpen ? 'white' : '#475569',
+            boxShadow: isSidebarOpen ? '0 2px 8px rgba(99,102,241,0.4)' : '0 1px 3px rgba(0,0,0,0.1)',
+          }}
           title="目錄"
         >
-          {isSidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {isSidebarOpen
+            ? <><X className="h-4 w-4" /><span>關閉</span></>
+            : <><Menu className="h-4 w-4" /><span>目錄</span></>
+          }
         </button>
       </div>
 
