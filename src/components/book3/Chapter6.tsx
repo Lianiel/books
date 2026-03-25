@@ -69,15 +69,15 @@ export default function Chapter6() {
             <MessageCircle className="w-6 h-6 mr-2" />
             <h2 className="text-xl font-bold">延伸探討：回歸聖經的宣教反思</h2>
           </div>
-          <div className="bg-indigo-50 p-5 rounded-lg border border-indigo-100 text-slate-700">
-            <div className="mb-4 text-sm font-medium text-indigo-700 bg-indigo-100/50 p-3 rounded border border-indigo-200">
+          <div className="bg-amber-50 p-5 rounded-lg border border-amber-200 text-slate-700">
+            <div className="mb-4 text-sm font-medium text-amber-700 bg-amber-100/50 p-3 rounded border border-amber-200">
               【延伸探討來源：綜合參照范榮真《上帝宣教之民》與博許《更新變化的宣教》對當代教會之挑戰】
             </div>
-            <h3 className="font-bold text-indigo-900 mb-4 text-lg">回歸聖經的宣教反思與當代挑戰</h3>
+            <h3 className="font-bold text-amber-900 mb-4 text-lg">回歸聖經的宣教反思與當代挑戰</h3>
             
             <div className="space-y-6">
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">一、 神學與實踐的動態結合</h4>
+                <h4 className="font-bold text-amber-800 mb-2">一、 神學與實踐的動態結合</h4>
                 <p className="mb-2">
                   范榮真（Charles Van Engen）在《上帝宣教之民》中強烈提醒我們，教會的本質就是「上帝宣教之民」（Missionary People of God）。教會的存在不是為了維持自身的組織運作，而是為了參與上帝在世上的宣教行動。保羅的一生完美詮釋了這一點：他的神學指導了他的宣教策略，而他在宣教前線所面臨的跨文化挑戰與牧養危機，又反過來豐富並深化了他的神學論述。兩者之間形成了一種充滿活力的動態循環。
                 </p>
@@ -87,7 +87,7 @@ export default function Chapter6() {
               </div>
 
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">二、 對福音大能的絕對確信</h4>
+                <h4 className="font-bold text-amber-800 mb-2">二、 對福音大能的絕對確信</h4>
                 <p className="mb-2">
                   在當代教會界，各種宣教策略、教會增長學、行銷模式與管理學理論推陳出新。雖然這些工具在某種程度上有其參考價值，但我們必須警惕，是否在不知不覺中，我們已經將教會復興的盼望寄託在這些「方法」上，而忘記了福音的本質。保羅在面對哥林多教會的道德敗壞、雅典哲學家的雄辯，或是猶太律法主義的攻擊時，他最大的倚靠從來不是高超的修辭或精密的策略，而是堅信：「這福音本是神的大能，要救一切相信的。」（羅一16）
                 </p>
@@ -97,7 +97,7 @@ export default function Chapter6() {
               </div>
 
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">三、 效法保羅：以生命為祭的宣教典範</h4>
+                <h4 className="font-bold text-amber-800 mb-2">三、 效法保羅：以生命為祭的宣教典範</h4>
                 <p className="mb-2">
                   博許也詳細論述了宣教神學的典範（Paradigm）是如何隨著歷史與時代變遷而轉移的。從初代教會、中世紀、宗教改革到啟蒙運動後的現代宣教，外在的形式與策略不斷在改變。然而，保羅宣教典範中最核心的精神——為福音受苦的心志、跨越文化界線的勇氣、以及對基督絕對的委身——卻是超越時代、永遠適用的。
                 </p>

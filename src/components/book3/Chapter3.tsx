@@ -136,15 +136,15 @@ export default function Chapter3() {
             <Users className="w-6 h-6 mr-2" />
             <h2 className="text-xl font-bold">延伸探討：團隊與處境化</h2>
           </div>
-          <div className="bg-indigo-50 p-5 rounded-lg border border-indigo-100 text-slate-700">
-            <div className="mb-4 text-sm font-medium text-indigo-700 bg-indigo-100/50 p-3 rounded border border-indigo-200">
+          <div className="bg-amber-50 p-5 rounded-lg border border-amber-200 text-slate-700">
+            <div className="mb-4 text-sm font-medium text-amber-700 bg-amber-100/50 p-3 rounded border border-amber-200">
               【延伸探討來源：參照 Rolland Allen《Missionary Method: St Paul's or Ours?》對保羅宣教策略之比較與反思】
             </div>
-            <h3 className="font-bold text-indigo-900 mb-4 text-lg">宣教的實踐智慧：團隊、處境化與打破傳統包袱</h3>
+            <h3 className="font-bold text-amber-900 mb-4 text-lg">宣教的實踐智慧：團隊、處境化與打破傳統包袱</h3>
             
             <div className="space-y-6">
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">一、 團隊合作的必要性與多元恩賜的配搭</h4>
+                <h4 className="font-bold text-amber-800 mb-2">一、 團隊合作的必要性與多元恩賜的配搭</h4>
                 <p className="mb-2">
                   宣教學先驅 Rolland Allen 在其經典著作中深刻指出，保羅的宣教方法之所以歷久彌新，並非因為他發明了一套死板的標準作業程序（SOP），而是因為他高度依賴聖靈的引導以及團隊的合作。保羅深知跨文化宣教的艱鉅，因此他從不單打獨鬥。他的團隊極具包容性與多元性：有被他視為屬靈真兒子的年輕提摩太；有曾經因軟弱退縮，後來卻被重新接納並委以重任的馬可；更有在當時父權社會中罕見、卻在保羅團隊中發揮關鍵作用的女性同工，如提供宣教基地的呂底亞，以及與他同工同勞的百基拉。
                 </p>
@@ -154,7 +154,7 @@ export default function Chapter3() {
               </div>
 
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">二、 真理與愛的平衡：處境化宣教的最高境界</h4>
+                <h4 className="font-bold text-amber-800 mb-2">二、 真理與愛的平衡：處境化宣教的最高境界</h4>
                 <p className="mb-2">
                   在處理哥林多教會「祭偶像之物」的爭議時，保羅展現了令人驚嘆的牧養智慧與處境化神學。從真理的知識層面來看，保羅完全認同「偶像算不得什麼」，基督徒擁有吃祭肉的絕對「自由」與「權利」（εξουσια）。然而，保羅並沒有停留在冷冰冰的神學正確上，他更看重的是「愛心能造就人」。他深刻理解，對於那些剛脫離異教背景、良心依然軟弱的初信者而言，看到領袖吃祭肉可能會造成他們信仰上的混亂與跌倒。
                 </p>
@@ -164,7 +164,7 @@ export default function Chapter3() {
               </div>
 
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">三、 打破傳統包袱：福音超越文化的普世性</h4>
+                <h4 className="font-bold text-amber-800 mb-2">三、 打破傳統包袱：福音超越文化的普世性</h4>
                 <p className="mb-2">
                   耶路撒冷會議（徒十五）無疑是初期教會歷史上最重要的轉捩點。當時的危機在於：部分具有法利賽背景的猶太信徒，試圖將猶太教的文化傳統（割禮與摩西律法）與基督的福音綁定，要求外邦人必須先「猶太化」才能得救。若當時教會妥協於這種壓力，基督教極可能只會萎縮成為猶太教底下的一個小分支，永遠無法成為普世性的信仰。在聖靈的引導下，保羅與雅各等人勇敢地斬斷了這層文化枷鎖，確立了「唯獨恩典、唯獨信心」的福音核心。
                 </p>

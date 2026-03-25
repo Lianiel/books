@@ -110,15 +110,15 @@ export default function Chapter4() {
             <Users className="w-6 h-6 mr-2" />
             <h2 className="text-xl font-bold">延伸探討：牧者的心腸</h2>
           </div>
-          <div className="bg-indigo-50 p-5 rounded-lg border border-indigo-100 text-slate-700">
-            <div className="mb-4 text-sm font-medium text-indigo-700 bg-indigo-100/50 p-3 rounded border border-indigo-200">
+          <div className="bg-amber-50 p-5 rounded-lg border border-amber-200 text-slate-700">
+            <div className="mb-4 text-sm font-medium text-amber-700 bg-amber-100/50 p-3 rounded border border-amber-200">
               【延伸探討來源：參照莊新泉《牧師保羅》與 Ernest Best《Paul and his convert》對保羅牧養心腸之分析】
             </div>
-            <h3 className="font-bold text-indigo-900 mb-4 text-lg">牧者的心腸：生命榜樣、權柄的限制與細膩的關顧</h3>
+            <h3 className="font-bold text-amber-900 mb-4 text-lg">牧者的心腸：生命榜樣、權柄的限制與細膩的關顧</h3>
             
             <div className="space-y-6">
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">一、 生命的榜樣：以「效法基督」為核心的牧養</h4>
+                <h4 className="font-bold text-amber-800 mb-2">一、 生命的榜樣：以「效法基督」為核心的牧養</h4>
                 <p className="mb-2">
                   莊新泉在《牧師保羅》一書中深刻指出，保羅的牧養哲學並非建立在華麗的演說技巧或繁複的教會管理學上，而是深深扎根於他那「效法基督」的真實生命榜樣。在一個充斥著異教風俗、道德標準低落的希羅社會中，保羅大膽地向信徒發出呼籲：「你們該效法我，像我效法基督一樣。」（林前十一1）他不僅用言語教導聖潔，更在生活中展現出不隨從世俗、清廉正直的品格；他為了不成為教會的經濟重擔，甚至放下使徒接受供養的權利，選擇親手織帳棚維持生計。
                 </p>
@@ -128,7 +128,7 @@ export default function Chapter4() {
               </div>
 
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">二、 權柄的正確使用：為了「造就」而非「轄制」</h4>
+                <h4 className="font-bold text-amber-800 mb-2">二、 權柄的正確使用：為了「造就」而非「轄制」</h4>
                 <p className="mb-2">
                   學者 Ernest Best 在探討保羅與其歸信者的關係時，特別關注保羅如何處理「屬靈權柄」的議題。作為由復活之主親自設立的使徒，保羅無疑擁有初代教會中最高的屬靈權柄。然而，令人動容的是，他極少以高高在上的姿態使用這份權柄來發號施令。相反地，他選擇了「限制權柄」。在處理腓利門與逃奴阿尼西母的棘手事件時，他明明可以「放膽吩咐」，卻選擇「憑著愛心求你」（門8-9）。他深知，出於愛心的順服，遠比出於恐懼的屈從更有屬靈價值。
                 </p>
@@ -138,7 +138,7 @@ export default function Chapter4() {
               </div>
 
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">三、 細膩的關顧：看見每一個「人」的價值與需要</h4>
+                <h4 className="font-bold text-amber-800 mb-2">三、 細膩的關顧：看見每一個「人」的價值與需要</h4>
                 <p className="mb-2">
                   保羅雖然肩負著向廣大外邦世界傳福音的宏大異象，但他從未因此忽略對個體生命細微的關顧。他的牧養心腸如同為父為母一般，充滿了溫暖與細膩。他會在書信中特別叮囑年輕同工提摩太注意胃病，建議他「稍微用點酒」（提前五23），展現了對同工身體健康的實質關懷；他更願意為了一個在當時社會毫無地位可言的逃奴阿尼西母，親自寫信懇求，甚至承諾代償債務，只為了挽回這個在捆鎖中所生的屬靈兒子。
                 </p>

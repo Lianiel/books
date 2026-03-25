@@ -84,15 +84,15 @@ export default function Chapter7() {
             <Lightbulb className="w-6 h-6 mr-2" />
             <h2 className="text-xl font-bold">延伸探討：宗派的更新與突破</h2>
           </div>
-          <div className="bg-indigo-50 p-5 rounded-lg border border-indigo-100 text-slate-700">
-            <div className="mb-4 text-sm font-medium text-indigo-700 bg-indigo-100/50 p-3 rounded border border-indigo-200">
+          <div className="bg-amber-50 p-5 rounded-lg border border-amber-200 text-slate-700">
+            <div className="mb-4 text-sm font-medium text-amber-700 bg-amber-100/50 p-3 rounded border border-amber-200">
               【延伸探討來源：參照賈榮禮《宣教學概論》並結合台灣拿撒勒人會之宣教處境反思】
             </div>
-            <h3 className="font-bold text-indigo-900 mb-4 text-lg">宗派的更新與突破：從保羅模式看台灣教會的未來</h3>
+            <h3 className="font-bold text-amber-900 mb-4 text-lg">宗派的更新與突破：從保羅模式看台灣教會的未來</h3>
             
             <div className="space-y-6">
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">一、 傳統與創新的張力：在堅守真理中靈活處境化</h4>
+                <h4 className="font-bold text-amber-800 mb-2">一、 傳統與創新的張力：在堅守真理中靈活處境化</h4>
                 <p className="mb-2">
                   拿撒勒人會作為衛理宗的一支，擁有極為美好的「聖潔」信仰傳統。然而，在快速變遷的現代社會中，如何讓這份傳統不流於僵化的教條，而是成為轉化生命的力量，是極大的挑戰。賈榮禮在《宣教學概論》中特別強調，宣教必須在「堅守基要真理」與「文化適應（處境化）」之間取得微妙的平衡。
                 </p>
@@ -102,7 +102,7 @@ export default function Chapter7() {
               </div>
 
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">二、 資源整合與團隊作戰：打破堂會本位主義</h4>
+                <h4 className="font-bold text-amber-800 mb-2">二、 資源整合與團隊作戰：打破堂會本位主義</h4>
                 <p className="mb-2">
                   目前台灣許多宗派（包括拿撒勒人會）都面臨著地方堂會規模偏小、資源分散、甚至逐漸老化的困境。在這種情況下，若各堂會仍堅持「單打獨鬥」或陷入「堂會本位主義」，將難以在宣教上取得突破。保羅的宣教模式給了我們一劑強心針：他不僅建立地方教會，更致力於建立教會之間的連結網絡（如推動外邦教會為耶路撒冷教會奉獻），並組建跨地區的「任務型宣教團隊」。
                 </p>
@@ -112,7 +112,7 @@ export default function Chapter7() {
               </div>
 
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">三、 世代傳承的急迫性：刻意營造接納與成全的環境</h4>
+                <h4 className="font-bold text-amber-800 mb-2">三、 世代傳承的急迫性：刻意營造接納與成全的環境</h4>
                 <p className="mb-2">
                   牧者團隊的老化是台灣教會普遍面臨的嚴峻危機。如果沒有新一代的領袖接棒，教會的未來將岌岌可危。保羅之所以能將福音傳遍小亞細亞與歐洲，一個關鍵因素在於他身邊總有一群被他刻意栽培的年輕同工（如提摩太、提多、馬可等）。保羅不僅教導他們，更信任他們，將重要的牧養與教導責任託付給他們。
                 </p>

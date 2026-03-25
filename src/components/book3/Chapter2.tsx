@@ -104,15 +104,15 @@ export default function Chapter2() {
             <Heart className="w-6 h-6 mr-2" />
             <h2 className="text-xl font-bold">延伸探討：兩個世界的交匯</h2>
           </div>
-          <div className="bg-indigo-50 p-5 rounded-lg border border-indigo-100 text-slate-700">
-            <div className="mb-4 text-sm font-medium text-indigo-700 bg-indigo-100/50 p-3 rounded border border-indigo-200">
+          <div className="bg-amber-50 p-5 rounded-lg border border-amber-200 text-slate-700">
+            <div className="mb-4 text-sm font-medium text-amber-700 bg-amber-100/50 p-3 rounded border border-amber-200">
               【延伸探討來源：參照湯姆．賴特 (Tom Wright)《再思保羅神學爭議》與 Beker《Paul The Apostle》對保羅蒙召與神學之探討】
             </div>
-            <h3 className="font-bold text-indigo-900 mb-4 text-lg">兩個世界的交匯：神的主權、預備與福音的普世性</h3>
+            <h3 className="font-bold text-amber-900 mb-4 text-lg">兩個世界的交匯：神的主權、預備與福音的普世性</h3>
             
             <div className="space-y-6">
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">一、 神的主權與背景的預備</h4>
+                <h4 className="font-bold text-amber-800 mb-2">一、 神的主權與背景的預備</h4>
                 <p className="mb-2">
                   湯姆．賴特（Tom Wright）在探討保羅神學時深刻指出，保羅的神學並非憑空產生，而是在大馬色經歷後，在聖靈的光照下對其深厚的猶太傳統進行的重新詮釋。保羅的生命軌跡展現了神令人敬畏的主權與奇妙的預備：他同時具備了猶太律法學者的嚴謹邏輯、希臘哲學的思辨與修辭能力，以及羅馬公民在帝國中暢行無阻的特權。這三種截然不同的文化背景，在保羅歸信基督後，全數被神轉化為向外邦世界傳揚福音的強大武器。
                 </p>
@@ -122,7 +122,7 @@ export default function Chapter2() {
               </div>
 
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">二、 從「宗教熱心」到「真理的知識」</h4>
+                <h4 className="font-bold text-amber-800 mb-2">二、 從「宗教熱心」到「真理的知識」</h4>
                 <p className="mb-2">
                   保羅早年對猶太律法極度熱心，甚至到了狂熱逼迫教會的地步。他的動機在當時的猶太教框架下是「神聖」的，是為了維護上帝的純潔與律法的尊嚴。然而，大馬色的強光讓他痛苦地意識到，這種缺乏對基督真正認識的「熱心」，實際上是在抵擋神、逼迫真理。
                 </p>
@@ -132,7 +132,7 @@ export default function Chapter2() {
               </div>
 
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">三、 打破藩籬：福音的普世性與神的得勝</h4>
+                <h4 className="font-bold text-amber-800 mb-2">三、 打破藩籬：福音的普世性與神的得勝</h4>
                 <p className="mb-2">
                   神學家 J. Christiaan Beker 在其著作中特別強調保羅神學中「神的得勝」（The Triumph of God）這一末世論維度。保羅所傳講的「因信稱義」，不僅僅是個人靈魂得救的教義，更是一個具有宇宙性意義的宣告：神在基督裡已經戰勝了罪惡與死亡的權勢，並且打破了猶太人與外邦人之間那道看似不可逾越的血統與律法藩籬。在基督裡，不再分猶太人、希臘人，自主的、為奴的，所有信靠基督的人都成為了神家中的人。
                 </p>

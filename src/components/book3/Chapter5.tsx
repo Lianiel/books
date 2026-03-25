@@ -159,15 +159,15 @@ export default function Chapter5() {
             <Lightbulb className="w-6 h-6 mr-2" />
             <h2 className="text-xl font-bold">延伸探討：現代教會的借鏡</h2>
           </div>
-          <div className="bg-indigo-50 p-5 rounded-lg border border-indigo-100 text-slate-700">
-            <div className="mb-4 text-sm font-medium text-indigo-700 bg-indigo-100/50 p-3 rounded border border-indigo-200">
+          <div className="bg-amber-50 p-5 rounded-lg border border-amber-200 text-slate-700">
+            <div className="mb-4 text-sm font-medium text-amber-700 bg-amber-100/50 p-3 rounded border border-amber-200">
               【延伸探討來源：參照陳濟民《成為宣教的教會：從新約看宣教神學與實踐》之觀點】
             </div>
-            <h3 className="font-bold text-indigo-900 mb-4 text-lg">策略、團隊與傳承的深層神學意涵</h3>
+            <h3 className="font-bold text-amber-900 mb-4 text-lg">策略、團隊與傳承的深層神學意涵</h3>
             
             <div className="space-y-6">
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">一、 都市宣教的戰略眼光與國度視野</h4>
+                <h4 className="font-bold text-amber-800 mb-2">一、 都市宣教的戰略眼光與國度視野</h4>
                 <p className="mb-2">
                   陳濟民在其著作中深刻指出，新約教會的本質就是宣教，而保羅的宣教軌跡並非隨機的漫遊，而是具備高度戰略意義的國度擴張。保羅主攻羅馬帝國一線都市（如以弗所、哥林多、帖撒羅尼迦）的策略，不僅是因為這些地方人口密集，更是因為它們是文化、經濟與交通的樞紐。當福音在這些中心城市扎根並建立起具有「母會」性質的信仰群體後，便能透過龐大的商業網絡與人際流動，自然地將影響力輻射至周邊的鄉鎮。
                 </p>
@@ -177,7 +177,7 @@ export default function Chapter5() {
               </div>
 
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">二、 打破「單打獨鬥」的迷思：多元互補的團隊事奉</h4>
+                <h4 className="font-bold text-amber-800 mb-2">二、 打破「單打獨鬥」的迷思：多元互補的團隊事奉</h4>
                 <p className="mb-2">
                   保羅的成功從來不是建立在個人的英雄主義上，而是在於他建立了一個多元、互補且目標一致的宣教團隊。陳濟民強調，新約中的事奉模式是「身體」的事奉，每個肢體都有其不可或缺的功用。保羅的團隊中包含了不同種族、階級與性別的同工，如猶太人與外邦人、醫生路加、商人百基拉與亞居拉，以及眾多在當時社會中地位不高的女性同工。
                 </p>
@@ -187,7 +187,7 @@ export default function Chapter5() {
               </div>
 
               <div>
-                <h4 className="font-bold text-indigo-800 mb-2">三、 刻意的人才培育與屬靈傳承</h4>
+                <h4 className="font-bold text-amber-800 mb-2">三、 刻意的人才培育與屬靈傳承</h4>
                 <p className="mb-2">
                   保羅對提摩太、提多等年輕同工的栽培，展現了初代教會對「傳承」的極度重視。這種「師徒制」的培育不僅僅是知識與事工技巧的傳授，更是生命品格的塑造與屬靈權柄的交接。保羅不僅將年輕同工帶在身邊言傳身教，更在關鍵時刻大膽放手，委派他們去處理哥林多、克里特等教會的棘手問題，並在書信中給予持續的指導與屬靈遮蓋。
                 </p>
