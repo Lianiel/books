@@ -118,5 +118,37 @@ export default function Chapter2() {
         </p>
       </div>
     </div>
+
+      {/* 反思與實踐 */}
+      <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white mt-4">
+        <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
+          <span>🧠</span>
+          深度反思與行動指南
+          <span className="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">延伸應用（非原書內容）</span>
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+            <h4 className="text-lg font-bold text-indigo-200 mb-4">💭 反思問題</h4>
+            <ul className="space-y-3 text-slate-300 text-sm">
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">1.</span>我對「真正的自己」感到舒適嗎？還是我習慣戴著面具面對神和他人？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">2.</span>我有哪些情感、想法或慾望，我認為「不屬靈」，因此一直壓抑或否認？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">3.</span>我是否曾經深入思考過：神為何要創造「獨一無二的我」，而不是複製品？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">4.</span>我最害怕讓別人看到我的哪一面？這種恐懼如何影響我與神的關係？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">5.</span>我是否曾讓別人的期望，塑造了我對自己身份的定義？</li>
+            </ul>
+          </div>
+          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+            <h4 className="text-lg font-bold text-emerald-300 mb-4">🎯 生活實踐</h4>
+            <ul className="space-y-3 text-slate-300 text-sm">
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">1.</span>列出三件你真正喜愛但覺得「不夠屬靈」的事，思考這些是否真的與信仰衝突。</li>
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">2.</span>本週在禱告中，試著對神說：「神啊，我不確定真正的我是誰，但我願意讓你告訴我。」</li>
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">3.</span>找出一個你在某個群體中戴著「面具」的場景，思考是什麼讓你覺得不能作真實的自己。</li>
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">4.</span>讀詩篇139篇，默想神對你的認識有多深，並寫下你的感受。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
   );
 }

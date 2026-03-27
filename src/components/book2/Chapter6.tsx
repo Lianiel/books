@@ -102,5 +102,37 @@ export default function Chapter6() {
 
       </div>
     </div>
+
+      {/* 反思與實踐 */}
+      <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white mt-4">
+        <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
+          <span>🧠</span>
+          深度反思與行動指南
+          <span className="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">延伸應用（非原書內容）</span>
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+            <h4 className="text-lg font-bold text-indigo-200 mb-4">💭 反思問題</h4>
+            <ul className="space-y-3 text-slate-300 text-sm">
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">1.</span>我目前的日常生活節奏，有多少是以神為中心，有多少是被緊急事務驅動？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">2.</span>我上一次真正「停下腳步」安靜在神面前，是什麼時候？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">3.</span>我對守安息日的態度是什麼？是命令、負擔、還是禮物？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">4.</span>我生活中最大的噪音來源是什麼（手機、社群媒體、人際關係）？我願意為靜默騰出空間嗎？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">5.</span>如果我今天開始守安息日，我最大的阻力是什麼？這阻力反映了什麼信念？</li>
+            </ul>
+          </div>
+          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+            <h4 className="text-lg font-bold text-emerald-300 mb-4">🎯 生活實踐</h4>
+            <ul className="space-y-3 text-slate-300 text-sm">
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">1.</span>本週嘗試一個「迷你日課」：每天選擇一個固定時間點（如午餐前），暫停兩分鐘，安靜禱告。</li>
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">2.</span>計畫下一個安息日：選擇一個二十四小時的時段，遠離工作和螢幕，以喜悅和休息為主。</li>
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">3.</span>每天早晨起床後，在看手機之前，先花3分鐘安靜在神面前。</li>
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">4.</span>把「守安息日」加入你的行事曆，視之為不可取消的約會。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
   );
 }

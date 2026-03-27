@@ -132,6 +132,38 @@ export default function Chapter3() {
         </div>
       </div>
     </div>
+
+      {/* 反思與實踐 */}
+      <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white mt-4">
+        <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
+          <span>🧠</span>
+          深度反思與行動指南
+          <span className="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">延伸應用（非原書內容）</span>
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+            <h4 className="text-lg font-bold text-indigo-200 mb-4">💭 反思問題</h4>
+            <ul className="space-y-3 text-slate-300 text-sm">
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">1.</span>我家庭的哪些模式（溝通方式、處理衝突的方法、情感表達）仍在影響我今天的行為？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">2.</span>我有哪些「一直都是這樣」的反應模式，我從未質疑過它的來源？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">3.</span>我是否曾因為害怕面對過去的傷痛，而選擇「向前看」但其實是在逃避？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">4.</span>在我的原生家庭中，有哪些未曾被說出口的規則？這些規則如何繼續影響我？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">5.</span>我是否願意承認，我現在某些讓我自己和別人痛苦的行為，其實有其根源？</li>
+            </ul>
+          </div>
+          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+            <h4 className="text-lg font-bold text-emerald-300 mb-4">🎯 生活實踐</h4>
+            <ul className="space-y-3 text-slate-300 text-sm">
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">1.</span>畫一個簡單的家庭圖，標記出家人之間的主要關係模式（親近、疏遠、衝突），思考這如何影響了你。</li>
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">2.</span>找出一個你在關係中一再重複的負面模式，試著追溯它可能的起源。</li>
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">3.</span>本週選擇一件小事，用不同於以往家庭模式的方式回應，觀察有何不同。</li>
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">4.</span>考慮尋求專業輔導或心靈關顧，處理家庭背景對你的影響。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
   );
 }
 

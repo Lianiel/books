@@ -90,5 +90,37 @@ export default function Chapter1() {
         </div>
       </div>
     </div>
+
+      {/* 反思與實踐 */}
+      <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white mt-4">
+        <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
+          <span>🧠</span>
+          深度反思與行動指南
+          <span className="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">延伸應用（非原書內容）</span>
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+            <h4 className="text-lg font-bold text-indigo-200 mb-4">💭 反思問題</h4>
+            <ul className="space-y-3 text-slate-300 text-sm">
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">1.</span>我生命中哪一個情感不健康的症狀最能描述我現在的狀態？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">2.</span>我是否曾經用「屬靈的藉口」來逃避衝突或迴避真實的感受？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">3.</span>我有多少時間是「為神做工」，但其實是在逃避與神真正的同在？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">4.</span>我是否允許別人在神面前作自己，還是我也有論斷他人靈命的傾向？</li>
+              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">5.</span>我生命中哪些「舊事」還沒有真正成為過去，仍在影響我現在的行為？</li>
+            </ul>
+          </div>
+          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+            <h4 className="text-lg font-bold text-emerald-300 mb-4">🎯 生活實踐</h4>
+            <ul className="space-y-3 text-slate-300 text-sm">
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">1.</span>本週花15分鐘寫日記，誠實記錄你在情感上真實的感受，不加任何「屬靈包裝」。</li>
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">2.</span>找一位信任的朋友或輔導者，分享你一直迴避面對的情感課題。</li>
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">3.</span>下次感到憤怒或哀傷時，試著在禱告中誠實向神表達這個感受，不要壓抑。</li>
+              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">4.</span>觀察自己本週在哪些時候是「為神做工」，哪些時候是「與神同工」，記錄下來。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
   );
 }
