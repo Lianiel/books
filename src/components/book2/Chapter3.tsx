@@ -132,23 +132,6 @@ export default function Chapter3() {
         </div>
       </div>
     </div>
-
-
-        {/* 延伸探討 */}
-        <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
-          <div className="flex items-center mb-4 text-amber-700">
-            <span className="mr-2 text-lg">ℹ</span>
-            <h2 className="text-xl font-bold">【延伸探討：家庭系統與信仰傳承】</h2>
-          </div>
-          <div className="text-slate-700 space-y-4">
-            <p>家庭治療理論告訴我們，每個人都是在一個「家庭系統」中長大的。這個系統有它自己的規則、角色、溝通模式和情感氣候。我們在這個系統中學會了「如何愛」、「如何處理衝突」、「表達情感是安全的還是危險的」。這些學習，往往比我們意識到的更深刻地影響著我們。</p>
-            <p>信仰不會自動瓦解這些家庭模式。我們可能帶著全新的神學觀念走進婚姻和教會，卻用舊有的家庭模式來處理衝突、表達親密和行使權威。因此，面對過去並不是在指責家人，而是在清楚看見那些需要被神恩典觸碰的地方。</p>
-            <p>好消息是：神不只是我們「屬靈上」的父，也是能夠重寫我們家庭故事的神。在祂裡面，我們可以學習全新的愛和連結的方式。</p>
-            <p className="text-sm text-amber-700 font-medium">📚 延伸參考：蘇珊・福沃《父母會傷人》、大衛・斯托普《了解你的父母》</p>
-          </div>
-        </section>
-
-      {/* 反思與實踐 */}
       <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white mt-4">
         <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
           <span>🧠</span>
@@ -178,7 +161,50 @@ export default function Chapter3() {
         </div>
       </div>
 
+        {/* 延伸探討 */}
+        <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
+          <div className="flex items-center mb-4 text-amber-700">
+            <span className="mr-2 text-lg">ℹ</span>
+            <h2 className="text-xl font-bold">【延伸探討：家庭系統與信仰傳承】</h2>
+          </div>
+          <div className="text-slate-700 space-y-4">
+            <p>家庭治療理論告訴我們，每個人都是在一個「家庭系統」中長大的。這個系統有它自己的規則、角色、溝通模式和情感氣候。我們在這個系統中學會了「如何愛」、「如何處理衝突」、「表達情感是安全的還是危險的」。這些學習，往往比我們意識到的更深刻地影響著我們。</p>
+            <p>信仰不會自動瓦解這些家庭模式。好消息是：神不只是我們「屬靈上」的父，也是能夠重寫我們家庭故事的神。在祂裡面，我們可以學習全新的愛和連結的方式。</p>
+            <p className="text-sm text-amber-700 font-medium">📚 延伸參考：蘇珊・福沃《父母會傷人》</p>
+          </div>
+        </section>
+
+        {/* 深度反思與行動指南 */}
+        <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white">
+          <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
+            <span>🧠</span>
+            深度反思與行動指南
+            <span className="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">延伸應用（非原書內容）</span>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+              <h4 className="text-lg font-bold text-indigo-200 mb-4">💭 反思問題</h4>
+              <ul className="space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">1.</span>我家庭的哪些模式（溝通方式、處理衝突的方法）仍在影響我今天的行為？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">2.</span>我有哪些「一直都是這樣」的反應模式，我從未質疑過它的來源？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">3.</span>我是否曾因為害怕面對過去的傷痛，而選擇「向前看」但其實是在逃避？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">4.</span>在我的原生家庭中，有哪些未曾被說出口的規則？這些規則如何繼續影響我？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">5.</span>我是否願意承認，我現在某些讓自己和別人痛苦的行為，其實有其根源？</li>
+              </ul>
+            </div>
+            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+              <h4 className="text-lg font-bold text-emerald-300 mb-4">🎯 生活實踐</h4>
+              <ul className="space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">1.</span>畫一個簡單的家庭圖，標記出家人之間的主要關係模式，思考這如何影響了你。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">2.</span>找出一個你在關係中一再重複的負面模式，試著追溯它可能的起源。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">3.</span>本週選擇一件小事，用不同於以往家庭模式的方式回應，觀察有何不同。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">4.</span>考慮尋求專業輔導或心靈關顧，處理家庭背景對你的影響。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   );
 }
-

@@ -103,36 +103,50 @@ export default function Chapter6() {
       </div>
     </div>
 
-      {/* 反思與實踐 */}
-      <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white mt-4">
-        <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
-          <span>🧠</span>
-          深度反思與行動指南
-          <span className="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">延伸應用（非原書內容）</span>
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-lg font-bold text-indigo-200 mb-4">💭 反思問題</h4>
-            <ul className="space-y-3 text-slate-300 text-sm">
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">1.</span>我目前的日常生活節奏，有多少是以神為中心，有多少是被緊急事務驅動？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">2.</span>我上一次真正「停下腳步」安靜在神面前，是什麼時候？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">3.</span>我對守安息日的態度是什麼？是命令、負擔、還是禮物？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">4.</span>我生活中最大的噪音來源是什麼（手機、社群媒體、人際關係）？我願意為靜默騰出空間嗎？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">5.</span>如果我今天開始守安息日，我最大的阻力是什麼？這阻力反映了什麼信念？</li>
-            </ul>
+        {/* 延伸探討 */}
+        <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
+          <div className="flex items-center mb-4 text-amber-700">
+            <span className="mr-2 text-lg">ℹ</span>
+            <h2 className="text-xl font-bold">【延伸探討：現代人的節奏危機】</h2>
           </div>
-          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-lg font-bold text-emerald-300 mb-4">🎯 生活實踐</h4>
-            <ul className="space-y-3 text-slate-300 text-sm">
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">1.</span>本週嘗試一個「迷你日課」：每天選擇一個固定時間點（如午餐前），暫停兩分鐘，安靜禱告。</li>
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">2.</span>計畫下一個安息日：選擇一個二十四小時的時段，遠離工作和螢幕，以喜悅和休息為主。</li>
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">3.</span>每天早晨起床後，在看手機之前，先花3分鐘安靜在神面前。</li>
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">4.</span>把「守安息日」加入你的行事曆，視之為不可取消的約會。</li>
-            </ul>
+          <div className="text-slate-700 space-y-4">
+            <p>現代社會最大的屬靈危機，或許不是道德敗壞，而是節奏失序。我們活在一個把「忙碌」等同於「有價值」的文化裡，卻忘記了神創造人類時，也設計了休息的節奏。</p>
+            <p>暫停操練日課與安息日，目的並不是要在已經非常忙碌的生活裡多加一些東西，而是要重新調整生活，重新以神為目標。換言之，那是一種全新的生活方式。</p>
+            <p className="text-sm text-amber-700 font-medium">📚 延伸參考：魏樂德《靈性操練的精義》、馬可・布坎南《安息的藝術》</p>
+          </div>
+        </section>
+
+        {/* 深度反思與行動指南 */}
+        <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white">
+          <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
+            <span>🧠</span>
+            深度反思與行動指南
+            <span className="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">延伸應用（非原書內容）</span>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+              <h4 className="text-lg font-bold text-indigo-200 mb-4">💭 反思問題</h4>
+              <ul className="space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">1.</span>我目前的日常生活節奏，有多少是以神為中心，有多少是被緊急事務驅動？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">2.</span>我上一次真正「停下腳步」安靜在神面前，是什麼時候？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">3.</span>我對守安息日的態度是什麼？是命令、負擔、還是禮物？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">4.</span>我生活中最大的噪音來源是什麼？我願意為靜默騰出空間嗎？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">5.</span>如果我今天開始守安息日，我最大的阻力是什麼？這阻力反映了什麼信念？</li>
+              </ul>
+            </div>
+            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+              <h4 className="text-lg font-bold text-emerald-300 mb-4">🎯 生活實踐</h4>
+              <ul className="space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">1.</span>本週嘗試一個「迷你日課」：每天選擇一個固定時間點，暫停兩分鐘，安靜禱告。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">2.</span>計畫下一個安息日：選擇一個二十四小時的時段，遠離工作和螢幕，以喜悅和休息為主。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">3.</span>每天早晨起床後，在看手機之前，先花3分鐘安靜在神面前。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">4.</span>把「守安息日」加入你的行事曆，視之為不可取消的約會。</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   );
 }

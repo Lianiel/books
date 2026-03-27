@@ -117,36 +117,50 @@ export default function Chapter7() {
       </div>
     </div>
 
-      {/* 反思與實踐 */}
-      <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white mt-4">
-        <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
-          <span>🧠</span>
-          深度反思與行動指南
-          <span className="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">延伸應用（非原書內容）</span>
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-lg font-bold text-indigo-200 mb-4">💭 反思問題</h4>
-            <ul className="space-y-3 text-slate-300 text-sm">
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">1.</span>誠實地評估：在情感成熟的四個階段中，我通常處於哪個階段？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">2.</span>在哪些關係或情境中，我會出現「情感嬰兒」或「情感孩童」的反應（如操控、退縮、報復）？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">3.</span>我是否能夠在維繫關係的同時，清楚表達不同的意見，而不害怕對方生氣？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">4.</span>我在關係中是否習慣把別人的問題攬上身，或讓別人把責任推給我？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">5.</span>什麼阻礙了我在情感上繼續成長？是害怕改變，還是不知道從何改起？</li>
-            </ul>
+        {/* 延伸探討 */}
+        <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
+          <div className="flex items-center mb-4 text-amber-700">
+            <span className="mr-2 text-lg">ℹ</span>
+            <h2 className="text-xl font-bold">【延伸探討：屬靈成熟與情感成熟】</h2>
           </div>
-          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-lg font-bold text-emerald-300 mb-4">🎯 生活實踐</h4>
-            <ul className="space-y-3 text-slate-300 text-sm">
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">1.</span>回想本週一次你在情感上反應不成熟的時刻，思考如果你是「情感大人」，你會如何回應？</li>
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">2.</span>本週在一段重要關係中，練習「直接說出你的需要」，而不是期待對方猜到。</li>
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">3.</span>當你感到被批評或攻擊時，在回應之前先深呼吸，問自己：「我現在幾歲（情感上）？」</li>
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">4.</span>找一位你信任的人，請他誠實告訴你：你在哪些方面還沒有情感上「長大」？</li>
-            </ul>
+          <div className="text-slate-700 space-y-4">
+            <p>我們常常把「屬靈成熟」和「情感成熟」分開來看，以為一個人可以在神學上非常成熟，卻在情感上仍然是個嬰兒。但本書最核心的洞見是：情感上的不成熟，必然會阻礙我們與神、與人建立真實的關係。</p>
+            <p>一個情感上的嬰兒，在禱告中也會把神當成滿足自己需求的「宇宙販賣機」；一個情感上的孩童，在教會中也會用操控和情緒勒索來得到自己想要的。情感的成長，不是屬靈成長的副產品，而是它的必要條件。</p>
+            <p className="text-sm text-amber-700 font-medium">📚 延伸參考：史考特・派克《心智的成熟旅程》</p>
+          </div>
+        </section>
+
+        {/* 深度反思與行動指南 */}
+        <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white">
+          <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
+            <span>🧠</span>
+            深度反思與行動指南
+            <span className="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">延伸應用（非原書內容）</span>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+              <h4 className="text-lg font-bold text-indigo-200 mb-4">💭 反思問題</h4>
+              <ul className="space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">1.</span>誠實地評估：在情感成熟的四個階段中，我通常處於哪個階段？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">2.</span>在哪些關係或情境中，我會出現「情感嬰兒」或「情感孩童」的反應？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">3.</span>我是否能夠在維繫關係的同時，清楚表達不同的意見，而不害怕對方生氣？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">4.</span>我在關係中是否習慣把別人的問題攬上身，或讓別人把責任推給我？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">5.</span>什麼阻礙了我在情感上繼續成長？是害怕改變，還是不知道從何改起？</li>
+              </ul>
+            </div>
+            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+              <h4 className="text-lg font-bold text-emerald-300 mb-4">🎯 生活實踐</h4>
+              <ul className="space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">1.</span>回想本週一次你在情感上反應不成熟的時刻，思考如果你是「情感大人」，你會如何回應？</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">2.</span>本週在一段重要關係中，練習「直接說出你的需要」，而不是期待對方猜到。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">3.</span>當你感到被批評時，在回應之前先深呼吸，問自己：「我現在幾歲（情感上）？」</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">4.</span>找一位你信任的人，請他誠實告訴你：你在哪些方面還沒有情感上「長大」？</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   );
 }

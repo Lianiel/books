@@ -123,36 +123,50 @@ export default function Chapter5() {
       </div>
     </div>
 
-      {/* 反思與實踐 */}
-      <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white mt-4">
-        <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
-          <span>🧠</span>
-          深度反思與行動指南
-          <span className="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">延伸應用（非原書內容）</span>
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-lg font-bold text-indigo-200 mb-4">💭 反思問題</h4>
-            <ul className="space-y-3 text-slate-300 text-sm">
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">1.</span>我生命中有哪些失落或悲傷，我至今仍未真正哀悼過？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">2.</span>我通常用什麼方式來逃避痛苦？這個方式帶來了什麼後果？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">3.</span>我是否曾因為自己感到悲傷而感到罪惡感，覺得「基督徒不應該這樣」？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">4.</span>在我的有限中，哪一個是我最難接受的？這告訴了我什麼？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">5.</span>約伯誠實面對神、直接向神抗議——我可以這樣對神說話嗎？什麼阻礙了我？</li>
-            </ul>
+        {/* 延伸探討 */}
+        <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
+          <div className="flex items-center mb-4 text-amber-700">
+            <span className="mr-2 text-lg">ℹ</span>
+            <h2 className="text-xl font-bold">【延伸探討：悲傷是靈性操練】</h2>
           </div>
-          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-lg font-bold text-emerald-300 mb-4">🎯 生活實踐</h4>
-            <ul className="space-y-3 text-slate-300 text-sm">
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">1.</span>找出一件你生命中從未完全哀悼的失落（關係、夢想、健康、機會），今天為它禱告，允許自己悲傷。</li>
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">2.</span>本週讀一篇哀歌詩篇（如詩篇22、88），用詩人的語言向神禱告。</li>
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">3.</span>列出你生命中五個你無法改變的有限，練習用感恩代替抗拒，接受神的設計。</li>
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">4.</span>找一個安全的人或空間，分享一個你一直沒有說出口的悲傷或失落。</li>
-            </ul>
+          <div className="text-slate-700 space-y-4">
+            <p>現代教會文化往往鼓勵信徒「常常喜樂」，卻很少教導如何「誠實哀傷」。然而聖經中充滿了哀歌——詩篇三分之二是抱怨詩，耶利米哀歌整卷書都在哭泣，連耶穌也在拉撒路墓前流淚。</p>
+            <p>學習悲傷是一種靈性操練。它要求我們誠實面對失落，允許自己感受哀傷，不急著「靠主得勝」，而是向神傾倒心中的苦水，在混沌中等候，相信神在黑暗中仍然掌權。</p>
+            <p className="text-sm text-amber-700 font-medium">📚 延伸參考：盧雲《負傷的治療者》</p>
+          </div>
+        </section>
+
+        {/* 深度反思與行動指南 */}
+        <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white">
+          <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
+            <span>🧠</span>
+            深度反思與行動指南
+            <span className="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">延伸應用（非原書內容）</span>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+              <h4 className="text-lg font-bold text-indigo-200 mb-4">💭 反思問題</h4>
+              <ul className="space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">1.</span>我生命中有哪些失落或悲傷，我至今仍未真正哀悼過？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">2.</span>我通常用什麼方式來逃避痛苦？這個方式帶來了什麼後果？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">3.</span>我是否曾因為自己感到悲傷而感到罪惡感，覺得「基督徒不應該這樣」？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">4.</span>在我的有限中，哪一個是我最難接受的？這告訴了我什麼？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">5.</span>約伯誠實面對神、直接向神抗議——什麼阻礙我這樣對神說話？</li>
+              </ul>
+            </div>
+            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+              <h4 className="text-lg font-bold text-emerald-300 mb-4">🎯 生活實踐</h4>
+              <ul className="space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">1.</span>找出一件你生命中從未完全哀悼的失落，今天為它禱告，允許自己悲傷。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">2.</span>本週讀一篇哀歌詩篇（如詩篇22、88），用詩人的語言向神禱告。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">3.</span>列出你生命中五個你無法改變的有限，練習用感恩代替抗拒，接受神的設計。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">4.</span>找一個安全的人或空間，分享一個你一直沒有說出口的悲傷或失落。</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   );
 }

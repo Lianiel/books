@@ -131,23 +131,6 @@ export default function Chapter4() {
 
       </div>
     </div>
-
-
-        {/* 延伸探討 */}
-        <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
-          <div className="flex items-center mb-4 text-amber-700">
-            <span className="mr-2 text-lg">ℹ</span>
-            <h2 className="text-xl font-bold">【延伸探討：放下掌控：信任神的主權】</h2>
-          </div>
-          <div className="text-slate-700 space-y-4">
-            <p>「穿牆之旅」這個隱喻，描述了一個我們大多數人都不願踏上的旅程：從掌控走向信任，從「我的方式」走向「神的方式」。掌控感讓我們覺得安全，讓我們覺得如果一切都在計畫之中，就不會受傷。但這種安全感是虛假的——它把我們困在一個我們自己建造的監獄裡。</p>
-            <p>放下掌控，不是被動地讓一切隨波逐流，而是在行動的同時，放開對結果的執著。保羅說「我靠著那加給我力量的，凡事都能做」（腓四13），這不是無所不能的自信，而是在承認自己的軟弱的同時，信任神的同在和能力。</p>
-            <p>每一次我們選擇不操控、不強迫、不操縱，而是誠實說出我們的需要並等候神，都是在操練這個「穿牆」的信心。</p>
-            <p className="text-sm text-amber-700 font-medium">📚 延伸參考：理察・佛斯特《靈性操練禮讚》、托瑪斯・基斯《效法基督》</p>
-          </div>
-        </section>
-
-      {/* 反思與實踐 */}
       <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white mt-4">
         <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
           <span>🧠</span>
@@ -177,6 +160,50 @@ export default function Chapter4() {
         </div>
       </div>
 
+        {/* 延伸探討 */}
+        <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
+          <div className="flex items-center mb-4 text-amber-700">
+            <span className="mr-2 text-lg">ℹ</span>
+            <h2 className="text-xl font-bold">【延伸探討：放下掌控：信任神的主權】</h2>
+          </div>
+          <div className="text-slate-700 space-y-4">
+            <p>「穿牆之旅」描述了一個我們大多數人都不願踏上的旅程：從掌控走向信任。掌控感讓我們覺得安全，讓我們覺得如果一切都在計畫之中，就不會受傷。但這種安全感是虛假的——它把我們困在一個自己建造的監獄裡。</p>
+            <p>放下掌控，不是被動地讓一切隨波逐流，而是在行動的同時，放開對結果的執著。每一次我們選擇不操控、不強迫，而是誠實說出我們的需要並等候神，都是在操練這個「穿牆」的信心。</p>
+            <p className="text-sm text-amber-700 font-medium">📚 延伸參考：理察・佛斯特《靈性操練禮讚》</p>
+          </div>
+        </section>
+
+        {/* 深度反思與行動指南 */}
+        <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white">
+          <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
+            <span>🧠</span>
+            深度反思與行動指南
+            <span className="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">延伸應用（非原書內容）</span>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+              <h4 className="text-lg font-bold text-indigo-200 mb-4">💭 反思問題</h4>
+              <ul className="space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">1.</span>我在哪些關係或情境中，仍然試圖掌控結果？我這樣做是出於愛還是出於恐懼？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">2.</span>當事情不按我的計畫進行時，我內心的第一個反應是什麼？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">3.</span>我是否真的相信神的掌管是夠好的？還是我其實不放心讓神主導？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">4.</span>我在哪些地方把「負責任」和「控制」混為一談了？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">5.</span>如果我真的「放手」，讓神掌權，我最害怕會發生什麼事？</li>
+              </ul>
+            </div>
+            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+              <h4 className="text-lg font-bold text-emerald-300 mb-4">🎯 生活實踐</h4>
+              <ul className="space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">1.</span>列出你目前正在試圖掌控的三件事，一一禱告，練習將它們交給神。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">2.</span>本週選擇在一件小事上，刻意讓別人做決定，觀察自己的情緒反應。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">3.</span>反思你最近一次強行控制某個情況，結果如何？如果你當時放手，可能會有什麼不同？</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">4.</span>每天早晨禱告時，試著說：「神啊，今天我選擇讓你主導，而不是我。」</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   );
 }

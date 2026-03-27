@@ -134,36 +134,50 @@ export default function Chapter8() {
       </div>
     </div>
 
-      {/* 反思與實踐 */}
-      <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white mt-4">
-        <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
-          <span>🧠</span>
-          深度反思與行動指南
-          <span className="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">延伸應用（非原書內容）</span>
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-lg font-bold text-indigo-200 mb-4">💭 反思問題</h4>
-            <ul className="space-y-3 text-slate-300 text-sm">
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">1.</span>我目前的生活有「規約」嗎？還是我的屬靈生命是隨機、被動的？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">2.</span>在禱告、休息、工作、關係這四個領域中，哪一個最被我忽略？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">3.</span>我的生活節奏是否反映了我真正的價值觀？還是我的時間都被「緊急」的事佔據？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">4.</span>如果但以理生活在我目前的處境中，他會如何建立他的「生活規約」？</li>
-              <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">5.</span>什麼樣的靈性操練讓我感到更親近神？什麼樣的反而讓我感到更遠？</li>
-            </ul>
+        {/* 延伸探討 */}
+        <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
+          <div className="flex items-center mb-4 text-amber-700">
+            <span className="mr-2 text-lg">ℹ</span>
+            <h2 className="text-xl font-bold">【延伸探討：生活規約的現代意義】</h2>
           </div>
-          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-lg font-bold text-emerald-300 mb-4">🎯 生活實踐</h4>
-            <ul className="space-y-3 text-slate-300 text-sm">
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">1.</span>本週為自己草擬一份簡單的「生活規約」：在禱告、休息、工作、關係各選一項你想要加強的操練。</li>
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">2.</span>找一個「守規約的夥伴」：找一位朋友，互相分享你們的生活規約，每月見面檢視。</li>
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">3.</span>把你的「生活規約」寫下來，貼在你每天都能看到的地方，作為每日的提醒。</li>
-              <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">4.</span>給自己三個月的時間試行這份規約，三個月後重新評估和調整。</li>
-            </ul>
+          <div className="text-slate-700 space-y-4">
+            <p>「生活規約」（Rule of Life）這個概念源自早期修道院傳統，聖本篤的《會規》是最著名的例子。但它並不是修道士的專利，而是每個基督徒都可以實踐的靈性框架。</p>
+            <p>在現代高速運轉的社會中，沒有刻意的規約，我們的靈性生命就會被各種緊急但不重要的事情淹沒。就像但以理一樣，我們每個人都活在自己的「巴比倫」中，而我們的「生活規約」，就是我們抵擋這些影響、保持屬靈清醒的核心策略。</p>
+            <p className="text-sm text-amber-700 font-medium">📚 延伸參考：蒂克爾《神聖時光》、托曲《靈性塑造》</p>
+          </div>
+        </section>
+
+        {/* 深度反思與行動指南 */}
+        <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white">
+          <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
+            <span>🧠</span>
+            深度反思與行動指南
+            <span className="text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">延伸應用（非原書內容）</span>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+              <h4 className="text-lg font-bold text-indigo-200 mb-4">💭 反思問題</h4>
+              <ul className="space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">1.</span>我目前的生活有「規約」嗎？還是我的屬靈生命是隨機、被動的？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">2.</span>在禱告、休息、工作、關係這四個領域中，哪一個最被我忽略？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">3.</span>我的生活節奏是否反映了我真正的價值觀？還是我的時間都被「緊急」的事佔據？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">4.</span>如果但以理生活在我目前的處境中，他會如何建立他的「生活規約」？</li>
+                <li className="flex items-start gap-2"><span className="text-indigo-400 font-bold flex-shrink-0">5.</span>什麼樣的靈性操練讓我感到更親近神？什麼樣的反而讓我感到更遠？</li>
+              </ul>
+            </div>
+            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+              <h4 className="text-lg font-bold text-emerald-300 mb-4">🎯 生活實踐</h4>
+              <ul className="space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">1.</span>本週為自己草擬一份簡單的「生活規約」：在禱告、休息、工作、關係各選一項你想要加強的操練。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">2.</span>找一個「守規約的夥伴」：找一位朋友，互相分享你們的生活規約，每月見面檢視。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">3.</span>把你的「生活規約」寫下來，貼在你每天都能看到的地方，作為每日的提醒。</li>
+                <li className="flex items-start gap-2"><span className="text-emerald-400 font-bold flex-shrink-0">4.</span>給自己三個月的時間試行這份規約，三個月後重新評估和調整。</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   );
 }
