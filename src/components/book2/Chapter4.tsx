@@ -132,6 +132,21 @@ export default function Chapter4() {
       </div>
     </div>
 
+
+        {/* 延伸探討 */}
+        <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
+          <div className="flex items-center mb-4 text-amber-700">
+            <span className="mr-2 text-lg">ℹ</span>
+            <h2 className="text-xl font-bold">【延伸探討：放下掌控：信任神的主權】</h2>
+          </div>
+          <div className="text-slate-700 space-y-4">
+            <p>「穿牆之旅」這個隱喻，描述了一個我們大多數人都不願踏上的旅程：從掌控走向信任，從「我的方式」走向「神的方式」。掌控感讓我們覺得安全，讓我們覺得如果一切都在計畫之中，就不會受傷。但這種安全感是虛假的——它把我們困在一個我們自己建造的監獄裡。</p>
+            <p>放下掌控，不是被動地讓一切隨波逐流，而是在行動的同時，放開對結果的執著。保羅說「我靠著那加給我力量的，凡事都能做」（腓四13），這不是無所不能的自信，而是在承認自己的軟弱的同時，信任神的同在和能力。</p>
+            <p>每一次我們選擇不操控、不強迫、不操縱，而是誠實說出我們的需要並等候神，都是在操練這個「穿牆」的信心。</p>
+            <p className="text-sm text-amber-700 font-medium">📚 延伸參考：理察・佛斯特《靈性操練禮讚》、托瑪斯・基斯《效法基督》</p>
+          </div>
+        </section>
+
       {/* 反思與實踐 */}
       <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white mt-4">
         <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">

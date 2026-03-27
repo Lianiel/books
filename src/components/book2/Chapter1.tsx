@@ -91,6 +91,21 @@ export default function Chapter1() {
       </div>
     </div>
 
+
+        {/* 延伸探討 */}
+        <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
+          <div className="flex items-center mb-4 text-amber-700">
+            <span className="mr-2 text-lg">ℹ</span>
+            <h2 className="text-xl font-bold">【延伸探討：情感健康與靈性成長的關係】</h2>
+          </div>
+          <div className="text-slate-700 space-y-4">
+            <p>本書最核心的洞見是：情感上的不成熟，必然會阻礙我們與神、與人建立真實的關係。一個人可以在神學知識上非常豐富，卻在情感上仍然是個嬰兒——用操控代替溝通，用憤怒代替誠實，用忙碌代替與神同在。</p>
+            <p>教會長期以來把「靈性成長」和「情感成長」切割開來，以為只要多禱告、多讀聖經、多服事，靈命就會自然成熟。但事實是，那些未被處理的情感傷痛和不健康模式，會像冰山的十分之九一樣，靜靜地在水面下影響我們所有的決定和關係。</p>
+            <p>真正的成聖，必須同時觸及我們的情感生命。讓神不只是進入我們的「屬靈活動」，也進入我們的憤怒、哀傷、恐懼和羞愧。</p>
+            <p className="text-sm text-amber-700 font-medium">📚 延伸參考：大衛・班納《情感：通往神的途徑》</p>
+          </div>
+        </section>
+
       {/* 反思與實踐 */}
       <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white mt-4">
         <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">

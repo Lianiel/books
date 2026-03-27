@@ -133,6 +133,21 @@ export default function Chapter3() {
       </div>
     </div>
 
+
+        {/* 延伸探討 */}
+        <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
+          <div className="flex items-center mb-4 text-amber-700">
+            <span className="mr-2 text-lg">ℹ</span>
+            <h2 className="text-xl font-bold">【延伸探討：家庭系統與信仰傳承】</h2>
+          </div>
+          <div className="text-slate-700 space-y-4">
+            <p>家庭治療理論告訴我們，每個人都是在一個「家庭系統」中長大的。這個系統有它自己的規則、角色、溝通模式和情感氣候。我們在這個系統中學會了「如何愛」、「如何處理衝突」、「表達情感是安全的還是危險的」。這些學習，往往比我們意識到的更深刻地影響著我們。</p>
+            <p>信仰不會自動瓦解這些家庭模式。我們可能帶著全新的神學觀念走進婚姻和教會，卻用舊有的家庭模式來處理衝突、表達親密和行使權威。因此，面對過去並不是在指責家人，而是在清楚看見那些需要被神恩典觸碰的地方。</p>
+            <p>好消息是：神不只是我們「屬靈上」的父，也是能夠重寫我們家庭故事的神。在祂裡面，我們可以學習全新的愛和連結的方式。</p>
+            <p className="text-sm text-amber-700 font-medium">📚 延伸參考：蘇珊・福沃《父母會傷人》、大衛・斯托普《了解你的父母》</p>
+          </div>
+        </section>
+
       {/* 反思與實踐 */}
       <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white mt-4">
         <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">

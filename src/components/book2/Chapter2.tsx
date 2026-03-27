@@ -119,6 +119,21 @@ export default function Chapter2() {
       </div>
     </div>
 
+
+        {/* 延伸探討 */}
+        <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
+          <div className="flex items-center mb-4 text-amber-700">
+            <span className="mr-2 text-lg">ℹ</span>
+            <h2 className="text-xl font-bold">【延伸探討：認識自己：屬靈旅程的起點】</h2>
+          </div>
+          <div className="text-slate-700 space-y-4">
+            <p>「認識自己才能認識神」這個命題，在基督教靈修傳統中有深厚的根基。十六世紀靈修大師聖十字若望說：「靈魂越認識自己，就越認識神；越認識神，就越認識自己。」這不是世俗的自我中心，而是在神面前誠實面對自己真實的樣貌。</p>
+            <p>許多基督徒害怕「太關注自己」，以為謙卑就是貶低自己、否認自己的需要和感受。但真正的謙卑，是如實看待自己——既不誇大，也不縮小。它要求我們有勇氣面對自己內心的黑暗，也有信心接受神對我們的愛和接納。</p>
+            <p>你不需要先「修好」自己，才能讓神愛你。神在你最真實、最脆弱的樣子面前，依然說：「我認識你，我愛你。」</p>
+            <p className="text-sm text-amber-700 font-medium">📚 延伸參考：盧雲《你是我所愛的》、聖十字若望《靈魂的黑夜》</p>
+          </div>
+        </section>
+
       {/* 反思與實踐 */}
       <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg text-white mt-4">
         <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center gap-3">
