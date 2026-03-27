@@ -4,10 +4,6 @@ import { Map, Heart, AlertCircle, Lightbulb } from 'lucide-react';
 export default function Chapter5() {
   return (
     <div className="max-w-4xl mx-auto pb-12">
-      <h1 className="text-3xl font-extrabold text-slate-900 mb-2 border-b-2 border-rose-100 pb-4">
-        第 5 章：藉悲傷與失落擴張生命境界
-      </h1>
-      <p className="text-slate-500 italic mb-8">接受自己的有限</p>
       <div className="space-y-8">
         <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
           <div className="bg-rose-50 border-l-4 border-rose-400 p-4 mb-6 rounded-r-lg">
@@ -120,8 +116,6 @@ export default function Chapter5() {
           </div>
         </section>
 
-      </div>
-    </div>
 
         {/* 延伸探討 */}
         <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">

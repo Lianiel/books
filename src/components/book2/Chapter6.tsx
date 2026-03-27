@@ -4,10 +4,6 @@ import { Sun, Clock, BookOpen, Heart } from 'lucide-react';
 export default function Chapter6() {
   return (
     <div className="max-w-4xl mx-auto pb-12">
-      <h1 className="text-3xl font-extrabold text-slate-900 mb-2 border-b-2 border-rose-100 pb-4">
-        第 6 章：發現日課與安息日的節奏
-      </h1>
-      <p className="text-slate-500 italic mb-8">停下腳步，呼吸永恆的空氣</p>
       <div className="space-y-8">
 
         <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
@@ -100,8 +96,6 @@ export default function Chapter6() {
           </div>
         </section>
 
-      </div>
-    </div>
 
         {/* 延伸探討 */}
         <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">

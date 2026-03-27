@@ -4,10 +4,6 @@ import { BookOpen, Star, Heart, Lightbulb } from 'lucide-react';
 export default function Chapter8() {
   return (
     <div className="max-w-4xl mx-auto pb-12">
-      <h1 className="text-3xl font-extrabold text-slate-900 mb-2 border-b-2 border-rose-100 pb-4">
-        第 8 章：進一步建立生活規約
-      </h1>
-      <p className="text-slate-500 italic mb-8">愛基督勝於一切</p>
       <div className="space-y-8">
 
         <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
@@ -131,8 +127,6 @@ export default function Chapter8() {
           </div>
         </section>
 
-      </div>
-    </div>
 
         {/* 延伸探討 */}
         <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
@@ -143,7 +137,7 @@ export default function Chapter8() {
           <div className="text-slate-700 space-y-4">
             <p>「生活規約」（Rule of Life）這個概念源自早期修道院傳統，聖本篤的《會規》是最著名的例子。但它並不是修道士的專利，而是每個基督徒都可以實踐的靈性框架。</p>
             <p>在現代高速運轉的社會中，沒有刻意的規約，我們的靈性生命就會被各種緊急但不重要的事情淹沒。就像但以理一樣，我們每個人都活在自己的「巴比倫」中，而我們的「生活規約」，就是我們抵擋這些影響、保持屬靈清醒的核心策略。</p>
-            <p className="text-sm text-amber-700 font-medium">📚 延伸參考：蒂克爾《神聖時光》、托曲《靈性塑造》</p>
+            <p className="text-sm text-amber-700 font-medium">📚 延伸參考：蒂克爾《神聖時光》</p>
           </div>
         </section>
 
