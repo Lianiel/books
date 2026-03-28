@@ -175,19 +175,19 @@ export default function SectionCh16() {
           <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章描述設立界線的過程，以及在這個旅程中需要培養的五個內在能力。作者指出，界線的成長不只是技巧的學習，更是整個人格和靈性的蛻變。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 成長的五個步驟 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.400-406)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者描述界線成長的五個里程碑：第一，怨恨的出現——怨恨是界線被長期侵犯的信號，它告訴你「某些事情需要改變」；第二，尋找連結——你無法獨自走這條路，你需要安全的人際支持；第三，停止責怪——從「都是他逼我的」轉到「是我允許這件事發生的」，這是真正改變的開始；第四，練習說不；第五，喜樂的出現——當界線開始建立，你會發現一種全新的自由和喜樂。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>作者描述界線成長的五個里程碑：第一，怨恨的出現——怨恨是界線被長期侵犯的信號，它告訴你「某些事情需要改變」；第二，尋找連結——你無法獨自走這條路，你需要安全的人際支持；第三，停止責怪——從「都是他逼我的」轉到「是我允許這件事發生的」，這是真正改變的開始；第四，練習說不；第五，喜樂的出現——當界線開始建立，你會發現一種全新的自由和喜樂。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 從怨恨到喜樂的蛻變 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.406-412)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者描述了一個深刻的蛻變歷程：在界線缺失的狀態下，我們活在一種被動的、受害者式的憤怒中；當我們開始設立界線，我們進入主動掌握自己生命的狀態；當界線成熟，我們不再需要用憤怒來捍衛自己，因為界線已經自然地保護了我們。這個過程通常需要數年，而不是數週。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>作者描述了一個深刻的蛻變歷程：在界線缺失的狀態下，我們活在一種被動的、受害者式的憤怒中；當我們開始設立界線，我們進入主動掌握自己生命的狀態；當界線成熟，我們不再需要用憤怒來捍衛自己，因為界線已經自然地保護了我們。這個過程通常需要數年，而不是數週。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 界線的誤用：孤立不是界線 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.412-418)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>本章也特別警告一種界線的誤用：用「界線」為名來孤立自己、拒絕所有連結和親密關係。這不是健康的界線，而是傷痛的防衛機制。真正的界線是有選擇地開放和保護，讓真實的連結能夠發生，同時保護自己不受傷害。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>本章也特別警告一種界線的誤用：用「界線」為名來孤立自己、拒絕所有連結和親密關係。這不是健康的界線，而是傷痛的防衛機制。真正的界線是有選擇地開放和保護，讓真實的連結能夠發生，同時保護自己不受傷害。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.400-418)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>界線的成長是一個整全的靈性和情感旅程。它需要誠實、連結、勇氣、時間和神的恩典。在這個過程中，你不只是在學習說「不」，你是在學習成為一個更真實、更有能力愛人的自己。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>界線的成長是一個整全的靈性和情感旅程。它需要誠實、連結、勇氣、時間和神的恩典。在這個過程中，你不只是在學習說「不」，你是在學習成為一個更真實、更有能力愛人的自己。</p>
           </div>
         </div>
 

@@ -121,19 +121,19 @@ export default function SectionHome() {
           <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章透過雪莉這個角色，帶領讀者看見一個「界線完全缺失」的生命長什麼樣子。作者用一天 18 小時的時間軸，讓我們在每一個場景中都能清楚辨認出「沒有界線」的具體模樣。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 故事的核心 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.21-26)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>雪莉是一個虔誠的基督徒、盡責的母親、勤勉的職員——然而她的生活卻像一輛失控的列車。從清晨被鬧鐘驚醒的那一刻起，她就不斷地回應他人的要求：母親的情緒勒索、丈夫的抱怨、上司的不合理指派、朋友的單向傾吐、教會的緊急徵召……每一次，她都說了「好」，每一次，她內心都感到憤怒、委屈和疲憊，卻說不出口。深夜，她躺在床上，充滿了孤獨和空洞。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>雪莉是一個虔誠的基督徒、盡責的母親、勤勉的職員——然而她的生活卻像一輛失控的列車。從清晨被鬧鐘驚醒的那一刻起，她就不斷地回應他人的要求：母親的情緒勒索、丈夫的抱怨、上司的不合理指派、朋友的單向傾吐、教會的緊急徵召……每一次，她都說了「好」，每一次，她內心都感到憤怒、委屈和疲憊，卻說不出口。深夜，她躺在床上，充滿了孤獨和空洞。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 問題的根源 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.29-36)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>雪莉的問題不是「太忙」，而是她無法分辨「我的責任」和「別人的責任」。她把別人的問題、情緒、後果，全部扛在自己身上。更深的根源是：她相信「如果我說不，我就是一個壞基督徒、壞妻子、壞員工」。這種罪惡感和對愛的渴望，成了控制她行為的隱形繩索。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>雪莉的問題不是「太忙」，而是她無法分辨「我的責任」和「別人的責任」。她把別人的問題、情緒、後果，全部扛在自己身上。更深的根源是：她相信「如果我說不，我就是一個壞基督徒、壞妻子、壞員工」。這種罪惡感和對愛的渴望，成了控制她行為的隱形繩索。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 界線缺失的代價 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.22-36)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>沒有界線的生命會付出沉重的代價：身體的疲憊與健康問題、情感的麻木與憤怒積累、關係的失衡與怨恨、靈性的枯竭與對神的疏離。作者指出，雪莉的問題在許多虔誠的基督徒身上普遍存在，因為教會文化往往強調「捨己」和「服事」，卻沒有教導如何在健康的自我之上服事他人。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>沒有界線的生命會付出沉重的代價：身體的疲憊與健康問題、情感的麻木與憤怒積累、關係的失衡與怨恨、靈性的枯竭與對神的疏離。作者指出，雪莉的問題在許多虔誠的基督徒身上普遍存在，因為教會文化往往強調「捨己」和「服事」，卻沒有教導如何在健康的自我之上服事他人。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.37-39)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>設立界線不是自私，而是對神所給的生命負責。你是神的財產的管理人，若你把自己耗盡，你就無法有效地愛任何人。真正的愛必須出於自由和充盛，而不是出於恐懼和匱乏。雪莉的故事是一面鏡子，邀請每位讀者誠實地問：「我在哪裡像雪莉一樣？」</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>設立界線不是自私，而是對神所給的生命負責。你是神的財產的管理人，若你把自己耗盡，你就無法有效地愛任何人。真正的愛必須出於自由和充盛，而不是出於恐懼和匱乏。雪莉的故事是一面鏡子，邀請每位讀者誠實地問：「我在哪裡像雪莉一樣？」</p>
           </div>
         </div>
 

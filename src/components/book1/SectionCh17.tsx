@@ -153,19 +153,19 @@ export default function SectionCh17() {
           <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章以雪莉的「重生版」一天作結——展示一個學會設立界線的人，生命看起來是什麼樣子。這不是一個完美的生命，而是一個真實的、有選擇的、有能力真正去愛的生命。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 雪莉的新的一天 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.422-428)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>本章以對比的方式，展示雪莉在學習界線後的同樣一天：早晨她主動起床、享受安靜；面對孩子的衝突，她平靜地設立後果並執行；面對上司的臨時要求，她清楚表達自己的工作優先次序；面對朋友的電話，她說「我現在在工作，晚點聯絡」；面對教會的要求，她誠實評估自己的能量然後做出真實的回應。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>本章以對比的方式，展示雪莉在學習界線後的同樣一天：早晨她主動起床、享受安靜；面對孩子的衝突，她平靜地設立後果並執行；面對上司的臨時要求，她清楚表達自己的工作優先次序；面對朋友的電話，她說「我現在在工作，晚點聯絡」；面對教會的要求，她誠實評估自己的能量然後做出真實的回應。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 自由的真實樣貌 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.428-432)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者指出，真正的自由不是隨心所欲，而是有能力選擇。當雪莉說「好」，那是她真實的選擇，不是恐懼的驅使；當她說「不」，那是她在保護神給她的生命，不是冷漠或自私。這種生命帶來的喜樂和平安，是以前那個永遠說「好」卻充滿怨恨的雪莉從未體驗過的。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>作者指出，真正的自由不是隨心所欲，而是有能力選擇。當雪莉說「好」，那是她真實的選擇，不是恐懼的驅使；當她說「不」，那是她在保護神給她的生命，不是冷漠或自私。這種生命帶來的喜樂和平安，是以前那個永遠說「好」卻充滿怨恨的雪莉從未體驗過的。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 界線是愛的最高表達 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.432-436)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者以一個深刻的觀點作結：學會設立界線，讓你能夠更深、更真實地去愛人——因為你現在的愛，不再是出於恐懼或義務，而是出於充盛和自由。你能夠清楚地說「我愛你，而且我需要這個」，你能夠說「不」而不帶罪惡感，你能夠說「是」而充滿真心。這是界線帶給你的最深的禮物。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>作者以一個深刻的觀點作結：學會設立界線，讓你能夠更深、更真實地去愛人——因為你現在的愛，不再是出於恐懼或義務，而是出於充盛和自由。你能夠清楚地說「我愛你，而且我需要這個」，你能夠說「不」而不帶罪惡感，你能夠說「是」而充滿真心。這是界線帶給你的最深的禮物。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.422-436)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>這不是旅程的終點，而是起點。學習界線是一生的功課，不是一個可以「完成」的任務。但每一步的成長，都讓你更加自由、更真實地與神和與人相遇。這條路或許艱難，但它通向的，是你被創造來應該有的生命。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>這不是旅程的終點，而是起點。學習界線是一生的功課，不是一個可以「完成」的任務。但每一步的成長，都讓你更加自由、更真實地與神和與人相遇。這條路或許艱難，但它通向的，是你被創造來應該有的生命。</p>
           </div>
         </div>
 

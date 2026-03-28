@@ -165,19 +165,19 @@ export default function SectionCh12() {
           <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章探討最常被忽略的界線面向——對自己內心世界的界線管理。這包括對自己的情緒、思想、習慣、時間和身體的負責任管理。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 科技與自我界線 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.300-306)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>本章以數位時代的挑戰開場——手機、社群媒體和無處不在的資訊流，不斷要求我們的注意力，讓我們幾乎沒有空間安靜下來面對自己的內心。作者指出，能夠管理自己與科技的關係，是現代人最重要的自我界線之一。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>本章以數位時代的挑戰開場——手機、社群媒體和無處不在的資訊流，不斷要求我們的注意力，讓我們幾乎沒有空間安靜下來面對自己的內心。作者指出，能夠管理自己與科技的關係，是現代人最重要的自我界線之一。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 自律是最深的自我界線 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.306-312)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>對自己設立界線的核心是自律——不是壓制自我，而是學習對那些傷害自己的衝動說「不」（過度消費、飲食失調、拖延、沉溺螢幕），並對那些滋養自己的事說「是」（禱告、運動、閱讀、真實的連結）。作者強調，自律不是律法主義，而是對自己和神的愛的表達。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>對自己設立界線的核心是自律——不是壓制自我，而是學習對那些傷害自己的衝動說「不」（過度消費、飲食失調、拖延、沉溺螢幕），並對那些滋養自己的事說「是」（禱告、運動、閱讀、真實的連結）。作者強調，自律不是律法主義，而是對自己和神的愛的表達。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 對自己的同理心 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.312-318)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者特別提醒：對自己設立界線，需要先對自己有同理心。許多人對別人充滿憐憫，卻對自己非常嚴苛。如果你不能溫柔地對待自己，你的「自我管理」很容易變成自我懲罰，這不是健康的界線。學習像神一樣看待自己——認識自己的限制，接受自己的不完美，同時不放棄成長。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>作者特別提醒：對自己設立界線，需要先對自己有同理心。許多人對別人充滿憐憫，卻對自己非常嚴苛。如果你不能溫柔地對待自己，你的「自我管理」很容易變成自我懲罰，這不是健康的界線。學習像神一樣看待自己——認識自己的限制，接受自己的不完美，同時不放棄成長。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.300-318)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>你對自己的管理，決定了你對別人的容量。若你任由自己的情緒、時間和精力被各種衝動和外在要求耗盡，你就沒有什麼可以給予別人的了。照顧好自己，不是自私，而是讓你能夠持續、真實地愛人的基礎。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>你對自己的管理，決定了你對別人的容量。若你任由自己的情緒、時間和精力被各種衝動和外在要求耗盡，你就沒有什麼可以給予別人的了。照顧好自己，不是自私，而是讓你能夠持續、真實地愛人的基礎。</p>
           </div>
         </div>
 

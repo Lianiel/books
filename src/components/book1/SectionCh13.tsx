@@ -174,19 +174,19 @@ export default function SectionCh13() {
           <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章深入分析那些抗拒你設立界線的人——他們為什麼抗拒、他們用什麼策略、以及你如何在面對抗拒時仍然堅守界線。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 抗拒的根源 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.322-328)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>當你開始設立界線，有些人會強烈反對。作者指出，這些抗拒往往揭示了一個不舒服的真相：這個人習慣了你沒有界線的狀態，而你的改變威脅到了他們習以為常的利益。他們的憤怒或傷心，本質上是對「控制失效」的反應，而不是對你的愛的證明。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>當你開始設立界線，有些人會強烈反對。作者指出，這些抗拒往往揭示了一個不舒服的真相：這個人習慣了你沒有界線的狀態，而你的改變威脅到了他們習以為常的利益。他們的憤怒或傷心，本質上是對「控制失效」的反應，而不是對你的愛的證明。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 六種常見的抗拒策略 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.328-337)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者識別出六種常見的界線抗拒策略：憤怒（用情緒爆發來讓你退縮）、罪惡感訊息（「你怎麼忍心這樣對我」）、威脅後果（切斷資源、威脅離開）、眼淚（用情緒軟化你的立場）、哄騙（暫時承諾改變，但從不真正落實）、以受害者自居（把自己塑造成你「傷害」的無辜者）。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>作者識別出六種常見的界線抗拒策略：憤怒（用情緒爆發來讓你退縮）、罪惡感訊息（「你怎麼忍心這樣對我」）、威脅後果（切斷資源、威脅離開）、眼淚（用情緒軟化你的立場）、哄騙（暫時承諾改變，但從不真正落實）、以受害者自居（把自己塑造成你「傷害」的無辜者）。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 面對抗拒的核心原則 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.337-345)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>面對抗拒，最重要的一個原則是：「對方的情緒反應，是他的責任，不是你的。」你的界線讓對方感到不舒服，這不代表你做錯了；這代表界線正在發揮它的作用。若你每次因為對方的憤怒就收回界線，你就在訓練對方「憤怒有效」，而下次他會更快、更強烈地使用這個工具。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>面對抗拒，最重要的一個原則是：「對方的情緒反應，是他的責任，不是你的。」你的界線讓對方感到不舒服，這不代表你做錯了；這代表界線正在發揮它的作用。若你每次因為對方的憤怒就收回界線，你就在訓練對方「憤怒有效」，而下次他會更快、更強烈地使用這個工具。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.322-345)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>設立界線需要準備好面對抗拒，這是成長的代價。但作者也帶來盼望：並非所有人都會永久抗拒。有些關係在你設立界線後，會經歷陣痛但最終走向更健康的型態。真正愛你的人，在初期的不適後，往往會尊重你的界線，甚至因此更尊重你。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>設立界線需要準備好面對抗拒，這是成長的代價。但作者也帶來盼望：並非所有人都會永久抗拒。有些關係在你設立界線後，會經歷陣痛但最終走向更健康的型態。真正愛你的人，在初期的不適後，往往會尊重你的界線，甚至因此更尊重你。</p>
           </div>
         </div>
 

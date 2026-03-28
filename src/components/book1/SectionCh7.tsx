@@ -374,19 +374,19 @@ export default function SectionCh7() {
           <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章聚焦於最具挑戰性的界線戰場——原生家庭。作者指出，許多成年人雖然已經在身體上離開了家，卻從未在情感上真正獨立。這種「情感上的未離家」，會嚴重影響他們的婚姻、親子關係和靈性成長。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 家庭界線失衡的六大症狀 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.185-193)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>本章列出六種常見的家庭界線問題：把原生家庭的互動模式移植到現在的家庭、配偶長期感到被排在父母之後、「長不大症候群」（成年後仍依賴父母的經濟支持）、三角關係溝通（不直接溝通，而是透過第三者傳話）、子女被迫照顧不成熟的父母（角色顛倒）、被不負責任的手足勒索情感。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>本章列出六種常見的家庭界線問題：把原生家庭的互動模式移植到現在的家庭、配偶長期感到被排在父母之後、「長不大症候群」（成年後仍依賴父母的經濟支持）、三角關係溝通（不直接溝通，而是透過第三者傳話）、子女被迫照顧不成熟的父母（角色顛倒）、被不負責任的手足勒索情感。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 情感上的離家：最難的功課 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.193-197)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者強調，真正的「成年」不只是年齡上的成熟，而是情感上的獨立——你愛你的父母，但你不再需要他們的認可才能感到安全；你尊重他們，但你的生命方向由神和你自己決定，而不是由他們的期望決定。這個離家的過程，往往需要刻意的努力和支持。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>作者強調，真正的「成年」不只是年齡上的成熟，而是情感上的獨立——你愛你的父母，但你不再需要他們的認可才能感到安全；你尊重他們，但你的生命方向由神和你自己決定，而不是由他們的期望決定。這個離家的過程，往往需要刻意的努力和支持。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 已婚者的特別挑戰 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.197-199)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>聖經說：「人要離開父母，與妻子連合」（創二24）。這個「離開」不只是地理上的，更是情感和忠誠上的優先次序的重新排列。對已婚者而言，配偶的需要應該優先於父母的期望（在合理的範圍內）。若你的父母仍然能用罪惡感或憤怒來控制你的婚姻決定，那是一個需要正視的界線問題。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>聖經說：「人要離開父母，與妻子連合」（創二24）。這個「離開」不只是地理上的，更是情感和忠誠上的優先次序的重新排列。對已婚者而言，配偶的需要應該優先於父母的期望（在合理的範圍內）。若你的父母仍然能用罪惡感或憤怒來控制你的婚姻決定，那是一個需要正視的界線問題。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
             <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.185-199)</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>對家人設立界線，不是要切斷關係，而是要讓關係建立在更真實、更健康的基礎上。有時候，真正的愛需要你說出一些讓對方不舒服的真話，或是拒絕繼續扮演一個讓雙方都不健康的角色。設立界線，可能是你給家人最深的愛的一種方式。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"18px"}}>對家人設立界線，不是要切斷關係，而是要讓關係建立在更真實、更健康的基礎上。有時候，真正的愛需要你說出一些讓對方不舒服的真話，或是拒絕繼續扮演一個讓雙方都不健康的角色。設立界線，可能是你給家人最深的愛的一種方式。</p>
           </div>
         </div>
 
