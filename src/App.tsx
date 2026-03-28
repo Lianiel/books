@@ -216,26 +216,48 @@ export default function App() {
     return () => document.removeEventListener('removeHighlight', handler);
   }, [removeHighlight]);
 
-  // Show toolbar on text selection
+  // Show toolbar on text selection (mouse + touch)
   useEffect(() => {
     if (!isLoggedIn || !selectedBook) return;
-    const handleMouseUp = (e: MouseEvent) => {
-      if (toolbarRef.current?.contains(e.target as Node)) return;
+
+    const handleSelectionChange = () => {
+      if (toolbarRef.current?.contains(document.activeElement)) return;
       const sel = window.getSelection();
       const text = sel?.toString().trim() || '';
       if (text.length < 2) { setToolbar(null); return; }
-      const range = sel!.getRangeAt(0);
-      const rect = range.getBoundingClientRect();
-      setToolbar({ x: rect.left + rect.width / 2, y: rect.top + window.scrollY - 8, text });
+      try {
+        const range = sel!.getRangeAt(0);
+        const rect = range.getBoundingClientRect();
+        if (rect.width === 0 && rect.height === 0) return;
+        setToolbar({ x: rect.left + rect.width / 2, y: rect.top + window.scrollY - 8, text });
+      } catch (e) {}
+    };
+
+    const handleMouseUp = (e: MouseEvent) => {
+      if (toolbarRef.current?.contains(e.target as Node)) return;
+      setTimeout(handleSelectionChange, 10);
+    };
+    const handleTouchEnd = (e: TouchEvent) => {
+      if (toolbarRef.current?.contains(e.target as Node)) return;
+      // Delay to allow browser to update selection after touch
+      setTimeout(handleSelectionChange, 300);
     };
     const handleMouseDown = (e: MouseEvent) => {
       if (!toolbarRef.current?.contains(e.target as Node)) setToolbar(null);
     };
+    const handleTouchStart = (e: TouchEvent) => {
+      if (!toolbarRef.current?.contains(e.target as Node)) setToolbar(null);
+    };
+
     document.addEventListener('mouseup', handleMouseUp);
     document.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('touchend', handleTouchEnd);
+    document.addEventListener('touchstart', handleTouchStart);
     return () => {
       document.removeEventListener('mouseup', handleMouseUp);
       document.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('touchend', handleTouchEnd);
+      document.removeEventListener('touchstart', handleTouchStart);
     };
   }, [isLoggedIn, selectedBook]);
 
@@ -413,7 +435,7 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans flex flex-col">
 
       {/* Header */}
-      <div className="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-slate-100 px-4 py-3 flex items-center justify-between flex-shrink-0" style={{marginTop: '56px'}}>
+      <div className="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-slate-100 px-4 py-3 flex items-center justify-between flex-shrink-0">
         <div className="flex items-center gap-1">
           <button
             onClick={() => setSelectedBook(null)}
