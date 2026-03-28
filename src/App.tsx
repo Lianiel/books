@@ -255,17 +255,113 @@ export default function App() {
     return null;
   };
 
+  // ── Login Modal ───────────────────────────────────────────────────
+  const [showLogin, setShowLogin] = useState(false);
+  const [loginPhone, setLoginPhone] = useState('');
+  const [loginPwd, setLoginPwd] = useState('');
+  const [loginMsg, setLoginMsg] = useState('');
+  const [loginLoading, setLoginLoading] = useState(false);
+
+  const handleLogin = async () => {
+    if (!loginPhone || !loginPwd) { setLoginMsg('請填寫帳號和密碼'); return; }
+    setLoginLoading(true); setLoginMsg('');
+    const sb = (window as any).supabase?.createClient(
+      'https://yhchjanqmopgbwgjspmf.supabase.co',
+      'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx'
+    );
+    const { error } = await sb.auth.signInWithPassword({
+      email: `${loginPhone}@puhe.app`,
+      password: loginPwd,
+    });
+    setLoginLoading(false);
+    if (error) { setLoginMsg('帳號或密碼錯誤'); return; }
+    setShowLogin(false); setLoginPhone(''); setLoginPwd(''); setLoginMsg('');
+  };
+
+  const handleLogout = async () => {
+    const sb = (window as any).supabase?.createClient(
+      'https://yhchjanqmopgbwgjspmf.supabase.co',
+      'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx'
+    );
+    await sb.auth.signOut();
+  };
+
   // ── Book List (home) ─────────────────────────────────────────────
   if (!selectedBook) {
     return (
       <div className="min-h-screen bg-slate-50 flex flex-col">
-        <header className="bg-white border-b border-slate-200 px-6 py-5 text-center shadow-sm">
-          <div className="flex items-center justify-center gap-2 mb-1">
-            <BookOpen className="h-6 w-6 text-indigo-500" />
-            <h1 className="text-xl font-bold text-slate-800">電子書房</h1>
+        <header className="bg-white border-b border-slate-200 px-6 py-4 shadow-sm">
+          <div className="flex items-center justify-between max-w-lg mx-auto">
+            <div className="flex items-center gap-2">
+              <BookOpen className="h-6 w-6 text-indigo-500" />
+              <h1 className="text-xl font-bold text-slate-800">電子書房</h1>
+            </div>
+            {isLoggedIn ? (
+              <button
+                onClick={handleLogout}
+                className="text-xs text-slate-400 hover:text-slate-600 px-3 py-1.5 rounded-full border border-slate-200 hover:border-slate-300 transition-colors"
+              >
+                ✏️ 登出畫重點
+              </button>
+            ) : (
+              <button
+                onClick={() => setShowLogin(true)}
+                className="text-xs text-indigo-600 hover:text-indigo-700 px-3 py-1.5 rounded-full border border-indigo-200 hover:border-indigo-300 transition-colors font-medium"
+              >
+                ✏️ 登入畫重點
+              </button>
+            )}
           </div>
-          <p className="text-xs text-slate-400">選擇一本書開始閱讀</p>
+          <p className="text-xs text-slate-400 text-center mt-1">選擇一本書開始閱讀</p>
         </header>
+
+        {/* Login Modal */}
+        {showLogin && (
+          <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+            <div className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl">
+              <h2 className="text-lg font-bold text-slate-800 mb-1">登入畫重點功能</h2>
+              <p className="text-xs text-slate-400 mb-4">使用你的小組帳號登入</p>
+              <div className="space-y-3">
+                <div>
+                  <label className="text-xs font-medium text-slate-600 mb-1 block">帳號（電話號碼）</label>
+                  <input
+                    type="text"
+                    value={loginPhone}
+                    onChange={e => setLoginPhone(e.target.value)}
+                    placeholder="輸入電話號碼"
+                    className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-indigo-400"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-medium text-slate-600 mb-1 block">密碼</label>
+                  <input
+                    type="password"
+                    value={loginPwd}
+                    onChange={e => setLoginPwd(e.target.value)}
+                    placeholder="輸入密碼"
+                    className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-indigo-400"
+                    onKeyDown={e => e.key === 'Enter' && handleLogin()}
+                  />
+                </div>
+                {loginMsg && <p className="text-xs text-red-500">{loginMsg}</p>}
+                <button
+                  onClick={handleLogin}
+                  disabled={loginLoading}
+                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-lg text-sm transition-colors disabled:opacity-60"
+                >
+                  {loginLoading ? '登入中...' : '登入'}
+                </button>
+                <button
+                  onClick={() => { setShowLogin(false); setLoginMsg(''); }}
+                  className="w-full text-slate-400 hover:text-slate-600 text-sm py-1 transition-colors"
+                >
+                  取消
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
         <main className="flex-1 p-6 max-w-lg mx-auto w-full">
           <div className="flex flex-col gap-4 mt-4">
             {BOOKS.map(b => (
@@ -326,6 +422,9 @@ export default function App() {
             : <><Menu className="h-4 w-4" /><span>目錄</span></>
           }
         </button>
+        {isLoggedIn && (
+          <span className="text-xs text-indigo-400 font-medium hidden sm:block">✏️ 畫重點已啟用</span>
+        )}
       </div>
 
       {/* Slide-down TOC — all devices */}
