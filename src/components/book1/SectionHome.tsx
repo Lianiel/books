@@ -112,6 +112,31 @@ export default function SectionHome() {
         </div>
       </div>
       {/* Reflection & Action Guide */}
+        {/* 本章總結 */}
+        <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
+          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+            <span className="text-lg">📝</span> 第1章總結：界線混亂的一天
+          </h3>
+          <ul className="space-y-2.5">
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">雪莉的一天完整呈現了「沒有界線」的生命樣貌——她對每個人的要求都說「好」，卻對自己的需要說「不」。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">界線的缺失不只讓人疲憊，更會讓關係失衡、靈性枯竭，甚至讓「愛人」變成「被人利用」。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">真正的問題不是外在的要求太多，而是內在沒有學會如何分辨「我的責任」和「別人的責任」。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">核心信息：你無法在自我耗盡的狀態下真正愛人，設立界線不是自私，而是健康愛人的前提。</span>
+              </li>
+          </ul>
+        </div>
+
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
         <h3 className="text-2xl font-bold text-rose-300 mb-6 flex items-center">
           <Brain className="w-7 h-7 mr-3" />

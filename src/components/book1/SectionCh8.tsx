@@ -347,6 +347,31 @@ export default function SectionCh8() {
         </div>
       </div>
       {/* Reflection & Action Guide */}
+        {/* 本章總結 */}
+        <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
+          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+            <span className="text-lg">📝</span> 第8章總結：界線與你的朋友
+          </h3>
+          <ul className="space-y-2.5">
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">友誼中的界線讓愛成為出於自由的選擇，而不是出於恐懼或義務的責任。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">真正的友誼是雙向的，若一段友誼讓你長期感到精疲力盡或被佔便宜，那是需要設立界線的信號。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">設立界線可能讓某些「友誼」結束——但那些因你說「不」而消失的關係，其實從未是真正的友誼。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">健康的友誼允許彼此說「不」，也允許彼此在不同的人生季節有不同的距離。</span>
+              </li>
+          </ul>
+        </div>
+
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
         <h3 className="text-2xl font-bold text-sky-300 mb-6 flex items-center">
           <Brain className="w-7 h-7 mr-3" />

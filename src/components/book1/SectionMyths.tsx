@@ -311,6 +311,31 @@ export default function SectionMyths() {
         ))}
       </div>
       {/* Reflection & Action Guide */}
+        {/* 本章總結 */}
+        <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
+          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+            <span className="text-lg">📝</span> 第6章總結：界線的迷思
+          </h3>
+          <ul className="space-y-2.5">
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">許多人因為錯誤的觀念而不敢設立界線，這些迷思需要被一一拆解。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">「設立界線是自私的」——這是最常見的迷思。界線保護的是你的能力，讓你能持續地愛人，而不是關閉你的心。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">「設立界線會傷害關係」——真正有益的關係建立在誠實和尊重上，界線能讓關係更健康，而不是更脆弱。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">「好基督徒不應該有界線」——耶穌本人也常常說「不」、獨處禱告、保護自己的時間和精力。</span>
+              </li>
+          </ul>
+        </div>
+
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
         <h3 className="text-2xl font-bold text-fuchsia-300 mb-6 flex items-center">
           <Brain className="w-7 h-7 mr-3" />

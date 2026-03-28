@@ -144,6 +144,31 @@ export default function SectionCh17() {
         </div>
       </div>
       {/* Reflection & Action Guide */}
+        {/* 本章總結 */}
+        <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
+          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+            <span className="text-lg">📝</span> 第17章總結：界線帶來自由
+          </h3>
+          <ul className="space-y-2.5">
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">學習設立界線的最終目的，不是保護自己免受傷害，而是讓你能夠更自由、更真實地愛人。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">當你不再出於恐懼或罪惡感而行動，你的愛和服事才真正成為禮物，而不是交換或負擔。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">界線帶來的自由是雙向的——你自由了，你所愛的人也因此得到空間去面對自己真實的處境。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">這不是旅程的終點，而是起點：帶著更健康的自我，更真實地與神、與人建立關係，這是界線最深的禮物。</span>
+              </li>
+          </ul>
+        </div>
+
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
         <h3 className="text-2xl font-bold text-amber-300 mb-6 flex items-center">
           <Brain className="w-7 h-7 mr-3" />

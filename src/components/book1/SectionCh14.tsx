@@ -147,6 +147,31 @@ export default function SectionCh14() {
         </div>
       </div>
       {/* Reflection & Action Guide */}
+        {/* 本章總結 */}
+        <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
+          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+            <span className="text-lg">📝</span> 第14章總結：如何說「不」
+          </h3>
+          <ul className="space-y-2.5">
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">說「不」是一種可以練習的技能，不是冷漠或殘忍，而是誠實和尊重的表達。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">說「不」需要清楚、直接，不需要過多的解釋和道歉——過度解釋往往讓對方有更多空間反駁。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">練習「我需要想一想再回答」，給自己時間在壓力下做出清醒的決定，而不是在恐懼中說「好」。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">說「不」之後可能有罪惡感——這是正常的，它不代表你做錯了，而是你正在學習一個新的模式。</span>
+              </li>
+          </ul>
+        </div>
+
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
         <h3 className="text-2xl font-bold text-purple-300 mb-6 flex items-center">
           <Brain className="w-7 h-7 mr-3" />

@@ -146,6 +146,31 @@ export default function SectionDefinition() {
         </div>
       </div>
       {/* Reflection & Action Guide */}
+        {/* 本章總結 */}
+        <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
+          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+            <span className="text-lg">📝</span> 第2章總結：界線看來啥模樣？
+          </h3>
+          <ul className="space-y-2.5">
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">界線定義了「我」在哪裡結束，「你」在哪裡開始——它是自我認同的地圖，也是愛的保護。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">界線的範圍包含感覺、態度、信念、行為、選擇、價值觀、限制、資源恩賜、思想、慾望和愛，這十項都是我們需要負責任的「自己的地」。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">有界線不代表冷漠或拒絕，而是清楚知道自己能給什麼、不能給什麼，並誠實地表達出來。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">沒有界線的人容易把別人的問題、情緒和責任扛在自己身上，最終兩敗俱傷。</span>
+              </li>
+          </ul>
+        </div>
+
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
         <h3 className="text-2xl font-bold text-blue-300 mb-6 flex items-center">
           <Brain className="w-7 h-7 mr-3" />

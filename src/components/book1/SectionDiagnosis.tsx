@@ -216,6 +216,31 @@ export default function SectionDiagnosis() {
         </div>
       </div>
       {/* Reflection & Action Guide */}
+        {/* 本章總結 */}
+        <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
+          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+            <span className="text-lg">📝</span> 第3章總結：為何我們建不起界線？
+          </h3>
+          <ul className="space-y-2.5">
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">界線的建立受到成長環境深刻影響——若原生家庭不允許說「不」，我們就學會了用討好代替真實。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">四種常見的界線問題類型：「屈服型」（不敢說不）、「掌控型」（不讓別人說不）、「漠然型」（對需要視而不見）、「反應型」（因過去的傷而過度防衛）。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">錯誤的神學觀念也會破壞界線，例如把「捨己」誤解為「沒有自我」，把「愛人」誤解為「有求必應」。</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
+                <span className="text-slate-600 text-sm leading-relaxed">了解界線問題的根源是改變的第一步——不是要責怪過去，而是要清楚看見需要醫治的地方。</span>
+              </li>
+          </ul>
+        </div>
+
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
         <h3 className="text-2xl font-bold text-amber-300 mb-6 flex items-center">
           <Brain className="w-7 h-7 mr-3" />
