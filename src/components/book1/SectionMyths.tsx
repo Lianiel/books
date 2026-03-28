@@ -319,19 +319,19 @@ export default function SectionMyths() {
           </h3>
           <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章逐一拆解八個常見的界線迷思。這些迷思往往根植於文化、宗教傳統或個人傷害，讓許多人在理智上知道界線是好的，卻在情感和行動上仍然無法踏出那一步。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 迷思一到三</div>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 迷思一到三 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.153-163)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>「設立界線是自私的」——真正的自私是緊盯自己的渴求而忽略他人；設立界線是在管理好神交給你的資產，讓你能持續地給予。「界線代表我不順服」——強迫自己說「好」卻內心充滿「不」，其實是一種謊言；真正的順服必須出於自由的心。「設立界線會傷害關係」——願意尊重你界線的人，才是真正喜愛你的人；那些因你說「不」而大怒的人，其實只是喜歡你的「順從」。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 迷思四到六</div>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 迷思四到六 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.163-172)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>「設立界線意味著我在定別人的罪」——讓一個成年人承擔自己行為的後果，並不等於定罪；這反而是把他當作有責任能力的人來對待，是一種尊重。「界線會傷害別人」——對別人說「不」可能讓他們感到不舒服，但這和真正的傷害不同；讓他們學習面對現實，才是更深的愛。「我有責任為別人難受的感覺負責」——別人的情緒是別人的責任，不是你的。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 迷思七到八</div>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 迷思七到八 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.172-178)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>「設定界線是永久性的」——界線是可以調整的，隨著對方的成長和信任的建立，你可以重新選擇開放或收緊。「界線讓我覺得充滿了憤怒」——在開始設立界線的早期，累積已久的憤怒確實可能湧現出來，這是過去被壓抑的抗議。這是正常的，不是界線造成了憤怒，而是界線給了憤怒一個安全的出口。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.153-178)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>每一個迷思的背後，都有一個需要被更新的信念。設立界線的旅程，同時也是一個「讓聖靈更新我們思想」的旅程。當我們開始相信「設立界線是愛，不是自私」、「尊重自己是敬虔，不是驕傲」，我們就開始真正地自由了。</p>
           </div>
         </div>

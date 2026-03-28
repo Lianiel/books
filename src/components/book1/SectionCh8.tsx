@@ -355,19 +355,19 @@ export default function SectionCh8() {
           </h3>
           <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章探討友誼中的界線問題，指出四種常見的不健康友誼模式，並提供建立更真實、更有生命力的友誼的具體方向。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 四種不健康的友誼模式</div>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 四種不健康的友誼模式 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.202-209)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者描述了四種常見的界線失衡友誼：「互相討好型」——雙方都太要好以至於無法說「不」，最終誰都得不到真正想要的；「控制者與順從者型」——一方強硬要求，另一方默默配合充滿怨恨；「責任型操控」——一方永遠不計畫、永遠臨時要求，另一方永遠買單；「單向付出型」——一方付出所有，另一方完全被動接受。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 真正的友誼需要雙向的「不」</div>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 真正的友誼需要雙向的「不」 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.209-213)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者提出一個反直覺的觀點：一段友誼若不能讓你說「不」，它就不是真正的友誼。真正的朋友不只接受你的「好」，也尊重你的「不」；他們喜愛的是真實的你，而不是那個永遠說「好」、永遠有空的你。若你發現一個朋友只在你說「好」的時候才對你好，這個關係需要被重新評估。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 設立界線可能讓友誼消失</div>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 設立界線可能讓友誼消失 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.213-217)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者誠實地指出：當你開始在友誼中設立界線，有些「朋友」可能會消失。這是痛苦的，但這也是真相的顯現——那些關係從一開始就是建立在你的「無限供應」上，而不是建立在真實的連結上。失去這樣的「友誼」，其實是一種釋放，讓空間給真正的友誼進來。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.202-217)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>健康的友誼是雙向的、有彈性的、允許變化的。它不會因為你有時說「不」而破裂，不會因為你有時需要空間而結束。在這樣的友誼裡，你不需要表演，不需要永遠有能量，不需要假裝沒事。這樣的友誼，是值得為之設立界線、也值得用界線來保護的。</p>
           </div>
         </div>

@@ -148,19 +148,19 @@ export default function SectionDevelopment() {
           </h3>
           <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章追溯界線的發展歷程，解釋健康的界線感是如何在人生早期逐漸形成的，以及當這個發展過程受到干擾時，會對成年後的關係產生什麼樣的影響。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 界線發展的里程碑</div>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 界線發展的里程碑 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.81-86)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>界線感的發展從出生就開始了。嬰兒期需要完全的依附與安全感；隨著孩子成長，他們逐漸學習「我是獨立的個體」——這個分離的過程需要父母既給予安全感，又鼓勵獨立探索。在這個過程中，父母如何回應孩子的「不」，至關重要。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 依附與分離的平衡</div>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 依附與分離的平衡 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.87-94)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>健康的界線需要在兩個看似矛盾的需要之間取得平衡：「依附」（我需要與人連結，感到被愛和接納）和「分離」（我需要成為獨立的個體，有自己的想法和選擇）。若家庭過度強調依附而壓制分離，孩子就會長成「無法說不的成人」；若家庭過度強調獨立而缺乏溫暖，孩子就會長成「無法真正連結的成人」。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 家庭系統如何破壞界線</div>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 家庭系統如何破壞界線 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.83-94)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>不同類型的家庭系統以不同的方式破壞孩子的界線發展：控制型父母讓孩子學會「我沒有權利有自己的感受和意見」；過度保護型父母讓孩子學會「世界是危險的，我需要別人來保護我」；忽視型父母讓孩子學會「我的需要不重要，不要麻煩別人」；情感勒索型父母讓孩子學會「如果我讓父母不開心，我就是壞孩子」。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.81-94)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>界線的缺失不是你的錯，但修復界線是你的責任。無論你的成長環境如何，改變是可能的。透過正確的關係支持、聖靈的工作和刻意的操練，成年人可以在任何年齡重新學習設立健康的界線。你不必永遠活在童年的模式裡。</p>
           </div>
         </div>

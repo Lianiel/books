@@ -168,19 +168,19 @@ export default function SectionCh15() {
           </h3>
           <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章探討在實際的關係中如何面對那些抗拒界線的人，並提供具體的步驟來應對各種抗拒策略，幫助讀者在壓力下仍然堅守界線。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 六種抗拒策略的應對</div>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 六種抗拒策略的應對 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.374-380)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>面對憤怒：不要因為對方的情緒而退縮，平靜地重申你的立場；面對罪惡感訊息：認清這是情感操控，不要讓對方的「受傷」成為改變你決定的理由；面對後果威脅：評估後果的真實性，並決定你是否能接受；面對哄騙：觀察行為而不只是語言，讓時間證明改變的真實性；面對以受害者自居：對他們的痛苦有同理心，但不要因同情而取消你的界線。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 關係的三種可能走向</div>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 關係的三種可能走向 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.380-388)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者坦誠地指出，當你設立界線後，關係有三種可能的走向：對方真正改變，關係走向更健康——這是最好的結果；對方暫時不舒服但最終接受，關係在陣痛後穩定——這是最常見的；對方離開或關係惡化——這是痛苦的，但有時也是必要的，因為某些關係本質上是建立在你的無限供應上的。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 後果是界線的執行力</div>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 後果是界線的執行力 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.388-395)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者強調，界線沒有後果，就等於沒有界線。若你說「如果你再這樣，我就……」卻從不真正執行，你的界線就只是空話，對方也會學到「這只是說說而已」。設立界線，必須同時準備好執行後果——這需要勇氣，但這是讓界線真正發揮作用的關鍵。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.374-395)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>設立界線不是一次性的事件，而是一個持續的過程。關係中的人需要時間適應新的規則，你也需要時間建立說「不」的能力和面對後果的勇氣。在這個過程中，找到支持你的群體和輔導者，是非常重要的資源。</p>
           </div>
         </div>

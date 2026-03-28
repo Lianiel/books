@@ -154,19 +154,19 @@ export default function SectionDefinition() {
           </h3>
           <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章從定義出發，清楚解釋「界線」是什麼、不是什麼，並列出十種屬於「我的地」的範疇。作者用「財產線」的比喻，幫助讀者理解界線的本質。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 什麼是界線？</div>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 什麼是界線？ <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.41-48)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>界線就像財產上的圍牆，標示出「這裡是我的地，那裡是你的地」。在人際關係中，界線定義了「我」在哪裡結束，「你」在哪裡開始。它不是把人推開的牆，而是讓愛能夠真實流動的疆界。沒有界線，就沒有真正意義上的自我；沒有自我，就不可能有真正的愛。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🗺️ 十種屬於我的地</div>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🗺️ 十種屬於我的地 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.49-60)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者列出十個我們需要負責任的「自己的地」：感覺（你的情緒是你的，不是別人的）、態度與信念、行為（行為有後果，我們必須承擔自己的後果）、選擇（不能說「我別無選擇」）、價值觀、限制（我們無法限制別人，但可以限制自己暴露在傷害中）、資源與恩賜、思想、慾望和愛。這十樣是我們的責任，也是我們的自由。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 界線的誤解</div>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 界線的誤解 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.46-60)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>許多人混淆了「界線」和「牆」。真正的界線是有門的——你可以選擇讓誰進來、讓誰離開、在什麼條件下開門。牆是永遠關閉的，是因傷害而建的防衛機制。界線的目的是保護和連結，不是孤立和排斥。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.41-60)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>你有責任管理好屬於自己的地，但你無法也不應該去管理別人的地。當你試圖控制別人的感受、選擇或行為，你就越界了；當你讓別人控制你的感受、選擇或行為，你就失去了自己的地。清楚的界線，讓愛成為禮物，而不是交換或義務。</p>
           </div>
         </div>

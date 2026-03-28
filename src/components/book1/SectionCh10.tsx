@@ -435,19 +435,19 @@ export default function SectionCh10() {
           </h3>
           <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章探討親子關係中的界線，從嬰兒期的發展需要，到青春期的界線挑戰，提供一個完整的藍圖，幫助父母理解如何在愛與限制之間找到平衡。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 孩子需要界線才能成長</div>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 孩子需要界線才能成長 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.240-248)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者指出，有界線的孩子是更有安全感的孩子——他們知道世界有規則、行為有後果，這讓他們感到安全而不是失控。缺乏界線的孩子雖然表面上「自由」，實際上卻活在一個讓他們焦慮的混沌中。設立清楚、一致的界線，是父母送給孩子最重要的禮物之一。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 不同發展階段的界線需要</div>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 不同發展階段的界線需要 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.248-260)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>嬰兒期需要完全的安撫和依附，不存在「寵壞」的問題；學步期孩子開始說「不」，這是健康的分離，父母要尊重這個「不」同時設立安全限制；青春期孩子需要更大的自主空間，但同時也需要清楚的底線和後果。作者強調，界線的形式會隨年齡改變，但界線本身從不消失。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 最常見的育兒界線錯誤</div>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 最常見的育兒界線錯誤 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.260-272)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>過度保護孩子、替他們承擔後果，是最常見也最具破壞力的界線失誤。當父母替孩子向老師道歉、替孩子還清他揮霍的零用錢、替孩子解決他的人際衝突，孩子就失去了學習責任感和解決問題能力的機會。善意的保護，可能正在培養一個無法在現實世界生存的成年人。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.240-272)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>做一個有界線的父母，不是嚴厲，而是清楚。「如果你這樣做，就會有這個後果」——然後溫和而堅定地執行。父母自己的界線健康程度，是孩子最真實的教材。你所展示的，比你所說的，對孩子的影響深遠得多。</p>
           </div>
         </div>

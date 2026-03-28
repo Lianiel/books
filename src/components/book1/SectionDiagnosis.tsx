@@ -224,19 +224,19 @@ export default function SectionDiagnosis() {
           </h3>
           <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章深入探討界線問題的根源，解釋為何許多人——尤其是基督徒——在成年後仍然無法設立健康的界線。作者指出，問題往往根植於成長環境、錯誤的神學觀念，以及四種典型的界線問題類型。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 根源：成長的家庭</div>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 根源：成長的家庭 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.63-68)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>我們對界線的認知，絕大部分來自於原生家庭的模塑。若父母從不允許你說「不」，你就學會了「說不是危險的」；若父母用罪惡感或憤怒來回應你的拒絕，你就學會了「讓別人不高興是我的錯」。這些早年形成的信念，在成年後仍深深影響著我們的行為模式。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 四種界線問題類型</div>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 四種界線問題類型 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.68-75)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者識別出四種常見的界線困難：一、「屈服型」——對所有要求說「好」，因為拒絕讓他們感到恐懼或罪惡感；二、「掌控型」——自己不尊重別人的界線，用各種方式讓別人無法說「不」；三、「漠然型」——對自己和他人的需要都視而不見，建造了看似堅硬實則脆弱的牆；四、「反應型」——因過去的傷而對界線過度敏感，以「自我保護」為名拒絕所有連結。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 錯誤的神學如何傷害界線</div>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 錯誤的神學如何傷害界線 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.70-78)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者特別指出，教會中流行的幾種錯誤觀念嚴重破壞了信徒設立界線的能力：把「捨己」誤解為「消滅自我」、把「愛人」誤解為「有求必應」、把「順服」誤解為「盲目服從」、把「謙卑」誤解為「永遠把自己放在最後」。這些誤解讓許多虔誠的基督徒陷入無法拒絕的困境，卻還以為這是在效法基督。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.63-78)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>了解你的界線問題從哪裡來，不是為了責怪過去，而是為了清楚看見需要醫治的地方。改變的第一步是誠實承認：「我有界線問題，而這不是神的設計。」神設計我們有健康的自我，有說「不」的自由，有保護神所給我們的生命的責任。</p>
           </div>
         </div>

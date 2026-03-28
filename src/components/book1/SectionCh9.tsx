@@ -336,19 +336,19 @@ export default function SectionCh9() {
           </h3>
           <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>婚姻是最親密的關係，也是界線最難設立、卻最關鍵的地方。本章針對婚姻中常見的界線問題提供深入分析，並特別探討如何在面對配偶的問題行為時，用界線來帶來真正的改變。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 婚姻中的界線問題</div>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 婚姻中的界線問題 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.221-225)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>許多婚姻的痛苦根源於界線的混亂：一方過度承擔，另一方無限索取；一方不斷討好，另一方習以為常；一方壓抑情緒，積累到爆發；一方試圖改變對方，兩人都精疲力盡。這些模式往往反映了雙方在成長過程中所習得的關係腳本。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 「種豆得豆」在婚姻中的應用</div>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 「種豆得豆」在婚姻中的應用 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.225-231)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者強調，設立界線在婚姻中最難、也最重要的應用，是「讓配偶承擔自己行為的後果」。若配偶有酗酒、暴力、不忠或財務不負責任等問題，一再替他收拾殘局只會讓問題持續。真正的愛有時需要讓對方「觸底」，才能激發真正的改變。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 愛需要兩個有界線的個體</div>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 愛需要兩個有界線的個體 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.231-235)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者提出一個重要觀點：健康的婚姻需要兩個有自我的人。若其中一方沒有自我（永遠讓步、永遠迎合），婚姻就會失去張力和真實性。你對配偶說「不」，有時反而是在給對方一個機會去真實地面對自己、和真實的你相遇，而不只是和你的「假笑」相遇。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息 <span style={{fontSize:"11px", fontWeight:"normal", opacity:0.7, marginLeft:"6px"}}>(P.221-235)</span></div>
             <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>在婚姻中設立界線，目的不是懲罰或報復，而是保護關係中的「良善」，並讓「邪惡」承擔後果。這需要極大的智慧、禱告和往往需要專業的輔導支持。若你的婚姻中有嚴重的問題，設立界線是你能為這段婚姻做的最真實的事之一。</p>
           </div>
         </div>
