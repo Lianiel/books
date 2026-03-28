@@ -140,29 +140,29 @@ export default function SectionDevelopment() {
         </div>
       </div>
       {/* Reflection & Action Guide */}
+
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
             <span className="text-lg">📝</span> 第4章總結：界線從哪裡來？
           </h3>
-          <ul className="space-y-2.5">
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">界線的發展是一個從嬰兒期到成年的成長過程，每個階段都有需要完成的任務。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">健康的界線需要在「依附」（與人連結）和「分離」（成為獨立個體）之間取得平衡。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">家庭系統深刻影響界線的形成——控制型、過度保護型或忽視型的家庭都可能造成界線發展的困難。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">好消息是：界線是可以學習和修復的，透過正確的關係、真理和聖靈的工作，我們可以在任何年齡重新學習。</span>
-              </li>
-          </ul>
+          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章追溯界線的發展歷程，解釋健康的界線感是如何在人生早期逐漸形成的，以及當這個發展過程受到干擾時，會對成年後的關係產生什麼樣的影響。</p>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">📖 界線發展的里程碑</div>
+            <p className="text-slate-600 text-sm leading-relaxed">界線感的發展從出生就開始了。嬰兒期需要完全的依附與安全感；隨著孩子成長，他們逐漸學習「我是獨立的個體」——這個分離的過程需要父母既給予安全感，又鼓勵獨立探索。在這個過程中，父母如何回應孩子的「不」，至關重要。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">🔍 依附與分離的平衡</div>
+            <p className="text-slate-600 text-sm leading-relaxed">健康的界線需要在兩個看似矛盾的需要之間取得平衡：「依附」（我需要與人連結，感到被愛和接納）和「分離」（我需要成為獨立的個體，有自己的想法和選擇）。若家庭過度強調依附而壓制分離，孩子就會長成「無法說不的成人」；若家庭過度強調獨立而缺乏溫暖，孩子就會長成「無法真正連結的成人」。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">⚠️ 家庭系統如何破壞界線</div>
+            <p className="text-slate-600 text-sm leading-relaxed">不同類型的家庭系統以不同的方式破壞孩子的界線發展：控制型父母讓孩子學會「我沒有權利有自己的感受和意見」；過度保護型父母讓孩子學會「世界是危險的，我需要別人來保護我」；忽視型父母讓孩子學會「我的需要不重要，不要麻煩別人」；情感勒索型父母讓孩子學會「如果我讓父母不開心，我就是壞孩子」。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">💡 本章的關鍵信息</div>
+            <p className="text-slate-600 text-sm leading-relaxed">界線的缺失不是你的錯，但修復界線是你的責任。無論你的成長環境如何，改變是可能的。透過正確的關係支持、聖靈的工作和刻意的操練，成年人可以在任何年齡重新學習設立健康的界線。你不必永遠活在童年的模式裡。</p>
+          </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">

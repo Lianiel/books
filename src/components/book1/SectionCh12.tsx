@@ -156,29 +156,29 @@ export default function SectionCh12() {
         </div>
       </div>
       {/* Reflection & Action Guide */}
+
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
             <span className="text-lg">📝</span> 第12章總結：界線與你自己
           </h3>
-          <ul className="space-y-2.5">
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">最重要也最常被忽略的界線，是對自己內心世界的界線——管理自己的情緒、時間、思想和習慣。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">自律不是壓制自我，而是學習說「不」給那些傷害自己的衝動，說「是」給那些讓自己成長的事物。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">許多人對別人設立界線很困難，但對自己的管理也同樣混亂——兩者需要同步成長。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">認識自己的限制、好好照顧自己，是愛人的前提，也是尊重神創造你這個人的表現。</span>
-              </li>
-          </ul>
+          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章探討最常被忽略的界線面向——對自己內心世界的界線管理。這包括對自己的情緒、思想、習慣、時間和身體的負責任管理。</p>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">📖 科技與自我界線</div>
+            <p className="text-slate-600 text-sm leading-relaxed">本章以數位時代的挑戰開場——手機、社群媒體和無處不在的資訊流，不斷要求我們的注意力，讓我們幾乎沒有空間安靜下來面對自己的內心。作者指出，能夠管理自己與科技的關係，是現代人最重要的自我界線之一。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">🔍 自律是最深的自我界線</div>
+            <p className="text-slate-600 text-sm leading-relaxed">對自己設立界線的核心是自律——不是壓制自我，而是學習對那些傷害自己的衝動說「不」（過度消費、飲食失調、拖延、沉溺螢幕），並對那些滋養自己的事說「是」（禱告、運動、閱讀、真實的連結）。作者強調，自律不是律法主義，而是對自己和神的愛的表達。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">⚠️ 對自己的同理心</div>
+            <p className="text-slate-600 text-sm leading-relaxed">作者特別提醒：對自己設立界線，需要先對自己有同理心。許多人對別人充滿憐憫，卻對自己非常嚴苛。如果你不能溫柔地對待自己，你的「自我管理」很容易變成自我懲罰，這不是健康的界線。學習像神一樣看待自己——認識自己的限制，接受自己的不完美，同時不放棄成長。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">💡 本章的關鍵信息</div>
+            <p className="text-slate-600 text-sm leading-relaxed">你對自己的管理，決定了你對別人的容量。若你任由自己的情緒、時間和精力被各種衝動和外在要求耗盡，你就沒有什麼可以給予別人的了。照顧好自己，不是自私，而是讓你能夠持續、真實地愛人的基礎。</p>
+          </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">

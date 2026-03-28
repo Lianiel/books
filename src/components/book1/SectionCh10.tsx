@@ -427,29 +427,29 @@ export default function SectionCh10() {
         </div>
       </div>
       {/* Reflection & Action Guide */}
+
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
             <span className="text-lg">📝</span> 第10章總結：界線與你的孩子
           </h3>
-          <ul className="space-y-2.5">
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">教導孩子界線，是父母能給孩子最重要的禮物之一，因為這直接影響他們的人際關係和情感健康。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">有界線的育兒不是嚴厲，而是清楚：讓孩子知道哪些行為有後果，並且溫和而堅定地執行。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">過度保護孩子、替他們承擔後果，只會阻礙孩子學習責任感和解決問題的能力。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">父母自己的界線健康程度，會直接影響孩子的界線發展——做一個有界線的父母，就是給孩子最好的榜樣。</span>
-              </li>
-          </ul>
+          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章探討親子關係中的界線，從嬰兒期的發展需要，到青春期的界線挑戰，提供一個完整的藍圖，幫助父母理解如何在愛與限制之間找到平衡。</p>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">📖 孩子需要界線才能成長</div>
+            <p className="text-slate-600 text-sm leading-relaxed">作者指出，有界線的孩子是更有安全感的孩子——他們知道世界有規則、行為有後果，這讓他們感到安全而不是失控。缺乏界線的孩子雖然表面上「自由」，實際上卻活在一個讓他們焦慮的混沌中。設立清楚、一致的界線，是父母送給孩子最重要的禮物之一。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">🔍 不同發展階段的界線需要</div>
+            <p className="text-slate-600 text-sm leading-relaxed">嬰兒期需要完全的安撫和依附，不存在「寵壞」的問題；學步期孩子開始說「不」，這是健康的分離，父母要尊重這個「不」同時設立安全限制；青春期孩子需要更大的自主空間，但同時也需要清楚的底線和後果。作者強調，界線的形式會隨年齡改變，但界線本身從不消失。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">⚠️ 最常見的育兒界線錯誤</div>
+            <p className="text-slate-600 text-sm leading-relaxed">過度保護孩子、替他們承擔後果，是最常見也最具破壞力的界線失誤。當父母替孩子向老師道歉、替孩子還清他揮霍的零用錢、替孩子解決他的人際衝突，孩子就失去了學習責任感和解決問題能力的機會。善意的保護，可能正在培養一個無法在現實世界生存的成年人。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">💡 本章的關鍵信息</div>
+            <p className="text-slate-600 text-sm leading-relaxed">做一個有界線的父母，不是嚴厲，而是清楚。「如果你這樣做，就會有這個後果」——然後溫和而堅定地執行。父母自己的界線健康程度，是孩子最真實的教材。你所展示的，比你所說的，對孩子的影響深遠得多。</p>
+          </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">

@@ -347,29 +347,29 @@ export default function SectionCh8() {
         </div>
       </div>
       {/* Reflection & Action Guide */}
+
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
             <span className="text-lg">📝</span> 第8章總結：界線與你的朋友
           </h3>
-          <ul className="space-y-2.5">
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">友誼中的界線讓愛成為出於自由的選擇，而不是出於恐懼或義務的責任。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">真正的友誼是雙向的，若一段友誼讓你長期感到精疲力盡或被佔便宜，那是需要設立界線的信號。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">設立界線可能讓某些「友誼」結束——但那些因你說「不」而消失的關係，其實從未是真正的友誼。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">健康的友誼允許彼此說「不」，也允許彼此在不同的人生季節有不同的距離。</span>
-              </li>
-          </ul>
+          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章探討友誼中的界線問題，指出四種常見的不健康友誼模式，並提供建立更真實、更有生命力的友誼的具體方向。</p>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">📖 四種不健康的友誼模式</div>
+            <p className="text-slate-600 text-sm leading-relaxed">作者描述了四種常見的界線失衡友誼：「互相討好型」——雙方都太要好以至於無法說「不」，最終誰都得不到真正想要的；「控制者與順從者型」——一方強硬要求，另一方默默配合充滿怨恨；「責任型操控」——一方永遠不計畫、永遠臨時要求，另一方永遠買單；「單向付出型」——一方付出所有，另一方完全被動接受。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">🔍 真正的友誼需要雙向的「不」</div>
+            <p className="text-slate-600 text-sm leading-relaxed">作者提出一個反直覺的觀點：一段友誼若不能讓你說「不」，它就不是真正的友誼。真正的朋友不只接受你的「好」，也尊重你的「不」；他們喜愛的是真實的你，而不是那個永遠說「好」、永遠有空的你。若你發現一個朋友只在你說「好」的時候才對你好，這個關係需要被重新評估。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">⚠️ 設立界線可能讓友誼消失</div>
+            <p className="text-slate-600 text-sm leading-relaxed">作者誠實地指出：當你開始在友誼中設立界線，有些「朋友」可能會消失。這是痛苦的，但這也是真相的顯現——那些關係從一開始就是建立在你的「無限供應」上，而不是建立在真實的連結上。失去這樣的「友誼」，其實是一種釋放，讓空間給真正的友誼進來。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">💡 本章的關鍵信息</div>
+            <p className="text-slate-600 text-sm leading-relaxed">健康的友誼是雙向的、有彈性的、允許變化的。它不會因為你有時說「不」而破裂，不會因為你有時需要空間而結束。在這樣的友誼裡，你不需要表演，不需要永遠有能量，不需要假裝沒事。這樣的友誼，是值得為之設立界線、也值得用界線來保護的。</p>
+          </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">

@@ -160,29 +160,29 @@ export default function SectionCh15() {
         </div>
       </div>
       {/* Reflection & Action Guide */}
+
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
             <span className="text-lg">📝</span> 第15章總結：完美的界線
           </h3>
-          <ul className="space-y-2.5">
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">完美的界線不存在於這個世界，但神自己展現了完美界線的樣式——祂愛我們，但不強迫我們。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">界線的成長是一個漸進的過程，不要因為無法一次做到完美而放棄。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">耶穌的生命是界線的最佳典範：祂服事眾人，卻也獨處禱告；祂愛每一個人，卻也對某些要求說「不」。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">在恩典中成長，允許自己在過程中犯錯，但持續向著更健康的界線前進。</span>
-              </li>
-          </ul>
+          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章探討在實際的關係中如何面對那些抗拒界線的人，並提供具體的步驟來應對各種抗拒策略，幫助讀者在壓力下仍然堅守界線。</p>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">📖 六種抗拒策略的應對</div>
+            <p className="text-slate-600 text-sm leading-relaxed">面對憤怒：不要因為對方的情緒而退縮，平靜地重申你的立場；面對罪惡感訊息：認清這是情感操控，不要讓對方的「受傷」成為改變你決定的理由；面對後果威脅：評估後果的真實性，並決定你是否能接受；面對哄騙：觀察行為而不只是語言，讓時間證明改變的真實性；面對以受害者自居：對他們的痛苦有同理心，但不要因同情而取消你的界線。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">🔍 關係的三種可能走向</div>
+            <p className="text-slate-600 text-sm leading-relaxed">作者坦誠地指出，當你設立界線後，關係有三種可能的走向：對方真正改變，關係走向更健康——這是最好的結果；對方暫時不舒服但最終接受，關係在陣痛後穩定——這是最常見的；對方離開或關係惡化——這是痛苦的，但有時也是必要的，因為某些關係本質上是建立在你的無限供應上的。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">⚠️ 後果是界線的執行力</div>
+            <p className="text-slate-600 text-sm leading-relaxed">作者強調，界線沒有後果，就等於沒有界線。若你說「如果你再這樣，我就……」卻從不真正執行，你的界線就只是空話，對方也會學到「這只是說說而已」。設立界線，必須同時準備好執行後果——這需要勇氣，但這是讓界線真正發揮作用的關鍵。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">💡 本章的關鍵信息</div>
+            <p className="text-slate-600 text-sm leading-relaxed">設立界線不是一次性的事件，而是一個持續的過程。關係中的人需要時間適應新的規則，你也需要時間建立說「不」的能力和面對後果的勇氣。在這個過程中，找到支持你的群體和輔導者，是非常重要的資源。</p>
+          </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">

@@ -146,29 +146,29 @@ export default function SectionDefinition() {
         </div>
       </div>
       {/* Reflection & Action Guide */}
+
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
             <span className="text-lg">📝</span> 第2章總結：界線看來啥模樣？
           </h3>
-          <ul className="space-y-2.5">
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">界線定義了「我」在哪裡結束，「你」在哪裡開始——它是自我認同的地圖，也是愛的保護。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">界線的範圍包含感覺、態度、信念、行為、選擇、價值觀、限制、資源恩賜、思想、慾望和愛，這十項都是我們需要負責任的「自己的地」。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">有界線不代表冷漠或拒絕，而是清楚知道自己能給什麼、不能給什麼，並誠實地表達出來。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">沒有界線的人容易把別人的問題、情緒和責任扛在自己身上，最終兩敗俱傷。</span>
-              </li>
-          </ul>
+          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章從定義出發，清楚解釋「界線」是什麼、不是什麼，並列出十種屬於「我的地」的範疇。作者用「財產線」的比喻，幫助讀者理解界線的本質。</p>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">📖 什麼是界線？</div>
+            <p className="text-slate-600 text-sm leading-relaxed">界線就像財產上的圍牆，標示出「這裡是我的地，那裡是你的地」。在人際關係中，界線定義了「我」在哪裡結束，「你」在哪裡開始。它不是把人推開的牆，而是讓愛能夠真實流動的疆界。沒有界線，就沒有真正意義上的自我；沒有自我，就不可能有真正的愛。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">🗺️ 十種屬於我的地</div>
+            <p className="text-slate-600 text-sm leading-relaxed">作者列出十個我們需要負責任的「自己的地」：感覺（你的情緒是你的，不是別人的）、態度與信念、行為（行為有後果，我們必須承擔自己的後果）、選擇（不能說「我別無選擇」）、價值觀、限制（我們無法限制別人，但可以限制自己暴露在傷害中）、資源與恩賜、思想、慾望和愛。這十樣是我們的責任，也是我們的自由。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">⚠️ 界線的誤解</div>
+            <p className="text-slate-600 text-sm leading-relaxed">許多人混淆了「界線」和「牆」。真正的界線是有門的——你可以選擇讓誰進來、讓誰離開、在什麼條件下開門。牆是永遠關閉的，是因傷害而建的防衛機制。界線的目的是保護和連結，不是孤立和排斥。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">💡 本章的關鍵信息</div>
+            <p className="text-slate-600 text-sm leading-relaxed">你有責任管理好屬於自己的地，但你無法也不應該去管理別人的地。當你試圖控制別人的感受、選擇或行為，你就越界了；當你讓別人控制你的感受、選擇或行為，你就失去了自己的地。清楚的界線，讓愛成為禮物，而不是交換或義務。</p>
+          </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">

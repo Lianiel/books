@@ -147,29 +147,29 @@ export default function SectionCh14() {
         </div>
       </div>
       {/* Reflection & Action Guide */}
+
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
             <span className="text-lg">📝</span> 第14章總結：如何說「不」
           </h3>
-          <ul className="space-y-2.5">
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">說「不」是一種可以練習的技能，不是冷漠或殘忍，而是誠實和尊重的表達。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">說「不」需要清楚、直接，不需要過多的解釋和道歉——過度解釋往往讓對方有更多空間反駁。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">練習「我需要想一想再回答」，給自己時間在壓力下做出清醒的決定，而不是在恐懼中說「好」。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">說「不」之後可能有罪惡感——這是正常的，它不代表你做錯了，而是你正在學習一個新的模式。</span>
-              </li>
-          </ul>
+          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章從神學角度出發，探討神自己如何有界線，以及這如何成為我們設立界線的最深根基。作者同時提供說「不」的具體策略。</p>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">📖 神有界線：最深的神學根基</div>
+            <p className="text-slate-600 text-sm leading-relaxed">作者提出一個深刻的洞見：界線不只是心理健康的工具，它有深刻的神學基礎。神自己就有界線——祂給了我們自由意志，讓我們能夠真正選擇愛祂或拒絕祂；祂有祂不能接受的（罪）；祂寧願我們對祂誠實，也不要我們帶著假面具與祂同行。若神有界線，界線本身就不可能是罪。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">🔍 說「不」的具體策略</div>
+            <p className="text-slate-600 text-sm leading-relaxed">作者提供幾個實用的說「不」策略：清楚而直接，不要過度解釋（解釋越多，對方越有反駁的空間）；使用「我」的陳述（「我現在沒有能力答應這個」，而不是「你要求太多了」）；練習「緩衝語言」（「讓我想想，我再告訴你」）；在低風險情境中練習，逐漸建立說「不」的肌肉記憶。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">⚠️ 罪惡感是成長的信號</div>
+            <p className="text-slate-600 text-sm leading-relaxed">作者特別提醒：在學習說「不」的初期，罪惡感是幾乎必然的伴隨物。但這個罪惡感不代表你做錯了——它只代表你在打破一個舊有的模式。就像長期不運動的人初次運動會肌肉酸痛，初期的罪惡感是界線肌肉在成長的信號，不是你越界的警告。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">💡 本章的關鍵信息</div>
+            <p className="text-slate-600 text-sm leading-relaxed">說「不」是可以練習的技能，也是你能給他人最誠實的禮物之一。一個總是說「好」卻內心充滿「不」的人，最終給予的是虛假的愛。真正說「好」的能力，建立在說「不」的自由之上——當你有能力說不，你的「好」才有意義。</p>
+          </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">

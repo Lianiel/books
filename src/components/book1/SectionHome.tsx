@@ -112,29 +112,29 @@ export default function SectionHome() {
         </div>
       </div>
       {/* Reflection & Action Guide */}
+
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-4 flex items-center gap-2">
+          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
             <span className="text-lg">📝</span> 第1章總結：界線混亂的一天
           </h3>
-          <ul className="space-y-2.5">
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">雪莉的一天完整呈現了「沒有界線」的生命樣貌——她對每個人的要求都說「好」，卻對自己的需要說「不」。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">界線的缺失不只讓人疲憊，更會讓關係失衡、靈性枯竭，甚至讓「愛人」變成「被人利用」。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">真正的問題不是外在的要求太多，而是內在沒有學會如何分辨「我的責任」和「別人的責任」。</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0 font-bold">▸</span>
-                <span className="text-slate-600 text-sm leading-relaxed">核心信息：你無法在自我耗盡的狀態下真正愛人，設立界線不是自私，而是健康愛人的前提。</span>
-              </li>
-          </ul>
+          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章透過雪莉這個角色，帶領讀者看見一個「界線完全缺失」的生命長什麼樣子。作者用一天 18 小時的時間軸，讓我們在每一個場景中都能清楚辨認出「沒有界線」的具體模樣。</p>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">📖 故事的核心</div>
+            <p className="text-slate-600 text-sm leading-relaxed">雪莉是一個虔誠的基督徒、盡責的母親、勤勉的職員——然而她的生活卻像一輛失控的列車。從清晨被鬧鐘驚醒的那一刻起，她就不斷地回應他人的要求：母親的情緒勒索、丈夫的抱怨、上司的不合理指派、朋友的單向傾吐、教會的緊急徵召……每一次，她都說了「好」，每一次，她內心都感到憤怒、委屈和疲憊，卻說不出口。深夜，她躺在床上，充滿了孤獨和空洞。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">🔍 問題的根源</div>
+            <p className="text-slate-600 text-sm leading-relaxed">雪莉的問題不是「太忙」，而是她無法分辨「我的責任」和「別人的責任」。她把別人的問題、情緒、後果，全部扛在自己身上。更深的根源是：她相信「如果我說不，我就是一個壞基督徒、壞妻子、壞員工」。這種罪惡感和對愛的渴望，成了控制她行為的隱形繩索。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">⚠️ 界線缺失的代價</div>
+            <p className="text-slate-600 text-sm leading-relaxed">沒有界線的生命會付出沉重的代價：身體的疲憊與健康問題、情感的麻木與憤怒積累、關係的失衡與怨恨、靈性的枯竭與對神的疏離。作者指出，雪莉的問題在許多虔誠的基督徒身上普遍存在，因為教會文化往往強調「捨己」和「服事」，卻沒有教導如何在健康的自我之上服事他人。</p>
+          </div>
+          <div className="mb-4">
+            <div className="text-xs font-bold text-teal-600 mb-1.5">💡 本章的關鍵信息</div>
+            <p className="text-slate-600 text-sm leading-relaxed">設立界線不是自私，而是對神所給的生命負責。你是神的財產的管理人，若你把自己耗盡，你就無法有效地愛任何人。真正的愛必須出於自由和充盛，而不是出於恐懼和匱乏。雪莉的故事是一面鏡子，邀請每位讀者誠實地問：「我在哪裡像雪莉一樣？」</p>
+          </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
