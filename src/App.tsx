@@ -175,6 +175,25 @@ export default function App() {
   const [activeChapter, setActiveChapter] = useState('ch1');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  // 從 URL 的 access_token 自動登入（從 puhe 後台帶過來）
+  useEffect(() => {
+    const access_token = params.get('access_token');
+    const refresh_token = params.get('refresh_token');
+    if (access_token && refresh_token) {
+      const sb = (window as any).supabase?.createClient(
+        'https://yhchjanqmopgbwgjspmf.supabase.co',
+        'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx'
+      );
+      sb?.auth.setSession({ access_token, refresh_token }).then(() => {
+        // 清掉 URL 的 token 參數，避免暴露
+        const clean = new URL(window.location.href);
+        clean.searchParams.delete('access_token');
+        clean.searchParams.delete('refresh_token');
+        window.history.replaceState({}, '', clean.toString());
+      });
+    }
+  }, []);
+
   // ── Highlight toolbar state ──────────────────────────────────────
   const [toolbar, setToolbar] = useState<{ x: number; y: number; text: string } | null>(null);
   const toolbarRef = useRef<HTMLDivElement>(null);
