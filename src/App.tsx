@@ -270,7 +270,7 @@ export default function App() {
       'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx'
     );
     const { error } = await sb.auth.signInWithPassword({
-      email: `${loginPhone}@puhe.app`,
+      email: `${loginPhone}@church.local`,
       password: loginPwd,
     });
     setLoginLoading(false);
