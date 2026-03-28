@@ -425,6 +425,59 @@ export default function App() {
         {isLoggedIn && (
           <span className="text-xs text-indigo-400 font-medium hidden sm:block">✏️ 畫重點已啟用</span>
         )}
+        {!isLoggedIn && (
+          <button
+            onClick={() => setShowLogin(true)}
+            className="text-xs text-indigo-600 px-2.5 py-1 rounded-full border border-indigo-200 font-medium"
+          >✏️ 登入</button>
+        )}
+
+        {/* Login Modal in reader */}
+        {showLogin && (
+          <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+            <div className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl">
+              <h2 className="text-lg font-bold text-slate-800 mb-1">登入畫重點功能</h2>
+              <p className="text-xs text-slate-400 mb-4">使用你的小組帳號登入</p>
+              <div className="space-y-3">
+                <div>
+                  <label className="text-xs font-medium text-slate-600 mb-1 block">帳號（電話號碼）</label>
+                  <input
+                    type="text"
+                    value={loginPhone}
+                    onChange={e => setLoginPhone(e.target.value)}
+                    placeholder="輸入電話號碼"
+                    className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-indigo-400"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-medium text-slate-600 mb-1 block">密碼</label>
+                  <input
+                    type="password"
+                    value={loginPwd}
+                    onChange={e => setLoginPwd(e.target.value)}
+                    placeholder="輸入密碼"
+                    className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-indigo-400"
+                    onKeyDown={e => e.key === 'Enter' && handleLogin()}
+                  />
+                </div>
+                {loginMsg && <p className="text-xs text-red-500">{loginMsg}</p>}
+                <button
+                  onClick={handleLogin}
+                  disabled={loginLoading}
+                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-lg text-sm transition-colors disabled:opacity-60"
+                >
+                  {loginLoading ? '登入中...' : '登入'}
+                </button>
+                <button
+                  onClick={() => { setShowLogin(false); setLoginMsg(''); }}
+                  className="w-full text-slate-400 hover:text-slate-600 text-sm py-1 transition-colors"
+                >
+                  取消
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Slide-down TOC — all devices */}
