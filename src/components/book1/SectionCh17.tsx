@@ -61,13 +61,13 @@ export default function SectionCh17() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-slate-600 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-slate-700 text-slate-300 text-sm font-bold mb-4 border border-slate-600">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-slate-700 text-slate-300 font-bold mb-4 border border-slate-600" style={{fontSize:"17px"}}>
             Chapter 17
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-white mb-4 tracking-tight" style={{fontSize:"33px"}}>
             有界線的一天
           </h2>
-          <p className="text-slate-300 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-300 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             這本書的最後一章，作者用一個虛構的故事，描繪了一個擁有健康界線的人，她的一天會是什麼樣子。這不是一個沒有衝突、沒有壓力的烏托邦，而是一個充滿了真實挑戰，但她卻能以自由、愛和責任感來回應的真實生活。這就是設立界線的最終目的：重新奪回你人生的主導權。
           </p>
         </div>
@@ -75,7 +75,7 @@ export default function SectionCh17() {
 
       {/* Timeline */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <Clock className="w-7 h-7 mr-3 text-slate-600" />
           健康界線的日常實踐 (P422-435)
         </h3>
@@ -100,28 +100,28 @@ export default function SectionCh17() {
                     <div className="bg-slate-200 p-2 rounded-lg text-slate-700">
                       {item.icon}
                     </div>
-                    <h4 className="text-xl font-bold text-slate-800">{item.time} - {item.title}</h4>
+                    <h4 className="font-bold text-slate-800" style={{fontSize:"23px"}}>{item.time} - {item.title}</h4>
                   </div>
                 </div>
                 
-                <p className="text-base text-slate-700 leading-relaxed mb-6">
+                <p className="text-slate-700 leading-relaxed mb-6" style={{fontSize:"19px"}}>
                   {item.desc}
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-auto">
                   <div className="bg-rose-50 p-4 rounded-xl border border-rose-100">
-                    <strong className="text-rose-800 text-sm flex items-center mb-1">
+                    <strong className="text-rose-800 flex items-center mb-1" style={{fontSize:"17px"}}>
                       <Frown className="w-4 h-4 mr-1 text-rose-600" />
                       過去的無界線反應：
                     </strong>
-                    <p className="text-sm text-rose-900/80">{item.contrast}</p>
+                    <p className="text-rose-900/80" style={{fontSize:"17px"}}>{item.contrast}</p>
                   </div>
                   <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
-                    <strong className="text-emerald-800 text-sm flex items-center mb-1">
+                    <strong className="text-emerald-800 flex items-center mb-1" style={{fontSize:"17px"}}>
                       <ShieldCheck className="w-4 h-4 mr-1 text-emerald-600" />
                       現在的界線洞察：
                     </strong>
-                    <p className="text-sm text-emerald-900/80">{item.insight}</p>
+                    <p className="text-emerald-900/80" style={{fontSize:"17px"}}>{item.insight}</p>
                   </div>
                 </div>
               </div>
@@ -132,13 +132,13 @@ export default function SectionCh17() {
 
       {/* Conclusion */}
       <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl p-8 md:p-10 border border-emerald-700 shadow-lg text-white text-center mt-8">
-        <h3 className="text-3xl font-bold mb-6">
+        <h3 className="font-bold mb-6" style={{fontSize:"33px"}}>
           立界線，得自由
         </h3>
-        <p className="text-emerald-100 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+        <p className="text-emerald-100 leading-relaxed max-w-2xl mx-auto mb-8" style={{fontSize:"21px"}}>
           界線不是為了把別人推開，而是為了保護你內心那個神聖的花園，讓愛、喜樂和平安能在其中生長。當你學會為自己的生命負責時，你就不再是環境的受害者，而是自己人生的管家。
         </p>
-        <div className="inline-flex items-center justify-center px-6 py-3 bg-white text-emerald-700 rounded-full font-bold text-lg shadow-md">
+        <div className="inline-flex items-center justify-center px-6 py-3 bg-white text-emerald-700 rounded-full font-bold shadow-md" style={{fontSize:"21px"}}>
           <CheckCircle2 className="w-6 h-6 mr-2" />
           恭喜你完成這趟旅程！
         </div>
@@ -147,36 +147,36 @@ export default function SectionCh17() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第17章總結：界線帶來自由
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第17章總結：界線帶來自由
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章以雪莉的「重生版」一天作結——展示一個學會設立界線的人，生命看起來是什麼樣子。這不是一個完美的生命，而是一個真實的、有選擇的、有能力真正去愛的生命。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章以雪莉的「重生版」一天作結——展示一個學會設立界線的人，生命看起來是什麼樣子。這不是一個完美的生命，而是一個真實的、有選擇的、有能力真正去愛的生命。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 雪莉的新的一天</div>
-            <p className="text-slate-600 text-sm leading-relaxed">本章以對比的方式，展示雪莉在學習界線後的同樣一天：早晨她主動起床、享受安靜；面對孩子的衝突，她平靜地設立後果並執行；面對上司的臨時要求，她清楚表達自己的工作優先次序；面對朋友的電話，她說「我現在在工作，晚點聯絡」；面對教會的要求，她誠實評估自己的能量然後做出真實的回應。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 雪莉的新的一天</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>本章以對比的方式，展示雪莉在學習界線後的同樣一天：早晨她主動起床、享受安靜；面對孩子的衝突，她平靜地設立後果並執行；面對上司的臨時要求，她清楚表達自己的工作優先次序；面對朋友的電話，她說「我現在在工作，晚點聯絡」；面對教會的要求，她誠實評估自己的能量然後做出真實的回應。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 自由的真實樣貌</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者指出，真正的自由不是隨心所欲，而是有能力選擇。當雪莉說「好」，那是她真實的選擇，不是恐懼的驅使；當她說「不」，那是她在保護神給她的生命，不是冷漠或自私。這種生命帶來的喜樂和平安，是以前那個永遠說「好」卻充滿怨恨的雪莉從未體驗過的。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 自由的真實樣貌</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者指出，真正的自由不是隨心所欲，而是有能力選擇。當雪莉說「好」，那是她真實的選擇，不是恐懼的驅使；當她說「不」，那是她在保護神給她的生命，不是冷漠或自私。這種生命帶來的喜樂和平安，是以前那個永遠說「好」卻充滿怨恨的雪莉從未體驗過的。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 界線是愛的最高表達</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者以一個深刻的觀點作結：學會設立界線，讓你能夠更深、更真實地去愛人——因為你現在的愛，不再是出於恐懼或義務，而是出於充盛和自由。你能夠清楚地說「我愛你，而且我需要這個」，你能夠說「不」而不帶罪惡感，你能夠說「是」而充滿真心。這是界線帶給你的最深的禮物。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 界線是愛的最高表達</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者以一個深刻的觀點作結：學會設立界線，讓你能夠更深、更真實地去愛人——因為你現在的愛，不再是出於恐懼或義務，而是出於充盛和自由。你能夠清楚地說「我愛你，而且我需要這個」，你能夠說「不」而不帶罪惡感，你能夠說「是」而充滿真心。這是界線帶給你的最深的禮物。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">這不是旅程的終點，而是起點。學習界線是一生的功課，不是一個可以「完成」的任務。但每一步的成長，都讓你更加自由、更真實地與神和與人相遇。這條路或許艱難，但它通向的，是你被創造來應該有的生命。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>這不是旅程的終點，而是起點。學習界線是一生的功課，不是一個可以「完成」的任務。但每一步的成長，都讓你更加自由、更真實地與神和與人相遇。這條路或許艱難，但它通向的，是你被創造來應該有的生命。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-amber-300 mb-6 flex items-center">
+        <h3 className="font-bold text-amber-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-amber-200 mb-4 flex items-center">
+            <h4 className="font-bold text-amber-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-amber-400" />
               反思問題
             </h4>
@@ -208,7 +208,7 @@ export default function SectionCh17() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>

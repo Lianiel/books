@@ -97,13 +97,13 @@ export default function SectionCh9() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-rose-100 text-rose-800 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-rose-100 text-rose-800 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 9
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             界線與你的配偶
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             在所有的人際關係中，婚姻裡的界線是最常使人感到困惑的。婚姻的目的是要「成為一體」，但界線卻鼓勵人要分離。事實上，兩個人在結婚的那一天成為一體，但並不因此就失去了個人的身分。健康的婚姻是由兩個「完整且獨立」的個體所組成，而不是兩個殘缺的人拼湊成一個。
           </p>
         </div>
@@ -111,41 +111,41 @@ export default function SectionCh9() {
 
       {/* What's mine, yours, ours */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Users className="w-7 h-7 mr-3 text-rose-500" />
           這是你的、我的，還是我們的？(P221-225)
         </h3>
-        <p className="text-slate-600 mb-8 text-lg">
+        <p className="text-slate-600 mb-8" style={{fontSize:"21px"}}>
           婚姻中最常見的問題，就是把對方的責任攬在自己身上，或者要求對方為自己的情緒負責。我們必須清楚劃分什麼是「我的責任」，什麼是「你的責任」。
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-rose-50 p-6 rounded-2xl border border-rose-100 hover:shadow-md transition-shadow">
             <HeartCrack className="w-8 h-8 text-rose-500 mb-4" />
-            <h4 className="font-bold text-rose-800 mb-3 text-xl">感覺 (Feelings)</h4>
-            <p className="text-base text-slate-700 leading-relaxed mb-4">
+            <h4 className="font-bold text-rose-800 mb-3" style={{fontSize:"23px"}}>感覺 (Feelings)</h4>
+            <p className="text-slate-700 leading-relaxed mb-4" style={{fontSize:"19px"}}>
               你不能為配偶的壞心情負責，配偶也不能為你的快樂負責。當配偶生氣時，不要立刻覺得「我一定做錯了什麼」而急著去安撫或討好。
             </p>
-            <div className="bg-white/60 p-3 rounded-lg text-sm text-rose-900 font-medium">
+            <div className="bg-white/60 p-3 rounded-lg text-rose-900 font-medium" style={{fontSize:"17px"}}>
               正確做法：坦承自己的脆弱（如：「我感覺孤單」），而不是用指責的方式（如：「你都不在乎我」）。
             </div>
           </div>
           <div className="bg-rose-50 p-6 rounded-2xl border border-rose-100 hover:shadow-md transition-shadow">
             <Heart className="w-8 h-8 text-rose-500 mb-4" />
-            <h4 className="font-bold text-rose-800 mb-3 text-xl">渴望 (Desires)</h4>
-            <p className="text-base text-slate-700 leading-relaxed mb-4">
+            <h4 className="font-bold text-rose-800 mb-3" style={{fontSize:"23px"}}>渴望 (Desires)</h4>
+            <p className="text-slate-700 leading-relaxed mb-4" style={{fontSize:"19px"}}>
               沒有人可以想要什麼就得到什麼。當配偶無法滿足你的渴望（例如：想要一個浪漫的週末，但他要加班）時，是你自己要為內心的失落哀傷。
             </p>
-            <div className="bg-white/60 p-3 rounded-lg text-sm text-rose-900 font-medium">
+            <div className="bg-white/60 p-3 rounded-lg text-rose-900 font-medium" style={{fontSize:"17px"}}>
               錯誤做法：透過懲罰、冷戰、擺臭臉來逼迫對方就範，這是一種情緒勒索。
             </div>
           </div>
           <div className="bg-rose-50 p-6 rounded-2xl border border-rose-100 hover:shadow-md transition-shadow">
             <ShieldAlert className="w-8 h-8 text-rose-500 mb-4" />
-            <h4 className="font-bold text-rose-800 mb-3 text-xl">付出的限制 (Limits)</h4>
-            <p className="text-base text-slate-700 leading-relaxed mb-4">
+            <h4 className="font-bold text-rose-800 mb-3" style={{fontSize:"23px"}}>付出的限制 (Limits)</h4>
+            <p className="text-slate-700 leading-relaxed mb-4" style={{fontSize:"19px"}}>
               聖經說要「甘心樂意」地給予。如果付出超越了你愛的能力範圍（例如：過度透支體力、長期忍受言語虐待），最終必然轉變成不滿與怨恨。
             </p>
-            <div className="bg-white/60 p-3 rounded-lg text-sm text-rose-900 font-medium">
+            <div className="bg-white/60 p-3 rounded-lg text-rose-900 font-medium" style={{fontSize:"17px"}}>
               正確做法：誠實評估自己的極限，並勇敢說出「我現在無法給予更多了」。
             </div>
           </div>
@@ -154,23 +154,23 @@ export default function SectionCh9() {
 
       {/* Applying Laws in Marriage */}
       <div className="bg-slate-800 rounded-3xl p-8 md:p-10 border border-slate-700 shadow-sm text-white">
-        <h3 className="text-2xl font-bold text-rose-300 mb-8 flex items-center">
+        <h3 className="font-bold text-rose-300 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <Scale className="w-7 h-7 mr-3" />
           在婚姻中運用界線定律 (P227-230)
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {marriageLaws.map((law) => (
             <div key={law.id} className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 hover:bg-slate-700 transition-colors flex flex-col h-full">
-              <h4 className="font-bold text-rose-400 mb-3 text-xl flex items-center">
+              <h4 className="font-bold text-rose-400 mb-3 flex items-center" style={{fontSize:"23px"}}>
                 <span className="bg-rose-500/20 p-2 rounded-lg mr-3 text-rose-300">{law.id}</span>
                 {law.title}
               </h4>
-              <p className="text-base text-slate-300 leading-relaxed mb-4 flex-grow">
+              <p className="text-slate-300 leading-relaxed mb-4 flex-grow" style={{fontSize:"19px"}}>
                 {law.desc}
               </p>
               <div className="bg-slate-800/80 p-4 rounded-xl border border-slate-600/50 mb-6">
-                <strong className="text-rose-300 text-sm block mb-1">⚠️ 應用與警告：</strong>
-                <p className="text-sm text-slate-400">{law.warning}</p>
+                <strong className="text-rose-300 block mb-1" style={{fontSize:"17px"}}>⚠️ 應用與警告：</strong>
+                <p className="text-slate-400" style={{fontSize:"17px"}}>{law.warning}</p>
               </div>
 
               {/* Interactive Quiz & Actionable Steps */}
@@ -230,7 +230,7 @@ export default function SectionCh9() {
                               ) : (
                                 <XCircle className="w-5 h-5 mr-2 shrink-0 mt-0.5" />
                               )}
-                              <p className="text-sm font-medium">
+                              <p className="font-medium" style={{fontSize:"17px"}}>
                                 {quizResults[law.id] ? law.quiz.feedback : '再想一想！請重新閱讀上方的應用與警告。'}
                               </p>
                             </motion.div>
@@ -246,10 +246,10 @@ export default function SectionCh9() {
                           <ul className="space-y-3">
                             {law.actionableSteps.map((step, stepIdx) => (
                               <li key={stepIdx} className="flex items-start">
-                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">
+                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-900/50 text-emerald-400 flex items-center justify-center font-bold mr-3 mt-0.5" style={{fontSize:"17px"}}>
                                   {stepIdx + 1}
                                 </span>
-                                <span className="text-slate-300 text-sm leading-relaxed">{step}</span>
+                                <span className="text-slate-300 leading-relaxed" style={{fontSize:"17px"}}>{step}</span>
                               </li>
                             ))}
                           </ul>
@@ -266,62 +266,62 @@ export default function SectionCh9() {
 
       {/* Exposure Law */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <MessageCircle className="w-7 h-7 mr-3 text-rose-500" />
           揭露律：溝通你的界線 (P231)
         </h3>
-        <p className="text-slate-600 mb-8 text-lg">
+        <p className="text-slate-600 mb-8" style={{fontSize:"21px"}}>
           界線必須被看見和聽見。如果你只在心裡生悶氣，配偶永遠不知道你的底線在哪裡。被動攻擊（如嘆氣、摔門）是無效的溝通。以下是婚姻中需要明確溝通的界線：
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-rose-200 transition-colors">
-            <strong className="text-rose-700 block mb-2 text-xl">皮膚 (Physical)</strong>
-            <p className="text-base text-slate-600">尊重彼此身體上的界線，絕對免於暴力或任何形式的身體虐待。這是不容妥協的底線。</p>
+            <strong className="text-rose-700 block mb-2" style={{fontSize:"23px"}}>皮膚 (Physical)</strong>
+            <p className="text-slate-600" style={{fontSize:"19px"}}>尊重彼此身體上的界線，絕對免於暴力或任何形式的身體虐待。這是不容妥協的底線。</p>
           </div>
           <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-rose-200 transition-colors">
-            <strong className="text-rose-700 block mb-2 text-xl">話語 (Words)</strong>
-            <p className="text-base text-slate-600">直接面對另一半，不要拐彎抹角，好好說「不」。拒絕言語暴力、諷刺和輕蔑的態度。</p>
+            <strong className="text-rose-700 block mb-2" style={{fontSize:"23px"}}>話語 (Words)</strong>
+            <p className="text-slate-600" style={{fontSize:"19px"}}>直接面對另一半，不要拐彎抹角，好好說「不」。拒絕言語暴力、諷刺和輕蔑的態度。</p>
           </div>
           <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-rose-200 transition-colors">
-            <strong className="text-rose-700 block mb-2 text-xl">事實 (Truth)</strong>
-            <p className="text-base text-slate-600">誠實的溝通一向是最好的策略。隱瞞（如隱瞞債務、行蹤）和欺騙會徹底破壞婚姻的信任根基。</p>
+            <strong className="text-rose-700 block mb-2" style={{fontSize:"23px"}}>事實 (Truth)</strong>
+            <p className="text-slate-600" style={{fontSize:"19px"}}>誠實的溝通一向是最好的策略。隱瞞（如隱瞞債務、行蹤）和欺騙會徹底破壞婚姻的信任根基。</p>
           </div>
           <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-rose-200 transition-colors">
-            <strong className="text-rose-700 block mb-2 text-xl">身體的距離 (Space)</strong>
-            <p className="text-base text-slate-600">需要獨處時直接告訴配偶：「我現在需要半小時安靜一下」，不要讓對方瞎猜或覺得被拒絕。</p>
+            <strong className="text-rose-700 block mb-2" style={{fontSize:"23px"}}>身體的距離 (Space)</strong>
+            <p className="text-slate-600" style={{fontSize:"19px"}}>需要獨處時直接告訴配偶：「我現在需要半小時安靜一下」，不要讓對方瞎猜或覺得被拒絕。</p>
           </div>
           <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-rose-200 transition-colors">
-            <strong className="text-rose-700 block mb-2 text-xl">情感的距離 (Emotional)</strong>
-            <p className="text-base text-slate-600">婚姻出嚴重問題時（如外遇、成癮），需要情感上的距離來重新練習信任，直到對方有真實的改變，而不是立刻假裝沒事。</p>
+            <strong className="text-rose-700 block mb-2" style={{fontSize:"23px"}}>情感的距離 (Emotional)</strong>
+            <p className="text-slate-600" style={{fontSize:"19px"}}>婚姻出嚴重問題時（如外遇、成癮），需要情感上的距離來重新練習信任，直到對方有真實的改變，而不是立刻假裝沒事。</p>
           </div>
           <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-rose-200 transition-colors">
-            <strong className="text-rose-700 block mb-2 text-xl">時間 (Time)</strong>
-            <p className="text-base text-slate-600">夫妻雙方都需要有自己的時間做自己的事、發展自己的興趣和友誼。婚姻不是24小時黏在一起。</p>
+            <strong className="text-rose-700 block mb-2" style={{fontSize:"23px"}}>時間 (Time)</strong>
+            <p className="text-slate-600" style={{fontSize:"19px"}}>夫妻雙方都需要有自己的時間做自己的事、發展自己的興趣和友誼。婚姻不是24小時黏在一起。</p>
           </div>
         </div>
       </div>
 
       {/* Submission Myth */}
       <div className="bg-gradient-to-r from-rose-50 to-pink-50 rounded-3xl p-8 md:p-10 border border-rose-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-rose-900 mb-6 flex items-center">
+        <h3 className="font-bold text-rose-900 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <ShieldCheck className="w-7 h-7 mr-3 text-rose-600" />
           破除迷思：順服的真義 (P233)
         </h3>
         <div className="flex flex-col md:flex-row gap-8 items-stretch">
           <div className="flex-1">
-            <p className="text-rose-800 leading-relaxed text-xl font-bold mb-4">
+            <p className="text-rose-800 leading-relaxed font-bold mb-4" style={{fontSize:"23px"}}>
               「可是如果我設界線，聽起來是不是很不順服？聖經不是要妻子順服丈夫嗎？」
             </p>
-            <p className="text-slate-700 leading-relaxed text-lg mb-4">
+            <p className="text-slate-700 leading-relaxed mb-4" style={{fontSize:"21px"}}>
               這是一個常被誤解和濫用的觀念。聖經中（如以弗所書5章）的順服，必須是婚姻中任一方自己的<strong>「自由選擇」</strong>。基督從來不會想要挪去我們的意願，更不會強迫我們超出自己的限制。
             </p>
-            <p className="text-slate-700 leading-relaxed text-lg">
+            <p className="text-slate-700 leading-relaxed" style={{fontSize:"21px"}}>
               奴隸式的順服（出於恐懼、被控制、不敢說不）在聖經中是站不住腳的。真正的順服只能存在於兩個擁有完全自由的人之間。當你出於愛而「選擇」放下自己的權利時，那才是真正的順服。
             </p>
           </div>
           <div className="bg-white p-6 md:p-8 rounded-2xl border border-rose-100 shadow-sm md:w-1/3 flex flex-col justify-center">
             <Zap className="w-10 h-10 text-rose-500 mb-4" />
-            <p className="text-base text-slate-800 italic font-medium leading-relaxed">
+            <p className="text-slate-800 italic font-medium leading-relaxed" style={{fontSize:"19px"}}>
               「如果妻子沒有權利說『不』，那麼她的『好』也就毫無意義。沒有自由，就沒有真愛。強迫的順服，只是另一種形式的奴役。」
             </p>
           </div>
@@ -331,36 +331,36 @@ export default function SectionCh9() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第9章總結：界線與你的配偶
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第9章總結：界線與你的配偶
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">婚姻是最親密的關係，也是界線最難設立、卻最關鍵的地方。本章針對婚姻中常見的界線問題提供深入分析，並特別探討如何在面對配偶的問題行為時，用界線來帶來真正的改變。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>婚姻是最親密的關係，也是界線最難設立、卻最關鍵的地方。本章針對婚姻中常見的界線問題提供深入分析，並特別探討如何在面對配偶的問題行為時，用界線來帶來真正的改變。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 婚姻中的界線問題</div>
-            <p className="text-slate-600 text-sm leading-relaxed">許多婚姻的痛苦根源於界線的混亂：一方過度承擔，另一方無限索取；一方不斷討好，另一方習以為常；一方壓抑情緒，積累到爆發；一方試圖改變對方，兩人都精疲力盡。這些模式往往反映了雙方在成長過程中所習得的關係腳本。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 婚姻中的界線問題</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>許多婚姻的痛苦根源於界線的混亂：一方過度承擔，另一方無限索取；一方不斷討好，另一方習以為常；一方壓抑情緒，積累到爆發；一方試圖改變對方，兩人都精疲力盡。這些模式往往反映了雙方在成長過程中所習得的關係腳本。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 「種豆得豆」在婚姻中的應用</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者強調，設立界線在婚姻中最難、也最重要的應用，是「讓配偶承擔自己行為的後果」。若配偶有酗酒、暴力、不忠或財務不負責任等問題，一再替他收拾殘局只會讓問題持續。真正的愛有時需要讓對方「觸底」，才能激發真正的改變。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 「種豆得豆」在婚姻中的應用</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者強調，設立界線在婚姻中最難、也最重要的應用，是「讓配偶承擔自己行為的後果」。若配偶有酗酒、暴力、不忠或財務不負責任等問題，一再替他收拾殘局只會讓問題持續。真正的愛有時需要讓對方「觸底」，才能激發真正的改變。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 愛需要兩個有界線的個體</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者提出一個重要觀點：健康的婚姻需要兩個有自我的人。若其中一方沒有自我（永遠讓步、永遠迎合），婚姻就會失去張力和真實性。你對配偶說「不」，有時反而是在給對方一個機會去真實地面對自己、和真實的你相遇，而不只是和你的「假笑」相遇。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 愛需要兩個有界線的個體</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者提出一個重要觀點：健康的婚姻需要兩個有自我的人。若其中一方沒有自我（永遠讓步、永遠迎合），婚姻就會失去張力和真實性。你對配偶說「不」，有時反而是在給對方一個機會去真實地面對自己、和真實的你相遇，而不只是和你的「假笑」相遇。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">在婚姻中設立界線，目的不是懲罰或報復，而是保護關係中的「良善」，並讓「邪惡」承擔後果。這需要極大的智慧、禱告和往往需要專業的輔導支持。若你的婚姻中有嚴重的問題，設立界線是你能為這段婚姻做的最真實的事之一。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>在婚姻中設立界線，目的不是懲罰或報復，而是保護關係中的「良善」，並讓「邪惡」承擔後果。這需要極大的智慧、禱告和往往需要專業的輔導支持。若你的婚姻中有嚴重的問題，設立界線是你能為這段婚姻做的最真實的事之一。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-rose-300 mb-6 flex items-center">
+        <h3 className="font-bold text-rose-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-rose-200 mb-4 flex items-center">
+            <h4 className="font-bold text-rose-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-rose-400" />
               反思問題
             </h4>
@@ -392,7 +392,7 @@ export default function SectionCh9() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>

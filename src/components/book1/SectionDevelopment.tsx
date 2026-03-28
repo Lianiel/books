@@ -26,13 +26,13 @@ export default function SectionDevelopment() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-100 text-amber-700 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 4
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             界線的發展歷程
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             界線不是與生俱來的，而是在成長過程中發展出來的。了解我們在童年時期如何學習（或未能學習）設立界線，是修復界線問題的第一步。
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function SectionDevelopment() {
 
       {/* Development Stages */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <Footprints className="w-7 h-7 mr-3 text-amber-500" />
           幼兒期的三個關鍵階段 (P81-86)
         </h3>
@@ -58,12 +58,12 @@ export default function SectionDevelopment() {
                   <div className="bg-amber-100 p-2 rounded-xl text-amber-600">
                     {stage.icon}
                   </div>
-                  <h4 className="text-lg font-bold text-slate-800">{stage.title}</h4>
+                  <h4 className="font-bold text-slate-800" style={{fontSize:"21px"}}>{stage.title}</h4>
                 </div>
-                <span className="text-xs font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200">{stage.page}</span>
+                <span className="font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>{stage.page}</span>
               </div>
-              <p className="text-amber-700 font-bold mb-3 text-sm">{stage.age}</p>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-amber-700 font-bold mb-3" style={{fontSize:"17px"}}>{stage.age}</p>
+              <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>
                 {stage.desc}
               </p>
             </motion.div>
@@ -72,11 +72,11 @@ export default function SectionDevelopment() {
 
         {/* Object Constancy Note */}
         <div className="mt-8 bg-slate-800 rounded-2xl p-6 border border-slate-700 text-white">
-          <h4 className="font-bold text-amber-400 mb-3 text-lg flex items-center">
+          <h4 className="font-bold text-amber-400 mb-3 flex items-center" style={{fontSize:"21px"}}>
             <HeartCrack className="w-5 h-5 mr-2" />
             關鍵概念：客體恆常性 (Object Constancy) (P85)
           </h4>
-          <p className="text-sm text-slate-300 leading-relaxed">
+          <p className="text-slate-300 leading-relaxed" style={{fontSize:"17px"}}>
             這是整合期最重要的發展任務。孩子必須學會：即使媽媽生氣（壞），她依然是愛我的媽媽（好）。如果沒有發展出客體恆常性，孩子長大後會傾向於「全好或全壞」的極端思維（例如：只要你反對我，你就是壞人）。
           </p>
         </div>
@@ -84,11 +84,11 @@ export default function SectionDevelopment() {
 
       {/* Boundary Injuries */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <AlertTriangle className="w-7 h-7 mr-3 text-red-500" />
           界線受傷的原因 (P87-94)
         </h3>
-        <p className="text-slate-600 leading-relaxed mb-8 text-lg">
+        <p className="text-slate-600 leading-relaxed mb-8" style={{fontSize:"21px"}}>
           當父母無法提供安全、一致且有規範的環境時，孩子的界線發展就會受挫。以下是常見的七種界線傷害：
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -105,9 +105,9 @@ export default function SectionDevelopment() {
                   {injury.icon}
                   <h4 className="font-bold">{injury.title}</h4>
                 </div>
-                <span className="text-xs font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200">{injury.page}</span>
+                <span className="font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>{injury.page}</span>
               </div>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>
                 {injury.desc}
               </p>
             </motion.div>
@@ -117,23 +117,23 @@ export default function SectionDevelopment() {
 
       {/* Repairing Boundaries */}
       <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 md:p-10 border border-emerald-100 shadow-sm">
-        <h3 className="text-2xl font-bold text-emerald-900 mb-6 flex items-center">
+        <h3 className="font-bold text-emerald-900 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Wrench className="w-7 h-7 mr-3 text-emerald-600" />
           修復界線的希望 (P95-96)
         </h3>
-        <p className="text-emerald-800 leading-relaxed mb-6 text-lg">
+        <p className="text-emerald-800 leading-relaxed mb-6" style={{fontSize:"21px"}}>
           好消息是，界線問題是可以修復的。上帝為我們預備了成長的途徑：
         </p>
         <div className="space-y-4">
           <div className="bg-white p-5 rounded-2xl border border-emerald-200 shadow-sm">
-            <h4 className="font-bold text-emerald-700 mb-2 text-lg">1. 恩典與真理的環境</h4>
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <h4 className="font-bold text-emerald-700 mb-2" style={{fontSize:"21px"}}>1. 恩典與真理的環境</h4>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>
               我們需要一個安全的關係（恩典），在那裡我們可以真實地展現自己而不被定罪；同時也需要有人對我們說實話（真理），指出我們的問題。
             </p>
           </div>
           <div className="bg-white p-5 rounded-2xl border border-emerald-200 shadow-sm">
-            <h4 className="font-bold text-emerald-700 mb-2 text-lg">2. 重新經歷發展階段</h4>
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <h4 className="font-bold text-emerald-700 mb-2" style={{fontSize:"21px"}}>2. 重新經歷發展階段</h4>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>
               在安全的關係中，我們可能需要重新經歷「練習說不」、「表達憤怒」等童年未完成的發展任務。這是一個需要時間和耐心的過程。
             </p>
           </div>
@@ -143,36 +143,36 @@ export default function SectionDevelopment() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第4章總結：界線從哪裡來？
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第4章總結：界線從哪裡來？
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章追溯界線的發展歷程，解釋健康的界線感是如何在人生早期逐漸形成的，以及當這個發展過程受到干擾時，會對成年後的關係產生什麼樣的影響。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章追溯界線的發展歷程，解釋健康的界線感是如何在人生早期逐漸形成的，以及當這個發展過程受到干擾時，會對成年後的關係產生什麼樣的影響。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 界線發展的里程碑</div>
-            <p className="text-slate-600 text-sm leading-relaxed">界線感的發展從出生就開始了。嬰兒期需要完全的依附與安全感；隨著孩子成長，他們逐漸學習「我是獨立的個體」——這個分離的過程需要父母既給予安全感，又鼓勵獨立探索。在這個過程中，父母如何回應孩子的「不」，至關重要。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 界線發展的里程碑</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>界線感的發展從出生就開始了。嬰兒期需要完全的依附與安全感；隨著孩子成長，他們逐漸學習「我是獨立的個體」——這個分離的過程需要父母既給予安全感，又鼓勵獨立探索。在這個過程中，父母如何回應孩子的「不」，至關重要。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 依附與分離的平衡</div>
-            <p className="text-slate-600 text-sm leading-relaxed">健康的界線需要在兩個看似矛盾的需要之間取得平衡：「依附」（我需要與人連結，感到被愛和接納）和「分離」（我需要成為獨立的個體，有自己的想法和選擇）。若家庭過度強調依附而壓制分離，孩子就會長成「無法說不的成人」；若家庭過度強調獨立而缺乏溫暖，孩子就會長成「無法真正連結的成人」。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 依附與分離的平衡</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>健康的界線需要在兩個看似矛盾的需要之間取得平衡：「依附」（我需要與人連結，感到被愛和接納）和「分離」（我需要成為獨立的個體，有自己的想法和選擇）。若家庭過度強調依附而壓制分離，孩子就會長成「無法說不的成人」；若家庭過度強調獨立而缺乏溫暖，孩子就會長成「無法真正連結的成人」。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 家庭系統如何破壞界線</div>
-            <p className="text-slate-600 text-sm leading-relaxed">不同類型的家庭系統以不同的方式破壞孩子的界線發展：控制型父母讓孩子學會「我沒有權利有自己的感受和意見」；過度保護型父母讓孩子學會「世界是危險的，我需要別人來保護我」；忽視型父母讓孩子學會「我的需要不重要，不要麻煩別人」；情感勒索型父母讓孩子學會「如果我讓父母不開心，我就是壞孩子」。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 家庭系統如何破壞界線</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>不同類型的家庭系統以不同的方式破壞孩子的界線發展：控制型父母讓孩子學會「我沒有權利有自己的感受和意見」；過度保護型父母讓孩子學會「世界是危險的，我需要別人來保護我」；忽視型父母讓孩子學會「我的需要不重要，不要麻煩別人」；情感勒索型父母讓孩子學會「如果我讓父母不開心，我就是壞孩子」。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">界線的缺失不是你的錯，但修復界線是你的責任。無論你的成長環境如何，改變是可能的。透過正確的關係支持、聖靈的工作和刻意的操練，成年人可以在任何年齡重新學習設立健康的界線。你不必永遠活在童年的模式裡。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>界線的缺失不是你的錯，但修復界線是你的責任。無論你的成長環境如何，改變是可能的。透過正確的關係支持、聖靈的工作和刻意的操練，成年人可以在任何年齡重新學習設立健康的界線。你不必永遠活在童年的模式裡。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-emerald-300 mb-6 flex items-center">
+        <h3 className="font-bold text-emerald-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-200 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-emerald-400" />
               反思問題
             </h4>
@@ -204,7 +204,7 @@ export default function SectionDevelopment() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-teal-300 mb-4 flex items-center">
+            <h4 className="font-bold text-teal-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-teal-400" />
               具體行動方案
             </h4>

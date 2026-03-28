@@ -76,13 +76,13 @@ export default function SectionCh16() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-teal-100 text-teal-800 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 16
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             如何評估我的界線發展
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             建立界線不是一個瞬間完成的魔法，而是一段需要時間、練習和經歷挫折的旅程。這段旅程有其可預測的階段。了解這些階段，能幫助你在遇到挫折時不至於放棄，並清楚知道自己正朝著哪個方向前進。
           </p>
         </div>
@@ -90,7 +90,7 @@ export default function SectionCh16() {
 
       {/* Progress Steps Timeline */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <TrendingUp className="w-7 h-7 mr-3 text-teal-500" />
           界線發展的 7 個階段 (P400-420)
         </h3>
@@ -115,26 +115,26 @@ export default function SectionCh16() {
                     <div className="bg-teal-100 p-2 rounded-lg text-teal-700">
                       {step.icon}
                     </div>
-                    <h4 className="text-xl font-bold text-slate-800">階段 {step.id}: {step.title}</h4>
+                    <h4 className="font-bold text-slate-800" style={{fontSize:"23px"}}>階段 {step.id}: {step.title}</h4>
                   </div>
-                  <span className="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200">{step.page}</span>
+                  <span className="font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>{step.page}</span>
                 </div>
                 
-                <p className="text-base text-slate-700 leading-relaxed mb-6">
+                <p className="text-slate-700 leading-relaxed mb-6" style={{fontSize:"19px"}}>
                   {step.desc}
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-auto">
                   <div className="bg-white p-4 rounded-xl border border-slate-200">
-                    <strong className="text-slate-800 text-sm block mb-1">🎬 具體情境：</strong>
-                    <p className="text-sm text-slate-600">{step.scenario}</p>
+                    <strong className="text-slate-800 block mb-1" style={{fontSize:"17px"}}>🎬 具體情境：</strong>
+                    <p className="text-slate-600" style={{fontSize:"17px"}}>{step.scenario}</p>
                   </div>
                   <div className="bg-teal-50 p-4 rounded-xl border border-teal-200">
-                    <strong className="text-teal-800 text-sm flex items-center mb-1">
+                    <strong className="text-teal-800 flex items-center mb-1" style={{fontSize:"17px"}}>
                       <Lightbulb className="w-4 h-4 mr-1 text-teal-600" />
                       核心洞察：
                     </strong>
-                    <p className="text-sm text-teal-900/80">{step.insight}</p>
+                    <p className="text-teal-900/80" style={{fontSize:"17px"}}>{step.insight}</p>
                   </div>
                 </div>
               </div>
@@ -145,11 +145,11 @@ export default function SectionCh16() {
 
       {/* Encouragement */}
       <div className="bg-slate-800 rounded-3xl p-8 md:p-10 border border-slate-700 shadow-sm text-white mt-8">
-        <h3 className="text-2xl font-bold text-teal-300 mb-6 flex items-center">
+        <h3 className="font-bold text-teal-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Trophy className="w-7 h-7 mr-3" />
           給正在路上的你
         </h3>
-        <p className="text-slate-300 text-lg leading-relaxed mb-6">
+        <p className="text-slate-300 leading-relaxed mb-6" style={{fontSize:"21px"}}>
           如果你發現自己正處於「怨恨」或「防衛過當」的階段，請不要氣餒。這就像毛毛蟲破繭而出之前的掙扎，是必經的過程。
         </p>
         <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600">
@@ -169,36 +169,36 @@ export default function SectionCh16() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第16章總結：界線帶來成長
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第16章總結：界線帶來成長
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章描述設立界線的過程，以及在這個旅程中需要培養的五個內在能力。作者指出，界線的成長不只是技巧的學習，更是整個人格和靈性的蛻變。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章描述設立界線的過程，以及在這個旅程中需要培養的五個內在能力。作者指出，界線的成長不只是技巧的學習，更是整個人格和靈性的蛻變。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 成長的五個步驟</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者描述界線成長的五個里程碑：第一，怨恨的出現——怨恨是界線被長期侵犯的信號，它告訴你「某些事情需要改變」；第二，尋找連結——你無法獨自走這條路，你需要安全的人際支持；第三，停止責怪——從「都是他逼我的」轉到「是我允許這件事發生的」，這是真正改變的開始；第四，練習說不；第五，喜樂的出現——當界線開始建立，你會發現一種全新的自由和喜樂。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 成長的五個步驟</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者描述界線成長的五個里程碑：第一，怨恨的出現——怨恨是界線被長期侵犯的信號，它告訴你「某些事情需要改變」；第二，尋找連結——你無法獨自走這條路，你需要安全的人際支持；第三，停止責怪——從「都是他逼我的」轉到「是我允許這件事發生的」，這是真正改變的開始；第四，練習說不；第五，喜樂的出現——當界線開始建立，你會發現一種全新的自由和喜樂。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 從怨恨到喜樂的蛻變</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者描述了一個深刻的蛻變歷程：在界線缺失的狀態下，我們活在一種被動的、受害者式的憤怒中；當我們開始設立界線，我們進入主動掌握自己生命的狀態；當界線成熟，我們不再需要用憤怒來捍衛自己，因為界線已經自然地保護了我們。這個過程通常需要數年，而不是數週。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 從怨恨到喜樂的蛻變</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者描述了一個深刻的蛻變歷程：在界線缺失的狀態下，我們活在一種被動的、受害者式的憤怒中；當我們開始設立界線，我們進入主動掌握自己生命的狀態；當界線成熟，我們不再需要用憤怒來捍衛自己，因為界線已經自然地保護了我們。這個過程通常需要數年，而不是數週。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 界線的誤用：孤立不是界線</div>
-            <p className="text-slate-600 text-sm leading-relaxed">本章也特別警告一種界線的誤用：用「界線」為名來孤立自己、拒絕所有連結和親密關係。這不是健康的界線，而是傷痛的防衛機制。真正的界線是有選擇地開放和保護，讓真實的連結能夠發生，同時保護自己不受傷害。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 界線的誤用：孤立不是界線</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>本章也特別警告一種界線的誤用：用「界線」為名來孤立自己、拒絕所有連結和親密關係。這不是健康的界線，而是傷痛的防衛機制。真正的界線是有選擇地開放和保護，讓真實的連結能夠發生，同時保護自己不受傷害。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">界線的成長是一個整全的靈性和情感旅程。它需要誠實、連結、勇氣、時間和神的恩典。在這個過程中，你不只是在學習說「不」，你是在學習成為一個更真實、更有能力愛人的自己。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>界線的成長是一個整全的靈性和情感旅程。它需要誠實、連結、勇氣、時間和神的恩典。在這個過程中，你不只是在學習說「不」，你是在學習成為一個更真實、更有能力愛人的自己。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-emerald-300 mb-6 flex items-center">
+        <h3 className="font-bold text-emerald-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-200 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-emerald-400" />
               反思問題
             </h4>
@@ -230,7 +230,7 @@ export default function SectionCh16() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>

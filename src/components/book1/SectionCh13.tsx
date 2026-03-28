@@ -67,13 +67,13 @@ export default function SectionCh13() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-rose-100 text-rose-800 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-rose-100 text-rose-800 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 13
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             界線與你自己
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             我們最大的敵人往往不是別人，而是我們自己。當我們無法對自己的慾望、情緒和衝動說「不」時，我們就失去了對自己生命的控制權。對自己設立界線，意味著承擔起管理自己靈魂的責任，不再讓本能和逃避心理主導我們的人生。
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function SectionCh13() {
 
       {/* Self Issues Grid */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <User className="w-7 h-7 mr-3 text-rose-500" />
           對自己失去界線的 6 大領域 (P322-340)
         </h3>
@@ -100,26 +100,26 @@ export default function SectionCh13() {
                   <div className="bg-rose-100 p-3 rounded-xl text-rose-700 group-hover:bg-rose-600 group-hover:text-white transition-colors">
                     {issue.icon}
                   </div>
-                  <h4 className="text-xl font-bold text-slate-800">領域 {issue.id}</h4>
+                  <h4 className="font-bold text-slate-800" style={{fontSize:"23px"}}>領域 {issue.id}</h4>
                 </div>
-                <span className="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200">{issue.page}</span>
+                <span className="font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>{issue.page}</span>
               </div>
               
               <div className="space-y-4 flex-grow">
-                <h5 className="font-bold text-rose-800 text-xl border-b border-rose-100 pb-2">{issue.title}</h5>
-                <p className="text-slate-700 leading-relaxed text-base">
+                <h5 className="font-bold text-rose-800 border-b border-rose-100 pb-2" style={{fontSize:"23px"}}>{issue.title}</h5>
+                <p className="text-slate-700 leading-relaxed" style={{fontSize:"19px"}}>
                   {issue.desc}
                 </p>
                 <div className="bg-white p-4 rounded-xl border border-slate-100">
-                  <strong className="text-slate-800 text-sm block mb-2">🎬 具體情境：</strong>
-                  <p className="text-sm text-slate-600 leading-relaxed">{issue.scenario}</p>
+                  <strong className="text-slate-800 block mb-2" style={{fontSize:"17px"}}>🎬 具體情境：</strong>
+                  <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{issue.scenario}</p>
                 </div>
                 <div className="bg-rose-50/80 p-4 rounded-xl border border-rose-200 mt-auto">
-                  <strong className="text-rose-800 text-sm flex items-center mb-2">
+                  <strong className="text-rose-800 flex items-center mb-2" style={{fontSize:"17px"}}>
                     <Lightbulb className="w-4 h-4 mr-1 text-rose-600" />
                     解決突破點：
                   </strong>
-                  <p className="text-sm text-rose-900/80 leading-relaxed">{issue.breakthrough}</p>
+                  <p className="text-rose-900/80 leading-relaxed" style={{fontSize:"17px"}}>{issue.breakthrough}</p>
                 </div>
               </div>
             </motion.div>
@@ -129,36 +129,36 @@ export default function SectionCh13() {
 
       {/* Why we fail */}
       <div className="bg-slate-800 rounded-3xl p-8 md:p-10 border border-slate-700 shadow-sm text-white">
-        <h3 className="text-2xl font-bold text-rose-300 mb-8 flex items-center">
+        <h3 className="font-bold text-rose-300 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <AlertCircle className="w-7 h-7 mr-3" />
           為什麼我們無法對自己說「不」？ (P341-345)
         </h3>
         
         <div className="space-y-6">
           <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 hover:bg-slate-700/80 transition-colors">
-            <h4 className="text-xl font-bold text-rose-200 mb-3 flex items-center">
+            <h4 className="font-bold text-rose-200 mb-3 flex items-center" style={{fontSize:"23px"}}>
               <span className="bg-rose-500/20 p-2 rounded-lg mr-3 text-rose-400">1</span>
               我們在逃避深層的痛苦
             </h4>
-            <p className="text-slate-300 text-base leading-relaxed">
+            <p className="text-slate-300 leading-relaxed" style={{fontSize:"19px"}}>
               暴食、購物狂、工作狂或成癮，通常都只是一個「症狀」。真正的病因是我們內心有未處理的悲傷、孤單、恐懼或創傷。我們用這些外在的行為來麻醉自己，因為面對真實的痛苦太可怕了。
             </p>
           </div>
           <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 hover:bg-slate-700/80 transition-colors">
-            <h4 className="text-xl font-bold text-rose-200 mb-3 flex items-center">
+            <h4 className="font-bold text-rose-200 mb-3 flex items-center" style={{fontSize:"23px"}}>
               <span className="bg-rose-500/20 p-2 rounded-lg mr-3 text-rose-400">2</span>
               我們缺乏安全的關係網絡
             </h4>
-            <p className="text-slate-300 text-base leading-relaxed">
+            <p className="text-slate-300 leading-relaxed" style={{fontSize:"19px"}}>
               意志力是會耗盡的。當我們試圖靠自己單打獨鬥來戒除壞習慣時，通常會失敗。我們需要「恩典與真理」的群體。恩典讓我們在失敗時不被定罪，真理讓我們面對現實並負起責任。
             </p>
           </div>
           <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 hover:bg-slate-700/80 transition-colors">
-            <h4 className="text-xl font-bold text-rose-200 mb-3 flex items-center">
+            <h4 className="font-bold text-rose-200 mb-3 flex items-center" style={{fontSize:"23px"}}>
               <span className="bg-rose-500/20 p-2 rounded-lg mr-3 text-rose-400">3</span>
               錯誤的內在父母 (Harsh Inner Critic)
             </h4>
-            <p className="text-slate-300 text-base leading-relaxed">
+            <p className="text-slate-300 leading-relaxed" style={{fontSize:"19px"}}>
               許多人內心有一個嚴厲、定罪的聲音（通常來自童年經驗）。當我們做錯事時，這個聲音會狠狠地羞辱我們。為了逃避這種羞辱感，我們反而會更深地陷入成癮行為中尋求安慰，形成惡性循環。
             </p>
           </div>
@@ -168,36 +168,36 @@ export default function SectionCh13() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第13章總結：抗拒界線者
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第13章總結：抗拒界線者
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章深入分析那些抗拒你設立界線的人——他們為什麼抗拒、他們用什麼策略、以及你如何在面對抗拒時仍然堅守界線。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章深入分析那些抗拒你設立界線的人——他們為什麼抗拒、他們用什麼策略、以及你如何在面對抗拒時仍然堅守界線。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 抗拒的根源</div>
-            <p className="text-slate-600 text-sm leading-relaxed">當你開始設立界線，有些人會強烈反對。作者指出，這些抗拒往往揭示了一個不舒服的真相：這個人習慣了你沒有界線的狀態，而你的改變威脅到了他們習以為常的利益。他們的憤怒或傷心，本質上是對「控制失效」的反應，而不是對你的愛的證明。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 抗拒的根源</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>當你開始設立界線，有些人會強烈反對。作者指出，這些抗拒往往揭示了一個不舒服的真相：這個人習慣了你沒有界線的狀態，而你的改變威脅到了他們習以為常的利益。他們的憤怒或傷心，本質上是對「控制失效」的反應，而不是對你的愛的證明。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 六種常見的抗拒策略</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者識別出六種常見的界線抗拒策略：憤怒（用情緒爆發來讓你退縮）、罪惡感訊息（「你怎麼忍心這樣對我」）、威脅後果（切斷資源、威脅離開）、眼淚（用情緒軟化你的立場）、哄騙（暫時承諾改變，但從不真正落實）、以受害者自居（把自己塑造成你「傷害」的無辜者）。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 六種常見的抗拒策略</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者識別出六種常見的界線抗拒策略：憤怒（用情緒爆發來讓你退縮）、罪惡感訊息（「你怎麼忍心這樣對我」）、威脅後果（切斷資源、威脅離開）、眼淚（用情緒軟化你的立場）、哄騙（暫時承諾改變，但從不真正落實）、以受害者自居（把自己塑造成你「傷害」的無辜者）。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 面對抗拒的核心原則</div>
-            <p className="text-slate-600 text-sm leading-relaxed">面對抗拒，最重要的一個原則是：「對方的情緒反應，是他的責任，不是你的。」你的界線讓對方感到不舒服，這不代表你做錯了；這代表界線正在發揮它的作用。若你每次因為對方的憤怒就收回界線，你就在訓練對方「憤怒有效」，而下次他會更快、更強烈地使用這個工具。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 面對抗拒的核心原則</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>面對抗拒，最重要的一個原則是：「對方的情緒反應，是他的責任，不是你的。」你的界線讓對方感到不舒服，這不代表你做錯了；這代表界線正在發揮它的作用。若你每次因為對方的憤怒就收回界線，你就在訓練對方「憤怒有效」，而下次他會更快、更強烈地使用這個工具。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">設立界線需要準備好面對抗拒，這是成長的代價。但作者也帶來盼望：並非所有人都會永久抗拒。有些關係在你設立界線後，會經歷陣痛但最終走向更健康的型態。真正愛你的人，在初期的不適後，往往會尊重你的界線，甚至因此更尊重你。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>設立界線需要準備好面對抗拒，這是成長的代價。但作者也帶來盼望：並非所有人都會永久抗拒。有些關係在你設立界線後，會經歷陣痛但最終走向更健康的型態。真正愛你的人，在初期的不適後，往往會尊重你的界線，甚至因此更尊重你。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-teal-300 mb-6 flex items-center">
+        <h3 className="font-bold text-teal-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-teal-200 mb-4 flex items-center">
+            <h4 className="font-bold text-teal-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-teal-400" />
               反思問題
             </h4>
@@ -229,7 +229,7 @@ export default function SectionCh13() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>

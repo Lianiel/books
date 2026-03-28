@@ -155,13 +155,13 @@ export default function SectionCh7() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 7
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             界線與你的家庭
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             許多成年人每次回原生家庭就會陷入憂鬱與沮喪，這通常是因為他們還沒有獲得完全獨立的情感許可。聖經說「人要離開父母，與妻子連合」，這不僅是地理上的離開，更是情感、經濟與責任上的完全獨立。
           </p>
         </div>
@@ -169,20 +169,20 @@ export default function SectionCh7() {
 
       {/* Core Concept: Leave and Cleave */}
       <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Scissors className="w-7 h-7 mr-3 text-indigo-500" />
           核心觀念：離開與聯合 (Leave and Cleave) (P184)
         </h3>
-        <p className="text-slate-600 mb-6 text-lg">
+        <p className="text-slate-600 mb-6" style={{fontSize:"21px"}}>
           在聖經的家庭觀中，成年是一個「轉換效忠對象」的過程。你必須先「離開」，才能真正地「聯合」。
         </p>
         <div className="flex flex-col md:flex-row gap-6 items-stretch">
           <div className="flex-1 bg-indigo-50 p-6 rounded-2xl border border-indigo-100 flex flex-col">
-            <h4 className="font-bold text-indigo-800 mb-3 text-xl border-b border-indigo-200 pb-2">離開 (Leave)</h4>
+            <h4 className="font-bold text-indigo-800 mb-3 border-b border-indigo-200 pb-2" style={{fontSize:"23px"}}>離開 (Leave)</h4>
             <p className="text-slate-700 leading-relaxed mb-4 flex-grow">
               意味著切斷對原生家庭的依賴（包含經濟、情感、決策）。你不再是個「孩子」，而是一個獨立的成年人。父母的意見從「必須服從的命令」變成了「可以參考的建議」。
             </p>
-            <div className="bg-white/60 p-3 rounded-lg text-sm text-indigo-900 font-medium">
+            <div className="bg-white/60 p-3 rounded-lg text-indigo-900 font-medium" style={{fontSize:"17px"}}>
               標誌：你不再因為父母不認同你的決定而感到強烈的罪惡感。
             </div>
           </div>
@@ -190,11 +190,11 @@ export default function SectionCh7() {
             <ArrowRight className="w-8 h-8 text-indigo-300" />
           </div>
           <div className="flex-1 bg-blue-50 p-6 rounded-2xl border border-blue-100 flex flex-col">
-            <h4 className="font-bold text-blue-800 mb-3 text-xl border-b border-blue-200 pb-2">聯合 (Cleave)</h4>
+            <h4 className="font-bold text-blue-800 mb-3 border-b border-blue-200 pb-2" style={{fontSize:"23px"}}>聯合 (Cleave)</h4>
             <p className="text-slate-700 leading-relaxed mb-4 flex-grow">
               意味著建立新的首要忠誠對象（配偶、自己的新家庭、或神呼召的社群）。當原生家庭與新家庭發生衝突時，你的首要責任是保護並優先考慮新家庭的需要。
             </p>
-            <div className="bg-white/60 p-3 rounded-lg text-sm text-blue-900 font-medium">
+            <div className="bg-white/60 p-3 rounded-lg text-blue-900 font-medium" style={{fontSize:"17px"}}>
               標誌：在配偶與父母的衝突中，你堅定地與配偶站在同一陣線。
             </div>
           </div>
@@ -203,7 +203,7 @@ export default function SectionCh7() {
 
       {/* Symptoms Grid */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <AlertTriangle className="w-7 h-7 mr-3 text-indigo-500" />
           原生家庭界線不清的 6 大徵兆 (P185-193)
         </h3>
@@ -222,22 +222,22 @@ export default function SectionCh7() {
                   <div className="bg-indigo-100 p-3 rounded-xl">
                     {item.icon}
                   </div>
-                  <h4 className="font-bold text-xl">{item.title}</h4>
+                  <h4 className="font-bold" style={{fontSize:"23px"}}>{item.title}</h4>
                 </div>
-                <span className="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200">{item.page}</span>
+                <span className="font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>{item.page}</span>
               </div>
               
               <div className="space-y-4 flex-grow">
-                <p className="text-slate-700 leading-relaxed text-base">
+                <p className="text-slate-700 leading-relaxed" style={{fontSize:"19px"}}>
                   {item.desc}
                 </p>
                 <div className="bg-white p-4 rounded-xl border border-slate-100">
-                  <strong className="text-slate-800 text-sm block mb-1">📝 具體情境：</strong>
-                  <p className="text-sm text-slate-600 leading-relaxed">{item.example}</p>
+                  <strong className="text-slate-800 block mb-1" style={{fontSize:"17px"}}>📝 具體情境：</strong>
+                  <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{item.example}</p>
                 </div>
                 <div className="bg-indigo-50/50 p-4 rounded-xl border border-indigo-100">
-                  <strong className="text-indigo-800 text-sm block mb-1">💡 深度洞察：</strong>
-                  <p className="text-sm text-indigo-900/80 leading-relaxed">{item.insight}</p>
+                  <strong className="text-indigo-800 block mb-1" style={{fontSize:"17px"}}>💡 深度洞察：</strong>
+                  <p className="text-indigo-900/80 leading-relaxed" style={{fontSize:"17px"}}>{item.insight}</p>
                 </div>
               </div>
 
@@ -298,7 +298,7 @@ export default function SectionCh7() {
                               ) : (
                                 <XCircle className="w-5 h-5 mr-2 shrink-0 mt-0.5" />
                               )}
-                              <p className="text-sm font-medium">
+                              <p className="font-medium" style={{fontSize:"17px"}}>
                                 {quizResults[idx] ? item.quiz.feedback : '再想一想！請重新閱讀上方的情境與洞察。'}
                               </p>
                             </motion.div>
@@ -314,10 +314,10 @@ export default function SectionCh7() {
                           <ul className="space-y-3">
                             {item.actionableSteps.map((step, stepIdx) => (
                               <li key={stepIdx} className="flex items-start">
-                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-200 text-emerald-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">
+                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-200 text-emerald-700 flex items-center justify-center font-bold mr-3 mt-0.5" style={{fontSize:"17px"}}>
                                   {stepIdx + 1}
                                 </span>
-                                <span className="text-slate-700 text-sm leading-relaxed">{step}</span>
+                                <span className="text-slate-700 leading-relaxed" style={{fontSize:"17px"}}>{step}</span>
                               </li>
                             ))}
                           </ul>
@@ -334,7 +334,7 @@ export default function SectionCh7() {
 
       {/* Solutions */}
       <div className="bg-slate-800 rounded-3xl p-8 md:p-10 border border-slate-700 shadow-sm text-white">
-        <h3 className="text-2xl font-bold text-indigo-300 mb-8 flex items-center">
+        <h3 className="font-bold text-indigo-300 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <ShieldCheck className="w-7 h-7 mr-3" />
           解決家庭界線問題的 5 個步驟 (P197-199)
         </h3>
@@ -348,15 +348,15 @@ export default function SectionCh7() {
               viewport={{ once: true }}
               className="flex items-start space-x-5 bg-slate-700/40 p-6 rounded-2xl border border-slate-600 hover:bg-slate-700/60 transition-colors"
             >
-              <div className="flex-shrink-0 w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center font-bold text-xl shadow-inner text-white">
+              <div className="flex-shrink-0 w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center font-bold shadow-inner text-white" style={{fontSize:"23px"}}>
                 {item.step}
               </div>
               <div className="flex-grow">
                 <div className="flex items-center justify-between mb-2">
-                  <h4 className="text-xl font-bold text-indigo-200">{item.title}</h4>
-                  <span className="text-xs font-medium text-slate-400 bg-slate-800 px-2 py-1 rounded-md border border-slate-600">{item.page}</span>
+                  <h4 className="font-bold text-indigo-200" style={{fontSize:"23px"}}>{item.title}</h4>
+                  <span className="font-medium text-slate-400 bg-slate-800 px-2 py-1 rounded-md border border-slate-600" style={{fontSize:"15px"}}>{item.page}</span>
                 </div>
-                <p className="text-slate-300 leading-relaxed text-base">
+                <p className="text-slate-300 leading-relaxed" style={{fontSize:"19px"}}>
                   {item.desc}
                 </p>
               </div>
@@ -368,36 +368,36 @@ export default function SectionCh7() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第7章總結：界線與你的家庭
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第7章總結：界線與你的家庭
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章聚焦於最具挑戰性的界線戰場——原生家庭。作者指出，許多成年人雖然已經在身體上離開了家，卻從未在情感上真正獨立。這種「情感上的未離家」，會嚴重影響他們的婚姻、親子關係和靈性成長。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章聚焦於最具挑戰性的界線戰場——原生家庭。作者指出，許多成年人雖然已經在身體上離開了家，卻從未在情感上真正獨立。這種「情感上的未離家」，會嚴重影響他們的婚姻、親子關係和靈性成長。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 家庭界線失衡的六大症狀</div>
-            <p className="text-slate-600 text-sm leading-relaxed">本章列出六種常見的家庭界線問題：把原生家庭的互動模式移植到現在的家庭、配偶長期感到被排在父母之後、「長不大症候群」（成年後仍依賴父母的經濟支持）、三角關係溝通（不直接溝通，而是透過第三者傳話）、子女被迫照顧不成熟的父母（角色顛倒）、被不負責任的手足勒索情感。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 家庭界線失衡的六大症狀</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>本章列出六種常見的家庭界線問題：把原生家庭的互動模式移植到現在的家庭、配偶長期感到被排在父母之後、「長不大症候群」（成年後仍依賴父母的經濟支持）、三角關係溝通（不直接溝通，而是透過第三者傳話）、子女被迫照顧不成熟的父母（角色顛倒）、被不負責任的手足勒索情感。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 情感上的離家：最難的功課</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者強調，真正的「成年」不只是年齡上的成熟，而是情感上的獨立——你愛你的父母，但你不再需要他們的認可才能感到安全；你尊重他們，但你的生命方向由神和你自己決定，而不是由他們的期望決定。這個離家的過程，往往需要刻意的努力和支持。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 情感上的離家：最難的功課</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者強調，真正的「成年」不只是年齡上的成熟，而是情感上的獨立——你愛你的父母，但你不再需要他們的認可才能感到安全；你尊重他們，但你的生命方向由神和你自己決定，而不是由他們的期望決定。這個離家的過程，往往需要刻意的努力和支持。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 已婚者的特別挑戰</div>
-            <p className="text-slate-600 text-sm leading-relaxed">聖經說：「人要離開父母，與妻子連合」（創二24）。這個「離開」不只是地理上的，更是情感和忠誠上的優先次序的重新排列。對已婚者而言，配偶的需要應該優先於父母的期望（在合理的範圍內）。若你的父母仍然能用罪惡感或憤怒來控制你的婚姻決定，那是一個需要正視的界線問題。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 已婚者的特別挑戰</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>聖經說：「人要離開父母，與妻子連合」（創二24）。這個「離開」不只是地理上的，更是情感和忠誠上的優先次序的重新排列。對已婚者而言，配偶的需要應該優先於父母的期望（在合理的範圍內）。若你的父母仍然能用罪惡感或憤怒來控制你的婚姻決定，那是一個需要正視的界線問題。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">對家人設立界線，不是要切斷關係，而是要讓關係建立在更真實、更健康的基礎上。有時候，真正的愛需要你說出一些讓對方不舒服的真話，或是拒絕繼續扮演一個讓雙方都不健康的角色。設立界線，可能是你給家人最深的愛的一種方式。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>對家人設立界線，不是要切斷關係，而是要讓關係建立在更真實、更健康的基礎上。有時候，真正的愛需要你說出一些讓對方不舒服的真話，或是拒絕繼續扮演一個讓雙方都不健康的角色。設立界線，可能是你給家人最深的愛的一種方式。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-orange-300 mb-6 flex items-center">
+        <h3 className="font-bold text-orange-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-orange-200 mb-4 flex items-center">
+            <h4 className="font-bold text-orange-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-orange-400" />
               反思問題
             </h4>
@@ -429,7 +429,7 @@ export default function SectionCh7() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>

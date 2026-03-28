@@ -20,13 +20,13 @@ export default function SectionHome() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-fuchsia-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-rose-100 text-rose-700 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 1
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             界線混亂的一天
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             雪莉是一個典型的「好基督徒」，努力滿足所有人的需求。然而，她的生活卻像一輛失速列車。她無法對周遭的人說「不」，導致自己深陷靈性與情緒的痛苦中。
           </p>
         </div>
@@ -34,7 +34,7 @@ export default function SectionHome() {
 
       {/* Timeline Section */}
       <div className="bg-white rounded-3xl shadow-sm p-6 md:p-10 border border-slate-200">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <Clock className="w-7 h-7 mr-3 text-rose-500" />
           雪莉的日常：失去掌控的 18 小時
         </h3>
@@ -55,14 +55,14 @@ export default function SectionHome() {
               <div className="bg-gradient-to-r from-white to-rose-50/30 rounded-2xl p-5 md:p-6 border border-slate-100 shadow-sm hover:shadow-md transition-all">
                 <div className="flex flex-wrap items-center justify-between mb-3 gap-2">
                   <div className="flex items-center space-x-3">
-                    <span className="px-3 py-1 bg-rose-100 text-rose-700 rounded-lg text-sm font-bold font-mono">
+                    <span className="px-3 py-1 bg-rose-100 text-rose-700 rounded-lg font-bold font-mono" style={{fontSize:"17px"}}>
                       {item.time}
                     </span>
-                    <h4 className="text-lg font-bold text-slate-800">{item.title}</h4>
+                    <h4 className="font-bold text-slate-800" style={{fontSize:"21px"}}>{item.title}</h4>
                   </div>
-                  <span className="text-xs font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded-md">{item.page}</span>
+                  <span className="font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded-md" style={{fontSize:"15px"}}>{item.page}</span>
                 </div>
-                <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                <p className="text-slate-600 leading-relaxed md:text-base" style={{fontSize:"17px"}}>
                   {item.desc}
                 </p>
               </div>
@@ -74,14 +74,14 @@ export default function SectionHome() {
       {/* Diagnosis Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-gradient-to-br from-red-50 to-rose-50 rounded-3xl p-8 border border-red-100 shadow-sm">
-          <h3 className="text-xl font-bold text-red-800 mb-4 flex items-center">
+          <h3 className="font-bold text-red-800 mb-4 flex items-center" style={{fontSize:"23px"}}>
             <AlertTriangle className="w-6 h-6 mr-2 text-red-600" />
             界線缺失的嚴重警訊 (P33-36)
           </h3>
           <p className="text-red-700 leading-relaxed mb-4">
             當我們失去界線時，最明顯的信號就是<strong>「怨恨」(Resentment)</strong>。雪莉對每一個她所愛、所服事的人感到憤怒，因為她覺得自己是被迫的。
           </p>
-          <ul className="space-y-3 text-sm text-red-800">
+          <ul className="space-y-3 text-red-800" style={{fontSize:"17px"}}>
             <li className="flex items-start">
               <span className="mr-2 mt-0.5 text-red-500">❌</span>
               <span><strong>徒勞無功的努力：</strong>想要更加努力，是無法改善情況的。</span>
@@ -98,14 +98,14 @@ export default function SectionHome() {
         </div>
 
         <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 border border-slate-700 shadow-sm text-white">
-          <h3 className="text-xl font-bold text-rose-300 mb-4 flex items-center">
-            <span className="text-2xl mr-2">🔍</span> 核心問題出在哪？ (P37-39)
+          <h3 className="font-bold text-rose-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
+            <span className="mr-2" style={{fontSize:"27px"}}>🔍</span> 核心問題出在哪？ (P37-39)
           </h3>
-          <p className="text-slate-300 leading-relaxed mb-6 text-lg">
+          <p className="text-slate-300 leading-relaxed mb-6" style={{fontSize:"21px"}}>
             雪莉的痛苦源於<strong className="text-white border-b-2 border-rose-400 pb-0.5">「無法掌控自己的人生」</strong>。她無法分辨「什麼是自己的責任，什麼不是」。
           </p>
           <div className="bg-slate-800/50 p-5 rounded-2xl border border-slate-600">
-            <p className="text-sm text-slate-300 italic leading-relaxed">
+            <p className="text-slate-300 italic leading-relaxed" style={{fontSize:"17px"}}>
               「因為擁有上帝的形像，你我被造原就是為了承擔某些任務和責任。而所謂的負責或是掌控，有一部分就是要知道什麼是我們的工作，什麼不是。老是把不屬於自己的責任扛下來，最終只會累死自己。」
             </p>
           </div>
@@ -115,36 +115,36 @@ export default function SectionHome() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第1章總結：界線混亂的一天
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第1章總結：界線混亂的一天
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章透過雪莉這個角色，帶領讀者看見一個「界線完全缺失」的生命長什麼樣子。作者用一天 18 小時的時間軸，讓我們在每一個場景中都能清楚辨認出「沒有界線」的具體模樣。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章透過雪莉這個角色，帶領讀者看見一個「界線完全缺失」的生命長什麼樣子。作者用一天 18 小時的時間軸，讓我們在每一個場景中都能清楚辨認出「沒有界線」的具體模樣。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 故事的核心</div>
-            <p className="text-slate-600 text-sm leading-relaxed">雪莉是一個虔誠的基督徒、盡責的母親、勤勉的職員——然而她的生活卻像一輛失控的列車。從清晨被鬧鐘驚醒的那一刻起，她就不斷地回應他人的要求：母親的情緒勒索、丈夫的抱怨、上司的不合理指派、朋友的單向傾吐、教會的緊急徵召……每一次，她都說了「好」，每一次，她內心都感到憤怒、委屈和疲憊，卻說不出口。深夜，她躺在床上，充滿了孤獨和空洞。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 故事的核心</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>雪莉是一個虔誠的基督徒、盡責的母親、勤勉的職員——然而她的生活卻像一輛失控的列車。從清晨被鬧鐘驚醒的那一刻起，她就不斷地回應他人的要求：母親的情緒勒索、丈夫的抱怨、上司的不合理指派、朋友的單向傾吐、教會的緊急徵召……每一次，她都說了「好」，每一次，她內心都感到憤怒、委屈和疲憊，卻說不出口。深夜，她躺在床上，充滿了孤獨和空洞。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 問題的根源</div>
-            <p className="text-slate-600 text-sm leading-relaxed">雪莉的問題不是「太忙」，而是她無法分辨「我的責任」和「別人的責任」。她把別人的問題、情緒、後果，全部扛在自己身上。更深的根源是：她相信「如果我說不，我就是一個壞基督徒、壞妻子、壞員工」。這種罪惡感和對愛的渴望，成了控制她行為的隱形繩索。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 問題的根源</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>雪莉的問題不是「太忙」，而是她無法分辨「我的責任」和「別人的責任」。她把別人的問題、情緒、後果，全部扛在自己身上。更深的根源是：她相信「如果我說不，我就是一個壞基督徒、壞妻子、壞員工」。這種罪惡感和對愛的渴望，成了控制她行為的隱形繩索。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 界線缺失的代價</div>
-            <p className="text-slate-600 text-sm leading-relaxed">沒有界線的生命會付出沉重的代價：身體的疲憊與健康問題、情感的麻木與憤怒積累、關係的失衡與怨恨、靈性的枯竭與對神的疏離。作者指出，雪莉的問題在許多虔誠的基督徒身上普遍存在，因為教會文化往往強調「捨己」和「服事」，卻沒有教導如何在健康的自我之上服事他人。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 界線缺失的代價</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>沒有界線的生命會付出沉重的代價：身體的疲憊與健康問題、情感的麻木與憤怒積累、關係的失衡與怨恨、靈性的枯竭與對神的疏離。作者指出，雪莉的問題在許多虔誠的基督徒身上普遍存在，因為教會文化往往強調「捨己」和「服事」，卻沒有教導如何在健康的自我之上服事他人。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">設立界線不是自私，而是對神所給的生命負責。你是神的財產的管理人，若你把自己耗盡，你就無法有效地愛任何人。真正的愛必須出於自由和充盛，而不是出於恐懼和匱乏。雪莉的故事是一面鏡子，邀請每位讀者誠實地問：「我在哪裡像雪莉一樣？」</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>設立界線不是自私，而是對神所給的生命負責。你是神的財產的管理人，若你把自己耗盡，你就無法有效地愛任何人。真正的愛必須出於自由和充盛，而不是出於恐懼和匱乏。雪莉的故事是一面鏡子，邀請每位讀者誠實地問：「我在哪裡像雪莉一樣？」</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-rose-300 mb-6 flex items-center">
+        <h3 className="font-bold text-rose-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-rose-200 mb-4 flex items-center">
+            <h4 className="font-bold text-rose-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-rose-400" />
               反思問題
             </h4>
@@ -176,7 +176,7 @@ export default function SectionHome() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>

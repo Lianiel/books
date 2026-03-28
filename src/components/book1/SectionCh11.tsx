@@ -67,13 +67,13 @@ export default function SectionCh11() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-100 text-amber-800 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 11
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             界線與工作
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             工作是上帝賦予我們的使命，但如果沒有適當的界線，工作很容易成為壓垮我們的重擔。在職場中，我們經常因為害怕失去工作、渴望被肯定，或是錯誤的責任感，而任由界線被踐踏。我們必須學會在職場中保護自己，同時也對自己的真實職責負責。
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function SectionCh11() {
 
       {/* Work Problems Grid */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <Briefcase className="w-7 h-7 mr-3 text-amber-500" />
           職場常見的 6 大界線問題 (P280-294)
         </h3>
@@ -100,26 +100,26 @@ export default function SectionCh11() {
                   <div className="bg-amber-100 p-3 rounded-xl text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-colors">
                     {problem.icon}
                   </div>
-                  <h4 className="text-xl font-bold text-slate-800">問題 {problem.id}</h4>
+                  <h4 className="font-bold text-slate-800" style={{fontSize:"23px"}}>問題 {problem.id}</h4>
                 </div>
-                <span className="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200">{problem.page}</span>
+                <span className="font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>{problem.page}</span>
               </div>
               
               <div className="space-y-4 flex-grow">
-                <h5 className="font-bold text-amber-800 text-xl border-b border-amber-100 pb-2">{problem.title}</h5>
-                <p className="text-slate-700 leading-relaxed text-base">
+                <h5 className="font-bold text-amber-800 border-b border-amber-100 pb-2" style={{fontSize:"23px"}}>{problem.title}</h5>
+                <p className="text-slate-700 leading-relaxed" style={{fontSize:"19px"}}>
                   {problem.desc}
                 </p>
                 <div className="bg-white p-4 rounded-xl border border-slate-100">
-                  <strong className="text-slate-800 text-sm block mb-2">🎬 具體情境：</strong>
-                  <p className="text-sm text-slate-600 leading-relaxed">{problem.scenario}</p>
+                  <strong className="text-slate-800 block mb-2" style={{fontSize:"17px"}}>🎬 具體情境：</strong>
+                  <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{problem.scenario}</p>
                 </div>
                 <div className="bg-amber-50/80 p-4 rounded-xl border border-amber-200 mt-auto">
-                  <strong className="text-amber-800 text-sm flex items-center mb-2">
+                  <strong className="text-amber-800 flex items-center mb-2" style={{fontSize:"17px"}}>
                     <Lightbulb className="w-4 h-4 mr-1 text-amber-600" />
                     解決突破點：
                   </strong>
-                  <p className="text-sm text-amber-900/80 leading-relaxed">{problem.breakthrough}</p>
+                  <p className="text-amber-900/80 leading-relaxed" style={{fontSize:"17px"}}>{problem.breakthrough}</p>
                 </div>
               </div>
             </motion.div>
@@ -129,36 +129,36 @@ export default function SectionCh11() {
 
       {/* Solutions */}
       <div className="bg-slate-800 rounded-3xl p-8 md:p-10 border border-slate-700 shadow-sm text-white">
-        <h3 className="text-2xl font-bold text-amber-300 mb-8 flex items-center">
+        <h3 className="font-bold text-amber-300 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <ShieldCheck className="w-7 h-7 mr-3" />
           建立職場界線的關鍵原則 (P295-296)
         </h3>
         
         <div className="space-y-6">
           <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 hover:bg-slate-700/80 transition-colors">
-            <h4 className="text-xl font-bold text-amber-200 mb-3 flex items-center">
+            <h4 className="font-bold text-amber-200 mb-3 flex items-center" style={{fontSize:"23px"}}>
               <span className="bg-amber-500/20 p-2 rounded-lg mr-3 text-amber-400">1</span>
               釐清你的核心工作職責
             </h4>
-            <p className="text-slate-300 text-base leading-relaxed">
+            <p className="text-slate-300 leading-relaxed" style={{fontSize:"19px"}}>
               清楚知道你的工作範圍是什麼，什麼不是。拿出你的職位說明書，確認你的核心產出是什麼。當被要求做超出範圍的事時，勇敢地提出討論，而不是默默吞下。
             </p>
           </div>
           <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 hover:bg-slate-700/80 transition-colors">
-            <h4 className="text-xl font-bold text-amber-200 mb-3 flex items-center">
+            <h4 className="font-bold text-amber-200 mb-3 flex items-center" style={{fontSize:"23px"}}>
               <span className="bg-amber-500/20 p-2 rounded-lg mr-3 text-amber-400">2</span>
               學會「協商式」的拒絕
             </h4>
-            <p className="text-slate-300 text-base leading-relaxed">
+            <p className="text-slate-300 leading-relaxed" style={{fontSize:"19px"}}>
               在職場上，直接說「不」有時會顯得不合作。更好的方式是「協商」。讓老闆知道你的產能極限，並把「優先順序的決定權」交還給老闆。這展現了你的專業與責任感。
             </p>
           </div>
           <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 hover:bg-slate-700/80 transition-colors">
-            <h4 className="text-xl font-bold text-amber-200 mb-3 flex items-center">
+            <h4 className="font-bold text-amber-200 mb-3 flex items-center" style={{fontSize:"23px"}}>
               <span className="bg-amber-500/20 p-2 rounded-lg mr-3 text-amber-400">3</span>
               把壓力留在辦公室
             </h4>
-            <p className="text-slate-300 text-base leading-relaxed">
+            <p className="text-slate-300 leading-relaxed" style={{fontSize:"19px"}}>
               下班後，刻意切斷與工作的連結。不要把工作的情緒帶回家，讓家庭成為你恢復能量的避風港。如果工作已經嚴重侵蝕你的身心健康，且溝通無效，你可能需要考慮換工作。
             </p>
           </div>
@@ -168,36 +168,36 @@ export default function SectionCh11() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第11章總結：界線與工作
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第11章總結：界線與工作
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章聚焦於職場界線，探討為何工作往往成為界線最難設立的領域之一，並提供具體的策略幫助讀者在職場中建立健康的界線。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章聚焦於職場界線，探討為何工作往往成為界線最難設立的領域之一，並提供具體的策略幫助讀者在職場中建立健康的界線。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 工作界線的三大困難</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者指出三個讓職場界線特別困難的因素：第一，我們往往把工作表現和自我價值混為一談，因此「拒絕工作要求」感覺像是「拒絕自己的價值」；第二，職場中有真實的權力關係，對上司說「不」需要極大的勇氣；第三，「盡忠職守」的價值觀往往被誤解為「沒有限制地給予」。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 工作界線的三大困難</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者指出三個讓職場界線特別困難的因素：第一，我們往往把工作表現和自我價值混為一談，因此「拒絕工作要求」感覺像是「拒絕自己的價值」；第二，職場中有真實的權力關係，對上司說「不」需要極大的勇氣；第三，「盡忠職守」的價值觀往往被誤解為「沒有限制地給予」。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 職場界線的常見失衡</div>
-            <p className="text-slate-600 text-sm leading-relaxed">本章描述幾種常見的職場界線失衡：替同事承擔責任（為別人的不負責任收拾殘局）、無法對不合理加班說「不」、把別人的緊急事件當作自己的優先事項、無法向上司反映不合理的要求。這些模式往往讓工作者在不知不覺中消耗殆盡，卻還以為這是「職業道德」。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 職場界線的常見失衡</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>本章描述幾種常見的職場界線失衡：替同事承擔責任（為別人的不負責任收拾殘局）、無法對不合理加班說「不」、把別人的緊急事件當作自己的優先事項、無法向上司反映不合理的要求。這些模式往往讓工作者在不知不覺中消耗殆盡，卻還以為這是「職業道德」。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 科技時代的特殊挑戰</div>
-            <p className="text-slate-600 text-sm leading-relaxed">本章也特別探討現代科技如何模糊了工作與生活的界線——手機讓我們「隨時在線」，讓下班後的休息成為一種奢侈。作者強調，真正的休息不是放縱，而是對工作說「不」，讓自己有時間恢復和充電，這本身就是一種負責任的行為。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 科技時代的特殊挑戰</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>本章也特別探討現代科技如何模糊了工作與生活的界線——手機讓我們「隨時在線」，讓下班後的休息成為一種奢侈。作者強調，真正的休息不是放縱，而是對工作說「不」，讓自己有時間恢復和充電，這本身就是一種負責任的行為。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">在工作中說「不」不只是保護自己，也是保護你的工作品質。一個長期超載、精疲力盡的工作者，無法持續提供高品質的工作。設立工作界線，長遠來說對雇主、同事和你自己都有益處。清楚地溝通你的限制，比默默承擔然後崩潰，更是一種專業的表現。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>在工作中說「不」不只是保護自己，也是保護你的工作品質。一個長期超載、精疲力盡的工作者，無法持續提供高品質的工作。設立工作界線，長遠來說對雇主、同事和你自己都有益處。清楚地溝通你的限制，比默默承擔然後崩潰，更是一種專業的表現。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-blue-300 mb-6 flex items-center">
+        <h3 className="font-bold text-blue-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-blue-200 mb-4 flex items-center">
+            <h4 className="font-bold text-blue-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-blue-400" />
               反思問題
             </h4>
@@ -229,7 +229,7 @@ export default function SectionCh11() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>

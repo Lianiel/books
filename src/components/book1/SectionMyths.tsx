@@ -181,13 +181,13 @@ export default function SectionMyths() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-fuchsia-100 text-fuchsia-700 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-fuchsia-100 text-fuchsia-700 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 6
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             常見的界線迷思
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             「迷思」聽起來很真實，讓許多基督徒深信不疑，甚至因此陷入無止境的服事與罪疚感中。讓我們用聖經的真理來打破這 8 個常見的界線迷思。
           </p>
         </div>
@@ -208,9 +208,9 @@ export default function SectionMyths() {
                 <div className="bg-fuchsia-100 p-3 rounded-2xl text-fuchsia-600">
                   {myth.icon}
                 </div>
-                <h3 className="text-xl font-bold text-slate-800">{myth.title}</h3>
+                <h3 className="font-bold text-slate-800" style={{fontSize:"23px"}}>{myth.title}</h3>
               </div>
-              <span className="text-xs font-medium text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">{myth.page}</span>
+              <span className="font-medium text-slate-400 bg-slate-50 px-2 py-1 rounded-md border border-slate-100" style={{fontSize:"15px"}}>{myth.page}</span>
             </div>
 
             <div className="flex-grow space-y-5">
@@ -219,13 +219,13 @@ export default function SectionMyths() {
                   <CheckCircle className="w-5 h-5 mr-2 text-fuchsia-500" />
                   真相：{myth.truth}
                 </h4>
-                <p className="text-sm text-slate-700 leading-relaxed">
+                <p className="text-slate-700 leading-relaxed" style={{fontSize:"17px"}}>
                   {myth.desc}
                 </p>
               </div>
 
               <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
-                <p className="text-sm text-slate-600 italic leading-relaxed">
+                <p className="text-slate-600 italic leading-relaxed" style={{fontSize:"17px"}}>
                   「{myth.verse}」
                 </p>
               </div>
@@ -253,7 +253,7 @@ export default function SectionMyths() {
                     className="overflow-hidden"
                   >
                     <div className="p-4 mt-2 bg-white border border-fuchsia-100 rounded-xl shadow-inner">
-                      <p className="font-medium text-slate-800 mb-4 text-sm">{myth.quiz.question}</p>
+                      <p className="font-medium text-slate-800 mb-4" style={{fontSize:"17px"}}>{myth.quiz.question}</p>
                       <div className="space-y-2">
                         {myth.quiz.options.map((option, idx) => (
                           <button
@@ -295,12 +295,12 @@ export default function SectionMyths() {
             </div>
 
             <div className="mt-5 bg-gradient-to-r from-pink-50 to-rose-50 p-4 rounded-2xl border border-pink-100">
-              <h4 className="font-bold text-pink-800 mb-3 text-sm flex items-center">
+              <h4 className="font-bold text-pink-800 mb-3 flex items-center" style={{fontSize:"17px"}}>
                 <span className="mr-2">🎯</span> 具體行動方案 (Actionable Steps)
               </h4>
               <ul className="space-y-2">
                 {myth.actionableSteps.map((step, idx) => (
-                  <li key={idx} className="flex items-start text-sm text-pink-700 leading-relaxed">
+                  <li key={idx} className="flex items-start text-pink-700 leading-relaxed" style={{fontSize:"17px"}}>
                     <span className="text-pink-500 mr-2 font-bold">{idx + 1}.</span>
                     {step}
                   </li>
@@ -314,36 +314,36 @@ export default function SectionMyths() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第6章總結：界線的迷思
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第6章總結：界線的迷思
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章逐一拆解八個常見的界線迷思。這些迷思往往根植於文化、宗教傳統或個人傷害，讓許多人在理智上知道界線是好的，卻在情感和行動上仍然無法踏出那一步。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章逐一拆解八個常見的界線迷思。這些迷思往往根植於文化、宗教傳統或個人傷害，讓許多人在理智上知道界線是好的，卻在情感和行動上仍然無法踏出那一步。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 迷思一到三</div>
-            <p className="text-slate-600 text-sm leading-relaxed">「設立界線是自私的」——真正的自私是緊盯自己的渴求而忽略他人；設立界線是在管理好神交給你的資產，讓你能持續地給予。「界線代表我不順服」——強迫自己說「好」卻內心充滿「不」，其實是一種謊言；真正的順服必須出於自由的心。「設立界線會傷害關係」——願意尊重你界線的人，才是真正喜愛你的人；那些因你說「不」而大怒的人，其實只是喜歡你的「順從」。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 迷思一到三</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>「設立界線是自私的」——真正的自私是緊盯自己的渴求而忽略他人；設立界線是在管理好神交給你的資產，讓你能持續地給予。「界線代表我不順服」——強迫自己說「好」卻內心充滿「不」，其實是一種謊言；真正的順服必須出於自由的心。「設立界線會傷害關係」——願意尊重你界線的人，才是真正喜愛你的人；那些因你說「不」而大怒的人，其實只是喜歡你的「順從」。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 迷思四到六</div>
-            <p className="text-slate-600 text-sm leading-relaxed">「設立界線意味著我在定別人的罪」——讓一個成年人承擔自己行為的後果，並不等於定罪；這反而是把他當作有責任能力的人來對待，是一種尊重。「界線會傷害別人」——對別人說「不」可能讓他們感到不舒服，但這和真正的傷害不同；讓他們學習面對現實，才是更深的愛。「我有責任為別人難受的感覺負責」——別人的情緒是別人的責任，不是你的。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 迷思四到六</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>「設立界線意味著我在定別人的罪」——讓一個成年人承擔自己行為的後果，並不等於定罪；這反而是把他當作有責任能力的人來對待，是一種尊重。「界線會傷害別人」——對別人說「不」可能讓他們感到不舒服，但這和真正的傷害不同；讓他們學習面對現實，才是更深的愛。「我有責任為別人難受的感覺負責」——別人的情緒是別人的責任，不是你的。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 迷思七到八</div>
-            <p className="text-slate-600 text-sm leading-relaxed">「設定界線是永久性的」——界線是可以調整的，隨著對方的成長和信任的建立，你可以重新選擇開放或收緊。「界線讓我覺得充滿了憤怒」——在開始設立界線的早期，累積已久的憤怒確實可能湧現出來，這是過去被壓抑的抗議。這是正常的，不是界線造成了憤怒，而是界線給了憤怒一個安全的出口。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 迷思七到八</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>「設定界線是永久性的」——界線是可以調整的，隨著對方的成長和信任的建立，你可以重新選擇開放或收緊。「界線讓我覺得充滿了憤怒」——在開始設立界線的早期，累積已久的憤怒確實可能湧現出來，這是過去被壓抑的抗議。這是正常的，不是界線造成了憤怒，而是界線給了憤怒一個安全的出口。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">每一個迷思的背後，都有一個需要被更新的信念。設立界線的旅程，同時也是一個「讓聖靈更新我們思想」的旅程。當我們開始相信「設立界線是愛，不是自私」、「尊重自己是敬虔，不是驕傲」，我們就開始真正地自由了。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>每一個迷思的背後，都有一個需要被更新的信念。設立界線的旅程，同時也是一個「讓聖靈更新我們思想」的旅程。當我們開始相信「設立界線是愛，不是自私」、「尊重自己是敬虔，不是驕傲」，我們就開始真正地自由了。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-fuchsia-300 mb-6 flex items-center">
+        <h3 className="font-bold text-fuchsia-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-fuchsia-200 mb-4 flex items-center">
+            <h4 className="font-bold text-fuchsia-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-fuchsia-400" />
               反思問題
             </h4>
@@ -375,7 +375,7 @@ export default function SectionMyths() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>

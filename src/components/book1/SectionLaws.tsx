@@ -211,13 +211,13 @@ export default function SectionLaws() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-sky-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 5
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             界線十律
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             就像物理學有萬有引力定律一樣，人際關係和靈性世界也有其運作的法則。這十條界線法則能幫助我們建立健康、負責任的生活方式。
           </p>
         </div>
@@ -225,7 +225,7 @@ export default function SectionLaws() {
 
       {/* The 10 Laws Grid */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <Scale className="w-7 h-7 mr-3 text-blue-500" />
           十條不可忽視的界線法則 (P97-123)
         </h3>
@@ -244,19 +244,19 @@ export default function SectionLaws() {
                   <div className="bg-blue-100 p-2 rounded-xl text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                     {law.icon}
                   </div>
-                  <h4 className="text-lg font-bold text-slate-800">{law.id}. {law.title}</h4>
+                  <h4 className="font-bold text-slate-800" style={{fontSize:"21px"}}>{law.id}. {law.title}</h4>
                 </div>
-                <span className="text-xs font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200">{law.page}</span>
+                <span className="font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>{law.page}</span>
               </div>
               
               <div className="flex-grow space-y-4">
                 <div className="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-                  <p className="text-sm text-blue-800 italic font-medium">
+                  <p className="text-blue-800 italic font-medium" style={{fontSize:"17px"}}>
                     {law.verse}
                   </p>
                 </div>
                 
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>
                   {law.desc}
                 </p>
               </div>
@@ -283,7 +283,7 @@ export default function SectionLaws() {
                       className="overflow-hidden"
                     >
                       <div className="p-4 mt-2 bg-white border border-blue-100 rounded-xl shadow-inner">
-                        <p className="font-medium text-slate-800 mb-4 text-sm">{law.quiz.question}</p>
+                        <p className="font-medium text-slate-800 mb-4" style={{fontSize:"17px"}}>{law.quiz.question}</p>
                         <div className="space-y-2">
                           {law.quiz.options.map((option, idx) => (
                             <button
@@ -325,12 +325,12 @@ export default function SectionLaws() {
               </div>
 
               <div className="mt-5 bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-2xl border border-blue-100">
-                <h4 className="font-bold text-blue-800 mb-3 text-sm flex items-center">
+                <h4 className="font-bold text-blue-800 mb-3 flex items-center" style={{fontSize:"17px"}}>
                   <span className="mr-2">🎯</span> 具體行動方案 (Actionable Steps)
                 </h4>
                 <ul className="space-y-2">
                   {law.actionableSteps.map((step, idx) => (
-                    <li key={idx} className="flex items-start text-sm text-blue-700 leading-relaxed">
+                    <li key={idx} className="flex items-start text-blue-700 leading-relaxed" style={{fontSize:"17px"}}>
                       <span className="text-blue-500 mr-2 font-bold">{idx + 1}.</span>
                       {step}
                     </li>
@@ -344,11 +344,11 @@ export default function SectionLaws() {
 
       {/* Application Note */}
       <div className="bg-slate-800 rounded-3xl p-8 md:p-10 border border-slate-700 shadow-sm text-white">
-        <h3 className="text-2xl font-bold text-blue-300 mb-6 flex items-center">
+        <h3 className="font-bold text-blue-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <ShieldAlert className="w-7 h-7 mr-3" />
           如何應用這些法則？
         </h3>
-        <p className="text-slate-300 leading-relaxed mb-6 text-lg">
+        <p className="text-slate-300 leading-relaxed mb-6" style={{fontSize:"21px"}}>
           這十條法則不是用來定罪的，而是用來診斷和醫治的。當你在關係中感到痛苦、怨恨或失去控制時，檢視一下：
         </p>
         <ul className="space-y-4 text-slate-300">
@@ -370,36 +370,36 @@ export default function SectionLaws() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第5章總結：界線的十大法則
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第5章總結：界線的十大法則
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章列出十條管理界線的屬靈法則，這些法則並非人為規定，而是神所設計的宇宙秩序的一部分。違背這些法則必然帶來痛苦；順應這些法則，才能經歷真正的自由和成長。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章列出十條管理界線的屬靈法則，這些法則並非人為規定，而是神所設計的宇宙秩序的一部分。違背這些法則必然帶來痛苦；順應這些法則，才能經歷真正的自由和成長。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 種豆得豆 & 能力法則</div>
-            <p className="text-slate-600 text-sm leading-relaxed">「種豆得豆」是界線最基本的法則：每個人必須為自己的選擇承擔後果。若你不斷替別人承擔後果（替他們還債、為他們道歉、幫他們擦屁股），你就打斷了因果律，讓他們無法學習和成長。「能力法則」則提醒我們：我們有能力改變自己，但無法改變別人。把精力放在改變自己的回應上，而不是試圖改變對方。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 種豆得豆 & 能力法則</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>「種豆得豆」是界線最基本的法則：每個人必須為自己的選擇承擔後果。若你不斷替別人承擔後果（替他們還債、為他們道歉、幫他們擦屁股），你就打斷了因果律，讓他們無法學習和成長。「能力法則」則提醒我們：我們有能力改變自己，但無法改變別人。把精力放在改變自己的回應上，而不是試圖改變對方。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 責任 & 尊重 & 動機法則</div>
-            <p className="text-slate-600 text-sm leading-relaxed">「責任法則」區分了「對某人負責」（愛、關心）和「替某人負責」（承擔他的後果）——我們要前者，但不要後者。「尊重法則」要求我們尊重別人的「不」，就像我們希望別人尊重我們的「不」。「動機法則」則是最核心的一條：若你的給予是出於恐懼（怕對方生氣）、罪惡感（我不得不）或討好（這樣他才會喜歡我），而不是出於自由和愛，這種給予無法帶來真正的連結，只會積累怨恨。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 責任 & 尊重 & 動機法則</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>「責任法則」區分了「對某人負責」（愛、關心）和「替某人負責」（承擔他的後果）——我們要前者，但不要後者。「尊重法則」要求我們尊重別人的「不」，就像我們希望別人尊重我們的「不」。「動機法則」則是最核心的一條：若你的給予是出於恐懼（怕對方生氣）、罪惡感（我不得不）或討好（這樣他才會喜歡我），而不是出於自由和愛，這種給予無法帶來真正的連結，只會積累怨恨。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 評估 & 嫉妒 & 主動法則</div>
-            <p className="text-slate-600 text-sm leading-relaxed">「評估法則」提醒我們：我們的界線會對他人造成痛苦，但這不代表我們傷害了他們——要區分「受傷(hurt)」和「受害(harm)」。「嫉妒法則」指出嫉妒是界線問題的警示燈：當你嫉妒別人時，通常是因為你沒有為自己的生命承擔責任。「主動法則」鼓勵我們不只是被動反應，而是主動清楚知道自己要什麼、不要什麼，並平靜表達。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 評估 & 嫉妒 & 主動法則</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>「評估法則」提醒我們：我們的界線會對他人造成痛苦，但這不代表我們傷害了他們——要區分「受傷(hurt)」和「受害(harm)」。「嫉妒法則」指出嫉妒是界線問題的警示燈：當你嫉妒別人時，通常是因為你沒有為自己的生命承擔責任。「主動法則」鼓勵我們不只是被動反應，而是主動清楚知道自己要什麼、不要什麼，並平靜表達。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">這些法則的背後有一個共同的神學基礎：神給了我們自由意志，讓我們能夠真正地選擇，也真正地承擔選擇的後果。當我們阻斷別人的後果，我們其實是在干預神的成長計畫。讓別人承擔自己的後果，是一種艱難但深刻的愛。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>這些法則的背後有一個共同的神學基礎：神給了我們自由意志，讓我們能夠真正地選擇，也真正地承擔選擇的後果。當我們阻斷別人的後果，我們其實是在干預神的成長計畫。讓別人承擔自己的後果，是一種艱難但深刻的愛。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center">
+        <h3 className="font-bold text-indigo-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-indigo-200 mb-4 flex items-center">
+            <h4 className="font-bold text-indigo-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-indigo-400" />
               反思問題
             </h4>
@@ -431,7 +431,7 @@ export default function SectionLaws() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>

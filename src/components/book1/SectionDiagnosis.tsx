@@ -18,13 +18,13 @@ export default function SectionDiagnosis() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-fuchsia-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-violet-100 text-violet-700 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-violet-100 text-violet-700 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 3
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             當界線出了問題
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             界線問題不是單一的，而是有不同的樣貌。我們可能會在某些關係中表現出一種問題，在另一種關係中又表現出另一種。了解這四種主要的界線問題，有助於我們對症下藥。
           </p>
         </div>
@@ -32,7 +32,7 @@ export default function SectionDiagnosis() {
 
       {/* The 4 Profiles */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <Users className="w-7 h-7 mr-3 text-violet-500" />
           四種界線問題的典型 (P63-75)
         </h3>
@@ -50,12 +50,12 @@ export default function SectionDiagnosis() {
                 <div className="bg-indigo-100 p-2 rounded-xl">
                   <UserX className="w-6 h-6 text-indigo-600" />
                 </div>
-                <h4 className="text-xl font-bold text-slate-800">1. 順從者 (Compliants)</h4>
+                <h4 className="font-bold text-slate-800" style={{fontSize:"23px"}}>1. 順從者 (Compliants)</h4>
               </div>
-              <span className="text-xs font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200">P63</span>
+              <span className="font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>P63</span>
             </div>
             <p className="text-indigo-700 font-medium mb-3">「對壞事說『好』：無法說『不』」</p>
-            <ul className="space-y-2 text-sm text-slate-600 list-disc list-inside">
+            <ul className="space-y-2 text-slate-600 list-disc list-inside" style={{fontSize:"17px"}}>
               <li><strong>特徵：</strong>像變色龍，為了融入環境而隱藏真實的自己。界線模糊，容易被別人的要求淹沒。</li>
               <li><strong>恐懼來源：</strong>害怕傷害別人的感覺、害怕被遺棄、害怕別人的怒氣、害怕被懲罰、害怕被貼上「自私」的標籤、害怕內在嚴厲的良知。</li>
               <li><strong>結果：</strong>承擔了過多的責任，內心充滿怨恨，覺得自己是受害者。</li>
@@ -75,12 +75,12 @@ export default function SectionDiagnosis() {
                 <div className="bg-emerald-100 p-2 rounded-xl">
                   <ShieldOff className="w-6 h-6 text-emerald-600" />
                 </div>
-                <h4 className="text-xl font-bold text-slate-800">2. 避開者 (Avoidants)</h4>
+                <h4 className="font-bold text-slate-800" style={{fontSize:"23px"}}>2. 避開者 (Avoidants)</h4>
               </div>
-              <span className="text-xs font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200">P66</span>
+              <span className="font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>P66</span>
             </div>
             <p className="text-emerald-700 font-medium mb-3">「對好事說『不』：無法接受幫助」</p>
-            <ul className="space-y-2 text-sm text-slate-600 list-disc list-inside">
+            <ul className="space-y-2 text-slate-600 list-disc list-inside" style={{fontSize:"17px"}}>
               <li><strong>特徵：</strong>築起高牆，不讓任何人進來。當自己有需要時，無法開口求助，也無法接受別人的關心。</li>
               <li><strong>原因：</strong>界線缺乏滲透性。可能因為過去受過傷，認為「沒有人會真的幫我」，或者把「需要別人」視為軟弱。</li>
               <li><strong>結果：</strong>極度孤單，獨自承受痛苦，無法體驗到真正的親密關係。</li>
@@ -100,12 +100,12 @@ export default function SectionDiagnosis() {
                 <div className="bg-rose-100 p-2 rounded-xl">
                   <Zap className="w-6 h-6 text-rose-600" />
                 </div>
-                <h4 className="text-xl font-bold text-slate-800">3. 控制者 (Controllers)</h4>
+                <h4 className="font-bold text-slate-800" style={{fontSize:"23px"}}>3. 控制者 (Controllers)</h4>
               </div>
-              <span className="text-xs font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200">P68</span>
+              <span className="font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>P68</span>
             </div>
             <p className="text-rose-700 font-medium mb-3">「不尊重別人的界線：無法聽見『不』」</p>
-            <ul className="space-y-2 text-sm text-slate-600 list-disc list-inside">
+            <ul className="space-y-2 text-slate-600 list-disc list-inside" style={{fontSize:"17px"}}>
               <li><strong>特徵：</strong>把責任推給別人，要求別人為他們的生活負責。無法忍受別人對他們說「不」。</li>
               <li><strong>兩種類型：</strong>
                 <ul className="pl-5 mt-1 space-y-1">
@@ -130,12 +130,12 @@ export default function SectionDiagnosis() {
                 <div className="bg-amber-100 p-2 rounded-xl">
                   <EarOff className="w-6 h-6 text-amber-600" />
                 </div>
-                <h4 className="text-xl font-bold text-slate-800">4. 沒有反應者 (Nonresponsives)</h4>
+                <h4 className="font-bold text-slate-800" style={{fontSize:"23px"}}>4. 沒有反應者 (Nonresponsives)</h4>
               </div>
-              <span className="text-xs font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200">P72</span>
+              <span className="font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>P72</span>
             </div>
             <p className="text-amber-700 font-medium mb-3">「對別人的需要說『不』：無法去愛」</p>
-            <ul className="space-y-2 text-sm text-slate-600 list-disc list-inside">
+            <ul className="space-y-2 text-slate-600 list-disc list-inside" style={{fontSize:"17px"}}>
               <li><strong>特徵：</strong>對別人的痛苦和需要視而不見。當別人需要幫助時，他們選擇忽略或逃避。</li>
               <li><strong>原因：</strong>可能過於專注於自己的事情，或者認為「每個人都該為自己負責」，將界線的觀念極端化，忽略了「互相擔當重擔」的聖經教導。</li>
               <li><strong>結果：</strong>顯得冷漠無情，無法建立深厚、互相扶持的關係。</li>
@@ -146,33 +146,33 @@ export default function SectionDiagnosis() {
 
       {/* Functional vs Relational Boundaries */}
       <div className="bg-slate-800 rounded-3xl p-8 md:p-10 border border-slate-700 shadow-sm text-white">
-        <h3 className="text-2xl font-bold text-violet-300 mb-6 flex items-center">
+        <h3 className="font-bold text-violet-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <HeartCrack className="w-7 h-7 mr-3" />
           功能性界線 vs. 關係性界線 (P75)
         </h3>
-        <p className="text-slate-300 leading-relaxed mb-8 text-lg">
+        <p className="text-slate-300 leading-relaxed mb-8" style={{fontSize:"21px"}}>
           這是一個常見的盲點：一個人在工作上可能非常成功，但在人際關係中卻一塌糊塗。
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600">
-            <h4 className="font-bold text-violet-400 mb-3 text-xl">功能性界線 (Functional)</h4>
-            <p className="text-sm text-slate-300 leading-relaxed mb-4">
+            <h4 className="font-bold text-violet-400 mb-3" style={{fontSize:"23px"}}>功能性界線 (Functional)</h4>
+            <p className="text-slate-300 leading-relaxed mb-4" style={{fontSize:"17px"}}>
               指的是完成任務、計畫、目標的能力。例如：準時交報告、把家裡打掃乾淨、管理財務。
             </p>
             <div className="bg-slate-800 p-4 rounded-xl border border-slate-600">
-              <p className="text-sm text-slate-400 italic">
+              <p className="text-slate-400 italic" style={{fontSize:"17px"}}>
                 <strong>聖經例子：馬大 (Martha)</strong><br/>
                 她忙於伺候耶穌，功能性界線很強，但忽略了關係。
               </p>
             </div>
           </div>
           <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600">
-            <h4 className="font-bold text-fuchsia-400 mb-3 text-xl">關係性界線 (Relational)</h4>
-            <p className="text-sm text-slate-300 leading-relaxed mb-4">
+            <h4 className="font-bold text-fuchsia-400 mb-3" style={{fontSize:"23px"}}>關係性界線 (Relational)</h4>
+            <p className="text-slate-300 leading-relaxed mb-4" style={{fontSize:"17px"}}>
               指的是與他人建立真實、親密連結的能力。例如：誠實表達感受、拒絕不合理要求、傾聽他人的需要。
             </p>
             <div className="bg-slate-800 p-4 rounded-xl border border-slate-600">
-              <p className="text-sm text-slate-400 italic">
+              <p className="text-slate-400 italic" style={{fontSize:"17px"}}>
                 <strong>聖經例子：馬利亞 (Mary)</strong><br/>
                 她選擇坐在耶穌腳前聽道，看重關係，但可能在功能上（幫忙家務）有所欠缺。
               </p>
@@ -183,7 +183,7 @@ export default function SectionDiagnosis() {
 
       {/* Radar Chart & Fatal Combinations */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <AlertOctagon className="w-7 h-7 mr-3 text-red-500" />
           致命的組合 (P74)
         </h3>
@@ -200,15 +200,15 @@ export default function SectionDiagnosis() {
             </ResponsiveContainer>
           </div>
           <div className="w-full lg:w-1/2 space-y-6">
-            <p className="text-slate-600 leading-relaxed text-lg">
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"21px"}}>
               這四種問題很少單獨存在，它們經常互相吸引，形成破壞性的關係模式。
             </p>
             <div className="bg-red-50 p-6 rounded-2xl border border-red-100">
-              <h4 className="font-bold text-red-800 mb-3 text-lg">最常見的致命組合：<br/>控制者 ＋ 順從者</h4>
-              <p className="text-sm text-red-700 leading-relaxed">
+              <h4 className="font-bold text-red-800 mb-3" style={{fontSize:"21px"}}>最常見的致命組合：<br/>控制者 ＋ 順從者</h4>
+              <p className="text-red-700 leading-relaxed" style={{fontSize:"17px"}}>
                 控制者尋找願意承擔責任、不會說「不」的人；而順從者尋找能告訴他們該怎麼做、替他們做決定的人。
               </p>
-              <p className="text-sm text-red-700 leading-relaxed mt-2">
+              <p className="text-red-700 leading-relaxed mt-2" style={{fontSize:"17px"}}>
                 這是一場災難。控制者越來越跋扈，順從者越來越充滿怨恨。直到順從者崩潰，或者控制者找到下一個目標。
               </p>
             </div>
@@ -219,36 +219,36 @@ export default function SectionDiagnosis() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第3章總結：為何我們建不起界線？
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第3章總結：為何我們建不起界線？
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章深入探討界線問題的根源，解釋為何許多人——尤其是基督徒——在成年後仍然無法設立健康的界線。作者指出，問題往往根植於成長環境、錯誤的神學觀念，以及四種典型的界線問題類型。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章深入探討界線問題的根源，解釋為何許多人——尤其是基督徒——在成年後仍然無法設立健康的界線。作者指出，問題往往根植於成長環境、錯誤的神學觀念，以及四種典型的界線問題類型。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 根源：成長的家庭</div>
-            <p className="text-slate-600 text-sm leading-relaxed">我們對界線的認知，絕大部分來自於原生家庭的模塑。若父母從不允許你說「不」，你就學會了「說不是危險的」；若父母用罪惡感或憤怒來回應你的拒絕，你就學會了「讓別人不高興是我的錯」。這些早年形成的信念，在成年後仍深深影響著我們的行為模式。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 根源：成長的家庭</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>我們對界線的認知，絕大部分來自於原生家庭的模塑。若父母從不允許你說「不」，你就學會了「說不是危險的」；若父母用罪惡感或憤怒來回應你的拒絕，你就學會了「讓別人不高興是我的錯」。這些早年形成的信念，在成年後仍深深影響著我們的行為模式。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 四種界線問題類型</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者識別出四種常見的界線困難：一、「屈服型」——對所有要求說「好」，因為拒絕讓他們感到恐懼或罪惡感；二、「掌控型」——自己不尊重別人的界線，用各種方式讓別人無法說「不」；三、「漠然型」——對自己和他人的需要都視而不見，建造了看似堅硬實則脆弱的牆；四、「反應型」——因過去的傷而對界線過度敏感，以「自我保護」為名拒絕所有連結。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 四種界線問題類型</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者識別出四種常見的界線困難：一、「屈服型」——對所有要求說「好」，因為拒絕讓他們感到恐懼或罪惡感；二、「掌控型」——自己不尊重別人的界線，用各種方式讓別人無法說「不」；三、「漠然型」——對自己和他人的需要都視而不見，建造了看似堅硬實則脆弱的牆；四、「反應型」——因過去的傷而對界線過度敏感，以「自我保護」為名拒絕所有連結。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 錯誤的神學如何傷害界線</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者特別指出，教會中流行的幾種錯誤觀念嚴重破壞了信徒設立界線的能力：把「捨己」誤解為「消滅自我」、把「愛人」誤解為「有求必應」、把「順服」誤解為「盲目服從」、把「謙卑」誤解為「永遠把自己放在最後」。這些誤解讓許多虔誠的基督徒陷入無法拒絕的困境，卻還以為這是在效法基督。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 錯誤的神學如何傷害界線</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者特別指出，教會中流行的幾種錯誤觀念嚴重破壞了信徒設立界線的能力：把「捨己」誤解為「消滅自我」、把「愛人」誤解為「有求必應」、把「順服」誤解為「盲目服從」、把「謙卑」誤解為「永遠把自己放在最後」。這些誤解讓許多虔誠的基督徒陷入無法拒絕的困境，卻還以為這是在效法基督。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">了解你的界線問題從哪裡來，不是為了責怪過去，而是為了清楚看見需要醫治的地方。改變的第一步是誠實承認：「我有界線問題，而這不是神的設計。」神設計我們有健康的自我，有說「不」的自由，有保護神所給我們的生命的責任。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>了解你的界線問題從哪裡來，不是為了責怪過去，而是為了清楚看見需要醫治的地方。改變的第一步是誠實承認：「我有界線問題，而這不是神的設計。」神設計我們有健康的自我，有說「不」的自由，有保護神所給我們的生命的責任。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-amber-300 mb-6 flex items-center">
+        <h3 className="font-bold text-amber-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-amber-200 mb-4 flex items-center">
+            <h4 className="font-bold text-amber-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-amber-400" />
               反思問題
             </h4>
@@ -280,7 +280,7 @@ export default function SectionDiagnosis() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>

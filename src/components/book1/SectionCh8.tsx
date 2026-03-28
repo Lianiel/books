@@ -132,13 +132,13 @@ export default function SectionCh8() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 8
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             界線與你的朋友
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             友誼是一段奠基在彼此的聯繫，而非功能上的非浪漫關係。這世上最悲哀的，莫過於那些沒有被朋友真正認識、並好好愛著的人。健康的友誼需要雙方都能自由地說「好」與「不」。如果一段友誼不能容忍「不」，那就不是友誼，而是控制。
           </p>
         </div>
@@ -146,32 +146,32 @@ export default function SectionCh8() {
 
       {/* Warning Signs */}
       <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <AlertCircle className="w-7 h-7 mr-3 text-rose-500" />
           不健康友誼的警訊
         </h3>
-        <p className="text-slate-600 mb-6 text-lg">
+        <p className="text-slate-600 mb-6" style={{fontSize:"21px"}}>
           友誼應該是避風港，而不是另一個壓力來源。如果你在一段友誼中經常感受到以下情緒，這就是界線出現問題的警訊：
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-rose-50 p-6 rounded-2xl border border-rose-100 hover:bg-rose-100/50 transition-colors">
             <HeartCrack className="w-8 h-8 text-rose-500 mb-4" />
-            <h4 className="font-bold text-rose-800 mb-3 text-xl">單向付出 (One-Sided)</h4>
-            <p className="text-base text-slate-700 leading-relaxed">
+            <h4 className="font-bold text-rose-800 mb-3" style={{fontSize:"23px"}}>單向付出 (One-Sided)</h4>
+            <p className="text-slate-700 leading-relaxed" style={{fontSize:"19px"}}>
               總是你在傾聽、幫忙、主動聯絡。當你需要幫助或想分享喜悅時，對方總是不在，或者很快把話題轉回自己身上。你感覺自己像個情緒垃圾桶。
             </p>
           </div>
           <div className="bg-rose-50 p-6 rounded-2xl border border-rose-100 hover:bg-rose-100/50 transition-colors">
             <MessageCircle className="w-8 h-8 text-rose-500 mb-4" />
-            <h4 className="font-bold text-rose-800 mb-3 text-xl">害怕說真話 (Fear of Truth)</h4>
-            <p className="text-base text-slate-700 leading-relaxed">
+            <h4 className="font-bold text-rose-800 mb-3" style={{fontSize:"23px"}}>害怕說真話 (Fear of Truth)</h4>
+            <p className="text-slate-700 leading-relaxed" style={{fontSize:"19px"}}>
               為了維持表面和平，你不敢表達不同意見，深怕對方生氣、冷戰或離開。你在這段關係中無法做真實的自己，總是如履薄冰。
             </p>
           </div>
           <div className="bg-rose-50 p-6 rounded-2xl border border-rose-100 hover:bg-rose-100/50 transition-colors">
             <Heart className="w-8 h-8 text-rose-500 mb-4" />
-            <h4 className="font-bold text-rose-800 mb-3 text-xl">充滿罪疚感 (Guilt-Ridden)</h4>
-            <p className="text-base text-slate-700 leading-relaxed">
+            <h4 className="font-bold text-rose-800 mb-3" style={{fontSize:"23px"}}>充滿罪疚感 (Guilt-Ridden)</h4>
+            <p className="text-slate-700 leading-relaxed" style={{fontSize:"19px"}}>
               對方常用情緒勒索（如：「如果你不幫我，我就死定了」、「我以為我們是好朋友」）讓你覺得自己「不夠朋友」，迫使你答應不合理的要求。
             </p>
           </div>
@@ -180,7 +180,7 @@ export default function SectionCh8() {
 
       {/* Conflicts Grid */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <Users className="w-7 h-7 mr-3 text-cyan-500" />
           友誼中的四種界線衝突 (P202-209)
         </h3>
@@ -199,26 +199,26 @@ export default function SectionCh8() {
                   <div className="bg-cyan-100 p-3 rounded-xl text-cyan-700 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
                     {conflict.icon}
                   </div>
-                  <h4 className="text-xl font-bold text-slate-800">衝突 {conflict.id}</h4>
+                  <h4 className="font-bold text-slate-800" style={{fontSize:"23px"}}>衝突 {conflict.id}</h4>
                 </div>
-                <span className="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200">{conflict.page}</span>
+                <span className="font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>{conflict.page}</span>
               </div>
               
               <div className="space-y-4 flex-grow">
-                <h5 className="font-bold text-cyan-800 text-xl border-b border-cyan-100 pb-2">{conflict.title}</h5>
-                <p className="text-slate-700 leading-relaxed text-base">
+                <h5 className="font-bold text-cyan-800 border-b border-cyan-100 pb-2" style={{fontSize:"23px"}}>{conflict.title}</h5>
+                <p className="text-slate-700 leading-relaxed" style={{fontSize:"19px"}}>
                   {conflict.desc}
                 </p>
                 <div className="bg-white p-4 rounded-xl border border-slate-100">
-                  <strong className="text-slate-800 text-sm block mb-2">🎬 具體情境：</strong>
-                  <p className="text-sm text-slate-600 leading-relaxed">{conflict.scenario}</p>
+                  <strong className="text-slate-800 block mb-2" style={{fontSize:"17px"}}>🎬 具體情境：</strong>
+                  <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{conflict.scenario}</p>
                 </div>
                 <div className="bg-cyan-50/80 p-4 rounded-xl border border-cyan-200 mt-auto">
-                  <strong className="text-cyan-800 text-sm flex items-center mb-2">
+                  <strong className="text-cyan-800 flex items-center mb-2" style={{fontSize:"17px"}}>
                     <Lightbulb className="w-4 h-4 mr-1 text-cyan-600" />
                     解決突破點：
                   </strong>
-                  <p className="text-sm text-cyan-900/80 leading-relaxed">{conflict.breakthrough}</p>
+                  <p className="text-cyan-900/80 leading-relaxed" style={{fontSize:"17px"}}>{conflict.breakthrough}</p>
                 </div>
               </div>
 
@@ -279,7 +279,7 @@ export default function SectionCh8() {
                               ) : (
                                 <XCircle className="w-5 h-5 mr-2 shrink-0 mt-0.5" />
                               )}
-                              <p className="text-sm font-medium">
+                              <p className="font-medium" style={{fontSize:"17px"}}>
                                 {quizResults[conflict.id] ? conflict.quiz.feedback : '再想一想！請重新閱讀上方的情境與突破點。'}
                               </p>
                             </motion.div>
@@ -295,10 +295,10 @@ export default function SectionCh8() {
                           <ul className="space-y-3">
                             {conflict.actionableSteps.map((step, stepIdx) => (
                               <li key={stepIdx} className="flex items-start">
-                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-200 text-emerald-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">
+                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-200 text-emerald-700 flex items-center justify-center font-bold mr-3 mt-0.5" style={{fontSize:"17px"}}>
                                   {stepIdx + 1}
                                 </span>
-                                <span className="text-slate-700 text-sm leading-relaxed">{step}</span>
+                                <span className="text-slate-700 leading-relaxed" style={{fontSize:"17px"}}>{step}</span>
                               </li>
                             ))}
                           </ul>
@@ -315,7 +315,7 @@ export default function SectionCh8() {
 
       {/* FAQs */}
       <div className="bg-slate-800 rounded-3xl p-8 md:p-10 border border-slate-700 shadow-sm text-white">
-        <h3 className="text-2xl font-bold text-cyan-300 mb-8 flex items-center">
+        <h3 className="font-bold text-cyan-300 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <HelpCircle className="w-7 h-7 mr-3" />
           常見問題與解答 (P211-217)
         </h3>
@@ -330,15 +330,15 @@ export default function SectionCh8() {
               className="bg-slate-700/50 p-6 md:p-8 rounded-2xl border border-slate-600 hover:bg-slate-700/70 transition-colors"
             >
               <div className="flex flex-col md:flex-row md:items-start justify-between mb-4 gap-4">
-                <h4 className="text-xl font-bold text-cyan-200 flex items-start leading-snug">
-                  <span className="text-cyan-500 mr-3 text-2xl font-black">Q:</span>
+                <h4 className="font-bold text-cyan-200 flex items-start leading-snug" style={{fontSize:"23px"}}>
+                  <span className="text-cyan-500 mr-3 font-black" style={{fontSize:"27px"}}>Q:</span>
                   {faq.q}
                 </h4>
-                <span className="text-xs font-medium text-slate-400 bg-slate-800 px-3 py-1 rounded-md border border-slate-600 shrink-0 self-start">{faq.page}</span>
+                <span className="font-medium text-slate-400 bg-slate-800 px-3 py-1 rounded-md border border-slate-600 shrink-0 self-start" style={{fontSize:"15px"}}>{faq.page}</span>
               </div>
               <div className="flex items-start bg-slate-800/60 p-5 rounded-xl border border-slate-600/50">
-                <span className="text-emerald-400 mr-3 font-black text-2xl">A:</span>
-                <p className="text-slate-300 text-base leading-relaxed">
+                <span className="text-emerald-400 mr-3 font-black" style={{fontSize:"27px"}}>A:</span>
+                <p className="text-slate-300 leading-relaxed" style={{fontSize:"19px"}}>
                   {faq.a}
                 </p>
               </div>
@@ -350,36 +350,36 @@ export default function SectionCh8() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第8章總結：界線與你的朋友
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第8章總結：界線與你的朋友
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章探討友誼中的界線問題，指出四種常見的不健康友誼模式，並提供建立更真實、更有生命力的友誼的具體方向。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章探討友誼中的界線問題，指出四種常見的不健康友誼模式，並提供建立更真實、更有生命力的友誼的具體方向。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 四種不健康的友誼模式</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者描述了四種常見的界線失衡友誼：「互相討好型」——雙方都太要好以至於無法說「不」，最終誰都得不到真正想要的；「控制者與順從者型」——一方強硬要求，另一方默默配合充滿怨恨；「責任型操控」——一方永遠不計畫、永遠臨時要求，另一方永遠買單；「單向付出型」——一方付出所有，另一方完全被動接受。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 四種不健康的友誼模式</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者描述了四種常見的界線失衡友誼：「互相討好型」——雙方都太要好以至於無法說「不」，最終誰都得不到真正想要的；「控制者與順從者型」——一方強硬要求，另一方默默配合充滿怨恨；「責任型操控」——一方永遠不計畫、永遠臨時要求，另一方永遠買單；「單向付出型」——一方付出所有，另一方完全被動接受。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 真正的友誼需要雙向的「不」</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者提出一個反直覺的觀點：一段友誼若不能讓你說「不」，它就不是真正的友誼。真正的朋友不只接受你的「好」，也尊重你的「不」；他們喜愛的是真實的你，而不是那個永遠說「好」、永遠有空的你。若你發現一個朋友只在你說「好」的時候才對你好，這個關係需要被重新評估。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 真正的友誼需要雙向的「不」</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者提出一個反直覺的觀點：一段友誼若不能讓你說「不」，它就不是真正的友誼。真正的朋友不只接受你的「好」，也尊重你的「不」；他們喜愛的是真實的你，而不是那個永遠說「好」、永遠有空的你。若你發現一個朋友只在你說「好」的時候才對你好，這個關係需要被重新評估。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 設立界線可能讓友誼消失</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者誠實地指出：當你開始在友誼中設立界線，有些「朋友」可能會消失。這是痛苦的，但這也是真相的顯現——那些關係從一開始就是建立在你的「無限供應」上，而不是建立在真實的連結上。失去這樣的「友誼」，其實是一種釋放，讓空間給真正的友誼進來。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 設立界線可能讓友誼消失</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者誠實地指出：當你開始在友誼中設立界線，有些「朋友」可能會消失。這是痛苦的，但這也是真相的顯現——那些關係從一開始就是建立在你的「無限供應」上，而不是建立在真實的連結上。失去這樣的「友誼」，其實是一種釋放，讓空間給真正的友誼進來。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">健康的友誼是雙向的、有彈性的、允許變化的。它不會因為你有時說「不」而破裂，不會因為你有時需要空間而結束。在這樣的友誼裡，你不需要表演，不需要永遠有能量，不需要假裝沒事。這樣的友誼，是值得為之設立界線、也值得用界線來保護的。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>健康的友誼是雙向的、有彈性的、允許變化的。它不會因為你有時說「不」而破裂，不會因為你有時需要空間而結束。在這樣的友誼裡，你不需要表演，不需要永遠有能量，不需要假裝沒事。這樣的友誼，是值得為之設立界線、也值得用界線來保護的。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-sky-300 mb-6 flex items-center">
+        <h3 className="font-bold text-sky-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-sky-200 mb-4 flex items-center">
+            <h4 className="font-bold text-sky-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-sky-400" />
               反思問題
             </h4>
@@ -411,7 +411,7 @@ export default function SectionCh8() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>

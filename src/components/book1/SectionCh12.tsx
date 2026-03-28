@@ -58,13 +58,13 @@ export default function SectionCh12() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 12
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             界線與數位時代
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             科技本身是中立的，但它極大地挑戰了我們的界線。智慧型手機和社群媒體讓我們隨時暴露在無數的要求、資訊和比較之中。如果我們不主動管理科技，科技就會管理我們的心智與時間。在數位時代，設立界線意味著奪回注意力的控制權。
           </p>
         </div>
@@ -72,7 +72,7 @@ export default function SectionCh12() {
 
       {/* Digital Issues Grid */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <Smartphone className="w-7 h-7 mr-3 text-indigo-500" />
           數位時代的 5 大界線挑戰 (P300-315)
         </h3>
@@ -91,26 +91,26 @@ export default function SectionCh12() {
                   <div className="bg-indigo-100 p-3 rounded-xl text-indigo-700 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
                     {issue.icon}
                   </div>
-                  <h4 className="text-xl font-bold text-slate-800">挑戰 {issue.id}</h4>
+                  <h4 className="font-bold text-slate-800" style={{fontSize:"23px"}}>挑戰 {issue.id}</h4>
                 </div>
-                <span className="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200">{issue.page}</span>
+                <span className="font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>{issue.page}</span>
               </div>
               
               <div className="space-y-4 flex-grow">
-                <h5 className="font-bold text-indigo-800 text-xl border-b border-indigo-100 pb-2">{issue.title}</h5>
-                <p className="text-slate-700 leading-relaxed text-base">
+                <h5 className="font-bold text-indigo-800 border-b border-indigo-100 pb-2" style={{fontSize:"23px"}}>{issue.title}</h5>
+                <p className="text-slate-700 leading-relaxed" style={{fontSize:"19px"}}>
                   {issue.desc}
                 </p>
                 <div className="bg-white p-4 rounded-xl border border-slate-100">
-                  <strong className="text-slate-800 text-sm block mb-2">🎬 具體情境：</strong>
-                  <p className="text-sm text-slate-600 leading-relaxed">{issue.scenario}</p>
+                  <strong className="text-slate-800 block mb-2" style={{fontSize:"17px"}}>🎬 具體情境：</strong>
+                  <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{issue.scenario}</p>
                 </div>
                 <div className="bg-indigo-50/80 p-4 rounded-xl border border-indigo-200 mt-auto">
-                  <strong className="text-indigo-800 text-sm flex items-center mb-2">
+                  <strong className="text-indigo-800 flex items-center mb-2" style={{fontSize:"17px"}}>
                     <Lightbulb className="w-4 h-4 mr-1 text-indigo-600" />
                     解決突破點：
                   </strong>
-                  <p className="text-sm text-indigo-900/80 leading-relaxed">{issue.breakthrough}</p>
+                  <p className="text-indigo-900/80 leading-relaxed" style={{fontSize:"17px"}}>{issue.breakthrough}</p>
                 </div>
               </div>
             </motion.div>
@@ -120,36 +120,36 @@ export default function SectionCh12() {
 
       {/* Solutions */}
       <div className="bg-slate-800 rounded-3xl p-8 md:p-10 border border-slate-700 shadow-sm text-white">
-        <h3 className="text-2xl font-bold text-indigo-300 mb-8 flex items-center">
+        <h3 className="font-bold text-indigo-300 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <WifiOff className="w-7 h-7 mr-3" />
           奪回數位主導權的實踐策略 (P316-318)
         </h3>
         
         <div className="space-y-6">
           <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 hover:bg-slate-700/80 transition-colors">
-            <h4 className="text-xl font-bold text-indigo-200 mb-3 flex items-center">
+            <h4 className="font-bold text-indigo-200 mb-3 flex items-center" style={{fontSize:"23px"}}>
               <span className="bg-indigo-500/20 p-2 rounded-lg mr-3 text-indigo-400">1</span>
               創造「無科技區」與「無科技時段」
             </h4>
-            <p className="text-slate-300 text-base leading-relaxed">
+            <p className="text-slate-300 leading-relaxed" style={{fontSize:"19px"}}>
               在家中設立明確的實體界線，例如：餐桌上不准放手機、臥室不放充電線。設定時間界線，例如：睡前一小時不看螢幕，起床後的第一個小時不滑手機，用來禱告、閱讀或與家人對話。
             </p>
           </div>
           <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 hover:bg-slate-700/80 transition-colors">
-            <h4 className="text-xl font-bold text-indigo-200 mb-3 flex items-center">
+            <h4 className="font-bold text-indigo-200 mb-3 flex items-center" style={{fontSize:"23px"}}>
               <span className="bg-indigo-500/20 p-2 rounded-lg mr-3 text-indigo-400">2</span>
               關閉非必要的通知
             </h4>
-            <p className="text-slate-300 text-base leading-relaxed">
+            <p className="text-slate-300 leading-relaxed" style={{fontSize:"19px"}}>
               不要讓APP的開發者決定你何時該分心。關閉所有社群媒體、新聞和購物APP的推播通知。只保留真正緊急的聯絡方式（如電話、重要家人的訊息）。讓「你」決定何時要查看手機，而不是手機呼叫你。
             </p>
           </div>
           <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 hover:bg-slate-700/80 transition-colors">
-            <h4 className="text-xl font-bold text-indigo-200 mb-3 flex items-center">
+            <h4 className="font-bold text-indigo-200 mb-3 flex items-center" style={{fontSize:"23px"}}>
               <span className="bg-indigo-500/20 p-2 rounded-lg mr-3 text-indigo-400">3</span>
               定期進行「數位排毒」
             </h4>
-            <p className="text-slate-300 text-base leading-relaxed">
+            <p className="text-slate-300 leading-relaxed" style={{fontSize:"19px"}}>
               每週安排半天或一整天（如安息日）完全遠離電子產品。去大自然走走、看實體書、與朋友面對面聊天。這能幫助大腦重新開機，恢復對真實世界的感知與連結。
             </p>
           </div>
@@ -159,36 +159,36 @@ export default function SectionCh12() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第12章總結：界線與你自己
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第12章總結：界線與你自己
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章探討最常被忽略的界線面向——對自己內心世界的界線管理。這包括對自己的情緒、思想、習慣、時間和身體的負責任管理。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章探討最常被忽略的界線面向——對自己內心世界的界線管理。這包括對自己的情緒、思想、習慣、時間和身體的負責任管理。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 科技與自我界線</div>
-            <p className="text-slate-600 text-sm leading-relaxed">本章以數位時代的挑戰開場——手機、社群媒體和無處不在的資訊流，不斷要求我們的注意力，讓我們幾乎沒有空間安靜下來面對自己的內心。作者指出，能夠管理自己與科技的關係，是現代人最重要的自我界線之一。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 科技與自我界線</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>本章以數位時代的挑戰開場——手機、社群媒體和無處不在的資訊流，不斷要求我們的注意力，讓我們幾乎沒有空間安靜下來面對自己的內心。作者指出，能夠管理自己與科技的關係，是現代人最重要的自我界線之一。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 自律是最深的自我界線</div>
-            <p className="text-slate-600 text-sm leading-relaxed">對自己設立界線的核心是自律——不是壓制自我，而是學習對那些傷害自己的衝動說「不」（過度消費、飲食失調、拖延、沉溺螢幕），並對那些滋養自己的事說「是」（禱告、運動、閱讀、真實的連結）。作者強調，自律不是律法主義，而是對自己和神的愛的表達。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 自律是最深的自我界線</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>對自己設立界線的核心是自律——不是壓制自我，而是學習對那些傷害自己的衝動說「不」（過度消費、飲食失調、拖延、沉溺螢幕），並對那些滋養自己的事說「是」（禱告、運動、閱讀、真實的連結）。作者強調，自律不是律法主義，而是對自己和神的愛的表達。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 對自己的同理心</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者特別提醒：對自己設立界線，需要先對自己有同理心。許多人對別人充滿憐憫，卻對自己非常嚴苛。如果你不能溫柔地對待自己，你的「自我管理」很容易變成自我懲罰，這不是健康的界線。學習像神一樣看待自己——認識自己的限制，接受自己的不完美，同時不放棄成長。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 對自己的同理心</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者特別提醒：對自己設立界線，需要先對自己有同理心。許多人對別人充滿憐憫，卻對自己非常嚴苛。如果你不能溫柔地對待自己，你的「自我管理」很容易變成自我懲罰，這不是健康的界線。學習像神一樣看待自己——認識自己的限制，接受自己的不完美，同時不放棄成長。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">你對自己的管理，決定了你對別人的容量。若你任由自己的情緒、時間和精力被各種衝動和外在要求耗盡，你就沒有什麼可以給予別人的了。照顧好自己，不是自私，而是讓你能夠持續、真實地愛人的基礎。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>你對自己的管理，決定了你對別人的容量。若你任由自己的情緒、時間和精力被各種衝動和外在要求耗盡，你就沒有什麼可以給予別人的了。照顧好自己，不是自私，而是讓你能夠持續、真實地愛人的基礎。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-indigo-300 mb-6 flex items-center">
+        <h3 className="font-bold text-indigo-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-indigo-200 mb-4 flex items-center">
+            <h4 className="font-bold text-indigo-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-indigo-400" />
               反思問題
             </h4>
@@ -220,7 +220,7 @@ export default function SectionCh12() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>

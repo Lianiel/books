@@ -64,13 +64,13 @@ export default function SectionCh15() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-fuchsia-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-purple-100 text-purple-800 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 15
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             對界線的阻力
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             當你開始設立界線時，事情通常會「先變糟，再變好」。那些習慣了你沒有界線的人，會強烈反抗你的改變；而你內心深處的恐懼與不安全感，也會試圖把你拉回熟悉的舊模式。認識並預備好面對這些「外在」與「內在」的阻力，是成功建立界線的關鍵。
           </p>
         </div>
@@ -78,11 +78,11 @@ export default function SectionCh15() {
 
       {/* External Resistance */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <ShieldAlert className="w-7 h-7 mr-3 text-purple-500" />
           外在的阻力 (External Resistance) (P374-385)
         </h3>
-        <p className="text-slate-600 mb-8 text-lg">
+        <p className="text-slate-600 mb-8" style={{fontSize:"21px"}}>
           當你改變規則時，那些從你身上獲益的人一定會反彈。不要驚訝，這是正常的反應。
         </p>
         
@@ -98,20 +98,20 @@ export default function SectionCh15() {
               <div className="bg-purple-100 p-3 rounded-xl text-purple-700 w-fit mb-4">
                 {item.icon}
               </div>
-              <h4 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h4>
-              <p className="text-slate-700 leading-relaxed text-base mb-4">
+              <h4 className="font-bold text-slate-800 mb-3" style={{fontSize:"23px"}}>{item.title}</h4>
+              <p className="text-slate-700 leading-relaxed mb-4" style={{fontSize:"19px"}}>
                 {item.desc}
               </p>
               <div className="bg-white p-4 rounded-xl border border-slate-100 mb-4">
-                <strong className="text-slate-800 text-sm block mb-1">🎬 具體情境：</strong>
-                <p className="text-sm text-slate-600">{item.scenario}</p>
+                <strong className="text-slate-800 block mb-1" style={{fontSize:"17px"}}>🎬 具體情境：</strong>
+                <p className="text-slate-600" style={{fontSize:"17px"}}>{item.scenario}</p>
               </div>
               <div className="bg-purple-50/80 p-4 rounded-xl border border-purple-200 mt-auto">
-                <strong className="text-purple-800 text-sm flex items-center mb-1">
+                <strong className="text-purple-800 flex items-center mb-1" style={{fontSize:"17px"}}>
                   <MessageSquare className="w-4 h-4 mr-1 text-purple-600" />
                   回應腳本：
                 </strong>
-                <p className="text-sm text-purple-900/80">{item.script}</p>
+                <p className="text-purple-900/80" style={{fontSize:"17px"}}>{item.script}</p>
               </div>
             </motion.div>
           ))}
@@ -120,11 +120,11 @@ export default function SectionCh15() {
 
       {/* Internal Resistance */}
       <div className="bg-slate-800 rounded-3xl p-8 md:p-10 border border-slate-700 shadow-sm text-white mt-8">
-        <h3 className="text-2xl font-bold text-purple-300 mb-8 flex items-center">
+        <h3 className="font-bold text-purple-300 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <HeartCrack className="w-7 h-7 mr-3" />
           內在的阻力 (Internal Resistance) (P386-395)
         </h3>
-        <p className="text-slate-300 mb-8 text-lg">
+        <p className="text-slate-300 mb-8" style={{fontSize:"21px"}}>
           外在的阻力雖然可怕，但真正能阻止我們改變的，往往是我們內心的恐懼與未處理的傷痛。
         </p>
         
@@ -140,20 +140,20 @@ export default function SectionCh15() {
               <div className="bg-slate-800 p-3 rounded-xl text-purple-400 w-fit mb-4 border border-slate-600">
                 {item.icon}
               </div>
-              <h4 className="text-xl font-bold text-purple-200 mb-3">{item.title}</h4>
-              <p className="text-slate-300 leading-relaxed text-base mb-4">
+              <h4 className="font-bold text-purple-200 mb-3" style={{fontSize:"23px"}}>{item.title}</h4>
+              <p className="text-slate-300 leading-relaxed mb-4" style={{fontSize:"19px"}}>
                 {item.desc}
               </p>
               <div className="bg-slate-800/80 p-4 rounded-xl border border-slate-600 mb-4">
-                <strong className="text-slate-400 text-sm block mb-1">🎬 具體情境：</strong>
-                <p className="text-sm text-slate-300">{item.scenario}</p>
+                <strong className="text-slate-400 block mb-1" style={{fontSize:"17px"}}>🎬 具體情境：</strong>
+                <p className="text-slate-300" style={{fontSize:"17px"}}>{item.scenario}</p>
               </div>
               <div className="bg-purple-900/30 p-4 rounded-xl border border-purple-500/30 mt-auto">
-                <strong className="text-purple-300 text-sm flex items-center mb-1">
+                <strong className="text-purple-300 flex items-center mb-1" style={{fontSize:"17px"}}>
                   <Lightbulb className="w-4 h-4 mr-1 text-purple-400" />
                   解決突破點：
                 </strong>
-                <p className="text-sm text-purple-200/80">{item.breakthrough}</p>
+                <p className="text-purple-200/80" style={{fontSize:"17px"}}>{item.breakthrough}</p>
               </div>
             </motion.div>
           ))}
@@ -163,36 +163,36 @@ export default function SectionCh15() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第15章總結：完美的界線
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第15章總結：完美的界線
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章探討在實際的關係中如何面對那些抗拒界線的人，並提供具體的步驟來應對各種抗拒策略，幫助讀者在壓力下仍然堅守界線。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章探討在實際的關係中如何面對那些抗拒界線的人，並提供具體的步驟來應對各種抗拒策略，幫助讀者在壓力下仍然堅守界線。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 六種抗拒策略的應對</div>
-            <p className="text-slate-600 text-sm leading-relaxed">面對憤怒：不要因為對方的情緒而退縮，平靜地重申你的立場；面對罪惡感訊息：認清這是情感操控，不要讓對方的「受傷」成為改變你決定的理由；面對後果威脅：評估後果的真實性，並決定你是否能接受；面對哄騙：觀察行為而不只是語言，讓時間證明改變的真實性；面對以受害者自居：對他們的痛苦有同理心，但不要因同情而取消你的界線。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 六種抗拒策略的應對</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>面對憤怒：不要因為對方的情緒而退縮，平靜地重申你的立場；面對罪惡感訊息：認清這是情感操控，不要讓對方的「受傷」成為改變你決定的理由；面對後果威脅：評估後果的真實性，並決定你是否能接受；面對哄騙：觀察行為而不只是語言，讓時間證明改變的真實性；面對以受害者自居：對他們的痛苦有同理心，但不要因同情而取消你的界線。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 關係的三種可能走向</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者坦誠地指出，當你設立界線後，關係有三種可能的走向：對方真正改變，關係走向更健康——這是最好的結果；對方暫時不舒服但最終接受，關係在陣痛後穩定——這是最常見的；對方離開或關係惡化——這是痛苦的，但有時也是必要的，因為某些關係本質上是建立在你的無限供應上的。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 關係的三種可能走向</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者坦誠地指出，當你設立界線後，關係有三種可能的走向：對方真正改變，關係走向更健康——這是最好的結果；對方暫時不舒服但最終接受，關係在陣痛後穩定——這是最常見的；對方離開或關係惡化——這是痛苦的，但有時也是必要的，因為某些關係本質上是建立在你的無限供應上的。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 後果是界線的執行力</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者強調，界線沒有後果，就等於沒有界線。若你說「如果你再這樣，我就……」卻從不真正執行，你的界線就只是空話，對方也會學到「這只是說說而已」。設立界線，必須同時準備好執行後果——這需要勇氣，但這是讓界線真正發揮作用的關鍵。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 後果是界線的執行力</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者強調，界線沒有後果，就等於沒有界線。若你說「如果你再這樣，我就……」卻從不真正執行，你的界線就只是空話，對方也會學到「這只是說說而已」。設立界線，必須同時準備好執行後果——這需要勇氣，但這是讓界線真正發揮作用的關鍵。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">設立界線不是一次性的事件，而是一個持續的過程。關係中的人需要時間適應新的規則，你也需要時間建立說「不」的能力和面對後果的勇氣。在這個過程中，找到支持你的群體和輔導者，是非常重要的資源。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>設立界線不是一次性的事件，而是一個持續的過程。關係中的人需要時間適應新的規則，你也需要時間建立說「不」的能力和面對後果的勇氣。在這個過程中，找到支持你的群體和輔導者，是非常重要的資源。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-red-300 mb-6 flex items-center">
+        <h3 className="font-bold text-red-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-red-200 mb-4 flex items-center">
+            <h4 className="font-bold text-red-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-red-400" />
               反思問題
             </h4>
@@ -224,7 +224,7 @@ export default function SectionCh15() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>

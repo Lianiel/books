@@ -175,13 +175,13 @@ export default function SectionCh10() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 10
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             界線與你的子女
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             界線在養育孩子的過程中尤其關鍵。界線會對孩子品格的發展有極大的影響，包括他們的價值觀、在學校的表現、朋友的選擇，以及未來的婚姻與工作。父母的終極責任，是幫助孩子將「外在的限制」內化為「內在的自律」，讓他們成為能為自己負責的成年人。
           </p>
         </div>
@@ -189,52 +189,52 @@ export default function SectionCh10() {
 
       {/* Discipline vs Punishment */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <BookOpen className="w-7 h-7 mr-3 text-emerald-500" />
           教導 (Discipline) VS. 懲罰 (Punishment) (P245-248)
         </h3>
-        <p className="text-slate-600 leading-relaxed mb-8 text-lg">
+        <p className="text-slate-600 leading-relaxed mb-8" style={{fontSize:"21px"}}>
           許多父母將「設立界線」誤以為是「發脾氣和懲罰」。真正的界線是透過自然的後果來教導孩子，而不是透過恐懼來控制他們。
         </p>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="bg-emerald-50 p-8 rounded-3xl border border-emerald-100 relative overflow-hidden flex flex-col">
             <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-200 rounded-bl-full opacity-50"></div>
-            <h4 className="font-bold text-emerald-800 mb-4 text-2xl flex items-center">
+            <h4 className="font-bold text-emerald-800 mb-4 flex items-center" style={{fontSize:"27px"}}>
               <CheckCircle2 className="w-6 h-6 mr-2" />
               管教 (Discipline)
             </h4>
-            <p className="text-base text-emerald-700 leading-relaxed mb-6">
+            <p className="text-emerald-700 leading-relaxed mb-6" style={{fontSize:"19px"}}>
               管教源自「門徒訓練」，意思是教導。它是上帝自然的法則：種什麼就收什麼。管教是<strong className="bg-emerald-200 px-1 rounded">向前看</strong>，透過後果讓孩子學到功課，不再犯同樣的錯。
             </p>
-            <ul className="space-y-3 text-sm text-emerald-800 font-medium mb-6 flex-grow">
+            <ul className="space-y-3 text-emerald-800 font-medium mb-6 flex-grow" style={{fontSize:"17px"}}>
               <li className="flex items-center bg-white/60 p-3 rounded-xl"><CheckCircle2 className="w-5 h-5 mr-3 text-emerald-600 shrink-0" /> 提供安全的鷹架與規範，態度溫和但堅定</li>
               <li className="flex items-center bg-white/60 p-3 rounded-xl"><CheckCircle2 className="w-5 h-5 mr-3 text-emerald-600 shrink-0" /> 培養內在的責任感，讓孩子明白行為與後果的關聯</li>
               <li className="flex items-center bg-white/60 p-3 rounded-xl"><CheckCircle2 className="w-5 h-5 mr-3 text-emerald-600 shrink-0" /> 允許從錯誤中學習，不帶定罪與羞辱</li>
             </ul>
             <div className="bg-white p-4 rounded-xl border border-emerald-200">
-              <strong className="text-emerald-800 text-sm block mb-1">✅ 具體情境：</strong>
-              <p className="text-sm text-emerald-700">「因為你沒有把腳踏車收好，所以你今天不能騎腳踏車。」（後果與行為直接相關，父母沒有發脾氣，只是執行規則）</p>
+              <strong className="text-emerald-800 block mb-1" style={{fontSize:"17px"}}>✅ 具體情境：</strong>
+              <p className="text-emerald-700" style={{fontSize:"17px"}}>「因為你沒有把腳踏車收好，所以你今天不能騎腳踏車。」（後果與行為直接相關，父母沒有發脾氣，只是執行規則）</p>
             </div>
           </div>
           
           <div className="bg-rose-50 p-8 rounded-3xl border border-rose-100 relative overflow-hidden flex flex-col">
             <div className="absolute top-0 right-0 w-24 h-24 bg-rose-200 rounded-bl-full opacity-50"></div>
-            <h4 className="font-bold text-rose-800 mb-4 text-2xl flex items-center">
+            <h4 className="font-bold text-rose-800 mb-4 flex items-center" style={{fontSize:"27px"}}>
               <XCircle className="w-6 h-6 mr-2" />
               懲罰 (Punishment)
             </h4>
-            <p className="text-base text-rose-700 leading-relaxed mb-6">
+            <p className="text-rose-700 leading-relaxed mb-6" style={{fontSize:"19px"}}>
               懲罰是讓人為做錯的事額外付代價。懲罰是<strong className="bg-rose-200 px-1 rounded">往回看</strong>，聚焦在為過去付代價，通常伴隨著父母的憤怒，沒有給練習留下太多空間。
             </p>
-            <ul className="space-y-3 text-sm text-rose-800 font-medium mb-6 flex-grow">
+            <ul className="space-y-3 text-rose-800 font-medium mb-6 flex-grow" style={{fontSize:"17px"}}>
               <li className="flex items-center bg-white/60 p-3 rounded-xl"><AlertTriangle className="w-5 h-5 mr-3 text-rose-600 shrink-0" /> 帶來恐懼與定罪，孩子覺得自己「很糟」</li>
               <li className="flex items-center bg-white/60 p-3 rounded-xl"><AlertTriangle className="w-5 h-5 mr-3 text-rose-600 shrink-0" /> 破壞關係與情感連結，產生怨恨</li>
               <li className="flex items-center bg-white/60 p-3 rounded-xl"><AlertTriangle className="w-5 h-5 mr-3 text-rose-600 shrink-0" /> 孩子學會逃避被抓、說謊，而不是為行為負責</li>
             </ul>
             <div className="bg-white p-4 rounded-xl border border-rose-200">
-              <strong className="text-rose-800 text-sm block mb-1">❌ 具體情境：</strong>
-              <p className="text-sm text-rose-700">「你這壞孩子，怎麼總是講不聽！給我回房間反省，我今天不想看到你！」（帶有情緒發洩、人身攻擊與關係的切斷）</p>
+              <strong className="text-rose-800 block mb-1" style={{fontSize:"17px"}}>❌ 具體情境：</strong>
+              <p className="text-rose-700" style={{fontSize:"17px"}}>「你這壞孩子，怎麼總是講不聽！給我回房間反省，我今天不想看到你！」（帶有情緒發洩、人身攻擊與關係的切斷）</p>
             </div>
           </div>
         </div>
@@ -242,42 +242,42 @@ export default function SectionCh10() {
 
       {/* Children's Needs */}
       <div className="bg-slate-800 rounded-3xl p-8 md:p-10 border border-slate-700 shadow-sm text-white">
-        <h3 className="text-2xl font-bold text-emerald-300 mb-8 flex items-center">
+        <h3 className="font-bold text-emerald-300 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <HeartHandshake className="w-7 h-7 mr-3" />
           孩童需要的界線能力 (P249-260)
         </h3>
-        <p className="text-slate-300 mb-8 text-lg">
+        <p className="text-slate-300 mb-8" style={{fontSize:"21px"}}>
           我們不只要對孩子設界線，更要教導他們如何為自己設界線。以下是孩子必須發展出的三種核心能力：
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 hover:bg-slate-700 transition-colors">
             <ShieldCheck className="w-8 h-8 text-emerald-400 mb-4" />
-            <h4 className="font-bold text-emerald-300 mb-3 text-xl">保護自己 (Protect Self)</h4>
-            <p className="text-base text-slate-300 leading-relaxed">
+            <h4 className="font-bold text-emerald-300 mb-3" style={{fontSize:"23px"}}>保護自己 (Protect Self)</h4>
+            <p className="text-slate-300 leading-relaxed" style={{fontSize:"19px"}}>
               界線是孩子用來保護自己、捍衛靈魂的方法。他們需要學會對不好的事物（如霸凌、不當觸摸、同儕壓力）勇敢說「不」。
             </p>
-            <div className="mt-4 bg-slate-800/80 p-3 rounded-lg text-sm text-emerald-200/80 border border-slate-600/50">
+            <div className="mt-4 bg-slate-800/80 p-3 rounded-lg text-emerald-200/80 border border-slate-600/50" style={{fontSize:"17px"}}>
               關鍵：如果父母在家裡不允許孩子說「不」（例如強迫他們擁抱不想擁抱的親戚），他們在外面遇到危險時也不會說「不」。
             </div>
           </div>
           <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 hover:bg-slate-700 transition-colors">
             <Sprout className="w-8 h-8 text-emerald-400 mb-4" />
-            <h4 className="font-bold text-emerald-300 mb-3 text-xl">擁有自主與選擇 (Autonomy)</h4>
-            <p className="text-base text-slate-300 leading-relaxed">
+            <h4 className="font-bold text-emerald-300 mb-3" style={{fontSize:"23px"}}>擁有自主與選擇 (Autonomy)</h4>
+            <p className="text-slate-300 leading-relaxed" style={{fontSize:"19px"}}>
               讓孩子意識到自己對生活有控制和選擇權，而不只是父母手中的棋子。給予適合年齡的選擇權，並讓他們為自己的選擇承擔後果。
             </p>
-            <div className="mt-4 bg-slate-800/80 p-3 rounded-lg text-sm text-emerald-200/80 border border-slate-600/50">
+            <div className="mt-4 bg-slate-800/80 p-3 rounded-lg text-emerald-200/80 border border-slate-600/50" style={{fontSize:"17px"}}>
               關鍵：與其命令「穿上這件紅衣服」，不如問「你想穿紅衣服還是藍衣服？」讓他們練習做決定。
             </div>
           </div>
           <div className="bg-slate-700/50 p-6 rounded-2xl border border-slate-600 hover:bg-slate-700 transition-colors">
             <Clock className="w-8 h-8 text-emerald-400 mb-4" />
-            <h4 className="font-bold text-emerald-300 mb-3 text-xl">延遲滿足 (Delay Gratification)</h4>
-            <p className="text-base text-slate-300 leading-relaxed">
+            <h4 className="font-bold text-emerald-300 mb-3" style={{fontSize:"23px"}}>延遲滿足 (Delay Gratification)</h4>
+            <p className="text-slate-300 leading-relaxed" style={{fontSize:"19px"}}>
               幫助孩子學會對當下的渴望說「不」，為了得到未來更好的東西。無法延遲滿足的孩子，長大後容易陷入債務、成癮和人際關係破裂的危機。
             </p>
-            <div className="mt-4 bg-slate-800/80 p-3 rounded-lg text-sm text-emerald-200/80 border border-slate-600/50">
+            <div className="mt-4 bg-slate-800/80 p-3 rounded-lg text-emerald-200/80 border border-slate-600/50" style={{fontSize:"17px"}}>
               關鍵：不要孩子一哭鬧就立刻滿足他。讓他們學會等待，學會為了買大玩具而存錢，而不是立刻買小玩具。
             </div>
           </div>
@@ -286,7 +286,7 @@ export default function SectionCh10() {
 
       {/* Age Stages */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <Baby className="w-7 h-7 mr-3 text-emerald-500" />
           不同年齡層的界線訓練 (P265-272)
         </h3>
@@ -307,31 +307,31 @@ export default function SectionCh10() {
               <div className="bg-gradient-to-r from-slate-50 to-emerald-50/30 rounded-2xl p-6 md:p-8 border border-slate-100 hover:border-emerald-300 hover:shadow-lg transition-all flex flex-col">
                 <div className="flex flex-wrap items-center justify-between mb-4 gap-2">
                   <div className="flex items-center space-x-3">
-                    <span className="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-lg text-sm font-bold">
+                    <span className="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-lg font-bold" style={{fontSize:"17px"}}>
                       {item.age}
                     </span>
-                    <h4 className="text-xl font-bold text-slate-800">{item.title}</h4>
+                    <h4 className="font-bold text-slate-800" style={{fontSize:"23px"}}>{item.title}</h4>
                   </div>
-                  <span className="text-xs font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200">{item.page}</span>
+                  <span className="font-medium text-slate-500 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>{item.page}</span>
                 </div>
-                <p className="text-base text-slate-700 leading-relaxed mb-6 flex-grow">
+                <p className="text-slate-700 leading-relaxed mb-6 flex-grow" style={{fontSize:"19px"}}>
                   {item.desc}
                 </p>
                 <div className="bg-white p-5 rounded-xl border border-emerald-200 mt-auto mb-6">
-                  <strong className="text-emerald-800 text-base flex items-center mb-2">
+                  <strong className="text-emerald-800 flex items-center mb-2" style={{fontSize:"19px"}}>
                     <CheckCircle2 className="w-5 h-5 mr-2 text-emerald-600" />
                     父母的任務與焦點：
                   </strong>
-                  <p className="text-base text-slate-700 leading-relaxed mb-4">{item.task}</p>
+                  <p className="text-slate-700 leading-relaxed mb-4" style={{fontSize:"19px"}}>{item.task}</p>
                   <div className="bg-emerald-50 p-4 rounded-lg border border-emerald-100">
-                    <strong className="text-emerald-700 text-sm flex items-center mb-2">
+                    <strong className="text-emerald-700 flex items-center mb-2" style={{fontSize:"17px"}}>
                       <HeartHandshake className="w-4 h-4 mr-1.5" />
                       親子互動建議
-                      <span className="ml-2 text-xs bg-emerald-200/80 text-emerald-800 px-2 py-0.5 rounded-full font-normal border border-emerald-300">
+                      <span className="ml-2 bg-emerald-200/80 text-emerald-800 px-2 py-0.5 rounded-full font-normal border border-emerald-300" style={{fontSize:"15px"}}>
                         💡 延伸實務應用 (非原書內容)
                       </span>：
                     </strong>
-                    <p className="text-sm text-emerald-700 leading-relaxed">{item.interaction}</p>
+                    <p className="text-emerald-700 leading-relaxed" style={{fontSize:"17px"}}>{item.interaction}</p>
                   </div>
                 </div>
 
@@ -392,7 +392,7 @@ export default function SectionCh10() {
                                 ) : (
                                   <XCircle className="w-5 h-5 mr-2 shrink-0 mt-0.5" />
                                 )}
-                                <p className="text-sm font-medium">
+                                <p className="font-medium" style={{fontSize:"17px"}}>
                                   {quizResults[item.id] ? item.quiz.feedback : '再想一想！請重新閱讀上方的任務與焦點。'}
                                 </p>
                               </motion.div>
@@ -408,10 +408,10 @@ export default function SectionCh10() {
                             <ul className="space-y-3">
                               {item.actionableSteps.map((step, stepIdx) => (
                                 <li key={stepIdx} className="flex items-start">
-                                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">
+                                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center font-bold mr-3 mt-0.5" style={{fontSize:"17px"}}>
                                     {stepIdx + 1}
                                   </span>
-                                  <span className="text-slate-700 text-sm leading-relaxed">{step}</span>
+                                  <span className="text-slate-700 leading-relaxed" style={{fontSize:"17px"}}>{step}</span>
                                 </li>
                               ))}
                             </ul>
@@ -430,36 +430,36 @@ export default function SectionCh10() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第10章總結：界線與你的孩子
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第10章總結：界線與你的孩子
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章探討親子關係中的界線，從嬰兒期的發展需要，到青春期的界線挑戰，提供一個完整的藍圖，幫助父母理解如何在愛與限制之間找到平衡。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章探討親子關係中的界線，從嬰兒期的發展需要，到青春期的界線挑戰，提供一個完整的藍圖，幫助父母理解如何在愛與限制之間找到平衡。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 孩子需要界線才能成長</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者指出，有界線的孩子是更有安全感的孩子——他們知道世界有規則、行為有後果，這讓他們感到安全而不是失控。缺乏界線的孩子雖然表面上「自由」，實際上卻活在一個讓他們焦慮的混沌中。設立清楚、一致的界線，是父母送給孩子最重要的禮物之一。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 孩子需要界線才能成長</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者指出，有界線的孩子是更有安全感的孩子——他們知道世界有規則、行為有後果，這讓他們感到安全而不是失控。缺乏界線的孩子雖然表面上「自由」，實際上卻活在一個讓他們焦慮的混沌中。設立清楚、一致的界線，是父母送給孩子最重要的禮物之一。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 不同發展階段的界線需要</div>
-            <p className="text-slate-600 text-sm leading-relaxed">嬰兒期需要完全的安撫和依附，不存在「寵壞」的問題；學步期孩子開始說「不」，這是健康的分離，父母要尊重這個「不」同時設立安全限制；青春期孩子需要更大的自主空間，但同時也需要清楚的底線和後果。作者強調，界線的形式會隨年齡改變，但界線本身從不消失。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🔍 不同發展階段的界線需要</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>嬰兒期需要完全的安撫和依附，不存在「寵壞」的問題；學步期孩子開始說「不」，這是健康的分離，父母要尊重這個「不」同時設立安全限制；青春期孩子需要更大的自主空間，但同時也需要清楚的底線和後果。作者強調，界線的形式會隨年齡改變，但界線本身從不消失。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 最常見的育兒界線錯誤</div>
-            <p className="text-slate-600 text-sm leading-relaxed">過度保護孩子、替他們承擔後果，是最常見也最具破壞力的界線失誤。當父母替孩子向老師道歉、替孩子還清他揮霍的零用錢、替孩子解決他的人際衝突，孩子就失去了學習責任感和解決問題能力的機會。善意的保護，可能正在培養一個無法在現實世界生存的成年人。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 最常見的育兒界線錯誤</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>過度保護孩子、替他們承擔後果，是最常見也最具破壞力的界線失誤。當父母替孩子向老師道歉、替孩子還清他揮霍的零用錢、替孩子解決他的人際衝突，孩子就失去了學習責任感和解決問題能力的機會。善意的保護，可能正在培養一個無法在現實世界生存的成年人。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">做一個有界線的父母，不是嚴厲，而是清楚。「如果你這樣做，就會有這個後果」——然後溫和而堅定地執行。父母自己的界線健康程度，是孩子最真實的教材。你所展示的，比你所說的，對孩子的影響深遠得多。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>做一個有界線的父母，不是嚴厲，而是清楚。「如果你這樣做，就會有這個後果」——然後溫和而堅定地執行。父母自己的界線健康程度，是孩子最真實的教材。你所展示的，比你所說的，對孩子的影響深遠得多。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-amber-300 mb-6 flex items-center">
+        <h3 className="font-bold text-amber-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-amber-200 mb-4 flex items-center">
+            <h4 className="font-bold text-amber-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-amber-400" />
               反思問題
             </h4>
@@ -491,7 +491,7 @@ export default function SectionCh10() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>

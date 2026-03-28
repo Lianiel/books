@@ -23,13 +23,13 @@ export default function SectionDefinition() {
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-sm font-bold mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 font-bold mb-4" style={{fontSize:"17px"}}>
             Chapter 2
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          <h2 className="md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" style={{fontSize:"33px"}}>
             界線看來啥模樣？
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed max-w-3xl">
+          <p className="text-slate-700 leading-relaxed max-w-3xl" style={{fontSize:"21px"}}>
             界線就像是財產的底線，標示出「我」的起點和終點。它幫助我們釐清責任歸屬，知道什麼是我們該負責的，什麼是不該負責的。
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function SectionDefinition() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* The Sprinkler Story */}
         <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-          <h3 className="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+          <h3 className="font-bold text-slate-800 mb-6 flex items-center" style={{fontSize:"27px"}}>
             <Droplet className="w-7 h-7 mr-3 text-teal-500" />
             灑水器的啟示 (P41-43)
           </h3>
@@ -49,7 +49,7 @@ export default function SectionDefinition() {
             </p>
             <div className="bg-teal-50 p-5 rounded-2xl border border-teal-100">
               <p className="font-bold text-teal-800 mb-2">問題的核心：</p>
-              <p className="text-sm text-teal-700">
+              <p className="text-teal-700" style={{fontSize:"17px"}}>
                 「問題出在誰身上？」約書亞沒有問題，因為父母替他承擔了所有後果。就像鄰居的灑水器壞了，水卻流進你家院子，鄰居當然不覺得有問題。
               </p>
             </div>
@@ -61,20 +61,20 @@ export default function SectionDefinition() {
 
         {/* Backpack vs Boulder */}
         <div className="bg-slate-800 rounded-3xl p-8 border border-slate-700 shadow-sm text-white">
-          <h3 className="text-2xl font-bold text-emerald-300 mb-6 flex items-center">
+          <h3 className="font-bold text-emerald-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
             <Package className="w-7 h-7 mr-3" />
             背包與巨石 (P46)
           </h3>
           <div className="space-y-6">
             <div className="bg-slate-700/50 p-5 rounded-2xl border border-slate-600">
-              <h4 className="font-bold text-emerald-400 mb-2 text-lg">各人要擔當自己的擔子 (加 6:5)</h4>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <h4 className="font-bold text-emerald-400 mb-2" style={{fontSize:"21px"}}>各人要擔當自己的擔子 (加 6:5)</h4>
+              <p className="text-slate-300 leading-relaxed" style={{fontSize:"17px"}}>
                 這是指日常的責任（如一個背包）。每個人都應該自己背負，不能推給別人。這是我們「分內」的事。
               </p>
             </div>
             <div className="bg-slate-700/50 p-5 rounded-2xl border border-slate-600">
-              <h4 className="font-bold text-emerald-400 mb-2 text-lg">你們各人的重擔要互相擔當 (加 6:2)</h4>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <h4 className="font-bold text-emerald-400 mb-2" style={{fontSize:"21px"}}>你們各人的重擔要互相擔當 (加 6:2)</h4>
+              <p className="text-slate-300 leading-relaxed" style={{fontSize:"17px"}}>
                 這是指壓垮人的巨大危機或創傷（如一塊巨石）。這時我們需要別人的幫助，因為我們無法獨自承受。
               </p>
             </div>
@@ -87,29 +87,29 @@ export default function SectionDefinition() {
 
       {/* Good In, Bad Out */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Shield className="w-7 h-7 mr-3 text-emerald-500" />
           界線的功能：把好的留在裡面，把壞的擋在外面 (P47)
         </h3>
-        <p className="text-slate-600 leading-relaxed mb-6 text-lg">
+        <p className="text-slate-600 leading-relaxed mb-6" style={{fontSize:"21px"}}>
           界線不是一堵密不透風的牆。它應該像是有門的柵欄。
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-emerald-50 p-6 rounded-2xl border border-emerald-100">
-            <h4 className="font-bold text-emerald-800 mb-3 text-lg flex items-center">
+            <h4 className="font-bold text-emerald-800 mb-3 flex items-center" style={{fontSize:"21px"}}>
               <Key className="w-5 h-5 mr-2" />
               打開門 (Open the Gate)
             </h4>
-            <p className="text-sm text-emerald-700 leading-relaxed">
+            <p className="text-emerald-700 leading-relaxed" style={{fontSize:"17px"}}>
               讓好的東西進來（如別人的愛、關心、真理），也讓自己裡面不好的東西出去（如承認自己的罪、脆弱、痛苦，向人求助）。
             </p>
           </div>
           <div className="bg-rose-50 p-6 rounded-2xl border border-rose-100">
-            <h4 className="font-bold text-rose-800 mb-3 text-lg flex items-center">
+            <h4 className="font-bold text-rose-800 mb-3 flex items-center" style={{fontSize:"21px"}}>
               <Lock className="w-5 h-5 mr-2" />
               關上門 (Close the Gate)
             </h4>
-            <p className="text-sm text-rose-700 leading-relaxed">
+            <p className="text-rose-700 leading-relaxed" style={{fontSize:"17px"}}>
               把壞的東西擋在外面（如別人的虐待、操控、不合理要求），也把好的東西保護在裡面（如自己的時間、精力、價值觀）。
             </p>
           </div>
@@ -118,7 +118,7 @@ export default function SectionDefinition() {
 
       {/* What's Inside My Boundary? */}
       <div className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+        <h3 className="font-bold text-slate-800 mb-8 flex items-center" style={{fontSize:"27px"}}>
           <Map className="w-7 h-7 mr-3 text-cyan-500" />
           我的界線內到底有什麼？ (P48-60)
         </h3>
@@ -136,9 +136,9 @@ export default function SectionDefinition() {
                   {item.icon}
                   <h4 className="font-bold">{item.title}</h4>
                 </div>
-                <span className="text-xs font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200">{item.page}</span>
+                <span className="font-medium text-slate-400 bg-white px-2 py-1 rounded-md border border-slate-200" style={{fontSize:"15px"}}>{item.page}</span>
               </div>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>
                 {item.desc}
               </p>
             </motion.div>
@@ -149,36 +149,36 @@ export default function SectionDefinition() {
 
         {/* 本章總結 */}
         <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-2xl p-6 mb-6">
-          <h3 className="text-base font-bold text-teal-700 mb-2 flex items-center gap-2">
-            <span className="text-lg">📝</span> 第2章總結：界線看來啥模樣？
+          <h3 className="font-bold text-teal-700 mb-2 flex items-center gap-2" style={{fontSize:"22px"}}>
+            <span style={{fontSize:"24px"}}>📝</span> 第2章總結：界線看來啥模樣？
           </h3>
-          <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章從定義出發，清楚解釋「界線」是什麼、不是什麼，並列出十種屬於「我的地」的範疇。作者用「財產線」的比喻，幫助讀者理解界線的本質。</p>
+          <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"18px"}}>本章從定義出發，清楚解釋「界線」是什麼、不是什麼，並列出十種屬於「我的地」的範疇。作者用「財產線」的比喻，幫助讀者理解界線的本質。</p>
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 什麼是界線？</div>
-            <p className="text-slate-600 text-sm leading-relaxed">界線就像財產上的圍牆，標示出「這裡是我的地，那裡是你的地」。在人際關係中，界線定義了「我」在哪裡結束，「你」在哪裡開始。它不是把人推開的牆，而是讓愛能夠真實流動的疆界。沒有界線，就沒有真正意義上的自我；沒有自我，就不可能有真正的愛。</p>
+            <div className="font-bold text-blue-700 mb-1.5" style={{fontSize:"18px"}}>📖 什麼是界線？</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>界線就像財產上的圍牆，標示出「這裡是我的地，那裡是你的地」。在人際關係中，界線定義了「我」在哪裡結束，「你」在哪裡開始。它不是把人推開的牆，而是讓愛能夠真實流動的疆界。沒有界線，就沒有真正意義上的自我；沒有自我，就不可能有真正的愛。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-violet-700 mb-1.5">🗺️ 十種屬於我的地</div>
-            <p className="text-slate-600 text-sm leading-relaxed">作者列出十個我們需要負責任的「自己的地」：感覺（你的情緒是你的，不是別人的）、態度與信念、行為（行為有後果，我們必須承擔自己的後果）、選擇（不能說「我別無選擇」）、價值觀、限制（我們無法限制別人，但可以限制自己暴露在傷害中）、資源與恩賜、思想、慾望和愛。這十樣是我們的責任，也是我們的自由。</p>
+            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>🗺️ 十種屬於我的地</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>作者列出十個我們需要負責任的「自己的地」：感覺（你的情緒是你的，不是別人的）、態度與信念、行為（行為有後果，我們必須承擔自己的後果）、選擇（不能說「我別無選擇」）、價值觀、限制（我們無法限制別人，但可以限制自己暴露在傷害中）、資源與恩賜、思想、慾望和愛。這十樣是我們的責任，也是我們的自由。</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 界線的誤解</div>
-            <p className="text-slate-600 text-sm leading-relaxed">許多人混淆了「界線」和「牆」。真正的界線是有門的——你可以選擇讓誰進來、讓誰離開、在什麼條件下開門。牆是永遠關閉的，是因傷害而建的防衛機制。界線的目的是保護和連結，不是孤立和排斥。</p>
+            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 界線的誤解</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>許多人混淆了「界線」和「牆」。真正的界線是有門的——你可以選擇讓誰進來、讓誰離開、在什麼條件下開門。牆是永遠關閉的，是因傷害而建的防衛機制。界線的目的是保護和連結，不是孤立和排斥。</p>
           </div>
           <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
-            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
-            <p className="text-slate-600 text-sm leading-relaxed">你有責任管理好屬於自己的地，但你無法也不應該去管理別人的地。當你試圖控制別人的感受、選擇或行為，你就越界了；當你讓別人控制你的感受、選擇或行為，你就失去了自己的地。清楚的界線，讓愛成為禮物，而不是交換或義務。</p>
+            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>💡 本章的關鍵信息</div>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"20px"}}>你有責任管理好屬於自己的地，但你無法也不應該去管理別人的地。當你試圖控制別人的感受、選擇或行為，你就越界了；當你讓別人控制你的感受、選擇或行為，你就失去了自己的地。清楚的界線，讓愛成為禮物，而不是交換或義務。</p>
           </div>
         </div>
 
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white mt-12">
-        <h3 className="text-2xl font-bold text-blue-300 mb-6 flex items-center">
+        <h3 className="font-bold text-blue-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
-          深度反思與行動指南 <span className="ml-3 text-xs bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600">💡 延伸應用 (非原書內容)</span>
+          深度反思與行動指南 <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用 (非原書內容)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-blue-200 mb-4 flex items-center">
+            <h4 className="font-bold text-blue-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Brain className="w-5 h-5 mr-2 text-blue-400" />
               反思問題
             </h4>
@@ -210,7 +210,7 @@ export default function SectionDefinition() {
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
               <Target className="w-5 h-5 mr-2 text-emerald-400" />
               具體行動方案
             </h4>
