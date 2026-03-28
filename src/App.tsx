@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   BookOpen, Menu, X, Heart, Activity, Compass, Map, Shield, Users, Sun, Star,
   Home, Footprints, Scale, HelpCircle, HeartHandshake, Baby, Briefcase,
   Smartphone, User, Cross, ShieldAlert, TrendingUp, ChevronLeft
 } from 'lucide-react';
+import { useHighlight, HighlightStyle, applyStyleToSpan } from './useHighlight';
 
 // Book 1: 立界線得自由
 import SectionHome from './components/book1/SectionHome';
@@ -174,6 +175,64 @@ export default function App() {
   const [activeChapter, setActiveChapter] = useState('ch1');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  // ── Highlight toolbar state ──────────────────────────────────────
+  const [toolbar, setToolbar] = useState<{ x: number; y: number; text: string } | null>(null);
+  const toolbarRef = useRef<HTMLDivElement>(null);
+  const { isLoggedIn, highlights, applyHighlights, addHighlight, removeHighlight, getHighlightByText } =
+    useHighlight(selectedBook || '', activeChapter);
+
+  // Apply highlights whenever chapter changes or highlights load
+  useEffect(() => {
+    const timer = setTimeout(() => { applyHighlights(); }, 300);
+    return () => clearTimeout(timer);
+  }, [applyHighlights, activeChapter, selectedBook]);
+
+  // Listen for click on highlight span (remove)
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const id = (e as CustomEvent).detail;
+      removeHighlight(id);
+    };
+    document.addEventListener('removeHighlight', handler);
+    return () => document.removeEventListener('removeHighlight', handler);
+  }, [removeHighlight]);
+
+  // Show toolbar on text selection
+  useEffect(() => {
+    if (!isLoggedIn || !selectedBook) return;
+    const handleMouseUp = (e: MouseEvent) => {
+      if (toolbarRef.current?.contains(e.target as Node)) return;
+      const sel = window.getSelection();
+      const text = sel?.toString().trim() || '';
+      if (text.length < 2) { setToolbar(null); return; }
+      const range = sel!.getRangeAt(0);
+      const rect = range.getBoundingClientRect();
+      setToolbar({ x: rect.left + rect.width / 2, y: rect.top + window.scrollY - 8, text });
+    };
+    const handleMouseDown = (e: MouseEvent) => {
+      if (!toolbarRef.current?.contains(e.target as Node)) setToolbar(null);
+    };
+    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener('mousedown', handleMouseDown);
+    return () => {
+      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('mousedown', handleMouseDown);
+    };
+  }, [isLoggedIn, selectedBook]);
+
+  const handleHighlight = async (style: HighlightStyle) => {
+    if (!toolbar) return;
+    const existing = getHighlightByText(toolbar.text);
+    if (existing) {
+      await removeHighlight(existing.id);
+    } else {
+      await addHighlight(toolbar.text, style);
+    }
+    setToolbar(null);
+    window.getSelection()?.removeAllRanges();
+    setTimeout(() => applyHighlights(), 200);
+  };
+
   const book = BOOKS.find(b => b.id === selectedBook);
 
   const handleSelectBook = (id: string) => {
@@ -323,6 +382,70 @@ export default function App() {
           </motion.div>
         </AnimatePresence>
       </main>
+
+      {/* Highlight Toolbar */}
+      {toolbar && isLoggedIn && (
+        <div
+          ref={toolbarRef}
+          style={{
+            position: 'absolute',
+            left: `${toolbar.x}px`,
+            top: `${toolbar.y}px`,
+            transform: 'translate(-50%, -100%)',
+            zIndex: 9999,
+          }}
+          className="flex items-center gap-1 bg-slate-800 rounded-xl shadow-2xl px-2 py-1.5 border border-slate-600"
+        >
+          {/* Yellow highlight */}
+          <button
+            onClick={() => handleHighlight('yellow')}
+            className="w-7 h-7 rounded-lg flex items-center justify-center hover:scale-110 transition-transform"
+            style={{ backgroundColor: '#fef08a' }}
+            title="螢光底色"
+          >🖍</button>
+          {/* Red text */}
+          <button
+            onClick={() => handleHighlight('red')}
+            className="w-7 h-7 rounded-lg flex items-center justify-center hover:scale-110 transition-transform font-bold text-sm"
+            style={{ backgroundColor: '#fee2e2', color: '#dc2626' }}
+            title="紅色文字"
+          >A</button>
+          {/* Blue text */}
+          <button
+            onClick={() => handleHighlight('blue')}
+            className="w-7 h-7 rounded-lg flex items-center justify-center hover:scale-110 transition-transform font-bold text-sm"
+            style={{ backgroundColor: '#dbeafe', color: '#2563eb' }}
+            title="藍色文字"
+          >A</button>
+          {/* Bold */}
+          <button
+            onClick={() => handleHighlight('bold')}
+            className="w-7 h-7 rounded-lg flex items-center justify-center hover:scale-110 transition-transform font-black text-sm"
+            style={{ backgroundColor: '#f1f5f9', color: '#1e293b' }}
+            title="粗體"
+          >B</button>
+          {/* Underline */}
+          <button
+            onClick={() => handleHighlight('underline')}
+            className="w-7 h-7 rounded-lg flex items-center justify-center hover:scale-110 transition-transform text-sm"
+            style={{ backgroundColor: '#f1f5f9', color: '#475569', textDecoration: 'underline', textUnderlineOffset: '2px' }}
+            title="底線"
+          >U</button>
+          {/* Divider */}
+          <div className="w-px h-5 bg-slate-600 mx-0.5" />
+          {/* Clear */}
+          <button
+            className="w-7 h-7 rounded-lg flex items-center justify-center hover:scale-110 transition-transform text-xs"
+            style={{ backgroundColor: '#fee2e2', color: '#dc2626' }}
+            title="移除畫線"
+            onClick={async () => {
+              const existing = getHighlightByText(toolbar.text);
+              if (existing) { await removeHighlight(existing.id); setTimeout(() => applyHighlights(), 200); }
+              setToolbar(null); window.getSelection()?.removeAllRanges();
+            }}
+          >✕</button>
+        </div>
+      )}
 
       <footer className="bg-white border-t border-slate-200 py-6 mt-auto">
         <div className="max-w-4xl mx-auto px-4 text-center text-slate-400 text-xs">
