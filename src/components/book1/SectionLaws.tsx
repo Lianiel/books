@@ -374,20 +374,20 @@ export default function SectionLaws() {
             <span className="text-lg">📝</span> 第5章總結：界線的十大法則
           </h3>
           <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章列出十條管理界線的屬靈法則，這些法則並非人為規定，而是神所設計的宇宙秩序的一部分。違背這些法則必然帶來痛苦；順應這些法則，才能經歷真正的自由和成長。</p>
-          <div className="mb-4">
-            <div className="text-xs font-bold text-teal-600 mb-1.5">📖 種豆得豆 & 能力法則</div>
+          <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
+            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 種豆得豆 & 能力法則</div>
             <p className="text-slate-600 text-sm leading-relaxed">「種豆得豆」是界線最基本的法則：每個人必須為自己的選擇承擔後果。若你不斷替別人承擔後果（替他們還債、為他們道歉、幫他們擦屁股），你就打斷了因果律，讓他們無法學習和成長。「能力法則」則提醒我們：我們有能力改變自己，但無法改變別人。把精力放在改變自己的回應上，而不是試圖改變對方。</p>
           </div>
-          <div className="mb-4">
-            <div className="text-xs font-bold text-teal-600 mb-1.5">🔍 責任 & 尊重 & 動機法則</div>
+          <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
+            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 責任 & 尊重 & 動機法則</div>
             <p className="text-slate-600 text-sm leading-relaxed">「責任法則」區分了「對某人負責」（愛、關心）和「替某人負責」（承擔他的後果）——我們要前者，但不要後者。「尊重法則」要求我們尊重別人的「不」，就像我們希望別人尊重我們的「不」。「動機法則」則是最核心的一條：若你的給予是出於恐懼（怕對方生氣）、罪惡感（我不得不）或討好（這樣他才會喜歡我），而不是出於自由和愛，這種給予無法帶來真正的連結，只會積累怨恨。</p>
           </div>
-          <div className="mb-4">
-            <div className="text-xs font-bold text-teal-600 mb-1.5">⚠️ 評估 & 嫉妒 & 主動法則</div>
+          <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
+            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 評估 & 嫉妒 & 主動法則</div>
             <p className="text-slate-600 text-sm leading-relaxed">「評估法則」提醒我們：我們的界線會對他人造成痛苦，但這不代表我們傷害了他們——要區分「受傷(hurt)」和「受害(harm)」。「嫉妒法則」指出嫉妒是界線問題的警示燈：當你嫉妒別人時，通常是因為你沒有為自己的生命承擔責任。「主動法則」鼓勵我們不只是被動反應，而是主動清楚知道自己要什麼、不要什麼，並平靜表達。</p>
           </div>
-          <div className="mb-4">
-            <div className="text-xs font-bold text-teal-600 mb-1.5">💡 本章的關鍵信息</div>
+          <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
+            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
             <p className="text-slate-600 text-sm leading-relaxed">這些法則的背後有一個共同的神學基礎：神給了我們自由意志，讓我們能夠真正地選擇，也真正地承擔選擇的後果。當我們阻斷別人的後果，我們其實是在干預神的成長計畫。讓別人承擔自己的後果，是一種艱難但深刻的愛。</p>
           </div>
         </div>

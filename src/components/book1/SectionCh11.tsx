@@ -172,20 +172,20 @@ export default function SectionCh11() {
             <span className="text-lg">📝</span> 第11章總結：界線與工作
           </h3>
           <p className="text-slate-500 text-xs mb-5 leading-relaxed">本章聚焦於職場界線，探討為何工作往往成為界線最難設立的領域之一，並提供具體的策略幫助讀者在職場中建立健康的界線。</p>
-          <div className="mb-4">
-            <div className="text-xs font-bold text-teal-600 mb-1.5">📖 工作界線的三大困難</div>
+          <div className="bg-blue-50 border-blue-200 border rounded-xl p-4 mb-3">
+            <div className="text-xs font-bold text-blue-700 mb-1.5">📖 工作界線的三大困難</div>
             <p className="text-slate-600 text-sm leading-relaxed">作者指出三個讓職場界線特別困難的因素：第一，我們往往把工作表現和自我價值混為一談，因此「拒絕工作要求」感覺像是「拒絕自己的價值」；第二，職場中有真實的權力關係，對上司說「不」需要極大的勇氣；第三，「盡忠職守」的價值觀往往被誤解為「沒有限制地給予」。</p>
           </div>
-          <div className="mb-4">
-            <div className="text-xs font-bold text-teal-600 mb-1.5">🔍 職場界線的常見失衡</div>
+          <div className="bg-violet-50 border-violet-200 border rounded-xl p-4 mb-3">
+            <div className="text-xs font-bold text-violet-700 mb-1.5">🔍 職場界線的常見失衡</div>
             <p className="text-slate-600 text-sm leading-relaxed">本章描述幾種常見的職場界線失衡：替同事承擔責任（為別人的不負責任收拾殘局）、無法對不合理加班說「不」、把別人的緊急事件當作自己的優先事項、無法向上司反映不合理的要求。這些模式往往讓工作者在不知不覺中消耗殆盡，卻還以為這是「職業道德」。</p>
           </div>
-          <div className="mb-4">
-            <div className="text-xs font-bold text-teal-600 mb-1.5">⚠️ 科技時代的特殊挑戰</div>
+          <div className="bg-amber-50 border-amber-200 border rounded-xl p-4 mb-3">
+            <div className="text-xs font-bold text-amber-700 mb-1.5">⚠️ 科技時代的特殊挑戰</div>
             <p className="text-slate-600 text-sm leading-relaxed">本章也特別探討現代科技如何模糊了工作與生活的界線——手機讓我們「隨時在線」，讓下班後的休息成為一種奢侈。作者強調，真正的休息不是放縱，而是對工作說「不」，讓自己有時間恢復和充電，這本身就是一種負責任的行為。</p>
           </div>
-          <div className="mb-4">
-            <div className="text-xs font-bold text-teal-600 mb-1.5">💡 本章的關鍵信息</div>
+          <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4 mb-3">
+            <div className="text-xs font-bold text-emerald-700 mb-1.5">💡 本章的關鍵信息</div>
             <p className="text-slate-600 text-sm leading-relaxed">在工作中說「不」不只是保護自己，也是保護你的工作品質。一個長期超載、精疲力盡的工作者，無法持續提供高品質的工作。設立工作界線，長遠來說對雇主、同事和你自己都有益處。清楚地溝通你的限制，比默默承擔然後崩潰，更是一種專業的表現。</p>
           </div>
         </div>
