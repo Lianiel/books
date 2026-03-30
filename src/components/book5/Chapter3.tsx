@@ -2,135 +2,199 @@ export default function Chapter3() {
   return (
     <section className="space-y-8">
       <h2 className="text-2xl font-bold text-emerald-800">第三周</h2>
+      <p className="text-sm text-slate-500">經文範圍：以弗所書四 1-16</p>
 
-      <div className="bg-emerald-50 rounded-xl p-5 space-y-4">
-        <h3 className="text-lg font-bold text-emerald-700">觀察</h3>
-        <p className="text-slate-700 leading-relaxed">在以弗所書的首三章，保羅提醒「在以弗所的聖徒」他們在基督裏有的位分。現在，他的書信由教義轉論到責任、由位分轉論到行為表現。</p>
-        <p className="text-slate-700 leading-relaxed">那些藉著恩典得救的人應當怎樣生活？恩典是否給我們特權去任意生活呢？還是，恩典給我們能力去活出我們應有的生活呢？我們若背著「基督徒」的稱號，言行相稱對我們來說有多重要？言行不相稱又如何呢？</p>
-        <p className="text-sm text-slate-500">組長：大聲朗讀以弗所書四 1、17，五 1-2、8、15。請組員留意一個重複出現的鑰字，這字讓你知道以弗所書第四和第五章的內容。</p>
+      <div className="bg-emerald-50 rounded-xl p-5 space-y-3">
+        <h3 className="text-lg font-bold text-emerald-700">📌 本周主題：行事為人與蒙召相稱</h3>
+        <p className="text-slate-700 leading-relaxed">保羅在前三章建立了信徒的身分後，從第四章開始轉入實際的生活應用。關鍵的轉折詞是「行事為人」（walk）——這個詞在以弗所書四至五章中反覆出現，成為這段經文的鑰字。</p>
       </div>
 
-      <div className="bg-amber-50 rounded-xl p-5 border-l-4 border-amber-400 space-y-4">
-        <div>
-          <h4 className="font-bold text-amber-800 mb-2">弗四 1</h4>
-          <p className="text-slate-700 leading-relaxed">我為主被囚的勸你們：既然蒙召，行事為人就當與蒙召的恩相稱。</p>
+      <div className="space-y-6">
+        <h3 className="text-xl font-bold text-slate-800">📖 重點整理</h3>
+
+        <div className="bg-white rounded-xl p-5 border border-slate-200 space-y-4">
+          <h4 className="font-bold text-emerald-700">一、五個「行事為人」的勸勉</h4>
+          <p className="text-slate-700 leading-relaxed">保羅在以弗所書四至五章中給出五個關於「行事為人」的指引：</p>
+          <div className="space-y-3">
+            <div className="flex items-start gap-3 bg-emerald-50 rounded-lg p-3">
+              <span className="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
+              <div>
+                <p className="font-semibold text-slate-800">與蒙召的恩相稱（四 1）</p>
+                <p className="text-sm text-slate-600">「既然蒙召，行事為人就當與蒙召的恩相稱」——你的生活要配得上你所領受的恩典。</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 bg-emerald-50 rounded-lg p-3">
+              <span className="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
+              <div>
+                <p className="font-semibold text-slate-800">不要像外邦人（四 17）</p>
+                <p className="text-sm text-slate-600">「行事不要再像外邦人存虛妄的心行事」——與過去的生活方式斷裂。</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 bg-emerald-50 rounded-lg p-3">
+              <span className="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
+              <div>
+                <p className="font-semibold text-slate-800">效法神、憑愛心行事（五 1-2）</p>
+                <p className="text-sm text-slate-600">「你們該效法神，好像蒙慈愛的兒女一樣。也要憑愛心行事。」</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 bg-emerald-50 rounded-lg p-3">
+              <span className="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0">4</span>
+              <div>
+                <p className="font-semibold text-slate-800">像光明的子女（五 8）</p>
+                <p className="text-sm text-slate-600">「行事為人就當像光明的子女」——從暗昧轉向光明。</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 bg-emerald-50 rounded-lg p-3">
+              <span className="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0">5</span>
+              <div>
+                <p className="font-semibold text-slate-800">當像智慧人（五 15）</p>
+                <p className="text-sm text-slate-600">「你們要謹慎行事，不要像愚昧人，當像智慧人」——有智慧地運用生命。</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <h4 className="font-bold text-amber-800 mb-2">弗四 17</h4>
-          <p className="text-slate-700 leading-relaxed">所以我說，且在主裏確實的說，你們行事不要再像外邦人存虛妄的心行事。</p>
+
+        <div className="bg-white rounded-xl p-5 border border-slate-200 space-y-4">
+          <h4 className="font-bold text-emerald-700">二、與蒙召相稱的具體表現（弗四 1-6）</h4>
+          <div className="bg-amber-50 rounded-lg p-4 border-l-4 border-amber-400 space-y-1">
+            <p className="text-slate-700"><sup className="text-amber-600 font-bold">1</sup> 我為主被囚的勸你們：既然蒙召，行事為人就當與蒙召的恩相稱。</p>
+            <p className="text-slate-700"><sup className="text-amber-600 font-bold">2</sup> 凡事謙虛、溫柔、忍耐，用愛心互相寬容，</p>
+            <p className="text-slate-700"><sup className="text-amber-600 font-bold">3</sup> 用和平彼此聯絡，竭力保守聖靈所賜合而為一的心。</p>
+          </div>
+
+          <p className="text-slate-700 font-semibold">與蒙召相稱的五個品格特質：</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="bg-slate-50 rounded-lg p-3">
+              <p className="font-bold text-emerald-700">謙虛</p>
+              <p className="text-sm text-slate-600">不高看自己，知道一切都是恩典</p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-3">
+              <p className="font-bold text-emerald-700">溫柔</p>
+              <p className="text-sm text-slate-600">有力量卻有節制，不粗暴不衝動</p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-3">
+              <p className="font-bold text-emerald-700">忍耐</p>
+              <p className="text-sm text-slate-600">面對困難和不完美的人能持久等候</p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-3">
+              <p className="font-bold text-emerald-700">用愛心互相寬容</p>
+              <p className="text-sm text-slate-600">接納彼此的不同和不足</p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-3 md:col-span-2">
+              <p className="font-bold text-emerald-700">竭力保守合一</p>
+              <p className="text-sm text-slate-600">合一不會自然發生，需要「竭力」去維持——用和平彼此聯絡</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <h4 className="font-bold text-amber-800 mb-2">弗五 1-2</h4>
-          <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">1</sup> 所以，你們該效法神，好像蒙慈愛的兒女一樣。</p>
-          <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">2</sup> 也要憑愛心行事，正如基督愛我們，為我們捨了自己，當作馨香的供物和祭物，獻與神。</p>
+
+        <div className="bg-white rounded-xl p-5 border border-slate-200 space-y-4">
+          <h4 className="font-bold text-emerald-700">三、合一的基礎——七個「一」（弗四 4-6）</h4>
+          <div className="bg-amber-50 rounded-lg p-4 border-l-4 border-amber-400 space-y-1">
+            <p className="text-slate-700"><sup className="text-amber-600 font-bold">4</sup> 身體只有一個，聖靈只有一個，正如你們蒙召同有一個指望。</p>
+            <p className="text-slate-700"><sup className="text-amber-600 font-bold">5</sup> 一主、一信、一洗、</p>
+            <p className="text-slate-700"><sup className="text-amber-600 font-bold">6</sup> 一神，就是眾人的父，超乎眾人之上，貫乎眾人之中，也住在眾人之內。</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+            {['一個身體', '一個聖靈', '一個指望', '一主', '一信', '一洗', '一神'].map((item, i) => (
+              <div key={i} className="bg-blue-50 rounded-lg p-2 text-center text-sm font-semibold text-blue-700">{item}</div>
+            ))}
+          </div>
+          <p className="text-slate-700 leading-relaxed">這七個「一」是所有真信徒合一的根基——不是靠人為的組織統一，而是基於共同的信仰本質。</p>
         </div>
-        <div>
-          <h4 className="font-bold text-amber-800 mb-2">弗五 8</h4>
-          <p className="text-slate-700 leading-relaxed">從前你們是暗昧的，但如今在主裏面是光明的，行事為人就當像光明的子女。</p>
+
+        <div className="bg-white rounded-xl p-5 border border-slate-200 space-y-4">
+          <h4 className="font-bold text-emerald-700">四、教會的恩賜與成長（弗四 7-16）</h4>
+          <p className="text-slate-700 leading-relaxed">在合一的基礎上，神賜下不同的恩賜來建造教會：</p>
+          <div className="space-y-2 text-slate-700">
+            <p><span className="font-semibold text-emerald-700">五種恩賜職分（v.11）：</span>使徒、先知、傳福音的、牧師、教師</p>
+            <p><span className="font-semibold text-emerald-700">恩賜的目的（v.12）：</span>成全聖徒，各盡其職，建立基督的身體</p>
+            <p><span className="font-semibold text-emerald-700">成長的目標（v.13）：</span>在真道上同歸於一，認識神的兒子，長大成人，滿有基督長成的身量</p>
+            <p><span className="font-semibold text-emerald-700">成熟的標記（v.14-15）：</span>不再像小孩子被異教之風搖動，而是用愛心說誠實話，凡事長進</p>
+            <p><span className="font-semibold text-emerald-700">身體的運作（v.16）：</span>全身靠聯絡得合式，百節各按各職，照著各體的功用彼此相助，在愛中建立自己</p>
+          </div>
         </div>
-        <div>
-          <h4 className="font-bold text-amber-800 mb-2">弗五 15</h4>
-          <p className="text-slate-700 leading-relaxed">你們要謹慎行事，不要像愚昧人，當像智慧人。</p>
+
+        <div className="bg-white rounded-xl p-5 border border-slate-200 space-y-4">
+          <h4 className="font-bold text-emerald-700">五、兩種「合一」的區別</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-blue-50 rounded-lg p-4">
+              <p className="font-bold text-blue-700">「聖靈所賜合而為一的心」（四 3）</p>
+              <p className="text-sm text-slate-600 mt-1">這是已經存在的合一——聖靈賜下的。我們的責任是「保守」它，不是製造它。</p>
+            </div>
+            <div className="bg-purple-50 rounded-lg p-4">
+              <p className="font-bold text-purple-700">「在真道上同歸於一」（四 13）</p>
+              <p className="text-sm text-slate-600 mt-1">這是成長的目標——需要時間和教導才能達到。是一個過程，需要我們一起努力。</p>
+            </div>
+          </div>
         </div>
       </div>
 
+      {/* 核心真理 */}
+      <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-5 border border-emerald-200 space-y-3">
+        <h3 className="text-lg font-bold text-emerald-800">💎 核心真理</h3>
+        <p className="text-slate-700 leading-relaxed font-medium">「聖徒」（四 12）的意思是「聖者」，是「分別出來」的人。「成全」的希臘原文在新約時代用來指修補魚網、接駁斷骨，有「修正」的意思。神透過教會的恩賜來修補、建造每一個聖徒。</p>
+        <p className="text-slate-700 leading-relaxed">教會不是一個觀眾席，而是一個身體——每個肢體都有功用，都不可或缺。成長不是個人的事，而是群體的事。</p>
+      </div>
+
+      {/* 討論問題 */}
       <div className="space-y-4">
-        <h3 className="text-lg font-bold text-slate-800">討論</h3>
-        <p className="text-slate-700 leading-relaxed">你既已知道保羅在第 1 節勉勵以弗所信徒去做甚麼事，現在請討論以下的問題：他們應當怎樣去做？用幾分鐘時間討論第 2 至 3 節給這個問題的答案。</p>
-        <p className="text-slate-700 leading-relaxed">我們在經文裏可以看見以弗所信應在生活中彰顯的不同素質和態度。你可以在經文裏，給每個素質和態度標上號碼。（可參看第 2 節「謙虛」的例子。）</p>
+        <h3 className="text-xl font-bold text-slate-800">💬 討論問題</h3>
+        <div className="space-y-3">
+          <div className="bg-white rounded-lg p-4 border border-slate-100">
+            <p className="text-slate-700">1. 謙虛、溫柔、忍耐、寬容——哪一個對你來說最難做到？為什麼？</p>
+          </div>
+          <div className="bg-white rounded-lg p-4 border border-slate-100">
+            <p className="text-slate-700">2. 在你的教會生活中，你如何「竭力保守合一」？有沒有遇到合一被破壞的經歷？</p>
+          </div>
+          <div className="bg-white rounded-lg p-4 border border-slate-100">
+            <p className="text-slate-700">3. 你認為自己在基督的身體裏扮演什麼角色？你的恩賜是什麼？</p>
+          </div>
+          <div className="bg-white rounded-lg p-4 border border-slate-100">
+            <p className="text-slate-700">4. 「用愛心說誠實話」和「討好人」有什麼區別？你如何在兩者之間取得平衡？</p>
+          </div>
+          <div className="bg-white rounded-lg p-4 border border-slate-100">
+            <p className="text-slate-700">5. 你是否正在長大成人，還是仍「飄來飄去」（四 14）？你如何判斷？</p>
+          </div>
+        </div>
       </div>
 
+      {/* 延伸思考 */}
       <div className="space-y-4">
-        <h3 className="text-lg font-bold text-slate-800">觀察</h3>
-        <p className="text-slate-700 leading-relaxed">從第 4 至 6 節，在所有「一」字下面畫底線。</p>
+        <h3 className="text-xl font-bold text-slate-800">🔍 延伸思考</h3>
+
+        <div className="bg-indigo-50 rounded-xl p-5 space-y-4">
+          <h4 className="font-bold text-indigo-700">延伸一：從身分到行為的橋樑</h4>
+          <p className="text-slate-700 leading-relaxed">以弗所書的結構非常精妙：第一至三章講「你是誰」（身分），第四至六章講「你該怎麼做」（行為）。連接兩者的是四章 1 節的「既然……就當……」。這告訴我們：正確的行為必須建立在正確的身分認知之上。不是「你做了什麼所以你是什麼」，而是「你是什麼所以你該做什麼」。</p>
+        </div>
+
+        <div className="bg-indigo-50 rounded-xl p-5 space-y-4">
+          <h4 className="font-bold text-indigo-700">延伸二：合一不等於統一</h4>
+          <p className="text-slate-700 leading-relaxed">保羅強調合一的同時，也強調恩賜的多元（四 7-11）。合一不是要每個人都一樣，而是在多元中保持一致的方向和愛。就像交響樂團——每種樂器不同，但演奏同一首曲子。教會的美麗在於多元中的合一。</p>
+        </div>
+
+        <div className="bg-indigo-50 rounded-xl p-5 space-y-4">
+          <h4 className="font-bold text-indigo-700">延伸三：成熟的衡量標準</h4>
+          <p className="text-slate-700 leading-relaxed">保羅給出了一個非常具體的成熟標準：「滿有基督長成的身量」（四 13）。不是用知識多少、服事多少、聚會多少來衡量，而是用像基督的程度來衡量。這包括祂的品格（謙虛、溫柔）、祂的愛（用愛心說誠實話）、和祂的穩定（不被異教之風搖動）。</p>
+        </div>
       </div>
 
-      <div className="bg-amber-50 rounded-xl p-5 border-l-4 border-amber-400 space-y-2">
-        <h4 className="font-bold text-amber-800 mb-3">弗四 1-6</h4>
-        <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">1</sup> 我為主被囚的勸你們：既然蒙召，行事為人就當與蒙召的恩相稱。</p>
-        <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">2</sup> 凡事謙虛、溫柔、忍耐，用愛心互相寬容，</p>
-        <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">3</sup> 用和平彼此聯絡，竭力保守聖靈所賜合而為一的心。</p>
-        <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">4</sup> 身體只有一個，聖靈只有一個，正如你們蒙召同有一個指望。</p>
-        <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">5</sup> 一主、一信、一洗、</p>
-        <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">6</sup> 一神，就是眾人的父，超乎眾人之上，貫乎眾人之中，也住在眾人之內。</p>
-      </div>
-
-      <div className="space-y-4">
-        <h3 className="text-lg font-bold text-slate-800">討論</h3>
-        <ul className="space-y-3 text-slate-700">
-          <li className="bg-white rounded-lg p-4 border border-slate-100">• 根據第 4 至 6 節，以弗所信徒合一的基礎是甚麼——所有信徒共同擁有著甚麼？</li>
-        </ul>
-      </div>
-
-      <div className="space-y-4">
-        <h3 className="text-lg font-bold text-slate-800">觀察</h3>
-        <p className="text-slate-700 leading-relaxed">在第 4 至 6 節中，保羅把靈裏的合一和所有真信徒共同擁有的特質告訴以弗所信徒之後，他轉論到身體上各個部分的區別。</p>
-        <p className="text-sm text-slate-500">組長：朗讀以弗所書四 7-13。請組員把所有提及「收信人」的字詞塗上顏色或圈出來。你也要把其代名詞標示出來，包括「我們」，因為作者也把自己包括在收信人之內。</p>
-      </div>
-
-      <div className="bg-amber-50 rounded-xl p-5 border-l-4 border-amber-400 space-y-2">
-        <h4 className="font-bold text-amber-800 mb-3">弗四 7-13</h4>
-        <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">7</sup> 我們各人蒙恩，都是照基督所量給各人的恩賜。</p>
-        <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">8</sup> 所以經上說：「他升上高天的時候，擄掠了仇敵，將各樣的恩賜賞給人。」</p>
-        <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">9</sup> （既說升上，豈不是先降在地下麼？</p>
-        <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">10</sup> 那降下的，就是遠升諸天之上要充滿萬有的。）</p>
-        <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">11</sup> 他所賜的有使徒，有先知，有傳福音的，有牧師和教師，</p>
-        <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">12</sup> 為要成全聖徒，各盡其職，建立基督的身體，</p>
-        <p className="text-slate-700 leading-relaxed"><sup className="text-amber-600 font-bold">13</sup> 直等到我們眾人在真道上同歸於一，認識神的兒子，得以長大成人，滿有基督長成的身量。</p>
-      </div>
-
-      <div className="space-y-4">
-        <h3 className="text-lg font-bold text-slate-800">討論</h3>
-        <p className="text-sm text-slate-500">留意：我們不會討論第 9 至 10 節，這兩節經文是一個插入的信息，與我們討論的題目無關。時間所限，不容許我們討論枝節。</p>
-        <ul className="space-y-3 text-slate-700">
-          <li className="bg-white rounded-lg p-4 border border-slate-100">• 在第 7 節裏，透過標示有關「收信人」的字詞，你學到甚麼？</li>
-          <li className="bg-white rounded-lg p-4 border border-slate-100">• 根據保羅在第 11 節所說，神把甚麼不同的恩賜（有恩賜的人）賜給教會呢？</li>
-          <li className="bg-white rounded-lg p-4 border border-slate-100">• 在基督的身體裏，這些有恩賜的人有甚麼作用？這些人會做些甚麼？</li>
-        </ul>
-      </div>
-
-      <div className="bg-slate-100 rounded-xl p-5 space-y-3">
-        <h4 className="font-bold text-slate-800">💡 心得</h4>
-        <p className="text-slate-700 leading-relaxed">聖徒（四 12）的意思是「聖者」，他們是「分別出來」的人，因為他們藉著從罪裏得拯救，現在已經屬於神——聖徒得享救恩，是因為他們相信耶穌基督為他們的罪，代替他們受死，並且三天之後復活。</p>
-        <p className="text-slate-700 leading-relaxed">「成全」（同樣在四 12）一詞的希臘原文，在新約時代用來指修補魚網、接駁斷骨和明白目的，有「修正」的意思。</p>
-      </div>
-
-      <div className="space-y-4">
-        <h3 className="text-lg font-bold text-slate-800">觀察</h3>
-        <p className="text-slate-700 leading-relaxed">在以弗所書四章 3 節，我們看到「聖靈所賜合而為一的心」這個片語，在第 13 節又看到「在真道上同歸於一」。用長方形標示這兩個片語，或把它們塗上醒目的顏色。</p>
-      </div>
-
-      <div className="space-y-4">
-        <h3 className="text-lg font-bold text-slate-800">討論</h3>
-        <ul className="space-y-3 text-slate-700">
-          <li className="bg-white rounded-lg p-4 border border-slate-100">• 這兩個片語有甚麼分別呢？你標示「聖靈所賜合而為一的心」和「在真道上同歸於一」的時候，領略到甚麼？我們對這兩個真理有甚麼責任？</li>
-          <li className="bg-white rounded-lg p-4 border border-slate-100">• 根據第 13 節，我們各人若要長大成人，還要得著甚麼呢？</li>
-          <li className="bg-white rounded-lg p-4 border border-slate-100">• 根據這節經文，「長大成人」是甚麼樣的？成熟的標準是基於甚麼東西或甚麼人呢？</li>
-          <li className="bg-white rounded-lg p-4 border border-slate-100">• 問問自己，根據經文的描述，你有達到這個成熟的程度呢？單單從首十三節的經文，我們能否找到一個方法去衡量自己是否正在成長呢？這些成熟的特質是否正在你的生命裏加增？</li>
-        </ul>
-      </div>
-
-      <div className="space-y-4">
-        <h3 className="text-lg font-bold text-slate-800">觀察</h3>
-        <p className="text-sm text-slate-500">組長：再次朗讀第 16 節。特別留意「照著各體的功用彼此相助」這個短語。</p>
-        <p className="text-slate-700 leading-relaxed">根據本節經文，當基督身體的各部分——所有的真信徒——都互相配合成為一個身體，保持在真道上的合一，並得到有恩賜的人的教導和裝備時，這個身體便要成長，我們會看見教會在愛中建立自己。</p>
-        <p className="text-slate-700 leading-relaxed">「愛」字是以弗所書第四章重複出現的鑰字。從第 2、15 和 16 節中尋找這個字，並用心形把它標示出來：♡</p>
-      </div>
-
-      <div className="space-y-4">
-        <h3 className="text-lg font-bold text-slate-800">討論</h3>
-        <ul className="space-y-3 text-slate-700">
-          <li className="bg-white rounded-lg p-4 border border-slate-100">• 你從這些經文學到甚麼？你怎樣去愛？你應有甚麼動機？你怎樣用愛心說誠實話？基督的身體怎樣在愛中建立自己？</li>
-        </ul>
-      </div>
-
+      {/* 實踐應用 */}
       <div className="bg-emerald-50 rounded-xl p-5 border-t-4 border-emerald-500 space-y-3">
-        <h3 className="text-lg font-bold text-emerald-800">總結</h3>
-        <ul className="space-y-3 text-slate-700">
-          <li className="bg-white rounded-lg p-4 border border-slate-100">• 一個人若要活出一種與他蒙召作基督徒相稱的生活——換句話說，人若自稱是基督徒，並想做到言行一致——根據你今天學到的真理，這人要怎樣做？</li>
-          <li className="bg-white rounded-lg p-4 border border-slate-100">• 若所有信徒都如此行，基督整個的身體會受到甚麼影響？</li>
-          <li className="bg-white rounded-lg p-4 border border-slate-100">• 你是否正在長大成人，在基督的身體裏做好自己的本分呢？還是正處於那些「飄來飄去」的人當中（四 14）？為了避免這種不好的經歷，你需要怎樣做——或繼續怎樣做呢？</li>
-        </ul>
+        <h3 className="text-lg font-bold text-emerald-800">✅ 本周實踐</h3>
+        <div className="space-y-2 text-slate-700">
+          <p>1. 自我評估：在謙虛、溫柔、忍耐、寬容四方面，給自己打分（1-10），找出最需要成長的領域。</p>
+          <p>2. 找出一個你目前在教會中可以更積極參與的服事，本周開始行動。</p>
+          <p>3. 這周主動用愛心向一個人說一句誠實但可能不容易聽的話。</p>
+          <p>4. 為教會的合一禱告，特別為你知道的任何不和睦的關係禱告。</p>
+        </div>
+      </div>
+
+      <div className="bg-slate-50 rounded-xl p-5 space-y-2">
+        <h3 className="text-lg font-bold text-slate-700">📚 延伸閱讀經文</h3>
+        <p className="text-slate-600 text-sm">• 腓立比書二 1-11 — 以基督的心為心，合一與謙卑</p>
+        <p className="text-slate-600 text-sm">• 哥林多前書十二 12-27 — 身體的比喻</p>
+        <p className="text-slate-600 text-sm">• 歌羅西書三 12-17 — 穿上新人的品格</p>
+        <p className="text-slate-600 text-sm">• 羅馬書十二 3-8 — 不同的恩賜，同一個身體</p>
       </div>
     </section>
   );
