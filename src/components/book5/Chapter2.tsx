@@ -87,7 +87,7 @@ export default function Chapter2() {
           <li className="bg-white rounded-lg p-4 border border-slate-100">• 根據以弗所書二章 10 節，我們是在哪裏造成的？我們被創造的目的是甚麼？誰來決定以上種種？</li>
           <li className="bg-white rounded-lg p-4 border border-slate-100">• 最後，若你完全相信你在過去兩星期學到的道理——確實相信，不論你感覺如何，不論別人怎樣談論你，你生命裏會發生甚麼？你認為你會有多安穩？你認為這一切會怎樣影響你的生活？</li>
         </ul>
-      </div>
+      </div> 
 
       <div className="bg-emerald-50 rounded-xl p-5 border-t-4 border-emerald-500 space-y-3">
         <h3 className="text-lg font-bold text-emerald-800">總結</h3>
