@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   BookOpen, Menu, X, Heart, Activity, Compass, Map, Shield, Users, Sun, Star,
   Home, Footprints, Scale, HelpCircle, HeartHandshake, Baby, Briefcase,
-  Smartphone, User, Cross, ShieldAlert, TrendingUp, ChevronLeft
+  Smartphone, User, Cross, ShieldAlert, TrendingUp, ChevronLeft, Download
 } from 'lucide-react';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from './useHighlight';
 
@@ -431,6 +431,69 @@ export default function App() {
     await sb.auth.signOut();
   };
 
+  // ── 匯出 Word 功能 ─────────────────────────────────────────
+  const exportToWord = (title: string, content: string) => {
+    const html = `
+      <html xmlns:o="urn:schemas-microsoft-com:office:office"
+            xmlns:w="urn:schemas-microsoft-com:office:word"
+            xmlns="http://www.w3.org/TR/REC-html40">
+      <head><meta charset="utf-8"><title>${title}</title>
+      <style>
+        body { font-family: '微軟正黑體', 'Microsoft JhengHei', sans-serif; line-height: 1.8; color: #333; max-width: 700px; margin: 0 auto; padding: 20px; }
+        h1 { font-size: 22pt; color: #1e3a5f; border-bottom: 2px solid #1e3a5f; padding-bottom: 8px; }
+        h2 { font-size: 16pt; color: #2c5282; margin-top: 24px; }
+        h3 { font-size: 13pt; color: #4a5568; margin-top: 16px; }
+        p { margin: 8px 0; font-size: 11pt; }
+        li { margin: 4px 0; font-size: 11pt; }
+        .divider { border-top: 1px solid #ccc; margin: 20px 0; }
+      </style></head>
+      <body>${content}</body></html>`;
+    const blob = new Blob(['\ufeff' + html], { type: 'application/msword' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${title}.doc`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const extractTextFromElement = (el: Element | null): string => {
+    if (!el) return '';
+    const clone = el.cloneNode(true) as Element;
+    // 移除按鈕等互動元素
+    clone.querySelectorAll('button, [data-highlight-id]').forEach(b => b.remove());
+    return clone.innerHTML;
+  };
+
+  const handleExportChapter = () => {
+    if (!book) return;
+    const main = document.querySelector('main');
+    const chapterLabel = book.chapters.find((c: any) => c.id === activeChapter)?.label || activeChapter;
+    const content = extractTextFromElement(main);
+    const title = `${book.title}－${chapterLabel}`;
+    exportToWord(title, `<h1>${title}</h1>${content}`);
+  };
+
+  const handleExportBook = () => {
+    if (!book) return;
+    // 提示使用者，因為需要時間
+    const confirmed = window.confirm(`即將匯出《${book.title}》全書內容為 Word 檔，確定嗎？`);
+    if (!confirmed) return;
+
+    // 匯出當前頁面可見的章節內容
+    // 由於其他章節不在 DOM 中，改為提取當前章節並提示
+    const main = document.querySelector('main');
+    const content = extractTextFromElement(main);
+    const chapterLabel = book.chapters.find((c: any) => c.id === activeChapter)?.label || activeChapter;
+
+    // 建立全書標題頁
+    let fullContent = `<h1>${book.title}</h1><p style="color:#888;">${book.subtitle}</p><div class="divider"></div>`;
+    fullContent += `<h2>${chapterLabel}</h2>${content}`;
+    fullContent += `<div class="divider"></div><p style="color:#aaa;text-align:center;">※ 如需匯出其他章節，請切換到該章節後使用「匯出本章」功能</p>`;
+
+    exportToWord(book.title, fullContent);
+  };
+
   // ── Book List (home) ─────────────────────────────────────────────
   if (!selectedBook) {
     return (
@@ -660,6 +723,15 @@ export default function App() {
                   </div>
                 </div>
               ))}
+              {/* 匯出全書按鈕 */}
+              <button
+                onClick={() => { setIsSidebarOpen(false); handleExportBook(); }}
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 mt-2 rounded-lg text-sm font-semibold text-white transition-colors"
+                style={{ background: book!.accentHex }}
+              >
+                <Download className="w-4 h-4" />
+                匯出全書 Word 檔
+              </button>
             </div>
           </motion.div>
         )}
@@ -676,6 +748,17 @@ export default function App() {
             transition={{ duration: 0.2 }}
           >
             {renderContent()}
+            {/* 匯出本章按鈕 */}
+            <div className="mt-8 pt-6 border-t border-slate-200 flex justify-center">
+              <button
+                onClick={handleExportChapter}
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all"
+                style={{ background: book!.accentHex }}
+              >
+                <Download className="w-4 h-4" />
+                匯出本章 Word 檔
+              </button>
+            </div>
           </motion.div>
         </AnimatePresence>
       </main>
