@@ -46,6 +46,32 @@ import Paul6 from './components/book3/Chapter6';
 import Paul7 from './components/book3/Chapter7';
 import Paul8 from './components/book3/Chapter8';
 
+// Book 4: 成為有感染力的基督徒
+import Cont1 from './components/book4/Chapter1';
+import Cont2 from './components/book4/Chapter2';
+import Cont3 from './components/book4/Chapter3';
+import Cont4 from './components/book4/Chapter4';
+import Cont5 from './components/book4/Chapter5';
+import Cont6 from './components/book4/Chapter6';
+import Cont7 from './components/book4/Chapter7';
+import Cont8 from './components/book4/Chapter8';
+import Cont9 from './components/book4/Chapter9';
+import Cont10 from './components/book4/Chapter10';
+import Cont11 from './components/book4/Chapter11';
+import Cont12 from './components/book4/Chapter12';
+import Cont13 from './components/book4/Chapter13';
+import Cont14 from './components/book4/Chapter14';
+import Cont15 from './components/book4/Chapter15';
+import Cont16 from './components/book4/Chapter16';
+
+// Book 5: 如何活出基督的樣式
+import Walk1 from './components/book5/Chapter1';
+import Walk2 from './components/book5/Chapter2';
+import Walk3 from './components/book5/Chapter3';
+import Walk4 from './components/book5/Chapter4';
+import Walk5 from './components/book5/Chapter5';
+import Walk6 from './components/book5/Chapter6';
+
 const BOOKS = [
   {
     id: 'book1',
@@ -116,6 +142,52 @@ const BOOKS = [
       { id: 'ch8', label: '參考書目',                               page: 'p198', icon: BookOpen, part: '向保羅學宣教' },
     ],
   },
+  {
+    id: 'book4',
+    title: '成為有感染力的基督徒',
+    subtitle: 'Bill Hybels & Mark Mittelberg 著',
+    emoji: '📕',
+    accentHex: '#d97706',
+    bgLight: 'bg-amber-50',
+    textAccent: 'text-amber-700',
+    hoverText: 'hover:text-amber-600',
+    chapters: [
+      { id: 'ch1',  label: '1. 神看重人',                               page: 'p7',   icon: Heart,           part: 'Part 1：為何要成為有感染力的基督徒？' },
+      { id: 'ch2',  label: '2. 有感染力之基督徒的報酬',                 page: 'p25',  icon: Star,            part: 'Part 1：為何要成為有感染力的基督徒？' },
+      { id: 'ch3',  label: '3. 影響世界的公式',                         page: 'p43',  icon: TrendingUp,      part: 'Part 1：為何要成為有感染力的基督徒？' },
+      { id: 'ch4',  label: '4. 真實的吸引力',                           page: 'p59',  icon: Sun,             part: 'Part 2：活出基督徒特質' },
+      { id: 'ch5',  label: '5. 愛心的牽引力',                           page: 'p75',  icon: HeartHandshake,  part: 'Part 2：活出基督徒特質' },
+      { id: 'ch6',  label: '6. 犧牲的力量',                             page: 'p93',  icon: Shield,          part: 'Part 2：活出基督徒特質' },
+      { id: 'ch7',  label: '7. 人際關係中的機會',                       page: 'p111', icon: Users,           part: 'Part 3：靠近人' },
+      { id: 'ch8',  label: '8. 跟未信者交往',                           page: 'p123', icon: Compass,         part: 'Part 3：靠近人' },
+      { id: 'ch9',  label: '9. 找到合適自己的方法',                     page: 'p139', icon: Map,             part: 'Part 3：靠近人' },
+      { id: 'ch10', label: '10. 開啟屬靈談話',                          page: 'p157', icon: Activity,        part: 'Part 4：清楚傳達' },
+      { id: 'ch11', label: '11. 把福音信息講清楚',                      page: 'p175', icon: BookOpen,        part: 'Part 4：清楚傳達' },
+      { id: 'ch12', label: '12. 拆毀阻斷信仰的障礙',                   page: 'p195', icon: ShieldAlert,     part: 'Part 4：清楚傳達' },
+      { id: 'ch13', label: '13. 跨越信心之線',                          page: 'p215', icon: Footprints,      part: 'Part 5：報酬：最大影響' },
+      { id: 'ch14', label: '14. 有感染力的基督徒和具感染力的教會',       page: 'p233', icon: Home,            part: 'Part 5：報酬：最大影響' },
+      { id: 'ch15', label: '15. 把生命投資在人身上',                    page: 'p249', icon: User,            part: 'Part 5：報酬：最大影響' },
+      { id: 'ch16', label: '附錄：訓練課程',                            page: 'p263', icon: Briefcase,       part: '附錄' },
+    ],
+  },
+  {
+    id: 'book5',
+    title: '如何活出基督的樣式',
+    subtitle: '歐凱莉（Kay Arthur）著',
+    emoji: '📗',
+    accentHex: '#059669',
+    bgLight: 'bg-emerald-50',
+    textAccent: 'text-emerald-700',
+    hoverText: 'hover:text-emerald-600',
+    chapters: [
+      { id: 'ch1', label: '第一周', icon: BookOpen, part: '如何活出基督的樣式' },
+      { id: 'ch2', label: '第二周', icon: Heart,    part: '如何活出基督的樣式' },
+      { id: 'ch3', label: '第三周', icon: Compass,  part: '如何活出基督的樣式' },
+      { id: 'ch4', label: '第四周', icon: Shield,   part: '如何活出基督的樣式' },
+      { id: 'ch5', label: '第五周', icon: Sun,      part: '如何活出基督的樣式' },
+      { id: 'ch6', label: '第六周', icon: Star,     part: '如何活出基督的樣式' },
+    ],
+  },
 ];
 
 function renderBook1(ch: string) {
@@ -161,6 +233,36 @@ function renderBook3(ch: string) {
     case 'ch6': return <Paul6 />;
     case 'ch7': return <Paul7 />;
     default:    return <Paul8 />;
+  }
+}
+function renderBook4(ch: string) {
+  switch (ch) {
+    case 'ch1': return <Cont1 />;
+    case 'ch2': return <Cont2 />;
+    case 'ch3': return <Cont3 />;
+    case 'ch4': return <Cont4 />;
+    case 'ch5': return <Cont5 />;
+    case 'ch6': return <Cont6 />;
+    case 'ch7': return <Cont7 />;
+    case 'ch8': return <Cont8 />;
+    case 'ch9': return <Cont9 />;
+    case 'ch10': return <Cont10 />;
+    case 'ch11': return <Cont11 />;
+    case 'ch12': return <Cont12 />;
+    case 'ch13': return <Cont13 />;
+    case 'ch14': return <Cont14 />;
+    case 'ch15': return <Cont15 />;
+    default:    return <Cont16 />;
+  }
+}
+function renderBook5(ch: string) {
+  switch (ch) {
+    case 'ch1': return <Walk1 />;
+    case 'ch2': return <Walk2 />;
+    case 'ch3': return <Walk3 />;
+    case 'ch4': return <Walk4 />;
+    case 'ch5': return <Walk5 />;
+    default:    return <Walk6 />;
   }
 }
 
@@ -293,6 +395,8 @@ export default function App() {
     if (selectedBook === 'book1') return renderBook1(activeChapter);
     if (selectedBook === 'book2') return renderBook2(activeChapter);
     if (selectedBook === 'book3') return renderBook3(activeChapter);
+    if (selectedBook === 'book4') return renderBook4(activeChapter);
+    if (selectedBook === 'book5') return renderBook5(activeChapter);
     return null;
   };
 
