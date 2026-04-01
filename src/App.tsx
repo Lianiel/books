@@ -72,6 +72,16 @@ import Walk4 from './components/book5/Chapter4';
 import Walk5 from './components/book5/Chapter5';
 import Walk6 from './components/book5/Chapter6';
 
+// Book 6: 列王紀上—上帝的啟示在人間
+import King1 from './components/book6/Chapter1';
+import King2 from './components/book6/Chapter2';
+import King3 from './components/book6/Chapter3';
+import King4 from './components/book6/Chapter4';
+import King5 from './components/book6/Chapter5';
+import King6 from './components/book6/Chapter6';
+import King7 from './components/book6/Chapter7';
+import King8 from './components/book6/Chapter8';
+
 const BOOKS = [
   {
     id: 'book1',
@@ -188,6 +198,26 @@ const BOOKS = [
       { id: 'ch6', label: '第六周', icon: Star,     part: '如何活出基督的樣式' },
     ],
   },
+  {
+    id: 'book6',
+    title: '列王紀上—上帝的啟示在人間',
+    subtitle: '吳獻章 著｜門訓生命讀經系列',
+    emoji: '📕',
+    accentHex: '#b45309',
+    bgLight: 'bg-amber-50',
+    textAccent: 'text-amber-700',
+    hoverText: 'hover:text-amber-600',
+    chapters: [
+      { id: 'ch1', label: '第 1 站：《列王紀》總論',           page: 'p.11',  icon: BookOpen,       part: '列王紀上—上帝的啟示在人間' },
+      { id: 'ch2', label: '第 2 站：聯合王國（一）所羅門登基', page: 'p.45',  icon: Star,           part: '列王紀上—上帝的啟示在人間' },
+      { id: 'ch3', label: '第 3 站：聯合王國（二）所羅門建聖殿', page: 'p.81', icon: Home,           part: '列王紀上—上帝的啟示在人間' },
+      { id: 'ch4', label: '第 4 站：聯合王國的分裂',           page: 'p.119', icon: ShieldAlert,    part: '列王紀上—上帝的啟示在人間' },
+      { id: 'ch5', label: '第 5 站：遵行神旨意的先知',         page: 'p.157', icon: Compass,        part: '列王紀上—上帝的啟示在人間' },
+      { id: 'ch6', label: '第 6 站：先知與君王的抗衡',         page: 'p.197', icon: Shield,         part: '列王紀上—上帝的啟示在人間' },
+      { id: 'ch7', label: '第 7 站：學者論述',                 page: 'p.233', icon: Map,            part: '列王紀上—上帝的啟示在人間' },
+      { id: 'ch8', label: '靈修默想／共讀討論指引',             page: 'p.242', icon: Heart,          part: '列王紀上—上帝的啟示在人間' },
+    ],
+  },
 ];
 
 function renderBook1(ch: string) {
@@ -263,6 +293,18 @@ function renderBook5(ch: string) {
     case 'ch4': return <Walk4 />;
     case 'ch5': return <Walk5 />;
     default:    return <Walk6 />;
+  }
+}
+function renderBook6(ch: string) {
+  switch (ch) {
+    case 'ch1': return <King1 />;
+    case 'ch2': return <King2 />;
+    case 'ch3': return <King3 />;
+    case 'ch4': return <King4 />;
+    case 'ch5': return <King5 />;
+    case 'ch6': return <King6 />;
+    case 'ch7': return <King7 />;
+    default:    return <King8 />;
   }
 }
 
@@ -397,6 +439,7 @@ export default function App() {
     if (selectedBook === 'book3') return renderBook3(activeChapter);
     if (selectedBook === 'book4') return renderBook4(activeChapter);
     if (selectedBook === 'book5') return renderBook5(activeChapter);
+    if (selectedBook === 'book6') return renderBook6(activeChapter);
     return null;
   };
 
