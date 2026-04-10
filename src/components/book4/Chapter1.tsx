@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, Globe, Users, BookOpen, ChevronDown, ChevronUp, Target, Brain, Lightbulb, MessageCircle, Search, AlertTriangle, Sparkles, Eye, Cross, HandHeart, ShieldCheck } from 'lucide-react';
+import { Heart, Globe, Users, BookOpen, ChevronDown, ChevronUp, Target, Brain, Lightbulb, MessageCircle, Search, AlertTriangle, Sparkles, Eye, HandHeart, Church, CalendarCheck, BookMarked, MessageSquareQuote } from 'lucide-react';
 
 export default function Chapter1() {
   const [openSection, setOpenSection] = useState<number | null>(null);
   const [openParable, setOpenParable] = useState<number | null>(null);
+  const [openTheology, setOpenTheology] = useState<number | null>(null);
+  const [openChallenge, setOpenChallenge] = useState<number | null>(null);
   const toggle = (i: number) => setOpenSection(openSection === i ? null : i);
   const toggleParable = (i: number) => setOpenParable(openParable === i ? null : i);
+  const toggleTheology = (i: number) => setOpenTheology(openTheology === i ? null : i);
+  const toggleChallenge = (i: number) => setOpenChallenge(openChallenge === i ? null : i);
 
   const scienceFacts = [
     { fact: "星球距離", detail: "如果星球之間的平均距離再增大一點，像地球這類行星就不會形成；如果再小一點，生命存在所需的行星軌道就不會出現。" },
     { fact: "碳氧比例", detail: "如果碳和氧的比例跟今天的情況稍有不同，就沒有人可以在這裏呼吸空氣。" },
     { fact: "地軸傾斜", detail: "把地軸的傾斜角度往某方向稍偏一點，我們就會凍死；往另一方向稍偏一點，我們就會被燒死。" },
-    { fact: "地球位置", detail: "地球跟太陽的距離稍微近一點或遠一點，兩者的體積稍微大一點或小一點，甚至地球轉動的速度與現今稍有不同——只要以上任何一點改變了，這些改變所造成的溫度變化就會要了人的命。" },
+    { fact: "地球位置", detail: "地球跟太陽的距離稍微近一點或遠一點，兩者的體積稍微大一點或小一點，甚至地球轉動的速度與現今稍有不同——只要以上任何一點改變了，溫度變化就會要了人的命。" },
     { fact: "宇宙擴張率", detail: "只要把宇宙的擴張率提高或降低百萬分之一，生命就不可能出現。這讓所有專家都無法否認，無論他們本身有無宗教信仰。" }
   ];
 
@@ -21,19 +25,22 @@ export default function Chapter1() {
       title: "🐑 走失的羊",
       story: "有個人有一百隻羊。有一隻毛茸茸的小傢伙晃蕩到別處去了。於是他把九十九隻留在原地，出去找那隻走失的。他一直找一直找，終於找到了。他輕柔地抱起這隻羊，扛在肩上，帶回羊群。然後他召請牧羊人朋友來，說：「我們開個慶祝會吧，我找回那隻走失的羊了！」",
       significance: "走失的羊對牧人的生計很重要。牧人不惜撇下九十九隻，全力尋找那一隻迷失的。",
-      application: "神不會因為教會裏已經有九十九個「好基督徒」，就放棄追尋那一個迷失的人。"
+      application: "神不會因為教會裏已經有九十九個「好基督徒」，就放棄追尋那一個迷失的人。",
+      extendedScriptures: ["以西結書34:11-12「主耶和華說：看哪，我必親自尋找我的羊，將牠們尋見。」", "以賽亞書53:6「我們都如羊走迷，各人偏行己路。」", "約翰福音10:11「我是好牧人；好牧人為羊捨命。」"]
     },
     {
       title: "💰 遺失的錢幣",
       story: "有個女人有十個銅錢，她弄丟了其中一枚。於是她點起燈來，打掃屋子，移開所有家具，不停地找不停地找，終於找到了。這女人找到後開心得不得了，把朋友都叫了來，請他們跟她一起慶祝。",
       significance: "這女人很可能是寡婦，這錢幣可能是她全部財產的十分之一。遺失的錢幣攸關她的生存。",
-      application: "每一個靈魂在神眼中都是不可或缺的，值得翻遍全屋去尋找。"
+      application: "每一個靈魂在神眼中都是不可或缺的，值得翻遍全屋去尋找。",
+      extendedScriptures: ["馬太福音13:45-46「天國好像買賣人尋找好珠子，遇見一顆重價的珠子，就去變賣他一切所有的，買了這顆珠子。」", "以賽亞書43:4「因我看你為寶為尊，又因我愛你。」"]
     },
     {
       title: "🏠 浪子回頭",
       story: "有一個人有兩個男孩子，小的那個帶著滿口袋的現金遠走他方，走上放蕩之路。當他阮囊羞澀、在餵豬討生活時終於覺悟過來，決定回家。他父親每天都引頸企盼這兒子歸來，在他離大門還有很長一段距離時就看到了他。滿懷希望的父親跑上前去擁抱他。孩子說：「爸爸，我犯了很大的錯，不配再作你的兒子。」父親打斷他：「噓，別這麼說！我很高興你終於回來了！」然後命人舉辦盛大宴會。",
       significance: "父親每天引頸企盼、看到時跑上前去擁抱——這描繪的是神對每一個偏離之人那份永不放棄的愛。",
-      application: "不管我們偏離多遠、犯了多少錯，神的愛說：「儘管你們偏離正途，仍然是我看重的！真的如此！」"
+      application: "不管我們偏離多遠、犯了多少錯，神的愛說：「儘管你們偏離正途，仍然是我看重的！真的如此！」",
+      extendedScriptures: ["羅馬書5:8「惟有基督在我們還作罪人的時候為我們死，神的愛就在此向我們顯明了。」", "耶利米書31:3「我以永遠的愛愛你，因此我以慈愛吸引你。」", "約翰一書4:10「不是我們愛神，乃是神愛我們，差祂的兒子為我們的罪作了挽回祭，這就是愛了。」"]
     }
   ];
 
@@ -52,6 +59,133 @@ export default function Chapter1() {
     { sign: "排斥外人", desc: "「那些『只來一回的人』對我不重要。」——如果我們認為他們對神也不重要，就不知不覺卻很有效地除掉任何想傳播福音的盼望。" },
     { sign: "自義態度", desc: "宗教領袖不滿耶穌跟「那種人」混在一起——這種自義態度正是耶穌講三個比喻的理由。我們是否也在不自覺中成了現代的法利賽人？" },
     { sign: "隱形名單", desc: "作者承認自己隨身帶著一張「不太重要的人」的名單：加油站服務員、餐廳女服務生、結帳員、開車慢的人、鄰居、飛機上喝醉的人、意見不同的同事……" }
+  ];
+
+  const theologyTopics = [
+    {
+      title: "神的形象（Imago Dei）：人為何如此寶貴？",
+      content: "創世記1:26-27記載：「神說：我們要照著我們的形像、按著我們的樣式造人。」每個人之所以寶貴，不是因為他們的表現、成就或宗教背景，而是因為他們是按照神的形像被造的。這個「形像」（צֶלֶם, tselem）包含了理性思考、道德判斷、創造力和關係能力。即使人墮落了，這個形像並沒有完全消失——這就是為什麼每個人都有永恆的價值。",
+      scriptures: ["創世記1:26-27", "詩篇8:3-6「我觀看你指頭所造的天，並你所陳設的月亮星宿，便說：人算甚麼，你竟顧念他？」", "創世記9:6「凡流人血的，他的血也必被人所流，因為神造人是照自己的形像造的。」"],
+      reflection: "如果每個人都帶著神的形像，那麼我對待任何人——包括我不喜歡的人——的方式，是否反映出我對這個真理的尊重？"
+    },
+    {
+      title: "神主動尋找人：恩典的本質",
+      content: "路加福音15章的三個比喻有一個驚人的共同點：都是「擁有者」主動去尋找「失去的」。牧人去找羊，女人去找錢，父親望向地平線等候兒子。這揭示了恩典的本質：不是人先尋找神，而是神先尋找人。保羅在羅馬書3:11說「沒有尋求神的」——是神主動來尋找我們。這個次序顛覆了所有宗教的邏輯：不是人努力爬向神，而是神俯身來就人。",
+      scriptures: ["羅馬書3:11「沒有明白的，沒有尋求神的。」", "約翰福音6:44「若不是差我來的父吸引人，就沒有能到我這裡來的。」", "路加福音19:10「人子來，為要尋找、拯救失喪的人。」", "啟示錄3:20「看哪，我站在門外叩門，若有聽見我聲音就開門的，我要進到他那裡去。」"],
+      reflection: "如果連神都主動來尋找人，我是否願意走出舒適圈，主動去接近那些還不認識神的人？"
+    },
+    {
+      title: "「一個罪人悔改」的天國觀點",
+      content: "路加福音15:10說「一個罪人悔改，在神的使者面前也是這樣為他歡喜」。注意，不是「一萬個」，而是「一個」。這句話揭示了天國的價值觀：神不是用數量來衡量成功，而是看重每一個個體的回轉。在人看來微不足道的一次談話、一次關心、一次禱告，可能正是天國慶祝會的序幕。這也提醒我們：傳福音的果效不在於我們「帶了多少人信主」，而在於我們是否忠心地活出見證、分享福音。結果是神的事，忠心是我們的事。",
+      scriptures: ["路加福音15:7「一個罪人悔改，在天上也要這樣為他歡喜，較比為九十九個不用悔改的義人歡喜更大。」", "哥林多前書3:6-7「我栽種了，亞波羅澆灌了，惟有神叫他生長。可見栽種的算不得甚麼，澆灌的也算不得甚麼，只在那叫他生長的神。」"],
+      reflection: "我是否把傳福音當成「業績」來看？還是把它當成參與神救贖計畫的榮幸？"
+    },
+    {
+      title: "「往內生長」vs.「向外展開」：教會的DNA檢驗",
+      content: "作者用商業界的「顧客革命」來類比教會的問題。使徒行傳1:8是教會的誕生宣言：「你們要……直到地極，作我的見證。」教會從第一天起就被設計為向外擴展的有機體，而不是自我服務的俱樂部。但歷史上，教會一再陷入「往內生長」的陷阱：忙於內部爭論、程序維護、小圈圈社交，卻忘了「外面的人」。潘霍華（Dietrich Bonhoeffer）說：「教會只有在為他人而存在時，才是真正的教會。」",
+      scriptures: ["使徒行傳1:8「但聖靈降臨在你們身上，你們就必得著能力，並要……直到地極，作我的見證。」", "馬太福音28:19-20「所以，你們要去，使萬民作我的門徒。」", "馬太福音5:13-14「你們是世上的鹽……你們是世上的光。」"],
+      reflection: "我們小組的時間分配中，有多少比例是用在「照顧自己人」？有多少是用在「接觸外面的人」？比例是否需要調整？"
+    }
+  ];
+
+  const taiwanExamples = [
+    {
+      title: "🏪 便利商店裡的「不重要的人」",
+      scenario: "每天去便利商店買咖啡，店員永遠是那幾位。你叫得出他們的名字嗎？你曾經多問一句「今天還好嗎」嗎？對很多人來說，這些服務人員就是「隱形人」——我們需要他們的服務，卻不把他們當「人」看。",
+      challenge: "本週去便利商店時，記住店員的名牌，叫他的名字，真誠地說一句「辛苦了」。觀察他的反應，也觀察你自己內心的變化。",
+      insight: "耶穌從不把任何人當「隱形人」。祂看見了稅吏撒該、看見了井邊的撒馬利亞婦人、看見了人群中患血漏的女人。「看見」就是看重的開始。"
+    },
+    {
+      title: "🏠 社區裡的外籍配偶和移工",
+      scenario: "台灣有數十萬外籍配偶和移工。他們離鄉背井，語言不通，文化衝擊，往往是社區裡最孤單的一群人。在教會裡，我們是否只關心「跟我們一樣的人」？這些外籍朋友是否在我們的「關心名單」上？",
+      challenge: "找一位住在你社區的外籍配偶或移工，用簡單的中文或微笑打招呼。如果教會有外語崇拜或關懷事工，考慮參與一次。",
+      insight: "作者在健身中心主動跟印度移民交朋友的故事，跟我們在台灣的處境何其相似。「如果神看重每個人，那麼神也看重這個外籍朋友。」"
+    },
+    {
+      title: "⛪ 教會裡的「復活節基督徒」",
+      scenario: "在華人教會中，過年過節時偶爾出現的「慕道友」或「久未聚會的弟兄姊妹」，我們的態度是歡迎還是在心裡碎碎念？「怎麼平常不來，過年才來？」「他們只是來吃愛宴的吧？」——這些想法是否似曾相識？",
+      challenge: "下次有久未出現的人來到教會，不要評斷他為什麼來，而是真心歡迎他。主動坐在他旁邊，聊聊近況，讓他感受到被接納。",
+      insight: "書中那位說「那些只來一回的人對我不重要」的弟兄，可能就是我們自己。耶穌說：「康健的人用不著醫生，有病的人才用得著。我來本不是召義人悔改，乃是召罪人悔改。」（路五31-32）"
+    },
+    {
+      title: "📱 LINE群組裡的沉默者",
+      scenario: "小組LINE群組裡，總有些人很少說話、很少回應。我們是否把他們當成「不活躍的成員」而忽略？或者我們有沒有想過，他們可能正在經歷困難、感到孤單、不知道如何開口？",
+      challenge: "本週私訊一位小組裡最安靜的成員，不談教會事務，只是關心他的生活。「最近好嗎？有什麼我可以為你禱告的嗎？」",
+      insight: "湯姆在信仰旅程中也經歷了很長的沉默期——他在「過程中，朝正確方向移動」，但還沒準備好表態。沉默不代表不在意。"
+    },
+    {
+      title: "🏢 職場上信仰「不同頻」的同事",
+      scenario: "在台灣的職場中，大部分同事都不是基督徒。有些人拜拜、有些人無神論、有些人覺得宗教很奇怪。我們是否因此把他們劃入「不可能信主」的名單？或者我們是否不敢在職場表明自己的信仰？",
+      challenge: "不需要一開始就「傳福音」。先從「活出不一樣」開始：在壓力中保持平靜、在同事有困難時主動幫忙、在背後不說人壞話。讓人因為你的生命而好奇你的信仰。",
+      insight: "作者跟湯姆的友誼中，最重要的不是「說教」，而是真誠的關係。兩年的友誼，才慢慢打開了屬靈對話的門。在職場中，關係永遠走在信息前面。"
+    }
+  ];
+
+  const weeklyChallenge = [
+    {
+      week: "第一週",
+      title: "「看見」的操練",
+      mission: "這一週，每天刻意「看見」一個你平常會忽略的人。可能是大樓管理員、早餐店老闆、公車司機、清潔人員。用眼神接觸、微笑、或一句簡短的問候，讓他們知道你「看見」了他們。",
+      scripture: "馬可福音10:21「耶穌看著他，就愛他。」",
+      journalPrompt: "每天晚上記錄：今天我「看見」了誰？我跟他們說了什麼？他們的反應是什麼？我內心有什麼感受？"
+    },
+    {
+      week: "第二週",
+      title: "撕掉「不重要名單」",
+      mission: "把你心中那張「不太重要的人」名單寫在紙上——寫得越具體越好。然後在禱告中，把這張名單交給神，求祂改變你看待這些人的眼光。最後，把紙撕掉，象徵你決定不再用這張名單來評斷人。",
+      scripture: "加拉太書3:28「並不分猶太人、希臘人，自主的、為奴的，或男或女，因為你們在基督耶穌裡都成為一了。」",
+      journalPrompt: "寫下你的名單上有哪些人？你為什麼把他們放在那裡？撕掉名單後，你的感受是什麼？"
+    },
+    {
+      week: "第三週",
+      title: "跨出舒適圈",
+      mission: "這一週，找一位你認識但平常不會主動聯絡的人（可能是不同背景、不同年齡、不同社會階層的人），邀請他喝一杯咖啡或吃一頓飯。不帶任何議程，只是真誠地認識他、聽他的故事。",
+      scripture: "腓立比書2:4「各人不要單顧自己的事，也要顧別人的事。」",
+      journalPrompt: "你選了誰？為什麼選他？見面後你對這個人有什麼新的認識？這次經驗改變了你對他的看法嗎？"
+    },
+    {
+      week: "第四週",
+      title: "為三個人禱告",
+      mission: "列出三位你認識但還未信主的人。這一週每天為他們各禱告至少一分鐘——不是禱告「讓他們趕快信主」，而是禱告「讓神祝福他們的生活、讓他們經歷神的愛」。同時，找機會用實際行動表達你的關心。",
+      scripture: "提摩太前書2:1,4「我勸你第一要為萬人懇求、禱告……祂願意萬人得救，明白真道。」",
+      journalPrompt: "你選了哪三位？為什麼選他們？一週的禱告後，你對他們的感受有什麼變化？你採取了什麼實際行動？"
+    }
+  ];
+
+  const groupDiscussion = [
+    {
+      category: "破冰問題",
+      questions: [
+        "如果你可以邀請任何一個人（活著的或已故的）共進晚餐，你會選誰？為什麼？",
+        "回想你生命中，有沒有一個人是你一開始不喜歡，後來卻成為好朋友的？分享那個故事。"
+      ]
+    },
+    {
+      category: "經文探討",
+      questions: [
+        "讀路加福音15:1-7。法利賽人為什麼不高興？耶穌的回應揭示了什麼？",
+        "在三個比喻中（失羊、失錢、浪子），你最能產生共鳴的是哪一個？為什麼？",
+        "路加福音15:10說「一個罪人悔改」天上就歡喜——注意是「一個」，不是「很多個」。這對你有什麼意義？",
+        "耶穌在十字架上對盜賊說的話（路23:43），如果換成是你在旁邊聽到，你會有什麼反應？"
+      ]
+    },
+    {
+      category: "生活反思",
+      questions: [
+        "你心中是否有一張「不太重要的人」名單？你願意分享上面有誰嗎？",
+        "你認為我們教會/小組是比較「往內生長」還是「向外展開」的？具體表現在哪裡？",
+        "書中作者在健身中心擁抱那位印度朋友時經歷了內心的掙扎。你有沒有類似的經驗——聖靈感動你做某件事，但你的本能在抗拒？",
+        "在台灣的處境中，你覺得「看重人」最大的挑戰是什麼？是文化差異？語言障礙？忙碌的生活？還是自己的偏見？"
+      ]
+    },
+    {
+      category: "實踐計畫",
+      questions: [
+        "這一週，你打算怎樣具體地「看重」一個你平常忽略的人？",
+        "作為一個小組，我們可以一起做什麼事來接觸小組以外的人？",
+        "你願意在小組中分享你正在為哪三位未信主的朋友禱告嗎？我們可以一起為他們禱告。"
+      ]
+    }
   ];
 
   const reflections = [
@@ -75,7 +209,7 @@ export default function Chapter1() {
 
   return (
     <div className="space-y-8 animate-in fade-in duration-700">
-      {/* Header */}
+      {/* ========== Header ========== */}
       <div className="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 rounded-3xl p-8 md:p-10 border border-amber-100 shadow-sm relative overflow-hidden">
         <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
         <div className="relative">
@@ -95,7 +229,7 @@ export default function Chapter1() {
         </div>
       </div>
 
-      {/* 開場故事：水手湯姆 */}
+      {/* ========== 開場故事：水手湯姆 ========== */}
       <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
         <h3 className="font-bold text-amber-800 mb-4 flex items-center gap-2" style={{fontSize:"24px"}}>
           <MessageCircle className="w-6 h-6 text-amber-600" />
@@ -115,15 +249,16 @@ export default function Chapter1() {
               <p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>
                 湯姆手臂掛著吊帶（打架受傷）來找作者，半開玩笑地求禱告。作者沒有禱告，反而給了他一節經文：
                 「人種的是甚麼，收的也是甚麼。」（加拉太書六7）湯姆愣住了：「不會真的是這麼說的吧？」
+                作者說：「如果你種了你昨晚種的那種種子，就會收成你今天掛的這種吊帶。」
                 這節經文成了他們之間常講的笑話，卻也開啟了指向屬靈談話的門。
               </p>
             </div>
             <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
-              <div className="font-bold text-slate-700 mb-2" style={{fontSize:"16px"}}>📖 漸進過程</div>
+              <div className="font-bold text-slate-700 mb-2" style={{fontSize:"16px"}}>📖 漸進過程（歷時兩年）</div>
               <p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>
-                經過兩年的禱告與關係建立，湯姆問：「哪裏可以買到聖經啊？」秋末，他開了好幾百哩來教會。
-                回家後打電話說：「我覺得我裏面不大一樣，好像在拼拼圖。」但他還沒準備好——
-                <strong>他還在過程中，朝正確方向移動，但還沒準備簽訂合約</strong>。
+                ① 背經文的玩笑 → ② 湯姆主動問「哪裏可以買到聖經？」 → ③ 開車數百哩從密西根到芝加哥去教會 →
+                ④ 打電話說「我覺得我裏面不大一樣，好像在拼拼圖」 → ⑤ 長談兩小時作基督徒的意義。
+                但他還沒準備好——<strong>他還在過程中，朝正確方向移動，但還沒準備簽訂合約</strong>。
               </p>
             </div>
           </div>
@@ -139,7 +274,7 @@ export default function Chapter1() {
         </div>
       </div>
 
-      {/* 科學界的功課 */}
+      {/* ========== 科學界的功課 ========== */}
       <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
         <h3 className="font-bold text-blue-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}>
           <Globe className="w-6 h-6 text-blue-600" />
@@ -148,7 +283,7 @@ export default function Chapter1() {
         </h3>
         <p className="text-slate-600 mb-4 leading-relaxed" style={{fontSize:"17px"}}>
           人本法則（Anthropic Principle）的意思是：我們審視周圍世界時，總覺得宇宙好像專為維持和供養人的生命而設計的。
-          這個觀念甚至不是源自基督徒學者，但許多證據都強烈顯示宇宙明顯是經過設計的，讓所有專家都無法否認。以下是一些鐵的事實：
+          這個觀念甚至不是源自基督徒學者，但許多證據都強烈顯示宇宙明顯是經過設計的。以下是鐵的事實：
         </p>
         <div className="space-y-3 mb-4">
           {scienceFacts.map((item, i) => (
@@ -163,12 +298,12 @@ export default function Chapter1() {
         </div>
         <div className="bg-gradient-to-r from-blue-100 to-indigo-100 rounded-xl p-5 border border-blue-200">
           <p className="text-blue-900 font-bold" style={{fontSize:"18px"}}>
-            ✨ 結論：一定有某一位下了很大工夫把事情安排得如此巧妙，好讓你我可以在此享受人生。現代科學指向一個事實：<span className="text-blue-600">神一定很看重人！</span>
+            ✨ 結論：一定有某一位下了很大工夫把事情安排得如此巧妙。現代科學指向一個事實：<span className="text-blue-600">神一定很看重人！</span>
           </p>
         </div>
       </div>
 
-      {/* 商業界的功課 */}
+      {/* ========== 商業界的功課 ========== */}
       <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
         <h3 className="font-bold text-emerald-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}>
           <Users className="w-6 h-6 text-emerald-600" />
@@ -199,13 +334,13 @@ export default function Chapter1() {
               ✨ 如果從科學界學得的功課是「神一定很看重人」，那麼從商業界學到的功課便是：<span className="text-emerald-600">我們最好也看重人。</span>
             </p>
             <p className="text-slate-600 mt-2" style={{fontSize:"16px"}}>
-              我們只有在重視基督教社群外的人時才會真正感到充實，才能按著神對我們的心意發揮功能。但我們也得誠實面對：<strong>我們很不容易守住焦點；我們很容易忘了要看重靈裏困惑的人。</strong>
+              我們只有在重視基督教社群外的人時才會真正感到充實。但我們也得誠實面對：<strong>我們很不容易守住焦點；我們很容易忘了要看重靈裏困惑的人。</strong>
             </p>
           </div>
         </div>
       </div>
 
-      {/* 危險警示：價值判斷的陷阱 */}
+      {/* ========== 危險警示 ========== */}
       <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl p-6 md:p-8 border border-red-100 shadow-sm">
         <h3 className="font-bold text-red-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}>
           <AlertTriangle className="w-6 h-6 text-red-600" />
@@ -213,15 +348,13 @@ export default function Chapter1() {
           <span className="text-slate-400 bg-slate-100 px-2 py-1 rounded-md font-normal" style={{fontSize:"13px"}}>P13</span>
         </h3>
         <p className="text-slate-700 mb-4 leading-relaxed" style={{fontSize:"17px"}}>
-          作者遇見一位舊識，對方說：「我復活節不去教會，因為我受不了『只來一回的人』。那些每年只來一次的人，盛裝出席，把教會裏的事全都攪亂，特別是停車場。」
-          作者心想：這人不但認為那些人對他不重要，恐怕他也深信他們對神也不重要。
+          作者遇見一位舊識，對方說：「我復活節不去教會，因為我受不了『只來一回的人』。那些每年只來一次的人，盛裝出席，把教會裏的事全都攪亂，特別是停車場。那些『只來一回的人』對我不重要。」
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {dangerSigns.map((item, i) => (
             <div key={i} className="bg-white rounded-xl p-4 border border-red-200">
               <div className="font-bold text-red-700 mb-2 flex items-center gap-2" style={{fontSize:"16px"}}>
-                <AlertTriangle className="w-4 h-4" />
-                {item.sign}
+                <AlertTriangle className="w-4 h-4" /> {item.sign}
               </div>
               <p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{item.desc}</p>
             </div>
@@ -234,7 +367,7 @@ export default function Chapter1() {
         </div>
       </div>
 
-      {/* 耶穌的三個比喻 */}
+      {/* ========== 耶穌的三個比喻 ========== */}
       <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
         <h3 className="font-bold text-violet-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}>
           <BookOpen className="w-6 h-6 text-violet-600" />
@@ -272,6 +405,14 @@ export default function Chapter1() {
                         <div className="font-bold text-amber-700 mb-2" style={{fontSize:"16px"}}>💡 生活應用：</div>
                         <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{item.application}</p>
                       </div>
+                      <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
+                        <div className="font-bold text-blue-700 mb-2" style={{fontSize:"16px"}}>📜 延伸經文：</div>
+                        <ul className="space-y-1">
+                          {item.extendedScriptures.map((s, j) => (
+                            <li key={j} className="text-slate-600" style={{fontSize:"16px"}}>• {s}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </motion.div>
                 )}
@@ -298,7 +439,7 @@ export default function Chapter1() {
         </div>
       </div>
 
-      {/* 十架上的對話 */}
+      {/* ========== 十架上的對話 ========== */}
       <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl p-6 md:p-8 border border-rose-100 shadow-sm">
         <h3 className="font-bold text-rose-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}>
           <Heart className="w-6 h-6 text-rose-600" />
@@ -322,13 +463,11 @@ export default function Chapter1() {
               </p>
             </div>
           </div>
-          <p className="text-rose-700 font-bold">
-            耶穌的憐憫不是我們可以理解的。面對事實吧！你我的愛根本不是這樣。
-          </p>
+          <p className="text-rose-700 font-bold">耶穌的憐憫不是我們可以理解的。面對事實吧！你我的愛根本不是這樣。</p>
         </div>
       </div>
 
-      {/* 健身中心的故事 */}
+      {/* ========== 健身中心的故事 ========== */}
       <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
         <h3 className="font-bold text-teal-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}>
           <HandHeart className="w-6 h-6 text-teal-600" />
@@ -357,7 +496,7 @@ export default function Chapter1() {
         </div>
       </div>
 
-      {/* 寶貴的一課：撕掉名單 */}
+      {/* ========== 寶貴的一課 ========== */}
       <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl p-6 md:p-8 border border-orange-100 shadow-sm">
         <h3 className="font-bold text-orange-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}>
           <Eye className="w-6 h-6 text-orange-600" />
@@ -382,84 +521,189 @@ export default function Chapter1() {
           </div>
           <p className="text-slate-700 leading-relaxed">
             <strong>等你開始以這種態度看待別人，你待人的方式就會產生革命性的改變。</strong>
-            你眼目鎖定過的人之中，沒有一個是神不看重的。當這個事實抓住你生命的核心，你就會不一樣——
-            你會活在充滿對神長闊高深之愛的敬畏中，你待人的方式會大不相同。
+            你眼目鎖定過的人之中，沒有一個是神不看重的。當這個事實抓住你生命的核心，你就會不一樣。
           </p>
         </div>
       </div>
 
-      {/* 值得花費力氣 + 使命 */}
-      <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
-        <h3 className="font-bold text-indigo-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}>
-          <Target className="w-6 h-6 text-indigo-600" />
-          值得花費力氣：我們在一場使命中
-          <span className="text-slate-400 bg-slate-100 px-2 py-1 rounded-md font-normal" style={{fontSize:"13px"}}>P21-22</span>
+      {/* ========== 值得花費力氣 + 使命 + 天上的慶祝會 ========== */}
+      <div className="bg-gradient-to-br from-violet-50 to-indigo-50 rounded-3xl p-6 md:p-8 border border-violet-100 shadow-sm">
+        <h3 className="font-bold text-violet-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}>
+          <Sparkles className="w-6 h-6 text-violet-600" />
+          我們在一場使命中 + 天上的慶祝會
+          <span className="text-slate-400 bg-slate-100 px-2 py-1 rounded-md font-normal" style={{fontSize:"13px"}}>P21-24</span>
         </h3>
         <div className="space-y-4" style={{fontSize:"17px"}}>
           <p className="text-slate-700 leading-relaxed">
-            神看重人到甚麼程度？<strong>重要到值得展開全面搜尋。</strong>羊走失了，牧羊人就出去找，直到找著為止。
-            錢弄丟了，女人就四處找，直到終於找到為止。父親的眼睛始終望向地平線，等候兒子回家。
+            神看重人到甚麼程度？<strong>重要到值得展開全面搜尋。</strong>耶穌說祂來到世間是為了「尋找、拯救失喪的人」。祂在離世前說：「父怎樣差遣了我，我也照樣差遣你們。」
           </p>
           <div className="bg-indigo-50 rounded-xl p-5 border border-indigo-200">
-            <p className="text-slate-700 leading-relaxed mb-3">
-              每個真基督徒的內心深處都能意識到，我們活在這行星上是為了一個更遠大的目的——
-              這個目的遠超過擁有一個事業、支付日用帳單、愛我們的家人。就連上教會、敬拜神，有時也會讓我們有種少了甚麼的感覺。
-            </p>
             <p className="text-indigo-800 font-bold leading-relaxed" style={{fontSize:"18px"}}>
               神要我們成為有感染力的基督徒——作祂的代言人，抓住祂的愛，再急切又有感染力地提供給所有願意考慮接受的人。
               這就是祂的計畫：把神的恩典和真理一個一個傳給人，直到全世界都感染上這種會改變人生命的「傳染病」。
             </p>
           </div>
-          <p className="text-slate-600 leading-relaxed">
-            耶穌說祂來到世間是為了「尋找、拯救失喪的人」。祂在離世前說：「父怎樣差遣了我，我也照樣差遣你們。」
-          </p>
-        </div>
-      </div>
-
-      {/* 天上的慶祝會 */}
-      <div className="bg-gradient-to-br from-violet-50 to-indigo-50 rounded-3xl p-6 md:p-8 border border-violet-100 shadow-sm">
-        <h3 className="font-bold text-violet-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}>
-          <Sparkles className="w-6 h-6 text-violet-600" />
-          天上的慶祝會
-          <span className="text-slate-400 bg-slate-100 px-2 py-1 rounded-md font-normal" style={{fontSize:"13px"}}>P23-24</span>
-        </h3>
-        <div className="space-y-4" style={{fontSize:"17px"}}>
           <div className="bg-violet-100 rounded-xl p-5 border border-violet-200">
             <p className="text-violet-800 font-bold" style={{fontSize:"18px"}}>
-              📖 路加福音十五章10節：「我告訴你們，一個罪人悔改，在神的使者面前也是這樣為他歡喜。」
+              📖 路加福音十五章10節：「一個罪人悔改，在神的使者面前也是這樣為他歡喜。」
             </p>
           </div>
           <p className="text-slate-700 leading-relaxed">
-            作者回憶自己十七歲時驕傲、叛逆、任性，自以為能靠自己的敬虔打動神。但透過聖經和關心他的基督徒朋友，
-            他開始明白自己永遠不可能累積足夠的義打動一位聖潔的神——他需要承認自己的罪，信靠基督為救主。
+            作者回憶自己十七歲在營會中悔改信主：「那一刻，全天國爆發出壯麗的宇宙級慶賀——天國開了一場極盛大的慶祝會，旗幟上寫著受賀主角的大名。」
           </p>
-          <p className="text-slate-700 leading-relaxed">
-            他在威斯康辛州南部的一個基督徒營會中，在神面前崩潰、悔改。那一刻，全天國爆發出壯麗的宇宙級慶賀——
-            <strong>天國開了一場極盛大的慶祝會，旗幟上寫著受賀主角的大名</strong>。
-          </p>
-          <div className="bg-white rounded-xl p-5 border border-violet-200">
-            <p className="text-violet-800 leading-relaxed">
-              如果你是真正跟隨基督的人，當你承認自己的罪、信靠祂的時候，也發生了同樣的事。
-              不管那是上週還是四十年前，那一刻全天國爆發出極大的慶祝，旗幟上寫著你的大名。
-            </p>
-          </div>
           <div className="bg-gradient-to-r from-violet-100 to-purple-100 rounded-xl p-5 border border-violet-300">
             <p className="text-violet-900 font-bold leading-relaxed" style={{fontSize:"18px"}}>
-              🎉 「如果你以為你現在懂了甚麼叫作歡欣鼓舞，等你作過朋友歸向基督之過程的主要推手時再說吧！
-              當你參與在天國為他開的慶祝會時，你會喜樂得幾乎要爆炸——特別是當你很清楚你真的是使他們名字登上那面旗幟的推手！」
+              🎉 「等你作過朋友歸向基督之過程的主要推手時再說吧！當你參與在天國為他開的慶祝會時，你會喜樂得幾乎要爆炸——特別是當你很清楚你真的是使他們名字登上那面旗幟的推手！」
             </p>
           </div>
         </div>
       </div>
 
-      {/* 本章總結 */}
+      {/* ========== 延伸探討：神學深化 ========== */}
+      <div className="bg-slate-800 rounded-3xl p-6 md:p-8 border border-slate-700 shadow-sm text-white">
+        <h3 className="font-bold text-amber-300 mb-6 flex items-center gap-2" style={{fontSize:"24px"}}>
+          <BookMarked className="w-6 h-6 text-amber-400" />
+          延伸探討：經文串連與神學深化
+          <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"13px"}}>非原書內容</span>
+        </h3>
+        <div className="space-y-4">
+          {theologyTopics.map((item, i) => (
+            <div key={i} className="bg-slate-700/50 rounded-2xl border border-slate-600 overflow-hidden cursor-pointer hover:bg-slate-700/70 transition-colors" onClick={() => toggleTheology(i)}>
+              <div className="p-5 flex items-center justify-between">
+                <h4 className="font-bold text-amber-200" style={{fontSize:"19px"}}>{item.title}</h4>
+                {openTheology === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+              </div>
+              <AnimatePresence>
+                {openTheology === i && (
+                  <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
+                    <div className="px-5 pb-5 space-y-3">
+                      <p className="text-slate-300 leading-relaxed" style={{fontSize:"17px"}}>{item.content}</p>
+                      <div className="bg-slate-800 rounded-xl p-4 border border-slate-600">
+                        <div className="font-bold text-blue-300 mb-2" style={{fontSize:"16px"}}>📜 相關經文：</div>
+                        <ul className="space-y-1">
+                          {item.scriptures.map((s, j) => (
+                            <li key={j} className="text-slate-400" style={{fontSize:"16px"}}>• {s}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="bg-amber-900/30 rounded-xl p-4 border border-amber-700/50">
+                        <div className="font-bold text-amber-300 mb-1" style={{fontSize:"16px"}}>💭 反思：</div>
+                        <p className="text-slate-300 leading-relaxed" style={{fontSize:"17px"}}>{item.reflection}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ========== 華人教會生活實例 ========== */}
+      <div className="bg-gradient-to-br from-red-50 to-amber-50 rounded-3xl p-6 md:p-8 border border-red-100 shadow-sm">
+        <h3 className="font-bold text-red-800 mb-6 flex items-center gap-2" style={{fontSize:"24px"}}>
+          <Church className="w-6 h-6 text-red-600" />
+          貼近我們的生活：華人教會實例
+          <span className="ml-3 bg-red-100 text-red-600 px-2 py-1 rounded-full font-normal border border-red-200" style={{fontSize:"13px"}}>延伸應用</span>
+        </h3>
+        <div className="space-y-4">
+          {taiwanExamples.map((item, i) => (
+            <div key={i} className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+              <h4 className="font-bold text-slate-800 mb-3" style={{fontSize:"19px"}}>{item.title}</h4>
+              <div className="space-y-3" style={{fontSize:"16px"}}>
+                <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
+                  <div className="font-bold text-slate-600 mb-1" style={{fontSize:"15px"}}>📍 情境：</div>
+                  <p className="text-slate-600 leading-relaxed">{item.scenario}</p>
+                </div>
+                <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-200">
+                  <div className="font-bold text-emerald-700 mb-1" style={{fontSize:"15px"}}>🎯 本週挑戰：</div>
+                  <p className="text-slate-600 leading-relaxed">{item.challenge}</p>
+                </div>
+                <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
+                  <div className="font-bold text-amber-700 mb-1" style={{fontSize:"15px"}}>💡 書中連結：</div>
+                  <p className="text-slate-600 leading-relaxed">{item.insight}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ========== 四週挑戰任務 ========== */}
+      <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-3xl p-6 md:p-8 border border-indigo-100 shadow-sm">
+        <h3 className="font-bold text-indigo-800 mb-6 flex items-center gap-2" style={{fontSize:"24px"}}>
+          <CalendarCheck className="w-6 h-6 text-indigo-600" />
+          四週挑戰任務
+          <span className="ml-3 bg-indigo-100 text-indigo-600 px-2 py-1 rounded-full font-normal border border-indigo-200" style={{fontSize:"13px"}}>實踐計畫</span>
+        </h3>
+        <div className="space-y-4">
+          {weeklyChallenge.map((item, i) => (
+            <div key={i} className="bg-white rounded-2xl border border-indigo-200 overflow-hidden cursor-pointer hover:bg-indigo-50/50 transition-colors" onClick={() => toggleChallenge(i)}>
+              <div className="p-5 flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center font-bold text-indigo-700" style={{fontSize:"16px"}}>{item.week}</div>
+                  <h4 className="font-bold text-indigo-800" style={{fontSize:"19px"}}>{item.title}</h4>
+                </div>
+                {openChallenge === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+              </div>
+              <AnimatePresence>
+                {openChallenge === i && (
+                  <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
+                    <div className="px-5 pb-5 space-y-3">
+                      <div className="bg-indigo-50 rounded-xl p-4 border border-indigo-100">
+                        <div className="font-bold text-indigo-700 mb-2" style={{fontSize:"16px"}}>🎯 任務說明：</div>
+                        <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{item.mission}</p>
+                      </div>
+                      <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
+                        <div className="font-bold text-blue-700 mb-1" style={{fontSize:"16px"}}>📖 本週經文：</div>
+                        <p className="text-slate-600" style={{fontSize:"17px"}}>{item.scripture}</p>
+                      </div>
+                      <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
+                        <div className="font-bold text-amber-700 mb-1" style={{fontSize:"16px"}}>📓 日記提示：</div>
+                        <p className="text-slate-600" style={{fontSize:"17px"}}>{item.journalPrompt}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ========== 小組討論問題 ========== */}
+      <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-6 md:p-8 border border-emerald-100 shadow-sm">
+        <h3 className="font-bold text-emerald-800 mb-6 flex items-center gap-2" style={{fontSize:"24px"}}>
+          <MessageSquareQuote className="w-6 h-6 text-emerald-600" />
+          小組討論問題
+          <span className="ml-3 bg-emerald-100 text-emerald-600 px-2 py-1 rounded-full font-normal border border-emerald-200" style={{fontSize:"13px"}}>小組使用</span>
+        </h3>
+        <div className="space-y-6">
+          {groupDiscussion.map((section, i) => (
+            <div key={i}>
+              <h4 className="font-bold text-emerald-700 mb-3 flex items-center gap-2" style={{fontSize:"20px"}}>
+                <span className="w-8 h-8 bg-emerald-200 rounded-full flex items-center justify-center text-emerald-800 font-bold" style={{fontSize:"14px"}}>{i+1}</span>
+                {section.category}
+              </h4>
+              <div className="space-y-2 ml-10">
+                {section.questions.map((q, j) => (
+                  <div key={j} className="bg-white rounded-xl p-4 border border-emerald-100">
+                    <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{q}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ========== 本章總結 ========== */}
       <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-3xl p-6 md:p-8">
         <h3 className="font-bold text-teal-700 mb-4 flex items-center gap-2" style={{fontSize:"22px"}}>
           📝 第一章總結：神看重人
         </h3>
         <p className="text-slate-500 mb-5 leading-relaxed" style={{fontSize:"17px"}}>
-          本章從多個角度建立一個核心信念：每個人在神眼中都極其寶貴。這個信念是成為有感染力的基督徒的根基——
-          如果我們不相信神看重每一個人，就不會有動力去接觸他們。
+          本章從多個角度建立一個核心信念：每個人在神眼中都極其寶貴。這個信念是成為有感染力的基督徒的根基。
         </p>
         <div className="space-y-3">
           <div className="bg-blue-50 border-blue-200 border rounded-xl p-4">
@@ -472,59 +716,54 @@ export default function Chapter1() {
           </div>
           <div className="bg-red-50 border-red-200 border rounded-xl p-4">
             <div className="font-bold text-red-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 危險警示：價值判斷陷阱 <span style={{fontSize:"12px", fontWeight:"normal", opacity:0.7}}>P13</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>我們很容易評斷誰可以為神所用、誰不能，把神的關心名單縮減到跟我們很像的一小撮人。這種思維會有效地除掉傳福音的盼望。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>我們很容易評斷誰可以為神所用、誰不能，把神的關心名單縮減到跟我們很像的一小撮人。</p>
           </div>
           <div className="bg-violet-50 border-violet-200 border rounded-xl p-4">
             <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>📖 耶穌的三個比喻 <span style={{fontSize:"12px", fontWeight:"normal", opacity:0.7}}>P14-17</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>失羊、失錢、浪子——唯一有記載耶穌一口氣連講三個比喻的場合。共同點：失去的很重要、值得全力搜尋、找回後天國歡喜慶祝。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>失羊、失錢、浪子——唯一耶穌連講三個比喻的場合。共同點：失去的很重要、值得全力搜尋、找回後天國歡喜慶祝。</p>
           </div>
           <div className="bg-rose-50 border-rose-200 border rounded-xl p-4">
             <div className="font-bold text-rose-700 mb-1.5" style={{fontSize:"18px"}}>✝️ 十架上的對話 <span style={{fontSize:"12px", fontWeight:"normal", opacity:0.7}}>P17-18</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>即使是被社會完全拋棄的重刑犯，耶穌也毫不猶豫地肯定他的價值：「你遠比你所能想像的重要！」神的憐憫超越我們的理解。</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>即使是被社會完全拋棄的重刑犯，耶穌也毫不猶豫地肯定他的價值。神的憐憫超越我們的理解。</p>
           </div>
           <div className="bg-teal-50 border-teal-200 border rounded-xl p-4">
             <div className="font-bold text-teal-700 mb-1.5" style={{fontSize:"18px"}}>🤝 健身中心的見證 <span style={{fontSize:"12px", fontWeight:"normal", opacity:0.7}}>P18-20</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>一位被眾人冷落的印度籍回教徒，在妻子離開時向作者傾訴。聖靈引導作者擁抱他——雖然內心掙扎，但順服後帶來深刻的改變：「當我領悟到神有多關心這個人，就使得我可以更關心他。」</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>一位被眾人冷落的印度籍回教徒，在妻子離開時向作者傾訴。聖靈引導作者擁抱他——「當我領悟到神有多關心這個人，就使得我可以更關心他。」</p>
           </div>
           <div className="bg-amber-50 border-amber-200 border rounded-xl p-4">
             <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>💡 核心行動 <span style={{fontSize:"12px", fontWeight:"normal", opacity:0.7}}>P20-24</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>撕掉心中的「不重要名單」，以神的眼光看待每一個人。我們在一場使命中——神要我們成為有感染力的基督徒，作祂的代言人。每一個罪人悔改，天國都會為他開慶祝會！</p>
+            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>撕掉心中的「不重要名單」，以神的眼光看待每一個人。我們在一場使命中——每一個罪人悔改，天國都會為他開慶祝會！</p>
           </div>
         </div>
       </div>
 
-      {/* 反思與行動 */}
+      {/* ========== 反思與行動 ========== */}
       <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white">
         <h3 className="font-bold text-orange-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
           <Brain className="w-7 h-7 mr-3" />
           深度反思與行動指南
-          <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"15px"}}>💡 延伸應用</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
             <h4 className="font-bold text-orange-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
-              <Brain className="w-5 h-5 mr-2 text-orange-400" />
-              反思問題
+              <Brain className="w-5 h-5 mr-2 text-orange-400" /> 反思問題
             </h4>
             <ul className="space-y-4 text-slate-300">
               {reflections.map((r, i) => (
                 <li key={i} className="flex items-start" style={{fontSize:"17px"}}>
-                  <span className="text-orange-400 mr-2 font-bold">{i+1}.</span>
-                  {r}
+                  <span className="text-orange-400 mr-2 font-bold">{i+1}.</span> {r}
                 </li>
               ))}
             </ul>
           </div>
           <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
             <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
-              <Target className="w-5 h-5 mr-2 text-emerald-400" />
-              具體行動方案
+              <Target className="w-5 h-5 mr-2 text-emerald-400" /> 具體行動方案
             </h4>
             <ul className="space-y-4 text-slate-300">
               {actions.map((a, i) => (
                 <li key={i} className="flex items-start" style={{fontSize:"17px"}}>
-                  <span className="text-emerald-400 mr-2 font-bold">{i+1}.</span>
-                  {a}
+                  <span className="text-emerald-400 mr-2 font-bold">{i+1}.</span> {a}
                 </li>
               ))}
             </ul>
