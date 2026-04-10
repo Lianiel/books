@@ -239,27 +239,52 @@ export default function Chapter1() {
         <div className="space-y-4">
           <div className="bg-amber-50 rounded-xl p-5 border border-amber-100" style={{fontSize:"17px"}}>
             <p className="text-slate-700 leading-relaxed mb-3">
-              湯姆是一流的水手、勇猛的賽者，愈在冒險邊緣愈蓬勃有活力。他是很極端的人——
-              <strong>要不就是完全投入，要不就是完全不理會</strong>。挑戰在於：湯姆對任何信仰都沒興趣。
+              湯姆踏上帆船不久，大家就看出他是一流的水手，勇猛的賽者，愈在冒險邊緣愈蓬勃有活力。
+              賽後他喜歡把音樂開得震天價響，和一堆朋友找刺激。他想贏，但也想在比賽過程中開心盡興。
+              他是很極端的人——<strong>要不就是完全投入，要不就是完全不理會</strong>。
+              一旦他相信某件事、對它起了興趣，就甚麼也攔不住他。但如果他不感興趣，你連要他看上一眼也難。
+              挑戰就在這裏：湯姆對任何信仰都沒興趣。
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
-              <div className="font-bold text-slate-700 mb-2" style={{fontSize:"16px"}}>🔑 轉折點：一節經文</div>
-              <p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>
-                湯姆手臂掛著吊帶（打架受傷）來找作者，半開玩笑地求禱告。作者沒有禱告，反而給了他一節經文：
-                「人種的是甚麼，收的也是甚麼。」（加拉太書六7）湯姆愣住了：「不會真的是這麼說的吧？」
-                作者說：「如果你種了你昨晚種的那種種子，就會收成你今天掛的這種吊帶。」
-                這節經文成了他們之間常講的笑話，卻也開啟了指向屬靈談話的門。
-              </p>
+          <div className="bg-white rounded-xl p-5 border border-amber-200 space-y-4" style={{fontSize:"17px"}}>
+            <div className="font-bold text-amber-800 mb-1" style={{fontSize:"18px"}}>🔑 轉折點：一節經文改變一切</div>
+            <p className="text-slate-700 leading-relaxed">
+              有一晚湯姆手臂掛著吊帶出現。作者問他發生甚麼事，他說前一晚他去賽車，之前喝太多酒，有點失控，跟別人打起架。
+              他已經知道作者是牧師，所以半開玩笑地問能不能為他禱告。
+            </p>
+            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200 space-y-2">
+              <p className="text-slate-600"><span className="font-bold text-amber-700">作者：</span>「也許改天找個時間吧。但是現在我有一節經文要給你。」</p>
+              <p className="text-slate-600"><span className="font-bold text-slate-500">湯姆：</span>「好啊，唸來聽聽。」</p>
+              <p className="text-slate-600"><span className="font-bold text-amber-700">作者：</span>「聖經加拉太書六章7節說：『人種的是甚麼，收的也是甚麼。』」</p>
+              <p className="text-slate-600"><span className="font-bold text-slate-500">湯姆（愣住）：</span>「不會真的是這麼說的吧？呃？」</p>
+              <p className="text-slate-600"><span className="font-bold text-amber-700">作者：</span>「絕對是。這裏說，如果你種了你昨晚種的那種種子，就會收成你今天掛的這種吊帶。」</p>
+              <p className="text-slate-600"><span className="font-bold text-slate-500">湯姆：</span>「你騙我！」</p>
+              <p className="text-slate-600"><span className="font-bold text-amber-700">作者：</span>「我不是在跟你開玩笑。而且我想你應該把這節經文好好背起來！」</p>
             </div>
-            <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
-              <div className="font-bold text-slate-700 mb-2" style={{fontSize:"16px"}}>📖 漸進過程（歷時兩年）</div>
-              <p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>
-                ① 背經文的玩笑 → ② 湯姆主動問「哪裏可以買到聖經？」 → ③ 開車數百哩從密西根到芝加哥去教會 →
-                ④ 打電話說「我覺得我裏面不大一樣，好像在拼拼圖」 → ⑤ 長談兩小時作基督徒的意義。
-                但他還沒準備好——<strong>他還在過程中，朝正確方向移動，但還沒準備簽訂合約</strong>。
-              </p>
+            <p className="text-slate-700 leading-relaxed">
+              後來幾天，作者都會語帶責備地問他到底背好沒有。沒過多久他就正視著作者把經文背出來了。
+              那個夏天，這整件事成了他們之間常講的笑話，<strong>開啟了指向屬靈談話的門</strong>。接下來一季，湯姆對信仰的興趣似乎多了一些。
+            </p>
+          </div>
+          <div className="bg-white rounded-xl p-5 border border-amber-200 space-y-4" style={{fontSize:"17px"}}>
+            <div className="font-bold text-amber-800 mb-1" style={{fontSize:"18px"}}>📖 漸進過程（歷時兩年）</div>
+            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200 space-y-2">
+              <p className="text-slate-600"><span className="font-bold text-slate-500">湯姆（餐廳用餐時）：</span>「哪裏可以買到聖經啊？我有點想讀讀看，但不知道一般書店有沒有賣。」</p>
+              <p className="text-slate-600"><span className="font-bold text-amber-700">作者（竭力顯得淡然）：</span>「嗯，我應該可以幫你弄一本。」</p>
+              <p className="text-slate-600 italic">（作者內心：「經過兩年的禱告、與他建立關係，他終於開始真的有點興趣了！」）</p>
+            </div>
+            <p className="text-slate-700 leading-relaxed">
+              那年秋末，湯姆開了好幾百哩，從密西根到芝加哥，只為了到教會看看，到作者家和他聊聊。
+            </p>
+            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200 space-y-2">
+              <p className="text-slate-600"><span className="font-bold text-slate-500">湯姆（回家後打電話）：</span>「我覺得我裏面不大一樣。就好像我開始把拼圖拼起來一樣。我不知道最後看起來會是甚麼樣子，但我還真的挺喜歡自己裏面這種感覺，雖然我不完全了解這是怎麼回事。」</p>
+            </div>
+            <p className="text-slate-700 leading-relaxed">
+              有一晚，在談了兩小時作基督徒是甚麼意思以後——
+            </p>
+            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200 space-y-2">
+              <p className="text-slate-600"><span className="font-bold text-amber-700">作者：</span>「湯姆，有一天你會是個很棒的基督徒。你非常誠實，對你委身的任何事都徹頭徹尾投入，而且你關切真理勝於別人的想法。」</p>
+              <p className="text-slate-600 italic">他勉強承認作者可能是對的。但是他還沒有預備好。<strong>他還在過程中，朝正確方向移動，但是他還沒準備就此簽訂合約。還不行。</strong></p>
             </div>
           </div>
           <div className="bg-gradient-to-r from-amber-100 to-orange-100 rounded-xl p-5 border border-amber-200">
