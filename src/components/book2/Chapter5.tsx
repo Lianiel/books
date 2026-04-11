@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, BookOpen, ChevronDown, ChevronUp, Target, Brain, MessageCircle, AlertTriangle, Sparkles, Shield, Users, MessageSquareQuote, Layers, BookMarked, CloudRain, Minus, ArrowDown } from 'lucide-react';
 
-export default function Chapter5() {
+export default function Chapter5({ expandAll }: { expandAll?: boolean }) {
   const [openLoss, setOpenLoss] = useState<number | null>(null);
   const [openShield, setOpenShield] = useState<number | null>(null);
   const [openStage, setOpenStage] = useState<number | null>(null);
@@ -180,7 +180,7 @@ export default function Chapter5() {
           {defenseMechanisms.map((d, i) => (
             <div key={i} className="bg-white rounded-xl p-4 border border-slate-200 hover:border-blue-200 transition-colors cursor-pointer" onClick={() => setOpenShield(openShield === i ? null : i)}>
               <div className="flex items-center gap-2 mb-1"><span className="text-xl">{d.icon}</span><span className="font-bold text-slate-800" style={{fontSize:"15px"}}>{d.mechanism}</span></div>
-              <AnimatePresence>{openShield === i && (
+              <AnimatePresence>{(expandAll || openShield === i) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2 }}>
                   <p className="text-slate-500 text-sm italic mt-2 bg-slate-50 p-3 rounded-lg">「{d.example}」</p>
                 </motion.div>
@@ -212,7 +212,7 @@ export default function Chapter5() {
                 <h4 className="font-bold text-indigo-800" style={{fontSize:"18px"}}>{s.num}. {s.title}</h4>
                 {openStage === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{openStage === i && (
+              <AnimatePresence>{(expandAll || openStage === i) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3 bg-white">
                     <p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{s.detail}</p>
@@ -265,7 +265,7 @@ export default function Chapter5() {
                 <h4 className="font-bold text-violet-800" style={{fontSize:"18px"}}>{topic.title}</h4>
                 {openTheology === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{openTheology === i && (
+              <AnimatePresence>{(expandAll || openTheology === i) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     <p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{topic.content}</p>
@@ -289,7 +289,7 @@ export default function Chapter5() {
                 <h4 className="font-bold text-orange-800" style={{fontSize:"18px"}}>{ex.title}</h4>
                 {openTaiwan === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{openTaiwan === i && (
+              <AnimatePresence>{(expandAll || openTaiwan === i) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     <div className="bg-orange-50 rounded-xl p-4 border border-orange-100"><div className="font-bold text-orange-700 mb-2" style={{fontSize:"15px"}}>📍 情境：</div><p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{ex.scenario}</p></div>
@@ -313,7 +313,7 @@ export default function Chapter5() {
                 <div className="flex items-center gap-3"><span className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-700 font-bold text-sm">{item.week.slice(-2)}</span><h4 className="font-bold text-indigo-800" style={{fontSize:"18px"}}>{item.title}</h4></div>
                 {openChallenge === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{openChallenge === i && (
+              <AnimatePresence>{(expandAll || openChallenge === i) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     <div className="bg-indigo-50 rounded-xl p-4 border border-indigo-100"><div className="font-bold text-indigo-700 mb-2" style={{fontSize:"15px"}}>🎯 任務：</div><p className="text-slate-600" style={{fontSize:"16px"}}>{item.mission}</p></div>
