@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   BookOpen, Menu, X, Heart, Activity, Compass, Map, Shield, Users, Sun, Star,
   Home, Footprints, Scale, HelpCircle, HeartHandshake, Baby, Briefcase,
-  Smartphone, User, Cross, ShieldAlert, TrendingUp, ChevronLeft, Download
+  Smartphone, User, Cross, ShieldAlert, TrendingUp, ChevronLeft, Download, Maximize2, Minimize2
 } from 'lucide-react';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from './useHighlight';
 
@@ -241,16 +241,16 @@ function renderBook1(ch: string) {
     default:     return <SectionCh17 />;
   }
 }
-function renderBook2(ch: string) {
+function renderBook2(ch: string, expandAll?: boolean) {
   switch (ch) {
-    case 'ch1': return <Emo1 />;
-    case 'ch2': return <Emo2 />;
-    case 'ch3': return <Emo3 />;
-    case 'ch4': return <Emo4 />;
-    case 'ch5': return <Emo5 />;
-    case 'ch6': return <Emo6 />;
-    case 'ch7': return <Emo7 />;
-    default:    return <Emo8 />;
+    case 'ch1': return <Emo1 expandAll={expandAll} />;
+    case 'ch2': return <Emo2 expandAll={expandAll} />;
+    case 'ch3': return <Emo3 expandAll={expandAll} />;
+    case 'ch4': return <Emo4 expandAll={expandAll} />;
+    case 'ch5': return <Emo5 expandAll={expandAll} />;
+    case 'ch6': return <Emo6 expandAll={expandAll} />;
+    case 'ch7': return <Emo7 expandAll={expandAll} />;
+    default:    return <Emo8 expandAll={expandAll} />;
   }
 }
 function renderBook3(ch: string) {
@@ -265,24 +265,24 @@ function renderBook3(ch: string) {
     default:    return <Paul8 />;
   }
 }
-function renderBook4(ch: string) {
+function renderBook4(ch: string, expandAll?: boolean) {
   switch (ch) {
-    case 'ch1': return <Cont1 />;
-    case 'ch2': return <Cont2 />;
-    case 'ch3': return <Cont3 />;
-    case 'ch4': return <Cont4 />;
-    case 'ch5': return <Cont5 />;
-    case 'ch6': return <Cont6 />;
-    case 'ch7': return <Cont7 />;
-    case 'ch8': return <Cont8 />;
-    case 'ch9': return <Cont9 />;
-    case 'ch10': return <Cont10 />;
-    case 'ch11': return <Cont11 />;
-    case 'ch12': return <Cont12 />;
-    case 'ch13': return <Cont13 />;
-    case 'ch14': return <Cont14 />;
-    case 'ch15': return <Cont15 />;
-    default:    return <Cont16 />;
+    case 'ch1': return <Cont1 expandAll={expandAll} />;
+    case 'ch2': return <Cont2 expandAll={expandAll} />;
+    case 'ch3': return <Cont3 expandAll={expandAll} />;
+    case 'ch4': return <Cont4 expandAll={expandAll} />;
+    case 'ch5': return <Cont5 expandAll={expandAll} />;
+    case 'ch6': return <Cont6 expandAll={expandAll} />;
+    case 'ch7': return <Cont7 expandAll={expandAll} />;
+    case 'ch8': return <Cont8 expandAll={expandAll} />;
+    case 'ch9': return <Cont9 expandAll={expandAll} />;
+    case 'ch10': return <Cont10 expandAll={expandAll} />;
+    case 'ch11': return <Cont11 expandAll={expandAll} />;
+    case 'ch12': return <Cont12 expandAll={expandAll} />;
+    case 'ch13': return <Cont13 expandAll={expandAll} />;
+    case 'ch14': return <Cont14 expandAll={expandAll} />;
+    case 'ch15': return <Cont15 expandAll={expandAll} />;
+    default:    return <Cont16 expandAll={expandAll} />;
   }
 }
 function renderBook5(ch: string) {
@@ -318,6 +318,7 @@ export default function App() {
   );
   const [activeChapter, setActiveChapter] = useState('ch1');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [expandAll, setExpandAll] = useState(false);
 
   // 從 URL 的 access_token 自動登入（從 puhe 後台帶過來）
   useEffect(() => {
@@ -429,15 +430,16 @@ export default function App() {
 
   const handleChapterClick = (id: string) => {
     setActiveChapter(id);
+    setExpandAll(false);
     setIsSidebarOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const renderContent = () => {
     if (selectedBook === 'book1') return renderBook1(activeChapter);
-    if (selectedBook === 'book2') return renderBook2(activeChapter);
+    if (selectedBook === 'book2') return renderBook2(activeChapter, expandAll);
     if (selectedBook === 'book3') return renderBook3(activeChapter);
-    if (selectedBook === 'book4') return renderBook4(activeChapter);
+    if (selectedBook === 'book4') return renderBook4(activeChapter, expandAll);
     if (selectedBook === 'book5') return renderBook5(activeChapter);
     if (selectedBook === 'book6') return renderBook6(activeChapter);
     return null;
@@ -510,6 +512,22 @@ export default function App() {
 
   const handleExportChapter = () => {
     if (!book) return;
+    // 先全展開所有摺疊區塊，等 DOM 更新後再抓取內容
+    const wasExpanded = expandAll;
+    if (!wasExpanded) {
+      setExpandAll(true);
+      // 等待 React re-render + framer-motion 動畫完成
+      setTimeout(() => {
+        doExportChapter();
+        setExpandAll(false);
+      }, 600);
+    } else {
+      doExportChapter();
+    }
+  };
+
+  const doExportChapter = () => {
+    if (!book) return;
     const main = document.querySelector('main');
     const chapterLabel = book.chapters.find((c: any) => c.id === activeChapter)?.label || activeChapter;
     const content = extractTextFromElement(main);
@@ -519,21 +537,28 @@ export default function App() {
 
   const handleExportBook = () => {
     if (!book) return;
-    // 提示使用者，因為需要時間
     const confirmed = window.confirm(`即將匯出《${book.title}》全書內容為 Word 檔，確定嗎？`);
     if (!confirmed) return;
+    const wasExpanded = expandAll;
+    if (!wasExpanded) {
+      setExpandAll(true);
+      setTimeout(() => {
+        doExportBook();
+        setExpandAll(false);
+      }, 600);
+    } else {
+      doExportBook();
+    }
+  };
 
-    // 匯出當前頁面可見的章節內容
-    // 由於其他章節不在 DOM 中，改為提取當前章節並提示
+  const doExportBook = () => {
+    if (!book) return;
     const main = document.querySelector('main');
     const content = extractTextFromElement(main);
     const chapterLabel = book.chapters.find((c: any) => c.id === activeChapter)?.label || activeChapter;
-
-    // 建立全書標題頁
     let fullContent = `<h1>${book.title}</h1><p style="color:#888;">${book.subtitle}</p><div class="divider"></div>`;
     fullContent += `<h2>${chapterLabel}</h2>${content}`;
     fullContent += `<div class="divider"></div><p style="color:#aaa;text-align:center;">※ 如需匯出其他章節，請切換到該章節後使用「匯出本章」功能</p>`;
-
     exportToWord(book.title, fullContent);
   };
 
@@ -791,8 +816,16 @@ export default function App() {
             transition={{ duration: 0.2 }}
           >
             {renderContent()}
-            {/* 匯出本章按鈕 */}
-            <div className="mt-8 pt-6 border-t border-slate-200 flex justify-center">
+            {/* 全展開/摺疊 + 匯出本章按鈕 */}
+            <div className="mt-8 pt-6 border-t border-slate-200 flex flex-wrap justify-center gap-3">
+              <button
+                onClick={() => setExpandAll(!expandAll)}
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold border-2 shadow-sm hover:shadow-md transition-all"
+                style={{ borderColor: book!.accentHex, color: expandAll ? '#fff' : book!.accentHex, background: expandAll ? book!.accentHex : 'transparent' }}
+              >
+                {expandAll ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
+                {expandAll ? '全部摺疊' : '全部展開'}
+              </button>
               <button
                 onClick={handleExportChapter}
                 className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all"
