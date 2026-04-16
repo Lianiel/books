@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   BookOpen, Menu, X, Heart, Activity, Compass, Map, Shield, Users, Sun, Star,
   Home, Footprints, Scale, HelpCircle, HeartHandshake, Baby, Briefcase,
-  Smartphone, User, Cross, ShieldAlert, TrendingUp, ChevronLeft, Download, Maximize2, Minimize2
+  Smartphone, User, Cross, ShieldAlert, TrendingUp, ChevronLeft, Download, Maximize2, Minimize2, Gift, AlertTriangle
 } from 'lucide-react';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from './useHighlight';
 
@@ -81,6 +81,14 @@ import King5 from './components/book6/Chapter5';
 import King6 from './components/book6/Chapter6';
 import King7 from './components/book6/Chapter7';
 import King8 from './components/book6/Chapter8';
+
+// Book 7: 基要陪讀課程
+import Disc1 from "./components/book7/Chapter1";
+import Disc2 from "./components/book7/Chapter2";
+import Disc3 from "./components/book7/Chapter3";
+import Disc4 from "./components/book7/Chapter4";
+import Disc5 from "./components/book7/Chapter5";
+import Disc6 from "./components/book7/Chapter6";
 
 const BOOKS = [
   {
@@ -218,6 +226,24 @@ const BOOKS = [
       { id: 'ch8', label: '靈修默想／共讀討論指引',             page: 'p.242', icon: Heart,          part: '列王紀上—上帝的啟示在人間' },
     ],
   },
+  {
+    id: "book7",
+    title: "基要陪讀課程",
+    subtitle: "教會陪讀教材",
+    emoji: "📗",
+    accentHex: "#0d9488",
+    bgLight: "bg-teal-50",
+    textAccent: "text-teal-700",
+    hoverText: "hover:text-teal-600",
+    chapters: [
+      { id: "ch1", label: "第一課：上帝的祝福",           page: "",  icon: Gift,           part: "基要陪讀課程" },
+      { id: "ch2", label: "第二課：祝福去哪了？",         page: "",  icon: AlertTriangle,  part: "基要陪讀課程" },
+      { id: "ch3", label: "第三課：祝福在耶穌裡",         page: "",  icon: Heart,          part: "基要陪讀課程" },
+      { id: "ch4", label: "第四課：擁抱祝福",             page: "",  icon: Star,           part: "基要陪讀課程" },
+      { id: "ch5", label: "補充經文及反對問題回應",       page: "",  icon: Shield,         part: "附錄" },
+      { id: "ch6", label: "陪讀課程使用守則",             page: "",  icon: BookOpen,       part: "附錄" },
+    ],
+  },
 ];
 
 function renderBook1(ch: string) {
@@ -305,6 +331,17 @@ function renderBook6(ch: string) {
     case 'ch6': return <King6 />;
     case 'ch7': return <King7 />;
     default:    return <King8 />;
+  }
+}
+
+function renderBook7(ch: string) {
+  switch (ch) {
+    case "ch1": return <Disc1 />;
+    case "ch2": return <Disc2 />;
+    case "ch3": return <Disc3 />;
+    case "ch4": return <Disc4 />;
+    case "ch5": return <Disc5 />;
+    default:    return <Disc6 />;
   }
 }
 
@@ -442,6 +479,7 @@ export default function App() {
     if (selectedBook === 'book4') return renderBook4(activeChapter, expandAll);
     if (selectedBook === 'book5') return renderBook5(activeChapter);
     if (selectedBook === 'book6') return renderBook6(activeChapter);
+    if (selectedBook === 'book7') return renderBook7(activeChapter);
     return null;
   };
 
