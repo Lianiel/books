@@ -16,7 +16,7 @@ export default function Chapter6() {
         <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-slate-400 rounded-full mix-blend-multiply filter blur-3xl opacity-15"></div>
         <div className="relative">
           <div className="flex items-center gap-2 mb-2"><AlertTriangle className="w-5 h-5 text-amber-300" /><span className="text-amber-300 text-sm tracking-widest">基要陪讀課程</span></div>
-          <h1 className="font-extrabold mb-3" style={{fontSize:"28px"}}>陪讀課程使用守則</h1>
+          <h1 className="font-extrabold mb-3" style={{fontSize:"30px"}}>陪讀課程使用守則</h1>
         </div>
       </div>
 

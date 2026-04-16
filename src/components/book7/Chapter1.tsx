@@ -107,16 +107,16 @@ export default function Chapter1() {
         <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-emerald-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
         <div className="relative">
           <div className="flex items-center gap-2 mb-2"><Gift className="w-5 h-5 text-emerald-300" /><span className="text-emerald-300 text-sm tracking-widest">基要陪讀課程</span></div>
-          <h1 className="font-extrabold mb-3" style={{fontSize:"30px"}}>第一課：上帝的祝福</h1>
+          <h1 className="font-extrabold mb-3" style={{fontSize:"32px"}}>第一課：上帝的祝福</h1>
           <p className="text-emerald-100 text-lg mb-4">你是上帝特別要賜給祝福的人！</p>
           <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm border border-white/10 mb-4">
-            <p className="text-white font-bold mb-2" style={{fontSize:"15px"}}>📋 課程目標：</p>
-            <p className="text-emerald-100" style={{fontSize:"15px"}}>1. 使朋友明白上帝創造人就是要將祝福賜給人。</p>
-            <p className="text-emerald-100" style={{fontSize:"15px"}}>2. 幫助朋友從聖經中認識上帝並渴望領受祝福。</p>
+            <p className="text-white font-bold mb-2" style={{fontSize:"17px"}}>📋 課程目標：</p>
+            <p className="text-emerald-100" style={{fontSize:"17px"}}>1. 使朋友明白上帝創造人就是要將祝福賜給人。</p>
+            <p className="text-emerald-100" style={{fontSize:"17px"}}>2. 幫助朋友從聖經中認識上帝並渴望領受祝福。</p>
           </div>
           <div className="bg-amber-500/20 rounded-xl p-4 border border-amber-400/30">
-            <p className="text-amber-200 font-bold" style={{fontSize:"15px"}}>💬 前言引導：</p>
-            <p className="text-amber-100" style={{fontSize:"15px"}}>先問問題：你的生命渴望有祝福嗎？</p>
+            <p className="text-amber-200 font-bold" style={{fontSize:"17px"}}>💬 前言引導：</p>
+            <p className="text-amber-100" style={{fontSize:"17px"}}>先問問題：你的生命渴望有祝福嗎？</p>
           </div>
         </div>
       </div>
@@ -130,7 +130,7 @@ export default function Chapter1() {
         return (
         <div key={i} className={`bg-gradient-to-br ${bgMap[colorName]} rounded-3xl p-6 md:p-8 border shadow-sm`}>
           <div className="flex items-center justify-between mb-4 cursor-pointer" onClick={() => setOpenSection(openSection === i ? null : i)}>
-            <h3 className={`font-bold ${textMap[colorName]} flex items-center gap-2`} style={{fontSize:"22px"}}>
+            <h3 className={`font-bold ${textMap[colorName]} flex items-center gap-2`} style={{fontSize:"24px"}}>
               <span className={`px-3 py-1 rounded-full text-sm border ${badgeMap[colorName]}`}>{sec.num}</span>
               {sec.title}
               <span className={`ml-2 text-xs px-2 py-1 rounded-full border ${badgeMap[colorName]} font-normal`}>{sec.ref}</span>
@@ -142,7 +142,7 @@ export default function Chapter1() {
           <div className="bg-white rounded-xl p-5 border border-slate-200 mb-4">
             <div className="flex items-start gap-2">
               <BookOpen className="w-5 h-5 text-slate-400 flex-shrink-0 mt-1" />
-              <p className="text-slate-700 leading-relaxed" style={{fontSize:"16px"}}>{sec.scripture}</p>
+              <p className="text-slate-700 leading-relaxed" style={{fontSize:"18px"}}>{sec.scripture}</p>
             </div>
           </div>
 
@@ -151,13 +151,13 @@ export default function Chapter1() {
               <div className="space-y-3">
                 {/* Questions */}
                 <div className="bg-white/80 rounded-xl p-4 border border-slate-100">
-                  <p className="font-bold text-slate-700 mb-3" style={{fontSize:"15px"}}>💬 討論問題：</p>
+                  <p className="font-bold text-slate-700 mb-3" style={{fontSize:"17px"}}>💬 討論問題：</p>
                   <div className="space-y-2">
                     {sec.questions.map((qa, j) => (
                       <div key={j} className="flex items-start gap-2 bg-slate-50 rounded-lg p-3 border border-slate-100">
                         <span className="text-slate-400 font-bold text-sm flex-shrink-0 mt-0.5">{j+1}.</span>
                         <div>
-                          <p className="text-slate-700 font-medium" style={{fontSize:"15px"}}>{qa.q}</p>
+                          <p className="text-slate-700 font-medium" style={{fontSize:"17px"}}>{qa.q}</p>
                           {qa.hint && <p className="text-slate-500 text-sm mt-1 italic">💡 {qa.hint}</p>}
                         </div>
                       </div>
@@ -168,14 +168,14 @@ export default function Chapter1() {
                 {/* Transition sentence */}
                 {sec.transition && (
                   <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
-                    <p className="text-amber-800 font-medium" style={{fontSize:"15px"}}>{sec.transition}</p>
+                    <p className="text-amber-800 font-medium" style={{fontSize:"17px"}}>{sec.transition}</p>
                   </div>
                 )}
 
                 {/* Backup scripture if exists */}
                 {sec.backup && (
                   <div className="bg-violet-50 rounded-xl p-4 border border-violet-200">
-                    <p className="font-bold text-violet-700 mb-2" style={{fontSize:"15px"}}>📖 {sec.backup.title}（{sec.backup.ref}）</p>
+                    <p className="font-bold text-violet-700 mb-2" style={{fontSize:"17px"}}>📖 {sec.backup.title}（{sec.backup.ref}）</p>
                     <p className="text-slate-600 text-sm leading-relaxed mb-2">{sec.backup.scripture}</p>
                     <p className="text-violet-600 text-sm font-medium">{sec.backup.question}</p>
                   </div>
@@ -189,7 +189,7 @@ export default function Chapter1() {
       {/* ========== 後續跟進 ========== */}
       <div className="bg-slate-800 rounded-3xl p-6 md:p-8 text-white">
         <div className="flex items-center justify-between cursor-pointer" onClick={() => setOpenFollow(!openFollow)}>
-          <h3 className="font-bold text-amber-300 flex items-center gap-2" style={{fontSize:"22px"}}><Target className="w-6 h-6 text-amber-400" />後續跟進</h3>
+          <h3 className="font-bold text-amber-300 flex items-center gap-2" style={{fontSize:"24px"}}><Target className="w-6 h-6 text-amber-400" />後續跟進</h3>
           {openFollow ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
         </div>
         <AnimatePresence>{openFollow && (
@@ -198,7 +198,7 @@ export default function Chapter1() {
               {followUp.map((item, i) => (
                 <div key={i} className="bg-white/10 rounded-xl p-4 border border-white/10 flex items-start gap-3">
                   <span className="text-amber-400 font-bold">{i+1}.</span>
-                  <p className="text-slate-200" style={{fontSize:"15px"}}>{item}</p>
+                  <p className="text-slate-200" style={{fontSize:"17px"}}>{item}</p>
                 </div>
               ))}
             </div>

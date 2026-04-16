@@ -32,15 +32,15 @@ export default function Chapter5() {
         <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-15"></div>
         <div className="relative">
           <div className="flex items-center gap-2 mb-2"><Shield className="w-5 h-5 text-blue-300" /><span className="text-blue-300 text-sm tracking-widest">基要陪讀課程</span></div>
-          <h1 className="font-extrabold mb-3" style={{fontSize:"28px"}}>補充經文及反對問題回應</h1>
-          <p className="text-slate-300" style={{fontSize:"16px"}}>陪讀過程中常見的問題與聖經回應，幫助陪讀者有準備地面對慕道友的疑問。</p>
+          <h1 className="font-extrabold mb-3" style={{fontSize:"30px"}}>補充經文及反對問題回應</h1>
+          <p className="text-slate-300" style={{fontSize:"18px"}}>陪讀過程中常見的問題與聖經回應，幫助陪讀者有準備地面對慕道友的疑問。</p>
         </div>
       </div>
 
       {/* ========== 補充經文 ========== */}
       <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-6 md:p-8 border border-blue-100 shadow-sm">
         <div className="flex items-center justify-between cursor-pointer" onClick={() => setShowScripture(!showScripture)}>
-          <h3 className="font-bold text-blue-800 flex items-center gap-2" style={{fontSize:"22px"}}><BookOpen className="w-6 h-6 text-blue-600" />補充經文</h3>
+          <h3 className="font-bold text-blue-800 flex items-center gap-2" style={{fontSize:"24px"}}><BookOpen className="w-6 h-6 text-blue-600" />補充經文</h3>
           {showScripture ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
         </div>
         <AnimatePresence>{showScripture && (
@@ -52,7 +52,7 @@ export default function Chapter5() {
                     <span className="font-bold text-blue-700 text-sm bg-blue-100 px-2 py-0.5 rounded-full">{s.topic}</span>
                     <span className="text-slate-500 text-sm">{s.ref}</span>
                   </div>
-                  <p className="text-slate-700 leading-relaxed" style={{fontSize:"15px"}}>{s.text}</p>
+                  <p className="text-slate-700 leading-relaxed" style={{fontSize:"17px"}}>{s.text}</p>
                 </div>
               ))}
             </div>
@@ -62,19 +62,19 @@ export default function Chapter5() {
 
       {/* ========== 反對問題回應 ========== */}
       <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-6 md:p-8 border border-amber-100 shadow-sm">
-        <h3 className="font-bold text-amber-800 mb-4 flex items-center gap-2" style={{fontSize:"22px"}}><MessageSquareQuote className="w-6 h-6 text-amber-600" />反對問題回應</h3>
+        <h3 className="font-bold text-amber-800 mb-4 flex items-center gap-2" style={{fontSize:"24px"}}><MessageSquareQuote className="w-6 h-6 text-amber-600" />反對問題回應</h3>
         <div className="space-y-3">
           {objections.map((obj, i) => (
             <div key={i} className="bg-white rounded-xl border border-amber-100 overflow-hidden">
               <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-amber-50 transition-colors" onClick={() => setOpenQ(openQ === i ? null : i)}>
-                <h4 className="font-bold text-amber-800" style={{fontSize:"16px"}}>❓ {obj.q}</h4>
+                <h4 className="font-bold text-amber-800" style={{fontSize:"18px"}}>❓ {obj.q}</h4>
                 {openQ === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
               <AnimatePresence>{(openQ === i) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2 }} className="overflow-hidden">
                   <div className="px-5 pb-4">
                     <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                      <p className="text-emerald-800" style={{fontSize:"15px"}}>💬 {obj.a}</p>
+                      <p className="text-emerald-800" style={{fontSize:"17px"}}>💬 {obj.a}</p>
                     </div>
                   </div>
                 </motion.div>
