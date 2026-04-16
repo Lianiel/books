@@ -1,643 +1,438 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Lightbulb, BookOpen, ChevronDown, ChevronUp, Target, Brain, MessageCircle, AlertTriangle, Sparkles, CheckCircle2, Users, Heart, Search, Globe, Shield, Zap } from 'lucide-react';
+import { Heart, BookOpen, ChevronDown, ChevronUp, Target, Brain, MessageSquareQuote, Layers, BookMarked, ArrowUp, ArrowDown } from 'lucide-react';
 
-export default function Chapter3() {
-  const [openFormula, setOpenFormula] = useState<number | null>(null);
-  const [openSalt, setOpenSalt] = useState<number | null>(null);
-  const [openMath, setOpenMath] = useState<number | null>(null);
+export default function Chapter2() {
+  const [openReward, setOpenReward] = useState<number | null>(null);
+  const [openCost, setOpenCost] = useState<number | null>(null);
   const [openTheology, setOpenTheology] = useState<number | null>(null);
   const [openChallenge, setOpenChallenge] = useState<number | null>(null);
+  const [openTaiwan, setOpenTaiwan] = useState<number | null>(null);
 
-  const formulaParts = [
+  const costBenefitIntro = {
+    concept: "商業界用「本益分析」（cost/benefit analysis）來做決策——把投資和收穫逐一列舉，然後做出有根有據的決定。耶穌在路加福音十四章也提出類似方法：蓋房子前先計算花費、打仗前先估量兵力。",
+    challenge: "即使目標高貴、用意真誠、計畫就緒，我們最後還是可能沒有任何行動。是甚麼在緊要關頭拉住我們？通常我們缺少的是：以清楚的頭腦和張大的眼睛仔細盤算需要付出的代價和可以得到的報酬。",
+    page: "P25-27"
+  };
+
+  const rewards = [
     {
-      title: "活出基督徒特質（HP = High Potency）",
-      icon: <Sparkles className="w-6 h-6" />,
-      color: "from-amber-50 to-yellow-50 border-amber-200",
-      titleColor: "text-amber-800",
-      summary: "鹽若失了味，就毫無用處——基督徒必須有「鹹味」。",
-      details: "基督對我們的生命要有夠強烈的影響，以致無人可以否認祂的權能和同在。我們的鹹度大致跟我們作屬靈操練的程度相當——閱讀聖經、跪下禱告、在小組團契中脫下面具真實相交、在教會服事、積極跟別人分享信仰。沒有魔法可用，也沒有捷徑可循。",
-      bookRef: "PART 2「活出基督徒特質」（第4-6章）將探討真誠、憐憫和犧牲三大特質。",
-      page: "P47-50"
+      num: 1, title: "激動人心的活動", icon: "🔥",
+      summary: "傳講信仰不是沉悶的義務，而是一場令人興奮的冒險。",
+      detail: "這點可能會讓你大吃一驚——傳講信仰竟然是一件讓你覺得激動人心的事！當你開始留意身邊的人，求神使用你，你會興奮地發現，即使在極艱難的事件和狀況中都可以看見神的手。知道我們每天所做的事都在神的大計畫裏有意義，會讓人有一種非常不可思議的感覺。",
+      story: "教會派編輯羅伯·威金斯和攝影記者賴瑞·凱瑟前往海地。在機場準備搭包機回家時，兩名政變失敗的軍人持機關槍和炸彈劫機。但羅伯和賴瑞卻把這場危機視為神的美意。他們在飛行途中和這兩個驚恐的人聊天說地，最後竟然在紙上畫出福音說明圖，向他們解釋神的愛。「神仍然看重他們，而且他們需要知道這一點。」",
+      page: "P27-30"
     },
     {
-      title: "靠近人（CP = Close Proximity）",
-      icon: <Users className="w-6 h-6" />,
-      color: "from-blue-50 to-cyan-50 border-blue-200",
-      titleColor: "text-blue-800",
-      summary: "鹽若不從鹽罐子倒出來，只是餐桌上的裝飾品。",
-      details: "我們必須與我們想接觸的人夠靠近，好使神的權能發揮應有的影響。很多自稱基督徒的人在跟基督的關係上很有能力、生活上走尊崇神的道路，但從來沒去接觸身邊需要自己影響的人。他們是很漂亮的餐桌擺設，但影響力很小。貝祺‧派伯（Becky Pippert）說得好：「除非鹽從鹽罐子倒出來，否則只是餐桌上的裝飾品。」",
-      bookRef: "PART 3「靠近人」（第7-9章）將探討人際關係中的機會、跟未信者交往、找到合適自己的方法。",
-      page: "P47-48"
+      num: 2, title: "滿足", icon: "😊",
+      summary: "沒有任何事比得上有效推動神對人類的救贖目的所帶來的滿足感！",
+      detail: "當我們開始投入於拯救未信者，在日常活動裏尋找目的，我們就會有一種超越日常人類經驗的滿足感。還有甚麼比得上成為神手裏的工具，被祂用以向祂關心到甚至甘心為之死的人傳達祂的愛、澄清祂的真理呢？",
+      story: "耶穌在井邊與悖逆的撒馬利亞婦人談話，為我們立了榜樣。後來門徒拿食物給祂吃，祂回答說：「我的食物就是遵行差我來者的旨意，做成祂的工。……我告訴你們，舉目向田觀看，莊稼已經熟了，可以收割了。」（約翰福音四：34-35）祂稱這項活動為祂的食物——因為祂有一種很深的滿足感。",
+      scripture: "彼後三9 主……不願有一人沉淪，乃願人人都悔改。",
+      page: "P30-31"
     },
     {
-      title: "清楚傳達（CC = Clear Communication）",
-      icon: <Lightbulb className="w-6 h-6" />,
-      color: "from-violet-50 to-purple-50 border-violet-200",
-      titleColor: "text-violet-800",
-      summary: "光的功能是讓人看見——福音信息必須被清楚講述出來。",
-      details: "很多基督徒被洗腦到認為，只要能活出信仰，周圍人就會看到、想要，然後自己想出得到這種生命的方法。但我們要面對現實：這種事幾乎從來不會發生。活出有滋味的基督徒生活是領人信主的必要條件，但並不是充分條件。神不准我們停在那裏，否則人們的結局就是地獄。我們一定得把這信息化為朋友聽得懂、能帶出行動的清楚語言。保羅在羅馬書十章14節問道：「未曾聽見祂，怎能信祂呢？沒有傳道的，怎能聽見呢？」",
-      bookRef: "PART 4「清楚傳達」（第10-12章）將探討開啟屬靈談話、講清楚福音信息、拆毀阻斷信仰的障礙。",
-      page: "P50-52"
+      num: 3, title: "屬靈成長", icon: "🌱",
+      summary: "這是有感染力的基督信仰最重要但常被忽略的一點。",
+      detail: "當無生氣的信徒掙脫屬靈真空，遇上信仰的追尋者，不可思議的事就發生了：讀經變得滿有活力——過去偶爾把聖經從書架上抽出來讀讀，現在覺得必須讀，甚至把有些部分背起來；禱告有了新的目的——陳腐的老套禱告詞不再，變成為朋友能得救所發的激動祈求；敬拜神的渴望也會成長；個人品格方面，成為有感染力之基督徒能幫助你維持高標準的行為，因為你更意識到自己是神的代表。",
+      story: "教會有個人一直改不掉賭馬的惡習。經過多次戒賭又再犯的挫折循環，後來有位同工挑戰他：「不是因為這是最大的罪，而是這會攔阻你影響朋友歸向基督。」有了這新的動機，這人一舉放棄賭馬的惡習——現在他是教會最有感染力的基督徒之一！",
+      page: "P32-34"
+    },
+    {
+      num: 4, title: "屬靈信心", icon: "💪",
+      summary: "跟信仰觀點不同的人談話可以迫使你採取行動，強化自己的信仰。",
+      detail: "努力讓別人接受你的信仰能大大地強化你對自己信仰的信心。這跟期末考很像——預備期末考會迫使你運用記憶力，改善讀書習慣，使得我們自己第一次把事情真正搞清楚。當我們要跟懷疑論者、摩門教徒、耶和華見證人、新世紀信徒及上教會的非基督徒說明我們的信仰時，我們就會自動增加自己的知識。當我們面對異議仍能成功把持自己的信仰，我們屬靈方面的肯定感就會增加。",
+      page: "P34-35"
+    },
+    {
+      num: 5, title: "經得起考驗的投資", icon: "💎",
+      summary: "我的人生要單單以真的能持久的東西為核心：神、祂的國度、像你我這樣的人。",
+      detail: "耶穌警告跟從祂的人：「不要為自己積攢財寶在地上：地上有蟲子咬，能銹壞，也有賊挖窟窿來偷。只要積攢財寶在天上。」（太六：19-20）彼得用了更強的措詞：「但主的日子要像賊來到一樣。那日，天必大有響聲廢去，有形質的都要被烈火銷化。」（彼後三：10-11）",
+      story: "有位朋友作了一個有趣的建議，他說我應該拿一堆紅色貼紙，上面寫著「即將焚毀」，貼在我擁有的每一件東西上！這可以不斷提醒我——每輛摩托車、每艘船、每樣家具——所有我擁有或想要的東西，都會朽壞、被竊，最終甚至要焚毀在烈火之中。在這些無法久長的事物上投資許多時間和精力，是多大的錯誤！",
+      page: "P35-36"
+    },
+    {
+      num: 6, title: "作神代言人的榮耀", icon: "👑",
+      summary: "神竟在選中我們作祂的代言人——祂給了我們代表祂說話的最高榮譽。",
+      detail: "當我們了解神有多偉大，而我們多軟弱多需要倚靠祂，耶穌在使徒行傳一章8節說的那席話似乎就顯得很難令人置信：「但聖靈降臨在你們身上，你們就必得著能力，並要在耶路撒冷、猶太全地，和撒馬利亞，直到地極，作我的見證。」門徒轉身看以確定祂到底在跟誰講話。神竟在選中我們作祂的代言人！祂應許在這過程中給我們能力、使用我們。",
+      story: "那是我服事早期的一段日子，當時我正在做高中生的學生工作。某個週三晚上規劃大型佈道活動，全場坐滿。差不多是我該上場的時候，我記得我有一種高度的「不配感」：「我是何許人啊？怎麼能跟這些孩子講話呢？」但我還是站起身來盡我有限的能力跟學生說明神看重他們。我邀請他們踏出那一步時，我目瞪口呆地看到好幾百名學生站起來！後來竟然有更多人站起來！事後我走到聚會的建築後面，靠著牆，為著祂竟願使用像我這樣一個人心裏充滿感恩與驚嘆。",
+      page: "P36-38"
+    },
+    {
+      num: 7, title: "三贏的結局", icon: "🏆",
+      summary: "你獲益，別人獲益，神也獲益——報酬是壓倒性的。",
+      detail: "當我們積極、有策略地努力為基督接觸人，當我們在生活方式和表達自己信仰上變得更有感染力，我們會發現自己獲益，別人獲益，神也獲益。這些好處還不夠刺激你的胃口？我們還沒談到我們為之如此努力的人會得到的諸多好處呢！逃過地獄的下場，得到天國的應許，在地上就能擁有美好的生活：充滿冒險、有目標、有滿足感、不斷成長、屬靈方面的肯定、持久的投資及成為宇宙之主的代表！最重要的，神也蒙受好處。約翰福音十五章8節說：「你們多結果子，我父就因此得榮耀……」路加福音十五章10節告訴我們：「一個罪人悔改，在天上也要這樣為他歡喜。」是天上的慶典！",
+      scripture: "約十五8「你們多結果子，我父就因此得榮耀。」\n路十五10「一個罪人悔改，在天上也要這樣為他歡喜。」",
+      page: "P38"
     }
   ];
 
-  const saltFunctions = [
-    { func: "使人口渴", detail: "基督徒順從聖靈，活出有目標、平安喜樂的生活時，常常會令周遭人感到靈裏餓渴。柳溪教會常聽到這樣的見證：「我發現我部門裏有個人的生命和別人不大一樣，講話的方式和別人不大一樣，看重的東西也和別人不大一樣。這引起我的注意，我感到自己裏面有一種愈來愈強的屬靈饑渴，是我不曾有過的。」", icon: "💧" },
-    { func: "為食物加味", detail: "沒有抹鹽，誰還想啃玉米？每當我們吃到沒味道的東西就自然會伸手取鹽，增添味道。當基督徒真實、勇敢地活出自己的信仰，就是在白湯裏加了引人興味的東西。他們出奇不意地引起人的注意，令人感到驚奇。他們以各種有挑戰性和看似激進的觀點將人喚醒，然後在這裏或那裏造成騷動。", icon: "🧂" },
-    { func: "防止腐敗", detail: "在冰箱發明以前，人們廣泛使用鹽來防止食物腐敗。信徒活出榮耀基督的生命可以阻擋社會的道德敗壞。在墮胎、環保、種族主義和破碎家庭的議題上，基督徒尊崇神時，祂就使用他們阻擋那威脅要橫掃全地的罪惡洪濤。", icon: "🛡️" },
-    { func: "鹽的兩個前提", detail: "鹽若要發揮最大影響，第一，必須有造成影響的能力（有鹹味）；第二，必須靠近它有意影響的東西。失了味的鹽沒有用處——它可以靠近很多東西，但若失去應有的能力，就沒有用，只好遭人踐踏。", icon: "⚡" }
-  ];
-
-  const wrongMath = [
-    { formula: "活出基督徒特質 + 不靠近人 = 最大影響？", problem: "他們一直與需要接近的人隔絕。在跟基督的關係上很有能力，但從來沒去接觸身邊的人——「很漂亮的餐桌擺設，但影響力很小。」", emoji: "❌" },
-    { formula: "靠近人 + 沒有基督徒特質 = 最大影響？", problem: "「我要跟這些人打成一片，甚至讓人分不出我在哪裏！」——你不會對他們有影響的，除非你擁有自己的特色和滋味。", emoji: "❌" },
-    { formula: "基督徒特質 + 靠近人 + 不開口 = 最大影響？", problem: "「拜託不要叫我真的開口！只要在他們面前活出我的信仰或許就能影響他們了。」——時間會證明這只是幻想。就如沒有行動的話語無益，沒有話語的行動不具意義。", emoji: "❌" },
-    { formula: "活出基督徒特質 + 靠近人 + 清楚傳達 = 最大影響", problem: "只要是滋味高、互動親密、真理清楚講明、聖靈活躍運行的地方，就會有具感染力之基督徒散發出的影響，至終使世上多一個人得救。", emoji: "✅" }
+  const costs = [
+    {
+      num: 1, title: "時間和精力", icon: "⏰",
+      detail: "接觸悖逆的人不容易，與對方建立關係、顯出基督徒的關心和同情、為對方持續禱告，這些都需要投注我們最寶貴的資源：時間和精力。包括要一再解釋看似簡單的福音信息，在他們「想一想」的時候耐心等候，努力應付許許多多充滿挑戰的問題，而且最後他們可能還是會拒絕基督。",
+      flip: "但是請問，把時間和精力投資在人身上，將來許多人會在天上的永恆裏感謝你，還有比這更好的投資嗎？甚麼投資有這麼高的報酬？",
+      page: "P39"
+    },
+    {
+      num: 2, title: "閱讀與學習", icon: "📚",
+      detail: "為了接觸他人，我們得去上點查經課，偶爾也要讀讀像本書這樣的書。你得費點力氣才能懂得自己所講的、所信的。",
+      flip: "但你反正也想多懂一點你所信的，對不對？聖經告訴我們，要在認識神上不斷成長。而且，我們已經把它查經放在報酬這邊，恐怕也不大公平吧！",
+      page: "P39"
+    },
+    {
+      num: 3, title: "金錢", icon: "💰",
+      detail: "在別人生命裏投資需要付出金錢。吃午餐、打長途電話、買書、參加特會，有時還要為供應別人實際的需要花上一大筆錢——這些都是有感染力之基督信仰可能有求於我們荷包的地方。",
+      flip: "但是把所有的花費加起來，總額還算挺低的，特別是相較於其後的龐大回報。至於代價較高的情況，耶穌也能給我們適當鼓勵：「只要積攢財寶在天上……因為你的財寶在哪裏，你的心也在那裏。」（太六：20-21）我想不出比這更安全的投資，你能嗎？",
+      page: "P39-40"
+    },
+    {
+      num: 4, title: "受窘、被拒絕、被迫害的風險", icon: "😰",
+      detail: "雖然我們大概沒甚麼人受過明顯的迫害，但是較輕的抵擋或許難免。可能是朋友的取笑或是受排擠於某些談話或社交聚會之外的孤獨感。若單單因為我們是基督徒而受歧視或惡意騷擾，情況可能更艱難。",
+      flip: "我沒有簡單的答案可以給你，只能鼓勵你注意順服神的好處之餘，向祂祈求讓你擁有祂的眼光。耶穌說：「人若因我辱罵你們，逼迫你們，捏造各樣壞話毀謗你們，你們就有福了！應當歡喜快樂，因為你們在天上的賞賜是大的。」（太五：11-12）",
+      scripture: "加六9 我們行善，不可喪志；若不灰心，到了時候就要收成。",
+      page: "P40"
+    },
+    {
+      num: 5, title: "生活變得複雜", icon: "🔄",
+      detail: "對我們大多數人而言，接觸人的主要代價是我們會跟對方生命所關切的事和活動糾纏在一起，我們不再能獨立行事，為我們原已超載的行程再添瑣事。簡單地說，使我們複雜的生活更複雜。",
+      flip: "但結婚不也一樣？生孩子也是，買房子也是；甚至，作基督徒也是。大多數重要的事都會使我們的生活變得更複雜。但是值得嗎？當然值得！問問任何剛作母親的人，她的回答一定是：「生下這孩子是我這一生最精采的事了。我愛這孩子！」",
+      page: "P41"
+    }
   ];
 
   const theologyTopics = [
     {
-      title: "鹽與光的神學：雙重身分，缺一不可",
-      content: "耶穌在登山寶訓中同時用了「鹽」和「光」兩個比喻，不是隨意的選擇。鹽代表的是「存在性影響」——你不需要說什麼，你的生命本身就在發揮作用（使人口渴、增添味道、防止腐敗）。光代表的是「宣告性影響」——你必須主動照亮、說明、傳達真理。基督徒不能只選一個：只作鹽不作光，人們不知道你為什麼不一樣；只作光不作鹽，你的話語沒有生命的支撐。耶穌要我們兩者兼具。",
-      scriptures: ["馬太福音5:13「你們是世上的鹽。鹽若失了味，怎能叫它再鹹呢？」", "馬太福音5:14-16「你們是世上的光……人點燈，不放在斗底下，是放在燈臺上，就照亮一家的人。你們的光也當這樣照在人前，叫他們看見你們的好行為，便將榮耀歸給你們在天上的父。」", "腓立比書2:15-16「你們顯在這世代中，好像明光照耀，將生命的道表明出來。」"],
-      reflection: "在你的生活中，你覺得自己比較偏向「鹽」（默默活出信仰）還是「光」（主動傳達福音）？你需要在哪方面加強？"
+      title: "本益分析的聖經根基：耶穌也教導計算代價",
+      content: "耶穌在路加福音十四章28-33節提出兩個比喻：蓋樓房的人先坐下來計算花費，打仗的王先估量兵力。這不是功利主義——而是誠實面對跟隨基督的代價。保羅也用「比賽」的比喻：「豈不知在場上賽跑的都跑，但得獎賞的只有一人？你們也當這樣跑，好叫你們得著獎賞。」（林前九24）重點不是報酬值不值得——而是當你真正看清報酬有多大，你的恐懼和猶豫就會顯得微不足道。(P25-27)",
+      scriptures: ["路十四28-33 你們哪一個要蓋一座樓，不先坐下算計花費？", "林前九24 豈不知在場上賽跑的都跑，但得獎賞的只有一人？", "來十二2 仰望為我們信心創始成終的耶穌，祂因那擺在前面的喜樂，就輕看羞辱，忍受了十字架的苦難。"],
+      reflection: "耶穌「因那擺在前面的喜樂，就輕看羞辱，忍受了十字架的苦難」——祂也做了本益分析！你是否也能看到那擺在你前面的「喜樂」，以至於能「輕看」分享信仰的困難和尷尬？"
     },
     {
-      title: "必要條件 vs. 充分條件：為什麼好行為不夠？",
-      content: "作者指出一個關鍵的邏輯：活出基督徒特質是「必要條件」（necessary condition），但不是「充分條件」（sufficient condition）。就像水是生命的必要條件，但只有水不足以維持生命——你還需要食物、空氣等。同樣地，好行為可以吸引人注意，但如果沒有人把福音信息講清楚，人們只會說「那個人人真好」，卻不知道如何得到同樣的生命。羅馬書十章14-17節說得很清楚：信道是從聽道來的。",
-      scriptures: ["羅馬書10:14-17「未曾聽見祂，怎能信祂呢？沒有傳道的，怎能聽見呢？……可見信道是從聽道來的，聽道是從基督的話來的。」", "使徒行傳8:30-31「腓利就跑到太監那裏……太監說：沒有人指教我，怎能明白呢？」", "何西阿書4:6「我的民因無知識而滅亡。」"],
-      reflection: "你是否曾經以「我用行為見證就好」為藉口，迴避用言語傳達福音？如果你的未信朋友今天突然問你「你為什麼信耶穌」，你能用三分鐘講清楚嗎？"
+      title: "「即將焚毀」的永恆觀：重新定義什麼是值得的投資",
+      content: "彼得後書三章10-11節提醒我們：有形質的都要被烈火銷化。作者的朋友建議他在每件擁有的東西上貼「即將焚毀」的紅色貼紙——這個畫面雖然誇張，卻直指核心問題：我們把最多的時間和精力投資在什麼上面？是那些「即將焚毀」的東西，還是那些存到永恆的事——人的靈魂、與神的關係、在天上的獎賞？耶穌說：「你的財寶在哪裏，你的心也在那裏。」(P35-36)",
+      scriptures: ["太六19-21 不要為自己積攢財寶在地上……只要積攢財寶在天上。", "彼後三10-11 但主的日子要像賊來到一樣……有形質的都要被烈火銷化。", "林後四18 我們不是顧念所見的，乃是顧念所不見的；因為所見的是暫時的，所不見的是永遠的。"],
+      reflection: "如果你真的在每件擁有的東西上貼「即將焚毀」的紅色貼紙，你的生活優先順序會有什麼改變？你目前最多的時間和精力投資在「即將焚毀」的東西上，還是「存到永恆」的事上？"
     },
     {
-      title: "屬靈操練與「鹹度」：沒有捷徑的成長之路",
-      content: "作者在拜訪葛理翰時深受觸動：這位七十三歲、向全世界數億人傳過福音的人，還是說「我還是需要神話語的餵養」。這揭示了一個重要的屬靈原則：鹹度不是一次性的成就，而是需要持續維持的狀態。就像運動員不能靠一次訓練保持體能，基督徒也不能靠一次靈修保持屬靈活力。達拉斯‧乌拉德（Dallas Willard）說：「恩典不反對努力，恩典反對的是靠功勞賺取。」屬靈操練不是為了賺取神的愛，而是為了讓自己處在能被神使用的狀態。",
-      scriptures: ["提摩太後書2:15「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」", "希伯來書5:14「惟獨長大成人的才能吃乾糧，他們的心竅習練得通達，就能分辨好歹了。」", "哥林多前書9:27「我是攻克己身，叫身服我，恐怕我傳福音給別人，自己反被棄絕了。」"],
-      reflection: "你目前的「鹹度」如何？你每天花多少時間在讀經、禱告、與神獨處上？如果葛理翰七十三歲還需要被神的話餵養，你呢？"
+      title: "代價其實就是報酬：一個反直覺的福音邏輯",
+      content: "本章最精妙的洞見是：那些看似「代價」的東西，仔細看其實本身就是報酬。花時間在人身上→建立深層關係→你自己也被祝福。閱讀學習→靈性成長→你更認識神。金錢奉獻→學習依靠神→經歷神的供應。被拒絕的風險→信心被鍛鍊→天上的獎賞。生活變複雜→生命更豐富→像耶穌。這和耶穌說的一樣：「你們要給人，就必有給你們的……因為你們用甚麼量器量給人，也必用甚麼量器量給你們。」（路六38）(P41-42)",
+      scriptures: ["路六38 你們要給人，就必有給你們的。", "可十29-30 凡為我和福音撇下房屋……沒有不在今世得百倍的。", "腓一21 因我活著就是基督，我死了就有益處。"],
+      reflection: "回顧你過去為信仰所付出的「代價」——有沒有哪些後來證明其實是「報酬」？你是否能相信，那些你現在害怕的代價，最終也會變成意想不到的祝福？"
     }
   ];
 
   const taiwanExamples = [
     {
-      title: "🏢 辦公室裡的「鹽」",
-      scenario: "在台灣的職場中，基督徒常面臨一個困境：太「鹹」怕被同事覺得怪，太「淡」又跟一般人沒兩樣。有些人選擇完全隱藏信仰身分，有些人則過度熱情地「傳教」讓人反感。",
-      challenge: "這週在辦公室中，不刻意「傳教」，但也不隱藏你的信仰。例如：同事問你週末做了什麼，誠實地說「去教會」；午餐時安靜地謝飯禱告；面對辦公室八卦時選擇不參與。觀察同事的反應。",
-      insight: "書中的公式告訴我們：鹽不需要大聲宣告「我是鹽！」——它只需要靠近食物，自然就會發揮作用。你的生命本身就是最有力的見證。"
+      title: "💼 台灣職場中的「激動人心的冒險」",
+      scenario: "台灣上班族每天通勤、加班、應酬，生活被工作填滿。信仰常常只是週日兩小時的事。但如果你開始用「神看重每個人」的眼光看待同事——那個總是獨自吃午餐的新人、那個最近離婚的主管、那個在茶水間抱怨生活的同事——你的職場就會從「賺錢的地方」變成「神使用你的禾場」。",
+      challenge: "這週選擇一位你覺得「需要被看見」的同事，主動邀請他一起吃午餐或喝咖啡。不需要傳教——只需要真正關心他。觀察神如何在這個簡單的行動中工作。",
+      insight: "海地劫機故事告訴我們：即使在最困難的處境中，羅伯和賴瑞仍然看到「神的美意」。(P29-30) 你的職場可能不像被劫持的飛機那麼危險，但同樣充滿了等待被接觸的人。"
     },
     {
-      title: "💇 理髮店裡的屬靈對話",
-      scenario: "作者在理髮時，用肯尼吉的音樂打開話題，最後談到了理髮師的家庭困境和教會經歷。在台灣，我們也有很多這樣的「日常接觸點」：理髮、看醫生、搭計程車、早餐店……但我們通常選擇沉默或只談天氣。",
-      challenge: "下次去理髮、看醫生或搭計程車時，試著多問一句：「最近還好嗎？」如果對方分享了困難，不急著「傳福音」，先真心傾聽，最後可以說：「我會為你禱告。」",
-      insight: "作者不是一開始就跟理髮師傳福音——他先用肯尼吉的話題建立連結，然後自然地轉到更深入的話題。關係永遠走在信息前面。"
+      title: "📱 在數位時代建立「真實關係」的挑戰",
+      scenario: "在台灣，LINE群組和社群媒體讓我們有上百個「好友」，卻很少有深入的關係。教會的LINE群組充斥貼圖和轉貼文章，但真正的生命分享很少發生。要成為有感染力的基督徒，需要的不是更多的群組或更巧妙的轉貼，而是真實的「靠近人」——面對面、生命對生命。",
+      challenge: "這個月把一個「線上互動」轉化為「面對面關係」：邀請一位你平常只在LINE上聊天的非基督徒朋友出來見面。放下手機，真正傾聽他的故事。",
+      insight: "本章的「滿足」來自耶穌在井邊與撒馬利亞婦人「面對面」的對話(P30-31)——不是透過社群媒體。真正的感染力需要真實的接觸。"
     },
     {
-      title: "📱 小組中的「錯誤數學」",
-      scenario: "華人教會小組常見三種「錯誤數學」：①「靈修型」小組——每週查經禱告很深入，但從來不邀請新朋友（有鹹味但不靠近人）；②「社交型」小組——跟非基督徒打成一片，但從不談信仰（靠近人但沒有鹹味）；③「活動型」小組——辦了很多活動吸引人來，但從不把福音講清楚（有鹹味也靠近人，但不作光）。",
-      challenge: "跟小組長討論：我們小組目前比較偏向哪一種「錯誤數學」？我們可以怎樣調整，讓三個成分更平衡？",
-      insight: "書中說：「有許多基督徒在玩弄可笑的算術。」這三個成分缺一不可——活出基督徒特質 + 靠近人 + 清楚傳達 = 最大影響。"
+      title: "😰 在華人文化中面對「被拒絕的風險」",
+      scenario: "華人文化重視「面子」和「和氣」。分享信仰最大的障礙不是神學問題，而是怕「破壞關係」「被當成怪人」「讓對方不舒服」。在台灣的職場和家族聚會中，公開談論信仰可能被視為「不識相」。特別是面對長輩或上司，更是難以開口。",
+      challenge: "回想你最近一次有機會分享信仰卻沒有開口的情境。問自己：真正阻止我的是什麼？是怕被拒絕？怕丟臉？還是怕影響關係？把這些恐懼帶到神面前禱告。然後問神：「下一次機會來臨時，祢要我怎麼做？」",
+      insight: "作者在高中佈道會上也有高度的「不配感」——但他還是站了起來，結果好幾百名學生回應。(P36-37) 你的「不配感」可能正是神要使用你的起點。"
     },
     {
-      title: "🧓 葛理翰的「鹹度維持」vs. 我們的屬靈健檢",
-      scenario: "葛理翰七十三歲還說「我還是需要神話語的餵養」。反觀我們自己——信主多少年了？我們的屬靈操練是在成長還是在退步？很多華人基督徒信主後，讀經禱告的習慣反而隨著時間遞減，因為「太忙了」「聽過了」「沒新鮮感了」。",
-      challenge: "做一次「屬靈健檢」：你每天花多少時間讀經？多少時間禱告？上次背一節新的經文是什麼時候？上次因為讀經而感動流淚是什麼時候？誠實面對你目前的「鹹度」。",
-      insight: "作者說：「我希望自己七十三歲時，可以鹹到危險的程度——你不希望這樣嗎？」鹹度需要每天維持，沒有捷徑。"
+      title: "🏠 家庭中的「三贏冒險」",
+      scenario: "在台灣，很多基督徒的家人並不信主——父母拜拜、配偶冷淡、孩子抗拒。在家庭中做有感染力的基督徒特別困難，因為家人看到你所有的軟弱和不一致。但這也是最大的禾場——如果連最了解你的人都能被你的信仰吸引，那就是最有說服力的見證。",
+      challenge: "不要急著「傳教」給家人。先用行動展示信仰的果子：主動服事、多一點耐心、真心道歉、少一點批評。讓家人看到基督在你身上的改變，而不只是聽到你的說教。記住：品格比言語更有感染力。",
+      insight: "本章說成為有感染力的基督徒能幫助你「維持高標準的行為」，因為你「更意識到自己是神的代表」。(P33) 你的家人就是你最嚴格的「品格監督員」——這是代價，也是報酬。"
+    },
+    {
+      title: "💎 「即將焚毀」在消費社會台灣的應用",
+      scenario: "台灣的消費文化極度發達——百貨公司週年慶、雙11、蝦皮免運——刺激我們不斷追求更多「即將焚毀」的東西。基督徒也不例外：我們追求更好的車、更大的房、更新的手機，卻很少投資在「存到永恆」的事上。如果把花在購物的時間拿來關心一個人的靈魂，結果會怎樣？",
+      challenge: "做一個實驗：這個月把你原本要花在一件「即將焚毀」的非必需品上的錢，用來投資在一個人身上——請他吃飯、送他一本書、或為他的需要奉獻。觀察這筆「永恆投資」帶給你什麼感受。",
+      insight: "作者的人生決定是：「我的人生要單單以真的能持久的東西為核心：神、祂的國度、像你我這樣的人。唯有這些配得我們全心的熱情。」(P36) 你的核心是什麼？"
     }
   ];
 
   const weeklyChallenge = [
     {
-      week: "第一週",
-      title: "「鹹度」自我評估",
-      mission: "用1-10分評估你目前在以下五個領域的「鹹度」：①讀經 ②禱告 ③小組團契 ④教會服事 ⑤分享信仰。找出最低分的那一項，這週刻意在那個領域多花10分鐘。",
-      scripture: "馬太福音5:13「你們是世上的鹽。鹽若失了味，怎能叫它再鹹呢？」",
-      journalPrompt: "你五個領域的分數各是多少？最低分的是哪一項？這週你打算怎樣提升它？"
+      week: "第一週", title: "做你的本益分析",
+      mission: "拿一張紙，畫一條線分成左右兩欄。左邊寫「報酬」（參考本章七項），右邊寫「代價」（參考本章五項）。然後加入你自己的項目——你個人經歷過或預期的報酬和代價。寫完後安靜看一分鐘，問自己：「這筆帳到底划不划算？」",
+      scripture: "路十四28 你們哪一個要蓋一座樓，不先坐下算計花費，能蓋成不能呢？",
+      journalPrompt: "看完你的本益分析表，你的結論是什麼？是報酬多還是代價多？什麼是你最害怕的代價？什麼是你最渴望的報酬？"
     },
     {
-      week: "第二週",
-      title: "從鹽罐子倒出來",
-      mission: "這一週，刻意在一個你平常只跟基督徒在一起的場合，帶一位非基督徒朋友加入（例如：一起午餐、運動、看電影）。不需要傳福音，只需要讓他自然地接觸到你和你的基督徒朋友。",
-      scripture: "馬太福音5:15「人點燈，不放在斗底下，是放在燈臺上，就照亮一家的人。」",
-      journalPrompt: "你邀請了誰？他的反應如何？你在這個過程中有什麼觀察或學習？"
+      week: "第二週", title: "尋找你的「海地時刻」",
+      mission: "這週每天問自己：「今天我身邊有沒有一個人是神要我去關心的？」不需要做大事——可能只是一句真誠的問候、一個傾聽的耳朵、一個午餐的邀請。每天晚上記錄：我今天是否「看見」了身邊的人？我有沒有錯過任何「神的美意在其中」的機會？",
+      scripture: "西四5 你們要愛惜光陰，用智慧與外人交往。",
+      journalPrompt: "這週你有沒有經歷到「激動人心」的時刻？即使只是一個小小的對話或關心的舉動，你是否感受到神在使用你？"
     },
     {
-      week: "第三週",
-      title: "練習「開口」",
-      mission: "準備一個90秒的「信仰簡介」：如果有人問你「你為什麼信耶穌？」或「基督教跟其他宗教有什麼不同？」，你能清楚、簡短、自然地回答嗎？寫下來，練習幾次，然後跟一位基督徒朋友演練。",
-      scripture: "彼得前書3:15「有人問你們心中盼望的緣由，就要常作準備，以溫柔、敬畏的心回答各人。」",
-      journalPrompt: "你的90秒信仰簡介是什麼？練習後你覺得自己的信心有提升嗎？哪些部分還需要改進？"
+      week: "第三週", title: "貼上「即將焚毀」的貼紙",
+      mission: "環顧你的生活，列出你花最多時間和精力的前五件事。然後問每一件：「這件事是『即將焚毀』的還是『存到永恆』的？」如果你發現大部分時間花在「即將焚毀」的事上，嘗試這週做一個調整：把其中一項的時間轉移到投資在人身上。",
+      scripture: "太六20-21 只要積攢財寶在天上……因為你的財寶在哪裏，你的心也在那裏。",
+      journalPrompt: "重新分配時間後，你的感受是什麼？你是否發現投資在人身上的「報酬」比你預期的更大？"
     },
     {
-      week: "第四週",
-      title: "完整公式實踐",
-      mission: "選一位你認識的未信者朋友，這週同時實踐公式的三個成分：①活出基督徒特質（為他禱告、在他面前活出真實的信仰）②靠近他（主動約他見面或聊天）③清楚傳達（在自然的對話中，至少提一次你的信仰或教會經歷）。",
-      scripture: "歌羅西書4:5-6「你們要愛惜光陰，用智慧與外人交往。你們的言語要常常帶著和氣，好像用鹽調和。」",
-      journalPrompt: "你選了誰？三個成分你分別怎樣實踐？結果如何？哪個成分你覺得最自然？哪個最困難？"
+      week: "第四週", title: "踏出信心的一步",
+      mission: "選擇一個你一直想分享信仰但還沒有行動的對象。這週為他禱告每天至少一分鐘。然後找一個自然的機會，做一件表達關心的事（不一定要直接傳教）。可以是分享你自己生命中神的作為、邀請他參加一個教會活動、或只是問他「你最近怎麼樣？有什麼我可以為你禱告的？」",
+      scripture: "徒一8 但聖靈降臨在你們身上，你們就必得著能力……作我的見證。",
+      journalPrompt: "你踏出了那一步嗎？結果如何？無論對方的回應是什麼，你自己內心有什麼感受？你是否經歷到神的同在和能力？"
     }
   ];
 
   const groupDiscussion = [
     {
-      category: "破冰問題",
+      category: "📊 本益分析",
       questions: [
-        "你覺得自己比較像「鹽」還是「光」？你的朋友會怎樣形容你的信仰表現？",
-        "分享一次你在日常生活中（職場、學校、社區）因為信仰而「不一樣」的經歷。"
+        "七項報酬中，哪一項最吸引你？哪一項是你之前沒有想過的？",
+        "五項代價中，哪一項是你最害怕的？為什麼？",
+        "你是否同意「代價其實就是報酬」的說法？你有沒有親身經歷過「付出代價後反而得到更多」的經驗？",
+        "如果你要說服一個基督徒朋友開始更積極地分享信仰，你會用哪個報酬作為主要論點？"
       ]
     },
     {
-      category: "書中探討",
+      category: "🔥 冒險與故事",
       questions: [
-        "作者提到鹽的三種功能（使人口渴、增味、防腐），你覺得你的生命目前比較在發揮哪一種功能？",
-        "葛理翰七十三歲還說「我還是需要神話語的餵養」——這句話對你有什麼震撼？",
-        "作者在理髮店用肯尼吉的音樂打開話題，最後談到了信仰。你有沒有類似的經歷，從一個世俗話題自然地轉到屬靈話題？",
-        "書中提到三種「錯誤數學」——你覺得我們小組比較偏向哪一種？",
-        "「很多基督徒被洗腦到認為，只要能活出信仰，周圍人就會看到、想要，然後自己想出得到這種生命的方法。但我們要面對現實：這種事幾乎從來不會發生。」你同意這句話嗎？"
+        "海地劫機的故事中，羅伯和賴瑞在危險中仍然看到傳福音的機會。你有沒有類似的經歷——在意想不到的場合遇到分享信仰的機會？",
+        "作者在高中佈道會上感到高度的「不配感」卻還是站了起來。你上一次「不配」但還是踏出信心一步的經歷是什麼？",
+        "「知道我們每天所做的事都在神的大計畫裏有意義」——這句話對你的日常生活有什麼影響？",
+        "你的生命中是否有一個人因為你的影響而認識了基督？那是什麼感覺？"
       ]
     },
     {
-      category: "生活反思",
+      category: "💎 永恆的投資",
       questions: [
-        "你的「鹹度」目前是在上升、持平還是下降？什麼因素影響最大？",
-        "你目前跟非基督徒朋友的互動頻率如何？你有沒有「從鹽罐子倒出來」？",
-        "如果有人今天問你「你為什麼信耶穌」，你能用90秒講清楚嗎？",
-        "在你的日常生活中，有哪些場合其實是「屬靈對話」的好機會，但你一直錯過？"
-      ]
-    },
-    {
-      category: "實踐計畫",
-      questions: [
-        "這週你打算在公式的哪一個成分上加強？具體怎麼做？",
-        "我們小組可以怎樣一起實踐這個公式？有沒有可以一起做的外展活動？",
-        "你願意準備一個90秒的「信仰簡介」，下次小組聚會時分享嗎？"
+        "如果你真的在每件東西上貼「即將焚毀」的紅色貼紙，你的生活會有什麼改變？",
+        "你目前在「存到永恆」的事上投資了多少時間和精力？你滿意這個比例嗎？",
+        "本章說這是一個「三贏的結局」——你獲益、別人獲益、神也獲益。你認同嗎？你覺得最大的贏家是誰？",
+        "作為小組，我們可以如何彼此鼓勵和支持，一起成為更有感染力的基督徒？"
       ]
     }
   ];
 
+  const reflections = [
+    "我目前的信仰生活更像「冒險」還是「例行公事」？是什麼讓我失去了信仰的「激動」？",
+    "我上一次因為分享信仰而感到深深的「滿足」是什麼時候？如果很久以前，是什麼攔阻了我？",
+    "我的屬靈生命是否正在「成長」？還是已經停滯在舒適圈裡？成為有感染力的基督徒如何能幫助我重新成長？",
+    "我花最多時間和精力投資的東西，是「即將焚毀」的還是「存到永恆」的？",
+    "我是否真的相信「代價其實就是報酬」？我願意為了永恆的報酬付出暫時的代價嗎？",
+    "如果神已經選中我作祂的代言人，我為什麼還在猶豫？我的「不配感」是否正阻擋神透過我工作？"
+  ];
+
+  const actions = [
+    "做本益分析：拿一張紙寫下你個人版的報酬vs代價清單，貼在你每天看得到的地方。",
+    "列出你的五個關鍵人物：寫下五個你最希望認識基督的人的名字，開始每天為他們禱告。",
+    "「即將焚毀」實驗：把這個月一筆非必需品的花費，改為投資在一個人的生命上。",
+    "說出你的故事：花十分鐘寫下你自己認識基督的故事（三分鐘版本），練習到能自然分享。",
+    "踏出一步：這週找一個自然的機會，向你清單上的一個人表達關心或分享你生命中神的作為。",
+    "找一位同伴：在教會或小組中找一個人，約定彼此鼓勵、問責，一起成為更有感染力的基督徒。"
+  ];
+
   return (
-    <div className="space-y-8 animate-in fade-in duration-700">
-      {/* Header */}
-      <div className="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 rounded-3xl p-8 md:p-10 border border-indigo-100 shadow-sm relative overflow-hidden">
-        <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+    <div className="max-w-4xl mx-auto pb-12">
+      <div className="space-y-8">
+
+      {/* ========== 章節標題 ========== */}
+      <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-3xl p-8 md:p-10 relative overflow-hidden border border-emerald-100 shadow-sm">
+        <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
         <div className="relative">
-          <div className="flex items-center gap-2 text-indigo-600 font-medium mb-2" style={{fontSize:"15px"}}>
-            <BookOpen className="w-5 h-5" />
-            PART 1：為何要成為有感染力的基督徒？
-          </div>
-          <h2 className="font-extrabold text-indigo-900 mb-4" style={{fontSize:"30px"}}>第三章：影響世界的公式</h2>
-          <p className="text-indigo-800 leading-relaxed mb-3" style={{fontSize:"18px"}}>
-            神不是給了作業就要我們自己想辦法完成的那種老闆。祂給了我們一套<strong>改變世界的公式</strong>——源自耶穌在登山寶訓中「鹽」和「光」的比喻：
-          </p>
-          <div className="bg-white/70 rounded-2xl p-5 border border-indigo-200 text-center">
-            <p className="font-extrabold text-indigo-900" style={{fontSize:"22px"}}>
-              活出基督徒特質 + 靠近人 + 清楚傳達 = 最大影響
-            </p>
-            <p className="text-indigo-600 mt-2" style={{fontSize:"16px"}}>
-              High Potency + Close Proximity + Clear Communication = Maximum Impact
-            </p>
-          </div>
+          <div className="flex items-center gap-2 text-emerald-600 font-medium mb-2" style={{fontSize:"15px"}}><BookOpen className="w-5 h-5" />PART 1：為何要成為有感染力的基督徒？</div>
+          <h2 className="font-extrabold text-emerald-900 mb-4" style={{fontSize:"30px"}}>第二章：有感染力之基督徒的報酬</h2>
+          <p className="text-emerald-800 leading-relaxed mb-3" style={{fontSize:"18px"}}>即使目標高貴、用意真誠、計畫就緒，我們最後還是可能沒有任何行動。是甚麼在緊要關頭拉住我們？本章用「<strong>本益分析</strong>」的方式，逐一列舉成為有感染力之基督徒的<strong>七項報酬</strong>和<strong>五項代價</strong>，讓你看清楚這筆帳到底划不划算。</p>
+          <p className="text-emerald-700 leading-relaxed" style={{fontSize:"17px"}}>結論是壓倒性的：報酬遠遠超過代價。事實上，那些看似「代價」的東西，其實本身就是報酬的一部分。這不是一場犧牲——而是一場<strong>三贏的冒險</strong>。</p>
         </div>
       </div>
 
-      {/* 開場：挫折感 */}
+      {/* ========== 本益分析 ========== */}
       <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
-        <h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2" style={{fontSize:"24px"}}>
-          <AlertTriangle className="w-6 h-6 text-orange-500" />
-          開場：得了指示卻不知道怎麼做
-          <span className="text-slate-400 bg-slate-100 px-2 py-1 rounded-md font-normal" style={{fontSize:"13px"}}>P43-44</span>
-        </h3>
-        <div className="space-y-4" style={{fontSize:"17px"}}>
-          <div className="bg-orange-50 rounded-xl p-5 border border-orange-100">
-            <p className="text-slate-700 leading-relaxed mb-3">
-              人生中最挫折的經驗之一就是，得了指示去做某事卻沒人告訴你該怎麼做——老闆訂下高銷售配額但不教你方法、
-              老師交代排山倒海的作業但不管你其他四門課的壓力。
-            </p>
-            <p className="text-slate-700 leading-relaxed mb-3">
-              <strong>在教會也是如此</strong>：「人們都迷失了！他們正走向地獄，神要接觸他們，而你是祂選中的使者——所以你要出去！把他們領向基督！」
-            </p>
-            <p className="text-orange-700 font-bold">
-              怎麼跟這種事爭呢？這是聖經說的，合乎真理。所以我要採取行動——但是在哪裏呢？我該怎麼開始？過程該是甚麼樣子？誰來幫我邁出第一步？
-            </p>
-          </div>
-          <div className="bg-emerald-50 rounded-xl p-5 border border-emerald-200">
-            <p className="text-emerald-800 font-bold" style={{fontSize:"18px"}}>
-              ✨ 好消息：「神所期待的，祂就促成。」祂不但告訴我們祂非常看重悖逆的人，也給了我們一套完整的方法。
-            </p>
-          </div>
+        <h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2" style={{fontSize:"24px"}}><Layers className="w-6 h-6 text-slate-600" />本益分析：先算清楚再出發<span className="ml-2 text-xs bg-slate-100 text-slate-500 px-2 py-1 rounded-full border border-slate-200">P25-27</span></h3>
+        <div className="bg-slate-50 rounded-xl p-5 border border-slate-200 mb-4">
+          <p className="text-slate-700 leading-relaxed" style={{fontSize:"17px"}}>{costBenefitIntro.concept}</p>
+        </div>
+        <div className="bg-amber-50 rounded-xl p-5 border border-amber-200">
+          <p className="text-amber-800 leading-relaxed" style={{fontSize:"17px"}}><strong>作者的挑戰：</strong>{costBenefitIntro.challenge}</p>
         </div>
       </div>
 
-      {/* 鹽的比喻 */}
-      <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
-        <h3 className="font-bold text-amber-800 mb-4 flex items-center gap-2" style={{fontSize:"24px"}}>
-          🧂 鹽的新觀點：「你們是世上的鹽」
-          <span className="text-slate-400 bg-slate-100 px-2 py-1 rounded-md font-normal" style={{fontSize:"13px"}}>P45-50</span>
-        </h3>
-        <p className="text-slate-600 mb-4" style={{fontSize:"17px"}}>
-          耶穌在登山寶訓中說：「你們是世上的鹽。」鹽在聖經時代有多種用途。學者們對耶穌指的是哪一種說法不一——
-          「自己挑一張，哪一張都可以。喜歡的話，統統拿去也無妨。」
-        </p>
-        <div className="space-y-3 mb-4">
-          {saltFunctions.map((item, i) => (
-            <div key={i} className="bg-amber-50 rounded-xl border border-amber-200 overflow-hidden cursor-pointer hover:bg-amber-100 transition-colors" onClick={() => setOpenSalt(openSalt === i ? null : i)}>
-              <div className="p-4 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span style={{fontSize:"24px"}}>{item.icon}</span>
-                  <span className="font-bold text-amber-800" style={{fontSize:"18px"}}>{item.func}</span>
-                </div>
-                {openSalt === i ? <ChevronUp className="w-5 h-5 text-amber-400" /> : <ChevronDown className="w-5 h-5 text-amber-400" />}
-              </div>
-              <AnimatePresence>
-                {openSalt === i && (
-                  <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
-                    <div className="px-4 pb-4">
-                      <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{item.detail}</p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* 葛理翰的故事 */}
-      <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
-        <h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2" style={{fontSize:"24px"}}>
-          <Heart className="w-6 h-6 text-blue-600" />
-          真實見證：葛理翰——七十三歲的「鹹味」
-          <span className="text-slate-400 bg-slate-100 px-2 py-1 rounded-md font-normal" style={{fontSize:"13px"}}>P48-49</span>
-        </h3>
-        <div className="space-y-4" style={{fontSize:"17px"}}>
-          <p className="text-slate-700 leading-relaxed">
-            幾年前，作者和妻子在葛理翰夫婦北卡羅萊納州山頂上的家裏度過一天。到了晚上，葛理翰累了，作者跟他說要回旅館。
-          </p>
-          <div className="bg-white rounded-xl p-5 border border-blue-200 space-y-3">
-            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-              <p className="text-slate-600"><span className="font-bold text-blue-700">葛理翰（遞過一本聖經）：</span>「比爾，在你走以前，餵養我一些神的話吧！」</p>
-            </div>
-            <p className="text-slate-700 leading-relaxed">
-              作者心想：這名七十三歲的老人顯然不是基督徒中的「嬰孩」，他也不像是在開玩笑的樣子。
-              而且，他向人傳講福音信息的人數遠超過歷史上任何人。
-            </p>
-            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-              <p className="text-slate-600"><span className="font-bold text-blue-700">葛理翰：</span>「我還是需要神話語的餵養，我喜歡神話語的餵養。」</p>
-            </div>
-          </div>
-          <div className="bg-gradient-to-r from-blue-100 to-indigo-100 rounded-xl p-5 border border-blue-200">
-            <p className="text-blue-900 font-bold leading-relaxed" style={{fontSize:"18px"}}>
-              💡 「那次的經驗幫助我明白何以葛理翰可以長期活出基督徒特質。他持續不斷地提升自己的『鹹味』。
-              我離去時不禁滿心盼望，等我到他那般年紀時，我的鹹味也能那樣高。
-              我希望自己七十三歲時，可以鹹到危險的程度——你不希望這樣嗎？」
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* 光的教訓 + 清楚傳達 */}
-      <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
-        <h3 className="font-bold text-violet-800 mb-4 flex items-center gap-2" style={{fontSize:"24px"}}>
-          💡 光的教訓：「你們是世上的光」
-          <span className="text-slate-400 bg-slate-100 px-2 py-1 rounded-md font-normal" style={{fontSize:"13px"}}>P50-52</span>
-        </h3>
-        <div className="space-y-4" style={{fontSize:"17px"}}>
-          <p className="text-slate-700 leading-relaxed">
-            光最基本的作用是讓人看得見東西，幫助我們看見事物真正的樣子。光的比喻代表的是<strong>清楚又吸引人地向人展現神的真理</strong>。
-            哥林多後書四章6節：「那吩咐光從黑暗裏照出來的神，已經照在我們心裏，叫我們得知神榮耀的光顯在耶穌基督的面上。」
-          </p>
-          <div className="bg-red-50 rounded-xl p-5 border border-red-200">
-            <p className="text-red-800 font-bold mb-2" style={{fontSize:"18px"}}>⚠️ 一個危險的迷思：</p>
-            <p className="text-slate-700 leading-relaxed">
-              「很多基督徒被洗腦到認為，只要能活出信仰，周圍人就會看到、想要，然後自己想出得到這種生命的方法。
-              但我們要面對現實：<strong>這種事幾乎從來不會發生</strong>。」
-            </p>
-            <p className="text-slate-700 leading-relaxed mt-2">
-              活出有滋味的基督徒生活是領人信主的<strong>必要條件</strong>，但並不是<strong>充分條件</strong>。
-              神不准我們停在那裏。我們一定得把這信息化為朋友聽得懂、能帶出行動的清楚語言。
-            </p>
-          </div>
-          <div className="bg-violet-50 rounded-xl p-5 border border-violet-200">
-            <p className="text-violet-800 font-bold" style={{fontSize:"17px"}}>
-              📖 保羅在羅馬書十章14節問道：「未曾聽見祂，怎能信祂呢？沒有傳道的，怎能聽見呢？」
-              ——就如沒有行動的話語無益，沒有話語的行動不具意義。耶穌說我們不但要是鹽，還要是光。
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* 理髮師的故事 */}
-      <div className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-3xl p-6 md:p-8 border border-teal-100 shadow-sm">
-        <h3 className="font-bold text-teal-800 mb-4 flex items-center gap-2" style={{fontSize:"24px"}}>
-          <MessageCircle className="w-6 h-6 text-teal-600" />
-          真實見證：理髮店裡的屬靈對話
-          <span className="text-slate-400 bg-slate-100 px-2 py-1 rounded-md font-normal" style={{fontSize:"13px"}}>P54-55</span>
-        </h3>
-        <div className="space-y-4" style={{fontSize:"17px"}}>
-          <p className="text-slate-700 leading-relaxed">
-            作者去理髮，理髮師心情很不好。他想逗她開心一點，卻想不出打開話題的方法。
-            後來他留意到店內播放的似乎是薩克斯風音樂——
-          </p>
-          <div className="bg-white rounded-xl p-5 border border-teal-200 space-y-3">
-            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-              <p className="text-slate-600"><span className="font-bold text-teal-700">作者（瞎掰）：</span>「那是肯尼吉（Kenny G.）演奏的吧？」</p>
-              <p className="text-slate-600"><span className="font-bold text-slate-500">理髮師（立刻興奮）：</span>「我最喜歡肯尼吉了！你也知道肯尼吉啊？」</p>
-              <p className="text-slate-500 italic">（作者內心：其實我大概只在脫口秀節目見過大約十五秒的肯尼吉。我真高興她沒問我他名字裏的"G"是哪個字的縮寫，因為我真的一點概念也沒有！）</p>
-            </div>
-            <p className="text-slate-700 leading-relaxed">
-              談了一會兒肯尼吉的音樂以後，談話就逐漸轉到更重要的事上。她說她是單親媽媽，於是他們講到她的婚姻以及孩子適應改變的情形。
-            </p>
-            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-              <p className="text-slate-600"><span className="font-bold text-slate-500">理髮師：</span>「孩子們適應得相當好，因為他們從附近一個叫柳溪的教會那邊得到很多幫助。」</p>
-              <p className="text-slate-600"><span className="font-bold text-teal-700">作者（努力克制熱情）：</span>「這樣喔。」</p>
-            </div>
-            <p className="text-slate-700 leading-relaxed">
-              他問她自己有沒有去過，她說很久以前去過。他問她為甚麼後來不去了，她說她也不知道。
-            </p>
-            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-              <p className="text-slate-600"><span className="font-bold text-teal-700">作者：</span>「我聽說那個教會最近有個特赦週——不管你做過甚麼或是為甚麼離開，都可以回去，沒有人會問你任何問題！」</p>
-              <p className="text-slate-600"><span className="font-bold text-slate-500">理髮師（一臉疑惑）：</span>「真的？」</p>
-              <p className="text-slate-600"><span className="font-bold text-teal-700">作者：</span>「嗯，可以這麼說。」</p>
-              <p className="text-slate-500 italic">（其實在柳溪教會每週都是特赦週！）</p>
-            </div>
-          </div>
-          <div className="bg-gradient-to-r from-teal-100 to-emerald-100 rounded-xl p-5 border border-teal-200">
-            <p className="text-teal-900 font-bold leading-relaxed" style={{fontSize:"18px"}}>
-              💡 「神喜歡我們靠近需要祂的人。當我們在談話中冒一點險把話題由世俗轉入真正重要的主題，祂很高興。
-              祂很開心能夠使用你我這樣平凡的基督徒近距離地對人們展開屬靈影響。」
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* 公式三大成分 */}
-      <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
-        <h3 className="font-bold text-indigo-800 mb-6 flex items-center gap-2" style={{fontSize:"24px"}}>
-          <Target className="w-6 h-6 text-indigo-600" />
-          公式的三大成分
-        </h3>
-        <div className="space-y-4">
-          {formulaParts.map((item, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-              <div className={`bg-gradient-to-r ${item.color} rounded-2xl border overflow-hidden cursor-pointer hover:shadow-md transition-all`} onClick={() => setOpenFormula(openFormula === i ? null : i)}>
-                <div className="p-5 flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-white/60 rounded-full flex items-center justify-center">{item.icon}</div>
-                    <div>
-                      <h4 className={`font-bold ${item.titleColor}`} style={{fontSize:"19px"}}>{item.title}</h4>
-                      <p className="text-slate-600 mt-1" style={{fontSize:"16px"}}>{item.summary}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-slate-400 bg-white/50 px-2 py-1 rounded-md" style={{fontSize:"13px"}}>{item.page}</span>
-                    {openFormula === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
-                  </div>
-                </div>
-                <AnimatePresence>
-                  {openFormula === i && (
-                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
-                      <div className="px-5 pb-5 space-y-3">
-                        <div className="bg-white/80 rounded-xl p-4 border border-white/50">
-                          <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{item.details}</p>
-                        </div>
-                        <div className="bg-white/60 rounded-xl p-4 border border-white/50">
-                          <p className="text-slate-500 italic" style={{fontSize:"16px"}}>📚 {item.bookRef}</p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-      {/* 錯誤數學 */}
-      <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl p-6 md:p-8 border border-red-100 shadow-sm">
-        <h3 className="font-bold text-red-800 mb-4 flex items-center gap-2" style={{fontSize:"24px"}}>
-          <AlertTriangle className="w-6 h-6 text-red-600" />
-          誠實的評估：你在玩「可笑的算術」嗎？
-          <span className="text-slate-400 bg-slate-100 px-2 py-1 rounded-md font-normal" style={{fontSize:"13px"}}>P52-53</span>
-        </h3>
-        <p className="text-slate-600 mb-4" style={{fontSize:"17px"}}>
-          作者指出，有許多基督徒在玩弄可笑的「新數學」——試圖用不完整的公式產生最大影響：
-        </p>
+      {/* ========== 七項報酬 ========== */}
+      <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-6 md:p-8 border border-emerald-100 shadow-sm">
+        <h3 className="font-bold text-emerald-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}><ArrowUp className="w-6 h-6 text-emerald-600" />成為有感染力之基督徒的報酬<span className="ml-2 text-xs bg-emerald-100 text-emerald-600 px-2 py-1 rounded-full border border-emerald-200">P27-38</span></h3>
+        <p className="text-slate-500 mb-4" style={{fontSize:"16px"}}>我們先從報酬開始，然後再說明要付出的成本：</p>
         <div className="space-y-3">
-          {wrongMath.map((item, i) => (
-            <div key={i} className={`rounded-2xl border overflow-hidden cursor-pointer hover:shadow-md transition-all ${i === 3 ? 'bg-emerald-50 border-emerald-200' : 'bg-white border-red-200'}`} onClick={() => setOpenMath(openMath === i ? null : i)}>
-              <div className="p-5 flex items-center justify-between">
+          {rewards.map((r, i) => (
+            <div key={i} className="bg-white rounded-2xl border border-emerald-100 overflow-hidden">
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-emerald-50 transition-colors" onClick={() => setOpenReward(openReward === i ? null : i)}>
                 <div className="flex items-center gap-3">
-                  <span style={{fontSize:"24px"}}>{item.emoji}</span>
-                  <span className={`font-bold ${i === 3 ? 'text-emerald-800' : 'text-red-800'}`} style={{fontSize:"17px"}}>{item.formula}</span>
+                  <span className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center text-xl">{r.icon}</span>
+                  <div><h4 className="font-bold text-emerald-800" style={{fontSize:"18px"}}>{r.num}. {r.title}</h4><p className="text-emerald-600 text-sm">{r.summary}</p></div>
                 </div>
-                {openMath === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openReward === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>
-                {openMath === i && (
-                  <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
-                    <div className="px-5 pb-5">
-                      <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{item.problem}</p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <AnimatePresence>{(openReward === i) && (
+                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
+                  <div className="px-5 pb-5 space-y-3">
+                    <p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{r.detail}</p>
+                    {r.story && <div className="bg-amber-50 rounded-xl p-4 border border-amber-200"><p className="text-amber-800 italic" style={{fontSize:"15px"}}>📖 {r.story}</p></div>}
+                    {r.scripture && <div className="bg-blue-50 rounded-xl p-3 border border-blue-200"><p className="text-blue-700 text-sm font-medium">{r.scripture}</p></div>}
+                    <p className="text-xs text-slate-400">{r.page}</p>
+                  </div>
+                </motion.div>
+              )}</AnimatePresence>
             </div>
           ))}
         </div>
       </div>
 
-      {/* 延伸探討：神學深化 */}
-      <div className="bg-slate-800 rounded-3xl p-6 md:p-8 border border-slate-700 shadow-sm text-white">
-        <h3 className="font-bold text-amber-300 mb-6 flex items-center gap-2" style={{fontSize:"24px"}}>
-          <BookOpen className="w-6 h-6 text-amber-400" />
-          延伸探討：經文串連與神學深化
-          <span className="ml-3 bg-slate-700/50 text-slate-300 px-2 py-1 rounded-full font-normal border border-slate-600" style={{fontSize:"13px"}}>非原書內容</span>
-        </h3>
-        <div className="space-y-4">
-          {theologyTopics.map((item, i) => (
-            <div key={i} className="bg-slate-700/50 rounded-2xl border border-slate-600 overflow-hidden cursor-pointer hover:bg-slate-700/70 transition-colors" onClick={() => setOpenTheology(openTheology === i ? null : i)}>
-              <div className="p-5 flex items-center justify-between">
-                <h4 className="font-bold text-amber-200" style={{fontSize:"19px"}}>{item.title}</h4>
+      {/* ========== 五項代價 ========== */}
+      <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl p-6 md:p-8 border border-rose-100 shadow-sm">
+        <h3 className="font-bold text-rose-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}><ArrowDown className="w-6 h-6 text-rose-600" />成為有感染力之基督徒的代價<span className="ml-2 text-xs bg-rose-100 text-rose-600 px-2 py-1 rounded-full border border-rose-200">P39-41</span></h3>
+        <p className="text-slate-500 mb-4" style={{fontSize:"16px"}}>代價是真實的——但你會發現，每一項代價的背後都藏著報酬：</p>
+        <div className="space-y-3">
+          {costs.map((c, i) => (
+            <div key={i} className="bg-white rounded-2xl border border-rose-100 overflow-hidden">
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-rose-50 transition-colors" onClick={() => setOpenCost(openCost === i ? null : i)}>
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">{c.icon}</span>
+                  <h4 className="font-bold text-rose-800" style={{fontSize:"18px"}}>{c.num}. {c.title}</h4>
+                </div>
+                {openCost === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+              </div>
+              <AnimatePresence>{(openCost === i) && (
+                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
+                  <div className="px-5 pb-5 space-y-3">
+                    <div className="bg-rose-50 rounded-xl p-4 border border-rose-200"><p className="text-rose-700" style={{fontSize:"16px"}}>💸 <strong>代價：</strong>{c.detail}</p></div>
+                    <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-200"><p className="text-emerald-700" style={{fontSize:"16px"}}>🔄 <strong>翻轉：</strong>{c.flip}</p></div>
+                    {c.scripture && <div className="bg-blue-50 rounded-xl p-3 border border-blue-200"><p className="text-blue-700 text-sm font-medium">📖 {c.scripture}</p></div>}
+                    <p className="text-xs text-slate-400">{c.page}</p>
+                  </div>
+                </motion.div>
+              )}</AnimatePresence>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ========== 結論 ========== */}
+      <div className="bg-slate-800 rounded-3xl p-6 md:p-8 text-white">
+        <h3 className="font-bold text-amber-300 mb-4" style={{fontSize:"22px"}}>🏆 結果：值上一千倍</h3>
+        <p className="text-slate-200 leading-relaxed mb-4" style={{fontSize:"17px"}}>在成為有感染力的基督徒這件事上，我們可以很有把握地說，事情同樣如此。沒錯，這裏面是要付代價、要努力、要冒險，又牽涉到很多複雜情況，但這一切都值得——值上一千倍。</p>
+        <div className="bg-amber-900/30 rounded-xl p-5 border border-amber-700">
+          <p className="text-amber-200 font-bold text-center leading-relaxed" style={{fontSize:"19px"}}>「你愈仔細看，就愈能看出報酬很高，代價卻相對地低，特別是當我們了解它們根本算不上是代價。這些投資會帶給人永存的報酬。」</p>
+          <p className="text-amber-400 text-sm text-center mt-2">(P42)</p>
+        </div>
+      </div>
+
+      {/* ========== 神學深度探討 ========== */}
+      <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-3xl p-6 md:p-8 border border-violet-100 shadow-sm">
+        <h3 className="font-bold text-violet-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}><BookMarked className="w-6 h-6 text-violet-600" />神學深度探討<span className="ml-2 text-xs bg-violet-100 text-violet-500 px-2 py-1 rounded-full border border-violet-200">延伸學習</span></h3>
+        <div className="space-y-3 mt-4">
+          {theologyTopics.map((topic, i) => (
+            <div key={i} className="bg-white rounded-2xl border border-violet-100 overflow-hidden">
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-violet-50 transition-colors" onClick={() => setOpenTheology(openTheology === i ? null : i)}>
+                <h4 className="font-bold text-violet-800" style={{fontSize:"18px"}}>{topic.title}</h4>
                 {openTheology === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>
-                {openTheology === i && (
-                  <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
-                    <div className="px-5 pb-5 space-y-3">
-                      <p className="text-slate-300 leading-relaxed" style={{fontSize:"17px"}}>{item.content}</p>
-                      <div className="bg-slate-800 rounded-xl p-4 border border-slate-600">
-                        <div className="font-bold text-blue-300 mb-2" style={{fontSize:"16px"}}>📜 相關經文：</div>
-                        <ul className="space-y-1">{item.scriptures.map((s, j) => (<li key={j} className="text-slate-400" style={{fontSize:"16px"}}>• {s}</li>))}</ul>
-                      </div>
-                      <div className="bg-amber-900/30 rounded-xl p-4 border border-amber-700/50">
-                        <div className="font-bold text-amber-300 mb-1" style={{fontSize:"16px"}}>💭 反思：</div>
-                        <p className="text-slate-300 leading-relaxed" style={{fontSize:"17px"}}>{item.reflection}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <AnimatePresence>{(openTheology === i) && (
+                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
+                  <div className="px-5 pb-5 space-y-3">
+                    <p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{topic.content}</p>
+                    <div className="bg-violet-50 rounded-xl p-4 border border-violet-100"><div className="font-bold text-violet-700 mb-2" style={{fontSize:"15px"}}>📖 相關經文：</div>{topic.scriptures.map((s: string, j: number) => (<p key={j} className="text-slate-600 text-sm mb-1.5">{s}</p>))}</div>
+                    <div className="bg-amber-50 rounded-xl p-4 border border-amber-200"><div className="font-bold text-amber-700 mb-1" style={{fontSize:"15px"}}>💬 反思：</div><p className="text-slate-600" style={{fontSize:"16px"}}>{topic.reflection}</p></div>
+                  </div>
+                </motion.div>
+              )}</AnimatePresence>
             </div>
           ))}
         </div>
       </div>
 
-      {/* 華人教會實例 */}
-      <div className="bg-gradient-to-br from-red-50 to-amber-50 rounded-3xl p-6 md:p-8 border border-red-100 shadow-sm">
-        <h3 className="font-bold text-red-800 mb-6 flex items-center gap-2" style={{fontSize:"24px"}}>
-          <Users className="w-6 h-6 text-red-600" />
-          貼近我們的生活：華人教會實例
-          <span className="ml-3 bg-red-100 text-red-600 px-2 py-1 rounded-full font-normal border border-red-200" style={{fontSize:"13px"}}>延伸應用</span>
-        </h3>
-        <div className="space-y-4">
-          {taiwanExamples.map((item, i) => (
-            <div key={i} className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
-              <h4 className="font-bold text-slate-800 mb-3" style={{fontSize:"19px"}}>{item.title}</h4>
-              <div className="space-y-3" style={{fontSize:"16px"}}>
-                <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
-                  <div className="font-bold text-slate-600 mb-1" style={{fontSize:"15px"}}>📍 情境：</div>
-                  <p className="text-slate-600 leading-relaxed">{item.scenario}</p>
-                </div>
-                <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-200">
-                  <div className="font-bold text-emerald-700 mb-1" style={{fontSize:"15px"}}>🎯 本週挑戰：</div>
-                  <p className="text-slate-600 leading-relaxed">{item.challenge}</p>
-                </div>
-                <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
-                  <div className="font-bold text-amber-700 mb-1" style={{fontSize:"15px"}}>💡 書中連結：</div>
-                  <p className="text-slate-600 leading-relaxed">{item.insight}</p>
-                </div>
+      {/* ========== 在我們的處境中 ========== */}
+      <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 md:p-8 border border-orange-100 shadow-sm">
+        <h3 className="font-bold text-orange-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}><Heart className="w-6 h-6 text-orange-600" />在我們的處境中<span className="ml-2 text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full border border-orange-200">生活應用</span></h3>
+        <div className="space-y-3 mt-4">
+          {taiwanExamples.map((ex, i) => (
+            <div key={i} className="bg-white rounded-2xl border border-orange-100 overflow-hidden">
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-orange-50 transition-colors" onClick={() => setOpenTaiwan(openTaiwan === i ? null : i)}>
+                <h4 className="font-bold text-orange-800" style={{fontSize:"18px"}}>{ex.title}</h4>
+                {openTaiwan === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
+              <AnimatePresence>{(openTaiwan === i) && (
+                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
+                  <div className="px-5 pb-5 space-y-3">
+                    <div className="bg-orange-50 rounded-xl p-4 border border-orange-100"><div className="font-bold text-orange-700 mb-2" style={{fontSize:"15px"}}>📍 情境：</div><p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{ex.scenario}</p></div>
+                    <div className="bg-green-50 rounded-xl p-4 border border-green-200"><div className="font-bold text-green-700 mb-1" style={{fontSize:"15px"}}>🎯 挑戰：</div><p className="text-slate-600" style={{fontSize:"16px"}}>{ex.challenge}</p></div>
+                    <div className="bg-blue-50 rounded-xl p-4 border border-blue-200"><div className="font-bold text-blue-700 mb-1" style={{fontSize:"15px"}}>💡 回扣本書：</div><p className="text-slate-600" style={{fontSize:"16px"}}>{ex.insight}</p></div>
+                  </div>
+                </motion.div>
+              )}</AnimatePresence>
             </div>
           ))}
         </div>
       </div>
 
-      {/* 四週挑戰任務 */}
+      {/* ========== 四週挑戰 ========== */}
       <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-3xl p-6 md:p-8 border border-indigo-100 shadow-sm">
-        <h3 className="font-bold text-indigo-800 mb-6 flex items-center gap-2" style={{fontSize:"24px"}}>
-          <CheckCircle2 className="w-6 h-6 text-indigo-600" />
-          四週挑戰任務
-          <span className="ml-3 bg-indigo-100 text-indigo-600 px-2 py-1 rounded-full font-normal border border-indigo-200" style={{fontSize:"13px"}}>實踐計畫</span>
-        </h3>
-        <div className="space-y-4">
+        <h3 className="font-bold text-indigo-800 mb-2 flex items-center gap-2" style={{fontSize:"24px"}}><Target className="w-6 h-6 text-indigo-600" />四週操練挑戰</h3>
+        <div className="space-y-3 mt-4">
           {weeklyChallenge.map((item, i) => (
-            <div key={i} className="bg-white rounded-2xl border border-indigo-200 overflow-hidden cursor-pointer hover:bg-indigo-50/50 transition-colors" onClick={() => setOpenChallenge(openChallenge === i ? null : i)}>
-              <div className="p-5 flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center font-bold text-indigo-700" style={{fontSize:"16px"}}>{item.week}</div>
-                  <h4 className="font-bold text-indigo-800" style={{fontSize:"19px"}}>{item.title}</h4>
-                </div>
+            <div key={i} className="bg-white rounded-2xl border border-indigo-100 overflow-hidden">
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-indigo-50 transition-colors" onClick={() => setOpenChallenge(openChallenge === i ? null : i)}>
+                <div className="flex items-center gap-3"><span className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-700 font-bold text-sm">{item.week.slice(-2)}</span><h4 className="font-bold text-indigo-800" style={{fontSize:"18px"}}>{item.title}</h4></div>
                 {openChallenge === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>
-                {openChallenge === i && (
-                  <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
-                    <div className="px-5 pb-5 space-y-3">
-                      <div className="bg-indigo-50 rounded-xl p-4 border border-indigo-100">
-                        <div className="font-bold text-indigo-700 mb-2" style={{fontSize:"16px"}}>🎯 任務說明：</div>
-                        <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{item.mission}</p>
-                      </div>
-                      <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
-                        <div className="font-bold text-blue-700 mb-1" style={{fontSize:"16px"}}>📖 本週經文：</div>
-                        <p className="text-slate-600" style={{fontSize:"17px"}}>{item.scripture}</p>
-                      </div>
-                      <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
-                        <div className="font-bold text-amber-700 mb-1" style={{fontSize:"16px"}}>📓 日記提示：</div>
-                        <p className="text-slate-600" style={{fontSize:"17px"}}>{item.journalPrompt}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <AnimatePresence>{(openChallenge === i) && (
+                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
+                  <div className="px-5 pb-5 space-y-3">
+                    <div className="bg-indigo-50 rounded-xl p-4 border border-indigo-100"><div className="font-bold text-indigo-700 mb-2" style={{fontSize:"15px"}}>🎯 任務：</div><p className="text-slate-600" style={{fontSize:"16px"}}>{item.mission}</p></div>
+                    <div className="bg-blue-50 rounded-xl p-4 border border-blue-200"><div className="font-bold text-blue-700 mb-1" style={{fontSize:"15px"}}>📖 經文：</div><p className="text-slate-600" style={{fontSize:"16px"}}>{item.scripture}</p></div>
+                    <div className="bg-amber-50 rounded-xl p-4 border border-amber-200"><div className="font-bold text-amber-700 mb-1" style={{fontSize:"15px"}}>📓 日記：</div><p className="text-slate-600" style={{fontSize:"16px"}}>{item.journalPrompt}</p></div>
+                  </div>
+                </motion.div>
+              )}</AnimatePresence>
             </div>
           ))}
         </div>
       </div>
 
-      {/* 小組討論問題 */}
+      {/* ========== 小組討論 ========== */}
       <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-6 md:p-8 border border-emerald-100 shadow-sm">
-        <h3 className="font-bold text-emerald-800 mb-6 flex items-center gap-2" style={{fontSize:"24px"}}>
-          <MessageCircle className="w-6 h-6 text-emerald-600" />
-          小組討論問題
-          <span className="ml-3 bg-emerald-100 text-emerald-600 px-2 py-1 rounded-full font-normal border border-emerald-200" style={{fontSize:"13px"}}>小組使用</span>
-        </h3>
+        <h3 className="font-bold text-emerald-800 mb-6 flex items-center gap-2" style={{fontSize:"24px"}}><MessageSquareQuote className="w-6 h-6 text-emerald-600" />小組討論問題<span className="ml-3 bg-emerald-100 text-emerald-600 px-2 py-1 rounded-full font-normal border border-emerald-200" style={{fontSize:"13px"}}>小組使用</span></h3>
         <div className="space-y-6">
           {groupDiscussion.map((section, i) => (
-            <div key={i}>
-              <h4 className="font-bold text-emerald-700 mb-3 flex items-center gap-2" style={{fontSize:"20px"}}>
-                <span className="w-8 h-8 bg-emerald-200 rounded-full flex items-center justify-center text-emerald-800 font-bold" style={{fontSize:"14px"}}>{i+1}</span>
-                {section.category}
-              </h4>
-              <div className="space-y-2 ml-10">
-                {section.questions.map((q, j) => (
-                  <div key={j} className="bg-white rounded-xl p-4 border border-emerald-100">
-                    <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{q}</p>
-                  </div>
-                ))}
-              </div>
+            <div key={i}><h4 className="font-bold text-emerald-700 mb-3 flex items-center gap-2" style={{fontSize:"20px"}}><span className="w-8 h-8 bg-emerald-200 rounded-full flex items-center justify-center text-emerald-800 font-bold" style={{fontSize:"14px"}}>{i+1}</span>{section.category}</h4>
+              <div className="space-y-2 ml-10">{section.questions.map((q: string, j: number) => (<div key={j} className="bg-white rounded-xl p-4 border border-emerald-100"><p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{q}</p></div>))}</div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* 本章總結 */}
+      {/* ========== 本章總結 ========== */}
       <div className="bg-gradient-to-br from-teal-50 to-slate-50 border border-teal-100 rounded-3xl p-6 md:p-8">
-        <h3 className="font-bold text-teal-700 mb-4 flex items-center gap-2" style={{fontSize:"22px"}}>
-          📝 第三章總結：影響世界的公式
-        </h3>
+        <h3 className="font-bold text-teal-700 mb-4" style={{fontSize:"22px"}}>📝 第二章總結：報酬遠遠超過代價</h3>
         <div className="space-y-3">
-          <div className="bg-indigo-50 border-indigo-200 border rounded-xl p-4">
-            <div className="font-bold text-indigo-700 mb-1.5" style={{fontSize:"18px"}}>📐 核心公式 <span style={{fontSize:"12px", fontWeight:"normal", opacity:0.7}}>P44</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>活出基督徒特質 + 靠近人 + 清楚傳達 = 最大影響。源自耶穌「你們是世上的鹽……你們是世上的光」（太五13-14）。三個成分缺一不可。</p>
+          <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4"><div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"17px"}}>🏆 七項報酬 <span style={{fontSize:"12px", fontWeight:"normal", opacity:0.7}}>P27-38</span></div><p className="text-slate-600" style={{fontSize:"16px"}}>激動人心的活動→滿足→屬靈成長→屬靈信心→經得起考驗的投資→作神代言人的榮耀→三贏結局（你獲益、別人獲益、神也獲益）。</p></div>
+          <div className="bg-rose-50 border-rose-200 border rounded-xl p-4"><div className="font-bold text-rose-700 mb-1.5" style={{fontSize:"17px"}}>💸 五項代價 <span style={{fontSize:"12px", fontWeight:"normal", opacity:0.7}}>P39-41</span></div><p className="text-slate-600" style={{fontSize:"16px"}}>時間和精力→閱讀與學習→金錢→被拒絕的風險→生活變複雜。但每一項代價的背後都藏著報酬。</p></div>
+          <div className="bg-amber-50 border-amber-200 border rounded-xl p-4"><div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"17px"}}>💎 核心洞見 <span style={{fontSize:"12px", fontWeight:"normal", opacity:0.7}}>P42</span></div><p className="text-slate-600" style={{fontSize:"16px"}}>代價其實就是報酬。這些投資會帶給人永存的報酬。值上一千倍！</p></div>
+        </div>
+      </div>
+
+      {/* ========== 反思與行動 ========== */}
+      <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white">
+        <h3 className="font-bold text-orange-300 mb-6 flex items-center" style={{fontSize:"27px"}}><Brain className="w-7 h-7 mr-3" />深度反思與行動指南</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+            <h4 className="font-bold text-orange-200 mb-4 flex items-center" style={{fontSize:"22px"}}><Brain className="w-5 h-5 mr-2 text-orange-400" /> 反思問題</h4>
+            <ul className="space-y-4 text-slate-300">{reflections.map((r, i) => (<li key={i} className="flex items-start" style={{fontSize:"16px"}}><span className="text-orange-400 mr-2 font-bold">{i+1}.</span> {r}</li>))}</ul>
           </div>
-          <div className="bg-amber-50 border-amber-200 border rounded-xl p-4">
-            <div className="font-bold text-amber-700 mb-1.5" style={{fontSize:"18px"}}>🧂 鹽的功能 <span style={{fontSize:"12px", fontWeight:"normal", opacity:0.7}}>P45-50</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>使人口渴、為食物加味、防止腐敗。鹽的兩個前提：必須有鹹味（活出基督徒特質）、必須靠近食物（靠近人）。失了味的鹽毫無用處。葛理翰七十三歲還在維持「鹹度」——沒有捷徑。</p>
-          </div>
-          <div className="bg-violet-50 border-violet-200 border rounded-xl p-4">
-            <div className="font-bold text-violet-700 mb-1.5" style={{fontSize:"18px"}}>💡 光的功能 <span style={{fontSize:"12px", fontWeight:"normal", opacity:0.7}}>P50-52</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>讓人看見事物真正的樣子——清楚傳達福音信息。好行為是必要條件但不是充分條件。「很多基督徒被洗腦到認為只要活出信仰就夠了，但這種事幾乎從來不會發生。」</p>
-          </div>
-          <div className="bg-red-50 border-red-200 border rounded-xl p-4">
-            <div className="font-bold text-red-700 mb-1.5" style={{fontSize:"18px"}}>⚠️ 三種錯誤數學 <span style={{fontSize:"12px", fontWeight:"normal", opacity:0.7}}>P52-53</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>只有特質不靠近人=漂亮的餐桌擺設；只靠近人沒特質=失去影響力；有特質靠近人但不開口=沒有話語的行動不具意義。</p>
-          </div>
-          <div className="bg-emerald-50 border-emerald-200 border rounded-xl p-4">
-            <div className="font-bold text-emerald-700 mb-1.5" style={{fontSize:"18px"}}>🎯 結論 <span style={{fontSize:"12px", fontWeight:"normal", opacity:0.7}}>P56</span></div>
-            <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>「只要是滋味高、互動親密、真理清楚講明、聖靈活躍運行的地方，就會有具感染力之基督徒散發出的影響。」耶穌說：「你們是世上的鹽，你們是世上的光。」祂說的是你。</p>
+          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"22px"}}><Target className="w-5 h-5 mr-2 text-emerald-400" /> 具體行動方案</h4>
+            <ul className="space-y-4 text-slate-300">{actions.map((a, i) => (<li key={i} className="flex items-start" style={{fontSize:"16px"}}><span className="text-emerald-400 mr-2 font-bold">{i+1}.</span> {a}</li>))}</ul>
           </div>
         </div>
       </div>
 
-      {/* 反思與行動 */}
-      <div className="bg-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 shadow-lg text-white">
-        <h3 className="font-bold text-orange-300 mb-6 flex items-center" style={{fontSize:"27px"}}>
-          <Brain className="w-7 h-7 mr-3" /> 深度反思與行動指南
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="font-bold text-orange-200 mb-4 flex items-center" style={{fontSize:"23px"}}>
-              <Brain className="w-5 h-5 mr-2 text-orange-400" /> 反思問題
-            </h4>
-            <ul className="space-y-4 text-slate-300">
-              {["你目前的「鹹度」是在上升、持平還是下降？什麼因素影響最大？","你比較偏向「鹽」（默默活出信仰）還是「光」（主動傳達福音）？你需要在哪方面加強？","你的生活中有沒有「錯誤數學」的問題？你屬於哪一種？","如果有人問你「你為什麼信耶穌」，你能用90秒講清楚嗎？","你目前跟非基督徒朋友的互動頻率如何？你有沒有「從鹽罐子倒出來」？","葛理翰七十三歲還在被神的話餵養——你的屬靈操練目前是什麼狀態？","在你的日常生活中，有哪些場合是「屬靈對話」的好機會，但你一直錯過？"].map((r, i) => (
-                <li key={i} className="flex items-start" style={{fontSize:"17px"}}>
-                  <span className="text-orange-400 mr-2 font-bold">{i+1}.</span> {r}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
-            <h4 className="font-bold text-emerald-300 mb-4 flex items-center" style={{fontSize:"23px"}}>
-              <Target className="w-5 h-5 mr-2 text-emerald-400" /> 具體行動方案
-            </h4>
-            <ul className="space-y-4 text-slate-300">
-              {["用1-10分評估你在讀經、禱告、團契、服事、分享信仰五個領域的「鹹度」，找出最弱的一項加強。","準備一個90秒的「信仰簡介」，練習到能自然地說出來。","這週找一個日常場合（理髮、搭車、排隊），試著跟陌生人多聊兩句，練習「靠近人」。","跟小組討論：我們小組屬於哪種「錯誤數學」？一起制定改善計畫。","每天花5分鐘讀一段經文並禱告，持續21天建立習慣——像葛理翰一樣維持你的鹹度。","背誦馬太福音5:13-16，每天提醒自己既要是鹽也要是光。"].map((a, i) => (
-                <li key={i} className="flex items-start" style={{fontSize:"17px"}}>
-                  <span className="text-emerald-400 mr-2 font-bold">{i+1}.</span> {a}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
   );
