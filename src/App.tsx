@@ -104,6 +104,15 @@ import Spir10 from "./components/book8/Chapter10";
 import Spir11 from "./components/book8/Chapter11";
 import Spir12 from "./components/book8/Chapter12";
 
+
+// Book 9: 三層天禱告
+import Prayer_Intro from "./components/book9/Intro";
+import Prayer_Ch1 from "./components/book9/Chapter1";
+import Prayer_Ch2 from "./components/book9/Chapter2";
+import Prayer_Ch3 from "./components/book9/Chapter3";
+import Prayer_Ch4 from "./components/book9/Chapter4";
+import Prayer_Ch5 from "./components/book9/Chapter5";
+import Prayer_Ch6 from "./components/book9/Chapter6";
 const BOOKS = [
   {
     id: 'book1',
@@ -282,6 +291,25 @@ const BOOKS = [
       { id: "ch12", label: "第十二單元：靈性平安與四道人生",   page: "",  icon: Heart,    part: "實務應用" },
     ],
   },
+  {
+    id: "book9",
+    title: "三層天禱告",
+    subtitle: "會幕式禱告手冊",
+    emoji: "🙏",
+    accentHex: "#7c3aed",
+    bgLight: "bg-violet-50",
+    textAccent: "text-violet-700",
+    hoverText: "hover:text-violet-600",
+    chapters: [
+      { id: "intro", label: "前言與會幕架構", page: "", icon: BookOpen, part: "前言" },
+      { id: "ch1", label: "第三層天禱告", page: "", icon: Sparkles, part: "第一篇" },
+      { id: "ch2", label: "第二層天禱告", page: "", icon: Shield, part: "第二篇" },
+      { id: "ch3", label: "第一層天禱告", page: "", icon: Heart, part: "第三篇" },
+      { id: "ch4", label: "為產業禱告", page: "", icon: Gift, part: "第四篇" },
+      { id: "ch5", label: "破除迦南七族", page: "", icon: Target, part: "第五篇" },
+      { id: "ch6", label: "話禱範例", page: "", icon: MessageCircle, part: "第六篇" },
+    ],
+  },
 ];
 
 function renderBook1(ch: string) {
@@ -399,6 +427,19 @@ function renderBook8(ch: string) {
     default:    return <Spir12 />;
   }
 }
+
+function renderBook9(ch: string, expandAll?: boolean) {
+  switch (ch) {
+    case "intro": return <Prayer_Intro />;
+    case "ch1": return <Prayer_Ch1 />;
+    case "ch2": return <Prayer_Ch2 />;
+    case "ch3": return <Prayer_Ch3 />;
+    case "ch4": return <Prayer_Ch4 />;
+    case "ch5": return <Prayer_Ch5 />;
+    default:    return <Prayer_Ch6 />;
+  }
+}
+
 
 export default function App() {
   // 讀取 URL 參數 ?book=book1 直接開對應書本
@@ -680,7 +721,7 @@ export default function App() {
 
   const handleSelectBook = (id: string) => {
     setSelectedBook(id);
-    setActiveChapter('ch1');
+    setActiveChapter(id === 'book9' ? 'intro' : 'ch1');
     setIsSidebarOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -701,6 +742,7 @@ export default function App() {
     if (selectedBook === 'book6') return renderBook6(activeChapter);
     if (selectedBook === 'book7') return renderBook7(activeChapter);
     if (selectedBook === 'book8') return renderBook8(activeChapter);
+    if (selectedBook === 'book9') return renderBook9(activeChapter, expandAll);
     return null;
   };
 
