@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   BookOpen, Menu, X, Heart, Activity, Compass, Map, Shield, Users, Sun, Star,
   Home, Footprints, Scale, HelpCircle, HeartHandshake, Baby, Briefcase,
-  Smartphone, User, Cross, ShieldAlert, TrendingUp, Download, Gift, AlertTriangle, Target
+  Smartphone, User, Cross, ShieldAlert, TrendingUp, Download, Gift, AlertTriangle, Target,
+  MessageCircle, Sparkles
 } from 'lucide-react';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from './useHighlight';
 
