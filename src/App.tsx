@@ -424,6 +424,125 @@ export default function App() {
     localStorage.setItem('bookFontZoomLevel', String(fontZoomLevel));
   }, [fontZoomLevel]);
 
+  // ===== 朗讀功能 =====
+  const [ttsState, setTtsState] = useState<'idle' | 'playing' | 'paused'>('idle');
+  const [ttsRate, setTtsRate] = useState<number>(() => {
+    const saved = localStorage.getItem('bookTtsRate');
+    return saved ? parseFloat(saved) : 1.0;
+  });
+  const [showSpeedMenu, setShowSpeedMenu] = useState(false);
+  const ttsRateRef = useRef(ttsRate);
+  useEffect(() => {
+    ttsRateRef.current = ttsRate;
+    localStorage.setItem('bookTtsRate', String(ttsRate));
+  }, [ttsRate]);
+
+  // 朗讀完結時清理狀態
+  useEffect(() => {
+    return () => {
+      if (typeof window !== 'undefined' && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
+
+  // 章節切換時停止朗讀
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.speechSynthesis) {
+      window.speechSynthesis.cancel();
+      setTtsState('idle');
+    }
+  }, [activeChapter, selectedBook]);
+
+  // 抓取目前章節的純文字
+  const extractReadableText = (): string => {
+    const wrapper = document.getElementById('book-content-wrapper');
+    if (!wrapper) return '';
+    const clone = wrapper.cloneNode(true) as HTMLElement;
+    // 移除按鈕、iframe、scripts
+    clone.querySelectorAll('button, iframe, script, style, svg').forEach(el => el.remove());
+    // 抓取文字，並用換行分隔段落
+    let text = clone.innerText || clone.textContent || '';
+    // 清理多餘空白，但保留段落分隔
+    text = text.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+/g, ' ').trim();
+    return text;
+  };
+
+  // 開始朗讀：先展開全部再朗讀
+  const startReading = () => {
+    if (typeof window === 'undefined' || !window.speechSynthesis) {
+      alert('您的瀏覽器不支援朗讀功能');
+      return;
+    }
+    // 先自動展開所有區塊
+    clickAllToggles('expand');
+    // 等待展開動畫完成後再開始朗讀
+    setTimeout(() => {
+      const text = extractReadableText();
+      if (!text) {
+        alert('沒有可朗讀的內容');
+        return;
+      }
+      window.speechSynthesis.cancel();
+      // 將文字切成較短的段落，避免某些瀏覽器限制長度
+      const chunks = text.match(/[^。！？\n]{1,150}[。！？\n]?/g) || [text];
+      let currentIndex = 0;
+
+      const speakNext = () => {
+        if (currentIndex >= chunks.length) {
+          setTtsState('idle');
+          return;
+        }
+        const utterance = new SpeechSynthesisUtterance(chunks[currentIndex]);
+        utterance.lang = 'zh-TW';
+        utterance.rate = ttsRateRef.current;
+        utterance.pitch = 1.0;
+        utterance.onend = () => {
+          currentIndex++;
+          if (window.speechSynthesis.speaking || window.speechSynthesis.paused) {
+            // 繼續下一段
+            speakNext();
+          } else if (currentIndex < chunks.length) {
+            speakNext();
+          } else {
+            setTtsState('idle');
+          }
+        };
+        utterance.onerror = (e) => {
+          if (e.error !== 'interrupted' && e.error !== 'canceled') {
+            console.error('TTS error:', e);
+            setTtsState('idle');
+          }
+        };
+        window.speechSynthesis.speak(utterance);
+      };
+
+      setTtsState('playing');
+      speakNext();
+    }, 700);
+  };
+
+  const pauseReading = () => {
+    if (window.speechSynthesis) {
+      window.speechSynthesis.pause();
+      setTtsState('paused');
+    }
+  };
+
+  const resumeReading = () => {
+    if (window.speechSynthesis) {
+      window.speechSynthesis.resume();
+      setTtsState('playing');
+    }
+  };
+
+  const stopReading = () => {
+    if (window.speechSynthesis) {
+      window.speechSynthesis.cancel();
+      setTtsState('idle');
+    }
+  };
+
   // 點擊所有可展開/摺疊的區塊（direction: 'expand' 或 'collapse'）
   const clickAllToggles = (direction: 'expand' | 'collapse') => {
     const wrapper = document.getElementById('book-content-wrapper');
@@ -1029,6 +1148,142 @@ export default function App() {
               padding: 0
             }}
           >A−</button>
+        </div>
+      )}
+
+      {/* 朗讀控制浮動按鈕 */}
+      {selectedBook && (
+        <div style={{
+          position: 'fixed',
+          top: '200px',
+          right: '12px',
+          zIndex: 40,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '4px',
+          background: 'rgba(255,255,255,0.95)',
+          backdropFilter: 'blur(8px)',
+          padding: '8px 6px',
+          borderRadius: '999px',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+          border: '1px solid rgba(0,0,0,0.06)'
+        }}>
+          {/* 播放/暫停 按鈕 */}
+          <button
+            onClick={() => {
+              if (ttsState === 'idle') startReading();
+              else if (ttsState === 'playing') pauseReading();
+              else resumeReading();
+            }}
+            title={ttsState === 'playing' ? '暫停朗讀' : ttsState === 'paused' ? '繼續朗讀' : '開始朗讀'}
+            style={{
+              width: '32px',
+              height: '32px',
+              borderRadius: '50%',
+              border: 'none',
+              background: ttsState === 'playing' ? '#f59e0b' : ttsState === 'paused' ? '#6366f1' : '#f1f5f9',
+              color: ttsState !== 'idle' ? '#fff' : '#1e293b',
+              fontSize: '14px',
+              fontWeight: 700,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 0
+            }}
+          >
+            {ttsState === 'playing' ? '⏸' : ttsState === 'paused' ? '▶' : '🔊'}
+          </button>
+
+          {/* 停止按鈕 */}
+          <button
+            onClick={stopReading}
+            disabled={ttsState === 'idle'}
+            title="停止朗讀"
+            style={{
+              width: '32px',
+              height: '32px',
+              borderRadius: '50%',
+              border: 'none',
+              background: ttsState === 'idle' ? '#e5e7eb' : '#f1f5f9',
+              color: ttsState === 'idle' ? '#9ca3af' : '#1e293b',
+              fontSize: '13px',
+              fontWeight: 700,
+              cursor: ttsState === 'idle' ? 'not-allowed' : 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 0
+            }}
+          >⏹</button>
+
+          {/* 語速按鈕 */}
+          <div style={{ position: 'relative' }}>
+            <button
+              onClick={() => setShowSpeedMenu(!showSpeedMenu)}
+              title="語速調整"
+              style={{
+                width: '32px',
+                height: '24px',
+                borderRadius: '12px',
+                border: 'none',
+                background: '#f1f5f9',
+                color: '#1e293b',
+                fontSize: '11px',
+                fontWeight: 700,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: 0
+              }}
+            >{ttsRate}x</button>
+
+            {/* 語速選單 */}
+            {showSpeedMenu && (
+              <div style={{
+                position: 'absolute',
+                top: '0',
+                right: '40px',
+                background: 'white',
+                borderRadius: '12px',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                border: '1px solid rgba(0,0,0,0.06)',
+                padding: '4px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '2px',
+                minWidth: '60px'
+              }}>
+                {[0.75, 1.0, 1.25, 1.5].map(rate => (
+                  <button
+                    key={rate}
+                    onClick={() => {
+                      setTtsRate(rate);
+                      setShowSpeedMenu(false);
+                      // 如果正在朗讀，重新啟動以套用新語速
+                      if (ttsState === 'playing' || ttsState === 'paused') {
+                        stopReading();
+                        setTimeout(() => startReading(), 200);
+                      }
+                    }}
+                    style={{
+                      padding: '6px 10px',
+                      border: 'none',
+                      borderRadius: '8px',
+                      background: ttsRate === rate ? '#6366f1' : 'transparent',
+                      color: ttsRate === rate ? 'white' : '#1e293b',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      textAlign: 'center'
+                    }}
+                  >{rate}x</button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       )}
 
