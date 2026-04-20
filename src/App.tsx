@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   BookOpen, Menu, X, Heart, Activity, Compass, Map, Shield, Users, Sun, Star,
   Home, Footprints, Scale, HelpCircle, HeartHandshake, Baby, Briefcase,
-  Smartphone, User, Cross, ShieldAlert, TrendingUp, ChevronLeft, Download, Maximize2, Minimize2, Gift, AlertTriangle, Target
+  Smartphone, User, Cross, ShieldAlert, TrendingUp, ChevronLeft, Download, Gift, AlertTriangle, Target
 } from 'lucide-react';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from './useHighlight';
 
@@ -424,6 +424,32 @@ export default function App() {
     localStorage.setItem('bookFontZoomLevel', String(fontZoomLevel));
   }, [fontZoomLevel]);
 
+  // 點擊所有可展開/摺疊的區塊（direction: 'expand' 或 'collapse'）
+  const clickAllToggles = (direction: 'expand' | 'collapse') => {
+    const wrapper = document.getElementById('book-content-wrapper');
+    if (!wrapper) return 0;
+
+    // 展開時找向下的 chevron；摺疊時找向上的 chevron
+    const selector = direction === 'expand' ? 'svg.lucide-chevron-down' : 'svg.lucide-chevron-up';
+    const chevrons = wrapper.querySelectorAll(selector);
+    const clicked = new Set<HTMLElement>();
+
+    chevrons.forEach(chevron => {
+      let el: HTMLElement | null = chevron as HTMLElement;
+      while (el && el !== wrapper) {
+        if (el.className && typeof el.className === 'string' && el.className.includes('cursor-pointer')) {
+          if (!clicked.has(el)) {
+            clicked.add(el);
+            el.click();
+          }
+          break;
+        }
+        el = el.parentElement;
+      }
+    });
+    return clicked.size;
+  };
+
   // 從 URL 的 access_token 自動登入（從 puhe 後台帶過來）
   useEffect(() => {
     const access_token = params.get('access_token');
@@ -618,18 +644,18 @@ export default function App() {
 
   const handleExportChapter = () => {
     if (!book) return;
-    // 先全展開所有摺疊區塊，等 DOM 更新後再抓取內容
-    const wasExpanded = expandAll;
-    if (!wasExpanded) {
-      setExpandAll(true);
-      // 等待 React re-render + framer-motion 動畫完成
-      setTimeout(() => {
-        doExportChapter();
-        setExpandAll(false);
-      }, 600);
-    } else {
+    // 先展開所有摺疊的區塊（對 Book2/4 用 state，對其他書用 DOM 點擊）
+    setExpandAll(true);
+    const expandedCount = clickAllToggles('expand');
+    // 等待 React re-render + framer-motion 動畫完成後匯出，然後摺疊回去
+    setTimeout(() => {
       doExportChapter();
-    }
+      setExpandAll(false);
+      // 匯出完成後再摺疊回去
+      setTimeout(() => {
+        if (expandedCount > 0) clickAllToggles('collapse');
+      }, 100);
+    }, 600);
   };
 
   const doExportChapter = () => {
@@ -645,16 +671,15 @@ export default function App() {
     if (!book) return;
     const confirmed = window.confirm(`即將匯出《${book.title}》全書內容為 Word 檔，確定嗎？`);
     if (!confirmed) return;
-    const wasExpanded = expandAll;
-    if (!wasExpanded) {
-      setExpandAll(true);
-      setTimeout(() => {
-        doExportBook();
-        setExpandAll(false);
-      }, 600);
-    } else {
+    setExpandAll(true);
+    const expandedCount = clickAllToggles('expand');
+    setTimeout(() => {
       doExportBook();
-    }
+      setExpandAll(false);
+      setTimeout(() => {
+        if (expandedCount > 0) clickAllToggles('collapse');
+      }, 100);
+    }, 600);
   };
 
   const doExportBook = () => {
@@ -921,19 +946,11 @@ export default function App() {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
           >
-            <div style={{ zoom: currentZoom }}>
+            <div id="book-content-wrapper" style={{ zoom: currentZoom }}>
               {renderContent()}
             </div>
             {/* 全展開/摺疊 + 匯出本章按鈕 */}
             <div className="mt-8 pt-6 border-t border-slate-200 flex flex-wrap justify-center gap-3">
-              <button
-                onClick={() => setExpandAll(!expandAll)}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold border-2 shadow-sm hover:shadow-md transition-all"
-                style={{ borderColor: book!.accentHex, color: expandAll ? '#fff' : book!.accentHex, background: expandAll ? book!.accentHex : 'transparent' }}
-              >
-                {expandAll ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
-                {expandAll ? '全部摺疊' : '全部展開'}
-              </button>
               <button
                 onClick={handleExportChapter}
                 className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all"
