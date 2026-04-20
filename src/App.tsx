@@ -851,7 +851,7 @@ export default function App() {
 
         {/* Login Modal */}
         {showLogin && (
-          <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="fixed inset-0 bg-black/50 z-[9999] flex items-start justify-center overflow-y-auto" style={{ paddingTop: "max(24px, env(safe-area-inset-top, 24px))", paddingBottom: "24px", paddingLeft: "16px", paddingRight: "16px" }}>
             <div className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl">
               <h2 className="text-lg font-bold text-slate-800 mb-1">登入畫重點功能</h2>
               <p className="text-xs text-slate-400 mb-4">使用你的小組帳號登入</p>
@@ -961,7 +961,7 @@ export default function App() {
 
         {/* Login Modal in reader */}
         {showLogin && (
-          <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="fixed inset-0 bg-black/50 z-[9999] flex items-start justify-center overflow-y-auto" style={{ paddingTop: "max(24px, env(safe-area-inset-top, 24px))", paddingBottom: "24px", paddingLeft: "16px", paddingRight: "16px" }}>
             <div className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl">
               <h2 className="text-lg font-bold text-slate-800 mb-1">登入畫重點功能</h2>
               <p className="text-xs text-slate-400 mb-4">使用你的小組帳號登入</p>
