@@ -1117,11 +1117,16 @@ export default function App() {
                 setShowHighlightPanel(false);
                 setToolbar(null);
                 // 若被埔和後台用 iframe 嵌入，請父層關閉整個 iframe（回電子書房分類頁）
-                // 否則退回書單頁
-                if (window.parent !== window) {
+                // 500ms 後若仍未被關閉（父層尚未部署監聽器或其他原因），退回書單頁
+                const inIframe = window.parent !== window;
+                if (inIframe) {
                   try {
                     window.parent.postMessage({ type: 'closeBookEmbed' }, '*');
                   } catch (e) {}
+                  setTimeout(() => {
+                    // 若 500ms 後 iframe 還活著，走後備
+                    setSelectedBook(null);
+                  }, 500);
                 } else {
                   setSelectedBook(null);
                 }
@@ -1169,14 +1174,6 @@ export default function App() {
                 flexShrink: 0,
               }}
             >A−</button>
-            <div style={{
-              fontSize: '11px',
-              color: '#64748b',
-              fontWeight: 600,
-              minWidth: '28px',
-              textAlign: 'center',
-              flexShrink: 0,
-            }}>{FONT_ZOOM_LABELS[fontZoomLevel]}</div>
             <button
               onClick={() => setFontZoomLevel(Math.min(4, fontZoomLevel + 1))}
               disabled={fontZoomLevel >= 4}
@@ -1228,28 +1225,6 @@ export default function App() {
             >
               {ttsState === 'playing' ? '⏸' : ttsState === 'paused' ? '▶' : '🔊'}
             </button>
-
-            <button
-              onClick={stopReading}
-              disabled={ttsState === 'idle'}
-              title="停止朗讀"
-              style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: '50%',
-                border: 'none',
-                background: ttsState === 'idle' ? '#f1f5f9' : '#fee2e2',
-                color: ttsState === 'idle' ? '#cbd5e1' : '#dc2626',
-                fontSize: '13px',
-                fontWeight: 700,
-                cursor: ttsState === 'idle' ? 'not-allowed' : 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: 0,
-                flexShrink: 0,
-              }}
-            >⏹</button>
 
             {/* 語速 */}
             <div style={{ position: 'relative', flexShrink: 0 }}>
@@ -1318,12 +1293,51 @@ export default function App() {
 
             {/* 畫重點：選到文字時亮起 */}
             <button
+              onPointerDown={() => {
+                // 若底部工具列的事件鏈導致 toolbar 被清掉，這裡再搶救一次：
+                // 讀取當下瀏覽器內的 selection，若文字還在就重新設定 toolbar。
+                const sel = window.getSelection();
+                const text = sel?.toString().trim() || '';
+                if (text.length >= 2) {
+                  try {
+                    const range = sel!.getRangeAt(0);
+                    const rect = range.getBoundingClientRect();
+                    if (rect.width !== 0 || rect.height !== 0) {
+                      setToolbar({
+                        x: rect.left + rect.width / 2,
+                        y: rect.top + window.scrollY - 8,
+                        text,
+                      });
+                    }
+                  } catch (e) {}
+                }
+              }}
               onClick={() => {
                 if (!isLoggedIn) { setShowLogin(true); return; }
-                if (!toolbar) return;
+                // 再次讀取 selection 作為最後一道保險
+                let currentText = toolbar?.text;
+                if (!currentText) {
+                  const sel = window.getSelection();
+                  const t = sel?.toString().trim() || '';
+                  if (t.length >= 2) {
+                    currentText = t;
+                    try {
+                      const range = sel!.getRangeAt(0);
+                      const rect = range.getBoundingClientRect();
+                      setToolbar({
+                        x: rect.left + rect.width / 2,
+                        y: rect.top + window.scrollY - 8,
+                        text: t,
+                      });
+                    } catch (e) {}
+                  }
+                }
+                if (!currentText) {
+                  alert('請先選取要畫重點的文字');
+                  return;
+                }
                 setShowHighlightPanel(v => !v);
               }}
-              disabled={!toolbar && isLoggedIn}
               title={
                 !isLoggedIn ? '登入後可畫重點'
                 : !toolbar ? '請先選取文字'
@@ -1340,10 +1354,10 @@ export default function App() {
                   : '#f1f5f9',
                 color: toolbar && isLoggedIn
                   ? (showHighlightPanel ? '#fff' : '#713f12')
-                  : '#cbd5e1',
+                  : '#94a3b8',
                 fontSize: '13px',
                 fontWeight: 700,
-                cursor: (!isLoggedIn || toolbar) ? 'pointer' : 'not-allowed',
+                cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
