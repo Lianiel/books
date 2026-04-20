@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   BookOpen, Menu, X, Heart, Activity, Compass, Map, Shield, Users, Sun, Star,
   Home, Footprints, Scale, HelpCircle, HeartHandshake, Baby, Briefcase,
-  Smartphone, User, Cross, ShieldAlert, TrendingUp, ChevronLeft, Download, Gift, AlertTriangle, Target
+  Smartphone, User, Cross, ShieldAlert, TrendingUp, Download, Gift, AlertTriangle, Target
 } from 'lucide-react';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from './useHighlight';
 
@@ -590,7 +590,9 @@ export default function App() {
 
   // ── Highlight toolbar state ──────────────────────────────────────
   const [toolbar, setToolbar] = useState<{ x: number; y: number; text: string } | null>(null);
+  const [showHighlightPanel, setShowHighlightPanel] = useState(false);
   const toolbarRef = useRef<HTMLDivElement>(null);
+  const highlightPanelRef = useRef<HTMLDivElement>(null);
   const { isLoggedIn, highlights, applyHighlights, addHighlight, removeHighlight, getHighlightByText } =
     useHighlight(selectedBook || '', activeChapter);
 
@@ -614,6 +616,12 @@ export default function App() {
   useEffect(() => {
     if (!isLoggedIn || !selectedBook) return;
 
+    const isInUi = (target: Node | null) =>
+      !!target && (
+        toolbarRef.current?.contains(target) ||
+        highlightPanelRef.current?.contains(target)
+      );
+
     const handleSelectionChange = () => {
       if (toolbarRef.current?.contains(document.activeElement)) return;
       const sel = window.getSelection();
@@ -628,19 +636,18 @@ export default function App() {
     };
 
     const handleMouseUp = (e: MouseEvent) => {
-      if (toolbarRef.current?.contains(e.target as Node)) return;
+      if (isInUi(e.target as Node)) return;
       setTimeout(handleSelectionChange, 10);
     };
     const handleTouchEnd = (e: TouchEvent) => {
-      if (toolbarRef.current?.contains(e.target as Node)) return;
-      // Delay to allow browser to update selection after touch
+      if (isInUi(e.target as Node)) return;
       setTimeout(handleSelectionChange, 300);
     };
     const handleMouseDown = (e: MouseEvent) => {
-      if (!toolbarRef.current?.contains(e.target as Node)) setToolbar(null);
+      if (!isInUi(e.target as Node)) { setToolbar(null); setShowHighlightPanel(false); }
     };
     const handleTouchStart = (e: TouchEvent) => {
-      if (!toolbarRef.current?.contains(e.target as Node)) setToolbar(null);
+      if (!isInUi(e.target as Node)) { setToolbar(null); setShowHighlightPanel(false); }
     };
 
     document.addEventListener('mouseup', handleMouseUp);
@@ -664,6 +671,7 @@ export default function App() {
       await addHighlight(toolbar.text, style);
     }
     setToolbar(null);
+    setShowHighlightPanel(false);
     window.getSelection()?.removeAllRanges();
     setTimeout(() => applyHighlights(), 200);
   };
@@ -922,14 +930,7 @@ export default function App() {
       {/* Header */}
       <div className="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-slate-100 px-4 py-3 flex items-center justify-between flex-shrink-0">
         <div className="flex items-center gap-1">
-          <button
-            onClick={() => setSelectedBook(null)}
-            className="text-slate-400 hover:text-slate-700 p-1.5 rounded-md"
-            title="返回書單"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <span className="text-sm font-bold text-slate-800 truncate max-w-[200px]">{book!.title}</span>
+          <span className="text-sm font-bold text-slate-800 truncate max-w-[240px]">{book!.title}</span>
         </div>
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -1083,272 +1084,340 @@ export default function App() {
         </AnimatePresence>
       </main>
 
-      {/* 字型縮放浮動按鈕 */}
+      {/* 底部水平工具列 */}
       {selectedBook && (
-        <div style={{
-          position: 'fixed',
-          top: '72px',
-          right: '12px',
-          zIndex: 40,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '4px',
-          background: 'rgba(255,255,255,0.95)',
-          backdropFilter: 'blur(8px)',
-          padding: '8px 6px',
-          borderRadius: '999px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-          border: '1px solid rgba(0,0,0,0.06)'
-        }}>
-          <button
-            onClick={() => setFontZoomLevel(Math.min(4, fontZoomLevel + 1))}
-            disabled={fontZoomLevel >= 4}
-            title="字型放大"
-            style={{
-              width: '32px',
-              height: '32px',
-              borderRadius: '50%',
-              border: 'none',
-              background: fontZoomLevel >= 4 ? '#e5e7eb' : '#f1f5f9',
-              color: fontZoomLevel >= 4 ? '#9ca3af' : '#1e293b',
-              fontSize: '18px',
-              fontWeight: 700,
-              cursor: fontZoomLevel >= 4 ? 'not-allowed' : 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: 0
-            }}
-          >A+</button>
-          <div style={{
-            fontSize: '11px',
-            color: '#64748b',
-            fontWeight: 600,
-            padding: '2px 0',
-            minHeight: '16px'
-          }}>{FONT_ZOOM_LABELS[fontZoomLevel]}</div>
-          <button
-            onClick={() => setFontZoomLevel(Math.max(0, fontZoomLevel - 1))}
-            disabled={fontZoomLevel <= 0}
-            title="字型縮小"
-            style={{
-              width: '32px',
-              height: '32px',
-              borderRadius: '50%',
-              border: 'none',
-              background: fontZoomLevel <= 0 ? '#e5e7eb' : '#f1f5f9',
-              color: fontZoomLevel <= 0 ? '#9ca3af' : '#1e293b',
-              fontSize: '16px',
-              fontWeight: 700,
-              cursor: fontZoomLevel <= 0 ? 'not-allowed' : 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: 0
-            }}
-          >A−</button>
-        </div>
-      )}
+        <>
+          {/* 底部空間填充，避免工具列遮住內容 */}
+          <div style={{ height: '72px', flexShrink: 0 }} />
 
-      {/* 朗讀控制浮動按鈕 */}
-      {selectedBook && (
-        <div style={{
-          position: 'fixed',
-          top: '200px',
-          right: '12px',
-          zIndex: 40,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '4px',
-          background: 'rgba(255,255,255,0.95)',
-          backdropFilter: 'blur(8px)',
-          padding: '8px 6px',
-          borderRadius: '999px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-          border: '1px solid rgba(0,0,0,0.06)'
-        }}>
-          {/* 播放/暫停 按鈕 */}
-          <button
-            onClick={() => {
-              if (ttsState === 'idle') startReading();
-              else if (ttsState === 'playing') pauseReading();
-              else resumeReading();
-            }}
-            title={ttsState === 'playing' ? '暫停朗讀' : ttsState === 'paused' ? '繼續朗讀' : '開始朗讀'}
+          <div
+            ref={toolbarRef}
             style={{
-              width: '32px',
-              height: '32px',
-              borderRadius: '50%',
-              border: 'none',
-              background: ttsState === 'playing' ? '#f59e0b' : ttsState === 'paused' ? '#6366f1' : '#f1f5f9',
-              color: ttsState !== 'idle' ? '#fff' : '#1e293b',
-              fontSize: '14px',
-              fontWeight: 700,
-              cursor: 'pointer',
+              position: 'fixed',
+              left: '50%',
+              bottom: 'max(12px, env(safe-area-inset-bottom, 12px))',
+              transform: 'translateX(-50%)',
+              zIndex: 40,
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              padding: 0
+              gap: '6px',
+              background: 'rgba(255,255,255,0.96)',
+              backdropFilter: 'blur(10px)',
+              padding: '8px 10px',
+              borderRadius: '999px',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
+              border: '1px solid rgba(0,0,0,0.06)',
+              maxWidth: 'calc(100vw - 24px)',
             }}
           >
-            {ttsState === 'playing' ? '⏸' : ttsState === 'paused' ? '▶' : '🔊'}
-          </button>
-
-          {/* 停止按鈕 */}
-          <button
-            onClick={stopReading}
-            disabled={ttsState === 'idle'}
-            title="停止朗讀"
-            style={{
-              width: '32px',
-              height: '32px',
-              borderRadius: '50%',
-              border: 'none',
-              background: ttsState === 'idle' ? '#e5e7eb' : '#f1f5f9',
-              color: ttsState === 'idle' ? '#9ca3af' : '#1e293b',
-              fontSize: '13px',
-              fontWeight: 700,
-              cursor: ttsState === 'idle' ? 'not-allowed' : 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: 0
-            }}
-          >⏹</button>
-
-          {/* 語速按鈕 */}
-          <div style={{ position: 'relative' }}>
+            {/* X 關閉 */}
             <button
-              onClick={() => setShowSpeedMenu(!showSpeedMenu)}
-              title="語速調整"
+              onClick={() => {
+                stopReading();
+                setSelectedBook(null);
+                setShowHighlightPanel(false);
+                setToolbar(null);
+              }}
+              title="關閉，返回書單"
+              style={{
+                width: '36px',
+                height: '36px',
+                borderRadius: '50%',
+                border: 'none',
+                background: '#fee2e2',
+                color: '#dc2626',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: 0,
+                flexShrink: 0,
+              }}
+            >
+              <X className="h-4 w-4" strokeWidth={2.5} />
+            </button>
+
+            <div style={{ width: '1px', height: '24px', background: '#e2e8f0', flexShrink: 0 }} />
+
+            {/* 字型縮放：A− / 標籤 / A+ */}
+            <button
+              onClick={() => setFontZoomLevel(Math.max(0, fontZoomLevel - 1))}
+              disabled={fontZoomLevel <= 0}
+              title="字型縮小"
               style={{
                 width: '32px',
-                height: '24px',
-                borderRadius: '12px',
+                height: '32px',
+                borderRadius: '50%',
                 border: 'none',
-                background: '#f1f5f9',
-                color: '#1e293b',
-                fontSize: '11px',
+                background: fontZoomLevel <= 0 ? '#f1f5f9' : '#eef2ff',
+                color: fontZoomLevel <= 0 ? '#cbd5e1' : '#4338ca',
+                fontSize: '15px',
+                fontWeight: 700,
+                cursor: fontZoomLevel <= 0 ? 'not-allowed' : 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: 0,
+                flexShrink: 0,
+              }}
+            >A−</button>
+            <div style={{
+              fontSize: '11px',
+              color: '#64748b',
+              fontWeight: 600,
+              minWidth: '28px',
+              textAlign: 'center',
+              flexShrink: 0,
+            }}>{FONT_ZOOM_LABELS[fontZoomLevel]}</div>
+            <button
+              onClick={() => setFontZoomLevel(Math.min(4, fontZoomLevel + 1))}
+              disabled={fontZoomLevel >= 4}
+              title="字型放大"
+              style={{
+                width: '32px',
+                height: '32px',
+                borderRadius: '50%',
+                border: 'none',
+                background: fontZoomLevel >= 4 ? '#f1f5f9' : '#eef2ff',
+                color: fontZoomLevel >= 4 ? '#cbd5e1' : '#4338ca',
+                fontSize: '17px',
+                fontWeight: 700,
+                cursor: fontZoomLevel >= 4 ? 'not-allowed' : 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: 0,
+                flexShrink: 0,
+              }}
+            >A+</button>
+
+            <div style={{ width: '1px', height: '24px', background: '#e2e8f0', flexShrink: 0 }} />
+
+            {/* 朗讀：播放/暫停 + 停止 + 語速 */}
+            <button
+              onClick={() => {
+                if (ttsState === 'idle') startReading();
+                else if (ttsState === 'playing') pauseReading();
+                else resumeReading();
+              }}
+              title={ttsState === 'playing' ? '暫停朗讀' : ttsState === 'paused' ? '繼續朗讀' : '開始朗讀'}
+              style={{
+                width: '36px',
+                height: '36px',
+                borderRadius: '50%',
+                border: 'none',
+                background: ttsState === 'playing' ? '#f59e0b' : ttsState === 'paused' ? '#6366f1' : '#eef2ff',
+                color: ttsState !== 'idle' ? '#fff' : '#4338ca',
+                fontSize: '15px',
                 fontWeight: 700,
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: 0
+                padding: 0,
+                flexShrink: 0,
               }}
-            >{ttsRate}x</button>
+            >
+              {ttsState === 'playing' ? '⏸' : ttsState === 'paused' ? '▶' : '🔊'}
+            </button>
 
-            {/* 語速選單 */}
-            {showSpeedMenu && (
-              <div style={{
-                position: 'absolute',
-                top: '0',
-                right: '40px',
-                background: 'white',
-                borderRadius: '12px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                border: '1px solid rgba(0,0,0,0.06)',
-                padding: '4px',
+            <button
+              onClick={stopReading}
+              disabled={ttsState === 'idle'}
+              title="停止朗讀"
+              style={{
+                width: '32px',
+                height: '32px',
+                borderRadius: '50%',
+                border: 'none',
+                background: ttsState === 'idle' ? '#f1f5f9' : '#fee2e2',
+                color: ttsState === 'idle' ? '#cbd5e1' : '#dc2626',
+                fontSize: '13px',
+                fontWeight: 700,
+                cursor: ttsState === 'idle' ? 'not-allowed' : 'pointer',
                 display: 'flex',
-                flexDirection: 'column',
-                gap: '2px',
-                minWidth: '60px'
-              }}>
-                {[0.75, 1.0, 1.25, 1.5].map(rate => (
-                  <button
-                    key={rate}
-                    onClick={() => {
-                      setTtsRate(rate);
-                      setShowSpeedMenu(false);
-                      // 如果正在朗讀，重新啟動以套用新語速
-                      if (ttsState === 'playing' || ttsState === 'paused') {
-                        stopReading();
-                        setTimeout(() => startReading(), 200);
-                      }
-                    }}
-                    style={{
-                      padding: '6px 10px',
-                      border: 'none',
-                      borderRadius: '8px',
-                      background: ttsRate === rate ? '#6366f1' : 'transparent',
-                      color: ttsRate === rate ? 'white' : '#1e293b',
-                      fontSize: '12px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      textAlign: 'center'
-                    }}
-                  >{rate}x</button>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      )}
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: 0,
+                flexShrink: 0,
+              }}
+            >⏹</button>
 
-      {/* Highlight Toolbar */}
-      {toolbar && isLoggedIn && (
-        <div
-          ref={toolbarRef}
-          style={{
-            position: 'absolute',
-            left: `${toolbar.x}px`,
-            top: `${toolbar.y}px`,
-            transform: 'translate(-50%, -100%)',
-            zIndex: 9999,
-          }}
-          className="flex items-center gap-1 bg-slate-800 rounded-xl shadow-2xl px-2 py-1.5 border border-slate-600"
-        >
-          {/* Yellow highlight */}
-          <button
-            onClick={() => handleHighlight('yellow')}
-            className="w-7 h-7 rounded-lg flex items-center justify-center hover:scale-110 transition-transform"
-            style={{ backgroundColor: '#fef08a' }}
-            title="螢光底色"
-          >🖍</button>
-          {/* Red text */}
-          <button
-            onClick={() => handleHighlight('red')}
-            className="w-7 h-7 rounded-lg flex items-center justify-center hover:scale-110 transition-transform font-bold text-sm"
-            style={{ backgroundColor: '#fee2e2', color: '#dc2626' }}
-            title="紅色文字"
-          >A</button>
-          {/* Blue text */}
-          <button
-            onClick={() => handleHighlight('blue')}
-            className="w-7 h-7 rounded-lg flex items-center justify-center hover:scale-110 transition-transform font-bold text-sm"
-            style={{ backgroundColor: '#dbeafe', color: '#2563eb' }}
-            title="藍色文字"
-          >A</button>
-          {/* Bold */}
-          <button
-            onClick={() => handleHighlight('bold')}
-            className="w-7 h-7 rounded-lg flex items-center justify-center hover:scale-110 transition-transform font-black text-sm"
-            style={{ backgroundColor: '#f1f5f9', color: '#1e293b' }}
-            title="粗體"
-          >B</button>
-          {/* Underline */}
-          <button
-            onClick={() => handleHighlight('underline')}
-            className="w-7 h-7 rounded-lg flex items-center justify-center hover:scale-110 transition-transform text-sm"
-            style={{ backgroundColor: '#f1f5f9', color: '#475569', textDecoration: 'underline', textUnderlineOffset: '2px' }}
-            title="底線"
-          >U</button>
-          {/* Divider */}
-          <div className="w-px h-5 bg-slate-600 mx-0.5" />
-          {/* Clear */}
-          <button
-            className="w-7 h-7 rounded-lg flex items-center justify-center hover:scale-110 transition-transform text-xs"
-            style={{ backgroundColor: '#fee2e2', color: '#dc2626' }}
-            title="移除畫線"
-            onClick={async () => {
-              const existing = getHighlightByText(toolbar.text);
-              if (existing) { await removeHighlight(existing.id); setTimeout(() => applyHighlights(), 200); }
-              setToolbar(null); window.getSelection()?.removeAllRanges();
-            }}
-          >✕</button>
-        </div>
+            {/* 語速 */}
+            <div style={{ position: 'relative', flexShrink: 0 }}>
+              <button
+                onClick={() => setShowSpeedMenu(!showSpeedMenu)}
+                title="語速調整"
+                style={{
+                  minWidth: '38px',
+                  height: '26px',
+                  borderRadius: '13px',
+                  border: 'none',
+                  background: showSpeedMenu ? '#6366f1' : '#f1f5f9',
+                  color: showSpeedMenu ? '#fff' : '#1e293b',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  padding: '0 8px',
+                }}
+              >{ttsRate}x</button>
+
+              {showSpeedMenu && (
+                <div style={{
+                  position: 'absolute',
+                  bottom: '34px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: 'white',
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                  border: '1px solid rgba(0,0,0,0.06)',
+                  padding: '4px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '2px',
+                  minWidth: '64px',
+                }}>
+                  {[0.75, 1.0, 1.25, 1.5].map(rate => (
+                    <button
+                      key={rate}
+                      onClick={() => {
+                        setTtsRate(rate);
+                        setShowSpeedMenu(false);
+                        if (ttsState === 'playing' || ttsState === 'paused') {
+                          stopReading();
+                          setTimeout(() => startReading(), 200);
+                        }
+                      }}
+                      style={{
+                        padding: '6px 10px',
+                        border: 'none',
+                        borderRadius: '8px',
+                        background: ttsRate === rate ? '#6366f1' : 'transparent',
+                        color: ttsRate === rate ? 'white' : '#1e293b',
+                        fontSize: '12px',
+                        fontWeight: 600,
+                        cursor: 'pointer',
+                        textAlign: 'center',
+                      }}
+                    >{rate}x</button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div style={{ width: '1px', height: '24px', background: '#e2e8f0', flexShrink: 0 }} />
+
+            {/* 畫重點：選到文字時亮起 */}
+            <button
+              onClick={() => {
+                if (!isLoggedIn) { setShowLogin(true); return; }
+                if (!toolbar) return;
+                setShowHighlightPanel(v => !v);
+              }}
+              disabled={!toolbar && isLoggedIn}
+              title={
+                !isLoggedIn ? '登入後可畫重點'
+                : !toolbar ? '請先選取文字'
+                : '畫重點'
+              }
+              style={{
+                minWidth: '36px',
+                height: '36px',
+                borderRadius: '18px',
+                border: 'none',
+                padding: '0 12px',
+                background: toolbar && isLoggedIn
+                  ? (showHighlightPanel ? '#4338ca' : 'linear-gradient(135deg,#fef08a,#facc15)')
+                  : '#f1f5f9',
+                color: toolbar && isLoggedIn
+                  ? (showHighlightPanel ? '#fff' : '#713f12')
+                  : '#cbd5e1',
+                fontSize: '13px',
+                fontWeight: 700,
+                cursor: (!isLoggedIn || toolbar) ? 'pointer' : 'not-allowed',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '4px',
+                flexShrink: 0,
+                boxShadow: toolbar && isLoggedIn && !showHighlightPanel
+                  ? '0 0 0 2px rgba(250,204,21,0.35)' : 'none',
+                transition: 'all 0.15s ease',
+              }}
+            >
+              <span style={{ fontSize: '14px' }}>✏️</span>
+              <span style={{ fontSize: '12px' }}>畫重點</span>
+            </button>
+          </div>
+
+          {/* 畫重點樣式子面板（從底部工具列往上彈出） */}
+          {showHighlightPanel && toolbar && isLoggedIn && (
+            <div
+              onMouseDown={e => e.stopPropagation()}
+              onTouchStart={e => e.stopPropagation()}
+              style={{
+                position: 'fixed',
+                left: '50%',
+                bottom: 'calc(max(12px, env(safe-area-inset-bottom, 12px)) + 68px)',
+                transform: 'translateX(-50%)',
+                zIndex: 41,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                background: '#1e293b',
+                padding: '8px 10px',
+                borderRadius: '14px',
+                boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
+                border: '1px solid #334155',
+              }}
+            >
+              <button
+                onClick={() => handleHighlight('yellow')}
+                className="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform"
+                style={{ backgroundColor: '#fef08a' }}
+                title="螢光底色"
+              >🖍</button>
+              <button
+                onClick={() => handleHighlight('red')}
+                className="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform font-bold text-sm"
+                style={{ backgroundColor: '#fee2e2', color: '#dc2626' }}
+                title="紅色文字"
+              >A</button>
+              <button
+                onClick={() => handleHighlight('blue')}
+                className="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform font-bold text-sm"
+                style={{ backgroundColor: '#dbeafe', color: '#2563eb' }}
+                title="藍色文字"
+              >A</button>
+              <button
+                onClick={() => handleHighlight('bold')}
+                className="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform font-black text-sm"
+                style={{ backgroundColor: '#f1f5f9', color: '#1e293b' }}
+                title="粗體"
+              >B</button>
+              <button
+                onClick={() => handleHighlight('underline')}
+                className="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform text-sm"
+                style={{ backgroundColor: '#f1f5f9', color: '#475569', textDecoration: 'underline', textUnderlineOffset: '2px' }}
+                title="底線"
+              >U</button>
+              <div className="w-px h-5 bg-slate-500 mx-0.5" />
+              <button
+                className="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform text-xs"
+                style={{ backgroundColor: '#fee2e2', color: '#dc2626' }}
+                title="移除畫線"
+                onClick={async () => {
+                  const existing = getHighlightByText(toolbar.text);
+                  if (existing) { await removeHighlight(existing.id); setTimeout(() => applyHighlights(), 200); }
+                  setToolbar(null);
+                  setShowHighlightPanel(false);
+                  window.getSelection()?.removeAllRanges();
+                }}
+              >✕</button>
+            </div>
+          )}
+        </>
       )}
 
       <footer className="bg-white border-t border-slate-200 py-6 mt-auto">
