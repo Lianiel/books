@@ -416,7 +416,7 @@ export default function App() {
     const saved = localStorage.getItem('bookFontZoomLevel');
     return saved ? parseInt(saved) : 2;
   });
-  const FONT_ZOOM_VALUES = [0.85, 0.92, 1.0, 1.15, 1.30];
+  const FONT_ZOOM_VALUES = [0.85, 1.0, 1.15, 1.30, 1.50];
   const FONT_ZOOM_LABELS = ['最小', '小', '標準', '大', '特大'];
   const currentZoom = FONT_ZOOM_VALUES[fontZoomLevel] ?? 1.0;
 
