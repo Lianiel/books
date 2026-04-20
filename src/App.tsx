@@ -1114,11 +1114,19 @@ export default function App() {
             <button
               onClick={() => {
                 stopReading();
-                setSelectedBook(null);
                 setShowHighlightPanel(false);
                 setToolbar(null);
+                // 若被埔和後台用 iframe 嵌入，請父層關閉整個 iframe（回電子書房分類頁）
+                // 否則退回書單頁
+                if (window.parent !== window) {
+                  try {
+                    window.parent.postMessage({ type: 'closeBookEmbed' }, '*');
+                  } catch (e) {}
+                } else {
+                  setSelectedBook(null);
+                }
               }}
-              title="關閉，返回書單"
+              title="關閉，返回電子書房"
               style={{
                 width: '36px',
                 height: '36px',
