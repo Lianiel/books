@@ -42,6 +42,15 @@ export default function Intro() {
           會幕分為三個區域：<strong>至聖所、聖所、外院</strong>，對應<strong>第三層天、第二層天、第一層天</strong>禱告。
         </p>
 
+        {/* 會幕架構圖片 */}
+        <div className="my-6 bg-white p-4 rounded-lg shadow-sm">
+          <img 
+            src="/Tabernacle Prayer.png" 
+            alt="會幕禱告架構圖" 
+            className="w-full h-auto rounded-lg"
+          />
+        </div>
+
         <div className="space-y-4">
           <div className="bg-white/80 p-4 rounded-lg border border-amber-200">
             <h4 className="font-bold text-amber-900 mb-2 text-lg">🚪 外院 — 進入神的門</h4>
