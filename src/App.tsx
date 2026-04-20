@@ -104,7 +104,6 @@ import Spir10 from "./components/book8/Chapter10";
 import Spir11 from "./components/book8/Chapter11";
 import Spir12 from "./components/book8/Chapter12";
 
-
 // Book 9: 三層天禱告
 import Prayer_Intro from "./components/book9/Intro";
 import Prayer_Ch1 from "./components/book9/Chapter1";
@@ -113,6 +112,7 @@ import Prayer_Ch3 from "./components/book9/Chapter3";
 import Prayer_Ch4 from "./components/book9/Chapter4";
 import Prayer_Ch5 from "./components/book9/Chapter5";
 import Prayer_Ch6 from "./components/book9/Chapter6";
+
 const BOOKS = [
   {
     id: 'book1',
