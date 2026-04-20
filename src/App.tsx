@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   BookOpen, Menu, X, Heart, Activity, Compass, Map, Shield, Users, Sun, Star,
   Home, Footprints, Scale, HelpCircle, HeartHandshake, Baby, Briefcase,
-  Smartphone, User, Cross, ShieldAlert, TrendingUp, ChevronLeft, Download, Maximize2, Minimize2, Gift, AlertTriangle
+  Smartphone, User, Cross, ShieldAlert, TrendingUp, ChevronLeft, Download, Maximize2, Minimize2, Gift, AlertTriangle, Target
 } from 'lucide-react';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from './useHighlight';
 
@@ -89,6 +89,20 @@ import Disc3 from "./components/book7/Chapter3";
 import Disc4 from "./components/book7/Chapter4";
 import Disc5 from "./components/book7/Chapter5";
 import Disc6 from "./components/book7/Chapter6";
+
+// Book 8: 靈性關懷與身心健康
+import Spir1 from "./components/book8/Chapter1";
+import Spir2 from "./components/book8/Chapter2";
+import Spir3 from "./components/book8/Chapter3";
+import Spir4 from "./components/book8/Chapter4";
+import Spir5 from "./components/book8/Chapter5";
+import Spir6 from "./components/book8/Chapter6";
+import Spir7 from "./components/book8/Chapter7";
+import Spir8 from "./components/book8/Chapter8";
+import Spir9 from "./components/book8/Chapter9";
+import Spir10 from "./components/book8/Chapter10";
+import Spir11 from "./components/book8/Chapter11";
+import Spir12 from "./components/book8/Chapter12";
 
 const BOOKS = [
   {
@@ -244,6 +258,30 @@ const BOOKS = [
       { id: "ch6", label: "陪讀課程使用守則",             page: "",  icon: BookOpen,       part: "附錄" },
     ],
   },
+  {
+    id: "book8",
+    title: "靈性關懷與身心健康",
+    subtitle: "戴文峻牧師｜時兆趨勢學苑 第4.0版",
+    emoji: "📘",
+    accentHex: "#6366f1",
+    bgLight: "bg-indigo-50",
+    textAccent: "text-indigo-700",
+    hoverText: "hover:text-indigo-600",
+    chapters: [
+      { id: "ch1",  label: "第一單元：靈性平安與靈性困擾",     page: "",  icon: Heart,    part: "靈性平安的五個面向" },
+      { id: "ch2",  label: "第二單元：生命的意義和價值",       page: "",  icon: Star,     part: "靈性平安的五個面向" },
+      { id: "ch3",  label: "第三單元：愛與被愛",               page: "",  icon: Heart,    part: "靈性平安的五個面向" },
+      { id: "ch4",  label: "第四單元：寬恕與被寬恕",           page: "",  icon: Shield,   part: "靈性平安的五個面向" },
+      { id: "ch5",  label: "第五單元：希望與失望",             page: "",  icon: Sun,      part: "靈性平安的五個面向" },
+      { id: "ch6",  label: "第六單元：與至高者建立關係",       page: "",  icon: Compass,  part: "靈性平安的五個面向" },
+      { id: "ch7",  label: "第七單元：確認問題",               page: "",  icon: Map,      part: "促進靈性平安" },
+      { id: "ch8",  label: "第八單元：探索問題",               page: "",  icon: Compass,  part: "促進靈性平安" },
+      { id: "ch9",  label: "第九單元：解決問題",               page: "",  icon: Target,   part: "促進靈性平安" },
+      { id: "ch10", label: "第十單元：安寧緩和治療 vs. 病人自主權利", page: "", icon: Shield, part: "實務應用" },
+      { id: "ch11", label: "第十一單元：長照體系與身心健康促進", page: "",  icon: Home,     part: "實務應用" },
+      { id: "ch12", label: "第十二單元：靈性平安與四道人生",   page: "",  icon: Heart,    part: "實務應用" },
+    ],
+  },
 ];
 
 function renderBook1(ch: string) {
@@ -345,6 +383,23 @@ function renderBook7(ch: string) {
   }
 }
 
+function renderBook8(ch: string) {
+  switch (ch) {
+    case "ch1": return <Spir1 />;
+    case "ch2": return <Spir2 />;
+    case "ch3": return <Spir3 />;
+    case "ch4": return <Spir4 />;
+    case "ch5": return <Spir5 />;
+    case "ch6": return <Spir6 />;
+    case "ch7": return <Spir7 />;
+    case "ch8": return <Spir8 />;
+    case "ch9": return <Spir9 />;
+    case "ch10": return <Spir10 />;
+    case "ch11": return <Spir11 />;
+    default:    return <Spir12 />;
+  }
+}
+
 export default function App() {
   // 讀取 URL 參數 ?book=book1 直接開對應書本
   const params = new URLSearchParams(window.location.search);
@@ -356,17 +411,15 @@ export default function App() {
   const [activeChapter, setActiveChapter] = useState('ch1');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [expandAll, setExpandAll] = useState(false);
-  // 字型縮放 (1=標準, 0=最小, 2=大, 3=特大, -1=小)
+  // 字型縮放 (0=最小, 1=小, 2=標準, 3=大, 4=特大)
   const [fontZoomLevel, setFontZoomLevel] = useState<number>(() => {
     const saved = localStorage.getItem('bookFontZoomLevel');
-    return saved ? parseInt(saved) : 1;
+    return saved ? parseInt(saved) : 2;
   });
-  // 字型縮放對應的 zoom 倍率（五段式：最小/小/標準/大/特大）
   const FONT_ZOOM_VALUES = [0.85, 0.92, 1.0, 1.15, 1.30];
   const FONT_ZOOM_LABELS = ['最小', '小', '標準', '大', '特大'];
   const currentZoom = FONT_ZOOM_VALUES[fontZoomLevel] ?? 1.0;
 
-  // 儲存字型縮放設定
   useEffect(() => {
     localStorage.setItem('bookFontZoomLevel', String(fontZoomLevel));
   }, [fontZoomLevel]);
@@ -494,6 +547,7 @@ export default function App() {
     if (selectedBook === 'book5') return renderBook5(activeChapter);
     if (selectedBook === 'book6') return renderBook6(activeChapter);
     if (selectedBook === 'book7') return renderBook7(activeChapter);
+    if (selectedBook === 'book8') return renderBook8(activeChapter);
     return null;
   };
 
