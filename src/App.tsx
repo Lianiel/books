@@ -235,7 +235,6 @@ const BOOKS = [
     ],
   },
   {
-  {
     id: 'book7',
     title: '以斯拉記——被擄歸回的恩典',
     subtitle: '陳濟民 著',
