@@ -22,107 +22,105 @@ import SectionCh16 from './components/book1/SectionCh16';
 import SectionCh17 from './components/book1/SectionCh17';
 
 // Book 2 imports
-import Chapter1 from './components/book2/Chapter1';
-import Chapter2 from './components/book2/Chapter2';
-import Chapter3 from './components/book2/Chapter3';
-import Chapter4 from './components/book2/Chapter4';
-import Chapter5 from './components/book2/Chapter5';
-import Chapter6 from './components/book2/Chapter6';
-import Chapter7 from './components/book2/Chapter7';
-import Chapter8 from './components/book2/Chapter8';
+import Book2Ch1 from './components/book2/Chapter1';
+import Book2Ch2 from './components/book2/Chapter2';
+import Book2Ch3 from './components/book2/Chapter3';
+import Book2Ch4 from './components/book2/Chapter4';
+import Book2Ch5 from './components/book2/Chapter5';
+import Book2Ch6 from './components/book2/Chapter6';
+import Book2Ch7 from './components/book2/Chapter7';
+import Book2Ch8 from './components/book2/Chapter8';
 
 // Book 3 imports
-import Paul1 from './components/book3/Chapter1';
-import Paul2 from './components/book3/Chapter2';
-import Paul3 from './components/book3/Chapter3';
-import Paul4 from './components/book3/Chapter4';
-import Paul5 from './components/book3/Chapter5';
-import Paul6 from './components/book3/Chapter6';
-import Paul7 from './components/book3/Chapter7';
-import Paul8 from './components/book3/Chapter8';
+import Book3Ch1 from './components/book3/Chapter1';
+import Book3Ch2 from './components/book3/Chapter2';
+import Book3Ch3 from './components/book3/Chapter3';
+import Book3Ch4 from './components/book3/Chapter4';
+import Book3Ch5 from './components/book3/Chapter5';
+import Book3Ch6 from './components/book3/Chapter6';
+import Book3Ch7 from './components/book3/Chapter7';
+import Book3Ch8 from './components/book3/Chapter8';
 
 // Book 4 imports
-import Inf1 from './components/book4/Chapter1';
-import Inf2 from './components/book4/Chapter2';
-import Inf3 from './components/book4/Chapter3';
-import Inf4 from './components/book4/Chapter4';
-import Inf5 from './components/book4/Chapter5';
-import Inf6 from './components/book4/Chapter6';
-import Inf7 from './components/book4/Chapter7';
-import Inf8 from './components/book4/Chapter8';
-import Inf9 from './components/book4/Chapter9';
-import Inf10 from './components/book4/Chapter10';
-import Inf11 from './components/book4/Chapter11';
-import Inf12 from './components/book4/Chapter12';
-import Inf13 from './components/book4/Chapter13';
-import Inf14 from './components/book4/Chapter14';
-import Inf15 from './components/book4/Chapter15';
+import Book4Ch1 from './components/book4/Chapter1';
+import Book4Ch2 from './components/book4/Chapter2';
+import Book4Ch3 from './components/book4/Chapter3';
+import Book4Ch4 from './components/book4/Chapter4';
+import Book4Ch5 from './components/book4/Chapter5';
+import Book4Ch6 from './components/book4/Chapter6';
+import Book4Ch7 from './components/book4/Chapter7';
+import Book4Ch8 from './components/book4/Chapter8';
+import Book4Ch9 from './components/book4/Chapter9';
+import Book4Ch10 from './components/book4/Chapter10';
+import Book4Ch11 from './components/book4/Chapter11';
+import Book4Ch12 from './components/book4/Chapter12';
+import Book4Ch13 from './components/book4/Chapter13';
+import Book4Ch14 from './components/book4/Chapter14';
+import Book4Ch15 from './components/book4/Chapter15';
 
 // Book 5 imports
-import Christ1 from './components/book5/Week1';
-import Christ2 from './components/book5/Week2';
-import Christ3 from './components/book5/Week3';
-import Christ4 from './components/book5/Week4';
-import Christ5 from './components/book5/Week5';
-import Christ6 from './components/book5/Week6';
+import Book5Ch1 from './components/book5/Chapter1';
+import Book5Ch2 from './components/book5/Chapter2';
+import Book5Ch3 from './components/book5/Chapter3';
+import Book5Ch4 from './components/book5/Chapter4';
+import Book5Ch5 from './components/book5/Chapter5';
+import Book5Ch6 from './components/book5/Chapter6';
 
 // Book 6 imports
-import Kings1 from './components/book6/Chapter1';
-import Kings2 from './components/book6/Chapter2';
-import Kings3 from './components/book6/Chapter3';
-import Kings4 from './components/book6/Chapter4';
-import Kings5 from './components/book6/Chapter5';
-import Kings6 from './components/book6/Chapter6';
-import Kings7 from './components/book6/Chapter7';
-import Kings8 from './components/book6/Chapter8';
+import Book6Ch1 from './components/book6/Chapter1';
+import Book6Ch2 from './components/book6/Chapter2';
+import Book6Ch3 from './components/book6/Chapter3';
+import Book6Ch4 from './components/book6/Chapter4';
+import Book6Ch5 from './components/book6/Chapter5';
+import Book6Ch6 from './components/book6/Chapter6';
+import Book6Ch7 from './components/book6/Chapter7';
+import Book6Ch8 from './components/book6/Chapter8';
 
 // Book 7 imports
-import Ezra1 from './components/book7/Chapter1';
-import Ezra2 from './components/book7/Chapter2';
-import Ezra3 from './components/book7/Chapter3';
-import Ezra4 from './components/book7/Chapter4';
-import Ezra5 from './components/book7/Chapter5';
-import Ezra6 from './components/book7/Chapter6';
-import Ezra7 from './components/book7/Chapter7';
-import Ezra8 from './components/book7/Chapter8';
-import Ezra9 from './components/book7/Chapter9';
-import Ezra10 from './components/book7/Chapter10';
+import Book7Ch1 from './components/book7/Chapter1';
+import Book7Ch2 from './components/book7/Chapter2';
+import Book7Ch3 from './components/book7/Chapter3';
+import Book7Ch4 from './components/book7/Chapter4';
+import Book7Ch5 from './components/book7/Chapter5';
+import Book7Ch6 from './components/book7/Chapter6';
+import Book7Ch7 from './components/book7/Chapter7';
+import Book7Ch8 from './components/book7/Chapter8';
+import Book7Ch9 from './components/book7/Chapter9';
+import Book7Ch10 from './components/book7/Chapter10';
 
 // Book 8 imports
-import Spir1 from './components/book8/Chapter1';
-import Spir2 from './components/book8/Chapter2';
-import Spir3 from './components/book8/Chapter3';
-import Spir4 from './components/book8/Chapter4';
-import Spir5 from './components/book8/Chapter5';
-import Spir6 from './components/book8/Chapter6';
-import Spir7 from './components/book8/Chapter7';
-import Spir8 from './components/book8/Chapter8';
-import Spir9 from './components/book8/Chapter9';
-import Spir10 from './components/book8/Chapter10';
-import Spir11 from './components/book8/Chapter11';
-import Spir12 from './components/book8/Chapter12';
+import Book8Ch1 from './components/book8/Chapter1';
+import Book8Ch2 from './components/book8/Chapter2';
+import Book8Ch3 from './components/book8/Chapter3';
+import Book8Ch4 from './components/book8/Chapter4';
+import Book8Ch5 from './components/book8/Chapter5';
+import Book8Ch6 from './components/book8/Chapter6';
+import Book8Ch7 from './components/book8/Chapter7';
+import Book8Ch8 from './components/book8/Chapter8';
+import Book8Ch9 from './components/book8/Chapter9';
+import Book8Ch10 from './components/book8/Chapter10';
+import Book8Ch11 from './components/book8/Chapter11';
+import Book8Ch12 from './components/book8/Chapter12';
 
 // Book 9 imports
-import Prayer_Intro from './components/book9/Intro';
-import Prayer_Ch1 from './components/book9/Chapter1';
-import Prayer_Ch2 from './components/book9/Chapter2';
-import Prayer_Ch3 from './components/book9/Chapter3';
-import Prayer_Ch4 from './components/book9/Chapter4';
-import Prayer_Ch5 from './components/book9/Chapter5';
-import Prayer_Ch6 from './components/book9/Chapter6';
+import Book9Intro from './components/book9/Intro';
+import Book9Ch1 from './components/book9/Chapter1';
+import Book9Ch2 from './components/book9/Chapter2';
+import Book9Ch3 from './components/book9/Chapter3';
+import Book9Ch4 from './components/book9/Chapter4';
+import Book9Ch5 from './components/book9/Chapter5';
+import Book9Ch6 from './components/book9/Chapter6';
 
 // Book 10 imports
-import Shield_Ch1 from './components/book10/Chapter1';
-import Shield_Ch2 from './components/book10/Chapter2';
-import Shield_Ch3 from './components/book10/Chapter3';
-import Shield_Ch4 from './components/book10/Chapter4';
-import Shield_Ch5 from './components/book10/Chapter5';
-import Shield_Ch6 from './components/book10/Chapter6';
-import Shield_Ch7 from './components/book10/Chapter7';
-import Shield_Ch8 from './components/book10/Chapter8';
-import Shield_Ch9 from './components/book10/Chapter9';
-
-// ==================== BOOKS DEFINITION ====================
+import Book10Ch1 from './components/book10/Chapter1';
+import Book10Ch2 from './components/book10/Chapter2';
+import Book10Ch3 from './components/book10/Chapter3';
+import Book10Ch4 from './components/book10/Chapter4';
+import Book10Ch5 from './components/book10/Chapter5';
+import Book10Ch6 from './components/book10/Chapter6';
+import Book10Ch7 from './components/book10/Chapter7';
+import Book10Ch8 from './components/book10/Chapter8';
+import Book10Ch9 from './components/book10/Chapter9';
 const BOOKS = [
   {
     id: 'book1',
@@ -341,132 +339,131 @@ function renderBook1(ch: string) {
 
 function renderBook2(ch: string, expandAll: boolean) {
   switch (ch) {
-    case 'ch1': return <Chapter1 expandAll={expandAll} />;
-    case 'ch2': return <Chapter2 expandAll={expandAll} />;
-    case 'ch3': return <Chapter3 expandAll={expandAll} />;
-    case 'ch4': return <Chapter4 expandAll={expandAll} />;
-    case 'ch5': return <Chapter5 expandAll={expandAll} />;
-    case 'ch6': return <Chapter6 expandAll={expandAll} />;
-    case 'ch7': return <Chapter7 expandAll={expandAll} />;
-    default: return <Chapter8 expandAll={expandAll} />;
+    case 'ch1': return <Book2Ch1 expandAll={expandAll} />;
+    case 'ch2': return <Book2Ch2 expandAll={expandAll} />;
+    case 'ch3': return <Book2Ch3 expandAll={expandAll} />;
+    case 'ch4': return <Book2Ch4 expandAll={expandAll} />;
+    case 'ch5': return <Book2Ch5 expandAll={expandAll} />;
+    case 'ch6': return <Book2Ch6 expandAll={expandAll} />;
+    case 'ch7': return <Book2Ch7 expandAll={expandAll} />;
+    default: return <Book2Ch8 expandAll={expandAll} />;
   }
 }
 
 function renderBook3(ch: string) {
   switch (ch) {
-    case 'ch1': return <Paul1 />;
-    case 'ch2': return <Paul2 />;
-    case 'ch3': return <Paul3 />;
-    case 'ch4': return <Paul4 />;
-    case 'ch5': return <Paul5 />;
-    case 'ch6': return <Paul6 />;
-    case 'ch7': return <Paul7 />;
-    default: return <Paul8 />;
+    case 'ch1': return <Book3Ch1 />;
+    case 'ch2': return <Book3Ch2 />;
+    case 'ch3': return <Book3Ch3 />;
+    case 'ch4': return <Book3Ch4 />;
+    case 'ch5': return <Book3Ch5 />;
+    case 'ch6': return <Book3Ch6 />;
+    case 'ch7': return <Book3Ch7 />;
+    default: return <Book3Ch8 />;
   }
 }
 
 function renderBook4(ch: string, expandAll: boolean) {
   switch (ch) {
-    case 'ch1': return <Inf1 expandAll={expandAll} />;
-    case 'ch2': return <Inf2 expandAll={expandAll} />;
-    case 'ch3': return <Inf3 expandAll={expandAll} />;
-    case 'ch4': return <Inf4 expandAll={expandAll} />;
-    case 'ch5': return <Inf5 expandAll={expandAll} />;
-    case 'ch6': return <Inf6 expandAll={expandAll} />;
-    case 'ch7': return <Inf7 expandAll={expandAll} />;
-    case 'ch8': return <Inf8 expandAll={expandAll} />;
-    case 'ch9': return <Inf9 expandAll={expandAll} />;
-    case 'ch10': return <Inf10 expandAll={expandAll} />;
-    case 'ch11': return <Inf11 expandAll={expandAll} />;
-    case 'ch12': return <Inf12 expandAll={expandAll} />;
-    case 'ch13': return <Inf13 expandAll={expandAll} />;
-    case 'ch14': return <Inf14 expandAll={expandAll} />;
-    default: return <Inf15 expandAll={expandAll} />;
+    case 'ch1': return <Book4Ch1 expandAll={expandAll} />;
+    case 'ch2': return <Book4Ch2 expandAll={expandAll} />;
+    case 'ch3': return <Book4Ch3 expandAll={expandAll} />;
+    case 'ch4': return <Book4Ch4 expandAll={expandAll} />;
+    case 'ch5': return <Book4Ch5 expandAll={expandAll} />;
+    case 'ch6': return <Book4Ch6 expandAll={expandAll} />;
+    case 'ch7': return <Book4Ch7 expandAll={expandAll} />;
+    case 'ch8': return <Book4Ch8 expandAll={expandAll} />;
+    case 'ch9': return <Book4Ch9 expandAll={expandAll} />;
+    case 'ch10': return <Book4Ch10 expandAll={expandAll} />;
+    case 'ch11': return <Book4Ch11 expandAll={expandAll} />;
+    case 'ch12': return <Book4Ch12 expandAll={expandAll} />;
+    case 'ch13': return <Book4Ch13 expandAll={expandAll} />;
+    case 'ch14': return <Book4Ch14 expandAll={expandAll} />;
+    default: return <Book4Ch15 expandAll={expandAll} />;
   }
 }
 
 function renderBook5(ch: string) {
   switch (ch) {
-    case 'week1': return <Christ1 />;
-    case 'week2': return <Christ2 />;
-    case 'week3': return <Christ3 />;
-    case 'week4': return <Christ4 />;
-    case 'week5': return <Christ5 />;
-    default: return <Christ6 />;
+    case 'week1': return <Book5Ch1 />;
+    case 'week2': return <Book5Ch2 />;
+    case 'week3': return <Book5Ch3 />;
+    case 'week4': return <Book5Ch4 />;
+    case 'week5': return <Book5Ch5 />;
+    default: return <Book5Ch6 />;
   }
 }
 
 function renderBook6(ch: string) {
   switch (ch) {
-    case 'ch1': return <Kings1 />;
-    case 'ch2': return <Kings2 />;
-    case 'ch3': return <Kings3 />;
-    case 'ch4': return <Kings4 />;
-    case 'ch5': return <Kings5 />;
-    case 'ch6': return <Kings6 />;
-    case 'ch7': return <Kings7 />;
-    default: return <Kings8 />;
+    case 'ch1': return <Book6Ch1 />;
+    case 'ch2': return <Book6Ch2 />;
+    case 'ch3': return <Book6Ch3 />;
+    case 'ch4': return <Book6Ch4 />;
+    case 'ch5': return <Book6Ch5 />;
+    case 'ch6': return <Book6Ch6 />;
+    case 'ch7': return <Book6Ch7 />;
+    default: return <Book6Ch8 />;
   }
 }
 
 function renderBook7(ch: string) {
   switch (ch) {
-    case 'ch1': return <Ezra1 />;
-    case 'ch2': return <Ezra2 />;
-    case 'ch3': return <Ezra3 />;
-    case 'ch4': return <Ezra4 />;
-    case 'ch5': return <Ezra5 />;
-    case 'ch6': return <Ezra6 />;
-    case 'ch7': return <Ezra7 />;
-    case 'ch8': return <Ezra8 />;
-    case 'ch9': return <Ezra9 />;
-    default: return <Ezra10 />;
+    case 'ch1': return <Book7Ch1 />;
+    case 'ch2': return <Book7Ch2 />;
+    case 'ch3': return <Book7Ch3 />;
+    case 'ch4': return <Book7Ch4 />;
+    case 'ch5': return <Book7Ch5 />;
+    case 'ch6': return <Book7Ch6 />;
+    case 'ch7': return <Book7Ch7 />;
+    case 'ch8': return <Book7Ch8 />;
+    case 'ch9': return <Book7Ch9 />;
+    default: return <Book7Ch10 />;
   }
 }
 
 function renderBook8(ch: string) {
   switch (ch) {
-    case 'ch1': return <Spir1 />;
-    case 'ch2': return <Spir2 />;
-    case 'ch3': return <Spir3 />;
-    case 'ch4': return <Spir4 />;
-    case 'ch5': return <Spir5 />;
-    case 'ch6': return <Spir6 />;
-    case 'ch7': return <Spir7 />;
-    case 'ch8': return <Spir8 />;
-    case 'ch9': return <Spir9 />;
-    case 'ch10': return <Spir10 />;
-    case 'ch11': return <Spir11 />;
-    default: return <Spir12 />;
+    case 'ch1': return <Book8Ch1 />;
+    case 'ch2': return <Book8Ch2 />;
+    case 'ch3': return <Book8Ch3 />;
+    case 'ch4': return <Book8Ch4 />;
+    case 'ch5': return <Book8Ch5 />;
+    case 'ch6': return <Book8Ch6 />;
+    case 'ch7': return <Book8Ch7 />;
+    case 'ch8': return <Book8Ch8 />;
+    case 'ch9': return <Book8Ch9 />;
+    case 'ch10': return <Book8Ch10 />;
+    case 'ch11': return <Book8Ch11 />;
+    default: return <Book8Ch12 />;
   }
 }
 
 function renderBook9(ch: string, expandAll: boolean) {
   switch (ch) {
-    case 'intro': return <Prayer_Intro />;
-    case 'ch1': return <Prayer_Ch1 />;
-    case 'ch2': return <Prayer_Ch2 />;
-    case 'ch3': return <Prayer_Ch3 />;
-    case 'ch4': return <Prayer_Ch4 />;
-    case 'ch5': return <Prayer_Ch5 />;
-    default: return <Prayer_Ch6 />;
+    case 'intro': return <Book9Intro expandAll={expandAll} />;
+    case 'ch1': return <Book9Ch1 expandAll={expandAll} />;
+    case 'ch2': return <Book9Ch2 expandAll={expandAll} />;
+    case 'ch3': return <Book9Ch3 expandAll={expandAll} />;
+    case 'ch4': return <Book9Ch4 expandAll={expandAll} />;
+    case 'ch5': return <Book9Ch5 expandAll={expandAll} />;
+    default: return <Book9Ch6 expandAll={expandAll} />;
   }
 }
 
 function renderBook10(ch: string) {
   switch (ch) {
-    case 'ch1': return <Shield_Ch1 />;
-    case 'ch2': return <Shield_Ch2 />;
-    case 'ch3': return <Shield_Ch3 />;
-    case 'ch4': return <Shield_Ch4 />;
-    case 'ch5': return <Shield_Ch5 />;
-    case 'ch6': return <Shield_Ch6 />;
-    case 'ch7': return <Shield_Ch7 />;
-    case 'ch8': return <Shield_Ch8 />;
-    default: return <Shield_Ch9 />;
+    case 'ch1': return <Book10Ch1 />;
+    case 'ch2': return <Book10Ch2 />;
+    case 'ch3': return <Book10Ch3 />;
+    case 'ch4': return <Book10Ch4 />;
+    case 'ch5': return <Book10Ch5 />;
+    case 'ch6': return <Book10Ch6 />;
+    case 'ch7': return <Book10Ch7 />;
+    case 'ch8': return <Book10Ch8 />;
+    default: return <Book10Ch9 />;
   }
 }
-
 // ==================== MAIN APP ====================
 export default function App() {
   const [selectedBook, setSelectedBook] = useState<string | null>(null);
