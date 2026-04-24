@@ -114,6 +114,17 @@ import Prayer_Ch4 from "./components/book9/Chapter4";
 import Prayer_Ch5 from "./components/book9/Chapter5";
 import Prayer_Ch6 from "./components/book9/Chapter6";
 
+// Book 10: 禱告的盾牌
+import Shield1 from "./components/book10/Chapter1";
+import Shield2 from "./components/book10/Chapter2";
+import Shield3 from "./components/book10/Chapter3";
+import Shield4 from "./components/book10/Chapter4";
+import Shield5 from "./components/book10/Chapter5";
+import Shield6 from "./components/book10/Chapter6";
+import Shield7 from "./components/book10/Chapter7";
+import Shield8 from "./components/book10/Chapter8";
+import Shield9 from "./components/book10/Chapter9";
+
 const BOOKS = [
   {
     id: 'book1',
@@ -311,6 +322,27 @@ const BOOKS = [
       { id: "ch6", label: "話禱範例", page: "", icon: MessageCircle, part: "第六篇" },
     ],
   },
+  {
+    id: "book10",
+    title: "禱告的盾牌",
+    subtitle: "彼得·魏格納 著",
+    emoji: "🛡️",
+    accentHex: "#9333ea",
+    bgLight: "bg-purple-50",
+    textAccent: "text-purple-700",
+    hoverText: "hover:text-purple-600",
+    chapters: [
+      { id: "ch1", label: "1. 建立個人代禱同工所產生的能力", page: "", icon: Shield, part: "禱告的盾牌" },
+      { id: "ch2", label: "2. 代禱者", page: "", icon: Users, part: "禱告的盾牌" },
+      { id: "ch3", label: "3. 為什麼牧師需要我們代禱", page: "", icon: Heart, part: "禱告的盾牌" },
+      { id: "ch4", label: "4. 牧師禱告生活的祕訣", page: "", icon: Star, part: "禱告的盾牌" },
+      { id: "ch5", label: "5. 接受個人性的代禱", page: "", icon: HeartHandshake, part: "禱告的盾牌" },
+      { id: "ch6", label: "6. 三種類型的代求者", page: "", icon: Users, part: "禱告的盾牌" },
+      { id: "ch7", label: "7. 呼召代禱同工", page: "", icon: Compass, part: "禱告的盾牌" },
+      { id: "ch8", label: "8. 個人代禱者的輪廓特徵", page: "", icon: User, part: "禱告的盾牌" },
+      { id: "ch9", label: "9. 保養顧惜你的代禱者", page: "", icon: Sun, part: "禱告的盾牌" },
+    ],
+  },
 ];
 // 在 import 區加入
 import Book10 from './components/Book10';
@@ -454,6 +486,20 @@ function renderBook9(ch: string, expandAll?: boolean) {
     case "ch4": return <Prayer_Ch4 />;
     case "ch5": return <Prayer_Ch5 />;
     default:    return <Prayer_Ch6 />;
+  }
+}
+
+function renderBook10(ch: string, expandAll?: boolean) {
+  switch (ch) {
+    case "ch1": return <Shield1 />;
+    case "ch2": return <Shield2 />;
+    case "ch3": return <Shield3 />;
+    case "ch4": return <Shield4 />;
+    case "ch5": return <Shield5 />;
+    case "ch6": return <Shield6 />;
+    case "ch7": return <Shield7 />;
+    case "ch8": return <Shield8 />;
+    default:    return <Shield9 />;
   }
 }
 
@@ -760,6 +806,7 @@ export default function App() {
     if (selectedBook === 'book7') return renderBook7(activeChapter);
     if (selectedBook === 'book8') return renderBook8(activeChapter);
     if (selectedBook === 'book9') return renderBook9(activeChapter, expandAll);
+    if (selectedBook === 'book10') return renderBook10(activeChapter, expandAll);
     return null;
   };
 
