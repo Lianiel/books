@@ -312,6 +312,22 @@ const BOOKS = [
     ],
   },
 ];
+// 在 import 區加入
+import Book10 from './components/Book10';
+
+// 在 BOOKS 陣列加入
+const BOOKS = [
+  { id: 'book1', title: '立界線得自由', emoji: '📘', color: 'teal' },
+  // ... 其他書本
+  { id: 'book10', title: '禱告的盾牌', emoji: '🛡️', color: 'purple' },
+];
+
+// 在 renderBook 函式加入
+function renderBook(bookId: string) {
+  // ...
+  if (bookId === 'book10') return <Book10 />;
+  // ...
+}
 
 function renderBook1(ch: string) {
   switch (ch) {
