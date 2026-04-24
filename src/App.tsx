@@ -1,43 +1,37 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect } from 'react';
+import { BookOpen, ChevronLeft, ChevronDown, ChevronUp, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  BookOpen, Menu, X, Heart, Activity, Compass, Map, Shield, Users, Sun, Star,
-  Home, Footprints, Scale, HelpCircle, HeartHandshake, Baby, Briefcase,
-  Smartphone, User, Cross, ShieldAlert, TrendingUp, Download, Gift, AlertTriangle, Target,
-  MessageCircle, Sparkles
-} from 'lucide-react';
-import { useHighlight, HighlightStyle, applyStyleToSpan } from './useHighlight';
 
-// Book 1: 立界線得自由
+// Book 1 imports
 import SectionHome from './components/book1/SectionHome';
 import SectionDefinition from './components/book1/SectionDefinition';
 import SectionDiagnosis from './components/book1/SectionDiagnosis';
 import SectionDevelopment from './components/book1/SectionDevelopment';
 import SectionLaws from './components/book1/SectionLaws';
 import SectionMyths from './components/book1/SectionMyths';
-import SectionCh7 from './components/book1/SectionCh7';
-import SectionCh8 from './components/book1/SectionCh8';
-import SectionCh9 from './components/book1/SectionCh9';
-import SectionCh10 from './components/book1/SectionCh10';
-import SectionCh11 from './components/book1/SectionCh11';
-import SectionCh12 from './components/book1/SectionCh12';
-import SectionCh13 from './components/book1/SectionCh13';
-import SectionCh14 from './components/book1/SectionCh14';
-import SectionCh15 from './components/book1/SectionCh15';
-import SectionCh16 from './components/book1/SectionCh16';
-import SectionCh17 from './components/book1/SectionCh17';
+import SectionFamily from './components/book1/SectionFamily';
+import SectionWork from './components/book1/SectionWork';
+import SectionSelf from './components/book1/SectionSelf';
+import SectionKids from './components/book1/SectionKids';
+import SectionBoundaries from './components/book1/SectionBoundaries';
+import SectionResistance from './components/book1/SectionResistance';
+import SectionSuccess from './components/book1/SectionSuccess';
+import SectionDigital from './components/book1/SectionDigital';
+import SectionFood from './components/book1/SectionFood';
+import SectionSexuality from './components/book1/SectionSexuality';
+import SectionClosing from './components/book1/SectionClosing';
 
-// Book 2: 情感健康的門徒
-import Emo1 from './components/book2/Chapter1';
-import Emo2 from './components/book2/Chapter2';
-import Emo3 from './components/book2/Chapter3';
-import Emo4 from './components/book2/Chapter4';
-import Emo5 from './components/book2/Chapter5';
-import Emo6 from './components/book2/Chapter6';
-import Emo7 from './components/book2/Chapter7';
-import Emo8 from './components/book2/Chapter8';
+// Book 2 imports
+import Chapter1 from './components/book2/Chapter1';
+import Chapter2 from './components/book2/Chapter2';
+import Chapter3 from './components/book2/Chapter3';
+import Chapter4 from './components/book2/Chapter4';
+import Chapter5 from './components/book2/Chapter5';
+import Chapter6 from './components/book2/Chapter6';
+import Chapter7 from './components/book2/Chapter7';
+import Chapter8 from './components/book2/Chapter8';
 
-// Book 3: 向保羅學宣教
+// Book 3 imports
 import Paul1 from './components/book3/Chapter1';
 import Paul2 from './components/book3/Chapter2';
 import Paul3 from './components/book3/Chapter3';
@@ -47,320 +41,282 @@ import Paul6 from './components/book3/Chapter6';
 import Paul7 from './components/book3/Chapter7';
 import Paul8 from './components/book3/Chapter8';
 
-// Book 4: 成為有感染力的基督徒
-import Cont1 from './components/book4/Chapter1';
-import Cont2 from './components/book4/Chapter2';
-import Cont3 from './components/book4/Chapter3';
-import Cont4 from './components/book4/Chapter4';
-import Cont5 from './components/book4/Chapter5';
-import Cont6 from './components/book4/Chapter6';
-import Cont7 from './components/book4/Chapter7';
-import Cont8 from './components/book4/Chapter8';
-import Cont9 from './components/book4/Chapter9';
-import Cont10 from './components/book4/Chapter10';
-import Cont11 from './components/book4/Chapter11';
-import Cont12 from './components/book4/Chapter12';
-import Cont13 from './components/book4/Chapter13';
-import Cont14 from './components/book4/Chapter14';
-import Cont15 from './components/book4/Chapter15';
-import Cont16 from './components/book4/Chapter16';
+// Book 4 imports
+import Inf1 from './components/book4/Chapter1';
+import Inf2 from './components/book4/Chapter2';
+import Inf3 from './components/book4/Chapter3';
+import Inf4 from './components/book4/Chapter4';
+import Inf5 from './components/book4/Chapter5';
+import Inf6 from './components/book4/Chapter6';
+import Inf7 from './components/book4/Chapter7';
+import Inf8 from './components/book4/Chapter8';
+import Inf9 from './components/book4/Chapter9';
+import Inf10 from './components/book4/Chapter10';
+import Inf11 from './components/book4/Chapter11';
+import Inf12 from './components/book4/Chapter12';
+import Inf13 from './components/book4/Chapter13';
+import Inf14 from './components/book4/Chapter14';
+import Inf15 from './components/book4/Chapter15';
 
-// Book 5: 如何活出基督的樣式
-import Walk1 from './components/book5/Chapter1';
-import Walk2 from './components/book5/Chapter2';
-import Walk3 from './components/book5/Chapter3';
-import Walk4 from './components/book5/Chapter4';
-import Walk5 from './components/book5/Chapter5';
-import Walk6 from './components/book5/Chapter6';
+// Book 5 imports
+import Christ1 from './components/book5/Week1';
+import Christ2 from './components/book5/Week2';
+import Christ3 from './components/book5/Week3';
+import Christ4 from './components/book5/Week4';
+import Christ5 from './components/book5/Week5';
+import Christ6 from './components/book5/Week6';
 
-// Book 6: 列王紀上—上帝的啟示在人間
-import King1 from './components/book6/Chapter1';
-import King2 from './components/book6/Chapter2';
-import King3 from './components/book6/Chapter3';
-import King4 from './components/book6/Chapter4';
-import King5 from './components/book6/Chapter5';
-import King6 from './components/book6/Chapter6';
-import King7 from './components/book6/Chapter7';
-import King8 from './components/book6/Chapter8';
+// Book 6 imports
+import Kings1 from './components/book6/Chapter1';
+import Kings2 from './components/book6/Chapter2';
+import Kings3 from './components/book6/Chapter3';
+import Kings4 from './components/book6/Chapter4';
+import Kings5 from './components/book6/Chapter5';
+import Kings6 from './components/book6/Chapter6';
+import Kings7 from './components/book6/Chapter7';
+import Kings8 from './components/book6/Chapter8';
 
-// Book 7: 基要陪讀課程
-import Disc1 from "./components/book7/Chapter1";
-import Disc2 from "./components/book7/Chapter2";
-import Disc3 from "./components/book7/Chapter3";
-import Disc4 from "./components/book7/Chapter4";
-import Disc5 from "./components/book7/Chapter5";
-import Disc6 from "./components/book7/Chapter6";
+// Book 7 imports
+import Ezra1 from './components/book7/Chapter1';
+import Ezra2 from './components/book7/Chapter2';
+import Ezra3 from './components/book7/Chapter3';
+import Ezra4 from './components/book7/Chapter4';
+import Ezra5 from './components/book7/Chapter5';
+import Ezra6 from './components/book7/Chapter6';
+import Ezra7 from './components/book7/Chapter7';
+import Ezra8 from './components/book7/Chapter8';
+import Ezra9 from './components/book7/Chapter9';
+import Ezra10 from './components/book7/Chapter10';
 
-// Book 8: 靈性關懷與身心健康
-import Spir1 from "./components/book8/Chapter1";
-import Spir2 from "./components/book8/Chapter2";
-import Spir3 from "./components/book8/Chapter3";
-import Spir4 from "./components/book8/Chapter4";
-import Spir5 from "./components/book8/Chapter5";
-import Spir6 from "./components/book8/Chapter6";
-import Spir7 from "./components/book8/Chapter7";
-import Spir8 from "./components/book8/Chapter8";
-import Spir9 from "./components/book8/Chapter9";
-import Spir10 from "./components/book8/Chapter10";
-import Spir11 from "./components/book8/Chapter11";
-import Spir12 from "./components/book8/Chapter12";
+// Book 8 imports
+import Spir1 from './components/book8/Chapter1';
+import Spir2 from './components/book8/Chapter2';
+import Spir3 from './components/book8/Chapter3';
+import Spir4 from './components/book8/Chapter4';
+import Spir5 from './components/book8/Chapter5';
+import Spir6 from './components/book8/Chapter6';
+import Spir7 from './components/book8/Chapter7';
+import Spir8 from './components/book8/Chapter8';
+import Spir9 from './components/book8/Chapter9';
+import Spir10 from './components/book8/Chapter10';
+import Spir11 from './components/book8/Chapter11';
+import Spir12 from './components/book8/Chapter12';
 
-// Book 9: 三層天禱告
-import Prayer_Intro from "./components/book9/Intro";
-import Prayer_Ch1 from "./components/book9/Chapter1";
-import Prayer_Ch2 from "./components/book9/Chapter2";
-import Prayer_Ch3 from "./components/book9/Chapter3";
-import Prayer_Ch4 from "./components/book9/Chapter4";
-import Prayer_Ch5 from "./components/book9/Chapter5";
-import Prayer_Ch6 from "./components/book9/Chapter6";
+// Book 9 imports
+import Prayer_Intro from './components/book9/Intro';
+import Prayer_Ch1 from './components/book9/Chapter1';
+import Prayer_Ch2 from './components/book9/Chapter2';
+import Prayer_Ch3 from './components/book9/Chapter3';
+import Prayer_Ch4 from './components/book9/Chapter4';
+import Prayer_Ch5 from './components/book9/Chapter5';
+import Prayer_Ch6 from './components/book9/Chapter6';
 
-// Book 10: 禱告的盾牌
-import Shield1 from "./components/book10/Chapter1";
-import Shield2 from "./components/book10/Chapter2";
-import Shield3 from "./components/book10/Chapter3";
-import Shield4 from "./components/book10/Chapter4";
-import Shield5 from "./components/book10/Chapter5";
-import Shield6 from "./components/book10/Chapter6";
-import Shield7 from "./components/book10/Chapter7";
-import Shield8 from "./components/book10/Chapter8";
-import Shield9 from "./components/book10/Chapter9";
+// Book 10 imports
+import Shield_Ch1 from './components/book10/Chapter1';
+import Shield_Ch2 from './components/book10/Chapter2';
+import Shield_Ch3 from './components/book10/Chapter3';
+import Shield_Ch4 from './components/book10/Chapter4';
+import Shield_Ch5 from './components/book10/Chapter5';
+import Shield_Ch6 from './components/book10/Chapter6';
+import Shield_Ch7 from './components/book10/Chapter7';
+import Shield_Ch8 from './components/book10/Chapter8';
+import Shield_Ch9 from './components/book10/Chapter9';
 
+// ==================== BOOKS DEFINITION ====================
 const BOOKS = [
   {
     id: 'book1',
     title: '立界線得自由',
-    subtitle: '全書重點整理',
+    subtitle: '克勞德、湯森德 著',
     emoji: '📘',
     accentHex: '#0d9488',
-    bgLight: 'bg-teal-50',
-    textAccent: 'text-teal-700',
-    hoverText: 'hover:text-teal-600',
     chapters: [
-      { id: 'ch1',  label: '1. 界線混亂的一天',       icon: Home,           part: '第一部：什麼是界線' },
-      { id: 'ch2',  label: '2. 界線看來啥模樣？',      icon: BookOpen,       part: '第一部：什麼是界線' },
-      { id: 'ch3',  label: '3. 當界線出了問題',        icon: Activity,       part: '第一部：什麼是界線' },
-      { id: 'ch4',  label: '4. 界線的發展歷程',        icon: Footprints,     part: '第一部：什麼是界線' },
-      { id: 'ch5',  label: '5. 界線十律',              icon: Scale,          part: '第一部：什麼是界線' },
-      { id: 'ch6',  label: '6. 常見的界線迷思',        icon: HelpCircle,     part: '第一部：什麼是界線' },
-      { id: 'ch7',  label: '7. 界線與你的家庭',        icon: Users,          part: '第二部：界線衝突' },
-      { id: 'ch8',  label: '8. 界線與你的朋友',        icon: HeartHandshake, part: '第二部：界線衝突' },
-      { id: 'ch9',  label: '9. 界線與你的配偶',        icon: Heart,          part: '第二部：界線衝突' },
-      { id: 'ch10', label: '10. 界線與你的子女',       icon: Baby,           part: '第二部：界線衝突' },
-      { id: 'ch11', label: '11. 界線與工作',           icon: Briefcase,      part: '第二部：界線衝突' },
-      { id: 'ch12', label: '12. 界線與數位時代',       icon: Smartphone,     part: '第二部：界線衝突' },
-      { id: 'ch13', label: '13. 界線與自己',           icon: User,           part: '第二部：界線衝突' },
-      { id: 'ch14', label: '14. 界線與上帝',           icon: Cross,          part: '第二部：界線衝突' },
-      { id: 'ch15', label: '15. 對界線的抗拒',         icon: ShieldAlert,    part: '第三部：發展健康的界線' },
-      { id: 'ch16', label: '16. 評估界線發展進度',     icon: TrendingUp,     part: '第三部：發展健康的界線' },
-      { id: 'ch17', label: '17. 界線明確的一天',       icon: Sun,            part: '第三部：發展健康的界線' },
+      { id: 'ch1', label: '第1章', title: '界線混亂的一天' },
+      { id: 'ch2', label: '第2章', title: '界線看來啥模樣？' },
+      { id: 'ch3', label: '第3章', title: '為何我們建不起界線？' },
+      { id: 'ch4', label: '第4章', title: '界線從哪裡來？' },
+      { id: 'ch5', label: '第5章', title: '界線的十大法則' },
+      { id: 'ch6', label: '第6章', title: '界線的迷思' },
+      { id: 'ch7', label: '第7章', title: '家庭中的界線' },
+      { id: 'ch8', label: '第8章', title: '工作中的界線' },
+      { id: 'ch9', label: '第9章', title: '與自己的界線' },
+      { id: 'ch10', label: '第10章', title: '與孩童的界線' },
+      { id: 'ch11', label: '第11章', title: '界線的實際應用' },
+      { id: 'ch12', label: '第12章', title: '阻力與成功' },
+      { id: 'ch13', label: '第13章', title: '數位時代的界線' },
+      { id: 'ch14', label: '第14章', title: '飲食與身體的界線' },
+      { id: 'ch15', label: '第15章', title: '性與界線' },
+      { id: 'ch16', label: '第16章', title: '總結' },
+      { id: 'ch17', label: '第17章', title: '結語' },
     ],
   },
   {
     id: 'book2',
     title: '情感健康的門徒',
-    subtitle: '重點整理',
+    subtitle: '史葛荷 著',
     emoji: '📗',
     accentHex: '#e11d48',
-    bgLight: 'bg-rose-50',
-    textAccent: 'text-rose-700',
-    hoverText: 'hover:text-rose-600',
     chapters: [
-      { id: 'ch1', label: '第 1 章：情感不健康門徒的症狀',     icon: Activity, part: '情感健康的門徒' },
-      { id: 'ch2', label: '第 2 章：認識自己好認識神',         icon: Heart,    part: '情感健康的門徒' },
-      { id: 'ch3', label: '第 3 章：往回看以便向前行',         icon: Compass,  part: '情感健康的門徒' },
-      { id: 'ch4', label: '第 4 章：穿越這堵牆',               icon: Shield,   part: '情感健康的門徒' },
-      { id: 'ch5', label: '第 5 章：藉悲傷與失落擴張靈魂',     icon: Map,      part: '情感健康的門徒' },
-      { id: 'ch6', label: '第 6 章：發現每日日課與安息日的節奏', icon: Users,  part: '情感健康的門徒' },
-      { id: 'ch7', label: '第 7 章：成長為情感成熟的大人',     icon: Sun,      part: '情感健康的門徒' },
-      { id: 'ch8', label: '第 8 章：發展出生活法則',           icon: Star,     part: '情感健康的門徒' },
+      { id: 'ch1', label: '第1章', title: '隱藏在冰山下的問題' },
+      { id: 'ch2', label: '第2章', title: '察覺你的感受，做真實的自己' },
+      { id: 'ch3', label: '第3章', title: '回到過去以擁抱上帝更大的未來' },
+      { id: 'ch4', label: '第4章', title: '在失落與破碎中與主相遇' },
+      { id: 'ch5', label: '第5章', title: '使你的愛有所節制' },
+      { id: 'ch6', label: '第6章', title: '正確地發展悲傷和失落' },
+      { id: 'ch7', label: '第7章', title: '擴大你的生命去愛那些與你不同的人' },
+      { id: 'ch8', label: '第8章', title: '帶領其他人進入情感健康的門徒生命' },
     ],
   },
   {
     id: 'book3',
     title: '向保羅學宣教',
-    subtitle: '回歸聖經的宣教學－王乃純',
+    subtitle: '王乃純 著',
     emoji: '📙',
     accentHex: '#4338ca',
-    bgLight: 'bg-indigo-50',
-    textAccent: 'text-indigo-700',
-    hoverText: 'hover:text-indigo-600',
     chapters: [
-      { id: 'ch1', label: '緒論',                                   page: 'p13',  icon: BookOpen, part: '向保羅學宣教' },
-      { id: 'ch2', label: '第一章：成長於兩個世界的保羅',           page: 'p25',  icon: Compass,  part: '向保羅學宣教' },
-      { id: 'ch3', label: '第二章：宣教者保羅',                     page: 'p71',  icon: Map,      part: '向保羅學宣教' },
-      { id: 'ch4', label: '第三章：牧者保羅',                       page: 'p132', icon: Shield,   part: '向保羅學宣教' },
-      { id: 'ch5', label: '第四章：保羅的典範與啟示',               page: 'p156', icon: Users,    part: '向保羅學宣教' },
-      { id: 'ch6', label: '第五章：宣教實踐者與導師',               page: 'p185', icon: Sun,      part: '向保羅學宣教' },
-      { id: 'ch7', label: '附錄：保羅宣教於台灣拿撒勒人會之應用',  page: 'p191', icon: Star,     part: '向保羅學宣教' },
-      { id: 'ch8', label: '參考書目',                               page: 'p198', icon: BookOpen, part: '向保羅學宣教' },
+      { id: 'ch1', label: '第1章', title: '保羅的呼召與預備' },
+      { id: 'ch2', label: '第2章', title: '保羅的宣教策略' },
+      { id: 'ch3', label: '第3章', title: '保羅的宣教團隊' },
+      { id: 'ch4', label: '第4章', title: '保羅的宣教神學' },
+      { id: 'ch5', label: '第5章', title: '保羅的宣教苦難' },
+      { id: 'ch6', label: '第6章', title: '保羅的宣教方法' },
+      { id: 'ch7', label: '第7章', title: '保羅的宣教果效' },
+      { id: 'ch8', label: '第8章', title: '保羅的宣教遺產' },
     ],
   },
   {
     id: 'book4',
     title: '成為有感染力的基督徒',
-    subtitle: 'Bill Hybels & Mark Mittelberg 著',
+    subtitle: '海波斯、米道藍 著',
     emoji: '📕',
-    accentHex: '#d97706',
-    bgLight: 'bg-amber-50',
-    textAccent: 'text-amber-700',
-    hoverText: 'hover:text-amber-600',
+    accentHex: '#dc2626',
     chapters: [
-      { id: 'ch1',  label: '1. 神看重人',                               page: 'p7',   icon: Heart,           part: 'Part 1：為何要成為有感染力的基督徒？' },
-      { id: 'ch2',  label: '2. 有感染力之基督徒的報酬',                 page: 'p25',  icon: Star,            part: 'Part 1：為何要成為有感染力的基督徒？' },
-      { id: 'ch3',  label: '3. 影響世界的公式',                         page: 'p43',  icon: TrendingUp,      part: 'Part 1：為何要成為有感染力的基督徒？' },
-      { id: 'ch4',  label: '4. 真實的吸引力',                           page: 'p59',  icon: Sun,             part: 'Part 2：活出基督徒特質' },
-      { id: 'ch5',  label: '5. 愛心的牽引力',                           page: 'p75',  icon: HeartHandshake,  part: 'Part 2：活出基督徒特質' },
-      { id: 'ch6',  label: '6. 犧牲的力量',                             page: 'p93',  icon: Shield,          part: 'Part 2：活出基督徒特質' },
-      { id: 'ch7',  label: '7. 人際關係中的機會',                       page: 'p111', icon: Users,           part: 'Part 3：靠近人' },
-      { id: 'ch8',  label: '8. 跟未信者交往',                           page: 'p123', icon: Compass,         part: 'Part 3：靠近人' },
-      { id: 'ch9',  label: '9. 找到合適自己的方法',                     page: 'p139', icon: Map,             part: 'Part 3：靠近人' },
-      { id: 'ch10', label: '10. 開啟屬靈談話',                          page: 'p157', icon: Activity,        part: 'Part 4：清楚傳達' },
-      { id: 'ch11', label: '11. 把福音信息講清楚',                      page: 'p175', icon: BookOpen,        part: 'Part 4：清楚傳達' },
-      { id: 'ch12', label: '12. 拆毀阻斷信仰的障礙',                   page: 'p195', icon: ShieldAlert,     part: 'Part 4：清楚傳達' },
-      { id: 'ch13', label: '13. 跨越信心之線',                          page: 'p215', icon: Footprints,      part: 'Part 5：報酬：最大影響' },
-      { id: 'ch14', label: '14. 有感染力的基督徒和具感染力的教會',       page: 'p233', icon: Home,            part: 'Part 5：報酬：最大影響' },
-      { id: 'ch15', label: '15. 把生命投資在人身上',                    page: 'p249', icon: User,            part: 'Part 5：報酬：最大影響' },
-      { id: 'ch16', label: '附錄：訓練課程',                            page: 'p263', icon: Briefcase,       part: '附錄' },
+      { id: 'ch1', label: '第1章', title: '為何要成為有感染力的基督徒（一）' },
+      { id: 'ch2', label: '第2章', title: '為何要成為有感染力的基督徒（二）' },
+      { id: 'ch3', label: '第3章', title: '為何要成為有感染力的基督徒（三）' },
+      { id: 'ch4', label: '第4章', title: '活出基督徒特質（一）' },
+      { id: 'ch5', label: '第5章', title: '活出基督徒特質（二）' },
+      { id: 'ch6', label: '第6章', title: '活出基督徒特質（三）' },
+      { id: 'ch7', label: '第7章', title: '靠近人（一）' },
+      { id: 'ch8', label: '第8章', title: '靠近人（二）' },
+      { id: 'ch9', label: '第9章', title: '靠近人（三）' },
+      { id: 'ch10', label: '第10章', title: '清楚傳達（一）' },
+      { id: 'ch11', label: '第11章', title: '清楚傳達（二）' },
+      { id: 'ch12', label: '第12章', title: '清楚傳達（三）' },
+      { id: 'ch13', label: '第13章', title: '最大影響（一）' },
+      { id: 'ch14', label: '第14章', title: '最大影響（二）' },
+      { id: 'ch15', label: '第15章', title: '最大影響（三）' },
     ],
   },
   {
     id: 'book5',
     title: '如何活出基督的樣式',
-    subtitle: '歐凱莉（Kay Arthur）著',
-    emoji: '📗',
-    accentHex: '#059669',
-    bgLight: 'bg-emerald-50',
-    textAccent: 'text-emerald-700',
-    hoverText: 'hover:text-emerald-600',
+    subtitle: '陶恕 著',
+    emoji: '📔',
+    accentHex: '#ea580c',
     chapters: [
-      { id: 'ch1', label: '第一周', icon: BookOpen, part: '如何活出基督的樣式' },
-      { id: 'ch2', label: '第二周', icon: Heart,    part: '如何活出基督的樣式' },
-      { id: 'ch3', label: '第三周', icon: Compass,  part: '如何活出基督的樣式' },
-      { id: 'ch4', label: '第四周', icon: Shield,   part: '如何活出基督的樣式' },
-      { id: 'ch5', label: '第五周', icon: Sun,      part: '如何活出基督的樣式' },
-      { id: 'ch6', label: '第六周', icon: Star,     part: '如何活出基督的樣式' },
+      { id: 'week1', label: '第1週', title: '謙卑' },
+      { id: 'week2', label: '第2週', title: '柔和' },
+      { id: 'week3', label: '第3週', title: '合一' },
+      { id: 'week4', label: '第4週', title: '愛心' },
+      { id: 'week5', label: '第5週', title: '聖潔' },
+      { id: 'week6', label: '第6週', title: '信心' },
     ],
   },
   {
     id: 'book6',
-    title: '列王紀上—上帝的啟示在人間',
-    subtitle: '吳獻章 著｜門訓生命讀經系列',
-    emoji: '📕',
-    accentHex: '#b45309',
-    bgLight: 'bg-amber-50',
-    textAccent: 'text-amber-700',
-    hoverText: 'hover:text-amber-600',
+    title: '列王紀上——上帝的啟示在人間',
+    subtitle: '聖經註釋',
+    emoji: '📖',
+    accentHex: '#059669',
     chapters: [
-      { id: 'ch1', label: '第 1 站：《列王紀》總論',           page: 'p.11',  icon: BookOpen,       part: '列王紀上—上帝的啟示在人間' },
-      { id: 'ch2', label: '第 2 站：聯合王國（一）所羅門登基', page: 'p.45',  icon: Star,           part: '列王紀上—上帝的啟示在人間' },
-      { id: 'ch3', label: '第 3 站：聯合王國（二）所羅門建聖殿', page: 'p.81', icon: Home,           part: '列王紀上—上帝的啟示在人間' },
-      { id: 'ch4', label: '第 4 站：聯合王國的分裂',           page: 'p.119', icon: ShieldAlert,    part: '列王紀上—上帝的啟示在人間' },
-      { id: 'ch5', label: '第 5 站：遵行神旨意的先知',         page: 'p.157', icon: Compass,        part: '列王紀上—上帝的啟示在人間' },
-      { id: 'ch6', label: '第 6 站：先知與君王的抗衡',         page: 'p.197', icon: Shield,         part: '列王紀上—上帝的啟示在人間' },
-      { id: 'ch7', label: '第 7 站：學者論述',                 page: 'p.233', icon: Map,            part: '列王紀上—上帝的啟示在人間' },
-      { id: 'ch8', label: '靈修默想／共讀討論指引',             page: 'p.242', icon: Heart,          part: '列王紀上—上帝的啟示在人間' },
+      { id: 'ch1', label: '第1章', title: '大衛的晚年與所羅門登基' },
+      { id: 'ch2', label: '第2章', title: '所羅門鞏固王位' },
+      { id: 'ch3', label: '第3章', title: '所羅門求智慧' },
+      { id: 'ch4', label: '第4章', title: '所羅門的智慧與繁榮' },
+      { id: 'ch5', label: '第5章', title: '建造聖殿的預備' },
+      { id: 'ch6', label: '第6章', title: '建造聖殿' },
+      { id: 'ch7', label: '第7章', title: '所羅門的宮殿與聖殿器具' },
+      { id: 'ch8', label: '第8章', title: '獻殿禮與所羅門的禱告' },
     ],
   },
   {
-    id: "book7",
-    title: "基要陪讀課程",
-    subtitle: "教會陪讀教材",
-    emoji: "📗",
-    accentHex: "#0d9488",
-    bgLight: "bg-teal-50",
-    textAccent: "text-teal-700",
-    hoverText: "hover:text-teal-600",
+    id: 'book7',
+    title: '以斯拉記——重建聖殿與靈性復興',
+    subtitle: '聖經註釋',
+    emoji: '📜',
+    accentHex: '#7c3aed',
     chapters: [
-      { id: "ch1", label: "第一課：上帝的祝福",           page: "",  icon: Gift,           part: "基要陪讀課程" },
-      { id: "ch2", label: "第二課：祝福去哪了？",         page: "",  icon: AlertTriangle,  part: "基要陪讀課程" },
-      { id: "ch3", label: "第三課：祝福在耶穌裡",         page: "",  icon: Heart,          part: "基要陪讀課程" },
-      { id: "ch4", label: "第四課：擁抱祝福",             page: "",  icon: Star,           part: "基要陪讀課程" },
-      { id: "ch5", label: "補充經文及反對問題回應",       page: "",  icon: Shield,         part: "附錄" },
-      { id: "ch6", label: "陪讀課程使用守則",             page: "",  icon: BookOpen,       part: "附錄" },
+      { id: 'ch1', label: '第1章', title: '古列王下詔重建聖殿' },
+      { id: 'ch2', label: '第2章', title: '歸回者的名單' },
+      { id: 'ch3', label: '第3章', title: '重建祭壇與立殿根基' },
+      { id: 'ch4', label: '第4章', title: '敵人阻擋重建工程' },
+      { id: 'ch5', label: '第5章', title: '重新開始建造聖殿' },
+      { id: 'ch6', label: '第6章', title: '完成並獻上聖殿' },
+      { id: 'ch7', label: '第7章', title: '以斯拉來到耶路撒冷' },
+      { id: 'ch8', label: '第8章', title: '與以斯拉同來的人' },
+      { id: 'ch9', label: '第9章', title: '以斯拉為百姓的罪禱告' },
+      { id: 'ch10', label: '第10章', title: '百姓的認罪與悔改' },
     ],
   },
   {
-    id: "book8",
-    title: "靈性關懷與身心健康",
-    subtitle: "戴文峻牧師｜時兆趨勢學苑 第4.0版",
-    emoji: "📘",
-    accentHex: "#6366f1",
-    bgLight: "bg-indigo-50",
-    textAccent: "text-indigo-700",
-    hoverText: "hover:text-indigo-600",
+    id: 'book8',
+    title: '屬靈操練禮讚',
+    subtitle: '傅士德 著',
+    emoji: '🙏',
+    accentHex: '#0891b2',
     chapters: [
-      { id: "ch1",  label: "第一單元：靈性平安與靈性困擾",     page: "",  icon: Heart,    part: "靈性平安的五個面向" },
-      { id: "ch2",  label: "第二單元：生命的意義和價值",       page: "",  icon: Star,     part: "靈性平安的五個面向" },
-      { id: "ch3",  label: "第三單元：愛與被愛",               page: "",  icon: Heart,    part: "靈性平安的五個面向" },
-      { id: "ch4",  label: "第四單元：寬恕與被寬恕",           page: "",  icon: Shield,   part: "靈性平安的五個面向" },
-      { id: "ch5",  label: "第五單元：希望與失望",             page: "",  icon: Sun,      part: "靈性平安的五個面向" },
-      { id: "ch6",  label: "第六單元：與至高者建立關係",       page: "",  icon: Compass,  part: "靈性平安的五個面向" },
-      { id: "ch7",  label: "第七單元：確認問題",               page: "",  icon: Map,      part: "促進靈性平安" },
-      { id: "ch8",  label: "第八單元：探索問題",               page: "",  icon: Compass,  part: "促進靈性平安" },
-      { id: "ch9",  label: "第九單元：解決問題",               page: "",  icon: Target,   part: "促進靈性平安" },
-      { id: "ch10", label: "第十單元：安寧緩和治療 vs. 病人自主權利", page: "", icon: Shield, part: "實務應用" },
-      { id: "ch11", label: "第十一單元：長照體系與身心健康促進", page: "",  icon: Home,     part: "實務應用" },
-      { id: "ch12", label: "第十二單元：靈性平安與四道人生",   page: "",  icon: Heart,    part: "實務應用" },
+      { id: 'ch1', label: '第1章', title: '屬靈操練的門' },
+      { id: 'ch2', label: '第2章', title: '默想的操練' },
+      { id: 'ch3', label: '第3章', title: '禱告的操練' },
+      { id: 'ch4', label: '第4章', title: '禁食的操練' },
+      { id: 'ch5', label: '第5章', title: '研究的操練' },
+      { id: 'ch6', label: '第6章', title: '簡樸的操練' },
+      { id: 'ch7', label: '第7章', title: '獨處的操練' },
+      { id: 'ch8', label: '第8章', title: '順服的操練' },
+      { id: 'ch9', label: '第9章', title: '服事的操練' },
+      { id: 'ch10', label: '第10章', title: '認罪的操練' },
+      { id: 'ch11', label: '第11章', title: '敬拜的操練' },
+      { id: 'ch12', label: '第12章', title: '引導的操練' },
     ],
   },
   {
-    id: "book9",
-    title: "三層天禱告",
-    subtitle: "會幕式禱告手冊",
-    emoji: "🙏",
-    accentHex: "#7c3aed",
-    bgLight: "bg-violet-50",
-    textAccent: "text-violet-700",
-    hoverText: "hover:text-violet-600",
+    id: 'book9',
+    title: '三層天禱告',
+    subtitle: '會幕式禱告手冊',
+    emoji: '🙏',
+    accentHex: '#7c3aed',
     chapters: [
-      { id: "intro", label: "前言與會幕架構", page: "", icon: BookOpen, part: "前言" },
-      { id: "ch1", label: "第三層天禱告", page: "", icon: Sparkles, part: "第一篇" },
-      { id: "ch2", label: "第二層天禱告", page: "", icon: Shield, part: "第二篇" },
-      { id: "ch3", label: "第一層天禱告", page: "", icon: Heart, part: "第三篇" },
-      { id: "ch4", label: "為產業禱告", page: "", icon: Gift, part: "第四篇" },
-      { id: "ch5", label: "破除迦南七族", page: "", icon: Target, part: "第五篇" },
-      { id: "ch6", label: "話禱範例", page: "", icon: MessageCircle, part: "第六篇" },
+      { id: 'intro', label: '前言', title: '會幕禱告架構' },
+      { id: 'ch1', label: '第1篇', title: '第三層天禱告' },
+      { id: 'ch2', label: '第2篇', title: '第二層天禱告' },
+      { id: 'ch3', label: '第3篇', title: '第一層天禱告' },
+      { id: 'ch4', label: '第4篇', title: '為產業禱告' },
+      { id: 'ch5', label: '第5篇', title: '破除迦南七族' },
+      { id: 'ch6', label: '第6篇', title: '話禱的範例' },
     ],
   },
   {
-    id: "book10",
-    title: "禱告的盾牌",
-    subtitle: "彼得·魏格納 著",
-    emoji: "🛡️",
-    accentHex: "#9333ea",
-    bgLight: "bg-purple-50",
-    textAccent: "text-purple-700",
-    hoverText: "hover:text-purple-600",
+    id: 'book10',
+    title: '禱告的盾牌',
+    subtitle: '彼得·魏格納 著',
+    emoji: '🛡️',
+    accentHex: '#9333ea',
     chapters: [
-      { id: "ch1", label: "1. 建立個人代禱同工所產生的能力", page: "", icon: Shield, part: "禱告的盾牌" },
-      { id: "ch2", label: "2. 代禱者", page: "", icon: Users, part: "禱告的盾牌" },
-      { id: "ch3", label: "3. 為什麼牧師需要我們代禱", page: "", icon: Heart, part: "禱告的盾牌" },
-      { id: "ch4", label: "4. 牧師禱告生活的祕訣", page: "", icon: Star, part: "禱告的盾牌" },
-      { id: "ch5", label: "5. 接受個人性的代禱", page: "", icon: HeartHandshake, part: "禱告的盾牌" },
-      { id: "ch6", label: "6. 三種類型的代求者", page: "", icon: Users, part: "禱告的盾牌" },
-      { id: "ch7", label: "7. 呼召代禱同工", page: "", icon: Compass, part: "禱告的盾牌" },
-      { id: "ch8", label: "8. 個人代禱者的輪廓特徵", page: "", icon: User, part: "禱告的盾牌" },
-      { id: "ch9", label: "9. 保養顧惜你的代禱者", page: "", icon: Sun, part: "禱告的盾牌" },
+      { id: 'ch1', label: '第1章', title: '建立個人代禱同工所產生的能力' },
+      { id: 'ch2', label: '第2章', title: '代禱者' },
+      { id: 'ch3', label: '第3章', title: '為什麼牧師需要我們代禱' },
+      { id: 'ch4', label: '第4章', title: '牧師禱告生活的祕訣' },
+      { id: 'ch5', label: '第5章', title: '接受個人性的代禱' },
+      { id: 'ch6', label: '第6章', title: '三種類型的代求者' },
+      { id: 'ch7', label: '第7章', title: '呼召代禱同工' },
+      { id: 'ch8', label: '第8章', title: '個人代禱者的輪廓特徵' },
+      { id: 'ch9', label: '第9章', title: '保養顧惜你的代禱者' },
     ],
   },
 ];
-// 在 import 區加入
-import Book10 from './components/Book10';
 
-// 在 BOOKS 陣列加入
-const BOOKS = [
-  { id: 'book1', title: '立界線得自由', emoji: '📘', color: 'teal' },
-  // ... 其他書本
-  { id: 'book10', title: '禱告的盾牌', emoji: '🛡️', color: 'purple' },
-];
-
-// 在 renderBook 函式加入
-function renderBook(bookId: string) {
-  // ...
-  if (bookId === 'book10') return <Book10 />;
-  // ...
-}
-
+// ==================== RENDER FUNCTIONS ====================
 function renderBook1(ch: string) {
   switch (ch) {
     case 'ch1': return <SectionHome />;
@@ -369,31 +325,33 @@ function renderBook1(ch: string) {
     case 'ch4': return <SectionDevelopment />;
     case 'ch5': return <SectionLaws />;
     case 'ch6': return <SectionMyths />;
-    case 'ch7': return <SectionCh7 />;
-    case 'ch8': return <SectionCh8 />;
-    case 'ch9': return <SectionCh9 />;
-    case 'ch10': return <SectionCh10 />;
-    case 'ch11': return <SectionCh11 />;
-    case 'ch12': return <SectionCh12 />;
-    case 'ch13': return <SectionCh13 />;
-    case 'ch14': return <SectionCh14 />;
-    case 'ch15': return <SectionCh15 />;
-    case 'ch16': return <SectionCh16 />;
-    default:     return <SectionCh17 />;
+    case 'ch7': return <SectionFamily />;
+    case 'ch8': return <SectionWork />;
+    case 'ch9': return <SectionSelf />;
+    case 'ch10': return <SectionKids />;
+    case 'ch11': return <SectionBoundaries />;
+    case 'ch12': return <SectionResistance />;
+    case 'ch13': return <SectionSuccess />;
+    case 'ch14': return <SectionDigital />;
+    case 'ch15': return <SectionFood />;
+    case 'ch16': return <SectionSexuality />;
+    default: return <SectionClosing />;
   }
 }
-function renderBook2(ch: string, expandAll?: boolean) {
+
+function renderBook2(ch: string, expandAll: boolean) {
   switch (ch) {
-    case 'ch1': return <Emo1 expandAll={expandAll} />;
-    case 'ch2': return <Emo2 expandAll={expandAll} />;
-    case 'ch3': return <Emo3 expandAll={expandAll} />;
-    case 'ch4': return <Emo4 expandAll={expandAll} />;
-    case 'ch5': return <Emo5 expandAll={expandAll} />;
-    case 'ch6': return <Emo6 expandAll={expandAll} />;
-    case 'ch7': return <Emo7 expandAll={expandAll} />;
-    default:    return <Emo8 expandAll={expandAll} />;
+    case 'ch1': return <Chapter1 expandAll={expandAll} />;
+    case 'ch2': return <Chapter2 expandAll={expandAll} />;
+    case 'ch3': return <Chapter3 expandAll={expandAll} />;
+    case 'ch4': return <Chapter4 expandAll={expandAll} />;
+    case 'ch5': return <Chapter5 expandAll={expandAll} />;
+    case 'ch6': return <Chapter6 expandAll={expandAll} />;
+    case 'ch7': return <Chapter7 expandAll={expandAll} />;
+    default: return <Chapter8 expandAll={expandAll} />;
   }
 }
+
 function renderBook3(ch: string) {
   switch (ch) {
     case 'ch1': return <Paul1 />;
@@ -403,395 +361,143 @@ function renderBook3(ch: string) {
     case 'ch5': return <Paul5 />;
     case 'ch6': return <Paul6 />;
     case 'ch7': return <Paul7 />;
-    default:    return <Paul8 />;
+    default: return <Paul8 />;
   }
 }
-function renderBook4(ch: string, expandAll?: boolean) {
+
+function renderBook4(ch: string, expandAll: boolean) {
   switch (ch) {
-    case 'ch1': return <Cont1 expandAll={expandAll} />;
-    case 'ch2': return <Cont2 expandAll={expandAll} />;
-    case 'ch3': return <Cont3 expandAll={expandAll} />;
-    case 'ch4': return <Cont4 expandAll={expandAll} />;
-    case 'ch5': return <Cont5 expandAll={expandAll} />;
-    case 'ch6': return <Cont6 expandAll={expandAll} />;
-    case 'ch7': return <Cont7 expandAll={expandAll} />;
-    case 'ch8': return <Cont8 expandAll={expandAll} />;
-    case 'ch9': return <Cont9 expandAll={expandAll} />;
-    case 'ch10': return <Cont10 expandAll={expandAll} />;
-    case 'ch11': return <Cont11 expandAll={expandAll} />;
-    case 'ch12': return <Cont12 expandAll={expandAll} />;
-    case 'ch13': return <Cont13 expandAll={expandAll} />;
-    case 'ch14': return <Cont14 expandAll={expandAll} />;
-    case 'ch15': return <Cont15 expandAll={expandAll} />;
-    default:    return <Cont16 expandAll={expandAll} />;
+    case 'ch1': return <Inf1 expandAll={expandAll} />;
+    case 'ch2': return <Inf2 expandAll={expandAll} />;
+    case 'ch3': return <Inf3 expandAll={expandAll} />;
+    case 'ch4': return <Inf4 expandAll={expandAll} />;
+    case 'ch5': return <Inf5 expandAll={expandAll} />;
+    case 'ch6': return <Inf6 expandAll={expandAll} />;
+    case 'ch7': return <Inf7 expandAll={expandAll} />;
+    case 'ch8': return <Inf8 expandAll={expandAll} />;
+    case 'ch9': return <Inf9 expandAll={expandAll} />;
+    case 'ch10': return <Inf10 expandAll={expandAll} />;
+    case 'ch11': return <Inf11 expandAll={expandAll} />;
+    case 'ch12': return <Inf12 expandAll={expandAll} />;
+    case 'ch13': return <Inf13 expandAll={expandAll} />;
+    case 'ch14': return <Inf14 expandAll={expandAll} />;
+    default: return <Inf15 expandAll={expandAll} />;
   }
 }
+
 function renderBook5(ch: string) {
   switch (ch) {
-    case 'ch1': return <Walk1 />;
-    case 'ch2': return <Walk2 />;
-    case 'ch3': return <Walk3 />;
-    case 'ch4': return <Walk4 />;
-    case 'ch5': return <Walk5 />;
-    default:    return <Walk6 />;
+    case 'week1': return <Christ1 />;
+    case 'week2': return <Christ2 />;
+    case 'week3': return <Christ3 />;
+    case 'week4': return <Christ4 />;
+    case 'week5': return <Christ5 />;
+    default: return <Christ6 />;
   }
 }
+
 function renderBook6(ch: string) {
   switch (ch) {
-    case 'ch1': return <King1 />;
-    case 'ch2': return <King2 />;
-    case 'ch3': return <King3 />;
-    case 'ch4': return <King4 />;
-    case 'ch5': return <King5 />;
-    case 'ch6': return <King6 />;
-    case 'ch7': return <King7 />;
-    default:    return <King8 />;
+    case 'ch1': return <Kings1 />;
+    case 'ch2': return <Kings2 />;
+    case 'ch3': return <Kings3 />;
+    case 'ch4': return <Kings4 />;
+    case 'ch5': return <Kings5 />;
+    case 'ch6': return <Kings6 />;
+    case 'ch7': return <Kings7 />;
+    default: return <Kings8 />;
   }
 }
 
 function renderBook7(ch: string) {
   switch (ch) {
-    case "ch1": return <Disc1 />;
-    case "ch2": return <Disc2 />;
-    case "ch3": return <Disc3 />;
-    case "ch4": return <Disc4 />;
-    case "ch5": return <Disc5 />;
-    default:    return <Disc6 />;
+    case 'ch1': return <Ezra1 />;
+    case 'ch2': return <Ezra2 />;
+    case 'ch3': return <Ezra3 />;
+    case 'ch4': return <Ezra4 />;
+    case 'ch5': return <Ezra5 />;
+    case 'ch6': return <Ezra6 />;
+    case 'ch7': return <Ezra7 />;
+    case 'ch8': return <Ezra8 />;
+    case 'ch9': return <Ezra9 />;
+    default: return <Ezra10 />;
   }
 }
 
 function renderBook8(ch: string) {
   switch (ch) {
-    case "ch1": return <Spir1 />;
-    case "ch2": return <Spir2 />;
-    case "ch3": return <Spir3 />;
-    case "ch4": return <Spir4 />;
-    case "ch5": return <Spir5 />;
-    case "ch6": return <Spir6 />;
-    case "ch7": return <Spir7 />;
-    case "ch8": return <Spir8 />;
-    case "ch9": return <Spir9 />;
-    case "ch10": return <Spir10 />;
-    case "ch11": return <Spir11 />;
-    default:    return <Spir12 />;
+    case 'ch1': return <Spir1 />;
+    case 'ch2': return <Spir2 />;
+    case 'ch3': return <Spir3 />;
+    case 'ch4': return <Spir4 />;
+    case 'ch5': return <Spir5 />;
+    case 'ch6': return <Spir6 />;
+    case 'ch7': return <Spir7 />;
+    case 'ch8': return <Spir8 />;
+    case 'ch9': return <Spir9 />;
+    case 'ch10': return <Spir10 />;
+    case 'ch11': return <Spir11 />;
+    default: return <Spir12 />;
   }
 }
 
-function renderBook9(ch: string, expandAll?: boolean) {
+function renderBook9(ch: string, expandAll: boolean) {
   switch (ch) {
-    case "intro": return <Prayer_Intro />;
-    case "ch1": return <Prayer_Ch1 />;
-    case "ch2": return <Prayer_Ch2 />;
-    case "ch3": return <Prayer_Ch3 />;
-    case "ch4": return <Prayer_Ch4 />;
-    case "ch5": return <Prayer_Ch5 />;
-    default:    return <Prayer_Ch6 />;
+    case 'intro': return <Prayer_Intro />;
+    case 'ch1': return <Prayer_Ch1 />;
+    case 'ch2': return <Prayer_Ch2 />;
+    case 'ch3': return <Prayer_Ch3 />;
+    case 'ch4': return <Prayer_Ch4 />;
+    case 'ch5': return <Prayer_Ch5 />;
+    default: return <Prayer_Ch6 />;
   }
 }
 
-function renderBook10(ch: string, expandAll?: boolean) {
+function renderBook10(ch: string) {
   switch (ch) {
-    case "ch1": return <Shield1 />;
-    case "ch2": return <Shield2 />;
-    case "ch3": return <Shield3 />;
-    case "ch4": return <Shield4 />;
-    case "ch5": return <Shield5 />;
-    case "ch6": return <Shield6 />;
-    case "ch7": return <Shield7 />;
-    case "ch8": return <Shield8 />;
-    default:    return <Shield9 />;
+    case 'ch1': return <Shield_Ch1 />;
+    case 'ch2': return <Shield_Ch2 />;
+    case 'ch3': return <Shield_Ch3 />;
+    case 'ch4': return <Shield_Ch4 />;
+    case 'ch5': return <Shield_Ch5 />;
+    case 'ch6': return <Shield_Ch6 />;
+    case 'ch7': return <Shield_Ch7 />;
+    case 'ch8': return <Shield_Ch8 />;
+    default: return <Shield_Ch9 />;
   }
 }
 
-
+// ==================== MAIN APP ====================
 export default function App() {
-  // 讀取 URL 參數 ?book=book1 直接開對應書本
-  const params = new URLSearchParams(window.location.search);
-  const initBook = params.get('book');
-
-  const [selectedBook, setSelectedBook] = useState<string | null>(
-    BOOKS.find(b => b.id === initBook) ? initBook : null
-  );
-  const [activeChapter, setActiveChapter] = useState('ch1');
+  const [selectedBook, setSelectedBook] = useState<string | null>(null);
+  const [activeChapter, setActiveChapter] = useState<string>('ch1');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [expandAll, setExpandAll] = useState(false);
-  // 字型縮放 (0=最小, 1=小, 2=標準, 3=大, 4=特大)
-  const [fontZoomLevel, setFontZoomLevel] = useState<number>(() => {
-    const saved = localStorage.getItem('bookFontZoomLevel');
-    return saved ? parseInt(saved) : 2;
-  });
-  const FONT_ZOOM_VALUES = [0.85, 1.0, 1.15, 1.30, 1.50];
-  const FONT_ZOOM_LABELS = ['最小', '小', '標準', '大', '特大'];
-  const currentZoom = FONT_ZOOM_VALUES[fontZoomLevel] ?? 1.0;
 
+  // URL parameter handling
   useEffect(() => {
-    localStorage.setItem('bookFontZoomLevel', String(fontZoomLevel));
-  }, [fontZoomLevel]);
-
-  // ===== 朗讀功能 =====
-  const [ttsState, setTtsState] = useState<'idle' | 'playing' | 'paused'>('idle');
-  const [ttsRate, setTtsRate] = useState<number>(() => {
-    const saved = localStorage.getItem('bookTtsRate');
-    return saved ? parseFloat(saved) : 1.0;
-  });
-  const [showSpeedMenu, setShowSpeedMenu] = useState(false);
-  const ttsRateRef = useRef(ttsRate);
-  useEffect(() => {
-    ttsRateRef.current = ttsRate;
-    localStorage.setItem('bookTtsRate', String(ttsRate));
-  }, [ttsRate]);
-
-  // 朗讀完結時清理狀態
-  useEffect(() => {
-    return () => {
-      if (typeof window !== 'undefined' && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
+    const params = new URLSearchParams(window.location.search);
+    const bookParam = params.get('book');
+    if (bookParam && BOOKS.find(b => b.id === bookParam)) {
+      setSelectedBook(bookParam);
+      if (bookParam === 'book9') {
+        setActiveChapter('intro');
+      } else {
+        setActiveChapter('ch1');
       }
-    };
-  }, []);
-
-  // 章節切換時停止朗讀
-  useEffect(() => {
-    if (typeof window !== 'undefined' && window.speechSynthesis) {
-      window.speechSynthesis.cancel();
-      setTtsState('idle');
-    }
-  }, [activeChapter, selectedBook]);
-
-  // 抓取目前章節的純文字
-  const extractReadableText = (): string => {
-    const wrapper = document.getElementById('book-content-wrapper');
-    if (!wrapper) return '';
-    const clone = wrapper.cloneNode(true) as HTMLElement;
-    // 移除按鈕、iframe、scripts
-    clone.querySelectorAll('button, iframe, script, style, svg').forEach(el => el.remove());
-    // 抓取文字，並用換行分隔段落
-    let text = clone.innerText || clone.textContent || '';
-    // 清理多餘空白，但保留段落分隔
-    text = text.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+/g, ' ').trim();
-    return text;
-  };
-
-  // 開始朗讀：先展開全部再朗讀
-  const startReading = () => {
-    if (typeof window === 'undefined' || !window.speechSynthesis) {
-      alert('您的瀏覽器不支援朗讀功能');
-      return;
-    }
-    // 先自動展開所有區塊
-    clickAllToggles('expand');
-    // 等待展開動畫完成後再開始朗讀
-    setTimeout(() => {
-      const text = extractReadableText();
-      if (!text) {
-        alert('沒有可朗讀的內容');
-        return;
-      }
-      window.speechSynthesis.cancel();
-      // 將文字切成較短的段落，避免某些瀏覽器限制長度
-      const chunks = text.match(/[^。！？\n]{1,150}[。！？\n]?/g) || [text];
-      let currentIndex = 0;
-
-      const speakNext = () => {
-        if (currentIndex >= chunks.length) {
-          setTtsState('idle');
-          return;
-        }
-        const utterance = new SpeechSynthesisUtterance(chunks[currentIndex]);
-        utterance.lang = 'zh-TW';
-        utterance.rate = ttsRateRef.current;
-        utterance.pitch = 1.0;
-        utterance.onend = () => {
-          currentIndex++;
-          if (window.speechSynthesis.speaking || window.speechSynthesis.paused) {
-            // 繼續下一段
-            speakNext();
-          } else if (currentIndex < chunks.length) {
-            speakNext();
-          } else {
-            setTtsState('idle');
-          }
-        };
-        utterance.onerror = (e) => {
-          if (e.error !== 'interrupted' && e.error !== 'canceled') {
-            console.error('TTS error:', e);
-            setTtsState('idle');
-          }
-        };
-        window.speechSynthesis.speak(utterance);
-      };
-
-      setTtsState('playing');
-      speakNext();
-    }, 700);
-  };
-
-  const pauseReading = () => {
-    if (window.speechSynthesis) {
-      window.speechSynthesis.pause();
-      setTtsState('paused');
-    }
-  };
-
-  const resumeReading = () => {
-    if (window.speechSynthesis) {
-      window.speechSynthesis.resume();
-      setTtsState('playing');
-    }
-  };
-
-  const stopReading = () => {
-    if (window.speechSynthesis) {
-      window.speechSynthesis.cancel();
-      setTtsState('idle');
-    }
-  };
-
-  // 點擊所有可展開/摺疊的區塊（direction: 'expand' 或 'collapse'）
-  const clickAllToggles = (direction: 'expand' | 'collapse') => {
-    const wrapper = document.getElementById('book-content-wrapper');
-    if (!wrapper) return 0;
-
-    // 展開時找向下的 chevron；摺疊時找向上的 chevron
-    const selector = direction === 'expand' ? 'svg.lucide-chevron-down' : 'svg.lucide-chevron-up';
-    const chevrons = wrapper.querySelectorAll(selector);
-    const clicked = new Set<HTMLElement>();
-
-    chevrons.forEach(chevron => {
-      let el: HTMLElement | null = chevron as HTMLElement;
-      while (el && el !== wrapper) {
-        if (el.className && typeof el.className === 'string' && el.className.includes('cursor-pointer')) {
-          if (!clicked.has(el)) {
-            clicked.add(el);
-            el.click();
-          }
-          break;
-        }
-        el = el.parentElement;
-      }
-    });
-    return clicked.size;
-  };
-
-  // 從 URL 的 access_token 自動登入（從 puhe 後台帶過來）
-  useEffect(() => {
-    const access_token = params.get('access_token');
-    const refresh_token = params.get('refresh_token');
-    if (access_token && refresh_token) {
-      const sb = (window as any).supabase?.createClient(
-        'https://yhchjanqmopgbwgjspmf.supabase.co',
-        'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx'
-      );
-      sb?.auth.setSession({ access_token, refresh_token }).then(() => {
-        // 清掉 URL 的 token 參數，避免暴露
-        const clean = new URL(window.location.href);
-        clean.searchParams.delete('access_token');
-        clean.searchParams.delete('refresh_token');
-        window.history.replaceState({}, '', clean.toString());
-      });
     }
   }, []);
-
-  // ── Highlight toolbar state ──────────────────────────────────────
-  const [toolbar, setToolbar] = useState<{ x: number; y: number; text: string } | null>(null);
-  const [showHighlightPanel, setShowHighlightPanel] = useState(false);
-  const toolbarRef = useRef<HTMLDivElement>(null);
-  const highlightPanelRef = useRef<HTMLDivElement>(null);
-  const { isLoggedIn, highlights, applyHighlights, addHighlight, removeHighlight, getHighlightByText } =
-    useHighlight(selectedBook || '', activeChapter);
-
-  // Apply highlights whenever chapter changes or highlights load
-  useEffect(() => {
-    const timer = setTimeout(() => { applyHighlights(); }, 300);
-    return () => clearTimeout(timer);
-  }, [applyHighlights, activeChapter, selectedBook]);
-
-  // Listen for click on highlight span (remove)
-  useEffect(() => {
-    const handler = (e: Event) => {
-      const id = (e as CustomEvent).detail;
-      removeHighlight(id);
-    };
-    document.addEventListener('removeHighlight', handler);
-    return () => document.removeEventListener('removeHighlight', handler);
-  }, [removeHighlight]);
-
-  // Show toolbar on text selection (mouse + touch)
-  useEffect(() => {
-    if (!isLoggedIn || !selectedBook) return;
-
-    const isInUi = (target: Node | null) =>
-      !!target && (
-        toolbarRef.current?.contains(target) ||
-        highlightPanelRef.current?.contains(target)
-      );
-
-    const handleSelectionChange = () => {
-      if (toolbarRef.current?.contains(document.activeElement)) return;
-      const sel = window.getSelection();
-      const text = sel?.toString().trim() || '';
-      if (text.length < 2) { setToolbar(null); return; }
-      try {
-        const range = sel!.getRangeAt(0);
-        const rect = range.getBoundingClientRect();
-        if (rect.width === 0 && rect.height === 0) return;
-        setToolbar({ x: rect.left + rect.width / 2, y: rect.top + window.scrollY - 8, text });
-      } catch (e) {}
-    };
-
-    const handleMouseUp = (e: MouseEvent) => {
-      if (isInUi(e.target as Node)) return;
-      setTimeout(handleSelectionChange, 10);
-    };
-    const handleTouchEnd = (e: TouchEvent) => {
-      if (isInUi(e.target as Node)) return;
-      setTimeout(handleSelectionChange, 300);
-    };
-    const handleMouseDown = (e: MouseEvent) => {
-      if (!isInUi(e.target as Node)) { setToolbar(null); setShowHighlightPanel(false); }
-    };
-    const handleTouchStart = (e: TouchEvent) => {
-      if (!isInUi(e.target as Node)) { setToolbar(null); setShowHighlightPanel(false); }
-    };
-
-    document.addEventListener('mouseup', handleMouseUp);
-    document.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('touchend', handleTouchEnd);
-    document.addEventListener('touchstart', handleTouchStart);
-    return () => {
-      document.removeEventListener('mouseup', handleMouseUp);
-      document.removeEventListener('mousedown', handleMouseDown);
-      document.removeEventListener('touchend', handleTouchEnd);
-      document.removeEventListener('touchstart', handleTouchStart);
-    };
-  }, [isLoggedIn, selectedBook]);
-
-  const handleHighlight = async (style: HighlightStyle) => {
-    if (!toolbar) return;
-    const existing = getHighlightByText(toolbar.text);
-    if (existing) {
-      await removeHighlight(existing.id);
-    } else {
-      await addHighlight(toolbar.text, style);
-    }
-    setToolbar(null);
-    setShowHighlightPanel(false);
-    window.getSelection()?.removeAllRanges();
-    setTimeout(() => applyHighlights(), 200);
-  };
 
   const book = BOOKS.find(b => b.id === selectedBook);
 
   const handleSelectBook = (id: string) => {
     setSelectedBook(id);
-    setActiveChapter(id === 'book9' ? 'intro' : 'ch1');
+    setActiveChapter(id === 'book9' ? 'intro' : id === 'book5' ? 'week1' : 'ch1');
     setIsSidebarOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleChapterClick = (id: string) => {
-    setActiveChapter(id);
-    setExpandAll(false);
+  const handleChapterChange = (chId: string) => {
+    setActiveChapter(chId);
     setIsSidebarOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -806,202 +512,21 @@ export default function App() {
     if (selectedBook === 'book7') return renderBook7(activeChapter);
     if (selectedBook === 'book8') return renderBook8(activeChapter);
     if (selectedBook === 'book9') return renderBook9(activeChapter, expandAll);
-    if (selectedBook === 'book10') return renderBook10(activeChapter, expandAll);
+    if (selectedBook === 'book10') return renderBook10(activeChapter);
     return null;
   };
 
-  // ── Login Modal ───────────────────────────────────────────────────
-  const [showLogin, setShowLogin] = useState(false);
-  const [loginPhone, setLoginPhone] = useState('');
-  const [loginPwd, setLoginPwd] = useState('');
-  const [loginMsg, setLoginMsg] = useState('');
-  const [loginLoading, setLoginLoading] = useState(false);
-
-  const handleLogin = async () => {
-    if (!loginPhone || !loginPwd) { setLoginMsg('請填寫帳號和密碼'); return; }
-    setLoginLoading(true); setLoginMsg('');
-    const sb = (window as any).supabase?.createClient(
-      'https://yhchjanqmopgbwgjspmf.supabase.co',
-      'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx'
-    );
-    const { error } = await sb.auth.signInWithPassword({
-      email: `${loginPhone}@church.local`,
-      password: loginPwd,
-    });
-    setLoginLoading(false);
-    if (error) { setLoginMsg('帳號或密碼錯誤'); return; }
-    setShowLogin(false); setLoginPhone(''); setLoginPwd(''); setLoginMsg('');
-  };
-
-  const handleLogout = async () => {
-    const sb = (window as any).supabase?.createClient(
-      'https://yhchjanqmopgbwgjspmf.supabase.co',
-      'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx'
-    );
-    await sb.auth.signOut();
-  };
-
-  // ── 匯出 Word 功能 ─────────────────────────────────────────
-  const exportToWord = (title: string, content: string) => {
-    const html = `
-      <html xmlns:o="urn:schemas-microsoft-com:office:office"
-            xmlns:w="urn:schemas-microsoft-com:office:word"
-            xmlns="http://www.w3.org/TR/REC-html40">
-      <head><meta charset="utf-8"><title>${title}</title>
-      <style>
-        body { font-family: '微軟正黑體', 'Microsoft JhengHei', sans-serif; line-height: 1.8; color: #333; max-width: 700px; margin: 0 auto; padding: 20px; }
-        h1 { font-size: 22pt; color: #1e3a5f; border-bottom: 2px solid #1e3a5f; padding-bottom: 8px; }
-        h2 { font-size: 16pt; color: #2c5282; margin-top: 24px; }
-        h3 { font-size: 13pt; color: #4a5568; margin-top: 16px; }
-        p { margin: 8px 0; font-size: 11pt; }
-        li { margin: 4px 0; font-size: 11pt; }
-        .divider { border-top: 1px solid #ccc; margin: 20px 0; }
-      </style></head>
-      <body>${content}</body></html>`;
-    const blob = new Blob(['\ufeff' + html], { type: 'application/msword' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${title}.doc`;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
-  const extractTextFromElement = (el: Element | null): string => {
-    if (!el) return '';
-    const clone = el.cloneNode(true) as Element;
-    // 移除按鈕等互動元素
-    clone.querySelectorAll('button, [data-highlight-id]').forEach(b => b.remove());
-    return clone.innerHTML;
-  };
-
-  const handleExportChapter = () => {
-    if (!book) return;
-    // 先展開所有摺疊的區塊（對 Book2/4 用 state，對其他書用 DOM 點擊）
-    setExpandAll(true);
-    const expandedCount = clickAllToggles('expand');
-    // 等待 React re-render + framer-motion 動畫完成後匯出，然後摺疊回去
-    setTimeout(() => {
-      doExportChapter();
-      setExpandAll(false);
-      // 匯出完成後再摺疊回去
-      setTimeout(() => {
-        if (expandedCount > 0) clickAllToggles('collapse');
-      }, 100);
-    }, 600);
-  };
-
-  const doExportChapter = () => {
-    if (!book) return;
-    const main = document.querySelector('main');
-    const chapterLabel = book.chapters.find((c: any) => c.id === activeChapter)?.label || activeChapter;
-    const content = extractTextFromElement(main);
-    const title = `${book.title}－${chapterLabel}`;
-    exportToWord(title, `<h1>${title}</h1>${content}`);
-  };
-
-  const handleExportBook = () => {
-    if (!book) return;
-    const confirmed = window.confirm(`即將匯出《${book.title}》全書內容為 Word 檔，確定嗎？`);
-    if (!confirmed) return;
-    setExpandAll(true);
-    const expandedCount = clickAllToggles('expand');
-    setTimeout(() => {
-      doExportBook();
-      setExpandAll(false);
-      setTimeout(() => {
-        if (expandedCount > 0) clickAllToggles('collapse');
-      }, 100);
-    }, 600);
-  };
-
-  const doExportBook = () => {
-    if (!book) return;
-    const main = document.querySelector('main');
-    const content = extractTextFromElement(main);
-    const chapterLabel = book.chapters.find((c: any) => c.id === activeChapter)?.label || activeChapter;
-    let fullContent = `<h1>${book.title}</h1><p style="color:#888;">${book.subtitle}</p><div class="divider"></div>`;
-    fullContent += `<h2>${chapterLabel}</h2>${content}`;
-    fullContent += `<div class="divider"></div><p style="color:#aaa;text-align:center;">※ 如需匯出其他章節，請切換到該章節後使用「匯出本章」功能</p>`;
-    exportToWord(book.title, fullContent);
-  };
-
-  // ── Book List (home) ─────────────────────────────────────────────
+  // ==================== BOOK LIST VIEW ====================
   if (!selectedBook) {
     return (
       <div className="min-h-screen bg-slate-50 flex flex-col">
-        <header className="bg-white border-b border-slate-200 px-6 py-4 shadow-sm">
-          <div className="flex items-center justify-between max-w-lg mx-auto">
-            <div className="flex items-center gap-2">
-              <BookOpen className="h-6 w-6 text-indigo-500" />
-              <h1 className="text-xl font-bold text-slate-800">電子書房</h1>
-            </div>
-            {isLoggedIn ? (
-              <button
-                onClick={handleLogout}
-                className="text-xs text-slate-400 hover:text-slate-600 px-3 py-1.5 rounded-full border border-slate-200 hover:border-slate-300 transition-colors"
-              >
-                ✏️ 登出畫重點
-              </button>
-            ) : (
-              <button
-                onClick={() => setShowLogin(true)}
-                className="text-xs text-indigo-600 hover:text-indigo-700 px-3 py-1.5 rounded-full border border-indigo-200 hover:border-indigo-300 transition-colors font-medium"
-              >
-                ✏️ 登入畫重點
-              </button>
-            )}
+        <header className="bg-white border-b border-slate-200 px-6 py-5 text-center shadow-sm">
+          <div className="flex items-center justify-center gap-2 mb-1">
+            <BookOpen className="h-6 w-6 text-indigo-500" />
+            <h1 className="text-xl font-bold text-slate-800">書房</h1>
           </div>
-          <p className="text-xs text-slate-400 text-center mt-1">選擇一本書開始閱讀</p>
+          <p className="text-xs text-slate-400">選擇一本書開始閱讀</p>
         </header>
-
-        {/* Login Modal */}
-        {showLogin && (
-          <div className="fixed inset-0 bg-black/50 z-[9999] flex items-start justify-center overflow-y-auto" style={{ paddingTop: "max(24px, env(safe-area-inset-top, 24px))", paddingBottom: "24px", paddingLeft: "16px", paddingRight: "16px" }}>
-            <div className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl">
-              <h2 className="text-lg font-bold text-slate-800 mb-1">登入畫重點功能</h2>
-              <p className="text-xs text-slate-400 mb-4">使用你的小組帳號登入</p>
-              <div className="space-y-3">
-                <div>
-                  <label className="text-xs font-medium text-slate-600 mb-1 block">帳號（電話號碼）</label>
-                  <input
-                    type="text"
-                    value={loginPhone}
-                    onChange={e => setLoginPhone(e.target.value)}
-                    placeholder="輸入電話號碼"
-                    className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-indigo-400"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-medium text-slate-600 mb-1 block">密碼</label>
-                  <input
-                    type="password"
-                    value={loginPwd}
-                    onChange={e => setLoginPwd(e.target.value)}
-                    placeholder="輸入密碼"
-                    className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-indigo-400"
-                    onKeyDown={e => e.key === 'Enter' && handleLogin()}
-                  />
-                </div>
-                {loginMsg && <p className="text-xs text-red-500">{loginMsg}</p>}
-                <button
-                  onClick={handleLogin}
-                  disabled={loginLoading}
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-lg text-sm transition-colors disabled:opacity-60"
-                >
-                  {loginLoading ? '登入中...' : '登入'}
-                </button>
-                <button
-                  onClick={() => { setShowLogin(false); setLoginMsg(''); }}
-                  className="w-full text-slate-400 hover:text-slate-600 text-sm py-1 transition-colors"
-                >
-                  取消
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-
         <main className="flex-1 p-6 max-w-lg mx-auto w-full">
           <div className="flex flex-col gap-4 mt-4">
             {BOOKS.map(b => (
@@ -1009,13 +534,13 @@ export default function App() {
                 key={b.id}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => handleSelectBook(b.id)}
-                className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex items-center gap-4 text-left hover:shadow-md transition-shadow w-full"
+                className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex items-center gap-4 text-left hover:shadow-md transition-shadow"
               >
                 <span className="text-4xl flex-shrink-0">{b.emoji}</span>
                 <div>
                   <div className="font-bold text-slate-800 text-base">{b.title}</div>
                   <div className="text-xs text-slate-400 mt-0.5">{b.subtitle}</div>
-                  <div className="text-xs mt-1.5 font-medium" style={{ color: b.accentHex }}>
+                  <div className="text-xs mt-1.5" style={{ color: b.accentHex }}>
                     {b.chapters.length} 章節
                   </div>
                 </div>
@@ -1027,532 +552,101 @@ export default function App() {
     );
   }
 
-  // ── Reader ───────────────────────────────────────────────────────
-  const parts = Array.from(new Set(book!.chapters.map((c: any) => c.part)));
-
+  // ==================== READER VIEW ====================
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans flex flex-col">
-
-      {/* Header */}
-      <div className="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-slate-100 px-4 py-3 flex items-center justify-between flex-shrink-0">
-        <div className="flex items-center gap-1">
-          <span className="text-sm font-bold text-slate-800 truncate max-w-[240px]">{book!.title}</span>
+      {/* Top Header */}
+      <div className="bg-white shadow-sm sticky top-0 z-50 border-b border-slate-200 px-4 h-14 flex items-center justify-between flex-shrink-0">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setSelectedBook(null)}
+            className="text-slate-400 hover:text-slate-700 p-1 rounded-md"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <span className="text-sm font-bold text-slate-800 truncate max-w-[180px]">{book!.title}</span>
         </div>
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold transition-all"
-          style={{
-            background: isSidebarOpen
-              ? 'linear-gradient(135deg,#6366f1,#4338ca)'
-              : 'linear-gradient(135deg,#f1f5f9,#e2e8f0)',
-            color: isSidebarOpen ? 'white' : '#475569',
-            boxShadow: isSidebarOpen ? '0 2px 8px rgba(99,102,241,0.4)' : '0 1px 3px rgba(0,0,0,0.1)',
-          }}
-          title="目錄"
+          className="p-2 rounded-md text-slate-500 hover:text-slate-800 focus:outline-none"
         >
-          {isSidebarOpen
-            ? <><X className="h-4 w-4" /><span>關閉</span></>
-            : <><Menu className="h-4 w-4" /><span>目錄</span></>
-          }
+          {isSidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
-        {isLoggedIn && (
-          <span className="text-xs text-indigo-400 font-medium hidden sm:block">✏️ 畫重點已啟用</span>
-        )}
-        {!isLoggedIn && (
-          <button
-            onClick={() => setShowLogin(true)}
-            className="text-xs text-indigo-600 px-2.5 py-1 rounded-full border border-indigo-200 font-medium"
-          >✏️ 登入</button>
-        )}
-
-        {/* Login Modal in reader */}
-        {showLogin && (
-          <div className="fixed inset-0 bg-black/50 z-[9999] flex items-start justify-center overflow-y-auto" style={{ paddingTop: "max(24px, env(safe-area-inset-top, 24px))", paddingBottom: "24px", paddingLeft: "16px", paddingRight: "16px" }}>
-            <div className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl">
-              <h2 className="text-lg font-bold text-slate-800 mb-1">登入畫重點功能</h2>
-              <p className="text-xs text-slate-400 mb-4">使用你的小組帳號登入</p>
-              <div className="space-y-3">
-                <div>
-                  <label className="text-xs font-medium text-slate-600 mb-1 block">帳號（電話號碼）</label>
-                  <input
-                    type="text"
-                    value={loginPhone}
-                    onChange={e => setLoginPhone(e.target.value)}
-                    placeholder="輸入電話號碼"
-                    className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-indigo-400"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-medium text-slate-600 mb-1 block">密碼</label>
-                  <input
-                    type="password"
-                    value={loginPwd}
-                    onChange={e => setLoginPwd(e.target.value)}
-                    placeholder="輸入密碼"
-                    className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-indigo-400"
-                    onKeyDown={e => e.key === 'Enter' && handleLogin()}
-                  />
-                </div>
-                {loginMsg && <p className="text-xs text-red-500">{loginMsg}</p>}
-                <button
-                  onClick={handleLogin}
-                  disabled={loginLoading}
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-lg text-sm transition-colors disabled:opacity-60"
-                >
-                  {loginLoading ? '登入中...' : '登入'}
-                </button>
-                <button
-                  onClick={() => { setShowLogin(false); setLoginMsg(''); }}
-                  className="w-full text-slate-400 hover:text-slate-600 text-sm py-1 transition-colors"
-                >
-                  取消
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
 
-      {/* Slide-down TOC — all devices */}
+      {/* Sidebar */}
       <AnimatePresence>
         {isSidebarOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="bg-white border-b border-slate-200 overflow-hidden sticky top-14 z-40 max-h-[70vh] overflow-y-auto shadow-lg"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'tween', duration: 0.3 }}
+            className="fixed right-0 top-14 bottom-0 w-80 bg-white shadow-2xl z-40 overflow-y-auto border-l border-slate-200"
           >
-            <div className="px-4 py-4 space-y-5">
-              {parts.map(part => (
-                <div key={part as string}>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">{part as string}</h4>
-                  <div className="space-y-1">
-                    {book!.chapters.filter((c: any) => c.part === part).map((ch: any) => (
-                      <button
-                        key={ch.id}
-                        onClick={() => handleChapterClick(ch.id)}
-                        className={`w-full text-left px-3 py-2.5 rounded-md text-sm font-medium flex items-center gap-3 transition-colors ${
-                          activeChapter === ch.id
-                            ? `${book!.bgLight} ${book!.textAccent}`
-                            : `text-slate-600 hover:bg-slate-50 ${book!.hoverText}`
-                        }`}
-                      >
-                        <ch.icon className="w-4 h-4 flex-shrink-0" />
-                        <span className="truncate">
-                          {ch.label}
-                          {ch.page && <span className="text-xs opacity-60 ml-1">{ch.page}</span>}
-                        </span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              ))}
-              {/* 匯出全書按鈕 */}
-              <button
-                onClick={() => { setIsSidebarOpen(false); handleExportBook(); }}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 mt-2 rounded-lg text-sm font-semibold text-white transition-colors"
-                style={{ background: book!.accentHex }}
-              >
-                <Download className="w-4 h-4" />
-                匯出全書 Word 檔
-              </button>
+            <div className="p-6">
+              <h2 className="text-lg font-bold text-slate-800 mb-4">目錄</h2>
+              {selectedBook === 'book2' || selectedBook === 'book4' ? (
+                <button
+                  onClick={() => setExpandAll(!expandAll)}
+                  className="w-full mb-4 px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors flex items-center justify-center gap-2"
+                >
+                  {expandAll ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                  <span>{expandAll ? '收合全部' : '展開全部'}</span>
+                </button>
+              ) : null}
+              <div className="space-y-2">
+                {book!.chapters.map(ch => (
+                  <button
+                    key={ch.id}
+                    onClick={() => handleChapterChange(ch.id)}
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                      activeChapter === ch.id
+                        ? 'bg-slate-800 text-white font-semibold'
+                        : 'hover:bg-slate-100 text-slate-700'
+                    }`}
+                  >
+                    <div className="font-medium">{ch.label}</div>
+                    <div className="text-sm opacity-75 mt-0.5">{ch.title}</div>
+                  </button>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Content */}
-      <main className="flex-1 p-4 md:p-8 lg:p-12 max-w-4xl mx-auto w-full">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={selectedBook + activeChapter}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div id="book-content-wrapper" style={{ zoom: currentZoom }}>
-              {renderContent()}
-            </div>
-            {/* 全展開/摺疊 + 匯出本章按鈕 */}
-            <div className="mt-8 pt-6 border-t border-slate-200 flex flex-wrap justify-center gap-3">
-              <button
-                onClick={handleExportChapter}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all"
-                style={{ background: book!.accentHex }}
-              >
-                <Download className="w-4 h-4" />
-                匯出本章 Word 檔
-              </button>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+      {/* Main Content */}
+      <main className="flex-1 p-6 max-w-4xl mx-auto w-full">
+        {renderContent()}
       </main>
 
-      {/* 底部水平工具列 */}
-      {selectedBook && (
-        <>
-          {/* 底部空間填充，避免工具列遮住內容 */}
-          <div style={{ height: '72px', flexShrink: 0 }} />
-
-          <div
-            ref={toolbarRef}
-            style={{
-              position: 'fixed',
-              left: '50%',
-              bottom: 'max(12px, env(safe-area-inset-bottom, 12px))',
-              transform: 'translateX(-50%)',
-              zIndex: 40,
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-              background: 'rgba(255,255,255,0.96)',
-              backdropFilter: 'blur(10px)',
-              padding: '8px 10px',
-              borderRadius: '999px',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
-              border: '1px solid rgba(0,0,0,0.06)',
-              maxWidth: 'calc(100vw - 24px)',
-            }}
-          >
-            {/* X 關閉 */}
-            <button
-              onClick={() => {
-                stopReading();
-                setShowHighlightPanel(false);
-                setToolbar(null);
-                // 若被埔和後台用 iframe 嵌入，請父層關閉整個 iframe（回電子書房分類頁）
-                // 500ms 後若仍未被關閉（父層尚未部署監聽器或其他原因），退回書單頁
-                const inIframe = window.parent !== window;
-                if (inIframe) {
-                  try {
-                    window.parent.postMessage({ type: 'closeBookEmbed' }, '*');
-                  } catch (e) {}
-                  setTimeout(() => {
-                    // 若 500ms 後 iframe 還活著，走後備
-                    setSelectedBook(null);
-                  }, 500);
-                } else {
-                  setSelectedBook(null);
-                }
-              }}
-              title="關閉，返回電子書房"
-              style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                border: 'none',
-                background: '#fee2e2',
-                color: '#dc2626',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: 0,
-                flexShrink: 0,
-              }}
-            >
-              <X className="h-4 w-4" strokeWidth={2.5} />
-            </button>
-
-            <div style={{ width: '1px', height: '24px', background: '#e2e8f0', flexShrink: 0 }} />
-
-            {/* 字型縮放：A− / 標籤 / A+ */}
-            <button
-              onClick={() => setFontZoomLevel(Math.max(0, fontZoomLevel - 1))}
-              disabled={fontZoomLevel <= 0}
-              title="字型縮小"
-              style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: '50%',
-                border: 'none',
-                background: fontZoomLevel <= 0 ? '#f1f5f9' : '#eef2ff',
-                color: fontZoomLevel <= 0 ? '#cbd5e1' : '#4338ca',
-                fontSize: '15px',
-                fontWeight: 700,
-                cursor: fontZoomLevel <= 0 ? 'not-allowed' : 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: 0,
-                flexShrink: 0,
-              }}
-            >A−</button>
-            <button
-              onClick={() => setFontZoomLevel(Math.min(4, fontZoomLevel + 1))}
-              disabled={fontZoomLevel >= 4}
-              title="字型放大"
-              style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: '50%',
-                border: 'none',
-                background: fontZoomLevel >= 4 ? '#f1f5f9' : '#eef2ff',
-                color: fontZoomLevel >= 4 ? '#cbd5e1' : '#4338ca',
-                fontSize: '17px',
-                fontWeight: 700,
-                cursor: fontZoomLevel >= 4 ? 'not-allowed' : 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: 0,
-                flexShrink: 0,
-              }}
-            >A+</button>
-
-            <div style={{ width: '1px', height: '24px', background: '#e2e8f0', flexShrink: 0 }} />
-
-            {/* 朗讀：播放/暫停 + 停止 + 語速 */}
-            <button
-              onClick={() => {
-                if (ttsState === 'idle') startReading();
-                else if (ttsState === 'playing') pauseReading();
-                else resumeReading();
-              }}
-              title={ttsState === 'playing' ? '暫停朗讀' : ttsState === 'paused' ? '繼續朗讀' : '開始朗讀'}
-              style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                border: 'none',
-                background: ttsState === 'playing' ? '#f59e0b' : ttsState === 'paused' ? '#6366f1' : '#eef2ff',
-                color: ttsState !== 'idle' ? '#fff' : '#4338ca',
-                fontSize: '15px',
-                fontWeight: 700,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: 0,
-                flexShrink: 0,
-              }}
-            >
-              {ttsState === 'playing' ? '⏸' : ttsState === 'paused' ? '▶' : '🔊'}
-            </button>
-
-            {/* 語速 */}
-            <div style={{ position: 'relative', flexShrink: 0 }}>
-              <button
-                onClick={() => setShowSpeedMenu(!showSpeedMenu)}
-                title="語速調整"
-                style={{
-                  minWidth: '38px',
-                  height: '26px',
-                  borderRadius: '13px',
-                  border: 'none',
-                  background: showSpeedMenu ? '#6366f1' : '#f1f5f9',
-                  color: showSpeedMenu ? '#fff' : '#1e293b',
-                  fontSize: '11px',
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  padding: '0 8px',
-                }}
-              >{ttsRate}x</button>
-
-              {showSpeedMenu && (
-                <div style={{
-                  position: 'absolute',
-                  bottom: '34px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  background: 'white',
-                  borderRadius: '12px',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                  border: '1px solid rgba(0,0,0,0.06)',
-                  padding: '4px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '2px',
-                  minWidth: '64px',
-                }}>
-                  {[0.75, 1.0, 1.25, 1.5].map(rate => (
-                    <button
-                      key={rate}
-                      onClick={() => {
-                        setTtsRate(rate);
-                        setShowSpeedMenu(false);
-                        if (ttsState === 'playing' || ttsState === 'paused') {
-                          stopReading();
-                          setTimeout(() => startReading(), 200);
-                        }
-                      }}
-                      style={{
-                        padding: '6px 10px',
-                        border: 'none',
-                        borderRadius: '8px',
-                        background: ttsRate === rate ? '#6366f1' : 'transparent',
-                        color: ttsRate === rate ? 'white' : '#1e293b',
-                        fontSize: '12px',
-                        fontWeight: 600,
-                        cursor: 'pointer',
-                        textAlign: 'center',
-                      }}
-                    >{rate}x</button>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <div style={{ width: '1px', height: '24px', background: '#e2e8f0', flexShrink: 0 }} />
-
-            {/* 畫重點：選到文字時亮起 */}
-            <button
-              onPointerDown={() => {
-                // 若底部工具列的事件鏈導致 toolbar 被清掉，這裡再搶救一次：
-                // 讀取當下瀏覽器內的 selection，若文字還在就重新設定 toolbar。
-                const sel = window.getSelection();
-                const text = sel?.toString().trim() || '';
-                if (text.length >= 2) {
-                  try {
-                    const range = sel!.getRangeAt(0);
-                    const rect = range.getBoundingClientRect();
-                    if (rect.width !== 0 || rect.height !== 0) {
-                      setToolbar({
-                        x: rect.left + rect.width / 2,
-                        y: rect.top + window.scrollY - 8,
-                        text,
-                      });
-                    }
-                  } catch (e) {}
-                }
-              }}
-              onClick={() => {
-                if (!isLoggedIn) { setShowLogin(true); return; }
-                // 再次讀取 selection 作為最後一道保險
-                let currentText = toolbar?.text;
-                if (!currentText) {
-                  const sel = window.getSelection();
-                  const t = sel?.toString().trim() || '';
-                  if (t.length >= 2) {
-                    currentText = t;
-                    try {
-                      const range = sel!.getRangeAt(0);
-                      const rect = range.getBoundingClientRect();
-                      setToolbar({
-                        x: rect.left + rect.width / 2,
-                        y: rect.top + window.scrollY - 8,
-                        text: t,
-                      });
-                    } catch (e) {}
-                  }
-                }
-                if (!currentText) {
-                  alert('請先選取要畫重點的文字');
-                  return;
-                }
-                setShowHighlightPanel(v => !v);
-              }}
-              title={
-                !isLoggedIn ? '登入後可畫重點'
-                : !toolbar ? '請先選取文字'
-                : '畫重點'
-              }
-              style={{
-                minWidth: '36px',
-                height: '36px',
-                borderRadius: '18px',
-                border: 'none',
-                padding: '0 12px',
-                background: toolbar && isLoggedIn
-                  ? (showHighlightPanel ? '#4338ca' : 'linear-gradient(135deg,#fef08a,#facc15)')
-                  : '#f1f5f9',
-                color: toolbar && isLoggedIn
-                  ? (showHighlightPanel ? '#fff' : '#713f12')
-                  : '#94a3b8',
-                fontSize: '13px',
-                fontWeight: 700,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '4px',
-                flexShrink: 0,
-                boxShadow: toolbar && isLoggedIn && !showHighlightPanel
-                  ? '0 0 0 2px rgba(250,204,21,0.35)' : 'none',
-                transition: 'all 0.15s ease',
-              }}
-            >
-              <span style={{ fontSize: '14px' }}>✏️</span>
-              <span style={{ fontSize: '12px' }}>畫重點</span>
-            </button>
-          </div>
-
-          {/* 畫重點樣式子面板（從底部工具列往上彈出） */}
-          {showHighlightPanel && toolbar && isLoggedIn && (
-            <div
-              onMouseDown={e => e.stopPropagation()}
-              onTouchStart={e => e.stopPropagation()}
-              style={{
-                position: 'fixed',
-                left: '50%',
-                bottom: 'calc(max(12px, env(safe-area-inset-bottom, 12px)) + 68px)',
-                transform: 'translateX(-50%)',
-                zIndex: 41,
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                background: '#1e293b',
-                padding: '8px 10px',
-                borderRadius: '14px',
-                boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
-                border: '1px solid #334155',
-              }}
-            >
-              <button
-                onClick={() => handleHighlight('yellow')}
-                className="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform"
-                style={{ backgroundColor: '#fef08a' }}
-                title="螢光底色"
-              >🖍</button>
-              <button
-                onClick={() => handleHighlight('red')}
-                className="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform font-bold text-sm"
-                style={{ backgroundColor: '#fee2e2', color: '#dc2626' }}
-                title="紅色文字"
-              >A</button>
-              <button
-                onClick={() => handleHighlight('blue')}
-                className="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform font-bold text-sm"
-                style={{ backgroundColor: '#dbeafe', color: '#2563eb' }}
-                title="藍色文字"
-              >A</button>
-              <button
-                onClick={() => handleHighlight('bold')}
-                className="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform font-black text-sm"
-                style={{ backgroundColor: '#f1f5f9', color: '#1e293b' }}
-                title="粗體"
-              >B</button>
-              <button
-                onClick={() => handleHighlight('underline')}
-                className="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform text-sm"
-                style={{ backgroundColor: '#f1f5f9', color: '#475569', textDecoration: 'underline', textUnderlineOffset: '2px' }}
-                title="底線"
-              >U</button>
-              <div className="w-px h-5 bg-slate-500 mx-0.5" />
-              <button
-                className="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform text-xs"
-                style={{ backgroundColor: '#fee2e2', color: '#dc2626' }}
-                title="移除畫線"
-                onClick={async () => {
-                  const existing = getHighlightByText(toolbar.text);
-                  if (existing) { await removeHighlight(existing.id); setTimeout(() => applyHighlights(), 200); }
-                  setToolbar(null);
-                  setShowHighlightPanel(false);
-                  window.getSelection()?.removeAllRanges();
-                }}
-              >✕</button>
-            </div>
-          )}
-        </>
-      )}
-
-      <footer className="bg-white border-t border-slate-200 py-6 mt-auto">
-        <div className="max-w-4xl mx-auto px-4 text-center text-slate-400 text-xs">
-          {book!.title}・{book!.subtitle}
-        </div>
-      </footer>
+      {/* Bottom Navigation */}
+      <div className="bg-white border-t border-slate-200 px-4 py-3 flex justify-between items-center sticky bottom-0">
+        <button
+          onClick={() => {
+            const currentIdx = book!.chapters.findIndex(c => c.id === activeChapter);
+            if (currentIdx > 0) handleChapterChange(book!.chapters[currentIdx - 1].id);
+          }}
+          disabled={book!.chapters.findIndex(c => c.id === activeChapter) === 0}
+          className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-200 transition-colors text-sm"
+        >
+          ← 上一章
+        </button>
+        <span className="text-xs text-slate-500">
+          {book!.chapters.find(c => c.id === activeChapter)?.label}
+        </span>
+        <button
+          onClick={() => {
+            const currentIdx = book!.chapters.findIndex(c => c.id === activeChapter);
+            if (currentIdx < book!.chapters.length - 1) handleChapterChange(book!.chapters[currentIdx + 1].id);
+          }}
+          disabled={book!.chapters.findIndex(c => c.id === activeChapter) === book!.chapters.length - 1}
+          className="px-4 py-2 bg-slate-800 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-700 transition-colors text-sm"
+        >
+          下一章 →
+        </button>
+      </div>
     </div>
   );
 }
