@@ -1,4 +1,3 @@
-cat > /home/claude/App_fixed.tsx << 'EOF'
 import React, { useState } from 'react';
 import { BookOpen } from 'lucide-react';
 import Book1 from './components/book1';
