@@ -83,10 +83,6 @@ import Book7Ch3 from './components/book7/Chapter3';
 import Book7Ch4 from './components/book7/Chapter4';
 import Book7Ch5 from './components/book7/Chapter5';
 import Book7Ch6 from './components/book7/Chapter6';
-import Book7Ch7 from './components/book7/Chapter7';
-import Book7Ch8 from './components/book7/Chapter8';
-import Book7Ch9 from './components/book7/Chapter9';
-import Book7Ch10 from './components/book7/Chapter10';
 
 // Book 8 imports
 import Book8Ch1 from './components/book8/Chapter1';
@@ -239,9 +235,10 @@ const BOOKS = [
     ],
   },
   {
+  {
     id: 'book7',
-    title: '以斯拉記——重建聖殿與靈性復興',
-    subtitle: '聖經註釋',
+    title: '以斯拉記——被擄歸回的恩典',
+    subtitle: '陳濟民 著',
     emoji: '📜',
     accentHex: '#7c3aed',
     chapters: [
@@ -251,14 +248,8 @@ const BOOKS = [
       { id: 'ch4', label: '第4章', title: '敵人阻擋重建工程' },
       { id: 'ch5', label: '第5章', title: '重新開始建造聖殿' },
       { id: 'ch6', label: '第6章', title: '完成並獻上聖殿' },
-      { id: 'ch7', label: '第7章', title: '以斯拉來到耶路撒冷' },
-      { id: 'ch8', label: '第8章', title: '與以斯拉同來的人' },
-      { id: 'ch9', label: '第9章', title: '以斯拉為百姓的罪禱告' },
-      { id: 'ch10', label: '第10章', title: '百姓的認罪與悔改' },
     ],
   },
-  {
-    id: 'book8',
     title: '屬靈操練禮讚',
     subtitle: '傅士德 著',
     emoji: '🙏',
@@ -414,12 +405,9 @@ function renderBook7(ch: string) {
     case 'ch3': return <Book7Ch3 />;
     case 'ch4': return <Book7Ch4 />;
     case 'ch5': return <Book7Ch5 />;
-    case 'ch6': return <Book7Ch6 />;
-    case 'ch7': return <Book7Ch7 />;
-    case 'ch8': return <Book7Ch8 />;
-    case 'ch9': return <Book7Ch9 />;
-    default: return <Book7Ch10 />;
+    default: return <Book7Ch6 />;
   }
+}
 }
 
 function renderBook8(ch: string) {
