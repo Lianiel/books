@@ -29,7 +29,7 @@ function App() {
       id: 'book1',
       title: '作主門徒',
       author: '戴維·普拉特',
-      description: '重新定義跟隨耶穌的真正含義，挑戰我們過著真實門徒的生活',
+      description: '重新定義跟隨耶穌的真正含義,挑戰我們過著真實門徒的生活',
       chapters: 9,
       color: 'from-blue-500 to-cyan-500',
       component: Book1
@@ -174,4 +174,3 @@ function App() {
 }
 
 export default App;
-EOF
