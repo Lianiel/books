@@ -249,6 +249,8 @@ const BOOKS = [
       { id: 'ch6', label: '第6章', title: '完成並獻上聖殿' },
     ],
   },
+  {
+    id: 'book8',
     title: '屬靈操練禮讚',
     subtitle: '傅士德 著',
     emoji: '🙏',
