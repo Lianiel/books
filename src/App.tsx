@@ -111,16 +111,6 @@ import Prayer_Ch4 from './components/book9/Chapter4';
 import Prayer_Ch5 from './components/book9/Chapter5';
 import Prayer_Ch6 from './components/book9/Chapter6';
 
-// Book 10 imports
-import Shield_Ch1 from './components/book10/Chapter1';
-import Shield_Ch2 from './components/book10/Chapter2';
-import Shield_Ch3 from './components/book10/Chapter3';
-import Shield_Ch4 from './components/book10/Chapter4';
-import Shield_Ch5 from './components/book10/Chapter5';
-import Shield_Ch6 from './components/book10/Chapter6';
-import Shield_Ch7 from './components/book10/Chapter7';
-import Shield_Ch8 from './components/book10/Chapter8';
-import Shield_Ch9 from './components/book10/Chapter9';
 
 // ==================== BOOKS DEFINITION ====================
 const BOOKS = [
@@ -296,24 +286,6 @@ const BOOKS = [
       { id: 'ch6', label: '第6篇', title: '話禱的範例' },
     ],
   },
-  {
-    id: 'book10',
-    title: '禱告的盾牌',
-    subtitle: '彼得·魏格納 著',
-    emoji: '🛡️',
-    accentHex: '#9333ea',
-    chapters: [
-      { id: 'ch1', label: '第1章', title: '建立個人代禱同工所產生的能力' },
-      { id: 'ch2', label: '第2章', title: '代禱者' },
-      { id: 'ch3', label: '第3章', title: '為什麼牧師需要我們代禱' },
-      { id: 'ch4', label: '第4章', title: '牧師禱告生活的祕訣' },
-      { id: 'ch5', label: '第5章', title: '接受個人性的代禱' },
-      { id: 'ch6', label: '第6章', title: '三種類型的代求者' },
-      { id: 'ch7', label: '第7章', title: '呼召代禱同工' },
-      { id: 'ch8', label: '第8章', title: '個人代禱者的輪廓特徵' },
-      { id: 'ch9', label: '第9章', title: '保養顧惜你的代禱者' },
-    ],
-  },
 ];
 
 // ==================== RENDER FUNCTIONS ====================
@@ -453,19 +425,6 @@ function renderBook9(ch: string, expandAll: boolean) {
   }
 }
 
-function renderBook10(ch: string) {
-  switch (ch) {
-    case 'ch1': return <Shield_Ch1 />;
-    case 'ch2': return <Shield_Ch2 />;
-    case 'ch3': return <Shield_Ch3 />;
-    case 'ch4': return <Shield_Ch4 />;
-    case 'ch5': return <Shield_Ch5 />;
-    case 'ch6': return <Shield_Ch6 />;
-    case 'ch7': return <Shield_Ch7 />;
-    case 'ch8': return <Shield_Ch8 />;
-    default: return <Shield_Ch9 />;
-  }
-}
 
 // ==================== MAIN APP ====================
 export default function App() {
@@ -512,7 +471,6 @@ export default function App() {
     if (selectedBook === 'book7') return renderBook7(activeChapter);
     if (selectedBook === 'book8') return renderBook8(activeChapter);
     if (selectedBook === 'book9') return renderBook9(activeChapter, expandAll);
-    if (selectedBook === 'book10') return renderBook10(activeChapter);
     return null;
   };
 
