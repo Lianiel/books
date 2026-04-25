@@ -409,7 +409,6 @@ function renderBook7(ch: string) {
     default: return <Book7Ch6 />;
   }
 }
-}
 
 function renderBook8(ch: string) {
   switch (ch) {
