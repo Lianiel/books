@@ -120,7 +120,7 @@ import Book10Ch9 from './components/book10/Chapter9';
 const BOOKS = [
   {
     id: 'book1',
-    title: '立界線得自由',
+    title: '01 立界線得自由',
     subtitle: '克勞德、湯森德 著',
     emoji: '📘',
     accentHex: '#0d9488',
@@ -146,7 +146,7 @@ const BOOKS = [
   },
   {
     id: 'book2',
-    title: '情感健康的門徒',
+    title: '02 情感健康的門徒',
     subtitle: '史葛荷 著',
     emoji: '📗',
     accentHex: '#e11d48',
@@ -163,7 +163,7 @@ const BOOKS = [
   },
   {
     id: 'book3',
-    title: '向保羅學宣教',
+    title: '03 向保羅學宣教',
     subtitle: '王乃純 著',
     emoji: '📙',
     accentHex: '#4338ca',
@@ -180,7 +180,7 @@ const BOOKS = [
   },
   {
     id: 'book4',
-    title: '成為有感染力的基督徒',
+    title: '04 成為有感染力的基督徒',
     subtitle: '海波斯、米道藍 著',
     emoji: '📕',
     accentHex: '#dc2626',
@@ -204,7 +204,7 @@ const BOOKS = [
   },
   {
     id: 'book5',
-    title: '如何活出基督的樣式',
+    title: '05 如何活出基督的樣式',
     subtitle: '陶恕 著',
     emoji: '📔',
     accentHex: '#ea580c',
@@ -219,7 +219,7 @@ const BOOKS = [
   },
   {
     id: 'book6',
-    title: '列王紀上——上帝的啟示在人間',
+    title: '06 列王紀上——上帝的啟示在人間',
     subtitle: '聖經註釋',
     emoji: '📖',
     accentHex: '#059669',
@@ -236,7 +236,7 @@ const BOOKS = [
   },
   {
     id: 'book7',
-    title: '以斯拉記——被擄歸回的恩典',
+    title: '07 以斯拉記——被擄歸回的恩典',
     subtitle: '陳濟民 著',
     emoji: '📜',
     accentHex: '#7c3aed',
@@ -251,7 +251,7 @@ const BOOKS = [
   },
   {
     id: 'book8',
-    title: '屬靈操練禮讚',
+    title: '08 屬靈操練禮讚',
     subtitle: '傅士德 著',
     emoji: '🙏',
     accentHex: '#0891b2',
@@ -272,7 +272,7 @@ const BOOKS = [
   },
   {
     id: 'book9',
-    title: '三層天禱告',
+    title: '09 三層天禱告',
     subtitle: '會幕式禱告手冊',
     emoji: '🙏',
     accentHex: '#7c3aed',
@@ -288,7 +288,7 @@ const BOOKS = [
   },
   {
     id: 'book10',
-    title: '禱告的盾牌',
+    title: '10 禱告的盾牌',
     subtitle: '彼得·魏格納 著',
     emoji: '🛡️',
     accentHex: '#9333ea',
