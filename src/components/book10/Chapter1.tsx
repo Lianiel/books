@@ -1,9 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, Shield, Users, Zap, Heart } from 'lucide-react';
 
-export default function Chapter1() {
+export default function Chapter1({ expandAll }: { expandAll?: boolean }) {
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
-  const [expandAll, setExpandAll] = useState(false);
 
   const toggleSection = (id: string) => {
     const newExpanded = new Set(expandedSections);
@@ -15,15 +14,14 @@ export default function Chapter1() {
     setExpandedSections(newExpanded);
   };
 
-  const toggleAll = () => {
+  useEffect(() => {
     if (expandAll) {
-      setExpandedSections(new Set());
-    } else {
       const allIds = ['intro', 'skyline', 'hereford', 'intercession', 'bible', 'power', 'summary'];
       setExpandedSections(new Set(allIds));
+    } else {
+      setExpandedSections(new Set());
     }
-    setExpandAll(!expandAll);
-  };
+  }, [expandAll]);
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -44,25 +42,6 @@ export default function Chapter1() {
             「在今日教會裏最少被運用的屬靈能力資源，就是為基督徒領袖們代禱的能力。」
           </p>
           <p className="text-sm text-gray-600 mt-2">—— 彼得·魏格納</p>
-        </div>
-
-        <div className="mt-6 flex justify-end">
-          <button
-            onClick={toggleAll}
-            className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-purple-200 text-purple-700 rounded-lg hover:bg-purple-50 transition-colors font-medium"
-          >
-            {expandAll ? (
-              <>
-                <ChevronUp className="w-4 h-4" />
-                <span>收合全部</span>
-              </>
-            ) : (
-              <>
-                <ChevronDown className="w-4 h-4" />
-                <span>展開全部</span>
-              </>
-            )}
-          </button>
         </div>
       </div>
 

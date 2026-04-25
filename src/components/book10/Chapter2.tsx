@@ -1,9 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, Users, Target, Gift, Heart, Sparkles, Brain } from 'lucide-react';
 
-export default function Chapter2() {
+export default function Chapter2({ expandAll }: { expandAll?: boolean }) {
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
-  const [expandAll, setExpandAll] = useState(false);
 
   const toggleSection = (id: string) => {
     const newExpanded = new Set(expandedSections);
@@ -15,15 +14,14 @@ export default function Chapter2() {
     setExpandedSections(newExpanded);
   };
 
-  const toggleAll = () => {
+  useEffect(() => {
     if (expandAll) {
-      setExpandedSections(new Set());
-    } else {
       const allIds = ['intro', 'pareto', 'gifts', 'role', 'characteristics', 'summary'];
       setExpandedSections(new Set(allIds));
+    } else {
+      setExpandedSections(new Set());
     }
-    setExpandAll(!expandAll);
-  };
+  }, [expandAll]);
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -45,24 +43,6 @@ export default function Chapter2() {
           </p>
         </div>
 
-        <div className="mt-6 flex justify-end">
-          <button
-            onClick={toggleAll}
-            className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-indigo-200 text-indigo-700 rounded-lg hover:bg-indigo-50 transition-colors font-medium"
-          >
-            {expandAll ? (
-              <>
-                <ChevronUp className="w-4 h-4" />
-                <span>收合全部</span>
-              </>
-            ) : (
-              <>
-                <ChevronDown className="w-4 h-4" />
-                <span>展開全部</span>
-              </>
-            )}
-          </button>
-        </div>
       </div>
 
       {/* Section 1: 派瑞特原則 */}
