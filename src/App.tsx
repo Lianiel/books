@@ -236,8 +236,8 @@ const BOOKS = [
   },
   {
     id: 'book7',
-    title: '07 以斯拉記——被擄歸回的恩典',
-    subtitle: '陳濟民 著',
+    title: '07 基要陪讀課程',
+    subtitle: '基要陪讀課程',
     emoji: '📜',
     accentHex: '#7c3aed',
     chapters: [
@@ -521,7 +521,6 @@ export default function App() {
                 onClick={() => handleSelectBook(b.id)}
                 className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex items-center gap-4 text-left hover:shadow-md transition-shadow"
               >
-                <span className="text-4xl flex-shrink-0">{b.emoji}</span>
                 <div>
                   <div className="font-bold text-slate-800 text-base">{b.title}</div>
                   <div className="text-xs text-slate-400 mt-0.5">{b.subtitle}</div>
