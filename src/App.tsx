@@ -251,8 +251,8 @@ const BOOKS = [
   },
   {
     id: 'book8',
-    title: '08 屬靈操練禮讚',
-    subtitle: '傅士德 著',
+    title: '08 靈性關懷與身心健康',
+    subtitle: '時兆趨勢學苑 著',
     emoji: '🙏',
     accentHex: '#0891b2',
     chapters: [
