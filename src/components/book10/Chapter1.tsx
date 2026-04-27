@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, ChevronUp, Zap, Globe, Sparkles, Heart, BookOpen, Shield, Users, Brain, Target, MessageCircle, Compass } from 'lucide-react';
+import { ChevronDown, ChevronUp, Zap, Globe, Sparkles, Heart, BookOpen, Shield, Users, Brain, Target, MessageCircle } from 'lucide-react';
 
 interface SectionProps {
   id: string;
@@ -995,22 +995,6 @@ export default function Chapter1({ expandAll }: { expandAll?: boolean }) {
           </div>
         </div>
       </Section>
-
-      <div className="bg-gradient-to-r from-purple-50 to-blue-50 border-2 border-purple-200 rounded-2xl p-6 mt-12">
-        <div className="flex items-center gap-3 mb-4">
-          <Compass className="w-8 h-8 text-purple-600" />
-          <h3 className="text-purple-900 font-bold text-2xl">完整版本</h3>
-        </div>
-        <p className="text-purple-800 mb-4" style={{fontSize:"17px"}}>
-          恭喜！你現在看到的是包含所有豐富內容的完整版本，參照 Book 1 的格式：
-        </p>
-        <div className="grid md:grid-cols-2 gap-3 text-purple-700" style={{fontSize:"16px"}}>
-          <div>✓ 7個詳細 Sections（完整重點整理）</div>
-          <div>✓ 豐富的延伸探討（每個4-5段深入論述）</div>
-          <div>✓ 充足的反思問題（每個5-6題）</div>
-          <div>✓ 具體生活實踐應用（每個5-6項可執行）</div>
-        </div>
-      </div>
 
     </div>
   );
