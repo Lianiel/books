@@ -108,10 +108,107 @@ export default function Chapter1({ expandAll }: { expandAll?: boolean }) {
       >
         <div className="space-y-4">
           <div className="bg-purple-50 rounded-xl p-5 border border-purple-100 mb-4">
-            <h4 className="font-bold text-purple-900 mb-3" style={{fontSize:"19px"}}>重點整理</h4>
-            <p className="text-gray-700 leading-relaxed" style={{fontSize:"17px"}}>
-              作者開宗明義地提出一個大膽的主張：在今日教會裏最少被運用的屬靈能力資源，就是為基督徒領袖們代禱的能力。他刻意不說最少被運用的能力資源之一，因為沒有任何一件事是如此重要卻又如此被忽略的。上帝話語的宣講、禱告、敬拜、讚美、醫治、認罪、禁食、聖禮、屬靈恩賜...這些屬靈能力資源近來在教會中都普遍被使用。但在為我們的領袖們代求上卻往往不是如此。
-            </p>
+            <h4 className="font-bold text-purple-900 mb-4" style={{fontSize:"19px"}}>重點整理</h4>
+
+            {/* 核心主張 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-purple-500 mb-4 shadow-sm">
+              <p className="font-bold text-purple-800 mb-2" style={{fontSize:"17px"}}>① 一個令人震驚的大膽主張</p>
+              <p className="text-gray-700 leading-relaxed" style={{fontSize:"16px"}}>
+                作者開宗明義提出：在今日教會裡<strong>最少被運用的屬靈能力資源</strong>，就是為基督徒領袖們代禱的能力。
+                他刻意不說「最少被運用的能力資源<em>之一</em>」，而是直接說「最少被運用的」——
+                因為在他數十年的觀察中，沒有任何一件事是如此重要、卻又如此被忽略的。
+              </p>
+            </div>
+
+            {/* 對比：其他資源 vs 為領袖代禱 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-blue-400 mb-4 shadow-sm">
+              <p className="font-bold text-blue-800 mb-3" style={{fontSize:"17px"}}>② 被重視的資源，與被忽略的代禱</p>
+              <p className="text-gray-700 leading-relaxed mb-3" style={{fontSize:"16px"}}>
+                作者列出教會近年來日益重視的屬靈能力資源：
+              </p>
+              <div className="grid grid-cols-2 gap-2 mb-3">
+                {['上帝話語的宣講', '禱告與靈修操練', '敬拜與讚美', '醫治與趕鬼', '認罪與復和', '禁食與等候', '聖禮與聖餐', '屬靈恩賜的運用'].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 bg-green-50 rounded-lg px-2 py-1.5">
+                    <span className="text-green-600 font-bold text-sm">✓</span>
+                    <span className="text-gray-700" style={{fontSize:"15px"}}>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex items-center gap-2 bg-red-50 rounded-lg px-3 py-2.5 border border-red-200">
+                <span className="text-red-500 font-bold text-lg">✗</span>
+                <span className="text-red-800 font-semibold" style={{fontSize:"16px"}}>專門為基督徒領袖個人守望的代禱——幾乎付之闕如</span>
+              </div>
+            </div>
+
+            {/* 這種代禱的定義 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-amber-400 mb-4 shadow-sm">
+              <p className="font-bold text-amber-800 mb-2" style={{fontSize:"17px"}}>③ 「為領袖代禱」是什麼意思？</p>
+              <p className="text-gray-700 leading-relaxed mb-2" style={{fontSize:"16px"}}>
+                作者強調，這不是禱告會中例行、泛泛的「為教會領袖守護」，而是一種<strong>專門、持續、深入的個人守望式代禱</strong>，包括：
+              </p>
+              <ul className="space-y-1.5 ml-1">
+                {[
+                  '定期、忠實地為特定領袖代禱，視之為自己的屬靈使命',
+                  '為領袖的靈命狀況、家庭關係、身心健康守望',
+                  '為領袖面對的屬靈爭戰和試探站在破口上',
+                  '在禱告中回應聖靈帶領，為領袖的具體需要呼求',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-gray-700" style={{fontSize:"15px"}}>
+                    <span className="text-amber-500 mt-1 flex-shrink-0">▸</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* 保羅的五次請求 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-indigo-400 mb-4 shadow-sm">
+              <p className="font-bold text-indigo-800 mb-2" style={{fontSize:"17px"}}>④ 聖經的依據：保羅五次明確請求代禱</p>
+              <p className="text-gray-700 leading-relaxed mb-3" style={{fontSize:"16px"}}>
+                使徒保羅在書信中<strong>五次明確請求教會為他個人代禱</strong>，顯示代禱不是可有可無的支持，
+                而是屬靈爭戰中生死攸關的武器：
+              </p>
+              <div className="space-y-2">
+                {[
+                  { ref: '羅馬書 15:30', text: '懇求你們靠我們主耶穌基督，並聖靈的愛，與我一同竭力，在禱告中為我用力...' },
+                  { ref: '以弗所書 6:19', text: '也為我祈求，使我得著口才，能以放膽，開口講明福音的奧祕...' },
+                  { ref: '歌羅西書 4:3',  text: '也要為我們禱告，求神給我們開傳道的門...' },
+                  { ref: '帖撒羅尼迦前書 5:25', text: '弟兄們，請你們為我們禱告。' },
+                  { ref: '帖撒羅尼迦後書 3:1',  text: '弟兄們，我還有一件事，請你們為我們禱告...' },
+                ].map((v, i) => (
+                  <div key={i} className="bg-indigo-50 rounded-lg px-3 py-2">
+                    <span className="font-semibold text-indigo-700" style={{fontSize:"14px"}}>{v.ref}</span>
+                    <p className="text-gray-600 leading-relaxed mt-0.5 italic" style={{fontSize:"14px"}}>{v.text}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-gray-600 leading-relaxed mt-3 italic" style={{fontSize:"15px"}}>
+                若連使徒保羅都如此迫切需要代禱的支持，今天的牧師、傳道人、教會領袖，豈不更需要嗎？
+              </p>
+            </div>
+
+            {/* 忽略的代價 */}
+            <div className="bg-red-50 rounded-xl p-4 border-l-4 border-red-400 shadow-sm">
+              <p className="font-bold text-red-800 mb-2" style={{fontSize:"17px"}}>⑤ 忽略代禱的代價</p>
+              <p className="text-gray-700 leading-relaxed mb-2" style={{fontSize:"16px"}}>
+                撒但深知領袖的影響力——擊倒一位牧師，可以散散一個羊群；摧毀一個教會的領導核心，可以讓整體見證蒙羞。
+                當沒有人為領袖守望，他們便在屬靈戰場上陷入孤立，其後果往往包括：
+              </p>
+              <ul className="space-y-1.5 ml-1">
+                {[
+                  '道德失足與醜聞——許多曾被上帝使用的領袖因此陷落',
+                  '靈命枯竭與倦怠——在服事的外殼下，內心早已荒涼',
+                  '家庭破裂——配偶和兒女常常付上最高的代價',
+                  '教會分裂——源於領袖屬靈軟弱和人際衝突',
+                  '使命停滯——本可突破的服事，因缺乏代禱支撐而受阻',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-gray-700" style={{fontSize:"15px"}}>
+                    <span className="text-red-500 mt-1 flex-shrink-0">▸</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div className="bg-blue-50 rounded-xl p-5 border border-blue-100">
@@ -334,13 +431,109 @@ export default function Chapter1({ expandAll }: { expandAll?: boolean }) {
       >
         <div className="space-y-4">
           <div className="bg-purple-50 rounded-xl p-5 border border-purple-100 mb-4">
-            <h4 className="font-bold text-purple-900 mb-3" style={{fontSize:"19px"}}>重點整理</h4>
-            <p className="text-gray-700 leading-relaxed mb-3" style={{fontSize:"17px"}}>
-              我們經常把代禱當成是禱告的同義詞。在日常的談話裏交替地使用這兩個詞是可以接受的，但是當我們以專業術語的角度來看時，就不可以互換了。禱告是向上帝說話，代禱是為了一個人的益處而來到上帝面前求告。所有的代禱都是禱告，但並非所有的禱告都是代禱。
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-3" style={{fontSize:"17px"}}>
-              代禱一字源於拉丁文 inter（意指之間）及 cedere（意指前去），所以代禱就是去到破口之間或站在破口內之意。主曾藉著先知以西結說：我在他們中間尋找一人重修牆垣，在我面前為這國站在破口防堵，使我不滅絕這國，卻找不著一個。
-            </p>
+            <h4 className="font-bold text-purple-900 mb-4" style={{fontSize:"19px"}}>重點整理</h4>
+
+            {/* 禱告 vs 代禱 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-purple-500 mb-4 shadow-sm">
+              <p className="font-bold text-purple-800 mb-2" style={{fontSize:"17px"}}>① 禱告 vs 代禱——重要的區分</p>
+              <p className="text-gray-700 leading-relaxed mb-3" style={{fontSize:"16px"}}>
+                我們常把「代禱」和「禱告」當同義詞交替使用，但作者指出這兩者有根本的區別：
+              </p>
+              <div className="grid grid-cols-2 gap-3 mb-2">
+                <div className="bg-blue-50 rounded-lg p-3 border border-blue-200">
+                  <p className="font-bold text-blue-700 mb-1" style={{fontSize:"15px"}}>禱告（Prayer）</p>
+                  <p className="text-gray-600" style={{fontSize:"14px"}}>向上帝說話。範圍廣泛，包括讚美、感謝、認罪、求告，以自我為中心或為國度。</p>
+                </div>
+                <div className="bg-purple-50 rounded-lg p-3 border border-purple-200">
+                  <p className="font-bold text-purple-700 mb-1" style={{fontSize:"15px"}}>代禱（Intercession）</p>
+                  <p className="text-gray-600" style={{fontSize:"14px"}}>為了<strong>另一個人的益處</strong>來到上帝面前求告，是他人導向而非自我導向的禱告。</p>
+                </div>
+              </div>
+              <p className="text-gray-600 italic" style={{fontSize:"15px"}}>✦ 所有的代禱都是禱告，但並非所有的禱告都是代禱。</p>
+            </div>
+
+            {/* 字源與意義 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-blue-400 mb-4 shadow-sm">
+              <p className="font-bold text-blue-800 mb-2" style={{fontSize:"17px"}}>② 字源揭示代禱的本質</p>
+              <p className="text-gray-700 leading-relaxed mb-2" style={{fontSize:"16px"}}>
+                「代禱」源自拉丁文：
+              </p>
+              <div className="flex gap-3 mb-3">
+                <div className="bg-indigo-50 rounded-lg px-4 py-2 flex-1 text-center">
+                  <p className="font-bold text-indigo-700" style={{fontSize:"16px"}}><em>inter</em></p>
+                  <p className="text-gray-600 text-sm">在……之間</p>
+                </div>
+                <div className="flex items-center text-gray-400 font-bold">+</div>
+                <div className="bg-indigo-50 rounded-lg px-4 py-2 flex-1 text-center">
+                  <p className="font-bold text-indigo-700" style={{fontSize:"16px"}}><em>cedere</em></p>
+                  <p className="text-gray-600 text-sm">前去、走入</p>
+                </div>
+                <div className="flex items-center text-gray-400 font-bold">=</div>
+                <div className="bg-purple-100 rounded-lg px-4 py-2 flex-1 text-center">
+                  <p className="font-bold text-purple-700" style={{fontSize:"15px"}}>走入破口之間</p>
+                  <p className="text-gray-600 text-sm">站在中間守護</p>
+                </div>
+              </div>
+              <p className="text-gray-700 leading-relaxed" style={{fontSize:"16px"}}>
+                代禱者<strong>站在上帝與有需要的人之間</strong>，作為橋樑，透過禱告讓上帝的能力流向那需要的人。這是一個主動進入、不是被動等候的動作。
+              </p>
+            </div>
+
+            {/* 以西結的呼聲 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-amber-400 mb-4 shadow-sm">
+              <p className="font-bold text-amber-800 mb-2" style={{fontSize:"17px"}}>③ 以西結書的呼聲：上帝在找人</p>
+              <div className="bg-amber-50 rounded-lg p-3 mb-3 border border-amber-200">
+                <p className="text-amber-900 italic leading-relaxed" style={{fontSize:"16px"}}>
+                  「我在他們中間尋找一人，重修牆垣，在我面前為這國站在破口防堵，使我不滅絕這國，<strong>卻找不著一個。</strong>」
+                </p>
+                <p className="text-amber-700 text-sm mt-1">——以西結書 22:30</p>
+              </div>
+              <p className="text-gray-700 leading-relaxed" style={{fontSize:"16px"}}>
+                這節經文令人心碎：全能的上帝<strong>主動尋找</strong>一個願意站在破口的代禱者，卻找不著一個。這揭示了一個震撼的真相——不是上帝沒有能力介入，而是祂選擇等候人的禱告，等候有人願意「站在破口上」，與祂同工。
+              </p>
+            </div>
+
+            {/* 站在破口是什麼意思 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-red-400 mb-4 shadow-sm">
+              <p className="font-bold text-red-800 mb-2" style={{fontSize:"17px"}}>④ 「站在破口上」的圖像</p>
+              <p className="text-gray-700 leading-relaxed mb-2" style={{fontSize:"16px"}}>
+                在古代戰爭中，當城牆被攻破出現缺口，最勇敢的戰士會站在破口處，用自己的身體擋住敵人的進攻——這是最危險的位置，也是最關鍵的位置。代禱者就是這樣的人：
+              </p>
+              <ul className="space-y-1.5 ml-1">
+                {[
+                  '當領袖被撒但攻擊時，代禱者站在上帝與領袖之間，為他守護',
+                  '當教會陷入危機時，代禱者站在上帝與會眾之間，築起禱告的牆',
+                  '當家庭面臨破裂時，代禱者在上帝面前為這個家族懇求',
+                  '代禱者不是旁觀者，而是參戰者；不是評論者，而是守護者',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-gray-700" style={{fontSize:"15px"}}>
+                    <span className="text-red-400 mt-1 flex-shrink-0">▸</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* 以斯帖的代禱榜樣 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-green-400 shadow-sm">
+              <p className="font-bold text-green-800 mb-2" style={{fontSize:"17px"}}>⑤ 代禱者的四種品格——以斯帖為榜樣</p>
+              <p className="text-gray-700 leading-relaxed mb-3" style={{fontSize:"16px"}}>
+                以斯帖冒著生命危險為同胞進謁君王，是代禱者最鮮明的聖經圖像。她身上展現了代禱者應有的品格：
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  { label: '謙卑', desc: '不以救世主姿態出現，以卑微僕人身分求情' },
+                  { label: '順服', desc: '尊重君王的權柄，是懇求而非強求' },
+                  { label: '預備', desc: '禁食三天，在進入王面前充分預備自己' },
+                  { label: '甘冒風險', desc: '「我若死就死吧」，願意為別人付出自己' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-green-50 rounded-lg p-2.5 border border-green-200">
+                    <p className="font-bold text-green-700 text-sm">{item.label}</p>
+                    <p className="text-gray-600" style={{fontSize:"13px"}}>{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="bg-blue-50 rounded-xl p-5 border border-blue-100">
@@ -397,19 +590,96 @@ export default function Chapter1({ expandAll }: { expandAll?: boolean }) {
       >
         <div className="space-y-4">
           <div className="bg-purple-50 rounded-xl p-5 border border-purple-100 mb-4">
-            <h4 className="font-bold text-purple-900 mb-3" style={{fontSize:"19px"}}>重點整理</h4>
-            <p className="text-gray-700 leading-relaxed mb-3" style={{fontSize:"17px"}}>
-              聖經中充滿了代禱者的榜樣。耶利米書十五章一節中，上帝說：雖有摩西和撒母耳在我面前代求，我的心也不顧惜這百姓。這裏的要點是代禱者並非操縱上帝的人，有些事上帝早已具體地設定好它必然會有的結果了。而為了要強調這點，上帝提到祂兩位最好的代禱僕人：摩西與撒母耳。
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-3" style={{fontSize:"17px"}}>
-              摩西在出埃及記17章為約書亞代禱，當摩西舉手時以色列人就得勝；在出埃及記32章，以色列百姓敬拜金牛犢，上帝說要滅絕他們，摩西代求後耶和華後悔，不把所說的禍降與祂的百姓。撒母耳在撒母耳記上7章為以色列人代求，結果主降下雷聲霹靂，以色列人戰勝了非利士人。
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-3" style={{fontSize:"17px"}}>
-              耶穌是最無與倫比的代禱者。在約翰福音十七章中祂為百姓的禱告，透露出了祂對子民所存的慈愛心腸。直到今日，祂仍持續不斷地為我們代求。祂是長遠活著，替他們祈求。
-            </p>
-            <p className="text-gray-700 leading-relaxed" style={{fontSize:"17px"}}>
-              使徒保羅深知為領袖個人代禱的價值，因此在他的書信中曾五次要求人為他禱告：帖撒羅尼迦前書5:25、羅馬書15:30、哥林多後書1:11、腓立比書1:19、腓利門書22。
-            </p>
+            <h4 className="font-bold text-purple-900 mb-4" style={{fontSize:"19px"}}>重點整理</h4>
+
+            {/* 摩西的代禱 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-purple-500 mb-4 shadow-sm">
+              <p className="font-bold text-purple-800 mb-2" style={{fontSize:"17px"}}>① 摩西：代禱改變戰局，甚至改變上帝的決定</p>
+              <div className="space-y-3">
+                <div className="bg-purple-50 rounded-lg p-3 border border-purple-100">
+                  <p className="font-semibold text-purple-700 text-sm mb-1">出埃及記 17章——手舉起，就得勝</p>
+                  <p className="text-gray-700 leading-relaxed" style={{fontSize:"15px"}}>
+                    約書亞在谷中打仗，摩西在山上舉手代禱。<strong>摩西手舉起，以色列人就得勝；手垂下，亞瑪力人就得勝。</strong>
+                    最終亞倫與戶珥扶住摩西的手，約書亞贏得戰爭。戰場的勝負，不在刀劍，而在禱告。
+                  </p>
+                </div>
+                <div className="bg-red-50 rounded-lg p-3 border border-red-100">
+                  <p className="font-semibold text-red-700 text-sm mb-1">出埃及記 32章——一人的代禱，留住全族的命</p>
+                  <p className="text-gray-700 leading-relaxed" style={{fontSize:"15px"}}>
+                    以色列百姓敬拜金牛犢，上帝說要滅絕他們。摩西在上帝面前代求，甚至說：
+                    「倘若祢肯赦免他們的罪...不然，求祢從祢所寫的冊上塗抹我的名。」
+                    結果：<strong>耶和華後悔，不把所說的禍降與百姓。</strong>一個人的代禱，改變了整個民族的命運。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 撒母耳的代禱 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-blue-400 mb-4 shadow-sm">
+              <p className="font-bold text-blue-800 mb-2" style={{fontSize:"17px"}}>② 撒母耳：代禱呼來雷電，擊退敵軍</p>
+              <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
+                <p className="font-semibold text-blue-700 text-sm mb-1">撒母耳記上 7章</p>
+                <p className="text-gray-700 leading-relaxed" style={{fontSize:"15px"}}>
+                  以色列人在米斯巴聚集悔改，非利士人趁機攻打。撒母耳在上帝面前為百姓代求，
+                  <strong>耶和華就用大雷轟非利士人，使他們大亂，敗在以色列人面前。</strong>
+                  耶利米書15:1中，上帝提到「摩西和撒母耳」，將他們列為最偉大的代禱者——代禱不是少數人的天賦，而是上帝揀選的呼召。
+                </p>
+              </div>
+            </div>
+
+            {/* 耶穌的代禱 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-amber-400 mb-4 shadow-sm">
+              <p className="font-bold text-amber-800 mb-2" style={{fontSize:"17px"}}>③ 耶穌：最無與倫比的代禱者，至今仍在代求</p>
+              <div className="space-y-2">
+                <div className="bg-amber-50 rounded-lg p-3 border border-amber-100">
+                  <p className="font-semibold text-amber-700 text-sm mb-1">約翰福音 17章——大祭司的禱告</p>
+                  <p className="text-gray-700 leading-relaxed" style={{fontSize:"15px"}}>
+                    受難前夕，耶穌不為自己禱告，而是為門徒、為今後一切信祂的人代求。祂為合一、為聖潔、為保守、為見證代禱。
+                    這章禱告「透露出祂對子民所存的慈愛心腸」——這是代禱最深的動力：<strong>愛</strong>。
+                  </p>
+                </div>
+                <div className="bg-amber-50 rounded-lg p-3 border border-amber-100">
+                  <p className="font-semibold text-amber-700 text-sm mb-1">希伯來書 7:25——祂現在仍在代求</p>
+                  <p className="text-gray-700 leading-relaxed" style={{fontSize:"15px"}}>
+                    「祂是長遠活著，替他們祈求。」升天後的耶穌，此刻仍在父的右邊為我們代求。
+                    代禱不只是屬地的行動，更是天上正在進行的事工。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 保羅的五次請求 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-indigo-400 mb-4 shadow-sm">
+              <p className="font-bold text-indigo-800 mb-2" style={{fontSize:"17px"}}>④ 保羅五次明確請求代禱——大使徒也需要守望</p>
+              <p className="text-gray-700 leading-relaxed mb-3" style={{fontSize:"16px"}}>
+                使徒保羅書信中明確出現五次「請為我禱告」的請求，顯示領袖尋求代禱不是軟弱，而是智慧：
+              </p>
+              <div className="space-y-2">
+                {[
+                  { ref: '帖前 5:25', text: '弟兄們，請你們為我們禱告。', note: '最簡短，最直接' },
+                  { ref: '羅 15:30', text: '懇求你們與我一同竭力，在禱告中為我用力，使我脫離在猶太不順從之人的手。', note: '為宣教安全代禱' },
+                  { ref: '弗 6:19', text: '也為我祈求，使我得著口才，能以放膽開口，講明福音的奧祕。', note: '為講道的能力代禱' },
+                  { ref: '西 4:3', text: '也要為我們禱告，求神給我們開傳道的門，能以講基督的奧祕。', note: '為傳道機會代禱' },
+                  { ref: '帖後 3:1', text: '要為我們禱告，使主的道快快行開，得著榮耀。', note: '為福音廣傳代禱' },
+                ].map((v, i) => (
+                  <div key={i} className="bg-indigo-50 rounded-lg px-3 py-2">
+                    <div className="flex justify-between items-center mb-0.5">
+                      <span className="font-semibold text-indigo-700" style={{fontSize:"14px"}}>{v.ref}</span>
+                      <span className="text-indigo-400 text-xs">{v.note}</span>
+                    </div>
+                    <p className="text-gray-600 italic leading-relaxed" style={{fontSize:"14px"}}>{v.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 結論 */}
+            <div className="bg-gradient-to-r from-purple-100 to-indigo-100 rounded-xl p-4 border border-purple-200 shadow-sm">
+              <p className="font-bold text-purple-900 mb-2" style={{fontSize:"17px"}}>⑤ 聖經代禱的核心邏輯</p>
+              <p className="text-gray-700 leading-relaxed" style={{fontSize:"16px"}}>
+                耶利米書15:1中，上帝說即使摩西和撒母耳代求，也無法改變某些已定的審判——但這恰恰反映出代禱<strong>通常確實能改變上帝的作為</strong>，否則提到這兩位就毫無意義。聖經的代禱邏輯是：上帝全能，卻主動選擇尊重人的禱告，讓人成為祂工作的同工。
+              </p>
+            </div>
           </div>
 
           <div className="bg-blue-50 rounded-xl p-5 border border-blue-100">
@@ -466,16 +736,112 @@ export default function Chapter1({ expandAll }: { expandAll?: boolean }) {
       >
         <div className="space-y-4">
           <div className="bg-purple-50 rounded-xl p-5 border border-purple-100 mb-4">
-            <h4 className="font-bold text-purple-900 mb-3" style={{fontSize:"19px"}}>重點整理</h4>
-            <p className="text-gray-700 leading-relaxed mb-3" style={{fontSize:"17px"}}>
-              代求的能力有多大？有人可能會問：你真的是說，單單人的祈求就能決定至高全能上帝的作為嗎？答案是肯定的。這就是全能上帝選擇用來設計這個世界並架構我們與祂關係的一種方式。正確的假設是：若以斯帖沒有為猶太人代求，他們將全部被毀滅。
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-3" style={{fontSize:"17px"}}>
-              約翰衛斯理說：除了回覆信心的禱告外，上帝在世上不做任何一件事。加爾文說：千言萬語無法說明禱告是何等地必要。在上帝至高主權的安排中並不排除人類信心的運用。傑克海福德說：我們可以幫忙決定祝福或咒詛這兩者中的那一項臨到世上。禱告正是決定的關鍵因素。溫瓦特說：歷史是屬於代禱者的。
-            </p>
-            <p className="text-gray-700 leading-relaxed" style={{fontSize:"17px"}}>
-              代禱是屬靈的爭戰。身為代禱者，他們可預期自己經常需要與那些想摧毀上帝工作的惡靈爭戰。愛德溫司脫伯說：代禱是一種爭戰，而爭戰主要是藉著這種方式來進行的。必須在禱告中先爭戰得勝，然後勝利才可能在現實生活中真正顯出來。
-            </p>
+            <h4 className="font-bold text-purple-900 mb-4" style={{fontSize:"19px"}}>重點整理</h4>
+
+            {/* 核心神學命題 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-purple-500 mb-4 shadow-sm">
+              <p className="font-bold text-purple-800 mb-2" style={{fontSize:"17px"}}>① 最震撼的神學命題：人的禱告真的能改變上帝的作為</p>
+              <p className="text-gray-700 leading-relaxed mb-2" style={{fontSize:"16px"}}>
+                作者提出一個令人震驚卻植根聖經的主張：<strong>單單人的祈求，真的能影響至高全能上帝的作為。</strong>
+                這不是說人能操縱上帝，而是上帝主動選擇讓人的禱告成為祂行動的條件。
+              </p>
+              <div className="bg-purple-50 rounded-lg p-3 border border-purple-100">
+                <p className="text-gray-700 italic" style={{fontSize:"15px"}}>
+                  正確的假設是：<strong>若以斯帖沒有為猶太人代求，他們將全部被毀滅。</strong>
+                  上帝有能力介入，卻等候一個人願意站在破口，才釋放祂的能力。
+                </p>
+              </div>
+            </div>
+
+            {/* 上帝自限的神學 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-blue-400 mb-4 shadow-sm">
+              <p className="font-bold text-blue-800 mb-2" style={{fontSize:"17px"}}>② 上帝「自限」的神學——為愛而等候</p>
+              <p className="text-gray-700 leading-relaxed mb-3" style={{fontSize:"16px"}}>
+                上帝是全能的，卻選擇讓人的禱告成為祂工作的管道。為什麼？
+              </p>
+              <ul className="space-y-1.5 ml-1">
+                {[
+                  '祂不要我們成為機器人，要我們成為兒女、同工',
+                  '尊重人的自由意志——強迫的愛不是愛',
+                  '讓我們參與祂的計畫，分享祂工作的榮耀',
+                  '這是上帝的謙卑：全能者願意等候受造者的禱告',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-gray-700" style={{fontSize:"15px"}}>
+                    <span className="text-blue-400 mt-1 flex-shrink-0">▸</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* 歷代神學家的見證 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-amber-400 mb-4 shadow-sm">
+              <p className="font-bold text-amber-800 mb-2" style={{fontSize:"17px"}}>③ 歷代神學家一致的見證</p>
+              <div className="space-y-2">
+                {[
+                  { name: '約翰衛斯理', quote: '除了回覆信心的禱告外，上帝在世上不做任何一件事。', note: '強調禱告是上帝工作的前提' },
+                  { name: '加爾文', quote: '千言萬語無法說明禱告是何等地必要。在上帝至高主權的安排中，並不排除人類信心的運用。', note: '即使主張主權，也肯定禱告的必要' },
+                  { name: '傑克海福德', quote: '我們可以幫忙決定祝福或咒詛這兩者中的那一項臨到世上。禱告正是決定的關鍵因素。', note: '代禱有決定性影響力' },
+                  { name: '溫瓦特', quote: '歷史是屬於代禱者的。', note: '最簡潔有力的總結' },
+                  { name: '愛德溫司脫伯', quote: '代禱是一種爭戰，必須在禱告中先爭戰得勝，然後勝利才可能在現實生活中真正顯出來。', note: '揭示代禱的屬靈爭戰本質' },
+                ].map((v, i) => (
+                  <div key={i} className="bg-amber-50 rounded-lg px-3 py-2 border border-amber-100">
+                    <div className="flex justify-between items-center mb-0.5">
+                      <span className="font-semibold text-amber-700" style={{fontSize:"14px"}}>{v.name}</span>
+                      <span className="text-amber-400 text-xs italic">{v.note}</span>
+                    </div>
+                    <p className="text-gray-600 italic leading-relaxed" style={{fontSize:"14px"}}>「{v.quote}」</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 代禱是屬靈爭戰 */}
+            <div className="bg-white rounded-xl p-4 border-l-4 border-red-400 mb-4 shadow-sm">
+              <p className="font-bold text-red-800 mb-2" style={{fontSize:"17px"}}>④ 代禱是屬靈爭戰——珍白芮德的真實見證</p>
+              <div className="bg-red-50 rounded-lg p-3 border border-red-100 mb-3">
+                <p className="text-red-900 font-semibold text-sm mb-1">深夜的代禱爭戰</p>
+                <p className="text-gray-700 leading-relaxed" style={{fontSize:"15px"}}>
+                  珍白芮德深夜為在東歐宣教的約翰麥瑟代禱時，突然被一股強大黑暗力量攻擊，完全癱瘓無法動彈。
+                  她後來察覺：<strong>這黑暗權勢本是被差遣去破壞約翰的，卻因她站在破口上而轉而攻擊她。</strong>
+                  就在一眨眼之間，一位天使進入房間引開了邪靈。珍精疲力竭，心中卻充滿得勝的喜悅。
+                </p>
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-2" style={{fontSize:"16px"}}>
+                這個見證揭示代禱的三個嚴肅真相：
+              </p>
+              <ul className="space-y-1.5 ml-1">
+                {[
+                  '代禱者站在破口上，會成為撒但優先攻擊的目標',
+                  '代禱不是安全舒適的靈修，而是危險的前線屬靈作戰',
+                  '爭戰是真實的，但得勝也是真實的——「勝利是屬於上帝的」',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-gray-700" style={{fontSize:"15px"}}>
+                    <span className="text-red-400 mt-1 flex-shrink-0">▸</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* 代禱者的生命圖像 */}
+            <div className="bg-gradient-to-r from-purple-100 to-blue-100 rounded-xl p-4 border border-purple-200 shadow-sm">
+              <p className="font-bold text-purple-900 mb-2" style={{fontSize:"17px"}}>⑤ 代禱者的生命：代價與榮耀並存</p>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="bg-white/70 rounded-lg p-3">
+                  <p className="font-semibold text-red-700 text-sm mb-1.5">代禱者所付的代價</p>
+                  {['時間與精力的犧牲', '屬靈攻擊與爭戰', '疲乏與掙扎', '無人知曉的默默付出'].map((item, i) => (
+                    <p key={i} className="text-gray-600 text-xs leading-relaxed">• {item}</p>
+                  ))}
+                </div>
+                <div className="bg-white/70 rounded-lg p-3">
+                  <p className="font-semibold text-green-700 text-sm mb-1.5">代禱者所領受的榮耀</p>
+                  {['親歷上帝大能的釋放', '與上帝同工的榮耀', '得勝的超越喜悅', '歷史是屬於代禱者的'].map((item, i) => (
+                    <p key={i} className="text-gray-600 text-xs leading-relaxed">• {item}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="bg-blue-50 rounded-xl p-5 border border-blue-100">
@@ -532,17 +898,60 @@ export default function Chapter1({ expandAll }: { expandAll?: boolean }) {
       >
         <div className="space-y-4">
           <div className="bg-purple-50 rounded-xl p-5 border border-purple-100 mb-4">
-            <h4 className="font-bold text-purple-900 mb-3" style={{fontSize:"19px"}}>重點整理</h4>
-            <p className="text-gray-700 leading-relaxed mb-3 font-semibold text-purple-800" style={{fontSize:"17px"}}>
-              本章揭示了一個被教會忽略卻極其重要的真理：為基督徒領袖代禱的能力。
-            </p>
-            <ul className="space-y-2">
-              <li className="text-gray-700" style={{fontSize:"17px"}}>• 代禱的定義：不只是為別人禱告，而是站在破口上，成為上帝與需要之間的橋樑</li>
-              <li className="text-gray-700" style={{fontSize:"17px"}}>• 代禱的能力：真實的見證顯示，代禱能改變決策（天廓教會）、帶來復興（赫里福德市）</li>
-              <li className="text-gray-700" style={{fontSize:"17px"}}>• 代禱的本質：是屬靈爭戰，代禱者常成為黑暗權勢首要攻擊的目標</li>
-              <li className="text-gray-700" style={{fontSize:"17px"}}>• 聖經榜樣：摩西、撒母耳、耶穌、保羅都顯明代禱的重要性</li>
-              <li className="text-gray-700" style={{fontSize:"17px"}}>• 神學真理：上帝選擇自限祂的作為，尊重人的禱告，歷史是屬於代禱者的</li>
-            </ul>
+            <h4 className="font-bold text-purple-900 mb-4" style={{fontSize:"19px"}}>重點整理</h4>
+
+            <div className="bg-white rounded-xl p-4 border-l-4 border-purple-500 mb-4 shadow-sm">
+              <p className="font-bold text-purple-800 mb-3" style={{fontSize:"17px"}}>第一章的五大核心洞見</p>
+              <div className="space-y-3">
+                {[
+                  {
+                    num: '①', color: 'bg-purple-100 text-purple-700',
+                    title: '最被忽略的資源',
+                    body: '為基督徒領袖個人守望的代禱，是今日教會最少被運用、卻最具能力的屬靈資源。不是「之一」，而是「最」。',
+                  },
+                  {
+                    num: '②', color: 'bg-blue-100 text-blue-700',
+                    title: '代禱有真實的能力',
+                    body: '天廓衛理教會：代禱帶來超乎想像的祝福（免費得到價值千萬的土地）。赫里福德市：兩位婦人禱告八小時，500人決志——服事的果效不在服事者，在代禱者。',
+                  },
+                  {
+                    num: '③', color: 'bg-amber-100 text-amber-700',
+                    title: '代禱的真實定義',
+                    body: '代禱（inter + cedere）= 走入破口之間。代禱者站在上帝與有需要的人之間，是危險的位置，也是榮耀的呼召。不是例行公事，是生死攸關的守護。',
+                  },
+                  {
+                    num: '④', color: 'bg-green-100 text-green-700',
+                    title: '聖經的雙重見證',
+                    body: '摩西、撒母耳、耶穌、保羅——代禱貫穿整本聖經。保羅五次請求代禱：即使最偉大的使徒，也深知自己離不開代禱的支撐。尋求代禱不是軟弱，是智慧。',
+                  },
+                  {
+                    num: '⑤', color: 'bg-red-100 text-red-700',
+                    title: '代禱是屬靈爭戰',
+                    body: '代禱者會成為撒但的攻擊對象（珍白芮德的見證）。禱告不是舒適的靈修，而是前線作戰。人的代禱真能影響上帝的作為——「歷史是屬於代禱者的」。',
+                  },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-3 items-start">
+                    <span className={`${item.color} rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5`}>{item.num}</span>
+                    <div>
+                      <p className="font-semibold text-gray-800 mb-0.5" style={{fontSize:"16px"}}>{item.title}</p>
+                      <p className="text-gray-600 leading-relaxed" style={{fontSize:"15px"}}>{item.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-purple-100 to-blue-100 rounded-xl p-4 border border-purple-200 shadow-sm">
+              <p className="font-bold text-purple-900 mb-2" style={{fontSize:"17px"}}>本章的核心呼召</p>
+              <p className="text-gray-700 leading-relaxed mb-2" style={{fontSize:"16px"}}>
+                上帝對以西結說「我尋找一人，卻找不著」——這是本章最令人震撼的結語。全能的上帝，
+                在等候一個願意站在破口的代禱者。
+              </p>
+              <p className="text-gray-700 leading-relaxed font-medium" style={{fontSize:"16px"}}>
+                你願意成為那個人嗎？不需要特殊恩賜，不需要顯赫地位——你只需要一顆願意的心，
+                和每天為你的牧師、你的領袖、你的弟兄姊妹<strong>持續、忠實地代禱</strong>的委身。
+              </p>
+            </div>
           </div>
 
           <div className="bg-blue-50 rounded-xl p-5 border border-blue-100">
