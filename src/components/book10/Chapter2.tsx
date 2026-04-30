@@ -15,6 +15,7 @@ export default function Book10Ch2() {
             「有代禱恩賜的人不多，然而代禱卻是每一位忠心的基督徒都應期許自己扮演的角色。」
           </p>
         </section>
+
         {/* Section 1: 重要的少數者 */}
         <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
           <div className="flex items-center mb-4 text-amber-700">
@@ -310,6 +311,13 @@ export default function Book10Ch2() {
               <p className="mt-2">
                 我們每一個人不僅都要為別人代求，而且無疑地大部分人都應該做得更多。坦白地說，我要承認雖然我確實有為他人代求，但還不夠。我應該更多為我的配偶、孩子、親戚、服事的同工、牧師、朋友(不論得救與否)代求才是。
               </p>
+              <p className="mt-2">
+                健康的基督徒生活就是每天最起碼要有一段固定的禱告時間(包括代求)。稍後我們會討論每天該有多長的時間，但我在此強調的重點乃是：<strong>此規則不僅僅是專為某些基督徒而設的，更是適用於全部的基督徒。代禱是普世每一位基督徒均應扮演的角色。</strong>
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* 延伸探討：恩賜投射 */}
         <section className="bg-amber-50 p-6 rounded-xl shadow-sm border border-amber-200">
           <div className="flex items-center mb-4 text-amber-700">
@@ -621,6 +629,13 @@ export default function Book10Ch2() {
               <h3 className="font-bold text-green-800 mb-2">6. 教導全教會尊重「隱藏的事奉」</h3>
               <p>透過講台教導、主日學課程，幫助會友明白：在上帝眼中，隱藏的禱告事奉與公開的講台事奉同等重要，甚至更有權柄。可以分享聖經中「隱密處禱告」（太6:6）的教導，以及歷史上女性代禱者改變歷史的見證。</p>
             </div>
+            <div className="bg-white p-4 rounded-lg border-l-4 border-green-500">
+              <h3 className="font-bold text-green-800 mb-2">7. 建立「代禱者榮譽牆」或「禱告勇士名單」</h3>
+              <p>在教會中設立一個特別的展示區或名單，公開肯定那些長期忠心代禱的姊妹們（當然要徵得她們同意）。這不是高舉人，而是讓全教會看見「這些隱藏的勇士是我們的屬靈遮蓋」，並激勵更多人投入禱告事奉。</p>
+            </div>
+          </div>
+        </section>
+
         {/* Section: 代禱的四種職事 */}
         <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
           <div className="flex items-center mb-4 text-amber-700">
@@ -1042,8 +1057,10 @@ export default function Book10Ch2() {
         <div className="mt-8 text-center">
           <div className="inline-block bg-gradient-to-r from-amber-600 to-orange-600 text-white px-6 py-3 rounded-full shadow-lg">
             <p className="font-bold text-lg">🎉 第二章完整內容結束 🎉</p>
+          </div>
+          <p className="text-sm text-gray-500 mt-4">請將 Part 1、Part 2、Part 3 三個檔案合併使用</p>
+        </div>
       </div>
     </div>
   );
 }
- 
