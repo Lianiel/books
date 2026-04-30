@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {
   ChevronDown, ChevronRight, Shield, AlertTriangle, Star,
   Users, Eye, Target, BookOpen, MessageCircle, CheckCircle,
-  Zap, Heart, TrendingUp, Crown, Search
+  Zap, Heart, TrendingUp, Crown, Search, Book, Clock, Lightbulb
 } from 'lucide-react';
 
 const Section = ({
