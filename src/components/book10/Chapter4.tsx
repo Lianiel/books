@@ -471,6 +471,333 @@ export default function Book10Ch4() {
         </div>
       </section>
 
+      {/* Theological Depth */}
+      <section className="mb-6">
+        <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+          <Book className="w-6 h-6 text-purple-600" />
+          神學深度探討
+        </h2>
+        
+        <Section title="一、禱告與工作的關係:馬大與馬利亞的平衡" icon={Heart} accentColor="purple">
+          <p className="text-gray-700 leading-relaxed mb-3" style={{ fontSize: '15px' }}>
+            路加福音 10:38-42 記載馬大與馬利亞的故事。馬大「伺候的事多,心裡忙亂」,而馬利亞「在耶穌腳前坐著聽他的道」。耶穌溫柔但清楚地說:「馬利亞已經選擇那上好的福分。」
+          </p>
+          <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-3">
+            <p className="text-purple-900 font-semibold mb-2" style={{ fontSize: '14px' }}>關鍵洞察:</p>
+            <p className="text-purple-800" style={{ fontSize: '14px' }}>
+              牧師的試探,常常是成為「屬靈的馬大」:忙於服事神,卻沒有時間親近神。我們會用「為神做工」來取代「與神同在」,用「事工的果效」來證明自己的價值,而忘記:神要的首先是我們的心,不是我們的手。
+            </p>
+          </div>
+          <p className="text-gray-700 leading-relaxed" style={{ fontSize: '15px' }}>
+            這不是說服事不重要,而是說:沒有禱告生活支撐的服事,最終會變成「血氣的工作」而非「聖靈的果子」。耶穌自己就是最好的榜樣:祂服事眾人,卻從不犧牲與父的親密(馬可福音 1:35)。
+          </p>
+        </Section>
+
+        <Section title="二、安息日原則:神命定的停頓與恢復" icon={Clock} accentColor="indigo">
+          <p className="text-gray-700 leading-relaxed mb-3" style={{ fontSize: '15px' }}>
+            十誡中的第四誡是「當記念安息日,守為聖日」(出埃及記 20:8)。神不只是「建議」我們休息,而是「命令」我們休息。為什麼？因為神深知:持續的工作會耗盡人的身心靈。
+          </p>
+          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 mb-3">
+            <p className="text-indigo-900 font-semibold mb-2" style={{ fontSize: '14px' }}>對牧師的應用:</p>
+            <p className="text-indigo-800" style={{ fontSize: '14px' }}>
+              許多牧師覺得「每天都是工作日」——主日講道、週間探訪、隨時待命。但神的心意是:即使在最忙碌的服事中,也要有「停下來與神獨處」的時刻。這不是偷懶,而是順服神所設立的節奏。
+            </p>
+          </div>
+          <p className="text-gray-700 leading-relaxed" style={{ fontSize: '15px' }}>
+            禱告就是牧師的「安息」——不是身體的休息,而是靈魂的恢復。在禱告中,我們放下所有的重擔,讓神來背負;我們不需要「解決問題」,只需要「尋求神的面」。
+          </p>
+        </Section>
+
+        <Section title="三、荒漠經驗:摩西、以利亞與耶穌的退修" icon={Star} accentColor="amber">
+          <p className="text-gray-700 leading-relaxed mb-3" style={{ fontSize: '15px' }}>
+            聖經中偉大的屬靈領袖,都有「曠野經驗」:
+          </p>
+          <ul className="space-y-2 mb-3">
+            {[
+              { name: '摩西', exp: '在曠野牧羊四十年,才在燃燒的荊棘中遇見神(出埃及記 3章)' },
+              { name: '以利亞', exp: '在羅騰樹下疲憊絕望,但神在細微的聲音中對他說話(列王紀上 19章)' },
+              { name: '耶穌', exp: '在曠野禁食禱告四十天,預備自己面對公開的服事(馬太福音 4章)' },
+            ].map((item, i) => (
+              <li key={i} className="bg-white rounded-lg p-3 border border-amber-100">
+                <span className="font-bold text-amber-800">{item.name}:</span>
+                <span className="text-gray-700" style={{ fontSize: '14px' }}> {item.exp}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-gray-700 leading-relaxed" style={{ fontSize: '15px' }}>
+            曠野不是懲罰,而是預備。在孤獨、安靜、看似「無所事事」的環境中,神更新祂僕人的心。每位牧師都需要定期的「曠野時刻」——退修、獨處、與神相遇。
+          </p>
+        </Section>
+
+        <Section title="四、禱告不是交易,而是關係" icon={Heart} accentColor="green">
+          <p className="text-gray-700 leading-relaxed mb-3" style={{ fontSize: '15px' }}>
+            許多牧師的禱告陷入「功利主義」:「我禱告了,神就會讓我的服事有果效。」「我獻上時間,神就會回報我成功。」這樣的心態,把禱告變成了「屬靈交易」。
+          </p>
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-3">
+            <p className="text-green-900 font-semibold mb-2" style={{ fontSize: '14px' }}>真正的禱告:</p>
+            <p className="text-green-800" style={{ fontSize: '14px' }}>
+              禱告的核心不是「我能從神那裡得到什麼」,而是「我渴望與神同在」。就像詩篇 27:4 說:「有一件事,我曾求耶和華,我仍要尋求:就是一生一世住在耶和華的殿中,瞻仰他的榮美,在他的殿裡求問。」
+            </p>
+          </div>
+          <p className="text-gray-700 leading-relaxed" style={{ fontSize: '15px' }}>
+            當我們開始享受與神的關係本身(而非只求結果),禱告就不再是「任務」,而是「特權」;不再是「重擔」,而是「喜樂」。
+          </p>
+        </Section>
+      </section>
+
+      {/* Taiwan Context */}
+      <section className="mb-6">
+        <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+          <Users className="w-6 h-6 text-purple-600" />
+          華人教會處境應用
+        </h2>
+
+        <Section title="情境一:「績效導向」的牧會文化" icon={TrendingUp} accentColor="red">
+          <p className="text-gray-700 leading-relaxed mb-3" style={{ fontSize: '15px' }}>
+            台灣教會深受華人文化中「績效導向」的影響:牧師被期待「帶來增長」「辦好活動」「讓教會變大」。在這樣的壓力下,禱告常常被視為「沒有立即產出」的事,因此被犧牲。
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-3" style={{ fontSize: '15px' }}>
+            更糟的是:當教會沒有增長,牧師會懷疑自己「是不是不夠努力」「是不是禱告太少」,陷入罪疚感的循環。
+          </p>
+          <div className="bg-white border-l-4 border-red-400 rounded-lg p-4">
+            <p className="text-red-800 font-semibold mb-2" style={{ fontSize: '14px' }}>突破之道:</p>
+            <p className="text-red-700" style={{ fontSize: '14px' }}>
+              重新定義「成功」:神量的標準不是「人數」,而是「忠心」。禱告不是為了「達成目標」,而是為了「與神對齊」。當我們的心對準神,神會按祂的時間表成就祂的工作。
+            </p>
+          </div>
+        </Section>
+
+        <Section title="情境二:「24小時待命」的牧師生活" icon={Clock} accentColor="amber">
+          <p className="text-gray-700 leading-relaxed mb-3" style={{ fontSize: '15px' }}>
+            在台灣,牧師常被視為「全年無休的服務業」:半夜有人住院,牧師要去;會友遇到困難,隨時可以打電話;甚至有會友直接到牧師家按門鈴……牧師沒有「下班時間」,也沒有「私人空間」。
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-3" style={{ fontSize: '15px' }}>
+            在這樣的文化中,如果牧師說「我需要時間禱告,這段時間請勿打擾」,可能會被視為「不夠愛羊」「太自私」。
+          </p>
+          <div className="bg-white border-l-4 border-amber-400 rounded-lg p-4">
+            <p className="text-amber-800 font-semibold mb-2" style={{ fontSize: '14px' }}>教會需要學習:</p>
+            <p className="text-amber-700" style={{ fontSize: '14px' }}>
+              尊重牧師的禱告時間,就是尊重神。長執與同工可以主動保護牧師的靈修時段,告訴會眾:「牧師每天早上8-9點禱告,除非緊急狀況,請勿打擾。」這不是自私,而是健康的界線。
+            </p>
+          </div>
+        </Section>
+
+        <Section title="情境三:「屬靈超人」的期待壓力" icon={Star} accentColor="purple">
+          <p className="text-gray-700 leading-relaxed mb-3" style={{ fontSize: '15px' }}>
+            華人教會對牧師有一種隱性的期待:「牧師應該什麼都懂、什麼都會、永遠剛強。」在這種期待下,牧師不敢承認自己的軟弱、疲憊或靈性低谷。
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-3" style={{ fontSize: '15px' }}>
+            結果是:牧師戴著面具禱告,不敢在神面前真實地哭泣、質問、掙扎。他們的禱告變成「演出」,而非「真實的相遇」。
+          </p>
+          <div className="bg-white border-l-4 border-purple-400 rounded-lg p-4">
+            <p className="text-purple-800 font-semibold mb-2" style={{ fontSize: '14px' }}>恢復真實:</p>
+            <p className="text-purple-700" style={{ fontSize: '14px' }}>
+              教會需要給牧師「軟弱的權利」。當牧師在講台上坦承「這週我的禱告生活很掙扎」,這不是失敗,而是真實。真實的見證,比完美的形象更能造就人。
+            </p>
+          </div>
+        </Section>
+
+        <Section title="情境四:「家庭祭壇」的理想與現實" icon={Users} accentColor="indigo">
+          <p className="text-gray-700 leading-relaxed mb-3" style={{ fontSize: '15px' }}>
+            華人教會常強調「家庭祭壇」:牧師應該每天帶領全家一起禱告。這個理想很美好,但現實是:牧師的孩子可能正值叛逆期、配偶可能對信仰冷淡、或者工作時間根本無法配合。
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-3" style={{ fontSize: '15px' }}>
+            如果牧師無法「做到」家庭祭壇,他們會深深自責:「我連自己的家都牧養不好,怎麼牧養教會？」
+          </p>
+          <div className="bg-white border-l-4 border-indigo-400 rounded-lg p-4">
+            <p className="text-indigo-800 font-semibold mb-2" style={{ fontSize: '14px' }}>恩典的眼光:</p>
+            <p className="text-indigo-700" style={{ fontSize: '14px' }}>
+              家庭祭壇不是「有或沒有」的二分法,而是「盡力而為」的過程。即使只是每週一次,或者只是睡前簡短的禱告,神都悅納。不要讓理想成為重擔,要讓恩典成為力量。
+            </p>
+          </div>
+        </Section>
+
+        <Section title="情境五:疫情後的「線上vs實體」張力" icon={Zap} accentColor="green">
+          <p className="text-gray-700 leading-relaxed mb-3" style={{ fontSize: '15px' }}>
+            COVID-19 疫情改變了教會生態。有些會眾習慣了線上聚會,不願意回來實體;有些會眾堅持實體才是「真正的聚會」,批評線上的人「不夠委身」。牧師夾在中間,兩面不是人。
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-3" style={{ fontSize: '15px' }}>
+            在這樣的張力中,牧師的禱告生活也受到影響:他們忙著處理教會內部的衝突、嘗試滿足不同群體的需要,卻沒有時間安靜聆聽神的聲音。
+          </p>
+          <div className="bg-white border-l-4 border-green-400 rounded-lg p-4">
+            <p className="text-green-800 font-semibold mb-2" style={{ fontSize: '14px' }}>在混亂中尋求神:</p>
+            <p className="text-green-700" style={{ fontSize: '14px' }}>
+              越是混亂的時代,越需要清晰的禱告生活。牧師需要問神:「在這個變動的時代,祢要我們教會如何前進？」而非只是試圖「讓所有人滿意」。禱告幫助我們聽見神的聲音,而非眾人的雜音。
+            </p>
+          </div>
+        </Section>
+      </section>
+
+      {/* Four-Week Challenge */}
+      <section className="mb-6">
+        <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+          <Target className="w-6 h-6 text-purple-600" />
+          四週禱告重建挑戰（進階版）
+        </h2>
+        
+        {[
+          {
+            week: 1,
+            title: '診斷你的禱告攔阻',
+            mission: '誠實評估:本章提到的四大攔阻（時間擠壓、孤獨感、罪疚感、分心疲憊）,哪一個最影響你的禱告生活？這週每天花10分鐘禱告,但重點不是「禱告什麼」,而是「觀察自己的狀態」。',
+            practice: '在禱告前,深呼吸三次,問自己:「我現在的身體感覺如何？我的心情如何？有什麼念頭在打擾我？」把這些誠實地告訴神。',
+            journal: '每天記錄:今天禱告時遇到的主要攔阻是什麼？我如何面對它？神有什麼提醒？',
+          },
+          {
+            week: 2,
+            title: '實驗不同的禱告方式',
+            mission: '每天嘗試一種新的禱告方式(走禱、唱禱、寫禱、圖禱、群禱)。不要堅持「一定要用某種方式」,而是讓聖靈引導你找到最適合當下的形式。',
+            practice: '週一:走禱(邊走邊禱告)、週二:唱禱(用詩歌敬拜進入禱告)、週三:寫禱(寫一封信給神)、週四:圖禱(用圖像整理禱告事項)、週五:群禱(邀請家人或小組一起禱告)',
+            journal: '哪一種方式讓你最能專注？哪一種讓你最能感受到神的同在？為什麼？',
+          },
+          {
+            week: 3,
+            title: '建立禱告日記習慣',
+            mission: '準備一本筆記本或開一個數位檔案,開始記錄你的禱告。不需要寫得很完美,只要簡單記下:日期、禱告事項、內心感受、神的回應(如果有)。',
+            practice: '每次禱告後,花3-5分鐘寫下重點。週末時,翻閱這週的禱告日記,為神的信實獻上感恩。',
+            journal: '寫禱告日記對你的禱告生活有什麼影響？是否更專注了？是否更容易看見神的回應？',
+          },
+          {
+            week: 4,
+            title: '邀請代禱者與建立問責',
+            mission: '找1-2位靈魂之友,告訴他們你正在重建禱告生活,請他們每週問你:「這週的禱告生活如何？」同時,為他們的禱告生活守望。',
+            practice: '每週固定時間(如週三晚上)與代禱夥伴見面或視訊,彼此分享禱告的掙扎與突破,一起為彼此守望。',
+            journal: '30天挑戰結束了。你的禱告生活有什麼改變？你會繼續哪些操練？你最大的收穫是什麼？',
+          },
+        ].map((item, i) => (
+          <div key={i} className="bg-purple-50 border-l-4 border-purple-500 rounded-xl p-5 mb-4 shadow-sm">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="bg-purple-600 text-white text-lg font-bold rounded-full w-10 h-10 flex items-center justify-center">{item.week}</span>
+              <h3 className="font-bold text-purple-900" style={{ fontSize: '17px' }}>第{item.week}週:{item.title}</h3>
+            </div>
+            <div className="space-y-3">
+              <div className="bg-white rounded-lg p-4">
+                <p className="text-purple-800 font-semibold mb-2" style={{ fontSize: '14px' }}>🎯 本週任務</p>
+                <p className="text-gray-700" style={{ fontSize: '14px' }}>{item.mission}</p>
+              </div>
+              <div className="bg-white rounded-lg p-4">
+                <p className="text-indigo-800 font-semibold mb-2" style={{ fontSize: '14px' }}>💡 具體操練</p>
+                <p className="text-gray-700" style={{ fontSize: '14px' }}>{item.practice}</p>
+              </div>
+              <div className="bg-white rounded-lg p-4">
+                <p className="text-green-800 font-semibold mb-2" style={{ fontSize: '14px' }}>📝 靈修日誌提示</p>
+                <p className="text-gray-700 italic" style={{ fontSize: '14px' }}>{item.journal}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* Group Discussion */}
+      <section className="mb-6">
+        <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+          <Users className="w-6 h-6 text-purple-600" />
+          小組討論問題
+        </h2>
+        
+        <div className="space-y-4">
+          <div className="bg-purple-50 border-l-4 border-purple-500 rounded-lg p-5">
+            <h3 className="font-bold text-purple-900 mb-3" style={{ fontSize: '16px' }}>🔍 自我省察類</h3>
+            <ol className="space-y-2 list-decimal list-inside text-gray-700" style={{ fontSize: '15px' }}>
+              <li>誠實評估:你現在的禱告生活,在1-10分的量表上是幾分？為什麼？</li>
+              <li>四大攔阻中,哪一個最常讓你的禱告破產？你嘗試過什麼方法突破嗎？</li>
+              <li>你是否曾經把禱告當作「任務」而非「約會」？這兩種心態對你的禱告有什麼不同影響？</li>
+            </ol>
+          </div>
+
+          <div className="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-5">
+            <h3 className="font-bold text-blue-900 mb-3" style={{ fontSize: '16px' }}>💭 深度思考類</h3>
+            <ol className="space-y-2 list-decimal list-inside text-gray-700" style={{ fontSize: '15px' }}>
+              <li>為什麼禱告對牧師來說如此困難？如果禱告這麼重要,為何會是「最先被犧牲」的項目？</li>
+              <li>五個祕訣中,哪一個對你來說最「顛覆」或最「實用」？為什麼？</li>
+              <li>你認為「禱告日記」真的有用嗎？為什麼很多人開始寫,卻無法堅持下去？</li>
+            </ol>
+          </div>
+
+          <div className="bg-green-50 border-l-4 border-green-500 rounded-lg p-5">
+            <h3 className="font-bold text-green-900 mb-3" style={{ fontSize: '16px' }}>🎯 行動應用類</h3>
+            <ol className="space-y-2 list-decimal list-inside text-gray-700" style={{ fontSize: '15px' }}>
+              <li>如果你要建立「不可妥協」的禱告時間,你會選擇每天的哪個時段？需要排除哪些干擾？</li>
+              <li>你願意參加30天禱告重建挑戰嗎？你需要誰來陪伴你、問責你？</li>
+              <li>小組可以如何一起建立禱告文化？(分享彼此的禱告見證、群體守望、代禱網絡……)</li>
+            </ol>
+          </div>
+
+          <div className="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-5">
+            <h3 className="font-bold text-amber-900 mb-3" style={{ fontSize: '16px' }}>🙏 為牧師代禱類</h3>
+            <ol className="space-y-2 list-decimal list-inside text-gray-700" style={{ fontSize: '15px' }}>
+              <li>你知道牧師的禱告生活狀況嗎？你是否曾問過他:「我可以如何為您的禱告生活守望？」</li>
+              <li>牧師可能面對的四大攔阻,哪一個你認為對他影響最大？你可以如何用行動(而非只是禱告)幫助他突破？</li>
+              <li>如果我們小組要成為牧師的「禱告盾牌」,具體可以做什麼？(每週為他禱告、保護他的靈修時段、給他退修的時間……)</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* Deep Reflection */}
+      <section className="mb-6">
+        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 shadow-xl">
+          <h2 className="text-xl font-bold text-slate-100 mb-6 flex items-center gap-2">
+            <MessageCircle className="w-6 h-6 text-purple-400" />
+            深度反思與行動指南
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Reflection */}
+            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+              <h3 className="font-bold text-purple-300 mb-4 flex items-center" style={{ fontSize: '18px' }}>
+                <Search className="w-5 h-5 mr-2 text-purple-400" /> 深度反思
+              </h3>
+              <ul className="space-y-4 text-slate-300">
+                {[
+                  '如果你的禱告生活在未來一年都沒有改變,你的服事會有什麼不同？你的生命會有什麼代價？',
+                  '想像神對你說:「你為我做了那麼多事,但我更想要的是你的心。」這句話觸動你嗎？',
+                  '你是否曾經用「太忙」來合理化自己不禱告？但你有沒有「太忙」到不吃飯、不睡覺？',
+                  '如果禱告真的是「與神約會」,你會如何為這個約會做準備？你會穿什麼、帶什麼、說什麼？',
+                  '30天後,如果你的禱告生活真的改變了,你的服事、家庭、心靈會有什麼不同？這個「不同」值得你今天開始嗎？',
+                ].map((q, i) => (
+                  <li key={i} className="flex items-start" style={{ fontSize: '15px' }}>
+                    <span className="text-purple-400 mr-2 font-bold">{i+1}.</span>
+                    <span>{q}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Action */}
+            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+              <h3 className="font-bold text-green-300 mb-4 flex items-center" style={{ fontSize: '18px' }}>
+                <CheckCircle className="w-5 h-5 mr-2 text-green-400" /> 具體行動方案
+              </h3>
+              <ul className="space-y-4 text-slate-300">
+                {[
+                  '今天就在行事曆上標記每天的禱告時段,設定鬧鐘,像對待講道預備一樣認真對待。',
+                  '找一位靈魂之友,告訴他:「我想重建禱告生活,請你每週問我進度。」',
+                  '準備一本禱告日記(實體或數位),從今天開始記錄你與神的對話。',
+                  '實驗一種新的禱告方式(走禱、唱禱、寫禱),看看哪種最適合你。',
+                  '告訴家人或同工你的禱告時段,請他們保護這段時間不被打擾。',
+                  '邀請3-5位信徒成為你的代禱團,每週或每兩週分享你的代禱需要。',
+                  '參加30天禱告重建挑戰,每天進步一點點,不求完美,只求持續。',
+                ].map((a, i) => (
+                  <li key={i} className="flex items-start" style={{ fontSize: '15px' }}>
+                    <span className="text-green-400 mr-2 font-bold">{i+1}.</span>
+                    <span>{a}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-6 bg-purple-900/30 border border-purple-500/30 rounded-xl p-5">
+            <p className="text-purple-200 leading-relaxed italic text-center" style={{ fontSize: '16px' }}>
+              「不是要一次做到完美,而是每天進步一點點。<br />
+              30天後,你會驚訝自己的改變。<br />
+              問題是:你願意從今天開始嗎？」
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Original Book Questions */}
       <section className="bg-white p-6 rounded-xl shadow-sm border-t-4 border-purple-600 mb-6">
         <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
