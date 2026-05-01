@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter, LogIn, LogOut, Download, Maximize2, ChevronDown, ChevronUp } from 'lucide-react';
+import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter, LogOut, Download, Maximize2, ChevronDown, ChevronUp } from 'lucide-react';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from '../useHighlight';
 import { asBlob } from 'html-docx-js-typescript';
 
@@ -37,34 +37,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
   const [highlightMode, setHighlightMode] = useState(false);
   const [selectedStyle, setSelectedStyle] = useState<HighlightStyle>('yellow');
   
-  // 登入功能
-  const handleLogin = async () => {
-    const phone = prompt('請輸入手機號碼（將作為帳號）：');
-    if (!phone) return;
-    
-    const email = `${phone}@puhe.church`;
-    const password = prompt('請輸入密碼：');
-    if (!password) return;
-    
-    const sb = (window as any).supabase?.createClient(
-      'https://yhchjanqmopgbwgjspmf.supabase.co',
-      'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx'
-    );
-    
-    if (!sb) {
-      alert('登入功能初始化失敗');
-      return;
-    }
-    
-    const { error } = await sb.auth.signInWithPassword({ email, password });
-    if (error) {
-      alert('登入失敗：' + error.message);
-    } else {
-      alert('登入成功！');
-      window.location.reload();
-    }
-  };
-  
+  // 登出功能
   const handleLogout = async () => {
     const sb = (window as any).supabase?.createClient(
       'https://yhchjanqmopgbwgjspmf.supabase.co',
@@ -237,9 +210,34 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
   };
 
   // 螢光筆模式
-  const toggleHighlightMode = () => {
+  const toggleHighlightMode = async () => {
     if (!isLoggedIn) {
-      // 不使用 alert，改為顯示溫和的提示
+      // 自動登入流程
+      const phone = prompt('請輸入手機號碼以使用螢光筆：');
+      if (!phone) return;
+      
+      const email = `${phone}@puhe.church`;
+      const password = '2jaiijrl'; // 預設密碼
+      
+      const sb = (window as any).supabase?.createClient(
+        'https://yhchjanqmopgbwgjspmf.supabase.co',
+        'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx'
+      );
+      
+      if (!sb) {
+        alert('登入功能初始化失敗');
+        return;
+      }
+      
+      const { error } = await sb.auth.signInWithPassword({ email, password });
+      if (error) {
+        alert('登入失敗：' + error.message);
+        return;
+      }
+      
+      // 登入成功，重新載入頁面以更新狀態
+      alert('登入成功！螢光筆功能已啟用');
+      window.location.reload();
       return;
     }
     setHighlightMode(!highlightMode);
@@ -394,25 +392,22 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
               </button>
             </div>
 
-            {/* 螢光筆 */}
+            {/* 螢光筆（包含自動登入）*/}
             <button
               onClick={toggleHighlightMode}
-              disabled={!isLoggedIn}
               className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-sm ${
                 highlightMode 
                   ? 'bg-yellow-500 hover:bg-yellow-600 text-slate-900' 
-                  : isLoggedIn
-                    ? 'bg-slate-700 hover:bg-slate-600 text-white'
-                    : 'bg-slate-800 text-gray-500 cursor-not-allowed'
+                  : 'bg-slate-700 hover:bg-slate-600 text-white'
               }`}
-              title={isLoggedIn ? '螢光筆' : '登入後可使用'}
+              title={isLoggedIn ? '螢光筆' : '點擊以登入並使用螢光筆'}
             >
               <Highlighter className="w-4 h-4" />
               <span className="hidden sm:inline text-sm">筆</span>
             </button>
             
-            {/* 登入/登出 */}
-            {isLoggedIn ? (
+            {/* 登出（僅在已登入時顯示）*/}
+            {isLoggedIn && (
               <button
                 onClick={handleLogout}
                 className="flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-white transition-colors font-semibold shadow-lg text-sm"
@@ -420,15 +415,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
               >
                 <LogOut className="w-4 h-4" />
                 <span className="hidden sm:inline text-sm">登出</span>
-              </button>
-            ) : (
-              <button
-                onClick={handleLogin}
-                className="flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg bg-green-600 hover:bg-green-700 text-white transition-colors font-semibold shadow-lg text-sm"
-                title="登入以使用螢光筆"
-              >
-                <LogIn className="w-4 h-4" />
-                <span className="hidden sm:inline text-sm">登入</span>
               </button>
             )}
           </div>
