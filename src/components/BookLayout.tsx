@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter } from 'lucide-react';
+import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter, LogIn, LogOut } from 'lucide-react';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from '../useHighlight';
 
 interface BookLayoutProps {
@@ -25,12 +25,52 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
   // TTS 狀態
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [speechRate, setSpeechRate] = useState(0.5); // 預設 0.5x
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   
   // 螢光筆
   const { isLoggedIn, applyHighlights, addHighlight, removeHighlight } = useHighlight(bookId, chapter);
   const [highlightMode, setHighlightMode] = useState(false);
   const [selectedStyle, setSelectedStyle] = useState<HighlightStyle>('yellow');
+  
+  // 登入功能
+  const handleLogin = async () => {
+    const phone = prompt('請輸入手機號碼（將作為帳號）：');
+    if (!phone) return;
+    
+    const email = `${phone}@puhe.church`;
+    const password = prompt('請輸入密碼：');
+    if (!password) return;
+    
+    const sb = (window as any).supabase?.createClient(
+      'https://yhchjanqmopgbwgjspmf.supabase.co',
+      'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx'
+    );
+    
+    if (!sb) {
+      alert('登入功能初始化失敗');
+      return;
+    }
+    
+    const { error } = await sb.auth.signInWithPassword({ email, password });
+    if (error) {
+      alert('登入失敗：' + error.message);
+    } else {
+      alert('登入成功！');
+      window.location.reload();
+    }
+  };
+  
+  const handleLogout = async () => {
+    const sb = (window as any).supabase?.createClient(
+      'https://yhchjanqmopgbwgjspmf.supabase.co',
+      'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx'
+    );
+    if (sb) {
+      await sb.auth.signOut();
+      window.location.reload();
+    }
+  };
   
   // 初始化螢光筆
   useEffect(() => {
@@ -79,7 +119,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
     const textContent = mainContent.innerText;
     const utterance = new SpeechSynthesisUtterance(textContent);
     utterance.lang = 'zh-TW';
-    utterance.rate = 0.5; // 語速 0.5x（根據記憶中 progressively halved twice）
+    utterance.rate = speechRate; // 使用狀態中的語速
     
     utterance.onstart = () => {
       setIsSpeaking(true);
@@ -124,7 +164,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
   // 螢光筆模式
   const toggleHighlightMode = () => {
     if (!isLoggedIn) {
-      alert('請先登入才能使用螢光筆功能');
+      // 不使用 alert，改為顯示溫和的提示
       return;
     }
     setHighlightMode(!highlightMode);
@@ -160,23 +200,24 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
 
       {/* 底部工具列 */}
       <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-slate-800 to-slate-900 border-t border-slate-700 shadow-2xl z-40">
-        <div className="flex items-center justify-between px-4 py-3 max-w-7xl mx-auto">
+        <div className="flex items-center justify-between px-2 sm:px-4 py-2 max-w-7xl mx-auto">
           
           {/* 左側：關閉按鈕 */}
           <button
             onClick={handleClose}
-            className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors font-semibold shadow-lg"
+            className="flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-sm"
             title="關閉並返回書房"
           >
-            <X className="w-5 h-5" />
-            <span className="hidden sm:inline">關閉</span>
+            <X className="w-4 h-4" />
+            <span className="hidden sm:inline text-sm">關閉</span>
           </button>
 
-          {/* 中間：TTS 控制 */}
-          <div className="flex items-center gap-2">
+          {/* 中間：TTS 控制 + 語速 */}
+          <div className="flex items-center gap-1">
+            {/* TTS 按鈕 */}
             <button
               onClick={handleSpeak}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors font-semibold ${
+              className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold text-sm ${
                 isSpeaking 
                   ? 'bg-orange-600 hover:bg-orange-700' 
                   : 'bg-blue-600 hover:bg-blue-700'
@@ -184,86 +225,129 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
               title={isSpeaking ? (isPaused ? '繼續' : '暫停') : '播放'}
             >
               {isSpeaking ? (
-                isPaused ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />
+                isPaused ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />
               ) : (
-                <Volume2 className="w-5 h-5" />
+                <Volume2 className="w-4 h-4" />
               )}
-              <span className="hidden sm:inline">
+              <span className="hidden sm:inline text-sm">
                 {isSpeaking ? (isPaused ? '繼續' : '暫停') : '朗讀'}
               </span>
             </button>
             
+            {/* 停止按鈕 */}
             {isSpeaking && (
               <button
                 onClick={handleStopSpeak}
-                className="px-3 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-semibold shadow-lg"
+                className="px-2 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-semibold shadow-lg text-sm"
                 title="停止"
               >
-                <span className="hidden sm:inline">停止</span>
+                <span className="hidden sm:inline text-sm">停止</span>
                 <span className="sm:hidden">■</span>
               </button>
             )}
+            
+            {/* 語速調整 */}
+            <div className="flex items-center bg-slate-700 rounded-lg overflow-hidden">
+              {[0.5, 0.75, 1.0].map(rate => (
+                <button
+                  key={rate}
+                  onClick={() => setSpeechRate(rate)}
+                  className={`px-2 py-1.5 text-xs font-semibold transition-colors ${
+                    speechRate === rate
+                      ? 'bg-blue-600 text-white'
+                      : 'text-gray-300 hover:bg-slate-600'
+                  }`}
+                  title={`語速 ${rate}x`}
+                >
+                  {rate}x
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* 右側：字體縮放 + 螢光筆 */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             {/* 字體縮放 */}
-            <div className="flex items-center gap-1 bg-slate-700 rounded-lg p-1">
+            <div className="flex items-center gap-0.5 bg-slate-700 rounded-lg p-0.5">
               <button
                 onClick={() => handleFontSizeChange('down')}
                 disabled={fontSize === 'sm'}
-                className="p-2 rounded hover:bg-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                className="p-1.5 rounded hover:bg-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 title="縮小字體"
               >
-                <ZoomOut className="w-4 h-4 text-white" />
+                <ZoomOut className="w-3.5 h-3.5 text-white" />
               </button>
-              <span className="text-white text-xs font-semibold px-2 hidden sm:inline">
+              <span className="text-white text-xs font-semibold px-1.5 hidden sm:inline">
                 {fontSize.toUpperCase()}
               </span>
               <button
                 onClick={() => handleFontSizeChange('up')}
                 disabled={fontSize === '2xl'}
-                className="p-2 rounded hover:bg-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                className="p-1.5 rounded hover:bg-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 title="放大字體"
               >
-                <ZoomIn className="w-4 h-4 text-white" />
+                <ZoomIn className="w-3.5 h-3.5 text-white" />
               </button>
             </div>
 
             {/* 螢光筆 */}
             <button
               onClick={toggleHighlightMode}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors font-semibold shadow-lg ${
+              disabled={!isLoggedIn}
+              className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-sm ${
                 highlightMode 
                   ? 'bg-yellow-500 hover:bg-yellow-600 text-slate-900' 
-                  : 'bg-slate-700 hover:bg-slate-600 text-white'
+                  : isLoggedIn
+                    ? 'bg-slate-700 hover:bg-slate-600 text-white'
+                    : 'bg-slate-800 text-gray-500 cursor-not-allowed'
               }`}
-              title={isLoggedIn ? '螢光筆' : '請先登入使用螢光筆'}
+              title={isLoggedIn ? '螢光筆' : '登入後可使用'}
             >
-              <Highlighter className="w-5 h-5" />
-              <span className="hidden sm:inline">螢光筆</span>
+              <Highlighter className="w-4 h-4" />
+              <span className="hidden sm:inline text-sm">筆</span>
             </button>
+            
+            {/* 登入/登出 */}
+            {isLoggedIn ? (
+              <button
+                onClick={handleLogout}
+                className="flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-white transition-colors font-semibold shadow-lg text-sm"
+                title="登出"
+              >
+                <LogOut className="w-4 h-4" />
+                <span className="hidden sm:inline text-sm">登出</span>
+              </button>
+            ) : (
+              <button
+                onClick={handleLogin}
+                className="flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg bg-green-600 hover:bg-green-700 text-white transition-colors font-semibold shadow-lg text-sm"
+                title="登入以使用螢光筆"
+              >
+                <LogIn className="w-4 h-4" />
+                <span className="hidden sm:inline text-sm">登入</span>
+              </button>
+            )}
           </div>
         </div>
 
         {/* 螢光筆樣式選擇器 */}
         {highlightMode && (
-          <div className="bg-slate-700 border-t border-slate-600 px-4 py-2">
-            <div className="flex items-center gap-2 max-w-7xl mx-auto">
-              <span className="text-white text-sm font-semibold mr-2">選擇樣式：</span>
+          <div className="bg-slate-700 border-t border-slate-600 px-2 sm:px-4 py-1.5">
+            <div className="flex items-center gap-1.5 max-w-7xl mx-auto">
+              <span className="text-white text-xs font-semibold mr-1">樣式：</span>
               {(['yellow', 'red', 'blue', 'bold', 'underline'] as HighlightStyle[]).map(style => {
                 const demoSpan = document.createElement('span');
-                demoSpan.textContent = style === 'yellow' ? '黃色' : 
-                                       style === 'red' ? '紅色' : 
-                                       style === 'blue' ? '藍色' : 
-                                       style === 'bold' ? '粗體' : '底線';
+                demoSpan.textContent = style === 'yellow' ? '黃' : 
+                                       style === 'red' ? '紅' : 
+                                       style === 'blue' ? '藍' : 
+                                       style === 'bold' ? '粗' : '底';
                 applyStyleToSpan(demoSpan, style);
                 
                 return (
                   <button
                     key={style}
                     onClick={() => setSelectedStyle(style)}
-                    className={`px-3 py-1 rounded transition-all ${
+                    className={`px-2 py-0.5 text-sm rounded transition-all ${
                       selectedStyle === style 
                         ? 'bg-white text-slate-900 ring-2 ring-yellow-400' 
                         : 'bg-slate-600 text-white hover:bg-slate-500'
@@ -279,7 +363,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
       </div>
 
       {/* 底部留白（避免內容被工具列遮住）*/}
-      <div className="h-20"></div>
+      <div className="h-16"></div>
     </div>
   );
 };
