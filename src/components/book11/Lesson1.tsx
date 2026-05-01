@@ -1156,4 +1156,6 @@ const DoubtToFaithLesson1: React.FC = () => {
       </div>
     </div>
   );
-}
+};
+
+export default DoubtToFaithLesson1;
