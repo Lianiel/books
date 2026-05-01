@@ -3,11 +3,14 @@ import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter, LogOut, Download, Ma
 import { useNavigate } from 'react-router-dom';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from '../useHighlight';
 import { asBlob } from 'html-docx-js-typescript';
-import { getBookChapters, getCurrentChapterIndex, getPreviousChapter, getNextChapter } from '../bookChapters';
+
+// 從 App.tsx 導入章節類型
+import type { ChapterInfo } from '../App';
 
 interface BookLayoutProps {
   bookId: string;
   chapter: string;
+  chapters: ChapterInfo[];  // 章節配置從 props 傳入
   children: ReactNode;
 }
 
@@ -21,7 +24,7 @@ const fontSizeClasses: Record<FontSize, string> = {
   '2xl': 'text-2xl'
 };
 
-const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) => {
+const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, children }) => {
   const navigate = useNavigate();
   
   // 字體縮放
@@ -36,7 +39,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
   // TTS 狀態
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [speechRate, setSpeechRate] = useState(0.5); // 預設 0.5x
+  const [speechRate, setSpeechRate] = useState(0.5);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   
   // 螢光筆
@@ -45,11 +48,10 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
   const [selectedStyle, setSelectedStyle] = useState<HighlightStyle>('yellow');
   
   // 獲取章節資訊
-  const chapters = getBookChapters(bookId);
-  const currentIndex = getCurrentChapterIndex(bookId, chapter);
+  const currentIndex = chapters.findIndex(ch => ch.id === chapter);
   const currentChapter = chapters[currentIndex];
-  const previousChapter = getPreviousChapter(bookId, chapter);
-  const nextChapter = getNextChapter(bookId, chapter);
+  const previousChapter = currentIndex > 0 ? chapters[currentIndex - 1] : null;
+  const nextChapter = currentIndex >= 0 && currentIndex < chapters.length - 1 ? chapters[currentIndex + 1] : null;
   
   // 登出功能
   const handleLogout = async () => {
@@ -65,13 +67,11 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
   
   // 全展開功能
   const handleExpandAll = () => {
-    // 觸發所有可折疊元素展開
     const buttons = document.querySelectorAll('button[aria-expanded="false"]');
     buttons.forEach(btn => {
       (btn as HTMLButtonElement).click();
     });
     
-    // 也可以通過 class 或其他方式找到折疊區塊
     const sections = document.querySelectorAll('[class*="collapse"]');
     sections.forEach(section => {
       (section as HTMLElement).style.display = 'block';
@@ -89,14 +89,11 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
         return;
       }
       
-      // 克隆內容以避免修改原始 DOM
       const clone = mainContent.cloneNode(true) as HTMLElement;
       
-      // 移除不需要的元素(如按鈕、工具列)
       clone.querySelectorAll('button').forEach(btn => btn.remove());
       clone.querySelectorAll('[class*="toolbar"]').forEach(el => el.remove());
       
-      // 準備 HTML 內容
       const htmlContent = `
         <!DOCTYPE html>
         <html>
@@ -114,10 +111,8 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
         </html>
       `;
       
-      // 轉換成 Word 格式
       const blob = await asBlob(htmlContent);
       
-      // 下載檔案
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
@@ -148,16 +143,14 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
     return () => document.removeEventListener('removeHighlight', handler);
   }, [removeHighlight]);
 
-  // 關閉按鈕 - 發送 postMessage 給埔和小站
+  // 關閉按鈕
   const handleClose = () => {
-    // 停止 TTS
     if (isSpeaking) {
       window.speechSynthesis.cancel();
       setIsSpeaking(false);
       setIsPaused(false);
     }
     
-    // 發送關閉訊息給父視窗(埔和小站)
     window.parent.postMessage({ type: 'closeBookEmbed' }, '*');
   };
 
@@ -181,7 +174,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
     const textContent = mainContent.innerText;
     const utterance = new SpeechSynthesisUtterance(textContent);
     utterance.lang = 'zh-TW';
-    utterance.rate = speechRate; // 使用狀態中的語速
+    utterance.rate = speechRate;
     
     utterance.onstart = () => {
       setIsSpeaking(true);
@@ -223,10 +216,9 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
     }
   };
 
-  // 螢光筆模式(包含登入流程)
+  // 螢光筆模式
   const toggleHighlightMode = async () => {
     if (!isLoggedIn) {
-      // 需要登入才能使用螢光筆
       const phone = prompt('請輸入手機號碼:');
       if (!phone) return;
       
@@ -251,7 +243,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
         return;
       }
       
-      // 登入成功,重新載入頁面以更新狀態
       alert('登入成功!螢光筆功能已啟用');
       window.location.reload();
       return;
@@ -272,7 +263,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
       addHighlight(text, selectedStyle);
       selection.removeAllRanges();
       
-      // 延遲重新套用螢光筆,確保 DOM 更新
       setTimeout(() => applyHighlights(), 100);
     };
 
@@ -282,20 +272,14 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
 
   // 章節切換
   const handleChapterChange = (chapterPath: string) => {
-    // 停止 TTS
     if (isSpeaking) {
       window.speechSynthesis.cancel();
       setIsSpeaking(false);
       setIsPaused(false);
     }
     
-    // 關閉章節選單
     setShowChapterMenu(false);
-    
-    // 導航到新章節
     navigate(chapterPath);
-    
-    // 滾動到頂部
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -345,13 +329,11 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
               {/* 章節下拉選單 */}
               {showChapterMenu && (
                 <>
-                  {/* 背景遮罩 */}
                   <div 
                     className="fixed inset-0 bg-black/20 z-40"
                     onClick={() => setShowChapterMenu(false)}
                   />
                   
-                  {/* 選單內容 */}
                   <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-2xl border border-gray-200 max-h-96 overflow-y-auto z-50">
                     <div className="p-2">
                       <div className="text-xs text-gray-500 font-semibold px-3 py-2 border-b border-gray-200">
@@ -417,7 +399,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
 
       {/* ========== 底部工具列 ========== */}
       <div className={`fixed bottom-0 left-0 right-0 bg-gradient-to-r from-slate-800 to-slate-900 border-t border-slate-700 shadow-2xl z-40 transition-transform duration-300 ${showToolbar ? 'translate-y-0' : 'translate-y-full'}`}>
-        {/* 收起/展開按鈕(固定在工具列上方)*/}
         <button
           onClick={() => setShowToolbar(!showToolbar)}
           className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-1 rounded-t-lg shadow-lg transition-colors"
@@ -460,7 +441,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
 
           {/* 中間:TTS 控制 + 語速 */}
           <div className="flex items-center gap-1">
-            {/* TTS 按鈕 */}
             <button
               onClick={handleSpeak}
               className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold text-sm ${
@@ -480,7 +460,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
               </span>
             </button>
             
-            {/* 停止按鈕 */}
             {isSpeaking && (
               <button
                 onClick={handleStopSpeak}
@@ -492,7 +471,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
               </button>
             )}
             
-            {/* 語速調整 */}
             <div className="flex items-center bg-slate-700 rounded-lg overflow-hidden">
               {[0.5, 0.75, 1.0].map(rate => (
                 <button
@@ -513,7 +491,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
 
           {/* 右側:字體縮放 + 螢光筆 */}
           <div className="flex items-center gap-1">
-            {/* 字體縮放 */}
             <div className="flex items-center gap-0.5 bg-slate-700 rounded-lg p-0.5">
               <button
                 onClick={() => handleFontSizeChange('down')}
@@ -536,7 +513,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
               </button>
             </div>
 
-            {/* 螢光筆(包含自動登入)*/}
             <button
               onClick={toggleHighlightMode}
               className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-sm ${
@@ -550,7 +526,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
               <span className="hidden sm:inline text-sm">筆</span>
             </button>
             
-            {/* 登出(僅在已登入時顯示)*/}
             {isLoggedIn && (
               <button
                 onClick={handleLogout}
@@ -564,7 +539,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
           </div>
         </div>
 
-        {/* 螢光筆樣式選擇器 */}
         {highlightMode && (
           <div className="bg-slate-700 border-t border-slate-600 px-2 sm:px-4 py-1.5">
             <div className="flex items-center gap-1.5 max-w-7xl mx-auto">
@@ -596,7 +570,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
         )}
       </div>
 
-      {/* 底部留白(避免內容被工具列遮住)*/}
       <div className="h-32 sm:h-24"></div>
     </div>
   );
