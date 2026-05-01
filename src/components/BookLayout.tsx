@@ -209,15 +209,17 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
     }
   };
 
-  // 螢光筆模式
+  // 螢光筆模式（包含登入流程）
   const toggleHighlightMode = async () => {
     if (!isLoggedIn) {
-      // 自動登入流程
-      const phone = prompt('請輸入手機號碼以使用螢光筆：');
+      // 需要登入才能使用螢光筆
+      const phone = prompt('請輸入手機號碼：');
       if (!phone) return;
       
+      const password = prompt('請輸入密碼：');
+      if (!password) return;
+      
       const email = `${phone}@puhe.church`;
-      const password = '2jaiijrl'; // 預設密碼
       
       const sb = (window as any).supabase?.createClient(
         'https://yhchjanqmopgbwgjspmf.supabase.co',
