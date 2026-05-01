@@ -63,8 +63,26 @@ const QuestionBox: React.FC<QuestionBoxProps> = ({ question, children }) => (
 const DoubtToFaithLesson1: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabId>('intro');
 
+  const tabs = [
+    { id: 'intro' as TabId, name: '聖經簡介', icon: Book },
+    { id: 'creation' as TabId, name: '創造', icon: Globe2 },
+    { id: 'endtimes' as TabId, name: '末世', icon: Calendar }
+  ];
+
   return (
     <div className="max-w-5xl mx-auto p-4 md:p-6 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+      {/* Header */}
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl p-6 mb-6 shadow-lg">
+        <h1 className="text-3xl font-bold mb-2 flex items-center gap-3">
+          <Sparkles className="w-8 h-8" />
+          從懷疑到相信
+        </h1>
+        <p className="text-blue-100 text-lg">第一課：神藉聖經傳達創造與末世</p>
+      </div>
+
+      {/* Tab Navigation */}
+      <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
+        {tabs.map(({ id, name, icon: Icon }) => (
           <button
             key={id}
             onClick={() => setActiveTab(id)}
