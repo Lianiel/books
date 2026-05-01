@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter, LogOut, Download, Maximize2, ChevronDown, ChevronUp } from 'lucide-react';
+import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter, LogOut, Download, Maximize2, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from '../useHighlight';
 import { asBlob } from 'html-docx-js-typescript';
+import { getBookChapters, getCurrentChapterIndex, getPreviousChapter, getNextChapter } from '../bookChapters';
 
 interface BookLayoutProps {
   bookId: string;
@@ -20,11 +22,16 @@ const fontSizeClasses: Record<FontSize, string> = {
 };
 
 const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) => {
+  const navigate = useNavigate();
+  
   // 字體縮放
   const [fontSize, setFontSize] = useState<FontSize>('base');
   
   // 工具列顯示/隱藏
   const [showToolbar, setShowToolbar] = useState(true);
+  
+  // 章節選擇器顯示/隱藏
+  const [showChapterMenu, setShowChapterMenu] = useState(false);
   
   // TTS 狀態
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -36,6 +43,13 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
   const { isLoggedIn, applyHighlights, addHighlight, removeHighlight } = useHighlight(bookId, chapter);
   const [highlightMode, setHighlightMode] = useState(false);
   const [selectedStyle, setSelectedStyle] = useState<HighlightStyle>('yellow');
+  
+  // 獲取章節資訊
+  const chapters = getBookChapters(bookId);
+  const currentIndex = getCurrentChapterIndex(bookId, chapter);
+  const currentChapter = chapters[currentIndex];
+  const previousChapter = getPreviousChapter(bookId, chapter);
+  const nextChapter = getNextChapter(bookId, chapter);
   
   // 登出功能
   const handleLogout = async () => {
@@ -78,7 +92,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
       // 克隆內容以避免修改原始 DOM
       const clone = mainContent.cloneNode(true) as HTMLElement;
       
-      // 移除不需要的元素（如按鈕、工具列）
+      // 移除不需要的元素(如按鈕、工具列)
       clone.querySelectorAll('button').forEach(btn => btn.remove());
       clone.querySelectorAll('[class*="toolbar"]').forEach(el => el.remove());
       
@@ -113,10 +127,10 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
       
-      alert('Word 檔案已下載！');
+      alert('Word 檔案已下載!');
     } catch (error) {
-      console.error('匯出失敗：', error);
-      alert('匯出失敗，請稍後再試');
+      console.error('匯出失敗:', error);
+      alert('匯出失敗,請稍後再試');
     }
   };
   
@@ -143,7 +157,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
       setIsPaused(false);
     }
     
-    // 發送關閉訊息給父視窗（埔和小站）
+    // 發送關閉訊息給父視窗(埔和小站)
     window.parent.postMessage({ type: 'closeBookEmbed' }, '*');
   };
 
@@ -209,14 +223,14 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
     }
   };
 
-  // 螢光筆模式（包含登入流程）
+  // 螢光筆模式(包含登入流程)
   const toggleHighlightMode = async () => {
     if (!isLoggedIn) {
       // 需要登入才能使用螢光筆
-      const phone = prompt('請輸入手機號碼：');
+      const phone = prompt('請輸入手機號碼:');
       if (!phone) return;
       
-      const password = prompt('請輸入密碼：');
+      const password = prompt('請輸入密碼:');
       if (!password) return;
       
       const email = `${phone}@puhe.church`;
@@ -233,12 +247,12 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
       
       const { error } = await sb.auth.signInWithPassword({ email, password });
       if (error) {
-        alert('登入失敗：' + error.message);
+        alert('登入失敗:' + error.message);
         return;
       }
       
-      // 登入成功，重新載入頁面以更新狀態
-      alert('登入成功！螢光筆功能已啟用');
+      // 登入成功,重新載入頁面以更新狀態
+      alert('登入成功!螢光筆功能已啟用');
       window.location.reload();
       return;
     }
@@ -258,7 +272,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
       addHighlight(text, selectedStyle);
       selection.removeAllRanges();
       
-      // 延遲重新套用螢光筆，確保 DOM 更新
+      // 延遲重新套用螢光筆,確保 DOM 更新
       setTimeout(() => applyHighlights(), 100);
     };
 
@@ -266,16 +280,144 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
     return () => document.removeEventListener('mouseup', handleSelection);
   }, [highlightMode, selectedStyle, addHighlight, applyHighlights]);
 
+  // 章節切換
+  const handleChapterChange = (chapterPath: string) => {
+    // 停止 TTS
+    if (isSpeaking) {
+      window.speechSynthesis.cancel();
+      setIsSpeaking(false);
+      setIsPaused(false);
+    }
+    
+    // 關閉章節選單
+    setShowChapterMenu(false);
+    
+    // 導航到新章節
+    navigate(chapterPath);
+    
+    // 滾動到頂部
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <div className="relative min-h-screen">
-      {/* 主要內容 - 套用字體大小 */}
-      <main className={fontSizeClasses[fontSize]}>
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+      
+      {/* ========== 頂部章節導航條 ========== */}
+      <div className="sticky top-0 z-50 bg-white shadow-md border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2">
+          <div className="flex items-center justify-between gap-2">
+            
+            {/* 左側:上一章按鈕 */}
+            <button
+              onClick={() => previousChapter && handleChapterChange(previousChapter.path)}
+              disabled={!previousChapter}
+              className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg font-semibold text-sm transition-colors ${
+                previousChapter 
+                  ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                  : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+              }`}
+              title={previousChapter ? `上一章:${previousChapter.title}` : '沒有上一章'}
+            >
+              <ChevronLeft className="w-4 h-4" />
+              <span className="hidden sm:inline">上一章</span>
+            </button>
+
+            {/* 中間:當前章節選擇器 */}
+            <div className="flex-1 relative">
+              <button
+                onClick={() => setShowChapterMenu(!showChapterMenu)}
+                className="w-full flex items-center justify-between gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-3 sm:px-4 py-2 rounded-lg font-semibold shadow-lg transition-all"
+              >
+                <div className="flex items-center gap-2">
+                  <BookOpen className="w-4 h-4 flex-shrink-0" />
+                  <span className="text-sm sm:text-base truncate">
+                    {currentChapter?.title || chapter}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full hidden sm:inline">
+                    {currentIndex + 1}/{chapters.length}
+                  </span>
+                  <List className="w-4 h-4 flex-shrink-0" />
+                </div>
+              </button>
+
+              {/* 章節下拉選單 */}
+              {showChapterMenu && (
+                <>
+                  {/* 背景遮罩 */}
+                  <div 
+                    className="fixed inset-0 bg-black/20 z-40"
+                    onClick={() => setShowChapterMenu(false)}
+                  />
+                  
+                  {/* 選單內容 */}
+                  <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-2xl border border-gray-200 max-h-96 overflow-y-auto z-50">
+                    <div className="p-2">
+                      <div className="text-xs text-gray-500 font-semibold px-3 py-2 border-b border-gray-200">
+                        選擇章節 ({chapters.length} 章)
+                      </div>
+                      {chapters.map((ch, idx) => (
+                        <button
+                          key={ch.id}
+                          onClick={() => handleChapterChange(ch.path)}
+                          className={`w-full text-left px-3 py-2 rounded-lg transition-colors flex items-center justify-between gap-2 ${
+                            ch.id === chapter
+                              ? 'bg-indigo-100 text-indigo-900 font-bold'
+                              : 'hover:bg-gray-100 text-gray-700'
+                          }`}
+                        >
+                          <span className="flex items-center gap-2">
+                            <span className="text-xs text-gray-500 w-6">{idx + 1}.</span>
+                            <span className="text-sm">{ch.title}</span>
+                          </span>
+                          {ch.id === chapter && (
+                            <span className="text-xs bg-indigo-600 text-white px-2 py-0.5 rounded-full">
+                              當前
+                            </span>
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+
+            {/* 右側:下一章按鈕 */}
+            <button
+              onClick={() => nextChapter && handleChapterChange(nextChapter.path)}
+              disabled={!nextChapter}
+              className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg font-semibold text-sm transition-colors ${
+                nextChapter 
+                  ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                  : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+              }`}
+              title={nextChapter ? `下一章:${nextChapter.title}` : '沒有下一章'}
+            >
+              <span className="hidden sm:inline">下一章</span>
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+          
+          {/* 進度條 */}
+          <div className="mt-2 bg-gray-200 rounded-full h-1.5 overflow-hidden">
+            <div 
+              className="bg-gradient-to-r from-indigo-600 to-purple-600 h-full transition-all duration-300"
+              style={{ width: `${((currentIndex + 1) / chapters.length) * 100}%` }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* ========== 主要內容區 ========== */}
+      <main className={`${fontSizeClasses[fontSize]} px-4 py-6`}>
         {children}
       </main>
 
-      {/* 底部工具列 */}
+      {/* ========== 底部工具列 ========== */}
       <div className={`fixed bottom-0 left-0 right-0 bg-gradient-to-r from-slate-800 to-slate-900 border-t border-slate-700 shadow-2xl z-40 transition-transform duration-300 ${showToolbar ? 'translate-y-0' : 'translate-y-full'}`}>
-        {/* 收起/展開按鈕（固定在工具列上方）*/}
+        {/* 收起/展開按鈕(固定在工具列上方)*/}
         <button
           onClick={() => setShowToolbar(!showToolbar)}
           className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-1 rounded-t-lg shadow-lg transition-colors"
@@ -286,7 +428,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
         
         <div className="flex items-center justify-between px-2 sm:px-4 py-2 max-w-7xl mx-auto">
           
-          {/* 左側：關閉 + 全展開 + 匯出 */}
+          {/* 左側:關閉 + 全展開 + 匯出 */}
           <div className="flex items-center gap-1">
             <button
               onClick={handleClose}
@@ -316,7 +458,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
             </button>
           </div>
 
-          {/* 中間：TTS 控制 + 語速 */}
+          {/* 中間:TTS 控制 + 語速 */}
           <div className="flex items-center gap-1">
             {/* TTS 按鈕 */}
             <button
@@ -369,7 +511,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
             </div>
           </div>
 
-          {/* 右側：字體縮放 + 螢光筆 */}
+          {/* 右側:字體縮放 + 螢光筆 */}
           <div className="flex items-center gap-1">
             {/* 字體縮放 */}
             <div className="flex items-center gap-0.5 bg-slate-700 rounded-lg p-0.5">
@@ -394,7 +536,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
               </button>
             </div>
 
-            {/* 螢光筆（包含自動登入）*/}
+            {/* 螢光筆(包含自動登入)*/}
             <button
               onClick={toggleHighlightMode}
               className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-sm ${
@@ -408,7 +550,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
               <span className="hidden sm:inline text-sm">筆</span>
             </button>
             
-            {/* 登出（僅在已登入時顯示）*/}
+            {/* 登出(僅在已登入時顯示)*/}
             {isLoggedIn && (
               <button
                 onClick={handleLogout}
@@ -426,7 +568,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
         {highlightMode && (
           <div className="bg-slate-700 border-t border-slate-600 px-2 sm:px-4 py-1.5">
             <div className="flex items-center gap-1.5 max-w-7xl mx-auto">
-              <span className="text-white text-xs font-semibold mr-1">樣式：</span>
+              <span className="text-white text-xs font-semibold mr-1">樣式:</span>
               {(['yellow', 'red', 'blue', 'bold', 'underline'] as HighlightStyle[]).map(style => {
                 const demoSpan = document.createElement('span');
                 demoSpan.textContent = style === 'yellow' ? '黃' : 
@@ -454,7 +596,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
         )}
       </div>
 
-      {/* 底部留白（避免內容被工具列遮住）*/}
+      {/* 底部留白(避免內容被工具列遮住)*/}
       <div className="h-32 sm:h-24"></div>
     </div>
   );
