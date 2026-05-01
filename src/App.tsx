@@ -14,6 +14,136 @@ interface BookCardProps {
   color?: string;
 }
 
+export interface ChapterInfo {
+  id: string;
+  title: string;
+  path: string;
+}
+
+// ========== 章節配置 - 新增書本時記得在這裡加入章節定義 ==========
+export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
+  book1: [
+    { id: 'home', title: '簡介', path: '/book1/home' },
+    { id: 'definition', title: '界線的定義', path: '/book1/definition' },
+    { id: 'development', title: '界線的發展', path: '/book1/development' },
+    { id: 'myths', title: '界線的迷思', path: '/book1/myths' },
+    { id: 'diagnosis', title: '界線的診斷', path: '/book1/diagnosis' },
+    { id: 'laws', title: '界線的法則', path: '/book1/laws' },
+    { id: 'ch7', title: '第7章', path: '/book1/ch7' },
+    { id: 'ch8', title: '第8章', path: '/book1/ch8' },
+    { id: 'ch9', title: '第9章', path: '/book1/ch9' },
+    { id: 'ch10', title: '第10章', path: '/book1/ch10' },
+    { id: 'ch11', title: '第11章', path: '/book1/ch11' },
+    { id: 'ch12', title: '第12章', path: '/book1/ch12' },
+    { id: 'ch13', title: '第13章', path: '/book1/ch13' },
+    { id: 'ch14', title: '第14章', path: '/book1/ch14' },
+    { id: 'ch15', title: '第15章', path: '/book1/ch15' },
+    { id: 'ch16', title: '第16章', path: '/book1/ch16' },
+    { id: 'ch17', title: '第17章', path: '/book1/ch17' },
+  ],
+  book2: [
+    { id: 'chapter1', title: '第1章', path: '/book2/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book2/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book2/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book2/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book2/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book2/chapter6' },
+    { id: 'chapter7', title: '第7章', path: '/book2/chapter7' },
+    { id: 'chapter8', title: '第8章', path: '/book2/chapter8' },
+  ],
+  book3: [
+    { id: 'chapter1', title: '第1章', path: '/book3/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book3/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book3/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book3/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book3/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book3/chapter6' },
+    { id: 'chapter7', title: '第7章', path: '/book3/chapter7' },
+    { id: 'chapter8', title: '第8章', path: '/book3/chapter8' },
+  ],
+  book4: [
+    { id: 'chapter1', title: '第1章', path: '/book4/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book4/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book4/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book4/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book4/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book4/chapter6' },
+    { id: 'chapter7', title: '第7章', path: '/book4/chapter7' },
+    { id: 'chapter8', title: '第8章', path: '/book4/chapter8' },
+    { id: 'chapter9', title: '第9章', path: '/book4/chapter9' },
+    { id: 'chapter10', title: '第10章', path: '/book4/chapter10' },
+    { id: 'chapter11', title: '第11章', path: '/book4/chapter11' },
+    { id: 'chapter12', title: '第12章', path: '/book4/chapter12' },
+    { id: 'chapter13', title: '第13章', path: '/book4/chapter13' },
+    { id: 'chapter14', title: '第14章', path: '/book4/chapter14' },
+    { id: 'chapter15', title: '第15章', path: '/book4/chapter15' },
+    { id: 'chapter16', title: '第16章', path: '/book4/chapter16' },
+  ],
+  book5: [
+    { id: 'chapter1', title: '第1章', path: '/book5/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book5/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book5/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book5/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book5/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book5/chapter6' },
+  ],
+  book6: [
+    { id: 'chapter1', title: '第1章', path: '/book6/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book6/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book6/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book6/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book6/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book6/chapter6' },
+    { id: 'chapter7', title: '第7章', path: '/book6/chapter7' },
+    { id: 'chapter8', title: '第8章', path: '/book6/chapter8' },
+  ],
+  book7: [
+    { id: 'chapter1', title: '第1章', path: '/book7/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book7/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book7/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book7/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book7/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book7/chapter6' },
+  ],
+  book8: [
+    { id: 'chapter1', title: '第1章', path: '/book8/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book8/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book8/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book8/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book8/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book8/chapter6' },
+    { id: 'chapter7', title: '第7章', path: '/book8/chapter7' },
+    { id: 'chapter8', title: '第8章', path: '/book8/chapter8' },
+    { id: 'chapter9', title: '第9章', path: '/book8/chapter9' },
+    { id: 'chapter10', title: '第10章', path: '/book8/chapter10' },
+    { id: 'chapter11', title: '第11章', path: '/book8/chapter11' },
+    { id: 'chapter12', title: '第12章', path: '/book8/chapter12' },
+  ],
+  book9: [
+    { id: 'intro', title: '引言', path: '/book9/intro' },
+    { id: 'chapter1', title: '第1章', path: '/book9/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book9/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book9/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book9/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book9/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book9/chapter6' },
+  ],
+  book10: [
+    { id: 'chapter1', title: '第1章', path: '/book10/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book10/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book10/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book10/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book10/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book10/chapter6' },
+    { id: 'chapter7', title: '第7章', path: '/book10/chapter7' },
+    { id: 'chapter8', title: '第8章', path: '/book10/chapter8' },
+    { id: 'chapter9', title: '第9章', path: '/book10/chapter9' },
+  ],
+  book11: [
+    { id: 'lesson1', title: '第1課', path: '/book11/lesson1' },
+  ],
+};
+
 // ========== 導入 Book 1 章節 ==========
 import Book1Home from './components/book1/SectionHome';
 import Book1Definition from './components/book1/SectionDefinition';
@@ -174,140 +304,140 @@ const App: React.FC = () => {
     <Router>
       <Routes>
         {/* ========== Book 1 - 立界線得自由 ========== */}
-        <Route path="/book1/home" element={<BookLayout bookId="book1" chapter="home"><Book1Home /></BookLayout>} />
-        <Route path="/book1/definition" element={<BookLayout bookId="book1" chapter="definition"><Book1Definition /></BookLayout>} />
-        <Route path="/book1/development" element={<BookLayout bookId="book1" chapter="development"><Book1Development /></BookLayout>} />
-        <Route path="/book1/myths" element={<BookLayout bookId="book1" chapter="myths"><Book1Myths /></BookLayout>} />
-        <Route path="/book1/diagnosis" element={<BookLayout bookId="book1" chapter="diagnosis"><Book1Diagnosis /></BookLayout>} />
-        <Route path="/book1/laws" element={<BookLayout bookId="book1" chapter="laws"><Book1Laws /></BookLayout>} />
-        <Route path="/book1/ch7" element={<BookLayout bookId="book1" chapter="ch7"><Book1Ch7 /></BookLayout>} />
-        <Route path="/book1/ch8" element={<BookLayout bookId="book1" chapter="ch8"><Book1Ch8 /></BookLayout>} />
-        <Route path="/book1/ch9" element={<BookLayout bookId="book1" chapter="ch9"><Book1Ch9 /></BookLayout>} />
-        <Route path="/book1/ch10" element={<BookLayout bookId="book1" chapter="ch10"><Book1Ch10 /></BookLayout>} />
-        <Route path="/book1/ch11" element={<BookLayout bookId="book1" chapter="ch11"><Book1Ch11 /></BookLayout>} />
-        <Route path="/book1/ch12" element={<BookLayout bookId="book1" chapter="ch12"><Book1Ch12 /></BookLayout>} />
-        <Route path="/book1/ch13" element={<BookLayout bookId="book1" chapter="ch13"><Book1Ch13 /></BookLayout>} />
-        <Route path="/book1/ch14" element={<BookLayout bookId="book1" chapter="ch14"><Book1Ch14 /></BookLayout>} />
-        <Route path="/book1/ch15" element={<BookLayout bookId="book1" chapter="ch15"><Book1Ch15 /></BookLayout>} />
-        <Route path="/book1/ch16" element={<BookLayout bookId="book1" chapter="ch16"><Book1Ch16 /></BookLayout>} />
-        <Route path="/book1/ch17" element={<BookLayout bookId="book1" chapter="ch17"><Book1Ch17 /></BookLayout>} />
+        <Route path="/book1/home" element={<BookLayout bookId="book1" chapter="home" chapters={BOOK_CHAPTERS.book1}><Book1Home /></BookLayout>} />
+        <Route path="/book1/definition" element={<BookLayout bookId="book1" chapter="definition" chapters={BOOK_CHAPTERS.book1}><Book1Definition /></BookLayout>} />
+        <Route path="/book1/development" element={<BookLayout bookId="book1" chapter="development" chapters={BOOK_CHAPTERS.book1}><Book1Development /></BookLayout>} />
+        <Route path="/book1/myths" element={<BookLayout bookId="book1" chapter="myths" chapters={BOOK_CHAPTERS.book1}><Book1Myths /></BookLayout>} />
+        <Route path="/book1/diagnosis" element={<BookLayout bookId="book1" chapter="diagnosis" chapters={BOOK_CHAPTERS.book1}><Book1Diagnosis /></BookLayout>} />
+        <Route path="/book1/laws" element={<BookLayout bookId="book1" chapter="laws" chapters={BOOK_CHAPTERS.book1}><Book1Laws /></BookLayout>} />
+        <Route path="/book1/ch7" element={<BookLayout bookId="book1" chapter="ch7" chapters={BOOK_CHAPTERS.book1}><Book1Ch7 /></BookLayout>} />
+        <Route path="/book1/ch8" element={<BookLayout bookId="book1" chapter="ch8" chapters={BOOK_CHAPTERS.book1}><Book1Ch8 /></BookLayout>} />
+        <Route path="/book1/ch9" element={<BookLayout bookId="book1" chapter="ch9" chapters={BOOK_CHAPTERS.book1}><Book1Ch9 /></BookLayout>} />
+        <Route path="/book1/ch10" element={<BookLayout bookId="book1" chapter="ch10" chapters={BOOK_CHAPTERS.book1}><Book1Ch10 /></BookLayout>} />
+        <Route path="/book1/ch11" element={<BookLayout bookId="book1" chapter="ch11" chapters={BOOK_CHAPTERS.book1}><Book1Ch11 /></BookLayout>} />
+        <Route path="/book1/ch12" element={<BookLayout bookId="book1" chapter="ch12" chapters={BOOK_CHAPTERS.book1}><Book1Ch12 /></BookLayout>} />
+        <Route path="/book1/ch13" element={<BookLayout bookId="book1" chapter="ch13" chapters={BOOK_CHAPTERS.book1}><Book1Ch13 /></BookLayout>} />
+        <Route path="/book1/ch14" element={<BookLayout bookId="book1" chapter="ch14" chapters={BOOK_CHAPTERS.book1}><Book1Ch14 /></BookLayout>} />
+        <Route path="/book1/ch15" element={<BookLayout bookId="book1" chapter="ch15" chapters={BOOK_CHAPTERS.book1}><Book1Ch15 /></BookLayout>} />
+        <Route path="/book1/ch16" element={<BookLayout bookId="book1" chapter="ch16" chapters={BOOK_CHAPTERS.book1}><Book1Ch16 /></BookLayout>} />
+        <Route path="/book1/ch17" element={<BookLayout bookId="book1" chapter="ch17" chapters={BOOK_CHAPTERS.book1}><Book1Ch17 /></BookLayout>} />
         {/* Book 1 首頁入口 */}
-        <Route path="/book1" element={<BookLayout bookId="book1" chapter="home"><Book1Home /></BookLayout>} />
+        <Route path="/book1" element={<BookLayout bookId="book1" chapter="home" chapters={BOOK_CHAPTERS.book1}><Book1Home /></BookLayout>} />
 
         {/* ========== Book 2 - 情感健康的門徒 ========== */}
-        <Route path="/book2/chapter1" element={<BookLayout bookId="book2" chapter="chapter1"><Book2Ch1 /></BookLayout>} />
-        <Route path="/book2/chapter2" element={<BookLayout bookId="book2" chapter="chapter2"><Book2Ch2 /></BookLayout>} />
-        <Route path="/book2/chapter3" element={<BookLayout bookId="book2" chapter="chapter3"><Book2Ch3 /></BookLayout>} />
-        <Route path="/book2/chapter4" element={<BookLayout bookId="book2" chapter="chapter4"><Book2Ch4 /></BookLayout>} />
-        <Route path="/book2/chapter5" element={<BookLayout bookId="book2" chapter="chapter5"><Book2Ch5 /></BookLayout>} />
-        <Route path="/book2/chapter6" element={<BookLayout bookId="book2" chapter="chapter6"><Book2Ch6 /></BookLayout>} />
-        <Route path="/book2/chapter7" element={<BookLayout bookId="book2" chapter="chapter7"><Book2Ch7 /></BookLayout>} />
-        <Route path="/book2/chapter8" element={<BookLayout bookId="book2" chapter="chapter8"><Book2Ch8 /></BookLayout>} />
+        <Route path="/book2/chapter1" element={<BookLayout bookId="book2" chapter="chapter1" chapters={BOOK_CHAPTERS.book2}><Book2Ch1 /></BookLayout>} />
+        <Route path="/book2/chapter2" element={<BookLayout bookId="book2" chapter="chapter2" chapters={BOOK_CHAPTERS.book2}><Book2Ch2 /></BookLayout>} />
+        <Route path="/book2/chapter3" element={<BookLayout bookId="book2" chapter="chapter3" chapters={BOOK_CHAPTERS.book2}><Book2Ch3 /></BookLayout>} />
+        <Route path="/book2/chapter4" element={<BookLayout bookId="book2" chapter="chapter4" chapters={BOOK_CHAPTERS.book2}><Book2Ch4 /></BookLayout>} />
+        <Route path="/book2/chapter5" element={<BookLayout bookId="book2" chapter="chapter5" chapters={BOOK_CHAPTERS.book2}><Book2Ch5 /></BookLayout>} />
+        <Route path="/book2/chapter6" element={<BookLayout bookId="book2" chapter="chapter6" chapters={BOOK_CHAPTERS.book2}><Book2Ch6 /></BookLayout>} />
+        <Route path="/book2/chapter7" element={<BookLayout bookId="book2" chapter="chapter7" chapters={BOOK_CHAPTERS.book2}><Book2Ch7 /></BookLayout>} />
+        <Route path="/book2/chapter8" element={<BookLayout bookId="book2" chapter="chapter8" chapters={BOOK_CHAPTERS.book2}><Book2Ch8 /></BookLayout>} />
 
         {/* ========== Book 3 - 你可以更靠近神 ========== */}
-        <Route path="/book3/chapter1" element={<BookLayout bookId="book3" chapter="chapter1"><Book3Ch1 /></BookLayout>} />
-        <Route path="/book3/chapter2" element={<BookLayout bookId="book3" chapter="chapter2"><Book3Ch2 /></BookLayout>} />
-        <Route path="/book3/chapter3" element={<BookLayout bookId="book3" chapter="chapter3"><Book3Ch3 /></BookLayout>} />
-        <Route path="/book3/chapter4" element={<BookLayout bookId="book3" chapter="chapter4"><Book3Ch4 /></BookLayout>} />
-        <Route path="/book3/chapter5" element={<BookLayout bookId="book3" chapter="chapter5"><Book3Ch5 /></BookLayout>} />
-        <Route path="/book3/chapter6" element={<BookLayout bookId="book3" chapter="chapter6"><Book3Ch6 /></BookLayout>} />
-        <Route path="/book3/chapter7" element={<BookLayout bookId="book3" chapter="chapter7"><Book3Ch7 /></BookLayout>} />
-        <Route path="/book3/chapter8" element={<BookLayout bookId="book3" chapter="chapter8"><Book3Ch8 /></BookLayout>} />
+        <Route path="/book3/chapter1" element={<BookLayout bookId="book3" chapter="chapter1" chapters={BOOK_CHAPTERS.book3}><Book3Ch1 /></BookLayout>} />
+        <Route path="/book3/chapter2" element={<BookLayout bookId="book3" chapter="chapter2" chapters={BOOK_CHAPTERS.book3}><Book3Ch2 /></BookLayout>} />
+        <Route path="/book3/chapter3" element={<BookLayout bookId="book3" chapter="chapter3" chapters={BOOK_CHAPTERS.book3}><Book3Ch3 /></BookLayout>} />
+        <Route path="/book3/chapter4" element={<BookLayout bookId="book3" chapter="chapter4" chapters={BOOK_CHAPTERS.book3}><Book3Ch4 /></BookLayout>} />
+        <Route path="/book3/chapter5" element={<BookLayout bookId="book3" chapter="chapter5" chapters={BOOK_CHAPTERS.book3}><Book3Ch5 /></BookLayout>} />
+        <Route path="/book3/chapter6" element={<BookLayout bookId="book3" chapter="chapter6" chapters={BOOK_CHAPTERS.book3}><Book3Ch6 /></BookLayout>} />
+        <Route path="/book3/chapter7" element={<BookLayout bookId="book3" chapter="chapter7" chapters={BOOK_CHAPTERS.book3}><Book3Ch7 /></BookLayout>} />
+        <Route path="/book3/chapter8" element={<BookLayout bookId="book3" chapter="chapter8" chapters={BOOK_CHAPTERS.book3}><Book3Ch8 /></BookLayout>} />
         {/* Book 3 首頁入口 */}
-        <Route path="/book3" element={<BookLayout bookId="book3" chapter="chapter1"><Book3Ch1 /></BookLayout>} />
+        <Route path="/book3" element={<BookLayout bookId="book3" chapter="chapter1" chapters={BOOK_CHAPTERS.book3}><Book3Ch1 /></BookLayout>} />
 
         {/* ========== Book 4 - 成為有感染力的基督徒 ========== */}
-        <Route path="/book4/chapter1" element={<BookLayout bookId="book4" chapter="chapter1"><Book4Ch1 /></BookLayout>} />
-        <Route path="/book4/chapter2" element={<BookLayout bookId="book4" chapter="chapter2"><Book4Ch2 /></BookLayout>} />
-        <Route path="/book4/chapter3" element={<BookLayout bookId="book4" chapter="chapter3"><Book4Ch3 /></BookLayout>} />
-        <Route path="/book4/chapter4" element={<BookLayout bookId="book4" chapter="chapter4"><Book4Ch4 /></BookLayout>} />
-        <Route path="/book4/chapter5" element={<BookLayout bookId="book4" chapter="chapter5"><Book4Ch5 /></BookLayout>} />
-        <Route path="/book4/chapter6" element={<BookLayout bookId="book4" chapter="chapter6"><Book4Ch6 /></BookLayout>} />
-        <Route path="/book4/chapter7" element={<BookLayout bookId="book4" chapter="chapter7"><Book4Ch7 /></BookLayout>} />
-        <Route path="/book4/chapter8" element={<BookLayout bookId="book4" chapter="chapter8"><Book4Ch8 /></BookLayout>} />
-        <Route path="/book4/chapter9" element={<BookLayout bookId="book4" chapter="chapter9"><Book4Ch9 /></BookLayout>} />
-        <Route path="/book4/chapter10" element={<BookLayout bookId="book4" chapter="chapter10"><Book4Ch10 /></BookLayout>} />
-        <Route path="/book4/chapter11" element={<BookLayout bookId="book4" chapter="chapter11"><Book4Ch11 /></BookLayout>} />
-        <Route path="/book4/chapter12" element={<BookLayout bookId="book4" chapter="chapter12"><Book4Ch12 /></BookLayout>} />
-        <Route path="/book4/chapter13" element={<BookLayout bookId="book4" chapter="chapter13"><Book4Ch13 /></BookLayout>} />
-        <Route path="/book4/chapter14" element={<BookLayout bookId="book4" chapter="chapter14"><Book4Ch14 /></BookLayout>} />
-        <Route path="/book4/chapter15" element={<BookLayout bookId="book4" chapter="chapter15"><Book4Ch15 /></BookLayout>} />
-        <Route path="/book4/chapter16" element={<BookLayout bookId="book4" chapter="chapter16"><Book4Ch16 /></BookLayout>} />
+        <Route path="/book4/chapter1" element={<BookLayout bookId="book4" chapter="chapter1" chapters={BOOK_CHAPTERS.book4}><Book4Ch1 /></BookLayout>} />
+        <Route path="/book4/chapter2" element={<BookLayout bookId="book4" chapter="chapter2" chapters={BOOK_CHAPTERS.book4}><Book4Ch2 /></BookLayout>} />
+        <Route path="/book4/chapter3" element={<BookLayout bookId="book4" chapter="chapter3" chapters={BOOK_CHAPTERS.book4}><Book4Ch3 /></BookLayout>} />
+        <Route path="/book4/chapter4" element={<BookLayout bookId="book4" chapter="chapter4" chapters={BOOK_CHAPTERS.book4}><Book4Ch4 /></BookLayout>} />
+        <Route path="/book4/chapter5" element={<BookLayout bookId="book4" chapter="chapter5" chapters={BOOK_CHAPTERS.book4}><Book4Ch5 /></BookLayout>} />
+        <Route path="/book4/chapter6" element={<BookLayout bookId="book4" chapter="chapter6" chapters={BOOK_CHAPTERS.book4}><Book4Ch6 /></BookLayout>} />
+        <Route path="/book4/chapter7" element={<BookLayout bookId="book4" chapter="chapter7" chapters={BOOK_CHAPTERS.book4}><Book4Ch7 /></BookLayout>} />
+        <Route path="/book4/chapter8" element={<BookLayout bookId="book4" chapter="chapter8" chapters={BOOK_CHAPTERS.book4}><Book4Ch8 /></BookLayout>} />
+        <Route path="/book4/chapter9" element={<BookLayout bookId="book4" chapter="chapter9" chapters={BOOK_CHAPTERS.book4}><Book4Ch9 /></BookLayout>} />
+        <Route path="/book4/chapter10" element={<BookLayout bookId="book4" chapter="chapter10" chapters={BOOK_CHAPTERS.book4}><Book4Ch10 /></BookLayout>} />
+        <Route path="/book4/chapter11" element={<BookLayout bookId="book4" chapter="chapter11" chapters={BOOK_CHAPTERS.book4}><Book4Ch11 /></BookLayout>} />
+        <Route path="/book4/chapter12" element={<BookLayout bookId="book4" chapter="chapter12" chapters={BOOK_CHAPTERS.book4}><Book4Ch12 /></BookLayout>} />
+        <Route path="/book4/chapter13" element={<BookLayout bookId="book4" chapter="chapter13" chapters={BOOK_CHAPTERS.book4}><Book4Ch13 /></BookLayout>} />
+        <Route path="/book4/chapter14" element={<BookLayout bookId="book4" chapter="chapter14" chapters={BOOK_CHAPTERS.book4}><Book4Ch14 /></BookLayout>} />
+        <Route path="/book4/chapter15" element={<BookLayout bookId="book4" chapter="chapter15" chapters={BOOK_CHAPTERS.book4}><Book4Ch15 /></BookLayout>} />
+        <Route path="/book4/chapter16" element={<BookLayout bookId="book4" chapter="chapter16" chapters={BOOK_CHAPTERS.book4}><Book4Ch16 /></BookLayout>} />
         {/* Book 4 首頁入口 */}
-        <Route path="/book4" element={<BookLayout bookId="book4" chapter="chapter1"><Book4Ch1 /></BookLayout>} />
+        <Route path="/book4" element={<BookLayout bookId="book4" chapter="chapter1" chapters={BOOK_CHAPTERS.book4}><Book4Ch1 /></BookLayout>} />
 
         {/* ========== Book 5 - 如何活出基督的樣式 ========== */}
-        <Route path="/book5/chapter1" element={<BookLayout bookId="book5" chapter="chapter1"><Book5Ch1 /></BookLayout>} />
-        <Route path="/book5/chapter2" element={<BookLayout bookId="book5" chapter="chapter2"><Book5Ch2 /></BookLayout>} />
-        <Route path="/book5/chapter3" element={<BookLayout bookId="book5" chapter="chapter3"><Book5Ch3 /></BookLayout>} />
-        <Route path="/book5/chapter4" element={<BookLayout bookId="book5" chapter="chapter4"><Book5Ch4 /></BookLayout>} />
-        <Route path="/book5/chapter5" element={<BookLayout bookId="book5" chapter="chapter5"><Book5Ch5 /></BookLayout>} />
-        <Route path="/book5/chapter6" element={<BookLayout bookId="book5" chapter="chapter6"><Book5Ch6 /></BookLayout>} />
+        <Route path="/book5/chapter1" element={<BookLayout bookId="book5" chapter="chapter1" chapters={BOOK_CHAPTERS.book5}><Book5Ch1 /></BookLayout>} />
+        <Route path="/book5/chapter2" element={<BookLayout bookId="book5" chapter="chapter2" chapters={BOOK_CHAPTERS.book5}><Book5Ch2 /></BookLayout>} />
+        <Route path="/book5/chapter3" element={<BookLayout bookId="book5" chapter="chapter3" chapters={BOOK_CHAPTERS.book5}><Book5Ch3 /></BookLayout>} />
+        <Route path="/book5/chapter4" element={<BookLayout bookId="book5" chapter="chapter4" chapters={BOOK_CHAPTERS.book5}><Book5Ch4 /></BookLayout>} />
+        <Route path="/book5/chapter5" element={<BookLayout bookId="book5" chapter="chapter5" chapters={BOOK_CHAPTERS.book5}><Book5Ch5 /></BookLayout>} />
+        <Route path="/book5/chapter6" element={<BookLayout bookId="book5" chapter="chapter6" chapters={BOOK_CHAPTERS.book5}><Book5Ch6 /></BookLayout>} />
         {/* Book 5 首頁入口 */}
-        <Route path="/book5" element={<BookLayout bookId="book5" chapter="chapter1"><Book5Ch1 /></BookLayout>} />
+        <Route path="/book5" element={<BookLayout bookId="book5" chapter="chapter1" chapters={BOOK_CHAPTERS.book5}><Book5Ch1 /></BookLayout>} />
 
         {/* ========== Book 6 - 向保羅學宣教 ========== */}
-        <Route path="/book6/chapter1" element={<BookLayout bookId="book6" chapter="chapter1"><Book6Ch1 /></BookLayout>} />
-        <Route path="/book6/chapter2" element={<BookLayout bookId="book6" chapter="chapter2"><Book6Ch2 /></BookLayout>} />
-        <Route path="/book6/chapter3" element={<BookLayout bookId="book6" chapter="chapter3"><Book6Ch3 /></BookLayout>} />
-        <Route path="/book6/chapter4" element={<BookLayout bookId="book6" chapter="chapter4"><Book6Ch4 /></BookLayout>} />
-        <Route path="/book6/chapter5" element={<BookLayout bookId="book6" chapter="chapter5"><Book6Ch5 /></BookLayout>} />
-        <Route path="/book6/chapter6" element={<BookLayout bookId="book6" chapter="chapter6"><Book6Ch6 /></BookLayout>} />
-        <Route path="/book6/chapter7" element={<BookLayout bookId="book6" chapter="chapter7"><Book6Ch7 /></BookLayout>} />
-        <Route path="/book6/chapter8" element={<BookLayout bookId="book6" chapter="chapter8"><Book6Ch8 /></BookLayout>} />
+        <Route path="/book6/chapter1" element={<BookLayout bookId="book6" chapter="chapter1" chapters={BOOK_CHAPTERS.book6}><Book6Ch1 /></BookLayout>} />
+        <Route path="/book6/chapter2" element={<BookLayout bookId="book6" chapter="chapter2" chapters={BOOK_CHAPTERS.book6}><Book6Ch2 /></BookLayout>} />
+        <Route path="/book6/chapter3" element={<BookLayout bookId="book6" chapter="chapter3" chapters={BOOK_CHAPTERS.book6}><Book6Ch3 /></BookLayout>} />
+        <Route path="/book6/chapter4" element={<BookLayout bookId="book6" chapter="chapter4" chapters={BOOK_CHAPTERS.book6}><Book6Ch4 /></BookLayout>} />
+        <Route path="/book6/chapter5" element={<BookLayout bookId="book6" chapter="chapter5" chapters={BOOK_CHAPTERS.book6}><Book6Ch5 /></BookLayout>} />
+        <Route path="/book6/chapter6" element={<BookLayout bookId="book6" chapter="chapter6" chapters={BOOK_CHAPTERS.book6}><Book6Ch6 /></BookLayout>} />
+        <Route path="/book6/chapter7" element={<BookLayout bookId="book6" chapter="chapter7" chapters={BOOK_CHAPTERS.book6}><Book6Ch7 /></BookLayout>} />
+        <Route path="/book6/chapter8" element={<BookLayout bookId="book6" chapter="chapter8" chapters={BOOK_CHAPTERS.book6}><Book6Ch8 /></BookLayout>} />
         {/* Book 6 首頁入口 */}
-        <Route path="/book6" element={<BookLayout bookId="book6" chapter="chapter1"><Book6Ch1 /></BookLayout>} />
+        <Route path="/book6" element={<BookLayout bookId="book6" chapter="chapter1" chapters={BOOK_CHAPTERS.book6}><Book6Ch1 /></BookLayout>} />
 
         {/* ========== Book 7 - 基要陪讀課程 ========== */}
-        <Route path="/book7/chapter1" element={<BookLayout bookId="book7" chapter="chapter1"><Book7Ch1 /></BookLayout>} />
-        <Route path="/book7/chapter2" element={<BookLayout bookId="book7" chapter="chapter2"><Book7Ch2 /></BookLayout>} />
-        <Route path="/book7/chapter3" element={<BookLayout bookId="book7" chapter="chapter3"><Book7Ch3 /></BookLayout>} />
-        <Route path="/book7/chapter4" element={<BookLayout bookId="book7" chapter="chapter4"><Book7Ch4 /></BookLayout>} />
-        <Route path="/book7/chapter5" element={<BookLayout bookId="book7" chapter="chapter5"><Book7Ch5 /></BookLayout>} />
-        <Route path="/book7/chapter6" element={<BookLayout bookId="book7" chapter="chapter6"><Book7Ch6 /></BookLayout>} />
+        <Route path="/book7/chapter1" element={<BookLayout bookId="book7" chapter="chapter1" chapters={BOOK_CHAPTERS.book7}><Book7Ch1 /></BookLayout>} />
+        <Route path="/book7/chapter2" element={<BookLayout bookId="book7" chapter="chapter2" chapters={BOOK_CHAPTERS.book7}><Book7Ch2 /></BookLayout>} />
+        <Route path="/book7/chapter3" element={<BookLayout bookId="book7" chapter="chapter3" chapters={BOOK_CHAPTERS.book7}><Book7Ch3 /></BookLayout>} />
+        <Route path="/book7/chapter4" element={<BookLayout bookId="book7" chapter="chapter4" chapters={BOOK_CHAPTERS.book7}><Book7Ch4 /></BookLayout>} />
+        <Route path="/book7/chapter5" element={<BookLayout bookId="book7" chapter="chapter5" chapters={BOOK_CHAPTERS.book7}><Book7Ch5 /></BookLayout>} />
+        <Route path="/book7/chapter6" element={<BookLayout bookId="book7" chapter="chapter6" chapters={BOOK_CHAPTERS.book7}><Book7Ch6 /></BookLayout>} />
         {/* Book 7 首頁入口 */}
-        <Route path="/book7" element={<BookLayout bookId="book7" chapter="chapter1"><Book7Ch1 /></BookLayout>} />
+        <Route path="/book7" element={<BookLayout bookId="book7" chapter="chapter1" chapters={BOOK_CHAPTERS.book7}><Book7Ch1 /></BookLayout>} />
 
         {/* ========== Book 8 - 靈性關懷與身心健康 ========== */}
-        <Route path="/book8/chapter1" element={<BookLayout bookId="book8" chapter="chapter1"><Book8Ch1 /></BookLayout>} />
-        <Route path="/book8/chapter2" element={<BookLayout bookId="book8" chapter="chapter2"><Book8Ch2 /></BookLayout>} />
-        <Route path="/book8/chapter3" element={<BookLayout bookId="book8" chapter="chapter3"><Book8Ch3 /></BookLayout>} />
-        <Route path="/book8/chapter4" element={<BookLayout bookId="book8" chapter="chapter4"><Book8Ch4 /></BookLayout>} />
-        <Route path="/book8/chapter5" element={<BookLayout bookId="book8" chapter="chapter5"><Book8Ch5 /></BookLayout>} />
-        <Route path="/book8/chapter6" element={<BookLayout bookId="book8" chapter="chapter6"><Book8Ch6 /></BookLayout>} />
-        <Route path="/book8/chapter7" element={<BookLayout bookId="book8" chapter="chapter7"><Book8Ch7 /></BookLayout>} />
-        <Route path="/book8/chapter8" element={<BookLayout bookId="book8" chapter="chapter8"><Book8Ch8 /></BookLayout>} />
-        <Route path="/book8/chapter9" element={<BookLayout bookId="book8" chapter="chapter9"><Book8Ch9 /></BookLayout>} />
-        <Route path="/book8/chapter10" element={<BookLayout bookId="book8" chapter="chapter10"><Book8Ch10 /></BookLayout>} />
-        <Route path="/book8/chapter11" element={<BookLayout bookId="book8" chapter="chapter11"><Book8Ch11 /></BookLayout>} />
-        <Route path="/book8/chapter12" element={<BookLayout bookId="book8" chapter="chapter12"><Book8Ch12 /></BookLayout>} />
+        <Route path="/book8/chapter1" element={<BookLayout bookId="book8" chapter="chapter1" chapters={BOOK_CHAPTERS.book8}><Book8Ch1 /></BookLayout>} />
+        <Route path="/book8/chapter2" element={<BookLayout bookId="book8" chapter="chapter2" chapters={BOOK_CHAPTERS.book8}><Book8Ch2 /></BookLayout>} />
+        <Route path="/book8/chapter3" element={<BookLayout bookId="book8" chapter="chapter3" chapters={BOOK_CHAPTERS.book8}><Book8Ch3 /></BookLayout>} />
+        <Route path="/book8/chapter4" element={<BookLayout bookId="book8" chapter="chapter4" chapters={BOOK_CHAPTERS.book8}><Book8Ch4 /></BookLayout>} />
+        <Route path="/book8/chapter5" element={<BookLayout bookId="book8" chapter="chapter5" chapters={BOOK_CHAPTERS.book8}><Book8Ch5 /></BookLayout>} />
+        <Route path="/book8/chapter6" element={<BookLayout bookId="book8" chapter="chapter6" chapters={BOOK_CHAPTERS.book8}><Book8Ch6 /></BookLayout>} />
+        <Route path="/book8/chapter7" element={<BookLayout bookId="book8" chapter="chapter7" chapters={BOOK_CHAPTERS.book8}><Book8Ch7 /></BookLayout>} />
+        <Route path="/book8/chapter8" element={<BookLayout bookId="book8" chapter="chapter8" chapters={BOOK_CHAPTERS.book8}><Book8Ch8 /></BookLayout>} />
+        <Route path="/book8/chapter9" element={<BookLayout bookId="book8" chapter="chapter9" chapters={BOOK_CHAPTERS.book8}><Book8Ch9 /></BookLayout>} />
+        <Route path="/book8/chapter10" element={<BookLayout bookId="book8" chapter="chapter10" chapters={BOOK_CHAPTERS.book8}><Book8Ch10 /></BookLayout>} />
+        <Route path="/book8/chapter11" element={<BookLayout bookId="book8" chapter="chapter11" chapters={BOOK_CHAPTERS.book8}><Book8Ch11 /></BookLayout>} />
+        <Route path="/book8/chapter12" element={<BookLayout bookId="book8" chapter="chapter12" chapters={BOOK_CHAPTERS.book8}><Book8Ch12 /></BookLayout>} />
         {/* Book 8 首頁入口 */}
-        <Route path="/book8" element={<BookLayout bookId="book8" chapter="chapter1"><Book8Ch1 /></BookLayout>} />
+        <Route path="/book8" element={<BookLayout bookId="book8" chapter="chapter1" chapters={BOOK_CHAPTERS.book8}><Book8Ch1 /></BookLayout>} />
 
         {/* ========== Book 9 - 三層天禱告 ========== */}
-        <Route path="/book9/intro" element={<BookLayout bookId="book9" chapter="intro"><Book9Intro /></BookLayout>} />
-        <Route path="/book9/chapter1" element={<BookLayout bookId="book9" chapter="chapter1"><Book9Ch1 /></BookLayout>} />
-        <Route path="/book9/chapter2" element={<BookLayout bookId="book9" chapter="chapter2"><Book9Ch2 /></BookLayout>} />
-        <Route path="/book9/chapter3" element={<BookLayout bookId="book9" chapter="chapter3"><Book9Ch3 /></BookLayout>} />
-        <Route path="/book9/chapter4" element={<BookLayout bookId="book9" chapter="chapter4"><Book9Ch4 /></BookLayout>} />
-        <Route path="/book9/chapter5" element={<BookLayout bookId="book9" chapter="chapter5"><Book9Ch5 /></BookLayout>} />
-        <Route path="/book9/chapter6" element={<BookLayout bookId="book9" chapter="chapter6"><Book9Ch6 /></BookLayout>} />
+        <Route path="/book9/intro" element={<BookLayout bookId="book9" chapter="intro" chapters={BOOK_CHAPTERS.book9}><Book9Intro /></BookLayout>} />
+        <Route path="/book9/chapter1" element={<BookLayout bookId="book9" chapter="chapter1" chapters={BOOK_CHAPTERS.book9}><Book9Ch1 /></BookLayout>} />
+        <Route path="/book9/chapter2" element={<BookLayout bookId="book9" chapter="chapter2" chapters={BOOK_CHAPTERS.book9}><Book9Ch2 /></BookLayout>} />
+        <Route path="/book9/chapter3" element={<BookLayout bookId="book9" chapter="chapter3" chapters={BOOK_CHAPTERS.book9}><Book9Ch3 /></BookLayout>} />
+        <Route path="/book9/chapter4" element={<BookLayout bookId="book9" chapter="chapter4" chapters={BOOK_CHAPTERS.book9}><Book9Ch4 /></BookLayout>} />
+        <Route path="/book9/chapter5" element={<BookLayout bookId="book9" chapter="chapter5" chapters={BOOK_CHAPTERS.book9}><Book9Ch5 /></BookLayout>} />
+        <Route path="/book9/chapter6" element={<BookLayout bookId="book9" chapter="chapter6" chapters={BOOK_CHAPTERS.book9}><Book9Ch6 /></BookLayout>} />
         {/* Book 9 首頁入口 */}
-        <Route path="/book9" element={<BookLayout bookId="book9" chapter="intro"><Book9Intro /></BookLayout>} />
+        <Route path="/book9" element={<BookLayout bookId="book9" chapter="intro" chapters={BOOK_CHAPTERS.book9}><Book9Intro /></BookLayout>} />
 
         {/* ========== Book 10 - 禱告的盾牌 ========== */}
-        <Route path="/book10/chapter1" element={<BookLayout bookId="book10" chapter="chapter1"><Book10Ch1 /></BookLayout>} />
-        <Route path="/book10/chapter2" element={<BookLayout bookId="book10" chapter="chapter2"><Book10Ch2 /></BookLayout>} />
-        <Route path="/book10/chapter3" element={<BookLayout bookId="book10" chapter="chapter3"><Book10Ch3 /></BookLayout>} />
-        <Route path="/book10/chapter4" element={<BookLayout bookId="book10" chapter="chapter4"><Book10Ch4 /></BookLayout>} />
-        <Route path="/book10/chapter5" element={<BookLayout bookId="book10" chapter="chapter5"><Book10Ch5 /></BookLayout>} />
-        <Route path="/book10/chapter6" element={<BookLayout bookId="book10" chapter="chapter6"><Book10Ch6 /></BookLayout>} />
-        <Route path="/book10/chapter7" element={<BookLayout bookId="book10" chapter="chapter7"><Book10Ch7 /></BookLayout>} />
-        <Route path="/book10/chapter8" element={<BookLayout bookId="book10" chapter="chapter8"><Book10Ch8 /></BookLayout>} />
-        <Route path="/book10/chapter9" element={<BookLayout bookId="book10" chapter="chapter9"><Book10Ch9 /></BookLayout>} />
+        <Route path="/book10/chapter1" element={<BookLayout bookId="book10" chapter="chapter1" chapters={BOOK_CHAPTERS.book10}><Book10Ch1 /></BookLayout>} />
+        <Route path="/book10/chapter2" element={<BookLayout bookId="book10" chapter="chapter2" chapters={BOOK_CHAPTERS.book10}><Book10Ch2 /></BookLayout>} />
+        <Route path="/book10/chapter3" element={<BookLayout bookId="book10" chapter="chapter3" chapters={BOOK_CHAPTERS.book10}><Book10Ch3 /></BookLayout>} />
+        <Route path="/book10/chapter4" element={<BookLayout bookId="book10" chapter="chapter4" chapters={BOOK_CHAPTERS.book10}><Book10Ch4 /></BookLayout>} />
+        <Route path="/book10/chapter5" element={<BookLayout bookId="book10" chapter="chapter5" chapters={BOOK_CHAPTERS.book10}><Book10Ch5 /></BookLayout>} />
+        <Route path="/book10/chapter6" element={<BookLayout bookId="book10" chapter="chapter6" chapters={BOOK_CHAPTERS.book10}><Book10Ch6 /></BookLayout>} />
+        <Route path="/book10/chapter7" element={<BookLayout bookId="book10" chapter="chapter7" chapters={BOOK_CHAPTERS.book10}><Book10Ch7 /></BookLayout>} />
+        <Route path="/book10/chapter8" element={<BookLayout bookId="book10" chapter="chapter8" chapters={BOOK_CHAPTERS.book10}><Book10Ch8 /></BookLayout>} />
+        <Route path="/book10/chapter9" element={<BookLayout bookId="book10" chapter="chapter9" chapters={BOOK_CHAPTERS.book10}><Book10Ch9 /></BookLayout>} />
 
         {/* ========== Book 11 - 從懷疑到相信 ========== */}
-        <Route path="/book11/lesson1" element={<BookLayout bookId="book11" chapter="lesson1"><Book11Lesson1 /></BookLayout>} />
+        <Route path="/book11/lesson1" element={<BookLayout bookId="book11" chapter="lesson1" chapters={BOOK_CHAPTERS.book11}><Book11Lesson1 /></BookLayout>} />
 
         {/* ========== 首頁 - 書籍列表 ========== */}
         <Route path="/" element={
