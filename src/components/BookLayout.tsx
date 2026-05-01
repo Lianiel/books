@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter, LogIn, LogOut } from 'lucide-react';
+import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter, LogIn, LogOut, Download, Maximize2 } from 'lucide-react';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from '../useHighlight';
+import { asBlob } from 'html-docx-js-typescript';
 
 interface BookLayoutProps {
   bookId: string;
@@ -69,6 +70,77 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
     if (sb) {
       await sb.auth.signOut();
       window.location.reload();
+    }
+  };
+  
+  // 全展開功能
+  const handleExpandAll = () => {
+    // 觸發所有可折疊元素展開
+    const buttons = document.querySelectorAll('button[aria-expanded="false"]');
+    buttons.forEach(btn => {
+      (btn as HTMLButtonElement).click();
+    });
+    
+    // 也可以通過 class 或其他方式找到折疊區塊
+    const sections = document.querySelectorAll('[class*="collapse"]');
+    sections.forEach(section => {
+      (section as HTMLElement).style.display = 'block';
+    });
+    
+    alert('已展開所有內容');
+  };
+  
+  // 匯出 Word
+  const handleExportWord = async () => {
+    try {
+      const mainContent = document.querySelector('main');
+      if (!mainContent) {
+        alert('找不到內容區域');
+        return;
+      }
+      
+      // 克隆內容以避免修改原始 DOM
+      const clone = mainContent.cloneNode(true) as HTMLElement;
+      
+      // 移除不需要的元素（如按鈕、工具列）
+      clone.querySelectorAll('button').forEach(btn => btn.remove());
+      clone.querySelectorAll('[class*="toolbar"]').forEach(el => el.remove());
+      
+      // 準備 HTML 內容
+      const htmlContent = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <style>
+            body { font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif; }
+            h1, h2, h3 { color: #1e40af; }
+            p { line-height: 1.6; margin-bottom: 0.5em; }
+          </style>
+        </head>
+        <body>
+          ${clone.innerHTML}
+        </body>
+        </html>
+      `;
+      
+      // 轉換成 Word 格式
+      const blob = await asBlob(htmlContent);
+      
+      // 下載檔案
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${bookId}_${chapter}.docx`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      
+      alert('Word 檔案已下載！');
+    } catch (error) {
+      console.error('匯出失敗：', error);
+      alert('匯出失敗，請稍後再試');
     }
   };
   
@@ -202,15 +274,35 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
       <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-slate-800 to-slate-900 border-t border-slate-700 shadow-2xl z-40">
         <div className="flex items-center justify-between px-2 sm:px-4 py-2 max-w-7xl mx-auto">
           
-          {/* 左側：關閉按鈕 */}
-          <button
-            onClick={handleClose}
-            className="flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-sm"
-            title="關閉並返回書房"
-          >
-            <X className="w-4 h-4" />
-            <span className="hidden sm:inline text-sm">關閉</span>
-          </button>
+          {/* 左側：關閉 + 全展開 + 匯出 */}
+          <div className="flex items-center gap-1">
+            <button
+              onClick={handleClose}
+              className="flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-sm"
+              title="關閉並返回書房"
+            >
+              <X className="w-4 h-4" />
+              <span className="hidden sm:inline text-sm">關閉</span>
+            </button>
+            
+            <button
+              onClick={handleExpandAll}
+              className="flex items-center gap-1 bg-purple-600 hover:bg-purple-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-sm"
+              title="展開所有內容"
+            >
+              <Maximize2 className="w-4 h-4" />
+              <span className="hidden sm:inline text-sm">全展開</span>
+            </button>
+            
+            <button
+              onClick={handleExportWord}
+              className="flex items-center gap-1 bg-indigo-600 hover:bg-indigo-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-sm"
+              title="匯出 Word 文件"
+            >
+              <Download className="w-4 h-4" />
+              <span className="hidden sm:inline text-sm">Word</span>
+            </button>
+          </div>
 
           {/* 中間：TTS 控制 + 語速 */}
           <div className="flex items-center gap-1">
