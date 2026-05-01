@@ -288,16 +288,16 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       
       {/* ========== 頂部章節導航條 ========== */}
       <div className="sticky top-0 z-50 bg-white shadow-md border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2">
-          <div className="flex items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3">
+          <div className="flex items-center justify-between gap-3">
             
             {/* 左側:上一章按鈕 */}
             <button
               onClick={() => previousChapter && handleChapterChange(previousChapter.path)}
               disabled={!previousChapter}
-              className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg font-semibold text-sm transition-colors ${
+              className={`flex items-center gap-1 px-3 sm:px-4 py-2 rounded-lg font-semibold text-sm transition-colors flex-shrink-0 ${
                 previousChapter 
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                  ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-md' 
                   : 'bg-gray-200 text-gray-400 cursor-not-allowed'
               }`}
               title={previousChapter ? `上一章:${previousChapter.title}` : '沒有上一章'}
@@ -370,9 +370,9 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             <button
               onClick={() => nextChapter && handleChapterChange(nextChapter.path)}
               disabled={!nextChapter}
-              className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg font-semibold text-sm transition-colors ${
+              className={`flex items-center gap-1 px-3 sm:px-4 py-2 rounded-lg font-semibold text-sm transition-colors flex-shrink-0 ${
                 nextChapter 
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                  ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-md' 
                   : 'bg-gray-200 text-gray-400 cursor-not-allowed'
               }`}
               title={nextChapter ? `下一章:${nextChapter.title}` : '沒有下一章'}
@@ -383,7 +383,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
           </div>
           
           {/* 進度條 */}
-          <div className="mt-2 bg-gray-200 rounded-full h-1.5 overflow-hidden">
+          <div className="mt-3 bg-gray-200 rounded-full h-2 overflow-hidden">
             <div 
               className="bg-gradient-to-r from-indigo-600 to-purple-600 h-full transition-all duration-300"
               style={{ width: `${((currentIndex + 1) / chapters.length) * 100}%` }}
@@ -393,7 +393,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       </div>
 
       {/* ========== 主要內容區 ========== */}
-      <main className={`${fontSizeClasses[fontSize]} px-4 py-6`}>
+      <main className={`${fontSizeClasses[fontSize]} px-4 py-8`}>
         {children}
       </main>
 
@@ -401,7 +401,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       <div className={`fixed bottom-0 left-0 right-0 bg-gradient-to-r from-slate-800 to-slate-900 border-t border-slate-700 shadow-2xl z-40 transition-transform duration-300 ${showToolbar ? 'translate-y-0' : 'translate-y-full'}`}>
         <button
           onClick={() => setShowToolbar(!showToolbar)}
-          className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-1 rounded-t-lg shadow-lg transition-colors"
+          className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-1 rounded-t-lg shadow-lg transition-colors z-30"
           title={showToolbar ? '收起工具列' : '展開工具列'}
         >
           {showToolbar ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
@@ -570,7 +570,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
         )}
       </div>
 
-      <div className="h-32 sm:h-24"></div>
+      <div className="h-40 sm:h-32"></div>
     </div>
   );
 };
