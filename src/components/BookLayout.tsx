@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter, LogIn, LogOut, Download, Maximize2 } from 'lucide-react';
+import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter, LogIn, LogOut, Download, Maximize2, ChevronDown, ChevronUp } from 'lucide-react';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from '../useHighlight';
 import { asBlob } from 'html-docx-js-typescript';
 
@@ -22,6 +22,9 @@ const fontSizeClasses: Record<FontSize, string> = {
 const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) => {
   // 字體縮放
   const [fontSize, setFontSize] = useState<FontSize>('base');
+  
+  // 工具列顯示/隱藏
+  const [showToolbar, setShowToolbar] = useState(true);
   
   // TTS 狀態
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -271,7 +274,16 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
       </main>
 
       {/* 底部工具列 */}
-      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-slate-800 to-slate-900 border-t border-slate-700 shadow-2xl z-40">
+      <div className={`fixed bottom-0 left-0 right-0 bg-gradient-to-r from-slate-800 to-slate-900 border-t border-slate-700 shadow-2xl z-40 transition-transform duration-300 ${showToolbar ? 'translate-y-0' : 'translate-y-full'}`}>
+        {/* 收起/展開按鈕（固定在工具列上方）*/}
+        <button
+          onClick={() => setShowToolbar(!showToolbar)}
+          className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-1 rounded-t-lg shadow-lg transition-colors"
+          title={showToolbar ? '收起工具列' : '展開工具列'}
+        >
+          {showToolbar ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
+        </button>
+        
         <div className="flex items-center justify-between px-2 sm:px-4 py-2 max-w-7xl mx-auto">
           
           {/* 左側：關閉 + 全展開 + 匯出 */}
@@ -455,7 +467,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, children }) =>
       </div>
 
       {/* 底部留白（避免內容被工具列遮住）*/}
-      <div className="h-16"></div>
+      <div className="h-32 sm:h-24"></div>
     </div>
   );
 };
