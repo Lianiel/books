@@ -1130,16 +1130,6 @@ const DoubtToFaithLesson1: React.FC = () => {
         )}
       </div>
 
-      {/* Footer */}
-      <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-xl p-6 mt-12 text-center">
-        <p className="text-gray-300 mb-2">從懷疑到相信 · 第一課完成</p>
-        <p className="text-sm text-gray-400">
-          基於姜文琪姊妹原教材改編 · 互動式電子書
-        </p>
-        <p className="text-xs text-gray-500 mt-3">
-          本課重點：聖經是神默示人寫的證據 · 創造原理放諸四海皆準 · 預言應驗 · 新天新地的盼望
-        </p>
-      </div>
     </div>
   );
 };
