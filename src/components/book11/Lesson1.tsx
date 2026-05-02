@@ -123,7 +123,7 @@ const DoubtToFaithLesson1: React.FC = () => {
                 {/* 圖1-1 */}
                 <div className="bg-gradient-to-r from-orange-100 to-red-100 p-4 rounded-xl border-2 border-orange-300 my-6">
                   <div className="text-right mb-2">
-                    <div className="inline-block bg-orange-500 text-white px-2 py-0.5 rounded text-xs font-semibold opacity-70">
+                    <div className="inline-block bg-orange-500 text-white px-2 py-0.5 rounded text-[2px] font-semibold opacity-70">
                       附圖 1-1
                     </div>
                   </div>
