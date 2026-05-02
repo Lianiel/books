@@ -525,7 +525,16 @@ const DoubtToFaithLesson1: React.FC = () => {
                   </div>
                   <div className="text-sm text-gray-600 mt-2">請讀聖經:創世記 1:1-2</div>
                 </div>
-    
+                
+                <div className="flex justify-center">
+                  <img 
+                    src="/images/doubt-to-faith/Genesis1.png" 
+                    alt="創世記第一章總圖表" 
+                    className="max-w-full h-auto rounded-lg shadow-lg"
+                  />
+                </div>
+              </div>
+
 
               {/* 方塊一提問模式 */}
               <div className="bg-amber-100 border-4 border-amber-500 rounded-xl p-6 mb-6">
