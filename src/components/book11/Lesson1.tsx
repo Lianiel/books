@@ -433,6 +433,98 @@ const DoubtToFaithLesson1: React.FC = () => {
                 </div>
               </Section>
 
+              {/* 人類被造 - 神的靈 */}
+              <Section title="5. 人類被造 — 神的靈，人的靈" color="red" defaultOpen>
+                <div className="space-y-4">
+                  {/* 經文引用 */}
+                  <div className="bg-red-50 rounded-xl p-5 border-2 border-red-300">
+                    <p className="text-lg font-bold mb-3 text-red-900">請讀聖經：創世記 2:7</p>
+                    <div className="bg-white rounded-lg p-4 border-l-4 border-red-500">
+                      <p className="text-gray-800 leading-relaxed">
+                        耶和華神<strong className="text-red-600">用地上的塵土造人</strong>，
+                        將<strong className="text-red-600">生氣吹在他鼻孔裡</strong>，
+                        他就<strong className="text-red-600">成了有靈的活人</strong>，名叫亞當。
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* 核心概念 */}
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-blue-50 rounded-lg p-5 border-2 border-blue-300">
+                      <div className="flex items-center gap-2 mb-3">
+                        <Heart className="w-6 h-6 text-blue-600" />
+                        <h4 className="font-bold text-blue-900 text-lg">神吹一口靈氣</h4>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed">
+                        神是靈，祂吹了一口氣給我們，是要我們與祂<strong className="text-blue-600">靈裡相通</strong>。
+                        原來人可以與神直接溝通，管理萬物有問題時也可以問祂。
+                      </p>
+                    </div>
+
+                    <div className="bg-green-50 rounded-lg p-5 border-2 border-green-300">
+                      <div className="flex items-center gap-2 mb-3">
+                        <Eye className="w-6 h-6 text-green-600" />
+                        <h4 className="font-bold text-green-900 text-lg">科學證據</h4>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed">
+                        科學家將人體角質拿去化驗，其中的<strong className="text-green-600">礦物質</strong>
+                        與<strong className="text-green-600">塵土所含礦物質</strong>是一模一樣的！
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* 人與動物的區別 */}
+                  <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl p-6 border-2 border-purple-300">
+                    <h4 className="text-xl font-bold text-purple-900 mb-4 flex items-center gap-2">
+                      <MessageCircle className="w-6 h-6" />
+                      人找神，動物不找神
+                    </h4>
+                    
+                    <div className="space-y-3">
+                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                        <p className="font-bold text-purple-900 mb-2">❓ 人類不是猿猴變的</p>
+                        <p className="text-gray-700 text-sm">
+                          從這裡不需要用科學證據，就知道沒有一個猿猴、狗狗會想要找神。
+                          即使不認識的廟，人也會進去拜一拜，這是誰給我們的本能？
+                        </p>
+                      </div>
+
+                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                        <p className="font-bold text-purple-900 mb-2">🙏 動物不會見廟就拜</p>
+                        <p className="text-gray-700 text-sm">
+                          觀光客看到廟宇，雖然不認識，也會進去拜一拜。
+                          怕不拜會得罪，這種「要找神的心」是人心中獨有的。
+                        </p>
+                      </div>
+
+                      <div className="bg-purple-600 text-white rounded-lg p-4">
+                        <p className="font-bold text-lg">
+                          → 原來人與神是靈裡相通，所以人心中有「尋找神」的本能！
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 為何今天不能與神相通 */}
+                  <div className="bg-amber-50 border-2 border-amber-400 rounded-lg p-5">
+                    <div className="flex items-start gap-3">
+                      <AlertCircle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+                      <div>
+                        <p className="font-bold text-amber-900 mb-2">為什麼今天不能與神相通？</p>
+                        <p className="text-amber-800 text-sm leading-relaxed">
+                          當人進入「罪」裡，人變得不完全，無法與這位完全的神相通了。
+                          神是聖潔無瑕疵的，當祂的光照在有瑕疵的形體上面，我們招架不住。
+                          <strong>不是神不要我們，是我們變得不完全以後，無法站立在祂面前。</strong>
+                        </p>
+                        <p className="text-amber-700 text-xs mt-2 italic">
+                          ※ 下一課會詳細探討「罪」導致人與神隔絕
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Section>
+
               {/* 神用「說」創造 */}
               <div className="bg-gradient-to-r from-green-600 to-teal-600 rounded-xl p-6 text-white mt-6">
                 <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
