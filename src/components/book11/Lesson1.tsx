@@ -215,7 +215,7 @@ const DoubtToFaithLesson1: React.FC = () => {
                   </div>
                   <div className="flex justify-center">
                     <img 
-                      src={image1_2} 
+                      src="/images/doubt-to-faith/lesson1-prophecies.png" 
                       alt="1000多項預言" 
                       className="max-w-full h-auto rounded-lg shadow-lg"
                     />
@@ -287,7 +287,7 @@ const DoubtToFaithLesson1: React.FC = () => {
                   </div>
                   <div className="flex justify-center">
                     <img 
-                      src={image1_3} 
+                      src="/images/doubt-to-faith/lesson1-exodus.png" 
                       alt="以色列人出埃及" 
                       className="max-w-full h-auto rounded-lg shadow-lg"
                     />
@@ -367,7 +367,7 @@ const DoubtToFaithLesson1: React.FC = () => {
                   </div>
                   <div className="flex justify-center">
                     <img 
-                      src={image1_4} 
+                      src="/images/doubt-to-faith/lesson1-authors.png" 
                       alt="作者40多位" 
                       className="max-w-full h-auto rounded-lg shadow-lg"
                     />
@@ -441,7 +441,7 @@ const DoubtToFaithLesson1: React.FC = () => {
                   </div>
                   <div className="flex justify-center">
                     <img 
-                      src={image1_5} 
+                      src="/images/doubt-to-faith/lesson1-testaments.png" 
                       alt="舊約新約對照" 
                       className="max-w-full h-auto rounded-lg shadow-lg"
                     />
