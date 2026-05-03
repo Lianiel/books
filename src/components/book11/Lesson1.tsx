@@ -584,41 +584,13 @@ const DoubtToFaithLesson1: React.FC = () => {
                     <div className="text-2xl font-bold text-purple-900">日月星辰運行</div>
                   </div>
 
-                  {/* 太陽系簡圖 - 超清晰 */}
-                  <div className="bg-white rounded-xl p-8 mb-4">
-                    <div className="flex items-center justify-center gap-8">
-                      {/* 太陽 */}
-                      <div className="text-center">
-                        <div className="w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full shadow-2xl flex items-center justify-center">
-                          <span className="text-3xl">☀️</span>
-                        </div>
-                        <div className="font-bold text-orange-900 mt-2">太陽</div>
-                      </div>
-
-                      {/* 箭頭 */}
-                      <div className="text-center">
-                        <div className="text-5xl text-blue-500">→</div>
-                        <div className="text-sm font-bold text-blue-700 mt-2">地球繞太陽</div>
-                        <div className="text-xs text-blue-600">= 一年</div>
-                      </div>
-
-                      {/* 地球 + 月亮 */}
-                      <div className="text-center">
-                        <div className="relative">
-                          <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-green-500 rounded-full shadow-xl flex items-center justify-center">
-                            <span className="text-2xl">🌍</span>
-                          </div>
-                          <div className="absolute -right-6 top-1/2 transform -translate-y-1/2">
-                            <div className="w-10 h-10 bg-gray-300 rounded-full shadow-lg flex items-center justify-center">
-                              <span className="text-sm">🌙</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="font-bold text-blue-900 mt-8">地球</div>
-                        <div className="text-xs text-gray-600 mt-1">自轉一圈 = 一日</div>
-                        <div className="text-xs text-gray-600">月繞地 = 一月</div>
-                      </div>
-                    </div>
+                  {/* 太陽系圖片 */}
+                  <div className="flex justify-center mb-4">
+                    <img 
+                      src="/images/doubt-to-faith/lesson1-1-7.png" 
+                      alt="日月星辰運行示意圖" 
+                      className="max-w-full h-auto rounded-lg shadow-lg"
+                    />
                   </div>
 
                   {/* 經文 */}
