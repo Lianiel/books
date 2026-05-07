@@ -573,6 +573,42 @@ const DoubtToFaithLesson1: React.FC = () => {
                 </div>
               </div>
 
+              {/* 第一日 創造 */}
+              <div className="bg-amber-100 border-4 border-amber-500 rounded-xl p-6 mb-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-1">
+                     <div className="space-y-3">
+                      <div className="bg-white rounded-lg p-4 shadow-md">
+                        <div className="font-bold text-amber-900 mb-2 text-lg">
+                          尚未創造世界之前，宇宙中有那些元素？　空虛混沌、黑暗、水及神的靈。
+                          第一日：造光，光將先前的暗分開。
+                          第二日：造空氣，空氣將先前的水，分為上水(雨、雪、冰雹等)
+                                                           下水(海...)
+                        </div>
+                        <div className="font-bold text-amber-900 mb-2 text-lg">
+                          ❶ 如果你是摩西（人），你認為水可以被分開嗎？空氣伸進去？
+                        </div>
+                        <div className="text-sm text-gray-700">
+                          例：在你腦子裡，會有水可以分開的觀念嗎？你會用這樣手法寫神的創造嗎？
+                        </div>
+                      </div>
+                      
+         
+                      
+                      <div className="bg-green-600 text-white rounded-lg p-4 shadow-lg">
+                        <div className="font-bold mb-2 text-xl">❸ 堅立證據：</div>
+                        <div className="text-green-100 text-lg">
+                          所以，創世記是<strong>神啟示人（摩西）所寫的</strong>，
+                          不可能<strong>是人（摩西）自己幻想有一位神怎樣創造世界</strong>而寫得出來的呢？
+                        </div>
+                        <div className="text-3xl font-bold mt-3 text-center">→ 是神啟示！</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              
               {/* 圖 1-7: 太陽系運行 */}
               <Section title="第四日：太陽、月亮、星星 — 定日子、年歲" color="purple" defaultOpen>
                 <div className="bg-purple-50 rounded-xl p-6 border-2 border-purple-300">
