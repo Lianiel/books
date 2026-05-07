@@ -537,42 +537,6 @@ const DoubtToFaithLesson1: React.FC = () => {
               </div>
 
 
-              {/* 方塊一提問模式 */}
-              <div className="bg-amber-100 border-4 border-amber-500 rounded-xl p-6 mb-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-1">
-                     <div className="space-y-3">
-                      <div className="bg-white rounded-lg p-4 shadow-md">
-                        <div className="font-bold text-amber-900 mb-2 text-lg">
-                          ❶ 如果你是摩西（人），可能有這樣的邏輯嗎？
-                        </div>
-                        <div className="text-sm text-gray-700">
-                          例：「空氣將水分開」— 在你腦子裡，會有水可以分開的觀念嗎？
-                        </div>
-                      </div>
-                      
-                      <div className="bg-white rounded-lg p-4 shadow-md">
-                        <div className="font-bold text-amber-900 mb-2 text-lg">
-                          ❷ 以摩西當時科學、交通、眼界，能寫出這樣的創造原理嗎？
-                        </div>
-                        <div className="text-sm text-gray-700">
-                          例：3400年前，能寫出「各從其類」「定日子年歲」嗎？
-                        </div>
-                      </div>
-                      
-                      <div className="bg-green-600 text-white rounded-lg p-4 shadow-lg">
-                        <div className="font-bold mb-2 text-xl">❸ 堅立證據：</div>
-                        <div className="text-green-100 text-lg">
-                          所以，創世記是<strong>神啟示人（摩西）寫</strong>，
-                          還是<strong>人（摩西）自己幻想</strong>而寫得出來的呢？
-                        </div>
-                        <div className="text-3xl font-bold mt-3 text-center">→ 是神啟示！</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               {/* 第一日 創造 */}
               <div className="bg-amber-100 border-4 border-amber-500 rounded-xl p-6 mb-6">
                 <div className="flex items-start gap-4">
