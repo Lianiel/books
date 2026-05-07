@@ -546,7 +546,7 @@ const DoubtToFaithLesson1: React.FC = () => {
                         <div className="font-bold text-amber-900 mb-2 text-lg">
                           尚未創造世界之前，宇宙中有那些元素？　空虛混沌、黑暗、水及神的靈。
                           第一日：造光，光將先前的暗分開。
-                          第二日：造空氣，空氣將先前的水，分為上水(雨、雪、冰雹等)
+                          第二日：造空氣，空氣將先前的水，分為上水(雨、雪、冰雹等)；
                                                            下水(海...)
                         </div>
                         <div className="font-bold text-amber-900 mb-2 text-lg">
@@ -560,7 +560,7 @@ const DoubtToFaithLesson1: React.FC = () => {
          
                       
                       <div className="bg-green-600 text-white rounded-lg p-4 shadow-lg">
-                        <div className="font-bold mb-2 text-xl">❸ 堅立證據：</div>
+                
                         <div className="text-green-100 text-lg">
                           所以，創世記是<strong>神啟示人（摩西）所寫的</strong>，
                           不可能<strong>是人（摩西）自己幻想有一位神怎樣創造世界</strong>而寫得出來的呢？
