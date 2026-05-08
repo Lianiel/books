@@ -287,99 +287,114 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       
       {/* ========== 頂部章節導航條 ========== */}
-      <div className="sticky top-0 z-50 bg-white shadow-md border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3">
-          <div className="flex items-center justify-between gap-3">
+      <div className="sticky top-0 z-50 bg-gradient-to-r from-pink-300 to-pink-400 shadow-lg">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-3">
+          <div className="flex items-center gap-2">
             
-            {/* 左側:上一章按鈕 */}
+            {/* 最左側:返回書房按鈕 */}
             <button
-              onClick={() => previousChapter && handleChapterChange(previousChapter.path)}
-              disabled={!previousChapter}
-              className={`flex items-center gap-1 px-3 sm:px-4 py-2 rounded-lg font-semibold text-sm transition-colors flex-shrink-0 ${
-                previousChapter 
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-md' 
-                  : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-              }`}
-              title={previousChapter ? `上一章:${previousChapter.title}` : '沒有上一章'}
+              onClick={() => navigate('/books')}
+              className="flex items-center gap-1 px-2 sm:px-3 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-semibold text-xs sm:text-sm transition-colors shadow-md flex-shrink-0"
+              title="返回書房"
             >
               <ChevronLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">上一章</span>
+              <span className="hidden sm:inline">返回書房</span>
             </button>
-
-            {/* 中間:當前章節選擇器 */}
-            <div className="flex-1 relative">
+            
+            {/* 中間:章節導航區 */}
+            <div className="flex-1 flex items-center gap-2">
+              {/* 上一章按鈕 */}
               <button
-                onClick={() => setShowChapterMenu(!showChapterMenu)}
-                className="w-full flex items-center justify-between gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-3 sm:px-4 py-2 rounded-lg font-semibold shadow-lg transition-all"
+                onClick={() => previousChapter && handleChapterChange(previousChapter.path)}
+                disabled={!previousChapter}
+                className={`flex items-center gap-1 px-2 sm:px-3 py-2 rounded-lg font-semibold text-xs sm:text-sm transition-colors flex-shrink-0 ${
+                  previousChapter 
+                    ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-md' 
+                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                }`}
+                title={previousChapter ? `上一章: ${previousChapter.title}` : '已是第一章'}
               >
-                <div className="flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 flex-shrink-0" />
-                  <span className="text-sm sm:text-base truncate">
-                    {currentChapter?.title || chapter}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full hidden sm:inline">
-                    {currentIndex + 1}/{chapters.length}
-                  </span>
-                  <List className="w-4 h-4 flex-shrink-0" />
-                </div>
+                <ChevronLeft className="w-4 h-4" />
+                <span className="hidden md:inline">上一章</span>
               </button>
 
-              {/* 章節下拉選單 */}
-              {showChapterMenu && (
-                <>
-                  <div 
-                    className="fixed inset-0 bg-black/20 z-40"
-                    onClick={() => setShowChapterMenu(false)}
-                  />
-                  
-                  <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-2xl border border-gray-200 max-h-96 overflow-y-auto z-50">
-                    <div className="p-2">
-                      <div className="text-xs text-gray-500 font-semibold px-3 py-2 border-b border-gray-200">
-                        選擇章節 ({chapters.length} 章)
-                      </div>
-                      {chapters.map((ch, idx) => (
-                        <button
-                          key={ch.id}
-                          onClick={() => handleChapterChange(ch.path)}
-                          className={`w-full text-left px-3 py-2 rounded-lg transition-colors flex items-center justify-between gap-2 ${
-                            ch.id === chapter
-                              ? 'bg-indigo-100 text-indigo-900 font-bold'
-                              : 'hover:bg-gray-100 text-gray-700'
-                          }`}
-                        >
-                          <span className="flex items-center gap-2">
-                            <span className="text-xs text-gray-500 w-6">{idx + 1}.</span>
-                            <span className="text-sm">{ch.title}</span>
-                          </span>
-                          {ch.id === chapter && (
-                            <span className="text-xs bg-indigo-600 text-white px-2 py-0.5 rounded-full">
-                              當前
-                            </span>
-                          )}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </>
-              )}
-            </div>
+              {/* 章節標題與選擇器 */}
+              <div className="flex-1 flex justify-center relative">
+                <button
+                  onClick={() => setShowChapterMenu(!showChapterMenu)}
+                  className="relative flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-3 sm:px-6 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all font-bold text-xs sm:text-sm truncate max-w-full"
+                  title="點擊選擇章節"
+                >
+                  <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                  <span className="truncate">{currentChapter?.title || chapter}</span>
+                  <span className="text-xs opacity-90 flex-shrink-0">{currentIndex + 1}/{chapters.length}</span>
+                  <List className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                </button>
 
-            {/* 右側:下一章按鈕 */}
-            <button
-              onClick={() => nextChapter && handleChapterChange(nextChapter.path)}
-              disabled={!nextChapter}
-              className={`flex items-center gap-1 px-3 sm:px-4 py-2 rounded-lg font-semibold text-sm transition-colors flex-shrink-0 ${
-                nextChapter 
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-md' 
-                  : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-              }`}
-              title={nextChapter ? `下一章:${nextChapter.title}` : '沒有下一章'}
-            >
-              <span className="hidden sm:inline">下一章</span>
-              <ChevronRight className="w-4 h-4" />
-            </button>
+                {/* 章節選擇下拉選單 */}
+                {showChapterMenu && (
+                  <>
+                    {/* 背景遮罩 */}
+                    <div 
+                      className="fixed inset-0 bg-black/20 z-40"
+                      onClick={() => setShowChapterMenu(false)}
+                    />
+                    
+                    {/* 選單內容 */}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white rounded-xl shadow-2xl overflow-hidden z-50 w-[90vw] max-w-md border-2 border-indigo-200">
+                      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-3">
+                        <h3 className="font-bold text-center">章節選擇</h3>
+                      </div>
+                      <div className="max-h-[60vh] overflow-y-auto p-2">
+                        {chapters.map((ch, idx) => (
+                          <button
+                            key={ch.id}
+                            onClick={() => {
+                              handleChapterChange(ch.path);
+                              setShowChapterMenu(false);
+                            }}
+                            className={`w-full text-left px-4 py-3 rounded-lg mb-1 transition-all ${
+                              ch.id === chapter
+                                ? 'bg-gradient-to-r from-indigo-100 to-purple-100 border-2 border-indigo-500 font-bold'
+                                : 'hover:bg-gray-100 border border-transparent'
+                            }`}
+                          >
+                            <div className="flex items-center justify-between gap-2">
+                              <span className="text-indigo-600 font-semibold text-sm">
+                                {idx + 1}.
+                              </span>
+                              <span className="flex-1 text-gray-800 text-sm">
+                                {ch.title}
+                              </span>
+                              {ch.id === chapter && (
+                                <span className="text-xs bg-indigo-600 text-white px-2 py-0.5 rounded-full">
+                                  當前
+                                </span>
+                              )}
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {/* 下一章按鈕 */}
+              <button
+                onClick={() => nextChapter && handleChapterChange(nextChapter.path)}
+                disabled={!nextChapter}
+                className={`flex items-center gap-1 px-2 sm:px-3 py-2 rounded-lg font-semibold text-xs sm:text-sm transition-colors flex-shrink-0 ${
+                  nextChapter 
+                    ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-md' 
+                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                }`}
+                title={nextChapter ? `下一章: ${nextChapter.title}` : '沒有下一章'}
+              >
+                <span className="hidden md:inline">下一章</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
           
           {/* 進度條 */}
