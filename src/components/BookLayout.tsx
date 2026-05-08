@@ -218,35 +218,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
 
   // 螢光筆模式
   const toggleHighlightMode = async () => {
-    if (!isLoggedIn) {
-      const phone = prompt('請輸入手機號碼:');
-      if (!phone) return;
-      
-      const password = prompt('請輸入密碼:');
-      if (!password) return;
-      
-      const email = `${phone}@puhe.church`;
-      
-      const sb = (window as any).supabase?.createClient(
-        'https://yhchjanqmopgbwgjspmf.supabase.co',
-        'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx'
-      );
-      
-      if (!sb) {
-        alert('登入功能初始化失敗');
-        return;
-      }
-      
-      const { error } = await sb.auth.signInWithPassword({ email, password });
-      if (error) {
-        alert('登入失敗:' + error.message);
-        return;
-      }
-      
-      alert('登入成功!螢光筆功能已啟用');
-      window.location.reload();
-      return;
-    }
     setHighlightMode(!highlightMode);
   };
 
@@ -408,10 +379,10 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
           {showToolbar ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
         </button>
         
-        {/* 第一列：主要功能按鈕 */}
-        <div className="flex items-center justify-between px-2 sm:px-4 py-1.5 sm:py-2 max-w-7xl mx-auto border-b border-slate-700">
+        {/* 單列工具列 */}
+        <div className="flex items-center justify-between px-2 sm:px-4 py-2 max-w-7xl mx-auto">
           
-          {/* 左側:關閉 + 全展開 + 匯出 */}
+          {/* 左側:關閉 + 全展開 + Word + 返回書房 */}
           <div className="flex items-center gap-1">
             <button
               onClick={handleClose}
@@ -438,6 +409,22 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             >
               <Download className="w-4 h-4" />
               <span className="hidden sm:inline">Word</span>
+            </button>
+            
+            <button
+              onClick={() => {
+                // 關閉 TTS（如果正在播放）
+                if (window.speechSynthesis.speaking) {
+                  window.speechSynthesis.cancel();
+                }
+                // 通知父視窗關閉電子書房
+                window.parent.postMessage({ type: 'closeBookEmbed' }, '*');
+              }}
+              className="flex items-center gap-1 bg-gray-600 hover:bg-gray-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm"
+              title="返回埔和小站電子書房選單"
+            >
+              <ChevronLeft className="w-4 h-4" />
+              <span className="hidden sm:inline">返回書房</span>
             </button>
           </div>
 
@@ -522,7 +509,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
                   ? 'bg-yellow-500 hover:bg-yellow-600 text-slate-900' 
                   : 'bg-slate-700 hover:bg-slate-600 text-white'
               }`}
-              title={isLoggedIn ? '螢光筆' : '點擊以登入並使用螢光筆'}
+              title="螢光筆"
             >
               <Highlighter className="w-4 h-4" />
               <span className="hidden sm:inline">筆</span>
@@ -539,25 +526,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
               </button>
             )}
           </div>
-        </div>
-
-        {/* 第二列：返回書房按鈕 */}
-        <div className="flex items-center justify-center px-2 sm:px-4 py-1.5 sm:py-2 max-w-7xl mx-auto">
-          <button
-            onClick={() => {
-              // 關閉 TTS（如果正在播放）
-              if (window.speechSynthesis.speaking) {
-                window.speechSynthesis.cancel();
-              }
-              // 通知父視窗關閉電子書房
-              window.parent.postMessage({ type: 'closeBookEmbed' }, '*');
-            }}
-            className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-4 sm:px-6 py-2 rounded-lg font-semibold shadow-lg text-sm transition-colors"
-            title="返回埔和小站電子書房選單"
-          >
-            <ChevronLeft className="w-4 h-4" />
-            <span>返回書房</span>
-          </button>
         </div>
 
         {highlightMode && (
@@ -591,7 +559,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
         )}
       </div>
 
-      <div className="h-56 sm:h-44"></div>
+      <div className="h-40 sm:h-32"></div>
     </div>
   );
 };
