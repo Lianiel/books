@@ -571,9 +571,6 @@ const DoubtToFaithLesson1: React.FC = () => {
               </h2>
               
               <GenesisChapter1 />
-            </div>
-          </div>
-        )}
 
 
               {/* 創世記第一章總圖表 */}
