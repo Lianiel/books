@@ -47,6 +47,9 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   const [highlightMode, setHighlightMode] = useState(false);
   const [selectedStyle, setSelectedStyle] = useState<HighlightStyle>('yellow');
   
+  // 語速選擇器
+  const [showSpeedSelector, setShowSpeedSelector] = useState(false);
+  
   // 獲取章節資訊
   const currentIndex = chapters.findIndex(ch => ch.id === chapter);
   const currentChapter = chapters[currentIndex];
@@ -382,7 +385,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
         {/* 單列工具列 */}
         <div className="flex items-center justify-between px-2 sm:px-4 py-2 max-w-7xl mx-auto">
           
-          {/* 左側:關閉 + 全展開 + Word + 返回書房 */}
+          {/* 左側:關閉 + 全展開 + Word */}
           <div className="flex items-center gap-1">
             <button
               onClick={handleClose}
@@ -409,22 +412,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             >
               <Download className="w-4 h-4" />
               <span className="hidden sm:inline">Word</span>
-            </button>
-            
-            <button
-              onClick={() => {
-                // 關閉 TTS（如果正在播放）
-                if (window.speechSynthesis.speaking) {
-                  window.speechSynthesis.cancel();
-                }
-                // 通知父視窗關閉電子書房
-                window.parent.postMessage({ type: 'closeBookEmbed' }, '*');
-              }}
-              className="flex items-center gap-1 bg-gray-600 hover:bg-gray-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm"
-              title="返回埔和小站電子書房選單"
-            >
-              <ChevronLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">返回書房</span>
             </button>
           </div>
 
@@ -460,22 +447,17 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
               </button>
             )}
             
-            <div className="flex items-center bg-slate-700 rounded-lg overflow-hidden">
-              {[0.5, 0.75, 1.0].map(rate => (
-                <button
-                  key={rate}
-                  onClick={() => setSpeechRate(rate)}
-                  className={`px-1.5 sm:px-2 py-1.5 text-xs font-semibold transition-colors ${
-                    speechRate === rate
-                      ? 'bg-blue-600 text-white'
-                      : 'text-gray-300 hover:bg-slate-600'
-                  }`}
-                  title={`語速 ${rate}x`}
-                >
-                  {rate}x
-                </button>
-              ))}
-            </div>
+            <button
+              onClick={() => setShowSpeedSelector(!showSpeedSelector)}
+              className={`px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm ${
+                showSpeedSelector
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-slate-700 text-white hover:bg-slate-600'
+              }`}
+              title="語速調整"
+            >
+              <span className="font-bold">{speechRate}x</span>
+            </button>
           </div>
 
           {/* 右側:字體縮放 + 螢光筆 */}
@@ -554,6 +536,30 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
                   </button>
                 );
               })}
+            </div>
+          </div>
+        )}
+
+        {showSpeedSelector && (
+          <div className="bg-slate-700 border-t border-slate-600 px-2 sm:px-4 py-1.5">
+            <div className="flex items-center gap-1.5 max-w-7xl mx-auto">
+              <span className="text-white text-xs font-semibold mr-1">語速:</span>
+              {[0.5, 0.75, 1.0, 1.25, 1.5].map(rate => (
+                <button
+                  key={rate}
+                  onClick={() => {
+                    setSpeechRate(rate);
+                    setShowSpeedSelector(false);
+                  }}
+                  className={`px-3 py-1 text-sm rounded transition-all font-semibold ${
+                    speechRate === rate 
+                      ? 'bg-blue-600 text-white ring-2 ring-blue-400' 
+                      : 'bg-slate-600 text-white hover:bg-slate-500'
+                  }`}
+                >
+                  {rate}x
+                </button>
+              ))}
             </div>
           </div>
         )}
