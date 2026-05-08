@@ -261,7 +261,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       
       {/* ========== 頂部章節導航條 ========== */}
-      <div className="sticky top-0 z-50 bg-gradient-to-r from-pink-300 to-pink-400 shadow-lg">
+      <div className="sticky top-0 z-50 bg-gradient-to-r from-pink-300 to-pink-400 shadow-lg" style={{ paddingTop: 'max(env(safe-area-inset-top), 10px)' }}>
         <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2 sm:py-3">
           <div className="flex items-center gap-2">
             
