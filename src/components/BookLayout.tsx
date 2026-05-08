@@ -293,7 +293,14 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             
             {/* 最左側:返回書房按鈕 */}
             <button
-              onClick={() => navigate('/books')}
+              onClick={() => {
+                // 關閉 TTS（如果正在播放）
+                if (window.speechSynthesis.speaking) {
+                  window.speechSynthesis.cancel();
+                }
+                // 通知父視窗關閉電子書房
+                window.parent.postMessage({ type: 'closeBookEmbed' }, '*');
+              }}
               className="flex items-center gap-1 px-2 sm:px-3 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-semibold text-xs sm:text-sm transition-colors shadow-md flex-shrink-0"
               title="返回書房"
             >
