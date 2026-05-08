@@ -288,31 +288,14 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       
       {/* ========== 頂部章節導航條 ========== */}
       <div className="sticky top-0 z-50 bg-gradient-to-r from-pink-300 to-pink-400 shadow-lg">
-        <div className="max-w-7xl mx-auto px-1 sm:px-4 py-2">
-          <div className="flex items-center gap-1 sm:gap-2">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2 sm:py-3">
+          <div className="flex items-center gap-2">
             
-            {/* 最左側:返回書房按鈕 */}
-            <button
-              onClick={() => {
-                // 關閉 TTS（如果正在播放）
-                if (window.speechSynthesis.speaking) {
-                  window.speechSynthesis.cancel();
-                }
-                // 通知父視窗關閉電子書房
-                window.parent.postMessage({ type: 'closeBookEmbed' }, '*');
-              }}
-              className="flex items-center gap-0.5 px-1.5 sm:px-3 py-1.5 sm:py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-semibold text-xs transition-colors shadow-md flex-shrink-0"
-              title="返回書房"
-            >
-              <ChevronLeft className="w-4 h-4" />
-              <span className="hidden lg:inline text-xs">返回書房</span>
-            </button>
-            
-            {/* 上一章按鈕（縮小版） */}
+            {/* 左側:上一章按鈕 */}
             <button
               onClick={() => previousChapter && handleChapterChange(previousChapter.path)}
               disabled={!previousChapter}
-              className={`flex items-center justify-center p-1.5 sm:px-2 sm:py-1.5 rounded-lg transition-colors flex-shrink-0 ${
+              className={`flex items-center gap-1 px-2 sm:px-3 py-2 rounded-lg font-semibold text-xs sm:text-sm transition-colors flex-shrink-0 ${
                 previousChapter 
                   ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-md' 
                   : 'bg-gray-300 text-gray-500 cursor-not-allowed'
@@ -320,16 +303,17 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
               title={previousChapter ? `上一章: ${previousChapter.title}` : '已是第一章'}
             >
               <ChevronLeft className="w-4 h-4" />
+              <span className="hidden sm:inline">上一章</span>
             </button>
 
-            {/* 章節標題與選擇器（佔據剩餘空間） */}
+            {/* 中間:章節標題與選擇器（佔據剩餘空間） */}
             <div className="flex-1 min-w-0">
               <button
                 onClick={() => setShowChapterMenu(!showChapterMenu)}
-                className="w-full flex items-center justify-between gap-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-2 sm:px-4 py-1.5 sm:py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all font-bold text-xs sm:text-sm"
+                className="w-full flex items-center justify-between gap-1 sm:gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all font-bold text-xs sm:text-sm"
                 title="點擊選擇章節"
               >
-                <BookOpen className="w-4 h-4 flex-shrink-0" />
+                <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                 <span className="truncate flex-1 text-center">{currentChapter?.title || chapter}</span>
                 <span className="text-xs opacity-90 flex-shrink-0">{currentIndex + 1}/{chapters.length}</span>
                 <List className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
@@ -424,35 +408,36 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
           {showToolbar ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
         </button>
         
-        <div className="flex items-center justify-between px-2 sm:px-4 py-2 max-w-7xl mx-auto">
+        {/* 第一列：主要功能按鈕 */}
+        <div className="flex items-center justify-between px-2 sm:px-4 py-1.5 sm:py-2 max-w-7xl mx-auto border-b border-slate-700">
           
           {/* 左側:關閉 + 全展開 + 匯出 */}
           <div className="flex items-center gap-1">
             <button
               onClick={handleClose}
-              className="flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-sm"
+              className="flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm"
               title="關閉並返回書房"
             >
               <X className="w-4 h-4" />
-              <span className="hidden sm:inline text-sm">關閉</span>
+              <span className="hidden sm:inline">關閉</span>
             </button>
             
             <button
               onClick={handleExpandAll}
-              className="flex items-center gap-1 bg-purple-600 hover:bg-purple-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-sm"
+              className="flex items-center gap-1 bg-purple-600 hover:bg-purple-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm"
               title="展開所有內容"
             >
               <Maximize2 className="w-4 h-4" />
-              <span className="hidden sm:inline text-sm">全展開</span>
+              <span className="hidden sm:inline">全展開</span>
             </button>
             
             <button
               onClick={handleExportWord}
-              className="flex items-center gap-1 bg-indigo-600 hover:bg-indigo-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-sm"
+              className="flex items-center gap-1 bg-indigo-600 hover:bg-indigo-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm"
               title="匯出 Word 文件"
             >
               <Download className="w-4 h-4" />
-              <span className="hidden sm:inline text-sm">Word</span>
+              <span className="hidden sm:inline">Word</span>
             </button>
           </div>
 
@@ -460,7 +445,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
           <div className="flex items-center gap-1">
             <button
               onClick={handleSpeak}
-              className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold text-sm ${
+              className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold text-xs sm:text-sm ${
                 isSpeaking 
                   ? 'bg-orange-600 hover:bg-orange-700' 
                   : 'bg-blue-600 hover:bg-blue-700'
@@ -472,7 +457,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
               ) : (
                 <Volume2 className="w-4 h-4" />
               )}
-              <span className="hidden sm:inline text-sm">
+              <span className="hidden sm:inline">
                 {isSpeaking ? (isPaused ? '繼續' : '暫停') : '朗讀'}
               </span>
             </button>
@@ -480,10 +465,10 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             {isSpeaking && (
               <button
                 onClick={handleStopSpeak}
-                className="px-2 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-semibold shadow-lg text-sm"
+                className="px-2 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm"
                 title="停止"
               >
-                <span className="hidden sm:inline text-sm">停止</span>
+                <span className="hidden sm:inline">停止</span>
                 <span className="sm:hidden">■</span>
               </button>
             )}
@@ -493,7 +478,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
                 <button
                   key={rate}
                   onClick={() => setSpeechRate(rate)}
-                  className={`px-2 py-1.5 text-xs font-semibold transition-colors ${
+                  className={`px-1.5 sm:px-2 py-1.5 text-xs font-semibold transition-colors ${
                     speechRate === rate
                       ? 'bg-blue-600 text-white'
                       : 'text-gray-300 hover:bg-slate-600'
@@ -532,7 +517,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
 
             <button
               onClick={toggleHighlightMode}
-              className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-sm ${
+              className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm ${
                 highlightMode 
                   ? 'bg-yellow-500 hover:bg-yellow-600 text-slate-900' 
                   : 'bg-slate-700 hover:bg-slate-600 text-white'
@@ -540,20 +525,39 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
               title={isLoggedIn ? '螢光筆' : '點擊以登入並使用螢光筆'}
             >
               <Highlighter className="w-4 h-4" />
-              <span className="hidden sm:inline text-sm">筆</span>
+              <span className="hidden sm:inline">筆</span>
             </button>
             
             {isLoggedIn && (
               <button
                 onClick={handleLogout}
-                className="flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-white transition-colors font-semibold shadow-lg text-sm"
+                className="flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-white transition-colors font-semibold shadow-lg text-xs sm:text-sm"
                 title="登出"
               >
                 <LogOut className="w-4 h-4" />
-                <span className="hidden sm:inline text-sm">登出</span>
+                <span className="hidden sm:inline">登出</span>
               </button>
             )}
           </div>
+        </div>
+
+        {/* 第二列：返回書房按鈕 */}
+        <div className="flex items-center justify-center px-2 sm:px-4 py-1.5 sm:py-2 max-w-7xl mx-auto">
+          <button
+            onClick={() => {
+              // 關閉 TTS（如果正在播放）
+              if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+              }
+              // 通知父視窗關閉電子書房
+              window.parent.postMessage({ type: 'closeBookEmbed' }, '*');
+            }}
+            className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-4 sm:px-6 py-2 rounded-lg font-semibold shadow-lg text-sm transition-colors"
+            title="返回埔和小站電子書房選單"
+          >
+            <ChevronLeft className="w-4 h-4" />
+            <span>返回書房</span>
+          </button>
         </div>
 
         {highlightMode && (
@@ -587,7 +591,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
         )}
       </div>
 
-      <div className="h-40 sm:h-32"></div>
+      <div className="h-56 sm:h-44"></div>
     </div>
   );
 };
