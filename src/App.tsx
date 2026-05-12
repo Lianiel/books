@@ -268,7 +268,7 @@ import Book10Ch9 from './components/book10/Chapter9';
 import Book11Lesson1 from './components/book11/Lesson1';
 
 // ========== 導入 Book 12 章節 ==========
-import Book12Home from './components/Book12/Book12Home';
+import Book12Home from './components/book12/Book12Home';
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({ 
