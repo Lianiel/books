@@ -1,9 +1,13 @@
 export default function Chapter3() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50">
-      <div className="text-center p-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">第三章 一根繩子</h2>
-        <p className="text-gray-600">本章內容建立中...</p>
+      <div className="max-w-2xl mx-auto p-8 bg-white rounded-lg shadow-lg">
+        <h1 className="text-3xl font-bold text-gray-800 mb-4">第3章</h1>
+        <div className="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-500">
+          <p className="text-gray-700 leading-relaxed">
+            本章內容建立中...
+          </p>
+        </div>
       </div>
     </div>
   );
