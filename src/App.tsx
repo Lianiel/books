@@ -145,6 +145,15 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
   book12: [
     { id: 'home', title: '十架預言真奇妙', path: '/book12/home' },
   ],
+  book13: [
+    { id: 'chapter1', title: '第1章 易肇事路口', path: '/book13/chapter1' },
+    { id: 'chapter2', title: '第2章 不隨血氣起舞', path: '/book13/chapter2' },
+    { id: 'chapter3', title: '第3章 一根繩子', path: '/book13/chapter3' },
+    { id: 'chapter4', title: '第4章 操練', path: '/book13/chapter4' },
+    { id: 'chapter5', title: '第5章 莽漢、艾利克斯和曼紐爾', path: '/book13/chapter5' },
+    { id: 'chapter6', title: '第6章 我叫法蘭克', path: '/book13/chapter6' },
+    { id: 'chapter7', title: '第7章 魔鬼的講壇', path: '/book13/chapter7' },
+  ],
 };
 
 // ========== 導入 Book 1 章節 ==========
@@ -269,6 +278,15 @@ import Book11Lesson1 from './components/book11/Lesson1';
 
 // ========== 導入 Book 12 章節 ==========
 import Book12Home from './components/book12/Book12Home';
+
+// ========== 導入 Book 13 章節 ==========
+import Book13Ch1 from './components/book13/Chapter1';
+import Book13Ch2 from './components/book13/Chapter2';
+import Book13Ch3 from './components/book13/Chapter3';
+import Book13Ch4 from './components/book13/Chapter4';
+import Book13Ch5 from './components/book13/Chapter5';
+import Book13Ch6 from './components/book13/Chapter6';
+import Book13Ch7 from './components/book13/Chapter7';
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({ 
@@ -449,6 +467,16 @@ const App: React.FC = () => {
         <Route path="/book12/home" element={<BookLayout bookId="book12" chapter="home" chapters={BOOK_CHAPTERS.book12}><Book12Home /></BookLayout>} />
         <Route path="/book/12" element={<BookLayout bookId="book12" chapter="home" chapters={BOOK_CHAPTERS.book12}><Book12Home /></BookLayout>} />
 
+        {/* ========== Book 13 - 十字架跨越的智慧 ========== */}
+        <Route path="/book13/chapter1" element={<BookLayout bookId="book13" chapter="chapter1" chapters={BOOK_CHAPTERS.book13}><Book13Ch1 /></BookLayout>} />
+        <Route path="/book13/chapter2" element={<BookLayout bookId="book13" chapter="chapter2" chapters={BOOK_CHAPTERS.book13}><Book13Ch2 /></BookLayout>} />
+        <Route path="/book13/chapter3" element={<BookLayout bookId="book13" chapter="chapter3" chapters={BOOK_CHAPTERS.book13}><Book13Ch3 /></BookLayout>} />
+        <Route path="/book13/chapter4" element={<BookLayout bookId="book13" chapter="chapter4" chapters={BOOK_CHAPTERS.book13}><Book13Ch4 /></BookLayout>} />
+        <Route path="/book13/chapter5" element={<BookLayout bookId="book13" chapter="chapter5" chapters={BOOK_CHAPTERS.book13}><Book13Ch5 /></BookLayout>} />
+        <Route path="/book13/chapter6" element={<BookLayout bookId="book13" chapter="chapter6" chapters={BOOK_CHAPTERS.book13}><Book13Ch6 /></BookLayout>} />
+        <Route path="/book13/chapter7" element={<BookLayout bookId="book13" chapter="chapter7" chapters={BOOK_CHAPTERS.book13}><Book13Ch7 /></BookLayout>} />
+        <Route path="/book/13" element={<BookLayout bookId="book13" chapter="chapter1" chapters={BOOK_CHAPTERS.book13}><Book13Ch1 /></BookLayout>} />
+
         {/* ========== 首頁 - 書籍列表 ========== */}
         <Route path="/" element={
           <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
@@ -596,6 +624,17 @@ const App: React.FC = () => {
                   chapters={1}
                   to="/book12/home"
                   color="from-amber-500 to-orange-600"
+                />
+
+                {/* Book 13 - 十字架跨越的智慧 */}
+                <BookCard
+                  number={13}
+                  title="十字架跨越的智慧"
+                  author="亨利·葛洛法"
+                  description="行走禱告教戰手冊,學習在禱告中不隨血氣起舞,為地方帶來神的保護與轉化"
+                  chapters={7}
+                  to="/book13/chapter1"
+                  color="from-teal-500 to-cyan-600"
                 />
 
               </div>
