@@ -142,6 +142,9 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
   book11: [
     { id: 'lesson1', title: '第1課', path: '/book11/lesson1' },
   ],
+  book12: [
+    { id: 'home', title: '十架預言真奇妙', path: '/book12/home' },
+  ],
 };
 
 // ========== 導入 Book 1 章節 ==========
@@ -263,6 +266,9 @@ import Book10Ch9 from './components/book10/Chapter9';
 
 // ========== 導入 Book 11 章節 ==========
 import Book11Lesson1 from './components/book11/Lesson1';
+
+// ========== 導入 Book 12 章節 ==========
+import Book12Home from './components/Book12/Book12Home';
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({ 
@@ -439,6 +445,10 @@ const App: React.FC = () => {
         {/* ========== Book 11 - 從懷疑到相信 ========== */}
         <Route path="/book11/lesson1" element={<BookLayout bookId="book11" chapter="lesson1" chapters={BOOK_CHAPTERS.book11}><Book11Lesson1 /></BookLayout>} />
 
+        {/* ========== Book 12 - 十架預言真奇妙 ========== */}
+        <Route path="/book12/home" element={<BookLayout bookId="book12" chapter="home" chapters={BOOK_CHAPTERS.book12}><Book12Home /></BookLayout>} />
+        <Route path="/book/12" element={<BookLayout bookId="book12" chapter="home" chapters={BOOK_CHAPTERS.book12}><Book12Home /></BookLayout>} />
+
         {/* ========== 首頁 - 書籍列表 ========== */}
         <Route path="/" element={
           <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
@@ -575,6 +585,17 @@ const App: React.FC = () => {
                   chapters={1}
                   to="/book11/lesson1"
                   color="from-indigo-500 to-purple-600"
+                />
+
+                {/* Book 12 - 十架預言真奇妙 */}
+                <BookCard
+                  number={12}
+                  title="十架預言真奇妙"
+                  author="李錦彬"
+                  description="探討耶穌被釘十字架的預言與真義,揭示聖經預言的精確性與救恩的奧秘"
+                  chapters={1}
+                  to="/book12/home"
+                  color="from-amber-500 to-orange-600"
                 />
 
               </div>
