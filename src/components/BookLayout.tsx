@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
 import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter, LogOut, Download, Maximize2, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from '../useHighlight';
 import { asBlob } from 'html-docx-js-typescript';
 
@@ -26,6 +26,7 @@ const fontSizeClasses: Record<FontSize, string> = {
 
 const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, children }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   
   // 字體縮放
   const [fontSize, setFontSize] = useState<FontSize>('base');
@@ -68,8 +69,8 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     }
   };
   
-  // 全展開功能
-  const handleExpandAll = () => {
+  // 自動展開所有區塊（不顯示提示）
+  const clickAllToggles = () => {
     const buttons = document.querySelectorAll('button[aria-expanded="false"]');
     buttons.forEach(btn => {
       (btn as HTMLButtonElement).click();
@@ -79,7 +80,11 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     sections.forEach(section => {
       (section as HTMLElement).style.display = 'block';
     });
-    
+  };
+  
+  // 全展開功能（手動點擊時顯示提示）
+  const handleExpandAll = () => {
+    clickAllToggles();
     alert('已展開所有內容');
   };
   
@@ -145,6 +150,15 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     document.addEventListener('removeHighlight', handler);
     return () => document.removeEventListener('removeHighlight', handler);
   }, [removeHighlight]);
+
+  // 自動展開所有區塊（頁面載入或切換章節時）
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      clickAllToggles();
+    }, 300); // 延遲確保 DOM 已完全渲染
+    
+    return () => clearTimeout(timer);
+  }, [location.pathname]); // 每次路徑變化時重新執行
 
   // 關閉按鈕
   const handleClose = () => {
