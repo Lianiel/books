@@ -400,7 +400,7 @@ const App: React.FC = () => {
         {/* Book 5 首頁入口 */}
         <Route path="/book5" element={<BookLayout bookId="book5" chapter="chapter1" chapters={BOOK_CHAPTERS.book5}><Book5Ch1 /></BookLayout>} />
 
-        {/* ========== Book 6 - 向保羅學宣教 ========== */}
+        {/* ========== Book 6 - 列王記上 從歷史中看見神的啟示 ========== */}
         <Route path="/book6/chapter1" element={<BookLayout bookId="book6" chapter="chapter1" chapters={BOOK_CHAPTERS.book6}><Book6Ch1 /></BookLayout>} />
         <Route path="/book6/chapter2" element={<BookLayout bookId="book6" chapter="chapter2" chapters={BOOK_CHAPTERS.book6}><Book6Ch2 /></BookLayout>} />
         <Route path="/book6/chapter3" element={<BookLayout bookId="book6" chapter="chapter3" chapters={BOOK_CHAPTERS.book6}><Book6Ch3 /></BookLayout>} />
@@ -516,12 +516,12 @@ const App: React.FC = () => {
                   color="from-green-500 to-emerald-600"
                 />
 
-                {/* Book 3 - 你可以更靠近神 */}
+                {/* Book 3 - 向保羅學宣教 */}
                 <BookCard
                   number={3}
-                  title="你可以更靠近神"
-                  author="作者名稱"
-                  description="探索與神建立更深關係的途徑"
+                  title="向保羅學宣教"
+                  author="王乃純"
+                  description="回歸聖經的宣教學"
                   chapters={8}
                   to="/book3"
                   color="from-purple-500 to-pink-600"
@@ -549,12 +549,12 @@ const App: React.FC = () => {
                   color="from-teal-500 to-cyan-600"
                 />
 
-                {/* Book 6 - 向保羅學宣教 */}
+                {/* Book 6 - 列王記上 從歷史中看見神的啟示 */}
                 <BookCard
                   number={6}
-                  title="向保羅學宣教"
+                  title="從歷史中看見神的啟示"
                   author="作者名稱"
-                  description="從使徒保羅的宣教旅程學習福音策略"
+                  description="列王記上 從歷史中看見神的啟示"
                   chapters={8}
                   to="/book6"
                   color="from-indigo-500 to-purple-600"
