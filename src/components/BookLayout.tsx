@@ -524,13 +524,15 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
         {highlightMode && (
           <div className="bg-slate-700 border-t border-slate-600 px-2 sm:px-4 py-1.5">
             <div className="flex items-center gap-1.5 max-w-7xl mx-auto">
-              <span className="text-white text-xs font-semibold mr-1">樣式:</span>
-              {(['yellow', 'red', 'blue', 'bold', 'underline'] as HighlightStyle[]).map(style => {
+              <span className="text-white text-xs font-semibold mr-1">顏色:</span>
+              {(['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple'] as HighlightStyle[]).map(style => {
                 const demoSpan = document.createElement('span');
-                demoSpan.textContent = style === 'yellow' ? '黃' : 
-                                       style === 'red' ? '紅' : 
+                demoSpan.textContent = style === 'red' ? '紅' : 
+                                       style === 'orange' ? '橙' : 
+                                       style === 'yellow' ? '黃' : 
+                                       style === 'green' ? '綠' : 
                                        style === 'blue' ? '藍' : 
-                                       style === 'bold' ? '粗' : '底';
+                                       style === 'indigo' ? '靛' : '紫';
                 applyStyleToSpan(demoSpan, style);
                 
                 return (
