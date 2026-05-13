@@ -6,7 +6,7 @@ const SUPABASE_KEY = 'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx';
 declare const supabase: any;
 const getSb = () => (window as any).supabase?.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-export type HighlightStyle = 'yellow' | 'red' | 'blue' | 'bold' | 'underline';
+export type HighlightStyle = 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple';
 
 export interface Highlight {
   id: string;
@@ -132,11 +132,17 @@ function applyHighlightToDOM(h: Highlight) {
 }
 
 export function applyStyleToSpan(span: HTMLElement, style: HighlightStyle) {
+  // 所有顏色都使用螢光筆效果（背景色 + 圓角）
+  span.style.borderRadius = '2px';
+  span.style.padding = '1px 2px';
+  
   switch (style) {
-    case 'yellow': span.style.backgroundColor = '#fef08a'; span.style.borderRadius = '2px'; break;
-    case 'red':    span.style.color = '#dc2626'; break;
-    case 'blue':   span.style.color = '#2563eb'; break;
-    case 'bold':   span.style.fontWeight = '800'; break;
-    case 'underline': span.style.textDecoration = 'underline'; span.style.textUnderlineOffset = '3px'; break;
+    case 'red':    span.style.backgroundColor = '#fecaca'; break; // 紅色螢光筆
+    case 'orange': span.style.backgroundColor = '#fed7aa'; break; // 橙色螢光筆
+    case 'yellow': span.style.backgroundColor = '#fef08a'; break; // 黃色螢光筆
+    case 'green':  span.style.backgroundColor = '#bbf7d0'; break; // 綠色螢光筆
+    case 'blue':   span.style.backgroundColor = '#bfdbfe'; break; // 藍色螢光筆
+    case 'indigo': span.style.backgroundColor = '#c7d2fe'; break; // 靛色螢光筆
+    case 'purple': span.style.backgroundColor = '#e9d5ff'; break; // 紫色螢光筆
   }
 }
