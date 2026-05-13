@@ -24,6 +24,15 @@ const fontSizeClasses: Record<FontSize, string> = {
   '2xl': 'text-2xl'
 };
 
+const fontSizeLabels: Record<FontSize, string> = {
+  'sm': '1',
+  'base': '2',
+  'lg': '3',
+  'xl': '4',
+  '2xl': '5'
+};
+
+
 const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, children }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -483,7 +492,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
               }`}
               title="字體大小調整"
             >
-              <span className="font-bold">{fontSize.toUpperCase()}</span>
+              <span className="font-bold">{fontSizeLabels[fontSize]}</span>
             </button>
 
             <button
@@ -583,7 +592,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
                       : 'bg-slate-600 text-white hover:bg-slate-500'
                   }`}
                 >
-                  {size.toUpperCase()}
+                  {fontSizeLabels[size]}
                 </button>
               ))}
             </div>
