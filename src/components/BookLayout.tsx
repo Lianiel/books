@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter, LogOut, Download, Maximize2, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List } from 'lucide-react';
+import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter, LogOut, Download, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from '../useHighlight';
 import { asBlob } from 'html-docx-js-typescript';
@@ -80,12 +80,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
         btn.click();
       }
     });
-  };
-  
-  // 全展開功能（手動點擊時顯示提示）
-  const handleExpandAll = () => {
-    clickAllToggles();
-    alert('已展開所有內容');
   };
   
   // 匯出 Word
@@ -414,7 +408,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
         {/* 單列工具列 */}
         <div className="flex items-center justify-between px-2 sm:px-4 py-2 max-w-7xl mx-auto">
           
-          {/* 左側:關閉 + 全展開 + Word */}
+          {/* 左側:關閉 + Word */}
           <div className="flex items-center gap-1">
             <button
               onClick={handleClose}
@@ -423,15 +417,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             >
               <X className="w-4 h-4" />
               <span className="hidden sm:inline">關閉</span>
-            </button>
-            
-            <button
-              onClick={handleExpandAll}
-              className="flex items-center gap-1 bg-purple-600 hover:bg-purple-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm"
-              title="展開所有內容"
-            >
-              <Maximize2 className="w-4 h-4" />
-              <span className="hidden sm:inline">全展開</span>
             </button>
             
             <button
