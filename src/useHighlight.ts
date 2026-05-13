@@ -146,3 +146,4 @@ export function applyStyleToSpan(span: HTMLElement, style: HighlightStyle) {
     case 'purple': span.style.backgroundColor = '#e9d5ff'; break; // 紫色螢光筆
   }
 }
+ 
