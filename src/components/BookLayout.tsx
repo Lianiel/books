@@ -180,7 +180,14 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       setIsPaused(false);
     }
     
-    window.parent.postMessage({ type: 'closeBookEmbed' }, '*');
+    // 檢查是否在 iframe 中（從埔和小站嵌入）
+    if (window.self !== window.parent) {
+      // 在 iframe 中，發送訊息給父窗口
+      window.parent.postMessage({ type: 'closeBookEmbed' }, '*');
+    } else {
+      // 直接開啟，返回書房首頁
+      navigate('/');
+    }
   };
 
   // TTS 控制
