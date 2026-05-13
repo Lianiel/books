@@ -358,7 +358,7 @@ const App: React.FC = () => {
         <Route path="/book2/chapter7" element={<BookLayout bookId="book2" chapter="chapter7" chapters={BOOK_CHAPTERS.book2}><Book2Ch7 /></BookLayout>} />
         <Route path="/book2/chapter8" element={<BookLayout bookId="book2" chapter="chapter8" chapters={BOOK_CHAPTERS.book2}><Book2Ch8 /></BookLayout>} />
 
-        {/* ========== Book 3 - 你可以更靠近神 ========== */}
+        {/* ========== Book 3 - 向保羅學宣教 ========== */}
         <Route path="/book3/chapter1" element={<BookLayout bookId="book3" chapter="chapter1" chapters={BOOK_CHAPTERS.book3}><Book3Ch1 /></BookLayout>} />
         <Route path="/book3/chapter2" element={<BookLayout bookId="book3" chapter="chapter2" chapters={BOOK_CHAPTERS.book3}><Book3Ch2 /></BookLayout>} />
         <Route path="/book3/chapter3" element={<BookLayout bookId="book3" chapter="chapter3" chapters={BOOK_CHAPTERS.book3}><Book3Ch3 /></BookLayout>} />
