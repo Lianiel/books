@@ -25,11 +25,11 @@ const fontSizeClasses: Record<FontSize, string> = {
 };
 
 const fontSizeLabels: Record<FontSize, string> = {
-  'sm': '1',
-  'base': '2',
-  'lg': '3',
-  'xl': '4',
-  '2xl': '5'
+  'sm': '14',    // 14px
+  'base': '16',  // 16px
+  'lg': '18',    // 18px
+  'xl': '20',    // 20px
+  '2xl': '24'    // 24px
 };
 
 
