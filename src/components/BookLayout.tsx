@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { X, Volume2, VolumeX, ZoomIn, ZoomOut, Highlighter, LogOut, Download, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List } from 'lucide-react';
+import { X, Volume2, VolumeX, Highlighter, LogOut, Download, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useHighlight, HighlightStyle, applyStyleToSpan } from '../useHighlight';
 import { asBlob } from 'html-docx-js-typescript';
@@ -50,6 +50,9 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   
   // 語速選擇器
   const [showSpeedSelector, setShowSpeedSelector] = useState(false);
+  
+  // 字體選擇器
+  const [showFontSelector, setShowFontSelector] = useState(false);
   
   // 獲取章節資訊
   const currentIndex = chapters.findIndex(ch => ch.id === chapter);
@@ -228,18 +231,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     setIsSpeaking(false);
     setIsPaused(false);
     utteranceRef.current = null;
-  };
-
-  // 字體縮放
-  const handleFontSizeChange = (direction: 'up' | 'down') => {
-    const sizes: FontSize[] = ['sm', 'base', 'lg', 'xl', '2xl'];
-    const currentIndex = sizes.indexOf(fontSize);
-    
-    if (direction === 'up' && currentIndex < sizes.length - 1) {
-      setFontSize(sizes[currentIndex + 1]);
-    } else if (direction === 'down' && currentIndex > 0) {
-      setFontSize(sizes[currentIndex - 1]);
-    }
   };
 
   // 螢光筆模式
@@ -474,29 +465,19 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             </button>
           </div>
 
-          {/* 右側:字體縮放 + 螢光筆 */}
+          {/* 右側:字體大小 + 螢光筆 */}
           <div className="flex items-center gap-1">
-            <div className="flex items-center gap-0.5 bg-slate-700 rounded-lg p-0.5">
-              <button
-                onClick={() => handleFontSizeChange('down')}
-                disabled={fontSize === 'sm'}
-                className="p-1.5 rounded hover:bg-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                title="縮小字體"
-              >
-                <ZoomOut className="w-3.5 h-3.5 text-white" />
-              </button>
-              <span className="text-white text-xs font-semibold px-1.5 hidden sm:inline">
-                {fontSize.toUpperCase()}
-              </span>
-              <button
-                onClick={() => handleFontSizeChange('up')}
-                disabled={fontSize === '2xl'}
-                className="p-1.5 rounded hover:bg-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                title="放大字體"
-              >
-                <ZoomIn className="w-3.5 h-3.5 text-white" />
-              </button>
-            </div>
+            <button
+              onClick={() => setShowFontSelector(!showFontSelector)}
+              className={`px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm ${
+                showFontSelector
+                  ? 'bg-slate-600 text-white'
+                  : 'bg-slate-700 text-white hover:bg-slate-600'
+              }`}
+              title="字體大小調整"
+            >
+              <span className="font-bold">{fontSize.toUpperCase()}</span>
+            </button>
 
             <button
               onClick={toggleHighlightMode}
@@ -572,6 +553,30 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
                   }`}
                 >
                   {rate}x
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {showFontSelector && (
+          <div className="bg-slate-700 border-t border-slate-600 px-2 sm:px-4 py-1.5">
+            <div className="flex items-center gap-1.5 max-w-7xl mx-auto">
+              <span className="text-white text-xs font-semibold mr-1">字體:</span>
+              {(['sm', 'base', 'lg', 'xl', '2xl'] as FontSize[]).map(size => (
+                <button
+                  key={size}
+                  onClick={() => {
+                    setFontSize(size);
+                    setShowFontSelector(false);
+                  }}
+                  className={`px-3 py-1 text-sm rounded transition-all font-semibold ${
+                    fontSize === size 
+                      ? 'bg-slate-600 text-white ring-2 ring-slate-400' 
+                      : 'bg-slate-600 text-white hover:bg-slate-500'
+                  }`}
+                >
+                  {size.toUpperCase()}
                 </button>
               ))}
             </div>
