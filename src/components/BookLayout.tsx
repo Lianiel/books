@@ -71,14 +71,14 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   
   // 自動展開所有區塊（不顯示提示）
   const clickAllToggles = () => {
-    const buttons = document.querySelectorAll('button[aria-expanded="false"]');
+    // 找到所有按鈕,檢查是否包含 ChevronDown（表示收合狀態）
+    const buttons = Array.from(document.querySelectorAll('button'));
     buttons.forEach(btn => {
-      (btn as HTMLButtonElement).click();
-    });
-    
-    const sections = document.querySelectorAll('[class*="collapse"]');
-    sections.forEach(section => {
-      (section as HTMLElement).style.display = 'block';
+      // 檢查按鈕內是否有 ChevronDown 的 SVG
+      const hasChevronDown = btn.querySelector('svg')?.parentElement?.innerHTML.includes('ChevronDown');
+      if (hasChevronDown || btn.querySelector('[class*="lucide-chevron-down"]')) {
+        btn.click();
+      }
     });
   };
   
@@ -153,12 +153,27 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
 
   // 自動展開所有區塊（頁面載入或切換章節時）
   useEffect(() => {
-    const timer = setTimeout(() => {
-      clickAllToggles();
-    }, 300); // 延遲確保 DOM 已完全渲染
+    const expandAll = () => {
+      // 找到所有可能的可展開區塊容器
+      const containers = document.querySelectorAll('.bg-white.rounded-lg.shadow-md');
+      
+      containers.forEach(container => {
+        // 在每個容器內找到按鈕
+        const button = container.querySelector('button');
+        if (button) {
+          // 檢查容器內是否只有一個子元素（只有按鈕，沒有內容區）
+          // 如果有內容區，容器會有2個子元素：button 和 content div
+          if (container.children.length === 1) {
+            // 只有按鈕，沒有內容，說明是收合狀態
+            button.click();
+          }
+        }
+      });
+    };
     
+    const timer = setTimeout(expandAll, 500);
     return () => clearTimeout(timer);
-  }, [location.pathname]); // 每次路徑變化時重新執行
+  }, [location.pathname]);
 
   // 關閉按鈕
   const handleClose = () => {
@@ -585,4 +600,3 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
 };
 
 export default BookLayout;
- 
