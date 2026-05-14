@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { X, Volume2, VolumeX, Highlighter, LogOut, Download, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List } from 'lucide-react';
+import { X, Volume2, VolumeX, LogOut, Download, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useHighlight, HighlightStyle, applyStyleToSpan } from '../useHighlight';
 import { asBlob } from 'html-docx-js-typescript';
 
 // 從 App.tsx 導入章節類型
@@ -51,11 +50,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   const [isPaused, setIsPaused] = useState(false);
   const [speechRate, setSpeechRate] = useState(0.5);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
-  
-  // 螢光筆
-  const { isLoggedIn, applyHighlights, addHighlight, removeHighlight } = useHighlight(bookId, chapter);
-  const [highlightMode, setHighlightMode] = useState(false);
-  const [selectedStyle, setSelectedStyle] = useState<HighlightStyle>('yellow');
   
   // 語速選擇器
   const [showSpeedSelector, setShowSpeedSelector] = useState(false);
@@ -142,20 +136,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       alert('匯出失敗,請稍後再試');
     }
   };
-  
-  // 初始化螢光筆
-  useEffect(() => {
-    applyHighlights();
-  }, [applyHighlights]);
-  
-  useEffect(() => {
-    const handler = (e: Event) => {
-      const id = (e as CustomEvent).detail;
-      removeHighlight(id);
-    };
-    document.addEventListener('removeHighlight', handler);
-    return () => document.removeEventListener('removeHighlight', handler);
-  }, [removeHighlight]);
 
   // 自動展開所有區塊（頁面載入或切換章節時）
   useEffect(() => {
@@ -248,31 +228,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     setIsPaused(false);
     utteranceRef.current = null;
   };
-
-  // 螢光筆模式
-  const toggleHighlightMode = async () => {
-    setHighlightMode(!highlightMode);
-  };
-
-  useEffect(() => {
-    if (!highlightMode) return;
-
-    const handleSelection = () => {
-      const selection = window.getSelection();
-      if (!selection || selection.isCollapsed) return;
-      
-      const text = selection.toString().trim();
-      if (!text) return;
-
-      addHighlight(text, selectedStyle);
-      selection.removeAllRanges();
-      
-      setTimeout(() => applyHighlights(), 100);
-    };
-
-    document.addEventListener('mouseup', handleSelection);
-    return () => document.removeEventListener('mouseup', handleSelection);
-  }, [highlightMode, selectedStyle, addHighlight, applyHighlights]);
 
   // 章節切換
   const handleChapterChange = (chapterPath: string) => {
@@ -481,7 +436,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             </button>
           </div>
 
-          {/* 右側:字體大小 + 螢光筆 */}
+          {/* 右側:字體大小 + 登出 */}
           <div className="flex items-center gap-1">
             <button
               onClick={() => setShowFontSelector(!showFontSelector)}
@@ -494,64 +449,17 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             >
               <span className="font-bold">{fontSizeLabels[fontSize]}</span>
             </button>
-
-            <button
-              onClick={toggleHighlightMode}
-              className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm ${
-                highlightMode 
-                  ? 'bg-yellow-500 hover:bg-yellow-600 text-slate-900' 
-                  : 'bg-slate-700 hover:bg-slate-600 text-white'
-              }`}
-              title="螢光筆"
-            >
-              <Highlighter className="w-4 h-4" />
-              <span className="hidden sm:inline">筆</span>
-            </button>
             
-            {isLoggedIn && (
-              <button
-                onClick={handleLogout}
-                className="flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-white transition-colors font-semibold shadow-lg text-xs sm:text-sm"
-                title="登出"
-              >
-                <LogOut className="w-4 h-4" />
-                <span className="hidden sm:inline">登出</span>
-              </button>
-            )}
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-white transition-colors font-semibold shadow-lg text-xs sm:text-sm"
+              title="登出"
+            >
+              <LogOut className="w-4 h-4" />
+              <span className="hidden sm:inline">登出</span>
+            </button>
           </div>
         </div>
-
-        {highlightMode && (
-          <div className="bg-slate-700 border-t border-slate-600 px-2 sm:px-4 py-1.5">
-            <div className="flex items-center gap-1.5 max-w-7xl mx-auto">
-              <span className="text-white text-xs font-semibold mr-1">顏色:</span>
-              {(['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple'] as HighlightStyle[]).map(style => {
-                const demoSpan = document.createElement('span');
-                demoSpan.textContent = style === 'red' ? '紅' : 
-                                       style === 'orange' ? '橙' : 
-                                       style === 'yellow' ? '黃' : 
-                                       style === 'green' ? '綠' : 
-                                       style === 'blue' ? '藍' : 
-                                       style === 'indigo' ? '靛' : '紫';
-                applyStyleToSpan(demoSpan, style);
-                
-                return (
-                  <button
-                    key={style}
-                    onClick={() => setSelectedStyle(style)}
-                    className={`px-2 py-0.5 text-sm rounded transition-all ${
-                      selectedStyle === style 
-                        ? 'bg-white text-slate-900 ring-2 ring-yellow-400' 
-                        : 'bg-slate-600 text-white hover:bg-slate-500'
-                    }`}
-                  >
-                    <span dangerouslySetInnerHTML={{ __html: demoSpan.outerHTML }} />
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        )}
 
         {showSpeedSelector && (
           <div className="bg-slate-700 border-t border-slate-600 px-2 sm:px-4 py-1.5">
