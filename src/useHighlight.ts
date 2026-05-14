@@ -10,7 +10,6 @@ export interface Highlight {
   style: HighlightStyle;
 }
 
-// 從 localStorage 載入高亮資料
 function loadHighlights(bookId: string, chapter: string): Highlight[] {
   try {
     const key = `highlights_${bookId}_${chapter}`;
@@ -22,7 +21,6 @@ function loadHighlights(bookId: string, chapter: string): Highlight[] {
   }
 }
 
-// 儲存高亮資料到 localStorage
 function saveHighlights(bookId: string, chapter: string, highlights: Highlight[]) {
   try {
     const key = `highlights_${bookId}_${chapter}`;
@@ -32,23 +30,25 @@ function saveHighlights(bookId: string, chapter: string, highlights: Highlight[]
   }
 }
 
-// 生成唯一 ID
 function generateId(): string {
   return `hl_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 }
 
+// 標準化文字（移除多餘空白，用於比對）
+function normalizeText(text: string): string {
+  return text.replace(/\s+/g, ' ').trim();
+}
+
 export function useHighlight(bookId: string, chapter: string) {
   const [highlights, setHighlights] = useState<Highlight[]>([]);
-  const [isLoggedIn] = useState(true); // 本地模式永遠是「已登入」狀態
+  const [isLoggedIn] = useState(true);
 
-  // 載入高亮資料
   useEffect(() => {
     const loaded = loadHighlights(bookId, chapter);
     console.log('📚 載入本地高亮資料:', loaded.length, '筆');
     setHighlights(loaded);
   }, [bookId, chapter]);
 
-  // 套用所有高亮
   const applyHighlights = useCallback(() => {
     console.log('🎨 開始套用高亮，共', highlights.length, '筆');
     clearHighlightSpans();
@@ -61,7 +61,6 @@ export function useHighlight(bookId: string, chapter: string) {
     });
   }, [highlights]);
 
-  // 新增高亮
   const addHighlight = useCallback((text: string, style: HighlightStyle) => {
     if (!text.trim()) {
       console.warn('文字內容為空，無法新增高亮');
@@ -83,7 +82,6 @@ export function useHighlight(bookId: string, chapter: string) {
     saveHighlights(bookId, chapter, updated);
 
     console.log('✓ 已儲存到 localStorage');
-    console.log('⚡ 立即套用到 DOM...');
     
     // 立即套用到 DOM
     try {
@@ -94,15 +92,11 @@ export function useHighlight(bookId: string, chapter: string) {
     }
   }, [highlights, bookId, chapter]);
 
-  // 移除高亮
   const removeHighlight = useCallback((id: string) => {
-    console.log('🗑️ 移除高亮:', id);
-    
     const updated = highlights.filter(h => h.id !== id);
     setHighlights(updated);
     saveHighlights(bookId, chapter, updated);
 
-    // 從 DOM 移除
     const span = document.querySelector(`span[data-highlight-id="${id}"]`);
     if (span?.parentNode) {
       span.parentNode.replaceChild(document.createTextNode(span.textContent || ''), span);
@@ -139,6 +133,7 @@ function clearHighlightSpans() {
 
 function applyHighlightToDOM(h: Highlight) {
   console.log('  🔧 applyHighlightToDOM 開始');
+  console.log('    → 尋找的文字:', h.text_content.substring(0, 50) + (h.text_content.length > 50 ? '...' : ''));
   
   // 找主容器
   let main = document.querySelector('main');
@@ -152,7 +147,12 @@ function applyHighlightToDOM(h: Highlight) {
   }
   console.log('    ✓ 找到主容器:', main.tagName);
   
-  // 遍歷文字節點
+  // 標準化要尋找的文字
+  const normalizedTarget = normalizeText(h.text_content);
+  console.log('    → 標準化後的目標文字:', normalizedTarget.substring(0, 50) + '...');
+  
+  // 收集所有文字節點
+  const textNodes: Text[] = [];
   const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT, {
     acceptNode: (node) => {
       if ((node as Text).parentElement?.closest('span[data-highlight-id]')) {
@@ -161,41 +161,90 @@ function applyHighlightToDOM(h: Highlight) {
       if ((node as Text).parentElement?.tagName === 'SCRIPT') {
         return NodeFilter.FILTER_REJECT;
       }
-      return (node.textContent?.includes(h.text_content)) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+      if ((node as Text).parentElement?.tagName === 'STYLE') {
+        return NodeFilter.FILTER_REJECT;
+      }
+      const text = node.textContent?.trim();
+      if (text && text.length > 0) {
+        return NodeFilter.FILTER_ACCEPT;
+      }
+      return NodeFilter.FILTER_SKIP;
     }
   });
   
-  const node = walker.nextNode() as Text | null;
-  if (!node) {
-    console.error('    ✗ 找不到文字節點');
-    return;
+  let node;
+  while (node = walker.nextNode()) {
+    textNodes.push(node as Text);
   }
-  console.log('    ✓ 找到文字節點');
   
-  const idx = node.textContent!.indexOf(h.text_content);
+  console.log('    → 找到', textNodes.length, '個文字節點');
+  
+  // 方法1: 精確匹配（原始文字）
+  for (const textNode of textNodes) {
+    const content = textNode.textContent || '';
+    if (content.includes(h.text_content)) {
+      console.log('    ✓ 精確匹配成功');
+      return wrapTextInSpan(textNode, h, h.text_content);
+    }
+  }
+  
+  // 方法2: 標準化匹配（忽略多餘空白）
+  for (const textNode of textNodes) {
+    const content = textNode.textContent || '';
+    const normalized = normalizeText(content);
+    if (normalized.includes(normalizedTarget)) {
+      console.log('    ✓ 標準化匹配成功');
+      // 找出原始文字中對應的位置
+      const idx = content.indexOf(h.text_content.trim());
+      if (idx !== -1) {
+        return wrapTextInSpan(textNode, h, h.text_content.trim());
+      }
+    }
+  }
+  
+  // 方法3: 模糊匹配（尋找部分文字）
+  const searchText = normalizedTarget.substring(0, Math.min(20, normalizedTarget.length));
+  for (const textNode of textNodes) {
+    const content = normalizeText(textNode.textContent || '');
+    if (content.includes(searchText)) {
+      console.log('    ⚠️ 模糊匹配成功（前20字）');
+      console.log('    → 節點內容:', textNode.textContent?.substring(0, 60) + '...');
+      // 這種情況可能是文字跨節點，暫不處理
+      break;
+    }
+  }
+  
+  console.error('    ✗ 所有匹配方式都失敗');
+  console.log('    💡 儲存的文字可能已不在當前頁面中');
+}
+
+function wrapTextInSpan(textNode: Text, h: Highlight, searchText: string): void {
+  const content = textNode.textContent || '';
+  const idx = content.indexOf(searchText);
+  
   if (idx === -1) {
-    console.error('    ✗ 文字不匹配');
+    console.error('    ✗ indexOf 失敗');
     return;
   }
-  
-  const range = document.createRange();
-  range.setStart(node, idx);
-  range.setEnd(node, idx + h.text_content.length);
-  
-  const span = document.createElement('span');
-  span.setAttribute('data-highlight-id', h.id);
-  span.style.cursor = 'pointer';
-  span.title = '點擊移除';
-  
-  applyStyleToSpan(span, h.style);
-  
-  span.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const event = new CustomEvent('removeHighlight', { detail: h.id });
-    document.dispatchEvent(event);
-  });
   
   try {
+    const range = document.createRange();
+    range.setStart(textNode, idx);
+    range.setEnd(textNode, idx + searchText.length);
+    
+    const span = document.createElement('span');
+    span.setAttribute('data-highlight-id', h.id);
+    span.style.cursor = 'pointer';
+    span.title = '點擊移除';
+    
+    applyStyleToSpan(span, h.style);
+    
+    span.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const event = new CustomEvent('removeHighlight', { detail: h.id });
+      document.dispatchEvent(event);
+    });
+    
     range.surroundContents(span);
     console.log('    ✓✓✓ 成功插入 DOM');
   } catch (e) {
