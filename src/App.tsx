@@ -20,6 +20,23 @@ export interface ChapterInfo {
   path: string;
 }
 
+// ========== 書名映射表 - 新增書本時記得在這裡加入書名 ==========
+export const BOOK_TITLES: Record<string, string> = {
+  book1: '立界線得自由',
+  book2: '情感健康的門徒',
+  book3: '向保羅學宣教',
+  book4: '成為有感染力的基督徒',
+  book5: '如何活出基督的樣式',
+  book6: '從歷史中看見神的啟示',
+  book7: '基要陪讀課程',
+  book8: '靈性關懷與身心健康',
+  book9: '三層天禱告',
+  book10: '禱告的盾牌',
+  book11: '從懷疑到相信',
+  book12: '十架預言真奇妙',
+  book13: '十字架跨越的智慧',
+};
+
 // ========== 章節配置 - 新增書本時記得在這裡加入章節定義 ==========
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
   book1: [
