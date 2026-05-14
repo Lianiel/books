@@ -35,6 +35,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book11: '從懷疑到相信',
   book12: '十架預言真奇妙',
   book13: '十字架跨越的智慧',
+  book14: '活在聖靈中',
 };
 
 // ========== 章節配置 - 新增書本時記得在這裡加入章節定義 ==========
@@ -171,6 +172,18 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter6', title: '第6章 我叫法蘭克', path: '/book13/chapter6' },
     { id: 'chapter7', title: '第7章 魔鬼的講壇', path: '/book13/chapter7' },
   ],
+  book14: [
+    { id: 'home', title: '簡介', path: '/book14/home' },
+    { id: 'chapter1', title: '第1章 序言及前言', path: '/book14/chapter1' },
+    { id: 'chapter2', title: '第2章 看清楚聖靈', path: '/book14/chapter2' },
+    { id: 'chapter3', title: '第3章 聖經裡的聖靈', path: '/book14/chapter3' },
+    { id: 'chapter4', title: '第4章 聖靈的路徑－聖潔之道', path: '/book14/chapter4' },
+    { id: 'chapter5', title: '第5章 聖靈的路徑－成聖面面觀', path: '/book14/chapter5' },
+    { id: 'chapter6', title: '第6章 聖靈的路徑－靈恩生活', path: '/book14/chapter6' },
+    { id: 'chapter7', title: '第7章 聖靈的路徑－解釋聖靈生活', path: '/book14/chapter7' },
+    { id: 'chapter8', title: '第8章 聖靈，請來！', path: '/book14/chapter8' },
+    { id: 'chapter9', title: '第9章 附錄：羅馬書第七章的『苦中人』', path: '/book14/chapter9' },
+  ],
 };
 
 // ========== 導入 Book 1 章節 ==========
@@ -304,6 +317,18 @@ import Book13Ch4 from './components/book13/Chapter4';
 import Book13Ch5 from './components/book13/Chapter5';
 import Book13Ch6 from './components/book13/Chapter6';
 import Book13Ch7 from './components/book13/Chapter7';
+
+// ========== 導入 Book 14 章節 ==========
+import Book14Home from './components/book14/Book14Home';
+import Book14Ch1 from './components/book14/Book14Ch1';
+import Book14Ch2 from './components/book14/Book14Ch2';
+import Book14Ch3 from './components/book14/Book14Ch3';
+import Book14Ch4 from './components/book14/Book14Ch4';
+import Book14Ch5 from './components/book14/Book14Ch5';
+import Book14Ch6 from './components/book14/Book14Ch6';
+import Book14Ch7 from './components/book14/Book14Ch7';
+import Book14Ch8 from './components/book14/Book14Ch8';
+import Book14Ch9 from './components/book14/Book14Ch9';
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({ 
@@ -494,6 +519,19 @@ const App: React.FC = () => {
         <Route path="/book13/chapter7" element={<BookLayout bookId="book13" chapter="chapter7" chapters={BOOK_CHAPTERS.book13}><Book13Ch7 /></BookLayout>} />
         <Route path="/book/13" element={<BookLayout bookId="book13" chapter="chapter1" chapters={BOOK_CHAPTERS.book13}><Book13Ch1 /></BookLayout>} />
 
+        {/* ========== Book 14 - 活在聖靈中 ========== */}
+        <Route path="/book14/home" element={<BookLayout bookId="book14" chapter="home" chapters={BOOK_CHAPTERS.book14}><Book14Home /></BookLayout>} />
+        <Route path="/book14/chapter1" element={<BookLayout bookId="book14" chapter="chapter1" chapters={BOOK_CHAPTERS.book14}><Book14Ch1 /></BookLayout>} />
+        <Route path="/book14/chapter2" element={<BookLayout bookId="book14" chapter="chapter2" chapters={BOOK_CHAPTERS.book14}><Book14Ch2 /></BookLayout>} />
+        <Route path="/book14/chapter3" element={<BookLayout bookId="book14" chapter="chapter3" chapters={BOOK_CHAPTERS.book14}><Book14Ch3 /></BookLayout>} />
+        <Route path="/book14/chapter4" element={<BookLayout bookId="book14" chapter="chapter4" chapters={BOOK_CHAPTERS.book14}><Book14Ch4 /></BookLayout>} />
+        <Route path="/book14/chapter5" element={<BookLayout bookId="book14" chapter="chapter5" chapters={BOOK_CHAPTERS.book14}><Book14Ch5 /></BookLayout>} />
+        <Route path="/book14/chapter6" element={<BookLayout bookId="book14" chapter="chapter6" chapters={BOOK_CHAPTERS.book14}><Book14Ch6 /></BookLayout>} />
+        <Route path="/book14/chapter7" element={<BookLayout bookId="book14" chapter="chapter7" chapters={BOOK_CHAPTERS.book14}><Book14Ch7 /></BookLayout>} />
+        <Route path="/book14/chapter8" element={<BookLayout bookId="book14" chapter="chapter8" chapters={BOOK_CHAPTERS.book14}><Book14Ch8 /></BookLayout>} />
+        <Route path="/book14/chapter9" element={<BookLayout bookId="book14" chapter="chapter9" chapters={BOOK_CHAPTERS.book14}><Book14Ch9 /></BookLayout>} />
+        <Route path="/book/14" element={<BookLayout bookId="book14" chapter="home" chapters={BOOK_CHAPTERS.book14}><Book14Home /></BookLayout>} />
+
         {/* ========== 首頁 - 書籍列表 ========== */}
         <Route path="/" element={
           <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
@@ -652,6 +690,17 @@ const App: React.FC = () => {
                   chapters={7}
                   to="/book13/chapter1"
                   color="from-teal-500 to-cyan-600"
+                />
+
+                {/* Book 14 - 活在聖靈中 */}
+                <BookCard
+                  number={14}
+                  title="活在聖靈中"
+                  author="巴刻 (J. I. Packer)"
+                  description="深入探討聖靈的位格、工作與基督徒生命，學習如何靠聖靈行事，活出得勝的生活"
+                  chapters={10}
+                  to="/book14/home"
+                  color="from-purple-500 to-pink-600"
                 />
 
               </div>
