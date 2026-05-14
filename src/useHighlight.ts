@@ -1,11 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
 
-const SUPABASE_URL = 'https://yhchjanqmopgbwgjspmf.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx';
-
-declare const supabase: any;
-const getSb = () => (window as any).supabase?.createClient(SUPABASE_URL, SUPABASE_KEY);
-
 export type HighlightStyle = 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple';
 
 export interface Highlight {
@@ -16,91 +10,105 @@ export interface Highlight {
   style: HighlightStyle;
 }
 
-async function getUserPhone(): Promise<string | null> {
-  const sb = getSb();
-  if (!sb) return null;
-  const { data: { session } } = await sb.auth.getSession();
-  if (!session) return null;
-  return session.user.email?.split('@')[0] || null;
+// 從 localStorage 載入高亮資料
+function loadHighlights(bookId: string, chapter: string): Highlight[] {
+  try {
+    const key = `highlights_${bookId}_${chapter}`;
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : [];
+  } catch (e) {
+    console.error('載入高亮資料失敗:', e);
+    return [];
+  }
+}
+
+// 儲存高亮資料到 localStorage
+function saveHighlights(bookId: string, chapter: string, highlights: Highlight[]) {
+  try {
+    const key = `highlights_${bookId}_${chapter}`;
+    localStorage.setItem(key, JSON.stringify(highlights));
+  } catch (e) {
+    console.error('儲存高亮資料失敗:', e);
+  }
+}
+
+// 生成唯一 ID
+function generateId(): string {
+  return `hl_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 }
 
 export function useHighlight(bookId: string, chapter: string) {
   const [highlights, setHighlights] = useState<Highlight[]>([]);
-  const [userPhone, setUserPhone] = useState<string | null>(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [sb] = useState(() => getSb());
+  const [isLoggedIn] = useState(true); // 本地模式永遠是「已登入」狀態
 
+  // 載入高亮資料
   useEffect(() => {
-    getUserPhone().then(phone => {
-      setUserPhone(phone);
-      setIsLoggedIn(!!phone);
-    });
-    if (!sb) return;
-    const { data: { subscription } } = sb.auth.onAuthStateChange((_: any, session: any) => {
-      const phone = session?.user?.email?.split('@')[0] || null;
-      setUserPhone(phone);
-      setIsLoggedIn(!!phone);
-    });
-    return () => subscription.unsubscribe();
-  }, []);
+    const loaded = loadHighlights(bookId, chapter);
+    console.log('📚 載入本地高亮資料:', loaded.length, '筆');
+    setHighlights(loaded);
+  }, [bookId, chapter]);
 
-  useEffect(() => {
-    if (!userPhone || !bookId || !chapter || !sb) return;
-    sb.from('book_highlights')
-      .select('*')
-      .eq('user_phone', userPhone)
-      .eq('book_id', bookId)
-      .eq('chapter', chapter)
-      .then(({ data }: any) => {
-        if (data) {
-          console.log('📚 載入高亮資料:', data);
-          setHighlights(data as Highlight[]);
-        }
-      });
-  }, [userPhone, bookId, chapter]);
-
+  // 套用所有高亮
   const applyHighlights = useCallback(() => {
     console.log('🎨 開始套用高亮，共', highlights.length, '筆');
     clearHighlightSpans();
     highlights.forEach(h => {
-      console.log('  → 套用:', h.text_content.substring(0, 20) + '...', '顏色:', h.style);
-      try { applyHighlightToDOM(h); } catch (e) {
-        console.error('  ✗ 套用失敗:', e);
+      try { 
+        applyHighlightToDOM(h); 
+      } catch (e) {
+        console.error('套用高亮失敗:', e);
       }
     });
   }, [highlights]);
 
-  const addHighlight = useCallback(async (text: string, style: HighlightStyle) => {
-    if (!userPhone || !text.trim() || !sb) return;
-    console.log('➕ 新增高亮:', text.substring(0, 30) + '...', '顏色:', style);
-    const { data, error } = await sb.from('book_highlights')
-      .insert([{ user_phone: userPhone, book_id: bookId, chapter, text_content: text, style }])
-      .select().single();
-    if (!error && data) {
-      console.log('✓ 新增成功，資料:', data);
-      setHighlights(prev => [...prev, data as Highlight]);
-      // 立即套用樣式到 DOM
-      console.log('⚡ 立即套用到 DOM...');
-      try {
-        applyHighlightToDOM(data as Highlight);
-      } catch (e) {
-        console.error('✗ 立即套用失敗:', e);
-      }
-    } else {
-      console.error('✗ 新增失敗:', error);
+  // 新增高亮
+  const addHighlight = useCallback((text: string, style: HighlightStyle) => {
+    if (!text.trim()) {
+      console.warn('文字內容為空，無法新增高亮');
+      return;
     }
-  }, [userPhone, bookId, chapter, sb]);
 
-  const removeHighlight = useCallback(async (id: string) => {
-    if (!sb) return;
-    await sb.from('book_highlights').delete().eq('id', id);
-    setHighlights(prev => prev.filter(h => h.id !== id));
+    console.log('➕ 新增高亮:', text.substring(0, 30) + '...', '顏色:', style);
+
+    const newHighlight: Highlight = {
+      id: generateId(),
+      book_id: bookId,
+      chapter,
+      text_content: text,
+      style
+    };
+
+    const updated = [...highlights, newHighlight];
+    setHighlights(updated);
+    saveHighlights(bookId, chapter, updated);
+
+    console.log('✓ 已儲存到 localStorage');
+    console.log('⚡ 立即套用到 DOM...');
+    
+    // 立即套用到 DOM
+    try {
+      applyHighlightToDOM(newHighlight);
+      console.log('✓ 套用成功');
+    } catch (e) {
+      console.error('✗ 套用失敗:', e);
+    }
+  }, [highlights, bookId, chapter]);
+
+  // 移除高亮
+  const removeHighlight = useCallback((id: string) => {
+    console.log('🗑️ 移除高亮:', id);
+    
+    const updated = highlights.filter(h => h.id !== id);
+    setHighlights(updated);
+    saveHighlights(bookId, chapter, updated);
+
+    // 從 DOM 移除
     const span = document.querySelector(`span[data-highlight-id="${id}"]`);
     if (span?.parentNode) {
       span.parentNode.replaceChild(document.createTextNode(span.textContent || ''), span);
       span.parentNode.normalize();
     }
-  }, [sb]);
+  }, [highlights, bookId, chapter]);
 
   const isHighlighted = useCallback((text: string) =>
     highlights.some(h => h.text_content === text), [highlights]);
@@ -108,7 +116,15 @@ export function useHighlight(bookId: string, chapter: string) {
   const getHighlightByText = useCallback((text: string) =>
     highlights.find(h => h.text_content === text), [highlights]);
 
-  return { highlights, isLoggedIn, applyHighlights, addHighlight, removeHighlight, isHighlighted, getHighlightByText };
+  return { 
+    highlights, 
+    isLoggedIn, 
+    applyHighlights, 
+    addHighlight, 
+    removeHighlight, 
+    isHighlighted, 
+    getHighlightByText 
+  };
 }
 
 function clearHighlightSpans() {
@@ -123,23 +139,20 @@ function clearHighlightSpans() {
 
 function applyHighlightToDOM(h: Highlight) {
   console.log('  🔧 applyHighlightToDOM 開始');
-  console.log('    → 尋找的文字:', h.text_content);
   
-  // 步驟 1: 找主容器
+  // 找主容器
   let main = document.querySelector('main');
   if (!main) {
-    console.warn('    ⚠️ 找不到 <main>，嘗試其他選擇器...');
     main = document.querySelector('.book-content, #content, article, [role="main"]') as HTMLElement;
   }
   
   if (!main) {
-    console.error('    ✗ 找不到主容器元素');
+    console.error('    ✗ 找不到主容器');
     return;
   }
-  console.log('    ✓ 找到主容器:', main.tagName, main.className);
+  console.log('    ✓ 找到主容器:', main.tagName);
   
-  // 步驟 2: 遍歷文字節點
-  console.log('    → 開始遍歷文字節點...');
+  // 遍歷文字節點
   const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT, {
     acceptNode: (node) => {
       if ((node as Text).parentElement?.closest('span[data-highlight-id]')) {
@@ -148,75 +161,45 @@ function applyHighlightToDOM(h: Highlight) {
       if ((node as Text).parentElement?.tagName === 'SCRIPT') {
         return NodeFilter.FILTER_REJECT;
       }
-      const hasText = node.textContent?.includes(h.text_content);
-      return hasText ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+      return (node.textContent?.includes(h.text_content)) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
     }
   });
   
   const node = walker.nextNode() as Text | null;
   if (!node) {
-    console.error('    ✗ 找不到包含文字的節點');
-    console.log('    提示: 嘗試在頁面搜索是否有這段文字:', h.text_content.substring(0, 50));
+    console.error('    ✗ 找不到文字節點');
     return;
   }
-  console.log('    ✓ 找到文字節點:', node.textContent?.substring(0, 50) + '...');
+  console.log('    ✓ 找到文字節點');
   
-  // 步驟 3: 定位文字位置
   const idx = node.textContent!.indexOf(h.text_content);
   if (idx === -1) {
-    console.error('    ✗ 文字不匹配（indexOf 返回 -1）');
+    console.error('    ✗ 文字不匹配');
     return;
   }
-  console.log('    ✓ 文字位置 idx:', idx);
   
-  // 步驟 4: 創建 range
   const range = document.createRange();
-  try {
-    range.setStart(node, idx);
-    range.setEnd(node, idx + h.text_content.length);
-    console.log('    ✓ Range 創建成功');
-  } catch (e) {
-    console.error('    ✗ Range 創建失敗:', e);
-    return;
-  }
+  range.setStart(node, idx);
+  range.setEnd(node, idx + h.text_content.length);
   
-  // 步驟 5: 創建 span
   const span = document.createElement('span');
   span.setAttribute('data-highlight-id', h.id);
   span.style.cursor = 'pointer';
   span.title = '點擊移除';
-  console.log('    ✓ Span 元素創建成功');
   
-  // 步驟 6: 套用樣式
   applyStyleToSpan(span, h.style);
-  console.log('    ✓ 樣式已套用');
   
-  // 步驟 7: 添加點擊事件
   span.addEventListener('click', (e) => {
     e.stopPropagation();
     const event = new CustomEvent('removeHighlight', { detail: h.id });
     document.dispatchEvent(event);
   });
-  console.log('    ✓ 事件監聽器已添加');
   
-  // 步驟 8: 包裹文字（關鍵步驟）
   try {
     range.surroundContents(span);
-    console.log('    ✓✓✓ surroundContents 成功！Span 已插入 DOM');
-    
-    // 驗證
-    const inserted = document.querySelector(`span[data-highlight-id="${h.id}"]`);
-    if (inserted) {
-      console.log('    ✓✓✓ 驗證成功：在 DOM 中找到了 span');
-    } else {
-      console.error('    ✗✗✗ 驗證失敗：surroundContents 成功但在 DOM 中找不到 span');
-    }
+    console.log('    ✓✓✓ 成功插入 DOM');
   } catch (e) {
     console.error('    ✗✗✗ surroundContents 失敗:', e);
-    console.error('    錯誤詳情:', e instanceof Error ? e.message : String(e));
-    
-    // 提供替代方案的提示
-    console.log('    💡 可能原因：選擇的文字跨越了多個元素邊界');
   }
 }
 
