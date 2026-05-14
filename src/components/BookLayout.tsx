@@ -3,8 +3,9 @@ import { X, Volume2, VolumeX, Download, ChevronDown, ChevronUp, ChevronLeft, Che
 import { useNavigate, useLocation } from 'react-router-dom';
 import { asBlob } from 'html-docx-js-typescript';
 
-// 從 App.tsx 導入章節類型
+// 從 App.tsx 導入章節類型和書名映射
 import type { ChapterInfo } from '../App';
+import { BOOK_TITLES } from '../App';
 
 interface BookLayoutProps {
   bookId: string;
@@ -259,13 +260,22 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             <div className="flex-1 min-w-0">
               <button
                 onClick={() => setShowChapterMenu(!showChapterMenu)}
-                className="w-full flex items-center justify-between gap-1 sm:gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all font-bold text-xs sm:text-sm"
+                className="w-full flex flex-col items-center justify-center gap-0.5 sm:gap-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all font-bold text-xs sm:text-sm"
                 title="點擊選擇章節"
               >
-                <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                <span className="truncate flex-1 text-center">{currentChapter?.title || chapter}</span>
-                <span className="text-xs opacity-90 flex-shrink-0">{currentIndex + 1}/{chapters.length}</span>
-                <List className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                {/* 書名（小字、淺色） */}
+                <div className="flex items-center gap-1 w-full justify-center">
+                  <BookOpen className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0 opacity-80" />
+                  <span className="text-xs opacity-90 font-normal truncate">
+                    {BOOK_TITLES[bookId] || bookId}
+                  </span>
+                </div>
+                {/* 章節標題與進度 */}
+                <div className="flex items-center justify-between gap-1 sm:gap-2 w-full">
+                  <span className="truncate flex-1 text-center">{currentChapter?.title || chapter}</span>
+                  <span className="text-xs opacity-90 flex-shrink-0">{currentIndex + 1}/{chapters.length}</span>
+                  <List className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                </div>
               </button>
 
                 {/* 章節選擇下拉選單 */}
