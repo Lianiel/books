@@ -132,18 +132,16 @@ function applyHighlightToDOM(h: Highlight) {
 }
 
 export function applyStyleToSpan(span: HTMLElement, style: HighlightStyle) {
-  // 所有顏色都使用螢光筆效果（背景色 + 圓角）
-  span.style.borderRadius = '2px';
-  span.style.padding = '1px 2px';
+  // 改用文字顏色，並稍微加粗讓顏色更明顯
+  span.style.fontWeight = '600';
   
   switch (style) {
-    case 'red':    span.style.backgroundColor = '#fecaca'; break; // 紅色螢光筆
-    case 'orange': span.style.backgroundColor = '#fed7aa'; break; // 橙色螢光筆
-    case 'yellow': span.style.backgroundColor = '#fef08a'; break; // 黃色螢光筆
-    case 'green':  span.style.backgroundColor = '#bbf7d0'; break; // 綠色螢光筆
-    case 'blue':   span.style.backgroundColor = '#bfdbfe'; break; // 藍色螢光筆
-    case 'indigo': span.style.backgroundColor = '#c7d2fe'; break; // 靛色螢光筆
-    case 'purple': span.style.backgroundColor = '#e9d5ff'; break; // 紫色螢光筆
+    case 'red':    span.style.color = '#dc2626'; break; // 紅色文字
+    case 'orange': span.style.color = '#ea580c'; break; // 橙色文字
+    case 'yellow': span.style.color = '#ca8a04'; break; // 黃色文字（深色，確保可見）
+    case 'green':  span.style.color = '#16a34a'; break; // 綠色文字
+    case 'blue':   span.style.color = '#2563eb'; break; // 藍色文字
+    case 'indigo': span.style.color = '#4f46e5'; break; // 靛色文字
+    case 'purple': span.style.color = '#9333ea'; break; // 紫色文字
   }
 }
- 
