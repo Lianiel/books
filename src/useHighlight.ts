@@ -132,16 +132,29 @@ function applyHighlightToDOM(h: Highlight) {
 }
 
 export function applyStyleToSpan(span: HTMLElement, style: HighlightStyle) {
-  // 改用文字顏色，並稍微加粗讓顏色更明顯
-  span.style.fontWeight = '600';
+  // 使用 setProperty 和 !important 確保樣式優先級
+  span.style.setProperty('font-weight', '600', 'important');
   
+  let color: string;
   switch (style) {
-    case 'red':    span.style.color = '#dc2626'; break; // 紅色文字
-    case 'orange': span.style.color = '#ea580c'; break; // 橙色文字
-    case 'yellow': span.style.color = '#ca8a04'; break; // 黃色文字（深色，確保可見）
-    case 'green':  span.style.color = '#16a34a'; break; // 綠色文字
-    case 'blue':   span.style.color = '#2563eb'; break; // 藍色文字
-    case 'indigo': span.style.color = '#4f46e5'; break; // 靛色文字
-    case 'purple': span.style.color = '#9333ea'; break; // 紫色文字
+    case 'red':    color = '#dc2626'; break; // 紅色文字
+    case 'orange': color = '#ea580c'; break; // 橙色文字
+    case 'yellow': color = '#ca8a04'; break; // 黃色文字（深色，確保可見）
+    case 'green':  color = '#16a34a'; break; // 綠色文字
+    case 'blue':   color = '#2563eb'; break; // 藍色文字
+    case 'indigo': color = '#4f46e5'; break; // 靛色文字
+    case 'purple': color = '#9333ea'; break; // 紫色文字
+    default:       color = '#dc2626'; break;
   }
+  
+  // 使用 !important 強制覆蓋其他 CSS 規則
+  span.style.setProperty('color', color, 'important');
+  
+  // 添加背景色讓效果更明顯（半透明）
+  const bgColor = color + '20'; // 20 = 約 12% 透明度
+  span.style.setProperty('background-color', bgColor, 'important');
+  
+  // 添加圓角和內距讓高亮更明顯
+  span.style.setProperty('border-radius', '2px', 'important');
+  span.style.setProperty('padding', '1px 2px', 'important');
 }
