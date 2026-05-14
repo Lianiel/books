@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { X, Volume2, VolumeX, LogOut, Download, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List } from 'lucide-react';
+import { X, Volume2, VolumeX, Download, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { asBlob } from 'html-docx-js-typescript';
 
@@ -63,17 +63,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   const previousChapter = currentIndex > 0 ? chapters[currentIndex - 1] : null;
   const nextChapter = currentIndex >= 0 && currentIndex < chapters.length - 1 ? chapters[currentIndex + 1] : null;
   
-  // 登出功能
-  const handleLogout = async () => {
-    const sb = (window as any).supabase?.createClient(
-      'https://yhchjanqmopgbwgjspmf.supabase.co',
-      'sb_publishable_51sbrd_Tv8Xuab92XiqRVQ_7iePDoJx'
-    );
-    if (sb) {
-      await sb.auth.signOut();
-      window.location.reload();
-    }
-  };
+
   
   // 自動展開所有區塊（不顯示提示）
   const clickAllToggles = () => {
@@ -436,7 +426,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             </button>
           </div>
 
-          {/* 右側:字體大小 + 登出 */}
+          {/* 右側:字體大小 */}
           <div className="flex items-center gap-1">
             <button
               onClick={() => setShowFontSelector(!showFontSelector)}
@@ -448,15 +438,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
               title="字體大小調整"
             >
               <span className="font-bold">{fontSizeLabels[fontSize]}</span>
-            </button>
-            
-            <button
-              onClick={handleLogout}
-              className="flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-white transition-colors font-semibold shadow-lg text-xs sm:text-sm"
-              title="登出"
-            >
-              <LogOut className="w-4 h-4" />
-              <span className="hidden sm:inline">登出</span>
             </button>
           </div>
         </div>
