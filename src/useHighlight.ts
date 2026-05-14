@@ -52,35 +52,30 @@ export function useHighlight(bookId: string, chapter: string) {
       .eq('book_id', bookId)
       .eq('chapter', chapter)
       .then(({ data }: any) => {
-        if (data) {
-          console.log('📚 載入高亮資料:', data);
-          setHighlights(data as Highlight[]);
-        }
+        if (data) setHighlights(data as Highlight[]);
       });
   }, [userPhone, bookId, chapter]);
 
   const applyHighlights = useCallback(() => {
-    console.log('🎨 開始套用高亮，共', highlights.length, '筆');
     clearHighlightSpans();
     highlights.forEach(h => {
-      console.log('  → 套用:', h.text_content.substring(0, 20) + '...', '顏色:', h.style);
-      try { applyHighlightToDOM(h); } catch (e) {
-        console.error('  ✗ 套用失敗:', e);
-      }
+      try { applyHighlightToDOM(h); } catch (e) {}
     });
   }, [highlights]);
 
   const addHighlight = useCallback(async (text: string, style: HighlightStyle) => {
     if (!userPhone || !text.trim() || !sb) return;
-    console.log('➕ 新增高亮:', text.substring(0, 30) + '...', '顏色:', style);
     const { data, error } = await sb.from('book_highlights')
       .insert([{ user_phone: userPhone, book_id: bookId, chapter, text_content: text, style }])
       .select().single();
     if (!error && data) {
-      console.log('✓ 新增成功，資料:', data);
       setHighlights(prev => [...prev, data as Highlight]);
-    } else {
-      console.error('✗ 新增失敗:', error);
+      // 🔧 關鍵修復：立即套用樣式到 DOM
+      try {
+        applyHighlightToDOM(data as Highlight);
+      } catch (e) {
+        console.error('套用高亮失敗:', e);
+      }
     }
   }, [userPhone, bookId, chapter, sb]);
 
@@ -116,11 +111,7 @@ function clearHighlightSpans() {
 
 function applyHighlightToDOM(h: Highlight) {
   const main = document.querySelector('main');
-  if (!main) {
-    console.error('  ✗ 找不到 main 元素');
-    return;
-  }
-  
+  if (!main) return;
   const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT, {
     acceptNode: (node) => {
       if ((node as Text).parentElement?.closest('span[data-highlight-id]')) return NodeFilter.FILTER_REJECT;
@@ -128,56 +119,27 @@ function applyHighlightToDOM(h: Highlight) {
       return (node.textContent?.includes(h.text_content)) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
     }
   });
-  
   const node = walker.nextNode() as Text | null;
-  if (!node) {
-    console.error('  ✗ 找不到文字節點:', h.text_content.substring(0, 30));
-    return;
-  }
-  
+  if (!node) return;
   const idx = node.textContent!.indexOf(h.text_content);
-  if (idx === -1) {
-    console.error('  ✗ 文字不匹配');
-    return;
-  }
-  
+  if (idx === -1) return;
   const range = document.createRange();
   range.setStart(node, idx);
   range.setEnd(node, idx + h.text_content.length);
-  
   const span = document.createElement('span');
   span.setAttribute('data-highlight-id', h.id);
   span.style.cursor = 'pointer';
   span.title = '點擊移除';
-  
-  // 套用樣式
-  console.log('  → 套用樣式到 span，style 值:', h.style, '型別:', typeof h.style);
   applyStyleToSpan(span, h.style);
-  
-  // 檢查樣式是否成功套用
-  console.log('  → span 實際樣式:', {
-    color: span.style.color,
-    backgroundColor: span.style.backgroundColor,
-    fontWeight: span.style.fontWeight
-  });
-  
   span.addEventListener('click', (e) => {
     e.stopPropagation();
     const event = new CustomEvent('removeHighlight', { detail: h.id });
     document.dispatchEvent(event);
   });
-  
-  try { 
-    range.surroundContents(span);
-    console.log('  ✓ 成功包裹 span');
-  } catch (e) {
-    console.error('  ✗ 包裹失敗:', e);
-  }
+  try { range.surroundContents(span); } catch (e) {}
 }
 
 export function applyStyleToSpan(span: HTMLElement, style: HighlightStyle) {
-  console.log('    🎨 applyStyleToSpan 被調用，style =', style, '型別 =', typeof style);
-  
   // 使用 setProperty 和 !important 確保樣式優先級
   span.style.setProperty('font-weight', '600', 'important');
   
@@ -190,13 +152,8 @@ export function applyStyleToSpan(span: HTMLElement, style: HighlightStyle) {
     case 'blue':   color = '#2563eb'; break;
     case 'indigo': color = '#4f46e5'; break;
     case 'purple': color = '#9333ea'; break;
-    default:       
-      color = '#dc2626';
-      console.warn('    ⚠️ 未知的 style 值:', style, '使用預設紅色');
-      break;
+    default:       color = '#dc2626'; break;
   }
-  
-  console.log('    → 決定使用顏色:', color);
   
   // 使用 !important 強制覆蓋其他 CSS 規則
   span.style.setProperty('color', color, 'important');
@@ -208,6 +165,4 @@ export function applyStyleToSpan(span: HTMLElement, style: HighlightStyle) {
   // 添加圓角和內距讓高亮更明顯
   span.style.setProperty('border-radius', '2px', 'important');
   span.style.setProperty('padding', '1px 2px', 'important');
-  
-  console.log('    ✓ 樣式已設定');
 }
