@@ -1,504 +1,671 @@
-import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { X, Volume2, VolumeX, Download, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List } from 'lucide-react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { asBlob } from 'html-docx-js-typescript';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Book } from 'lucide-react';
+import BookLayout from './components/BookLayout';
 
-// 從 App.tsx 導入章節類型和書名映射
-import type { ChapterInfo } from '../App';
-import { BOOK_TITLES } from '../App';
+// ========== TypeScript 型別定義 ==========
 
-interface BookLayoutProps {
-  bookId: string;
-  chapter: string;
-  chapters: ChapterInfo[];  // 章節配置從 props 傳入
-  children: ReactNode;
+interface BookCardProps {
+  number: number;
+  title: string;
+  author: string;
+  description: string;
+  chapters: number;
+  to: string;
+  color?: string;
 }
 
-type FontSize = 'sm' | 'base' | 'lg' | 'xl' | '2xl';
+export interface ChapterInfo {
+  id: string;
+  title: string;
+  path: string;
+}
 
-const fontSizeClasses: Record<FontSize, string> = {
-  'sm': 'text-sm',
-  'base': 'text-base',
-  'lg': 'text-lg',
-  'xl': 'text-xl',
-  '2xl': 'text-2xl'
+// ========== 書名映射表 - 新增書本時記得在這裡加入書名 ==========
+export const BOOK_TITLES: Record<string, string> = {
+  book1: '立界線得自由',
+  book2: '情感健康的門徒',
+  book3: '向保羅學宣教',
+  book4: '成為有感染力的基督徒',
+  book5: '如何活出基督的樣式',
+  book6: '從歷史中看見神的啟示',
+  book7: '基要陪讀課程',
+  book8: '靈性關懷與身心健康',
+  book9: '三層天禱告',
+  book10: '禱告的盾牌',
+  book11: '從懷疑到相信',
+  book12: '十架預言真奇妙',
+  book13: '十字架跨越的智慧',
 };
 
-const fontSizeLabels: Record<FontSize, string> = {
-  'sm': '14',    // 14px
-  'base': '16',  // 16px
-  'lg': '18',    // 18px
-  'xl': '20',    // 20px
-  '2xl': '24'    // 24px
+// ========== 章節配置 - 新增書本時記得在這裡加入章節定義 ==========
+export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
+  book1: [
+    { id: 'home', title: '簡介', path: '/book1/home' },
+    { id: 'definition', title: '界線的定義', path: '/book1/definition' },
+    { id: 'development', title: '界線的發展', path: '/book1/development' },
+    { id: 'myths', title: '界線的迷思', path: '/book1/myths' },
+    { id: 'diagnosis', title: '界線的診斷', path: '/book1/diagnosis' },
+    { id: 'laws', title: '界線的法則', path: '/book1/laws' },
+    { id: 'ch7', title: '第7章', path: '/book1/ch7' },
+    { id: 'ch8', title: '第8章', path: '/book1/ch8' },
+    { id: 'ch9', title: '第9章', path: '/book1/ch9' },
+    { id: 'ch10', title: '第10章', path: '/book1/ch10' },
+    { id: 'ch11', title: '第11章', path: '/book1/ch11' },
+    { id: 'ch12', title: '第12章', path: '/book1/ch12' },
+    { id: 'ch13', title: '第13章', path: '/book1/ch13' },
+    { id: 'ch14', title: '第14章', path: '/book1/ch14' },
+    { id: 'ch15', title: '第15章', path: '/book1/ch15' },
+    { id: 'ch16', title: '第16章', path: '/book1/ch16' },
+    { id: 'ch17', title: '第17章', path: '/book1/ch17' },
+  ],
+  book2: [
+    { id: 'chapter1', title: '第1章', path: '/book2/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book2/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book2/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book2/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book2/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book2/chapter6' },
+    { id: 'chapter7', title: '第7章', path: '/book2/chapter7' },
+    { id: 'chapter8', title: '第8章', path: '/book2/chapter8' },
+  ],
+  book3: [
+    { id: 'chapter1', title: '第1章', path: '/book3/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book3/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book3/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book3/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book3/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book3/chapter6' },
+    { id: 'chapter7', title: '第7章', path: '/book3/chapter7' },
+    { id: 'chapter8', title: '第8章', path: '/book3/chapter8' },
+  ],
+  book4: [
+    { id: 'chapter1', title: '第1章', path: '/book4/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book4/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book4/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book4/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book4/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book4/chapter6' },
+    { id: 'chapter7', title: '第7章', path: '/book4/chapter7' },
+    { id: 'chapter8', title: '第8章', path: '/book4/chapter8' },
+    { id: 'chapter9', title: '第9章', path: '/book4/chapter9' },
+    { id: 'chapter10', title: '第10章', path: '/book4/chapter10' },
+    { id: 'chapter11', title: '第11章', path: '/book4/chapter11' },
+    { id: 'chapter12', title: '第12章', path: '/book4/chapter12' },
+    { id: 'chapter13', title: '第13章', path: '/book4/chapter13' },
+    { id: 'chapter14', title: '第14章', path: '/book4/chapter14' },
+    { id: 'chapter15', title: '第15章', path: '/book4/chapter15' },
+    { id: 'chapter16', title: '第16章', path: '/book4/chapter16' },
+  ],
+  book5: [
+    { id: 'chapter1', title: '第1章', path: '/book5/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book5/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book5/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book5/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book5/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book5/chapter6' },
+  ],
+  book6: [
+    { id: 'chapter1', title: '第1章', path: '/book6/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book6/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book6/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book6/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book6/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book6/chapter6' },
+    { id: 'chapter7', title: '第7章', path: '/book6/chapter7' },
+    { id: 'chapter8', title: '第8章', path: '/book6/chapter8' },
+  ],
+  book7: [
+    { id: 'chapter1', title: '第1章', path: '/book7/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book7/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book7/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book7/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book7/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book7/chapter6' },
+  ],
+  book8: [
+    { id: 'chapter1', title: '第1章', path: '/book8/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book8/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book8/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book8/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book8/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book8/chapter6' },
+    { id: 'chapter7', title: '第7章', path: '/book8/chapter7' },
+    { id: 'chapter8', title: '第8章', path: '/book8/chapter8' },
+    { id: 'chapter9', title: '第9章', path: '/book8/chapter9' },
+    { id: 'chapter10', title: '第10章', path: '/book8/chapter10' },
+    { id: 'chapter11', title: '第11章', path: '/book8/chapter11' },
+    { id: 'chapter12', title: '第12章', path: '/book8/chapter12' },
+  ],
+  book9: [
+    { id: 'intro', title: '引言', path: '/book9/intro' },
+    { id: 'chapter1', title: '第1章', path: '/book9/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book9/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book9/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book9/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book9/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book9/chapter6' },
+  ],
+  book10: [
+    { id: 'chapter1', title: '第1章', path: '/book10/chapter1' },
+    { id: 'chapter2', title: '第2章', path: '/book10/chapter2' },
+    { id: 'chapter3', title: '第3章', path: '/book10/chapter3' },
+    { id: 'chapter4', title: '第4章', path: '/book10/chapter4' },
+    { id: 'chapter5', title: '第5章', path: '/book10/chapter5' },
+    { id: 'chapter6', title: '第6章', path: '/book10/chapter6' },
+    { id: 'chapter7', title: '第7章', path: '/book10/chapter7' },
+    { id: 'chapter8', title: '第8章', path: '/book10/chapter8' },
+    { id: 'chapter9', title: '第9章', path: '/book10/chapter9' },
+  ],
+  book11: [
+    { id: 'lesson1', title: '第1課', path: '/book11/lesson1' },
+  ],
+  book12: [
+    { id: 'home', title: '十架預言真奇妙', path: '/book12/home' },
+  ],
+  book13: [
+    { id: 'chapter1', title: '第1章 易肇事路口', path: '/book13/chapter1' },
+    { id: 'chapter2', title: '第2章 不隨血氣起舞', path: '/book13/chapter2' },
+    { id: 'chapter3', title: '第3章 一根繩子', path: '/book13/chapter3' },
+    { id: 'chapter4', title: '第4章 操練', path: '/book13/chapter4' },
+    { id: 'chapter5', title: '第5章 莽漢、艾利克斯和曼紐爾', path: '/book13/chapter5' },
+    { id: 'chapter6', title: '第6章 我叫法蘭克', path: '/book13/chapter6' },
+    { id: 'chapter7', title: '第7章 魔鬼的講壇', path: '/book13/chapter7' },
+  ],
 };
 
+// ========== 導入 Book 1 章節 ==========
+import Book1Home from './components/book1/SectionHome';
+import Book1Definition from './components/book1/SectionDefinition';
+import Book1Development from './components/book1/SectionDevelopment';
+import Book1Myths from './components/book1/SectionMyths';
+import Book1Diagnosis from './components/book1/SectionDiagnosis';
+import Book1Laws from './components/book1/SectionLaws';
+import Book1Ch7 from './components/book1/SectionCh7';
+import Book1Ch8 from './components/book1/SectionCh8';
+import Book1Ch9 from './components/book1/SectionCh9';
+import Book1Ch10 from './components/book1/SectionCh10';
+import Book1Ch11 from './components/book1/SectionCh11';
+import Book1Ch12 from './components/book1/SectionCh12';
+import Book1Ch13 from './components/book1/SectionCh13';
+import Book1Ch14 from './components/book1/SectionCh14';
+import Book1Ch15 from './components/book1/SectionCh15';
+import Book1Ch16 from './components/book1/SectionCh16';
+import Book1Ch17 from './components/book1/SectionCh17';
 
-const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, children }) => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  
-  // 字體縮放
-  const [fontSize, setFontSize] = useState<FontSize>('base');
-  
-  // 工具列顯示/隱藏
-  const [showToolbar, setShowToolbar] = useState(true);
-  
-  // 章節選擇器顯示/隱藏
-  const [showChapterMenu, setShowChapterMenu] = useState(false);
-  
-  // TTS 狀態
-  const [isSpeaking, setIsSpeaking] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
-  const [speechRate, setSpeechRate] = useState(0.5);
-  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
-  
-  // 語速選擇器
-  const [showSpeedSelector, setShowSpeedSelector] = useState(false);
-  
-  // 字體選擇器
-  const [showFontSelector, setShowFontSelector] = useState(false);
-  
-  // 獲取章節資訊
-  const currentIndex = chapters.findIndex(ch => ch.id === chapter);
-  const currentChapter = chapters[currentIndex];
-  const previousChapter = currentIndex > 0 ? chapters[currentIndex - 1] : null;
-  const nextChapter = currentIndex >= 0 && currentIndex < chapters.length - 1 ? chapters[currentIndex + 1] : null;
-  
+// ========== 導入 Book 2 章節 ==========
+import Book2Ch1 from './components/book2/Chapter1';
+import Book2Ch2 from './components/book2/Chapter2';
+import Book2Ch3 from './components/book2/Chapter3';
+import Book2Ch4 from './components/book2/Chapter4';
+import Book2Ch5 from './components/book2/Chapter5';
+import Book2Ch6 from './components/book2/Chapter6';
+import Book2Ch7 from './components/book2/Chapter7';
+import Book2Ch8 from './components/book2/Chapter8';
 
-  
-  // 自動展開所有區塊（不顯示提示）
-  const clickAllToggles = () => {
-    // 找到所有按鈕,檢查是否包含 ChevronDown（表示收合狀態）
-    const buttons = Array.from(document.querySelectorAll('button'));
-    buttons.forEach(btn => {
-      // 檢查按鈕內是否有 ChevronDown 的 SVG
-      const hasChevronDown = btn.querySelector('svg')?.parentElement?.innerHTML.includes('ChevronDown');
-      if (hasChevronDown || btn.querySelector('[class*="lucide-chevron-down"]')) {
-        btn.click();
-      }
-    });
-  };
-  
-  // 匯出 Word
-  const handleExportWord = async () => {
-    try {
-      const mainContent = document.querySelector('main');
-      if (!mainContent) {
-        alert('找不到內容區域');
-        return;
-      }
-      
-      const clone = mainContent.cloneNode(true) as HTMLElement;
-      
-      clone.querySelectorAll('button').forEach(btn => btn.remove());
-      clone.querySelectorAll('[class*="toolbar"]').forEach(el => el.remove());
-      
-      const htmlContent = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="UTF-8">
-          <style>
-            body { font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif; }
-            h1, h2, h3 { color: #1e40af; }
-            p { line-height: 1.6; margin-bottom: 0.5em; }
-          </style>
-        </head>
-        <body>
-          ${clone.innerHTML}
-        </body>
-        </html>
-      `;
-      
-      const blob = await asBlob(htmlContent);
-      
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `${bookId}_${chapter}.docx`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      
-      alert('Word 檔案已下載!');
-    } catch (error) {
-      console.error('匯出失敗:', error);
-      alert('匯出失敗,請稍後再試');
-    }
-  };
+// ========== 導入 Book 3 章節 ==========
+import Book3Ch1 from './components/book3/Chapter1';
+import Book3Ch2 from './components/book3/Chapter2';
+import Book3Ch3 from './components/book3/Chapter3';
+import Book3Ch4 from './components/book3/Chapter4';
+import Book3Ch5 from './components/book3/Chapter5';
+import Book3Ch6 from './components/book3/Chapter6';
+import Book3Ch7 from './components/book3/Chapter7';
+import Book3Ch8 from './components/book3/Chapter8';
 
-  // 自動展開所有區塊（頁面載入或切換章節時）
-  useEffect(() => {
-    const expandAll = () => {
-      // 找到所有可能的可展開區塊容器
-      const containers = document.querySelectorAll('.bg-white.rounded-lg.shadow-md');
-      
-      containers.forEach(container => {
-        // 在每個容器內找到按鈕
-        const button = container.querySelector('button');
-        if (button) {
-          // 檢查容器內是否只有一個子元素（只有按鈕，沒有內容區）
-          // 如果有內容區，容器會有2個子元素：button 和 content div
-          if (container.children.length === 1) {
-            // 只有按鈕，沒有內容，說明是收合狀態
-            button.click();
-          }
-        }
-      });
-    };
-    
-    const timer = setTimeout(expandAll, 500);
-    return () => clearTimeout(timer);
-  }, [location.pathname]);
+// ========== 導入 Book 4 章節 ==========
+import Book4Ch1 from './components/book4/Chapter1';
+import Book4Ch2 from './components/book4/Chapter2';
+import Book4Ch3 from './components/book4/Chapter3';
+import Book4Ch4 from './components/book4/Chapter4';
+import Book4Ch5 from './components/book4/Chapter5';
+import Book4Ch6 from './components/book4/Chapter6';
+import Book4Ch7 from './components/book4/Chapter7';
+import Book4Ch8 from './components/book4/Chapter8';
+import Book4Ch9 from './components/book4/Chapter9';
+import Book4Ch10 from './components/book4/Chapter10';
+import Book4Ch11 from './components/book4/Chapter11';
+import Book4Ch12 from './components/book4/Chapter12';
+import Book4Ch13 from './components/book4/Chapter13';
+import Book4Ch14 from './components/book4/Chapter14';
+import Book4Ch15 from './components/book4/Chapter15';
+import Book4Ch16 from './components/book4/Chapter16';
 
-  // 關閉按鈕
-  const handleClose = () => {
-    if (isSpeaking) {
-      window.speechSynthesis.cancel();
-      setIsSpeaking(false);
-      setIsPaused(false);
-    }
-    
-    // 檢查是否在 iframe 中（從埔和小站嵌入）
-    if (window.self !== window.parent) {
-      // 在 iframe 中，發送訊息給父窗口
-      window.parent.postMessage({ type: 'closeBookEmbed' }, '*');
-    } else {
-      // 直接開啟，返回書房首頁
-      navigate('/');
-    }
-  };
+// ========== 導入 Book 5 章節 ==========
+import Book5Ch1 from './components/book5/Chapter1';
+import Book5Ch2 from './components/book5/Chapter2';
+import Book5Ch3 from './components/book5/Chapter3';
+import Book5Ch4 from './components/book5/Chapter4';
+import Book5Ch5 from './components/book5/Chapter5';
+import Book5Ch6 from './components/book5/Chapter6';
 
-  // TTS 控制
-  const handleSpeak = () => {
-    if (isPaused) {
-      window.speechSynthesis.resume();
-      setIsPaused(false);
-      return;
-    }
+// ========== 導入 Book 6 章節 ==========
+import Book6Ch1 from './components/book6/Chapter1';
+import Book6Ch2 from './components/book6/Chapter2';
+import Book6Ch3 from './components/book6/Chapter3';
+import Book6Ch4 from './components/book6/Chapter4';
+import Book6Ch5 from './components/book6/Chapter5';
+import Book6Ch6 from './components/book6/Chapter6';
+import Book6Ch7 from './components/book6/Chapter7';
+import Book6Ch8 from './components/book6/Chapter8';
 
-    if (isSpeaking) {
-      window.speechSynthesis.pause();
-      setIsPaused(true);
-      return;
-    }
+// ========== 導入 Book 7 章節 ==========
+import Book7Ch1 from './components/book7/Chapter1';
+import Book7Ch2 from './components/book7/Chapter2';
+import Book7Ch3 from './components/book7/Chapter3';
+import Book7Ch4 from './components/book7/Chapter4';
+import Book7Ch5 from './components/book7/Chapter5';
+import Book7Ch6 from './components/book7/Chapter6';
 
-    const mainContent = document.querySelector('main');
-    if (!mainContent) return;
+// ========== 導入 Book 8 章節 ==========
+import Book8Ch1 from './components/book8/Chapter1';
+import Book8Ch2 from './components/book8/Chapter2';
+import Book8Ch3 from './components/book8/Chapter3';
+import Book8Ch4 from './components/book8/Chapter4';
+import Book8Ch5 from './components/book8/Chapter5';
+import Book8Ch6 from './components/book8/Chapter6';
+import Book8Ch7 from './components/book8/Chapter7';
+import Book8Ch8 from './components/book8/Chapter8';
+import Book8Ch9 from './components/book8/Chapter9';
+import Book8Ch10 from './components/book8/Chapter10';
+import Book8Ch11 from './components/book8/Chapter11';
+import Book8Ch12 from './components/book8/Chapter12';
 
-    const textContent = mainContent.innerText;
-    const utterance = new SpeechSynthesisUtterance(textContent);
-    utterance.lang = 'zh-TW';
-    utterance.rate = speechRate;
-    
-    utterance.onstart = () => {
-      setIsSpeaking(true);
-      setIsPaused(false);
-    };
-    
-    utterance.onend = () => {
-      setIsSpeaking(false);
-      setIsPaused(false);
-      utteranceRef.current = null;
-    };
-    
-    utterance.onerror = () => {
-      setIsSpeaking(false);
-      setIsPaused(false);
-      utteranceRef.current = null;
-    };
+// ========== 導入 Book 9 章節 ==========
+import Book9Intro from './components/book9/Intro';
+import Book9Ch1 from './components/book9/Chapter1';
+import Book9Ch2 from './components/book9/Chapter2';
+import Book9Ch3 from './components/book9/Chapter3';
+import Book9Ch4 from './components/book9/Chapter4';
+import Book9Ch5 from './components/book9/Chapter5';
+import Book9Ch6 from './components/book9/Chapter6';
 
-    utteranceRef.current = utterance;
-    window.speechSynthesis.speak(utterance);
-  };
+// ========== 導入 Book 10 章節 ==========
+import Book10Ch1 from './components/book10/Chapter1';
+import Book10Ch2 from './components/book10/Chapter2';
+import Book10Ch3 from './components/book10/Chapter3';
+import Book10Ch4 from './components/book10/Chapter4';
+import Book10Ch5 from './components/book10/Chapter5';
+import Book10Ch6 from './components/book10/Chapter6';
+import Book10Ch7 from './components/book10/Chapter7';
+import Book10Ch8 from './components/book10/Chapter8';
+import Book10Ch9 from './components/book10/Chapter9';
 
-  const handleStopSpeak = () => {
-    window.speechSynthesis.cancel();
-    setIsSpeaking(false);
-    setIsPaused(false);
-    utteranceRef.current = null;
-  };
+// ========== 導入 Book 11 章節 ==========
+import Book11Lesson1 from './components/book11/Lesson1';
 
-  // 章節切換
-  const handleChapterChange = (chapterPath: string) => {
-    if (isSpeaking) {
-      window.speechSynthesis.cancel();
-      setIsSpeaking(false);
-      setIsPaused(false);
-    }
-    
-    setShowChapterMenu(false);
-    navigate(chapterPath);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+// ========== 導入 Book 12 章節 ==========
+import Book12Home from './components/book12/Book12Home';
 
+// ========== 導入 Book 13 章節 ==========
+import Book13Ch1 from './components/book13/Chapter1';
+import Book13Ch2 from './components/book13/Chapter2';
+import Book13Ch3 from './components/book13/Chapter3';
+import Book13Ch4 from './components/book13/Chapter4';
+import Book13Ch5 from './components/book13/Chapter5';
+import Book13Ch6 from './components/book13/Chapter6';
+import Book13Ch7 from './components/book13/Chapter7';
+
+// BookCard 組件
+const BookCard: React.FC<BookCardProps> = ({ 
+  number, 
+  title, 
+  author, 
+  description, 
+  chapters, 
+  to, 
+  color = "from-blue-500 to-purple-600" 
+}) => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-      
-      {/* ========== 頂部章節導航條 ========== */}
-      <div className="sticky top-0 z-50 bg-gradient-to-r from-pink-300 to-pink-400 shadow-lg" style={{ paddingTop: 'max(env(safe-area-inset-top), 20px)' }}>
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2 sm:py-3">
-          <div className="flex items-center gap-2">
-            
-            {/* 左側:上一章按鈕 */}
-            <button
-              onClick={() => previousChapter && handleChapterChange(previousChapter.path)}
-              disabled={!previousChapter}
-              className={`flex items-center gap-1 px-2 sm:px-3 py-2 rounded-lg font-semibold text-xs sm:text-sm transition-colors flex-shrink-0 ${
-                previousChapter 
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-md' 
-                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-              }`}
-              title={previousChapter ? `上一章: ${previousChapter.title}` : '已是第一章'}
-            >
-              <ChevronLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">上一章</span>
-            </button>
-
-            {/* 中間:章節標題與選擇器（佔據剩餘空間） */}
-            <div className="flex-1 min-w-0">
-              <button
-                onClick={() => setShowChapterMenu(!showChapterMenu)}
-                className="w-full flex items-center justify-between gap-1 sm:gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all font-bold text-xs sm:text-sm"
-                title="點擊選擇章節"
-              >
-                <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                <span className="truncate flex-1 text-center">
-                  <span className="opacity-75 font-normal">{BOOK_TITLES[bookId] || bookId}</span>
-                  <span className="opacity-60 mx-1">·</span>
-                  {currentChapter?.title || chapter}
-                </span>
-                <span className="text-xs opacity-90 flex-shrink-0">{currentIndex + 1}/{chapters.length}</span>
-                <List className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
-              </button>
-
-                {/* 章節選擇下拉選單 */}
-                {showChapterMenu && (
-                  <>
-                    {/* 背景遮罩 */}
-                    <div 
-                      className="fixed inset-0 bg-black/20 z-40"
-                      onClick={() => setShowChapterMenu(false)}
-                    />
-                    
-                    {/* 選單內容 */}
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white rounded-xl shadow-2xl overflow-hidden z-50 w-[90vw] max-w-md border-2 border-indigo-200">
-                      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-3">
-                        <h3 className="font-bold text-center">章節選擇</h3>
-                      </div>
-                      <div className="max-h-[60vh] overflow-y-auto p-2">
-                        {chapters.map((ch, idx) => (
-                          <button
-                            key={ch.id}
-                            onClick={() => {
-                              handleChapterChange(ch.path);
-                              setShowChapterMenu(false);
-                            }}
-                            className={`w-full text-left px-4 py-3 rounded-lg mb-1 transition-all ${
-                              ch.id === chapter
-                                ? 'bg-gradient-to-r from-indigo-100 to-purple-100 border-2 border-indigo-500 font-bold'
-                                : 'hover:bg-gray-100 border border-transparent'
-                            }`}
-                          >
-                            <div className="flex items-center justify-between gap-2">
-                              <span className="text-indigo-600 font-semibold text-sm">
-                                {idx + 1}.
-                              </span>
-                              <span className="flex-1 text-gray-800 text-sm">
-                                {ch.title}
-                              </span>
-                              {ch.id === chapter && (
-                                <span className="text-xs bg-indigo-600 text-white px-2 py-0.5 rounded-full">
-                                  當前
-                                </span>
-                              )}
-                            </div>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  </>
-                )}
-            </div>
-
-            {/* 下一章按鈕（縮小版） */}
-            <button
-              onClick={() => nextChapter && handleChapterChange(nextChapter.path)}
-              disabled={!nextChapter}
-              className={`flex items-center justify-center p-1.5 sm:px-2 sm:py-1.5 rounded-lg transition-colors flex-shrink-0 ${
-                nextChapter 
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-md' 
-                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-              }`}
-              title={nextChapter ? `下一章: ${nextChapter.title}` : '沒有下一章'}
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
+    <Link to={to} className="block">
+      <div className={`bg-gradient-to-br ${color} rounded-2xl p-6 text-white shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300`}>
+        <div className="flex items-start justify-between mb-4">
+          <div className="bg-white/20 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center">
+            <Book className="w-6 h-6" />
           </div>
-          
-          {/* 進度條 */}
-          <div className="mt-2 sm:mt-3 bg-gray-200 rounded-full h-1.5 sm:h-2 overflow-hidden">
-            <div 
-              className="bg-gradient-to-r from-indigo-600 to-purple-600 h-full transition-all duration-300"
-              style={{ width: `${((currentIndex + 1) / chapters.length) * 100}%` }}
-            />
+          <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-semibold">
+            Book {number}
           </div>
         </div>
-      </div>
-
-      {/* ========== 主要內容區 ========== */}
-      <main className={`${fontSizeClasses[fontSize]} px-4 py-8`}>
-        {children}
-      </main>
-
-      {/* ========== 底部工具列 ========== */}
-      <div className={`fixed bottom-0 left-0 right-0 bg-gradient-to-r from-slate-800 to-slate-900 border-t border-slate-700 shadow-2xl z-40 transition-transform duration-300 ${showToolbar ? 'translate-y-0' : 'translate-y-full'}`}>
-        <button
-          onClick={() => setShowToolbar(!showToolbar)}
-          className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-1 rounded-t-lg shadow-lg transition-colors z-30"
-          title={showToolbar ? '收起工具列' : '展開工具列'}
-        >
-          {showToolbar ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
-        </button>
-        
-        {/* 單列工具列 */}
-        <div className="flex items-center justify-between px-2 sm:px-4 py-2 max-w-7xl mx-auto">
-          
-          {/* 左側:關閉 + Word */}
-          <div className="flex items-center gap-1">
-            <button
-              onClick={handleClose}
-              className="flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm"
-              title="關閉並返回書房"
-            >
-              <X className="w-4 h-4" />
-              <span className="hidden sm:inline">關閉</span>
-            </button>
-            
-            <button
-              onClick={handleExportWord}
-              className="flex items-center gap-1 bg-indigo-600 hover:bg-indigo-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm"
-              title="匯出 Word 文件"
-            >
-              <Download className="w-4 h-4" />
-              <span className="hidden sm:inline">Word</span>
-            </button>
-          </div>
-
-          {/* 中間:TTS 控制 + 語速 */}
-          <div className="flex items-center gap-1">
-            <button
-              onClick={handleSpeak}
-              className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold text-xs sm:text-sm ${
-                isSpeaking 
-                  ? 'bg-orange-600 hover:bg-orange-700' 
-                  : 'bg-blue-600 hover:bg-blue-700'
-              } text-white shadow-lg`}
-              title={isSpeaking ? (isPaused ? '繼續' : '暫停') : '播放'}
-            >
-              {isSpeaking ? (
-                isPaused ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />
-              ) : (
-                <Volume2 className="w-4 h-4" />
-              )}
-              <span className="hidden sm:inline">
-                {isSpeaking ? (isPaused ? '繼續' : '暫停') : '朗讀'}
-              </span>
-            </button>
-            
-            {isSpeaking && (
-              <button
-                onClick={handleStopSpeak}
-                className="px-2 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm"
-                title="停止"
-              >
-                <span className="hidden sm:inline">停止</span>
-                <span className="sm:hidden">■</span>
-              </button>
-            )}
-            
-            <button
-              onClick={() => setShowSpeedSelector(!showSpeedSelector)}
-              className={`px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm ${
-                showSpeedSelector
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-slate-700 text-white hover:bg-slate-600'
-              }`}
-              title="語速調整"
-            >
-              <span className="font-bold">{speechRate}x</span>
-            </button>
-          </div>
-
-          {/* 右側:字體大小 */}
-          <div className="flex items-center gap-1">
-            <button
-              onClick={() => setShowFontSelector(!showFontSelector)}
-              className={`px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm ${
-                showFontSelector
-                  ? 'bg-slate-600 text-white'
-                  : 'bg-slate-700 text-white hover:bg-slate-600'
-              }`}
-              title="字體大小調整"
-            >
-              <span className="font-bold">{fontSizeLabels[fontSize]}</span>
-            </button>
-          </div>
+        <h3 className="text-2xl font-bold mb-2">{title}</h3>
+        <p className="text-sm text-white/80 mb-3">{author}</p>
+        <p className="text-sm text-white/90 mb-4 line-clamp-2">{description}</p>
+        <div className="flex items-center justify-between text-sm">
+          <span className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+            {chapters} {chapters > 1 ? 'chapters' : 'lesson'}
+          </span>
+          <span className="font-semibold">閱讀 →</span>
         </div>
-
-        {showSpeedSelector && (
-          <div className="bg-slate-700 border-t border-slate-600 px-2 sm:px-4 py-1.5">
-            <div className="flex items-center gap-1.5 max-w-7xl mx-auto">
-              <span className="text-white text-xs font-semibold mr-1">語速:</span>
-              {[0.5, 0.75, 1.0, 1.25, 1.5].map(rate => (
-                <button
-                  key={rate}
-                  onClick={() => {
-                    setSpeechRate(rate);
-                    setShowSpeedSelector(false);
-                  }}
-                  className={`px-3 py-1 text-sm rounded transition-all font-semibold ${
-                    speechRate === rate 
-                      ? 'bg-blue-600 text-white ring-2 ring-blue-400' 
-                      : 'bg-slate-600 text-white hover:bg-slate-500'
-                  }`}
-                >
-                  {rate}x
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {showFontSelector && (
-          <div className="bg-slate-700 border-t border-slate-600 px-2 sm:px-4 py-1.5">
-            <div className="flex items-center gap-1.5 max-w-7xl mx-auto">
-              <span className="text-white text-xs font-semibold mr-1">字體:</span>
-              {(['sm', 'base', 'lg', 'xl', '2xl'] as FontSize[]).map(size => (
-                <button
-                  key={size}
-                  onClick={() => {
-                    setFontSize(size);
-                    setShowFontSelector(false);
-                  }}
-                  className={`px-3 py-1 text-sm rounded transition-all font-semibold ${
-                    fontSize === size 
-                      ? 'bg-slate-600 text-white ring-2 ring-slate-400' 
-                      : 'bg-slate-600 text-white hover:bg-slate-500'
-                  }`}
-                >
-                  {fontSizeLabels[size]}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
-
-      <div className="h-40 sm:h-32"></div>
-    </div>
+    </Link>
   );
 };
 
-export default BookLayout;
+const App: React.FC = () => {
+  return (
+    <Router>
+      <Routes>
+        {/* ========== Book 1 - 立界線得自由 ========== */}
+        <Route path="/book1/home" element={<BookLayout bookId="book1" chapter="home" chapters={BOOK_CHAPTERS.book1}><Book1Home /></BookLayout>} />
+        <Route path="/book1/definition" element={<BookLayout bookId="book1" chapter="definition" chapters={BOOK_CHAPTERS.book1}><Book1Definition /></BookLayout>} />
+        <Route path="/book1/development" element={<BookLayout bookId="book1" chapter="development" chapters={BOOK_CHAPTERS.book1}><Book1Development /></BookLayout>} />
+        <Route path="/book1/myths" element={<BookLayout bookId="book1" chapter="myths" chapters={BOOK_CHAPTERS.book1}><Book1Myths /></BookLayout>} />
+        <Route path="/book1/diagnosis" element={<BookLayout bookId="book1" chapter="diagnosis" chapters={BOOK_CHAPTERS.book1}><Book1Diagnosis /></BookLayout>} />
+        <Route path="/book1/laws" element={<BookLayout bookId="book1" chapter="laws" chapters={BOOK_CHAPTERS.book1}><Book1Laws /></BookLayout>} />
+        <Route path="/book1/ch7" element={<BookLayout bookId="book1" chapter="ch7" chapters={BOOK_CHAPTERS.book1}><Book1Ch7 /></BookLayout>} />
+        <Route path="/book1/ch8" element={<BookLayout bookId="book1" chapter="ch8" chapters={BOOK_CHAPTERS.book1}><Book1Ch8 /></BookLayout>} />
+        <Route path="/book1/ch9" element={<BookLayout bookId="book1" chapter="ch9" chapters={BOOK_CHAPTERS.book1}><Book1Ch9 /></BookLayout>} />
+        <Route path="/book1/ch10" element={<BookLayout bookId="book1" chapter="ch10" chapters={BOOK_CHAPTERS.book1}><Book1Ch10 /></BookLayout>} />
+        <Route path="/book1/ch11" element={<BookLayout bookId="book1" chapter="ch11" chapters={BOOK_CHAPTERS.book1}><Book1Ch11 /></BookLayout>} />
+        <Route path="/book1/ch12" element={<BookLayout bookId="book1" chapter="ch12" chapters={BOOK_CHAPTERS.book1}><Book1Ch12 /></BookLayout>} />
+        <Route path="/book1/ch13" element={<BookLayout bookId="book1" chapter="ch13" chapters={BOOK_CHAPTERS.book1}><Book1Ch13 /></BookLayout>} />
+        <Route path="/book1/ch14" element={<BookLayout bookId="book1" chapter="ch14" chapters={BOOK_CHAPTERS.book1}><Book1Ch14 /></BookLayout>} />
+        <Route path="/book1/ch15" element={<BookLayout bookId="book1" chapter="ch15" chapters={BOOK_CHAPTERS.book1}><Book1Ch15 /></BookLayout>} />
+        <Route path="/book1/ch16" element={<BookLayout bookId="book1" chapter="ch16" chapters={BOOK_CHAPTERS.book1}><Book1Ch16 /></BookLayout>} />
+        <Route path="/book1/ch17" element={<BookLayout bookId="book1" chapter="ch17" chapters={BOOK_CHAPTERS.book1}><Book1Ch17 /></BookLayout>} />
+        {/* Book 1 首頁入口 */}
+        <Route path="/book1" element={<BookLayout bookId="book1" chapter="home" chapters={BOOK_CHAPTERS.book1}><Book1Home /></BookLayout>} />
+
+        {/* ========== Book 2 - 情感健康的門徒 ========== */}
+        <Route path="/book2/chapter1" element={<BookLayout bookId="book2" chapter="chapter1" chapters={BOOK_CHAPTERS.book2}><Book2Ch1 /></BookLayout>} />
+        <Route path="/book2/chapter2" element={<BookLayout bookId="book2" chapter="chapter2" chapters={BOOK_CHAPTERS.book2}><Book2Ch2 /></BookLayout>} />
+        <Route path="/book2/chapter3" element={<BookLayout bookId="book2" chapter="chapter3" chapters={BOOK_CHAPTERS.book2}><Book2Ch3 /></BookLayout>} />
+        <Route path="/book2/chapter4" element={<BookLayout bookId="book2" chapter="chapter4" chapters={BOOK_CHAPTERS.book2}><Book2Ch4 /></BookLayout>} />
+        <Route path="/book2/chapter5" element={<BookLayout bookId="book2" chapter="chapter5" chapters={BOOK_CHAPTERS.book2}><Book2Ch5 /></BookLayout>} />
+        <Route path="/book2/chapter6" element={<BookLayout bookId="book2" chapter="chapter6" chapters={BOOK_CHAPTERS.book2}><Book2Ch6 /></BookLayout>} />
+        <Route path="/book2/chapter7" element={<BookLayout bookId="book2" chapter="chapter7" chapters={BOOK_CHAPTERS.book2}><Book2Ch7 /></BookLayout>} />
+        <Route path="/book2/chapter8" element={<BookLayout bookId="book2" chapter="chapter8" chapters={BOOK_CHAPTERS.book2}><Book2Ch8 /></BookLayout>} />
+
+        {/* ========== Book 3 - 向保羅學宣教 ========== */}
+        <Route path="/book3/chapter1" element={<BookLayout bookId="book3" chapter="chapter1" chapters={BOOK_CHAPTERS.book3}><Book3Ch1 /></BookLayout>} />
+        <Route path="/book3/chapter2" element={<BookLayout bookId="book3" chapter="chapter2" chapters={BOOK_CHAPTERS.book3}><Book3Ch2 /></BookLayout>} />
+        <Route path="/book3/chapter3" element={<BookLayout bookId="book3" chapter="chapter3" chapters={BOOK_CHAPTERS.book3}><Book3Ch3 /></BookLayout>} />
+        <Route path="/book3/chapter4" element={<BookLayout bookId="book3" chapter="chapter4" chapters={BOOK_CHAPTERS.book3}><Book3Ch4 /></BookLayout>} />
+        <Route path="/book3/chapter5" element={<BookLayout bookId="book3" chapter="chapter5" chapters={BOOK_CHAPTERS.book3}><Book3Ch5 /></BookLayout>} />
+        <Route path="/book3/chapter6" element={<BookLayout bookId="book3" chapter="chapter6" chapters={BOOK_CHAPTERS.book3}><Book3Ch6 /></BookLayout>} />
+        <Route path="/book3/chapter7" element={<BookLayout bookId="book3" chapter="chapter7" chapters={BOOK_CHAPTERS.book3}><Book3Ch7 /></BookLayout>} />
+        <Route path="/book3/chapter8" element={<BookLayout bookId="book3" chapter="chapter8" chapters={BOOK_CHAPTERS.book3}><Book3Ch8 /></BookLayout>} />
+        {/* Book 3 首頁入口 */}
+        <Route path="/book3" element={<BookLayout bookId="book3" chapter="chapter1" chapters={BOOK_CHAPTERS.book3}><Book3Ch1 /></BookLayout>} />
+
+        {/* ========== Book 4 - 成為有感染力的基督徒 ========== */}
+        <Route path="/book4/chapter1" element={<BookLayout bookId="book4" chapter="chapter1" chapters={BOOK_CHAPTERS.book4}><Book4Ch1 /></BookLayout>} />
+        <Route path="/book4/chapter2" element={<BookLayout bookId="book4" chapter="chapter2" chapters={BOOK_CHAPTERS.book4}><Book4Ch2 /></BookLayout>} />
+        <Route path="/book4/chapter3" element={<BookLayout bookId="book4" chapter="chapter3" chapters={BOOK_CHAPTERS.book4}><Book4Ch3 /></BookLayout>} />
+        <Route path="/book4/chapter4" element={<BookLayout bookId="book4" chapter="chapter4" chapters={BOOK_CHAPTERS.book4}><Book4Ch4 /></BookLayout>} />
+        <Route path="/book4/chapter5" element={<BookLayout bookId="book4" chapter="chapter5" chapters={BOOK_CHAPTERS.book4}><Book4Ch5 /></BookLayout>} />
+        <Route path="/book4/chapter6" element={<BookLayout bookId="book4" chapter="chapter6" chapters={BOOK_CHAPTERS.book4}><Book4Ch6 /></BookLayout>} />
+        <Route path="/book4/chapter7" element={<BookLayout bookId="book4" chapter="chapter7" chapters={BOOK_CHAPTERS.book4}><Book4Ch7 /></BookLayout>} />
+        <Route path="/book4/chapter8" element={<BookLayout bookId="book4" chapter="chapter8" chapters={BOOK_CHAPTERS.book4}><Book4Ch8 /></BookLayout>} />
+        <Route path="/book4/chapter9" element={<BookLayout bookId="book4" chapter="chapter9" chapters={BOOK_CHAPTERS.book4}><Book4Ch9 /></BookLayout>} />
+        <Route path="/book4/chapter10" element={<BookLayout bookId="book4" chapter="chapter10" chapters={BOOK_CHAPTERS.book4}><Book4Ch10 /></BookLayout>} />
+        <Route path="/book4/chapter11" element={<BookLayout bookId="book4" chapter="chapter11" chapters={BOOK_CHAPTERS.book4}><Book4Ch11 /></BookLayout>} />
+        <Route path="/book4/chapter12" element={<BookLayout bookId="book4" chapter="chapter12" chapters={BOOK_CHAPTERS.book4}><Book4Ch12 /></BookLayout>} />
+        <Route path="/book4/chapter13" element={<BookLayout bookId="book4" chapter="chapter13" chapters={BOOK_CHAPTERS.book4}><Book4Ch13 /></BookLayout>} />
+        <Route path="/book4/chapter14" element={<BookLayout bookId="book4" chapter="chapter14" chapters={BOOK_CHAPTERS.book4}><Book4Ch14 /></BookLayout>} />
+        <Route path="/book4/chapter15" element={<BookLayout bookId="book4" chapter="chapter15" chapters={BOOK_CHAPTERS.book4}><Book4Ch15 /></BookLayout>} />
+        <Route path="/book4/chapter16" element={<BookLayout bookId="book4" chapter="chapter16" chapters={BOOK_CHAPTERS.book4}><Book4Ch16 /></BookLayout>} />
+        {/* Book 4 首頁入口 */}
+        <Route path="/book4" element={<BookLayout bookId="book4" chapter="chapter1" chapters={BOOK_CHAPTERS.book4}><Book4Ch1 /></BookLayout>} />
+
+        {/* ========== Book 5 - 如何活出基督的樣式 ========== */}
+        <Route path="/book5/chapter1" element={<BookLayout bookId="book5" chapter="chapter1" chapters={BOOK_CHAPTERS.book5}><Book5Ch1 /></BookLayout>} />
+        <Route path="/book5/chapter2" element={<BookLayout bookId="book5" chapter="chapter2" chapters={BOOK_CHAPTERS.book5}><Book5Ch2 /></BookLayout>} />
+        <Route path="/book5/chapter3" element={<BookLayout bookId="book5" chapter="chapter3" chapters={BOOK_CHAPTERS.book5}><Book5Ch3 /></BookLayout>} />
+        <Route path="/book5/chapter4" element={<BookLayout bookId="book5" chapter="chapter4" chapters={BOOK_CHAPTERS.book5}><Book5Ch4 /></BookLayout>} />
+        <Route path="/book5/chapter5" element={<BookLayout bookId="book5" chapter="chapter5" chapters={BOOK_CHAPTERS.book5}><Book5Ch5 /></BookLayout>} />
+        <Route path="/book5/chapter6" element={<BookLayout bookId="book5" chapter="chapter6" chapters={BOOK_CHAPTERS.book5}><Book5Ch6 /></BookLayout>} />
+        {/* Book 5 首頁入口 */}
+        <Route path="/book5" element={<BookLayout bookId="book5" chapter="chapter1" chapters={BOOK_CHAPTERS.book5}><Book5Ch1 /></BookLayout>} />
+
+        {/* ========== Book 6 - 列王記上 從歷史中看見神的啟示 ========== */}
+        <Route path="/book6/chapter1" element={<BookLayout bookId="book6" chapter="chapter1" chapters={BOOK_CHAPTERS.book6}><Book6Ch1 /></BookLayout>} />
+        <Route path="/book6/chapter2" element={<BookLayout bookId="book6" chapter="chapter2" chapters={BOOK_CHAPTERS.book6}><Book6Ch2 /></BookLayout>} />
+        <Route path="/book6/chapter3" element={<BookLayout bookId="book6" chapter="chapter3" chapters={BOOK_CHAPTERS.book6}><Book6Ch3 /></BookLayout>} />
+        <Route path="/book6/chapter4" element={<BookLayout bookId="book6" chapter="chapter4" chapters={BOOK_CHAPTERS.book6}><Book6Ch4 /></BookLayout>} />
+        <Route path="/book6/chapter5" element={<BookLayout bookId="book6" chapter="chapter5" chapters={BOOK_CHAPTERS.book6}><Book6Ch5 /></BookLayout>} />
+        <Route path="/book6/chapter6" element={<BookLayout bookId="book6" chapter="chapter6" chapters={BOOK_CHAPTERS.book6}><Book6Ch6 /></BookLayout>} />
+        <Route path="/book6/chapter7" element={<BookLayout bookId="book6" chapter="chapter7" chapters={BOOK_CHAPTERS.book6}><Book6Ch7 /></BookLayout>} />
+        <Route path="/book6/chapter8" element={<BookLayout bookId="book6" chapter="chapter8" chapters={BOOK_CHAPTERS.book6}><Book6Ch8 /></BookLayout>} />
+        {/* Book 6 首頁入口 */}
+        <Route path="/book6" element={<BookLayout bookId="book6" chapter="chapter1" chapters={BOOK_CHAPTERS.book6}><Book6Ch1 /></BookLayout>} />
+
+        {/* ========== Book 7 - 基要陪讀課程 ========== */}
+        <Route path="/book7/chapter1" element={<BookLayout bookId="book7" chapter="chapter1" chapters={BOOK_CHAPTERS.book7}><Book7Ch1 /></BookLayout>} />
+        <Route path="/book7/chapter2" element={<BookLayout bookId="book7" chapter="chapter2" chapters={BOOK_CHAPTERS.book7}><Book7Ch2 /></BookLayout>} />
+        <Route path="/book7/chapter3" element={<BookLayout bookId="book7" chapter="chapter3" chapters={BOOK_CHAPTERS.book7}><Book7Ch3 /></BookLayout>} />
+        <Route path="/book7/chapter4" element={<BookLayout bookId="book7" chapter="chapter4" chapters={BOOK_CHAPTERS.book7}><Book7Ch4 /></BookLayout>} />
+        <Route path="/book7/chapter5" element={<BookLayout bookId="book7" chapter="chapter5" chapters={BOOK_CHAPTERS.book7}><Book7Ch5 /></BookLayout>} />
+        <Route path="/book7/chapter6" element={<BookLayout bookId="book7" chapter="chapter6" chapters={BOOK_CHAPTERS.book7}><Book7Ch6 /></BookLayout>} />
+        {/* Book 7 首頁入口 */}
+        <Route path="/book7" element={<BookLayout bookId="book7" chapter="chapter1" chapters={BOOK_CHAPTERS.book7}><Book7Ch1 /></BookLayout>} />
+
+        {/* ========== Book 8 - 靈性關懷與身心健康 ========== */}
+        <Route path="/book8/chapter1" element={<BookLayout bookId="book8" chapter="chapter1" chapters={BOOK_CHAPTERS.book8}><Book8Ch1 /></BookLayout>} />
+        <Route path="/book8/chapter2" element={<BookLayout bookId="book8" chapter="chapter2" chapters={BOOK_CHAPTERS.book8}><Book8Ch2 /></BookLayout>} />
+        <Route path="/book8/chapter3" element={<BookLayout bookId="book8" chapter="chapter3" chapters={BOOK_CHAPTERS.book8}><Book8Ch3 /></BookLayout>} />
+        <Route path="/book8/chapter4" element={<BookLayout bookId="book8" chapter="chapter4" chapters={BOOK_CHAPTERS.book8}><Book8Ch4 /></BookLayout>} />
+        <Route path="/book8/chapter5" element={<BookLayout bookId="book8" chapter="chapter5" chapters={BOOK_CHAPTERS.book8}><Book8Ch5 /></BookLayout>} />
+        <Route path="/book8/chapter6" element={<BookLayout bookId="book8" chapter="chapter6" chapters={BOOK_CHAPTERS.book8}><Book8Ch6 /></BookLayout>} />
+        <Route path="/book8/chapter7" element={<BookLayout bookId="book8" chapter="chapter7" chapters={BOOK_CHAPTERS.book8}><Book8Ch7 /></BookLayout>} />
+        <Route path="/book8/chapter8" element={<BookLayout bookId="book8" chapter="chapter8" chapters={BOOK_CHAPTERS.book8}><Book8Ch8 /></BookLayout>} />
+        <Route path="/book8/chapter9" element={<BookLayout bookId="book8" chapter="chapter9" chapters={BOOK_CHAPTERS.book8}><Book8Ch9 /></BookLayout>} />
+        <Route path="/book8/chapter10" element={<BookLayout bookId="book8" chapter="chapter10" chapters={BOOK_CHAPTERS.book8}><Book8Ch10 /></BookLayout>} />
+        <Route path="/book8/chapter11" element={<BookLayout bookId="book8" chapter="chapter11" chapters={BOOK_CHAPTERS.book8}><Book8Ch11 /></BookLayout>} />
+        <Route path="/book8/chapter12" element={<BookLayout bookId="book8" chapter="chapter12" chapters={BOOK_CHAPTERS.book8}><Book8Ch12 /></BookLayout>} />
+        {/* Book 8 首頁入口 */}
+        <Route path="/book8" element={<BookLayout bookId="book8" chapter="chapter1" chapters={BOOK_CHAPTERS.book8}><Book8Ch1 /></BookLayout>} />
+
+        {/* ========== Book 9 - 三層天禱告 ========== */}
+        <Route path="/book9/intro" element={<BookLayout bookId="book9" chapter="intro" chapters={BOOK_CHAPTERS.book9}><Book9Intro /></BookLayout>} />
+        <Route path="/book9/chapter1" element={<BookLayout bookId="book9" chapter="chapter1" chapters={BOOK_CHAPTERS.book9}><Book9Ch1 /></BookLayout>} />
+        <Route path="/book9/chapter2" element={<BookLayout bookId="book9" chapter="chapter2" chapters={BOOK_CHAPTERS.book9}><Book9Ch2 /></BookLayout>} />
+        <Route path="/book9/chapter3" element={<BookLayout bookId="book9" chapter="chapter3" chapters={BOOK_CHAPTERS.book9}><Book9Ch3 /></BookLayout>} />
+        <Route path="/book9/chapter4" element={<BookLayout bookId="book9" chapter="chapter4" chapters={BOOK_CHAPTERS.book9}><Book9Ch4 /></BookLayout>} />
+        <Route path="/book9/chapter5" element={<BookLayout bookId="book9" chapter="chapter5" chapters={BOOK_CHAPTERS.book9}><Book9Ch5 /></BookLayout>} />
+        <Route path="/book9/chapter6" element={<BookLayout bookId="book9" chapter="chapter6" chapters={BOOK_CHAPTERS.book9}><Book9Ch6 /></BookLayout>} />
+        {/* Book 9 首頁入口 */}
+        <Route path="/book9" element={<BookLayout bookId="book9" chapter="intro" chapters={BOOK_CHAPTERS.book9}><Book9Intro /></BookLayout>} />
+
+        {/* ========== Book 10 - 禱告的盾牌 ========== */}
+        <Route path="/book10/chapter1" element={<BookLayout bookId="book10" chapter="chapter1" chapters={BOOK_CHAPTERS.book10}><Book10Ch1 /></BookLayout>} />
+        <Route path="/book10/chapter2" element={<BookLayout bookId="book10" chapter="chapter2" chapters={BOOK_CHAPTERS.book10}><Book10Ch2 /></BookLayout>} />
+        <Route path="/book10/chapter3" element={<BookLayout bookId="book10" chapter="chapter3" chapters={BOOK_CHAPTERS.book10}><Book10Ch3 /></BookLayout>} />
+        <Route path="/book10/chapter4" element={<BookLayout bookId="book10" chapter="chapter4" chapters={BOOK_CHAPTERS.book10}><Book10Ch4 /></BookLayout>} />
+        <Route path="/book10/chapter5" element={<BookLayout bookId="book10" chapter="chapter5" chapters={BOOK_CHAPTERS.book10}><Book10Ch5 /></BookLayout>} />
+        <Route path="/book10/chapter6" element={<BookLayout bookId="book10" chapter="chapter6" chapters={BOOK_CHAPTERS.book10}><Book10Ch6 /></BookLayout>} />
+        <Route path="/book10/chapter7" element={<BookLayout bookId="book10" chapter="chapter7" chapters={BOOK_CHAPTERS.book10}><Book10Ch7 /></BookLayout>} />
+        <Route path="/book10/chapter8" element={<BookLayout bookId="book10" chapter="chapter8" chapters={BOOK_CHAPTERS.book10}><Book10Ch8 /></BookLayout>} />
+        <Route path="/book10/chapter9" element={<BookLayout bookId="book10" chapter="chapter9" chapters={BOOK_CHAPTERS.book10}><Book10Ch9 /></BookLayout>} />
+
+        {/* ========== Book 11 - 從懷疑到相信 ========== */}
+        <Route path="/book11/lesson1" element={<BookLayout bookId="book11" chapter="lesson1" chapters={BOOK_CHAPTERS.book11}><Book11Lesson1 /></BookLayout>} />
+
+        {/* ========== Book 12 - 十架預言真奇妙 ========== */}
+        <Route path="/book12/home" element={<BookLayout bookId="book12" chapter="home" chapters={BOOK_CHAPTERS.book12}><Book12Home /></BookLayout>} />
+        <Route path="/book/12" element={<BookLayout bookId="book12" chapter="home" chapters={BOOK_CHAPTERS.book12}><Book12Home /></BookLayout>} />
+
+        {/* ========== Book 13 - 十字架跨越的智慧 ========== */}
+        <Route path="/book13/chapter1" element={<BookLayout bookId="book13" chapter="chapter1" chapters={BOOK_CHAPTERS.book13}><Book13Ch1 /></BookLayout>} />
+        <Route path="/book13/chapter2" element={<BookLayout bookId="book13" chapter="chapter2" chapters={BOOK_CHAPTERS.book13}><Book13Ch2 /></BookLayout>} />
+        <Route path="/book13/chapter3" element={<BookLayout bookId="book13" chapter="chapter3" chapters={BOOK_CHAPTERS.book13}><Book13Ch3 /></BookLayout>} />
+        <Route path="/book13/chapter4" element={<BookLayout bookId="book13" chapter="chapter4" chapters={BOOK_CHAPTERS.book13}><Book13Ch4 /></BookLayout>} />
+        <Route path="/book13/chapter5" element={<BookLayout bookId="book13" chapter="chapter5" chapters={BOOK_CHAPTERS.book13}><Book13Ch5 /></BookLayout>} />
+        <Route path="/book13/chapter6" element={<BookLayout bookId="book13" chapter="chapter6" chapters={BOOK_CHAPTERS.book13}><Book13Ch6 /></BookLayout>} />
+        <Route path="/book13/chapter7" element={<BookLayout bookId="book13" chapter="chapter7" chapters={BOOK_CHAPTERS.book13}><Book13Ch7 /></BookLayout>} />
+        <Route path="/book/13" element={<BookLayout bookId="book13" chapter="chapter1" chapters={BOOK_CHAPTERS.book13}><Book13Ch1 /></BookLayout>} />
+
+        {/* ========== 首頁 - 書籍列表 ========== */}
+        <Route path="/" element={
+          <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+            {/* Header */}
+            <div className="bg-white shadow-md sticky top-0 z-10">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <div className="flex items-center gap-3">
+                  <Book className="w-8 h-8 text-blue-600" />
+                  <h1 className="text-2xl font-bold text-gray-900">電子書房</h1>
+                </div>
+              </div>
+            </div>
+
+            {/* 書籍網格 */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                {/* Book 1 - 立界線得自由 */}
+                <BookCard
+                  number={1}
+                  title="立界線得自由"
+                  author="克勞德博士 & 湯森德博士"
+                  description="學習在人際關係中建立健康的界線，活出自由豐盛的生命"
+                  chapters={17}
+                  to="/book1"
+                  color="from-blue-500 to-cyan-600"
+                />
+
+                {/* Book 2 - 情感健康的門徒 */}
+                <BookCard
+                  number={2}
+                  title="情感健康的門徒"
+                  author="彼得·史卡吉羅"
+                  description="整合情感健康與靈命成長，成為成熟的門徒"
+                  chapters={8}
+                  to="/book2/chapter1"
+                  color="from-green-500 to-emerald-600"
+                />
+
+                {/* Book 3 - 向保羅學宣教 */}
+                <BookCard
+                  number={3}
+                  title="向保羅學宣教"
+                  author="王乃純"
+                  description="回歸聖經的宣教學"
+                  chapters={8}
+                  to="/book3"
+                  color="from-purple-500 to-pink-600"
+                />
+
+                {/* Book 4 - 成為有感染力的基督徒 */}
+                <BookCard
+                  number={4}
+                  title="成為有感染力的基督徒"
+                  author="比爾·海波斯 & 馬克·米德堡"
+                  description="學習在日常生活中自然地分享信仰"
+                  chapters={16}
+                  to="/book4"
+                  color="from-orange-500 to-red-600"
+                />
+
+                {/* Book 5 - 如何活出基督的樣式 */}
+                <BookCard
+                  number={5}
+                  title="如何活出基督的樣式"
+                  author="作者名稱"
+                  description="六週靈修課程，學習效法基督的生命"
+                  chapters={6}
+                  to="/book5"
+                  color="from-teal-500 to-cyan-600"
+                />
+
+                {/* Book 6 - 列王記上 從歷史中看見神的啟示 */}
+                <BookCard
+                  number={6}
+                  title="從歷史中看見神的啟示"
+                  author="作者名稱"
+                  description="列王記上 從歷史中看見神的啟示"
+                  chapters={8}
+                  to="/book6"
+                  color="from-indigo-500 to-purple-600"
+                />
+
+                {/* Book 7 - 基要陪讀課程 */}
+                <BookCard
+                  number={7}
+                  title="基要陪讀課程"
+                  author="作者名稱"
+                  description="系統化的聖經陪讀教材"
+                  chapters={6}
+                  to="/book7"
+                  color="from-amber-500 to-orange-600"
+                />
+
+                {/* Book 8 - 靈性關懷與身心健康 */}
+                <BookCard
+                  number={8}
+                  title="靈性關懷與身心健康"
+                  author="作者名稱"
+                  description="整合靈性、心理與身體的全人關懷"
+                  chapters={12}
+                  to="/book8"
+                  color="from-rose-500 to-pink-600"
+                />
+
+                {/* Book 9 - 三層天禱告 */}
+                <BookCard
+                  number={9}
+                  title="三層天禱告"
+                  author="作者名稱"
+                  description="進入更深層次的禱告生活"
+                  chapters={7}
+                  to="/book9"
+                  color="from-violet-500 to-purple-600"
+                />
+
+                {/* Book 10 - 禱告的盾牌 */}
+                <BookCard
+                  number={10}
+                  title="禱告的盾牌"
+                  author="C. Peter Wagner"
+                  description="建立代禱團隊，為屬靈爭戰禱告"
+                  chapters={9}
+                  to="/book10/chapter1"
+                  color="from-purple-500 to-pink-600"
+                />
+
+                {/* Book 11 - 從懷疑到相信 */}
+                <BookCard
+                  number={11}
+                  title="從懷疑到相信"
+                  author="姜文琪 姊妹"
+                  description="帶領未信者認識神的福音課程"
+                  chapters={1}
+                  to="/book11/lesson1"
+                  color="from-indigo-500 to-purple-600"
+                />
+
+                {/* Book 12 - 十架預言真奇妙 */}
+                <BookCard
+                  number={12}
+                  title="十架預言真奇妙"
+                  author="李錦彬"
+                  description="探討耶穌被釘十字架的預言與真義,揭示聖經預言的精確性與救恩的奧秘"
+                  chapters={1}
+                  to="/book12/home"
+                  color="from-amber-500 to-orange-600"
+                />
+
+                {/* Book 13 - 十字架跨越的智慧 */}
+                <BookCard
+                  number={13}
+                  title="十字架跨越的智慧"
+                  author="亨利·葛洛法"
+                  description="行走禱告教戰手冊,學習在禱告中不隨血氣起舞,為地方帶來神的保護與轉化"
+                  chapters={7}
+                  to="/book13/chapter1"
+                  color="from-teal-500 to-cyan-600"
+                />
+
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-600">
+              <p className="text-sm">電子書房 · 數位靈修學習平台</p>
+            </div>
+          </div>
+        } />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
