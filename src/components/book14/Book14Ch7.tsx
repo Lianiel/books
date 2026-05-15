@@ -24,7 +24,7 @@ export default function Book14Ch7() {
       <div className="mb-6 border border-purple-100 rounded-lg overflow-hidden shadow-sm">
         <button onClick={() => toggleSection('content')} className="w-full px-5 py-3 bg-gradient-to-r from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 flex items-center justify-between transition-all">
           <div className="flex items-center gap-2">
-            <SearchIcon className="w-5 h-5 text-purple-600 flex-shrink-0" />
+            <BookOpen className="w-5 h-5 text-purple-600 flex-shrink-0" />
             <span className="font-semibold text-gray-800">主要內容</span>
           </div>
           {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
@@ -32,11 +32,21 @@ export default function Book14Ch7() {
 
         {expanded['content'] && (
           <div className="p-5 bg-white space-y-4">
-            <p className="text-gray-700 leading-relaxed">許多關於聖靈生活的誤解源於對聖經的曲解。本章旨在澄清一些常見的誤讀和錯誤理解。</p>
-            <p className="text-gray-700 leading-relaxed">首先是關於「聖靈充滿」的誤解。許多人以為聖靈充滿是一次性的經驗，達到後就永久擁有。但聖經中「被聖靈充滿」是反覆出現的動詞，表示它是持續的過程，不是一次性的事件。信徒需要反覆地求聖靈充滿自己。</p>
-            <p className="text-gray-700 leading-relaxed">其次是關於「聖靈內住」與「聖靈充滿」的區別。聖靈內住是指聖靈住在每個信徒心中——這是一次性的、不可改變的。聖靈充滿是指信徒允許聖靈完全控制、引導自己——這需要信徒主動的順服和開放。</p>
-            <p className="text-gray-700 leading-relaxed">第三，許多人誤解「聖靈引導」，期望聽到神的聲音或看見異象。但聖靈引導主要是透過理性思考、聖經原則、環境安排、他人勸告等方式進行，而非神祕的靈感。</p>
-            <p className="text-gray-700 leading-relaxed">最後，許多人被某些「聖靈生活」的誇張描述所迷惑——期待永遠的喜樂、無止的能力、問題的瞬間解決。但現實的聖靈生活是平靜而持久的，是在挑戰中的堅持，是在軟弱中的依靠。</p>
+            <p className="text-gray-700 leading-relaxed mb-3">說方言代表一種對於神的真相的醒覺，並將這醒覺對焦和強化；因此，說方言成了一種自然的表達崇敬情緒的方法，而靈恩派信徒稱方言為他們「禱告的語言」是一點也不希奇的。說方言，雖然不是以一種概念性的語言形式出現，但作為發自心靈的聲音，在基督教裡，正如在其他領域一樣，他總是「說出」一些東西——他說出一個人有意識地投入並直接回應鄂圖（Rlldolph OttO）稱為「那聖潔的」或「那神聖不可測的」，也就是現今社會學家和人類學家一般稱為「那神聖的」。</p>
+            <p className="text-gray-700 leading-relaxed mb-3">那些尋覓、尋索和運用方言的人通常視說方言的群體為屬靈上「特殊」的一群，並希望全然投入他整個團體經驗之中。</p>
+            <p className="text-gray-700 leading-relaxed mb-3">但無論如何，以上一切觀點辯證出對於一些人來說，說方言是從神而來美好的恩賜，即如對於我們所有人來說，能清晰表達思想的語言能力是神給我們一個美好的恩賜。可是，既然說方言者視方言的作用主要是（縱非全然）為私人用途，也不宣稱他們知道自己所說的是什麼，而保羅所講述的方言是純粹為公開發言及要求把意思翻出來的，並且保羅也許認為講者總會對自己的話的含意有多少認識，我們不可能確定這兩種現象能夠達到複還論所要求的一致。</p>
+            <p className="text-gray-700 leading-relaxed mb-3">在我來看，有關翻方言這問題，似乎是最莫衷一是的。翻方言就是將所說方言的訊息內容（一如他們自己所聲稱的）宣佈出來。複還論引導我們將說方言及翻方言與哥林多教會的方言（charismata）等同。保羅給「翻」方言的用字是 diermeneuo（林前一二 30，一四 5、13、27），可以指到解釋任何不明白的事情（一如路二四 27 所載的）；這辭彙與語言連結起來很自然是指到把字句本身蘊含的意思翻譯出來（一如徒九 36 所載）。從保羅的話看來，他顯然認為哥林多信徒的方言是帶有可翻出來的意義的（—四 19-13），而今天的翻方言者對今天的方言亦有相同的假設，把他們對方言的解釋視為方言的實際翻譯。</p>
+            <p className="text-gray-700 leading-relaxed mb-3">然而，他們的表現是令人因惑的。那些流暢、肯定而又自然流露出來的解釋，後來卻被證實是千篇一律、含糊不清和無所傳達的。其中造成了許多荒誕的錯誤。喬達（Kildahl）告訴我們非洲土話主禱文如何被翻為主再來的訊息。27 一位我曾教導過的衣索比亞牧師，參加一個說方言的聚會，他誤以為是一個非正式的多種語言讚美崇拜會，於是，他站起來用基茲話（ Ge’ez，譯者注：一種已廢的閃族語，今用於衣索比亞基督徒的禱文中。）背誦詩篇第二十三篇，這是他出生的科普替族（Coptic）崇拜時用的古老語言；他的背誦立刻被當眾翻譯出來。翌日，他憂愁困惑地告訴我：「全都翻錯了。」喬達也報導過一件事，同一段方言錄音經兩個不同的人翻譯，其中一個翻為「為一份新工作尋求引導」的禱告，另一個則翻為「為一次嚴重大病最近康復而獻上的感恩」。當告訴翻方言的人兩種解釋有出入時，「那翻譯者毫不遲疑，亦不自辯地說神給予一個翻譯者一種翻譯，又給予另一個翻譯者另一種翻譯。」</p>
+            <p className="text-gray-700 leading-relaxed mb-3">28 那翻方言者的經驗是，「方言的解釋」是即時浮現腦海的，換句話說，聽見方言之後，那些即時深印腦海的思想就視為那段方言的解釋。他們宣稱神直接賜予翻譯的內容；就好像靈恩派的預言一樣，他們持相類似的宣稱，只要該預言是合乎聖經的話，他就可以成立，不能修改，因為他是無從驗證的。我們可以看出一個翻方言的人——尤其是一開始就滿腦袋儲存了許多聖經真理的人——如何能夠借著與講者、或講者的聲線語調、或聚會的氣氛共嗚感應而產生恰當並造就人的「解釋」。可是，至於這些解釋如何能夠直接表達所剛剛聽到的聲音的意義，以致實際上將一種不明白的言語翻譯為一種能明白的言語，那就難以理解了。</p>
+            <p className="text-gray-700 leading-relaxed mb-3">我不會妄自憑幾句翻譯錯誤的例子作為基礎，去全盤否定所有方言的解釋，看他們為虛妄的，同時，我同意撒瑪連（Samarin）的意見，他認為說方言加上翻方言的宗教儀式所產生的團結友愛本身可以是有價值的。 29 但我想，因此就假設我們已重獲保羅所說的翻方言恩賜，卻是十分危險的。無他，事實的證據委實太不肯定了。</p>
+            <p className="text-gray-700 leading-relaxed mb-3">賀其馬提出當說方言帶來祝福的時候，祝福的源頭「並不是方言本身，而是說方言時候的心境，或者說„„在方言說出之先，一顆尋求更多被聖靈充滿的心。」 30 這個意見似乎比任何認為現時人所說的方言，在思想暫時停止活動的情況下，這方言本身能造就人的說法來得實在。同樣，翻方言也可以帶來祝福，是由於他傳達了聖經的激勵，而不一定像一些人的想法，認為這些必然是神所賜方言的神授解釋，就如當日在哥林多教會裡被翻出來的方言可能是神授的一樣。</p>
+            <p className="text-gray-700 leading-relaxed mb-3">走筆至此，我們必需就醫治和說預言提出一些反問。</p>
+            <p className="text-gray-700 leading-relaxed mb-3">靈恩派的醫治職事能否令人信服地與哥林多前書第十二章二十八及三十節描述的醫治恩賜等同呢？當然不可以。</p>
+            <p className="text-gray-700 leading-relaxed mb-3">使徒時期教會醫治恩賜的典範只能夠是屬乎使徒擁有的醫治恩賜，而耶穌自己的醫治職事就是他們的典範。可是，耶穌和門徒是直接用他們的話（太八 5 一 13，九 6、7；約四 46 一 53；徒九 34）或者他們的撫摸（可一 41，五 25—34；徒二八 8）來醫治的。然後，病者立即得醫治（太八 13；可五 29；路六 10，一七 14；約五 9；徒三 7；有一次分兩階段進行醫治，每階段的效果是即時的，可七 32—35）。</p>
+            <p className="text-gray-700 leading-relaxed mb-3">身體上的殘缺（例如跛子、瘸子），以及功能性、徵候的和心理引致身心上的疾病（徒三 2 一 10；路六</p>
+            <p className="text-gray-700 leading-relaxed mb-3">8—10；約九），一概獲得醫治。有時候，他們叫死了多天的人復活（路七 11—15，八 49—55；約—一 1 一 44；徒九 36—41）。他們醫治一大群人（路四 40，七 21；太四 23、24；徒五 12—16，二八 19），並且沒有任何記載說他們嘗試醫治而結果失敗的（除卻有一次門徒忽略了禱告，要由耶穌接替他們進行醫治「可九 17—29」）。再者，他們醫治的結果是持久的；沒有任何跡象顯示得醫治者後來舊病復發。對於現今五旬節派及靈恩派醫者的職事，以及那些為病者禱告的人的職事，無論人如何說他們有神特別的呼召，他們當中沒有一人有上述如此驕人的成績。</p>
+            <p className="text-gray-700 leading-relaxed mb-3">所以，我們不能像某些人有時候的想法一樣，假設現今靈恩派醫治的能源一定就是保羅在哥林多前書十二章二十八節所講述的。在使徒時代，醫治的恩賜比起現今靈恩派信徒看來擁有的醫治恩賜，在本質上是更超越的。我們頂多可以說，靈恩派醫者有時候並在某些方面可以表現得像新約時代有恩賜的醫者一樣，而每次這樣的場合都印證了神的觸摸仍然具有他自遠古以來的能力。可是，這並不等如說在這些人的職事裡，新約時期的醫治恩賜又重新出現。31</p>
+            <p className="text-gray-700 leading-relaxed mb-3">「靈恩派的預言能否確實被視為新約表記恩賜的復興？」當然不可以。</p>
           </div>
         )}
       </div>
@@ -45,7 +55,7 @@ export default function Book14Ch7() {
       <div className="mb-6 border border-indigo-100 rounded-lg overflow-hidden shadow-sm">
         <button onClick={() => toggleSection('exploration')} className="w-full px-5 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 flex items-center justify-between transition-all">
           <div className="flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-indigo-600 flex-shrink-0" />
+            <Search className="w-5 h-5 text-indigo-600 flex-shrink-0" />
             <span className="font-semibold text-gray-800">延伸探討</span>
           </div>
           {expanded['exploration'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
@@ -53,25 +63,7 @@ export default function Book14Ch7() {
 
         {expanded['exploration'] && (
           <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">動詞時態的神學含義</h4>
-              <p className="text-gray-700 leading-relaxed">希臘文聖經中「被聖靈充滿」（pletho）是現在式、被動語態，表示一個反覆持續的行為。相比之下，「聖靈內住」（oikeo）也是現在式，但指的是一個狀態。這個語言上的區別反映了神學上的真理：聖靈內住是信主後的固定狀態，充滿是信徒需要反覆追求的經驗。</p>
-            </div>
 
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">聖靈引導的理性維度</h4>
-              <p className="text-gray-700 leading-relaxed">西方基督教傳統往往過分強調理性（傾向理性主義，否定神祕），而靈恩傳統往往過分強調靈感（傾向神祕主義，輕視理性）。但聖靈的引導同時使用理性和直覺。聖靈光照我們的理性，幫助我們思考；聖靈也在我們靈魂深處工作，給予平安與確信。二者並非對立。</p>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">聖靈生活的現實性</h4>
-              <p className="text-gray-700 leading-relaxed">許多靈恩教導描繪一個過度理想化的聖靈生活：永遠的勝利、無止的能力、立即的改變。但保羅的見證包括他的「肉中刺」（林後12章），表明甚至屬靈最高超的人也面臨持續的挑戰。聖靈生活是在軟弱中的力量、在失敗中的恢復、在試煉中的堅持。</p>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">聖靈見證的多元形式</h4>
-              <p className="text-gray-700 leading-relaxed">聖靈在人身上的見證不是單一形式。有時是眼淚的悔改（內在的痛苦），有時是喜樂的確信（內在的平安），有時甚至是沉默的順服（內在的決定）。不同的人經歷聖靈工作的方式不同，這些都是有效的見證。</p>
-            </div>
           </div>
         )}
       </div>
@@ -88,26 +80,7 @@ export default function Book14Ch7() {
 
         {expanded['questions'] && (
           <div className="p-5 bg-white space-y-3">
-            <div className="flex gap-3">
-              <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
-              <p className="text-gray-700">你之前對「聖靈充滿」的理解是什麼？現在你如何看待它作為一個反覆的過程？</p>
-            </div>
-            <div className="flex gap-3">
-              <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
-              <p className="text-gray-700">你有沒有期待聖靈引導總是以神祕或超自然的形式出現？理性與靈感如何在你的決策中互動？</p>
-            </div>
-            <div className="flex gap-3">
-              <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
-              <p className="text-gray-700">你對聖靈生活的期待是現實的嗎？有沒有被某些理想化的描述所誤導？</p>
-            </div>
-            <div className="flex gap-3">
-              <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
-              <p className="text-gray-700">你如何區別聖靈內住與聖靈充滿？這個區別對你有什麼實踐意義？</p>
-            </div>
-            <div className="flex gap-3">
-              <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
-              <p className="text-gray-700">聖靈在你生命中的工作是否常常是平靜而持久的，而非戲劇性的？你如何看待這種平凡的工作？</p>
-            </div>
+
           </div>
         )}
       </div>
@@ -124,52 +97,7 @@ export default function Book14Ch7() {
 
         {expanded['practice'] && (
           <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">📖 經文重新閱讀</h4>
-              <p className="text-gray-700 mb-2">重新閱讀幾段關於聖靈的關鍵經文（以弗所1:13-14, 4:30; 羅8:15-16; 加5:25），注意：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
-                <li>聖靈內住與充滿的區別</li>
-                <li>動詞時態與其含義</li>
-                <li>你之前可能忽視的細節</li>
-              </ul>
-            </div>
 
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">🤔 期待的重新校準</h4>
-              <p className="text-gray-700 mb-2">列出你對聖靈生活的期待，問自己：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
-                <li>這些期待是基於聖經，還是基於某些人的見證或教導？</li>
-                <li>哪些期待可能過於理想化？</li>
-                <li>聖經中關於聖靈工作的現實性說法有哪些？</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">⚖️ 理性與靈感的平衡</h4>
-              <p className="text-gray-700 mb-2">在一個需要決策的事項上，同時使用理性和靈感：</p>
-              <div className="bg-green-50 p-3 rounded text-gray-700 text-sm space-y-2">
-                <p><strong>理性層面：</strong>蒐集信息、分析利弊、尋求建議</p>
-                <p><strong>靈感層面：</strong>禱告、安靜、聆聽內在的平安或不安</p>
-                <p><strong>整合：</strong>理性和靈感如何一致？如果衝突，我需要更多禱告</p>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">🔄 聖靈充滿的日常追求</h4>
-              <p className="text-gray-700 mb-2">建立一個日常習慣，反覆向聖靈敞開：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
-                <li>早晨：「聖靈啊，充滿我，願你引導我今天的每一個決定」</li>
-                <li>中午：檢查自己是否仍在聖靈的引導下，還是走回自我中心</li>
-                <li>晚間：感謝聖靈的指引，為失誤悔改，再次開放自己</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">🙏 現實性的禱告</h4>
-              <div className="bg-green-50 p-3 rounded text-gray-700 text-sm">
-                <p>「聖靈啊，感謝你內住在我裡面，一個已經完成、永遠不變的事實。同時，求你每一天充滿我。我承認我的軟弱和失敗，不期待完全的勝利，而是在軟弱中尋求你的力量。幫助我用現實且平衡的角度看待屬靈生活，既不懷疑你的能力，也不對自己有不切實際的期待。」</p>
-              </div>
-            </div>
           </div>
         )}
       </div>
