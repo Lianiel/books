@@ -64,6 +64,19 @@ export default function Book14Ch7() {
         {expanded['exploration'] && (
           <div className="p-5 bg-white space-y-4">
 
+          
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">聖靈充滿的動詞時態：反覆充滿，非一次完成</h4>
+              <p className="text-gray-700 leading-relaxed">希臘文「被聖靈充滿」（plerousthe）是現在式命令語態，強調持續、反覆的動作。與此對比，「聖靈內住」（oikein）是描述一個固定的狀態。這個語法區別反映了重要的神學真理：聖靈在信徒生命中的「同在」是一次性、永久的，但聖靈對信徒生命的「影響力和掌控」則需要信徒持續地開放和順服。這解釋了為什麼保羅在以弗所書5:18說「要被聖靈充滿」（命令語態），而不是「你已被聖靈充滿」。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">聖靈生活的誤解：超自然主義與自然主義的兩極</h4>
+              <p className="text-gray-700 leading-relaxed">對聖靈生活有兩種常見的誤解：(1)超自然主義的誤解——認為真正的聖靈生活必然伴隨戲劇性的超自然現象，如異象、神蹟、方言等；沒有這些現象就表示沒有真正的聖靈工作。(2)自然主義的誤解——認為聖靈的工作完全可以用心理或社會因素解釋，否認任何超自然的維度。聖經的立場是：聖靈既可以透過平凡的方式工作（聖經的感動、信徒的勸勉、環境的安排），也有時透過特別的方式工作，兩者都是真實的聖靈工作。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">辨別聖靈與辨別邪靈：約翰的測試</h4>
+              <p className="text-gray-700 leading-relaxed">約翰一書4:1-3給出辨別聖靈的關鍵測試：「凡靈認耶穌基督是成了肉身來的，就是出於神的。」真正的聖靈工作必然高舉和見證基督。任何靈裡的感動，若把人的注意力從基督移開，指向說話者本身、某種特殊經歷或組織，都值得謹慎檢驗。辨別靈的能力本身也是聖靈所賜的恩賜（林前12:10），需要屬靈的成熟和聖經的知識。</p>
+            </div>
           </div>
         )}
       </div>
@@ -81,6 +94,27 @@ export default function Book14Ch7() {
         {expanded['questions'] && (
           <div className="p-5 bg-white space-y-3">
 
+          
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
+              <p className="text-gray-700">你對「聖靈充滿」的理解是什麼？你有沒有把它理解為一次性的特殊經歷，而非每天需要更新的關係？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
+              <p className="text-gray-700">在解釋自己的屬靈經歷時，你有沒有不自覺地傾向「超自然主義」（凡事求超自然現象）或「自然主義」（否認聖靈的特別工作）的一端？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
+              <p className="text-gray-700">你如何在日常生活中辨別一個感動是「出於聖靈」還是「出於自己的情緒或軟弱」？你有哪些個人的辨別準則？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
+              <p className="text-gray-700">保羅的「肉中刺」（林後12章）表明，即使屬靈最成熟的人也有持續的軟弱和挑戰。這對你面對自己的軟弱有什麼安慰？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
+              <p className="text-gray-700">「按聖靈而行」的生活（加5:25）在你的日常決策中是什麼樣子的？你有沒有可以分享的具體例子？</p>
+            </div>
           </div>
         )}
       </div>
@@ -98,6 +132,23 @@ export default function Book14Ch7() {
         {expanded['practice'] && (
           <div className="p-5 bg-white space-y-4">
 
+          
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">📖 每日被聖靈充滿的操練</h4>
+              <p className="text-gray-700">每天早晨，有意識地「向聖靈開放自己」：(1)認罪——承認昨天有哪些地方自我行事而非靠聖靈；(2)降服——把今天的計劃、對話、決定交在聖靈手中；(3)邀請——求聖靈掌管你今天的每個時刻。這不是儀式，而是一種生活態度。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">📝 屬靈日記：辨別聖靈的足跡</h4>
+              <p className="text-gray-700">本週每天記錄一件你相信是「聖靈工作」的事（可能是突然的憐憫心、對某節聖經的深刻感動、或在挑戰中意外的平安）。週末回顧：聖靈在你生命中的工作，是否多過你平時注意到的？</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">⚖️ 辨別靈的實踐框架</h4>
+              <p className="text-gray-700">當你有一個強烈的屬靈感動或感覺「神在告訴我什麼」時，用這個四步驟檢驗：(1)這感動是否與聖經一致？(2)這是否高舉基督而非我自己？(3)這感動的果效是愛和造就，還是驕傲和分裂？(4)屬靈成熟的弟兄姊妹怎麼看？四項都一致，才有更大的把握。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🗓️ 季度屬靈成長評估</h4>
+              <p className="text-gray-700">每三個月，安靜地問自己：「我的聖靈生活在哪些方面有真實的成長？哪些方面有退步或停滯？」不要用戲劇性的超自然經歷作為衡量標準，而是用加拉太書5:22-23的聖靈果子作為標準。</p>
+            </div>
           </div>
         )}
       </div>

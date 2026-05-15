@@ -92,6 +92,27 @@ export default function Book14Ch3() {
         {expanded['questions'] && (
           <div className="p-5 bg-white space-y-3">
 
+          
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
+              <p className="text-gray-700">舊約聖靈的工作（賦予能力給特定人物）與新約聖靈的工作（內住所有信徒）有什麼根本的不同？這個轉變對你有什麼意義？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
+              <p className="text-gray-700">五旬節是一個不可重複的歷史事件，還是每個信徒都應該「再次追求」的個人經歷？你如何理解五旬節在救贖歷史中的位置？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
+              <p className="text-gray-700">聖靈「見證基督」的使命，在你讀聖經和個人敬拜中有什麼具體的體現？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
+              <p className="text-gray-700">巴刻指出聖靈是「另一位保惠師」（約14:16），這個「另一位」強調了聖靈與基督的相似性和延續性。這對你理解聖靈的工作有什麼幫助？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
+              <p className="text-gray-700">你有沒有經歷過聖靈藉著聖經讓某個關於基督的真理「活過來」的時刻？分享那個經歷，並思考那就是聖靈見證基督的工作。</p>
+            </div>
           </div>
         )}
       </div>
@@ -109,6 +130,23 @@ export default function Book14Ch3() {
         {expanded['practice'] && (
           <div className="p-5 bg-white space-y-4">
 
+          
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">📜 舊約與新約聖靈的比較研讀</h4>
+              <p className="text-gray-700">用對照式方法研讀聖靈的工作：選讀民數記11章（聖靈在舊約的賦能）和使徒行傳2章（五旬節）、羅馬書8章（聖靈內住），注意在工作對象、深度、持久性上的不同，寫下你的觀察。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🕊️ 認識聖靈的七重工作</h4>
+              <p className="text-gray-700">根據聖經，聖靈有七種主要工作：(1)重生(約3:5)、(2)內住(林前6:19)、(3)印記(弗1:13)、(4)充滿(弗5:18)、(5)結果子(加5:22)、(6)賜恩賜(林前12)、(7)見證基督(約15:26)。選其中兩樣你最不熟悉的，用一周時間深入研讀。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">📝 感謝日記</h4>
+              <p className="text-gray-700">每天記錄一件聖靈在你生命中做的事——可能是讓你理解聖經、感動你悔改、給你平安、或帶你更接近基督。一個月後回顧，你會看見聖靈在你生命中的軌跡。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🎯 以基督為中心的屬靈成長計劃</h4>
+              <p className="text-gray-700">按照「聖靈見證基督」的原則，設計一個三個月的靈修計劃，目標不是「得著更多聖靈的感動」，而是「更認識和愛基督」。每月評估：我現在更像基督了嗎？</p>
+            </div>
           </div>
         )}
       </div>

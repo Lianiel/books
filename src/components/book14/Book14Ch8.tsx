@@ -64,6 +64,19 @@ export default function Book14Ch8() {
         {expanded['exploration'] && (
           <div className="p-5 bg-white space-y-4">
 
+          
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">「聖靈，請來」的神學基礎：已來與再來</h4>
+              <p className="text-gray-700 leading-relaxed">「聖靈，請來！」這個呼求有一個重要的神學張力：聖靈已在五旬節降臨，已內住在每位信徒裡（一次性、永久性）；但同時，信徒仍然需要持續地邀請聖靈在自己生命中完全掌權（反覆性、漸進性）。這不是矛盾，而是救贖論的「已然—未然」（already-not yet）結構在聖靈論中的體現。每一次「聖靈，請來」的禱告，都是信徒在確信聖靈已同在的前提下，求他更完全地掌管和充滿。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">聖靈果子的全面觀：九個不可分割的特質</h4>
+              <p className="text-gray-700 leading-relaxed">加拉太書5:22-23的「聖靈果子」不是九個獨立的選項，而是一棵樹上九個有機相連的果子。它們可以分成三組：(1)對神的態度——愛（agape，無條件的犧牲之愛）、喜樂（在苦難中的深層喜悅）、和平（靈魂深處的安穩）；(2)對人的態度——忍耐（在人際衝突中的長久容忍）、恩慈（主動的善良）、良善（正直的品格）；(3)對自己的態度——信實（可靠的誠信）、溫柔（力量在謙遜中的表達）、節制（對慾望的自我管理）。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">被聖靈掌管的生命：自由還是失去自我？</h4>
+              <p className="text-gray-700 leading-relaxed">許多信徒害怕被聖靈完全掌管，因為害怕失去個性和自主權。但巴刻和聖經都指出，被聖靈掌管不是失去自我，而是「真我」的釋放和提升。罪使人成為慾望的奴隸，失去自由；聖靈的掌管使人從罪的奴役中得自由，成為本應成為的人。正如奧古斯丁說：「你為自己造了我們，我們的心若不安息在你懷中，便不得安寧。」被聖靈掌管，正是回到那個真正使人自由的安息。</p>
+            </div>
           </div>
         )}
       </div>
@@ -81,6 +94,27 @@ export default function Book14Ch8() {
         {expanded['questions'] && (
           <div className="p-5 bg-white space-y-3">
 
+          
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
+              <p className="text-gray-700">你如何理解「聖靈，請來」這個禱告的意義？你認為這是求聖靈第一次來，還是求他更完全地掌管？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
+              <p className="text-gray-700">在加拉太書5:22-23的九個聖靈果子中，哪一個在你生命中最豐盛？哪一個最需要成長？你認為原因是什麼？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
+              <p className="text-gray-700">你有沒有過害怕讓聖靈完全掌管某個生命領域的經歷？那個領域是什麼？是什麼讓你感到猶豫？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
+              <p className="text-gray-700">「被聖靈掌管是得自由，不是失去自我」——這個觀念對你有什麼挑戰或釋放？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
+              <p className="text-gray-700">回顧你的信仰旅程，你能看見聖靈「請來」的工作在哪些方面改變了你？你對未來還有什麼期待？</p>
+            </div>
           </div>
         )}
       </div>
@@ -98,6 +132,23 @@ export default function Book14Ch8() {
         {expanded['practice'] && (
           <div className="p-5 bg-white space-y-4">
 
+          
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🙏 每日「聖靈，請來」的禱告儀式</h4>
+              <p className="text-gray-700">設計一個個人的早晨禱告：先靜默一分鐘感謝聖靈同在；然後說：「聖靈，請完全充滿我——我的思想、我的情感、我的意志、我的言語、我的行動。今天凡我所做的，願都是在你的引導下完成的。」一個月後評估：這個禱告有沒有改變你的一天？</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🍎 聖靈果子的栽培計劃</h4>
+              <p className="text-gray-700">選加拉太書5:22-23九個果子中最薄弱的一個，設計一個為期三十天的「栽培計劃」：每天在聖靈果子相關的聖經段落默想，每天尋找一個機會實踐這個果子，每晚評估今天的表現。例如：若選「忍耐」，每天找一個需要忍耐的時刻，刻意選擇等待而非爆發。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🔐 交付控制清單</h4>
+              <p className="text-gray-700">列出你生命中所有你仍想「自己掌管」的領域（財務、關係、職業、健康、未來計劃）。然後逐一在禱告中宣告：「主啊，我把這個領域交給你和聖靈管理。」這不是一次性的行動，而是每當你感到重新「抓回控制」時，再次有意識地交付。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">✍️ 信仰宣言的書寫</h4>
+              <p className="text-gray-700">寫下一份個人的「聖靈生活宣言」——你對聖靈的信仰、你對被聖靈掌管的承諾、你對屬靈成長的期許。貼在你每天能看到的地方，每週重讀，在信心軟弱時，讓它提醒你你所相信和所立志的。</p>
+            </div>
           </div>
         )}
       </div>

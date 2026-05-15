@@ -64,6 +64,19 @@ export default function Book14Ch4() {
         {expanded['exploration'] && (
           <div className="p-5 bg-white space-y-4">
 
+          
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">聖潔之道的本質：不是道德主義，而是關係</h4>
+              <p className="text-gray-700 leading-relaxed">巴刻強調，聖潔之道的核心不是遵守道德規條，而是一個與聖靈的活潑關係。許多基督徒把成聖理解為「努力做好人」，但聖靈引導的成聖是從內而外的改變——先改變心志，再影響行為。這是保羅在羅馬書8章所說「按聖靈行事」的真義：不是靠自力壓制罪性，而是讓聖靈從內部更新我們的動機和渴望。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">罪的兩面：「罪的行為」與「罪的體質」</h4>
+              <p className="text-gray-700 leading-relaxed">成聖處理兩個層面的問題：(1)個別罪行的悔改與赦免；(2)罪的傾向（本性）的持續更新。信徒在成聖過程中會發現，即使個別罪行得赦，罪的傾向仍然存在，需要聖靈持續的更新工作。這正是為什麼成聖是一生的旅程，而非一次性的事件。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">十字架與成聖：「老我」的釘死</h4>
+              <p className="text-gray-700 leading-relaxed">保羅在加拉太書5章說：「凡屬基督耶穌的人，是已經把肉體連肉體的邪情私欲同釘在十字架上了。」這不是自我折磨或苦修，而是一種身份的認同——認同自己的「老我」已在基督裡被釘死。每當罪的誘惑來臨，信徒的回應是「記起」這個已成就的事實，而非靠意志力抵抗。</p>
+            </div>
           </div>
         )}
       </div>
@@ -81,6 +94,27 @@ export default function Book14Ch4() {
         {expanded['questions'] && (
           <div className="p-5 bg-white space-y-3">
 
+          
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
+              <p className="text-gray-700">你對「成聖」的理解，更偏向「努力遵守道德規條」還是「與聖靈建立關係」？這兩種理解在實踐上有什麼不同？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
+              <p className="text-gray-700">巴刻說成聖的核心是「渴望」的改變，而非只是行為的改變。你能識別聖靈在你生命中改變了哪些渴望嗎？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
+              <p className="text-gray-700">你生命中有哪些「根深蒂固的罪性」（不只是個別罪行），是你意識到需要聖靈持續更新的？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
+              <p className="text-gray-700">「把老我釘死」這個圖像對你有什麼共鳴？你在面對罪的試探時，如何「記起」自己已在基督裡的身份？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
+              <p className="text-gray-700">成聖是一個緩慢的過程，有時甚至看不見進展。你如何在這個過程中保持盼望和不放棄？</p>
+            </div>
           </div>
         )}
       </div>
@@ -98,6 +132,23 @@ export default function Book14Ch4() {
         {expanded['practice'] && (
           <div className="p-5 bg-white space-y-4">
 
+          
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">📋 每日的「罪情意識」操練</h4>
+              <p className="text-gray-700">每晚花5分鐘，問自己三個問題：(1)今天哪些行為反映了我還未更新的罪性？(2)我是靠意志力壓制，還是靠求聖靈的幫助？(3)我今天有沒有「按肉體行事」而非「按聖靈行事」的時刻？不是要自責，而是要培養對罪的敏銳。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🙏 成聖導向的禱告</h4>
+              <p className="text-gray-700">改變你的晨禱模式。不要只求神「今天幫助我做好人」，而是求：「聖靈啊，今天請你更新我的渴望，使我渴望你所渴望的，厭惡你所厭惡的。願基督的形象在我身上成形。」</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">📖 羅馬書8章默想計劃</h4>
+              <p className="text-gray-700">用兩週時間，每天默想羅馬書8章的兩到三節，特別關注聖靈在成聖中的角色。記下聖靈的工作清單：他做了什麼？他要求信徒做什麼？哪些是你已經經歷的，哪些是你還需要成長的？</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">⚔️ 「治死」一個具體的罪</h4>
+              <p className="text-gray-700">選一個你意識到在你生命中持續出現的罪（可能是憤怒、嫉妒、貪婪、驕傲等），用一個月時間，有意識地：(a)每次出現時認罪；(b)求聖靈更新這個渴望；(c)記錄任何微小的改變。</p>
+            </div>
           </div>
         )}
       </div>

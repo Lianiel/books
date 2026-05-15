@@ -64,6 +64,19 @@ export default function Book14Ch5() {
         {expanded['exploration'] && (
           <div className="p-5 bg-white space-y-4">
 
+          
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">稱義與成聖的關係：分別但不分離</h4>
+              <p className="text-gray-700 leading-relaxed">稱義是法庭上的宣告（我是義的），成聖是生命的更新（我成為義的）。許多信徒分不清這兩個概念，要麼把成聖視為獲取稱義的方式（道德主義），要麼把稱義視為成聖的終點（輕視成聖的必要性）。巴刻強調：稱義是成聖的基礎，成聖是稱義的果實。沒有稱義，成聖是無根之木；沒有成聖，稱義的宣告就缺乏生命的見證。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">成聖的兩個動作：「治死」與「活出」</h4>
+              <p className="text-gray-700 leading-relaxed">清教徒傳統將成聖描述為兩個互補的行動：(1)「治死」（mortification）——持續地壓制、對抗、釘死肉體的罪性；(2)「活出」（vivification）——讓聖靈的生命在我們身上成長、開花、結果。成聖不是只有「不做壞事」（消極的），更是「活出基督的生命」（積極的）。一個只強調「治死」的信仰容易變成壓抑和律法主義；一個只強調「活出」的信仰容易忽略罪的嚴重性。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">成聖的群體維度：教會的角色</h4>
+              <p className="text-gray-700 leading-relaxed">個人的成聖不是孤立的旅程。聖靈透過教會群體來塑造我們：通過講道的真理、通過聖禮的記念、通過肢體的彼此勸勉、通過共同敬拜的操練。一個脫離群體的「個人信仰」會缺乏成聖的重要資源。教會不是成聖的終點，但是成聖不可缺少的環境。</p>
+            </div>
           </div>
         )}
       </div>
@@ -81,6 +94,27 @@ export default function Book14Ch5() {
         {expanded['questions'] && (
           <div className="p-5 bg-white space-y-3">
 
+          
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
+              <p className="text-gray-700">你能清楚地分辨「稱義」和「成聖」的意義嗎？在你的屬靈生活中，這兩個真理如何互相支持？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
+              <p className="text-gray-700">你目前的屬靈生活中，「治死」和「活出」的比例是怎樣的？有沒有哪一方面過分強調或忽略？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
+              <p className="text-gray-700">成聖有哪些「面面觀」是你之前可能忽略的（如：思想的更新、情感的淨化、意志的順服、人際關係的改善）？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
+              <p className="text-gray-700">你的教會群體（小組、肢體關係）在你個人成聖旅程中扮演著什麼角色？這個角色是否充分？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
+              <p className="text-gray-700">成聖的過程中，你有沒有過灰心或放棄的時刻？是什麼幫助你重新站起來？</p>
+            </div>
           </div>
         )}
       </div>
@@ -98,6 +132,23 @@ export default function Book14Ch5() {
         {expanded['practice'] && (
           <div className="p-5 bg-white space-y-4">
 
+          
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🌱 成聖的全人評估</h4>
+              <p className="text-gray-700">從五個維度評估自己的成聖進度：(1)思想——我的思想模式是否更像基督？(2)情感——我的情感是否更加平衡和受聖靈管理？(3)意志——我在面對試探時的意志力有沒有更強？(4)言語——我說話的方式是否更加建立人？(5)人際關係——我對待他人是否更有基督的愛？為每項評分1-10，並設定下月目標。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">✂️ 「治死」的操練</h4>
+              <p className="text-gray-700">「治死」需要識別觸發點。記錄一週內你最容易犯的罪：發生在什麼場合？在什麼情緒下？與什麼人在一起時？找出模式，然後計劃如何提前避免或預備好應對。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🌳 「活出」的操練</h4>
+              <p className="text-gray-700">每週刻意做一件體現聖靈果子的事：可能是主動的原諒、慷慨的給予、耐心的傾聽、或積極的鼓勵。把它記錄下來，一個月後回顧你的成長足跡。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">👥 尋找屬靈導師</h4>
+              <p className="text-gray-700">找一位比你屬靈成熟的信徒，定期分享你成聖旅程中的掙扎和進步。真實的問責關係是成聖最有效的環境之一。如果沒有這樣的關係，這個月就開始禱告和尋找。</p>
+            </div>
           </div>
         )}
       </div>

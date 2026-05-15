@@ -64,6 +64,19 @@ export default function Book14Ch9() {
         {expanded['exploration'] && (
           <div className="p-5 bg-white space-y-4">
 
+          
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">羅馬書7章的苦中人：信徒還是非信徒？</h4>
+              <p className="text-gray-700 leading-relaxed">羅馬書7:14-25的「苦中人」是聖經詮釋史上爭議最大的段落之一，主要有三種立場：(1)非信徒觀——這是一個在律法之下掙扎卻未得救的人，描述重生前的狀態（奧利金、加爾文早期）；(2)不成熟信徒觀——這是一個尚未認識聖靈得勝之道的初信者；(3)成熟信徒觀——這是一個靈命成熟、對罪的本質認識深刻、因此感到更大靈魂掙扎的信徒（奧古斯丁後期、路德、巴刻）。巴刻在附錄中詳細論證第三種立場。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">「苦中人」的靈命特質：越認識神，越感到自己的罪</h4>
+              <p className="text-gray-700 leading-relaxed">第三種立場有一個重要的屬靈洞見：靈命越成熟的人，往往對自己罪性的感受越深、掙扎越強烈。一個靈命幼稚的信徒可能對自己的罪渾然不覺；一個靈命成熟的信徒，因為更靠近聖靈的光、因為對神的聖潔有更深的認識，反而更清楚自己的不足和罪性的頑固。這就是為什麼保羅——那個說「我已死了，現在是基督在我裡面活著」的人——同時也說「我真是苦啊！誰能救我脫離這取死的身體呢？」</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">律法的功用：定罪而非稱義</h4>
+              <p className="text-gray-700 leading-relaxed">羅馬書7章也是保羅對律法神學最完整的論述之一。律法有三個功用：(1)啟示標準——顯示神對人的要求；(2)定罪功用——揭示人的罪性，使人知罪（7:7-13）；(3)激發悔改——將人驅向基督（加3:24）。律法的問題不是律法本身（保羅說「律法是聖潔的、公義的、良善的」），而是人靠肉體之力無法遵行律法。解決方案不是廢除律法，而是靠聖靈遵行律法的義（羅8:4）。</p>
+            </div>
           </div>
         )}
       </div>
@@ -81,6 +94,27 @@ export default function Book14Ch9() {
         {expanded['questions'] && (
           <div className="p-5 bg-white space-y-3">
 
+          
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
+              <p className="text-gray-700">你認為羅馬書7章的「苦中人」是信徒還是非信徒？你的立場是基於哪些聖經論據？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
+              <p className="text-gray-700">你有沒有經歷過保羅在羅馬書7章描述的那種內在掙扎——「我所願意的善，我偏不去做；我所不願意的惡，我倒去做」？這種經歷對你的信仰有什麼意義？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
+              <p className="text-gray-700">如果「越靠近神，越感到自己的罪」是屬靈成長的標誌，你如何分辨這種「健康的罪疚感」和「不健康的自我定罪」？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
+              <p className="text-gray-700">律法在你的信仰生活中扮演什麼角色？你有沒有過「靠律法稱義」或「靠律法成聖」的傾向？聖靈如何幫助你從律法的捆綁中釋放？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
+              <p className="text-gray-700">讀完全書（活在聖靈中），你對聖靈的認識有什麼最大的改變或更新？你打算如何把這些學習整合到你的日常生活中？</p>
+            </div>
           </div>
         )}
       </div>
@@ -98,6 +132,23 @@ export default function Book14Ch9() {
         {expanded['practice'] && (
           <div className="p-5 bg-white space-y-4">
 
+          
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">📖 羅馬書7-8章的對比研讀</h4>
+              <p className="text-gray-700">用一週時間對比研讀羅馬書7章和8章：7章描述靠自己和律法的掙扎，8章描述靠聖靈的得勝。列出兩章的對比：主體是誰？動力是什麼？結果如何？這個對比如何幫助你理解你目前的屬靈狀態？</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🪞 誠實的自我反思</h4>
+              <p className="text-gray-700">花時間誠實地寫下：在你的信仰生活中，有哪些領域你仍然在靠「自己的努力」行善或抵抗罪？有哪些領域你已經在靠聖靈的能力生活？哪些掙扎是你需要繼續帶到神面前的？</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">📚 全書回顧與整合</h4>
+              <p className="text-gray-700">回顧《活在聖靈中》全書，選出三個對你最有影響的觀念或段落，寫下：(1)這個觀念挑戰了我什麼舊有的想法？(2)它帶來了什麼新的理解？(3)我打算如何在生活中具體實踐？</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🗣️ 與他人分享讀書心得</h4>
+              <p className="text-gray-700">組織或參與一次讀書分享會，與弟兄姊妹分享你從這本書學到的最重要的一個功課。教導是最深入的學習方式——當你嘗試向他人解釋一個觀念時，你對它的理解會更加深刻和清晰。</p>
+            </div>
           </div>
         )}
       </div>

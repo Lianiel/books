@@ -92,6 +92,27 @@ export default function Book14Ch2() {
         {expanded['questions'] && (
           <div className="p-5 bg-white space-y-3">
 
+          
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
+              <p className="text-gray-700">巴刻用「近視眼」和「眼鏡」來比喻我們對聖靈的認識，你覺得自己目前對聖靈的認識是「清晰」還是「模糊」的？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
+              <p className="text-gray-700">你對聖靈的了解，主要來自聖經的教導，還是來自個人經歷或別人的見證？兩者各占多少比重？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
+              <p className="text-gray-700">靈恩運動強調聖靈的「能力」，你認為這個強調有什麼正確的地方，又有什麼可能的偏差？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
+              <p className="text-gray-700">巴刻提到聖靈的工作不是要叫人注目聖靈，而是要叫人注目基督（「泛光燈」比喻）。你的教會在這方面有沒有達到這個平衡？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
+              <p className="text-gray-700">你願意承認自己對聖靈可能有一些「先入為主的錯誤觀念」，並決定從聖經重新認識他嗎？你會怎樣開始？</p>
+            </div>
           </div>
         )}
       </div>
@@ -109,6 +130,23 @@ export default function Book14Ch2() {
         {expanded['practice'] && (
           <div className="p-5 bg-white space-y-4">
 
+          
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">📖 系統研讀聖靈相關經文</h4>
+              <p className="text-gray-700">用一個月時間，每天選讀一段關於聖靈的聖經段落（如約14-16章、羅8章、林前12-14章、加5章、弗1章），記錄聖靈工作的特質、目的和對象，逐漸建立一個以聖經為基礎的聖靈觀。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🔍 自我誠實的評估</h4>
+              <p className="text-gray-700">把你過去對聖靈的認識寫下來：你認為聖靈最主要的工作是什麼？這個想法的來源是聖經、教導、還是經歷？用本章的教導來對照和修正自己的理解。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🙏 謙遜求知的禱告</h4>
+              <p className="text-gray-700">每天禱告：「聖靈啊，請你引導我按真理認識你。幫助我放下成見，用聖經的眼鏡來看清楚你的本質和工作。願我越認識你，就越被帶向基督。」</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">👥 與人分享和討論</h4>
+              <p className="text-gray-700">找一位信任的屬靈同伴，分享你在本章中學到的一個新的認識或對自己原有觀念的修正，互相問責，一同成長。</p>
+            </div>
           </div>
         )}
       </div>

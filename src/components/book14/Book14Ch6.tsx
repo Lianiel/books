@@ -64,6 +64,19 @@ export default function Book14Ch6() {
         {expanded['exploration'] && (
           <div className="p-5 bg-white space-y-4">
 
+          
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">靈恩恩賜的聖經根基：林前12-14章的平衡觀</h4>
+              <p className="text-gray-700 leading-relaxed">保羅在哥林多前書12至14章給出了靈恩恩賜最完整的教導，但常被片面引用。完整的教導包含三個平衡：(1)所有恩賜都是同一位聖靈所賜，不應分等級高低（12章）；(2)愛是使用所有恩賜的最高原則和最終目標（13章）；(3)造就教會是評估恩賜運用的唯一標準（14章）。任何撇除這三層平衡的靈恩神學都是不完整的。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">方言恩賜：歷史和神學的爭議</h4>
+              <p className="text-gray-700 leading-relaxed">方言恩賜（glossolalia）是靈恩運動中爭議最大的議題。歷史上主要有三種立場：(1)恩賜已終止論（cessationism）——認為使徒時代的奇跡性恩賜已在聖經完成後終止；(2)恩賜持續論（continuationism）——認為所有恩賜在今天仍然運作；(3)開放但謹慎論——認為神可以按主權賜下任何恩賜，但要以聖經為準繩、以愛和造就為目標。巴刻傾向第三種立場。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">恩賜與果子：不可分割的整體</h4>
+              <p className="text-gray-700 leading-relaxed">靈恩運動有時過分強調恩賜（能力的表現）而忽略果子（品格的培養）。但保羅在哥林多前書13章說：「我若能說萬人的方言，並天使的話語，卻沒有愛，我就成了鳴的鑼，響的鈸一般。」恩賜是服事的工具，果子是信仰的本質。一個充滿恩賜但缺乏果子的信徒，是靈命不健全的；一個有美好品格但不運用恩賜服事的信徒，也是靈命不完全的。</p>
+            </div>
           </div>
         )}
       </div>
@@ -81,6 +94,27 @@ export default function Book14Ch6() {
         {expanded['questions'] && (
           <div className="p-5 bg-white space-y-3">
 
+          
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
+              <p className="text-gray-700">你的教會對靈恩恩賜（尤其是方言、預言、醫治）的立場是什麼？你個人怎麼看待這些立場？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
+              <p className="text-gray-700">你認為自己有哪些屬靈恩賜？你是如何發現的？你目前有沒有在使用這些恩賜服事教會？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
+              <p className="text-gray-700">保羅說「愛」是恩賜運用的最高原則（林前13章）。你在使用你的恩賜時，是否以愛和造就他人為目標？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
+              <p className="text-gray-700">靈恩經歷（如得著聖靈充滿的喜樂、或有特別的屬靈感動）對你的信仰生活有什麼正面的貢獻？有沒有需要謹慎的地方？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
+              <p className="text-gray-700">「恩賜」與「果子」在你個人的屬靈生活中，哪一個相對更豐富？哪一個更需要成長？</p>
+            </div>
           </div>
         )}
       </div>
@@ -98,6 +132,23 @@ export default function Book14Ch6() {
         {expanded['practice'] && (
           <div className="p-5 bg-white space-y-4">
 
+          
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🎁 恩賜探索與確認</h4>
+              <p className="text-gray-700">用三種方式探索你的屬靈恩賜：(1)做一份靈恩恩賜評估問卷；(2)詢問三位熟悉你的弟兄姊妹，他們觀察到你有什麼恩賜；(3)回想過去服事中什麼事情讓你感到最有「流動感」和最被使用。把結果綜合，確認一到兩個主要恩賜。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">🔧 恩賜的刻意操練</h4>
+              <p className="text-gray-700">針對你確認的恩賜，本月找一個具體的服事機會來操練它：如果是教導——找機會準備並分享一個查經；如果是憐憫——主動關顧一位有需要的弟兄姊妹；如果是領導——主動帶領一個小組討論。服事後評估：哪裡做得好？哪裡可以改進？</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">❤️ 愛為中心的服事反思</h4>
+              <p className="text-gray-700">在每次服事結束後，問自己：我今天的服事是以「愛和造就他人」為目標，還是更多是為了自我表現或獲得認可？這個問題不是要引發罪疚感，而是幫助我們的動機越來越純正。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">📚 靈恩議題的平衡研讀</h4>
+              <p className="text-gray-700">閱讀一本對靈恩立場有平衡討論的書籍（如巴刻本書第六章，或韋恩‧葛倫《聖靈恩賜》），以聖經為標準評估靈恩運動的各個主張，形成一個既不全面接受也不全面拒絕的成熟立場。</p>
+            </div>
           </div>
         )}
       </div>
