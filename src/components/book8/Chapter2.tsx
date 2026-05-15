@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, ChevronDown, ChevronUp, Heart } from 'lucide-react';
 
 export default function Chapter2() {
-  const [openSection, setOpenSection] = useState<number | null>(null);
+  const [openSection, setOpenSection] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
   const [showPdf, setShowPdf] = useState(false);
 
   const sections = [{"title": "意義治療法 (Logotherapy)", "icon": "🔬", "content": "由精神科醫師法蘭克爾 (Frankl) 創立，他認為每個人的生命都有其獨特、無可取代的意義。生命可經由三種管道發現意義：\\n\\n1. 創造性價值：藉著對人生的具體貢獻（如創造功業）。\\n2. 經驗性價值：藉著從這世界所獲得的（如愛、尊嚴）。\\n3. 態度性價值：藉著面臨不可改變的命運（如承受痛苦）時的態度。"}, {"title": "從悲劇中找到意義", "icon": "💡", "content": "法蘭克爾認為人類可以從悲劇中找到五種意義：愛的意義、責任的意義、苦難的意義、工作之意義、生與死之意義。\\n\\n死亡不會使人生無意義，反而是因為生命的短暫無常，才使人將一切行動賦予責任與抉擇。"}];
@@ -24,11 +24,11 @@ export default function Chapter2() {
       {/* 內容區塊 */}
       {sections.map((sec: any, i: number) => (
         <div key={i} className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between cursor-pointer" onClick={() => setOpenSection(openSection === i ? null : i)}>
+          <div className="flex items-center justify-between cursor-pointer" onClick={() => setOpenSection(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
             <h3 className="font-bold text-slate-800 flex items-center gap-2" style={{fontSize:"22px"}}><span className="text-2xl">{sec.icon}</span>{sec.title}</h3>
-            {openSection === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+            {openSection.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
           </div>
-          <AnimatePresence>{(openSection === i) && (
+          <AnimatePresence>{(openSection.has(i)) && (
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
               <div className="mt-4 bg-slate-50 rounded-xl p-5 border border-slate-100">
                 {sec.content.split('\n\n').map((para: string, j: number) => (

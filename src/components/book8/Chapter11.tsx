@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, ChevronDown, ChevronUp, Heart } from 'lucide-react';
 
 export default function Chapter11() {
-  const [openSection, setOpenSection] = useState<number | null>(null);
+  const [openSection, setOpenSection] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
   const [showPdf, setShowPdf] = useState(false);
 
   const sections = [{"title": "長照 2.0 政策", "icon": "🏘️", "content": "強調建立以社區為基礎的長照體系，推動「ABC社區整體照顧模式」：A級（社區整合型服務中心）、B級（複合型服務中心）、C級（巷弄長照站），提供具近便性的照顧服務。"}, {"title": "延緩失能與老化", "icon": "💪", "content": "針對衰弱老人及輕度失智者，推動肌力強化、生活功能重建、口腔與膳食保健等預防措施。衛福部也將「靈性關懷」納入長照服務計畫中，追求全人健康的目標。"}];
@@ -24,11 +24,11 @@ export default function Chapter11() {
       {/* 內容區塊 */}
       {sections.map((sec: any, i: number) => (
         <div key={i} className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between cursor-pointer" onClick={() => setOpenSection(openSection === i ? null : i)}>
+          <div className="flex items-center justify-between cursor-pointer" onClick={() => setOpenSection(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
             <h3 className="font-bold text-slate-800 flex items-center gap-2" style={{fontSize:"22px"}}><span className="text-2xl">{sec.icon}</span>{sec.title}</h3>
-            {openSection === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+            {openSection.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
           </div>
-          <AnimatePresence>{(openSection === i) && (
+          <AnimatePresence>{(openSection.has(i)) && (
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
               <div className="mt-4 bg-slate-50 rounded-xl p-5 border border-slate-100">
                 {sec.content.split('\n\n').map((para: string, j: number) => (

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, ChevronDown, ChevronUp, Heart } from 'lucide-react';
 
 export default function Chapter9() {
-  const [openSection, setOpenSection] = useState<number | null>(null);
+  const [openSection, setOpenSection] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
   const [showPdf, setShowPdf] = useState(false);
 
   const sections = [{"title": "麥肯錫解決問題的7步驟", "icon": "📋", "content": "可借鑒全球頂尖顧問公司的科學方法與邏輯思考，包含：界定問題、建立問題架構（如邏輯樹狀圖）、排定優先順序、議題分析（如推式規劃 Backward Planning）、彙整、構思故事情節，以及簡報成果。"}, {"title": "靈性問題的獨特性", "icon": "✨", "content": "一般問題涉及政策或計畫改善，但「靈性問題」往往涉及生命的意義與價值、愛與被愛、寬恕、希望等，常常不是套些原則或步驟就能解決的，這是解決靈性問題的獨特性。"}];
@@ -24,11 +24,11 @@ export default function Chapter9() {
       {/* 內容區塊 */}
       {sections.map((sec: any, i: number) => (
         <div key={i} className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between cursor-pointer" onClick={() => setOpenSection(openSection === i ? null : i)}>
+          <div className="flex items-center justify-between cursor-pointer" onClick={() => setOpenSection(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
             <h3 className="font-bold text-slate-800 flex items-center gap-2" style={{fontSize:"22px"}}><span className="text-2xl">{sec.icon}</span>{sec.title}</h3>
-            {openSection === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+            {openSection.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
           </div>
-          <AnimatePresence>{(openSection === i) && (
+          <AnimatePresence>{(openSection.has(i)) && (
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
               <div className="mt-4 bg-slate-50 rounded-xl p-5 border border-slate-100">
                 {sec.content.split('\n\n').map((para: string, j: number) => (

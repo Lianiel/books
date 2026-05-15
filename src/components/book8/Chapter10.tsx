@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, ChevronDown, ChevronUp, Heart } from 'lucide-react';
 
 export default function Chapter10() {
-  const [openSection, setOpenSection] = useState<number | null>(null);
+  const [openSection, setOpenSection] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
   const [showPdf, setShowPdf] = useState(false);
 
   const sections = [{"title": "安寧療護 (Palliative Care)", "icon": "🏥", "content": "當疾病進入末期，治癒性治療已無法產生效果時，為末期患者提供症狀緩和的照護，協助其有尊嚴地走向人生終點，並協助家屬度過哀傷。適用對象除了癌症，也擴及「八大非癌疾病」（如失智症、帕金森病、心臟衰竭等）。"}, {"title": "《安寧緩和醫療條例》vs《病人自主權利法》", "icon": "⚖️", "content": "適用疾病：《安寧》僅限「末期病人」；《病主法》則擴及5種臨床條件（末期病人、不可逆轉之昏迷、永久植物人、極重度失智、其他經公告之難以忍受的重症）。\\n\\n拒絕範圍：《安寧》可拒絕心肺復甦術(CPR)與延長瀕死過程的維生醫療；《病主法》更進一步包含拒絕「人工營養及流體餵養」（如鼻胃管）。"}, {"title": "預立醫療照護諮商 (ACP)", "icon": "📝", "content": "健康的成年人可透過諮商，訂定「預立醫療決定 (AD)」，註記於健保卡，以保障自身在未來無法表達意願時的醫療自主權。"}];
@@ -24,11 +24,11 @@ export default function Chapter10() {
       {/* 內容區塊 */}
       {sections.map((sec: any, i: number) => (
         <div key={i} className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between cursor-pointer" onClick={() => setOpenSection(openSection === i ? null : i)}>
+          <div className="flex items-center justify-between cursor-pointer" onClick={() => setOpenSection(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
             <h3 className="font-bold text-slate-800 flex items-center gap-2" style={{fontSize:"22px"}}><span className="text-2xl">{sec.icon}</span>{sec.title}</h3>
-            {openSection === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+            {openSection.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
           </div>
-          <AnimatePresence>{(openSection === i) && (
+          <AnimatePresence>{(openSection.has(i)) && (
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
               <div className="mt-4 bg-slate-50 rounded-xl p-5 border border-slate-100">
                 {sec.content.split('\n\n').map((para: string, j: number) => (

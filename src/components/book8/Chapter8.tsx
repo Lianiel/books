@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, ChevronDown, ChevronUp, Heart } from 'lucide-react';
 
 export default function Chapter8() {
-  const [openSection, setOpenSection] = useState<number | null>(null);
+  const [openSection, setOpenSection] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
   const [showPdf, setShowPdf] = useState(false);
 
   const sections = [{"title": "3F 原則", "icon": "🧩", "content": "在探討問題時，可以運用 3F 原則來全面分析：\\n\\n1. 事實 (Fact)：確保提供的訊息真實可靠，但要注意「事實」往往帶有主觀性，會受到個人價值觀與文化影響（例如約瑟將被哥哥賣掉解讀為上帝美好的意思）。\\n\\n2. 特徵 (Feature)：關懷者需敏銳點出案主顯露出的特徵與屬性，例如特殊的言語或非語言特徵（如眼神呆滯、說「反正我的命就這樣」）。\\n\\n3. 感受 (Feeling)：將人們對於問題的感受和看法納入分析。"}, {"title": "思維導圖 (Mind Mapping)", "icon": "🧠", "content": "可利用東尼·博贊發明的思維導圖，透過左腦邏輯與右腦圖像的結合，幫助進行多方位的發散性思維及總結。"}];
@@ -24,11 +24,11 @@ export default function Chapter8() {
       {/* 內容區塊 */}
       {sections.map((sec: any, i: number) => (
         <div key={i} className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between cursor-pointer" onClick={() => setOpenSection(openSection === i ? null : i)}>
+          <div className="flex items-center justify-between cursor-pointer" onClick={() => setOpenSection(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
             <h3 className="font-bold text-slate-800 flex items-center gap-2" style={{fontSize:"22px"}}><span className="text-2xl">{sec.icon}</span>{sec.title}</h3>
-            {openSection === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+            {openSection.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
           </div>
-          <AnimatePresence>{(openSection === i) && (
+          <AnimatePresence>{(openSection.has(i)) && (
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
               <div className="mt-4 bg-slate-50 rounded-xl p-5 border border-slate-100">
                 {sec.content.split('\n\n').map((para: string, j: number) => (
