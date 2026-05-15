@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Users, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, BookOpen, Search, HelpCircle, Check } from 'lucide-react';
 
 export default function Book14Ch6() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
