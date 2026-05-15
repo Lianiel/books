@@ -4,9 +4,9 @@ import { ChevronDown, ChevronUp, BookOpen, Search, HelpCircle, Check } from 'luc
 export default function Book14Ch3() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
     content: true,
-    exploration: false,
-    questions: false,
-    practice: false
+    exploration: true,
+    questions: true,
+    practice: true
   });
 
   const toggleSection = (id: string) => {

@@ -4,9 +4,9 @@ import { BookOpen, ChevronDown, ChevronUp, Heart, Search, Target, Check, HelpCir
 export default function Book14Ch1() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
     content: true,
-    exploration: false,
-    questions: false,
-    practice: false
+    exploration: true,
+    questions: true,
+    practice: true
   });
 
   const toggleSection = (id: string) => {
