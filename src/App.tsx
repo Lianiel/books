@@ -173,7 +173,6 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter7', title: '第7章 魔鬼的講壇', path: '/book13/chapter7' },
   ],
   book14: [
-    { id: 'home', title: '簡介', path: '/book14/home' },
     { id: 'chapter1', title: '第1章 序言及前言', path: '/book14/chapter1' },
     { id: 'chapter2', title: '第2章 看清楚聖靈', path: '/book14/chapter2' },
     { id: 'chapter3', title: '第3章 聖經裡的聖靈', path: '/book14/chapter3' },
@@ -319,7 +318,6 @@ import Book13Ch6 from './components/book13/Chapter6';
 import Book13Ch7 from './components/book13/Chapter7';
 
 // ========== 導入 Book 14 章節 ==========
-import Book14Home from './components/book14/Book14Home';
 import Book14Ch1 from './components/book14/Book14Ch1';
 import Book14Ch2 from './components/book14/Book14Ch2';
 import Book14Ch3 from './components/book14/Book14Ch3';
@@ -520,7 +518,6 @@ const App: React.FC = () => {
         <Route path="/book/13" element={<BookLayout bookId="book13" chapter="chapter1" chapters={BOOK_CHAPTERS.book13}><Book13Ch1 /></BookLayout>} />
 
         {/* ========== Book 14 - 活在聖靈中 ========== */}
-        <Route path="/book14/home" element={<BookLayout bookId="book14" chapter="home" chapters={BOOK_CHAPTERS.book14}><Book14Home /></BookLayout>} />
         <Route path="/book14/chapter1" element={<BookLayout bookId="book14" chapter="chapter1" chapters={BOOK_CHAPTERS.book14}><Book14Ch1 /></BookLayout>} />
         <Route path="/book14/chapter2" element={<BookLayout bookId="book14" chapter="chapter2" chapters={BOOK_CHAPTERS.book14}><Book14Ch2 /></BookLayout>} />
         <Route path="/book14/chapter3" element={<BookLayout bookId="book14" chapter="chapter3" chapters={BOOK_CHAPTERS.book14}><Book14Ch3 /></BookLayout>} />
@@ -530,7 +527,7 @@ const App: React.FC = () => {
         <Route path="/book14/chapter7" element={<BookLayout bookId="book14" chapter="chapter7" chapters={BOOK_CHAPTERS.book14}><Book14Ch7 /></BookLayout>} />
         <Route path="/book14/chapter8" element={<BookLayout bookId="book14" chapter="chapter8" chapters={BOOK_CHAPTERS.book14}><Book14Ch8 /></BookLayout>} />
         <Route path="/book14/chapter9" element={<BookLayout bookId="book14" chapter="chapter9" chapters={BOOK_CHAPTERS.book14}><Book14Ch9 /></BookLayout>} />
-        <Route path="/book/14" element={<BookLayout bookId="book14" chapter="home" chapters={BOOK_CHAPTERS.book14}><Book14Home /></BookLayout>} />
+        <Route path="/book/14" element={<BookLayout bookId="book14" chapter="chapter1" chapters={BOOK_CHAPTERS.book14}><Book14Ch1 /></BookLayout>} />
 
         {/* ========== 首頁 - 書籍列表 ========== */}
         <Route path="/" element={
@@ -698,8 +695,8 @@ const App: React.FC = () => {
                   title="活在聖靈中"
                   author="巴刻 (J. I. Packer)"
                   description="深入探討聖靈的位格、工作與基督徒生命，學習如何靠聖靈行事，活出得勝的生活"
-                  chapters={10}
-                  to="/book14/home"
+                  chapters={9}
+                  to="/book14/chapter1"
                   color="from-purple-500 to-pink-600"
                 />
 
