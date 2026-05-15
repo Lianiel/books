@@ -10,7 +10,7 @@ const Section = ({
   title,
   icon: Icon,
   children,
-  defaultOpen = false,
+  defaultOpen = true,
   accentColor = 'indigo',
 }: {
   title: string;
@@ -50,8 +50,8 @@ const Section = ({
 };
 
 export default function Book10Ch9() {
-  const [openPrinciple, setOpenPrinciple] = useState<number | null>(null);
-  const [openPitfall, setOpenPitfall] = useState<number | null>(null);
+  const [openPrinciple, setOpenPrinciple] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openPitfall, setOpenPitfall] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
 
   const principles = [
     {
@@ -241,7 +241,7 @@ export default function Book10Ch9() {
         </p>
         {principles.map((principle, idx) => {
           const Icon = principle.icon;
-          const isOpen = openPrinciple === idx;
+          const isOpen = openPrinciple.has(i)dx;
           const c = principle.color === 'green' ? { border: 'border-green-400', bg: 'bg-green-50', icon: 'text-green-600', title: 'text-green-900' } :
                     principle.color === 'purple' ? { border: 'border-purple-400', bg: 'bg-purple-50', icon: 'text-purple-600', title: 'text-purple-900' } :
                     principle.color === 'blue' ? { border: 'border-blue-400', bg: 'bg-blue-50', icon: 'text-blue-600', title: 'text-blue-900' } :
@@ -309,7 +309,7 @@ export default function Book10Ch9() {
           了解這些陷阱，可以避免代禱團走向失敗。
         </p>
         {commonPitfalls.map((item, idx) => {
-          const isOpen = openPitfall === idx;
+          const isOpen = openPitfall.has(i)dx;
 
           return (
             <div key={idx} className="rounded-xl border-l-4 border-red-400 bg-red-50 mb-3 shadow-sm overflow-hidden">

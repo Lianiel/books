@@ -10,7 +10,7 @@ const Section = ({
   title,
   icon: Icon,
   children,
-  defaultOpen = false,
+  defaultOpen = true,
   accentColor = 'indigo',
 }: {
   title: string;
@@ -50,8 +50,8 @@ const Section = ({
 };
 
 export default function Book10Ch7() {
-  const [openStep, setOpenStep] = useState<number | null>(null);
-  const [openMistake, setOpenMistake] = useState<number | null>(null);
+  const [openStep, setOpenStep] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openMistake, setOpenMistake] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
 
   const steps = [
     {
@@ -223,7 +223,7 @@ export default function Book10Ch7() {
         </p>
         {steps.map((step, idx) => {
           const Icon = step.icon;
-          const isOpen = openStep === idx;
+          const isOpen = openStep.has(i)dx;
           const c = step.color === 'purple' ? { border: 'border-purple-400', bg: 'bg-purple-50', icon: 'text-purple-600', title: 'text-purple-900' } :
                     step.color === 'indigo' ? { border: 'border-indigo-400', bg: 'bg-indigo-50', icon: 'text-indigo-600', title: 'text-indigo-900' } :
                     step.color === 'green' ? { border: 'border-green-400', bg: 'bg-green-50', icon: 'text-green-600', title: 'text-green-900' } :
@@ -286,7 +286,7 @@ export default function Book10Ch7() {
           了解別人的失敗，可以避免自己重蹈覆轍。這些錯誤都是真實案例的總結。
         </p>
         {commonMistakes.map((item, idx) => {
-          const isOpen = openMistake === idx;
+          const isOpen = openMistake.has(i)dx;
 
           return (
             <div key={idx} className="rounded-xl border-l-4 border-red-400 bg-red-50 mb-3 shadow-sm overflow-hidden">

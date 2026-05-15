@@ -9,7 +9,7 @@ const Section = ({
   title,
   icon: Icon,
   children,
-  defaultOpen = false,
+  defaultOpen = true,
   accentColor = 'indigo',
 }: {
   title: string;
@@ -44,8 +44,8 @@ const Section = ({
 };
 
 export default function Book10Ch4() {
-  const [openBarrier, setOpenBarrier] = useState<number | null>(null);
-  const [openSecret, setOpenSecret] = useState<number | null>(null);
+  const [openBarrier, setOpenBarrier] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openSecret, setOpenSecret] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
 
   const barriers = [
     {
@@ -299,7 +299,7 @@ export default function Book10Ch4() {
         </p>
         {barriers.map((barrier, idx) => {
           const Icon = barrier.icon;
-          const isOpen = openBarrier === idx;
+          const isOpen = openBarrier.has(i)dx;
           const borderColor = barrier.color === 'red' ? 'border-red-400' : barrier.color === 'purple' ? 'border-purple-400' : 'border-amber-400';
           const bgColor = barrier.color === 'red' ? 'bg-red-50' : barrier.color === 'purple' ? 'bg-purple-50' : 'bg-amber-50';
           const iconColor = barrier.color === 'red' ? 'text-red-600' : barrier.color === 'purple' ? 'text-purple-600' : 'text-amber-600';
@@ -362,7 +362,7 @@ export default function Book10Ch4() {
         </p>
         {secrets.map((secret, idx) => {
           const Icon = secret.icon;
-          const isOpen = openSecret === idx;
+          const isOpen = openSecret.has(i)dx;
           const borderColor = secret.color === 'purple' ? 'border-purple-400' : secret.color === 'green' ? 'border-green-400' : secret.color === 'amber' ? 'border-amber-400' : 'border-indigo-400';
           const bgColor = secret.color === 'purple' ? 'bg-purple-50' : secret.color === 'green' ? 'bg-green-50' : secret.color === 'amber' ? 'bg-amber-50' : 'bg-indigo-50';
           const iconColor = secret.color === 'purple' ? 'text-purple-600' : secret.color === 'green' ? 'text-green-600' : secret.color === 'amber' ? 'text-amber-600' : 'text-indigo-600';

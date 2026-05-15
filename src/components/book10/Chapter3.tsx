@@ -9,7 +9,7 @@ const Section = ({
   title,
   icon: Icon,
   children,
-  defaultOpen = false,
+  defaultOpen = true,
   accentColor = 'indigo',
 }: {
   title: string;
@@ -44,8 +44,8 @@ const Section = ({
 };
 
 export default function Book10Ch3() {
-  const [openReason, setOpenReason] = useState<number | null>(null);
-  const [openVul, setOpenVul] = useState<number | null>(null);
+  const [openReason, setOpenReason] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openVul, setOpenVul] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
 
   const reasons = [
     {
@@ -241,7 +241,7 @@ export default function Book10Ch3() {
         </h2>
         {reasons.map((reason, idx) => {
           const Icon = reason.icon;
-          const isOpen = openReason === idx;
+          const isOpen = openReason.has(i)dx;
           const borderColor = reason.color === 'red' ? 'border-red-400' : reason.color === 'purple' ? 'border-purple-400' : 'border-indigo-400';
           const bgColor = reason.color === 'red' ? 'bg-red-50' : reason.color === 'purple' ? 'bg-purple-50' : 'bg-indigo-50';
           const iconColor = reason.color === 'red' ? 'text-red-600' : reason.color === 'purple' ? 'text-purple-600' : 'text-indigo-600';
@@ -313,7 +313,7 @@ export default function Book10Ch3() {
         </p>
         {vulnerabilities.map((vul, idx) => {
           const Icon = vul.icon;
-          const isOpen = openVul === idx;
+          const isOpen = openVul.has(i)dx;
           return (
             <div key={idx} className="rounded-xl border-l-4 border-amber-400 bg-amber-50 mb-3 shadow-sm overflow-hidden">
               <button

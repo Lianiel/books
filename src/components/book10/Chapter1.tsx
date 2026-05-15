@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, ChevronUp, Zap, Globe, Sparkles, Heart, BookOpen, Shield, Users, Brain, Target, MessageCircle } from 'lucide-react';
 
@@ -51,8 +51,8 @@ function Section({ id, icon: Icon, title, isExpanded, onToggle, children }: Sect
   );
 }
 
-export default function Chapter1({ expandAll }: { expandAll?: boolean }) {
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
+export default function Chapter1() {
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['intro','skyline','hereford','intercession','bible','power','summary']));
 
   const toggleSection = (id: string) => {
     const newExpanded = new Set(expandedSections);
@@ -63,15 +63,6 @@ export default function Chapter1({ expandAll }: { expandAll?: boolean }) {
     }
     setExpandedSections(newExpanded);
   };
-
-  useEffect(() => {
-    if (expandAll) {
-      const allIds = ['intro', 'skyline', 'hereford', 'intercession', 'bible', 'power', 'summary'];
-      setExpandedSections(new Set(allIds));
-    } else {
-      setExpandedSections(new Set());
-    }
-  }, [expandAll]);
 
   return (
     <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-700">
