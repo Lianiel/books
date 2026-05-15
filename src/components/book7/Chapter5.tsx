@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, ChevronDown, ChevronUp, MessageSquareQuote, Shield } from 'lucide-react';
 
 export default function Chapter5() {
-  const [openQ, setOpenQ] = useState<number | null>(null);
-  const [showScripture, setShowScripture] = useState(false);
+  const [openQ, setOpenQ] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [showScripture, setShowScripture] = useState(true);
 
   const supplementScriptures = [
     { topic: "有關聚會的態度", ref: "希伯來書 10:24~25", text: "又要彼此相顧，激發愛心，勉勵行善。你們不可停止聚會，好像那些停止慣了的人，倒要彼此勸勉，既知道那日子臨近，就更當如此。" },
@@ -66,11 +66,11 @@ export default function Chapter5() {
         <div className="space-y-3">
           {objections.map((obj, i) => (
             <div key={i} className="bg-white rounded-xl border border-amber-100 overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-amber-50 transition-colors" onClick={() => setOpenQ(openQ === i ? null : i)}>
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-amber-50 transition-colors" onClick={() => setOpenQ(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <h4 className="font-bold text-amber-800" style={{fontSize:"18px"}}>❓ {obj.q}</h4>
-                {openQ === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openQ.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{(openQ === i) && (
+              <AnimatePresence>{(openQ.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2 }} className="overflow-hidden">
                   <div className="px-5 pb-4">
                     <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">

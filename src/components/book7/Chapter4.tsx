@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, ChevronDown, ChevronUp, Target, Heart, Gift } from 'lucide-react';
 
 export default function Chapter4() {
-  const [openSection, setOpenSection] = useState<number | null>(null);
-  const [openFollow, setOpenFollow] = useState(false);
+  const [openSection, setOpenSection] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openFollow, setOpenFollow] = useState(true);
 
   const sections = [
     {
@@ -119,13 +119,13 @@ export default function Chapter4() {
 
         return (
         <div key={i} className={`bg-gradient-to-br ${bgMap[colorName]} rounded-3xl p-6 md:p-8 border shadow-sm`}>
-          <div className="flex items-center justify-between mb-4 cursor-pointer" onClick={() => setOpenSection(openSection === i ? null : i)}>
+          <div className="flex items-center justify-between mb-4 cursor-pointer" onClick={() => setOpenSection(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
             <h3 className={`font-bold ${textMap[colorName]} flex items-center gap-2 flex-wrap`} style={{fontSize:"24px"}}>
               <span className={`px-3 py-1 rounded-full text-sm border ${badgeMap[colorName]}`}>{sec.num}</span>
               {sec.title}
               {sec.ref && <span className={`text-xs px-2 py-1 rounded-full border ${badgeMap[colorName]} font-normal`}>{sec.ref}</span>}
             </h3>
-            {openSection === i ? <ChevronUp className="w-5 h-5 text-slate-400 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0" />}
+            {openSection.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0" />}
           </div>
           <div className="bg-white rounded-xl p-5 border border-slate-200 mb-4">
             <div className="flex items-start gap-2">
@@ -138,7 +138,7 @@ export default function Chapter4() {
               <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{sec.extraScripture}</p>
             </div>
           )}
-          <AnimatePresence>{(openSection === i) && (
+          <AnimatePresence>{(openSection.has(i)) && (
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
               <div className="space-y-3">
                 <div className="bg-white/80 rounded-xl p-4 border border-slate-100">

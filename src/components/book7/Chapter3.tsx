@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, ChevronDown, ChevronUp, Target, Heart, ChevronRight } from 'lucide-react';
 
 export default function Chapter3() {
-  const [openSection, setOpenSection] = useState<number | null>(null);
-  const [openFollow, setOpenFollow] = useState(false);
+  const [openSection, setOpenSection] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openFollow, setOpenFollow] = useState(true);
 
   const sections = [
     {
@@ -142,13 +142,13 @@ export default function Chapter3() {
         const badgeMap: Record<string,string> = { emerald:"bg-emerald-100 text-emerald-700 border-emerald-200", blue:"bg-blue-100 text-blue-700 border-blue-200", rose:"bg-rose-100 text-rose-700 border-rose-200", indigo:"bg-indigo-100 text-indigo-700 border-indigo-200", amber:"bg-amber-100 text-amber-700 border-amber-200", violet:"bg-violet-100 text-violet-700 border-violet-200", teal:"bg-teal-100 text-teal-700 border-teal-200" };
         return (
         <div key={i} className={`bg-gradient-to-br ${bgMap[colorName]} rounded-3xl p-6 md:p-8 border shadow-sm`}>
-          <div className="flex items-center justify-between mb-4 cursor-pointer" onClick={() => setOpenSection(openSection === i ? null : i)}>
+          <div className="flex items-center justify-between mb-4 cursor-pointer" onClick={() => setOpenSection(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
             <h3 className={`font-bold ${textMap[colorName]} flex items-center gap-2 flex-wrap`} style={{fontSize:"24px"}}>
               <span className={`px-3 py-1 rounded-full text-sm border ${badgeMap[colorName]}`}>{sec.num}</span>
               {sec.title}
               <span className={`text-xs px-2 py-1 rounded-full border ${badgeMap[colorName]} font-normal`}>{sec.ref}</span>
             </h3>
-            {openSection === i ? <ChevronUp className="w-5 h-5 text-slate-400 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0" />}
+            {openSection.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0" />}
           </div>
           {sec.subtitle && <p className="text-slate-500 text-sm italic mb-3 -mt-2 ml-12">{sec.subtitle}</p>}
           <div className="bg-white rounded-xl p-5 border border-slate-200 mb-4">
@@ -158,7 +158,7 @@ export default function Chapter3() {
             </div>
           </div>
           {sec.note && <p className="text-slate-500 text-xs italic mb-3 ml-2">* {sec.note}</p>}
-          <AnimatePresence>{(openSection === i) && (
+          <AnimatePresence>{(openSection.has(i)) && (
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
               <div className="space-y-3">
                 {sec.guide && (
