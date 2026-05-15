@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Lightbulb, BookOpen, ChevronDown, ChevronUp, Target, Brain, MessageCircle, AlertTriangle, Sparkles, CheckCircle2, Users, Heart, Search, Globe, Shield, Zap } from 'lucide-react';
 
 export default function Chapter3() {
-  const [openFormula, setOpenFormula] = useState<number | null>(null);
-  const [openSalt, setOpenSalt] = useState<number | null>(null);
-  const [openMath, setOpenMath] = useState<number | null>(null);
-  const [openTheology, setOpenTheology] = useState<number | null>(null);
-  const [openChallenge, setOpenChallenge] = useState<number | null>(null);
+  const [openFormula, setOpenFormula] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openSalt, setOpenSalt] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openMath, setOpenMath] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openTheology, setOpenTheology] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openChallenge, setOpenChallenge] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
 
   const formulaParts = [
     {
@@ -237,16 +237,16 @@ export default function Chapter3() {
         </p>
         <div className="space-y-3 mb-4">
           {saltFunctions.map((item, i) => (
-            <div key={i} className="bg-amber-50 rounded-xl border border-amber-200 overflow-hidden cursor-pointer hover:bg-amber-100 transition-colors" onClick={() => setOpenSalt(openSalt === i ? null : i)}>
+            <div key={i} className="bg-amber-50 rounded-xl border border-amber-200 overflow-hidden cursor-pointer hover:bg-amber-100 transition-colors" onClick={() => setOpenSalt(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
               <div className="p-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <span style={{fontSize:"24px"}}>{item.icon}</span>
                   <span className="font-bold text-amber-800" style={{fontSize:"18px"}}>{item.func}</span>
                 </div>
-                {openSalt === i ? <ChevronUp className="w-5 h-5 text-amber-400" /> : <ChevronDown className="w-5 h-5 text-amber-400" />}
+                {openSalt.has(i) ? <ChevronUp className="w-5 h-5 text-amber-400" /> : <ChevronDown className="w-5 h-5 text-amber-400" />}
               </div>
               <AnimatePresence>
-                {openSalt === i && (
+                {openSalt.has(i) && (
                   <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                     <div className="px-4 pb-4">
                       <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{item.detail}</p>
@@ -376,7 +376,7 @@ export default function Chapter3() {
         <div className="space-y-4">
           {formulaParts.map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-              <div className={`bg-gradient-to-r ${item.color} rounded-2xl border overflow-hidden cursor-pointer hover:shadow-md transition-all`} onClick={() => setOpenFormula(openFormula === i ? null : i)}>
+              <div className={`bg-gradient-to-r ${item.color} rounded-2xl border overflow-hidden cursor-pointer hover:shadow-md transition-all`} onClick={() => setOpenFormula(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <div className="p-5 flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-white/60 rounded-full flex items-center justify-center">{item.icon}</div>
@@ -387,11 +387,11 @@ export default function Chapter3() {
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-slate-400 bg-white/50 px-2 py-1 rounded-md" style={{fontSize:"13px"}}>{item.page}</span>
-                    {openFormula === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                    {openFormula.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
                   </div>
                 </div>
                 <AnimatePresence>
-                  {openFormula === i && (
+                  {openFormula.has(i) && (
                     <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                       <div className="px-5 pb-5 space-y-3">
                         <div className="bg-white/80 rounded-xl p-4 border border-white/50">
@@ -422,16 +422,16 @@ export default function Chapter3() {
         </p>
         <div className="space-y-3">
           {wrongMath.map((item, i) => (
-            <div key={i} className={`rounded-2xl border overflow-hidden cursor-pointer hover:shadow-md transition-all ${i === 3 ? 'bg-emerald-50 border-emerald-200' : 'bg-white border-red-200'}`} onClick={() => setOpenMath(openMath === i ? null : i)}>
+            <div key={i} className={`rounded-2xl border overflow-hidden cursor-pointer hover:shadow-md transition-all ${i === 3 ? 'bg-emerald-50 border-emerald-200' : 'bg-white border-red-200'}`} onClick={() => setOpenMath(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
               <div className="p-5 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <span style={{fontSize:"24px"}}>{item.emoji}</span>
                   <span className={`font-bold ${i === 3 ? 'text-emerald-800' : 'text-red-800'}`} style={{fontSize:"17px"}}>{item.formula}</span>
                 </div>
-                {openMath === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openMath.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
               <AnimatePresence>
-                {openMath === i && (
+                {openMath.has(i) && (
                   <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                     <div className="px-5 pb-5">
                       <p className="text-slate-600 leading-relaxed" style={{fontSize:"17px"}}>{item.problem}</p>
@@ -453,13 +453,13 @@ export default function Chapter3() {
         </h3>
         <div className="space-y-4">
           {theologyTopics.map((item, i) => (
-            <div key={i} className="bg-slate-700/50 rounded-2xl border border-slate-600 overflow-hidden cursor-pointer hover:bg-slate-700/70 transition-colors" onClick={() => setOpenTheology(openTheology === i ? null : i)}>
+            <div key={i} className="bg-slate-700/50 rounded-2xl border border-slate-600 overflow-hidden cursor-pointer hover:bg-slate-700/70 transition-colors" onClick={() => setOpenTheology(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
               <div className="p-5 flex items-center justify-between">
                 <h4 className="font-bold text-amber-200" style={{fontSize:"19px"}}>{item.title}</h4>
-                {openTheology === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openTheology.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
               <AnimatePresence>
-                {openTheology === i && (
+                {openTheology.has(i) && (
                   <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                     <div className="px-5 pb-5 space-y-3">
                       <p className="text-slate-300 leading-relaxed" style={{fontSize:"17px"}}>{item.content}</p>
@@ -519,16 +519,16 @@ export default function Chapter3() {
         </h3>
         <div className="space-y-4">
           {weeklyChallenge.map((item, i) => (
-            <div key={i} className="bg-white rounded-2xl border border-indigo-200 overflow-hidden cursor-pointer hover:bg-indigo-50/50 transition-colors" onClick={() => setOpenChallenge(openChallenge === i ? null : i)}>
+            <div key={i} className="bg-white rounded-2xl border border-indigo-200 overflow-hidden cursor-pointer hover:bg-indigo-50/50 transition-colors" onClick={() => setOpenChallenge(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
               <div className="p-5 flex items-center justify-between">
                 <div className="flex items-center gap-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center font-bold text-indigo-700" style={{fontSize:"16px"}}>{item.week}</div>
                   <h4 className="font-bold text-indigo-800" style={{fontSize:"19px"}}>{item.title}</h4>
                 </div>
-                {openChallenge === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openChallenge.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
               <AnimatePresence>
-                {openChallenge === i && (
+                {openChallenge.has(i) && (
                   <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                     <div className="px-5 pb-5 space-y-3">
                       <div className="bg-indigo-50 rounded-xl p-4 border border-indigo-100">

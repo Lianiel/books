@@ -3,14 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, Globe, Users, BookOpen, ChevronDown, ChevronUp, Target, Brain, Lightbulb, MessageCircle, Search, AlertTriangle, Sparkles, Eye, HandHeart, Church, CalendarCheck, BookMarked, MessageSquareQuote } from 'lucide-react';
 
 export default function Chapter1() {
-  const [openSection, setOpenSection] = useState<number | null>(null);
-  const [openParable, setOpenParable] = useState<number | null>(null);
-  const [openTheology, setOpenTheology] = useState<number | null>(null);
-  const [openChallenge, setOpenChallenge] = useState<number | null>(null);
-  const toggle = (i: number) => setOpenSection(openSection === i ? null : i);
-  const toggleParable = (i: number) => setOpenParable(openParable === i ? null : i);
-  const toggleTheology = (i: number) => setOpenTheology(openTheology === i ? null : i);
-  const toggleChallenge = (i: number) => setOpenChallenge(openChallenge === i ? null : i);
+  const [openSection, setOpenSection] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openParable, setOpenParable] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openTheology, setOpenTheology] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openChallenge, setOpenChallenge] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const toggle = (i: number) => setOpenSection(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; });
+  const toggleParable = (i: number) => setOpenParable(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; });
+  const toggleTheology = (i: number) => setOpenTheology(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; });
+  const toggleChallenge = (i: number) => setOpenChallenge(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; });
 
   const scienceFacts = [
     { fact: "星球距離", detail: "如果星球之間的平均距離再增大一點，像地球這類行星就不會形成；如果再小一點，生命存在所需的行星軌道就不會出現。" },
@@ -412,10 +412,10 @@ export default function Chapter1() {
             <div key={i} className="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden cursor-pointer hover:bg-slate-100 transition-colors" onClick={() => toggleParable(i)}>
               <div className="p-5 flex items-center justify-between">
                 <h4 className="font-bold text-slate-800" style={{fontSize:"20px"}}>{item.title}</h4>
-                {openParable === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openParable.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
               <AnimatePresence>
-                {openParable === i && (
+                {openParable.has(i) && (
                   <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                     <div className="px-5 pb-5 space-y-3">
                       <div className="bg-white rounded-xl p-4 border border-slate-100">
@@ -596,10 +596,10 @@ export default function Chapter1() {
             <div key={i} className="bg-slate-700/50 rounded-2xl border border-slate-600 overflow-hidden cursor-pointer hover:bg-slate-700/70 transition-colors" onClick={() => toggleTheology(i)}>
               <div className="p-5 flex items-center justify-between">
                 <h4 className="font-bold text-amber-200" style={{fontSize:"19px"}}>{item.title}</h4>
-                {openTheology === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openTheology.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
               <AnimatePresence>
-                {openTheology === i && (
+                {openTheology.has(i) && (
                   <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                     <div className="px-5 pb-5 space-y-3">
                       <p className="text-slate-300 leading-relaxed" style={{fontSize:"17px"}}>{item.content}</p>
@@ -669,10 +669,10 @@ export default function Chapter1() {
                   <div className="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center font-bold text-indigo-700" style={{fontSize:"16px"}}>{item.week}</div>
                   <h4 className="font-bold text-indigo-800" style={{fontSize:"19px"}}>{item.title}</h4>
                 </div>
-                {openChallenge === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openChallenge.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
               <AnimatePresence>
-                {openChallenge === i && (
+                {openChallenge.has(i) && (
                   <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                     <div className="px-5 pb-5 space-y-3">
                       <div className="bg-indigo-50 rounded-xl p-4 border border-indigo-100">

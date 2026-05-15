@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, BookOpen, ChevronDown, ChevronUp, Target, Brain, MessageSquareQuote, BookMarked, Eye, ArrowDown } from 'lucide-react';
 
 export default function Chapter4() {
-  const [openTrait, setOpenTrait] = useState<number | null>(null);
-  const [openPitfall, setOpenPitfall] = useState<number | null>(null);
-  const [openTheology, setOpenTheology] = useState<number | null>(null);
-  const [openChallenge, setOpenChallenge] = useState<number | null>(null);
-  const [openTaiwan, setOpenTaiwan] = useState<number | null>(null);
+  const [openTrait, setOpenTrait] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openPitfall, setOpenPitfall] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openTheology, setOpenTheology] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openChallenge, setOpenChallenge] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openTaiwan, setOpenTaiwan] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
 
   const strobel = {
     name: "李·史特博（Lee Strobel）",
@@ -224,14 +224,14 @@ export default function Chapter4() {
             const c = traitColorMap[trait.color];
             return (
             <div key={i} className={`${c.bg} border ${c.border} rounded-2xl overflow-hidden`}>
-              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setOpenTrait(openTrait === i ? null : i)}>
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setOpenTrait(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <div className="flex items-center gap-3">
                   <span className="text-3xl">{trait.icon}</span>
                   <div><h4 className={`font-bold ${c.text}`} style={{fontSize:"20px"}}>{trait.title}</h4><p className="text-slate-500 text-sm">{trait.subtitle}</p></div>
                 </div>
-                {openTrait === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openTrait.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{(openTrait === i) && (
+              <AnimatePresence>{(openTrait.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     {trait.sections.map((s, j) => (
@@ -254,9 +254,9 @@ export default function Chapter4() {
         <h3 className="font-bold text-rose-800 mb-4 flex items-center gap-2" style={{fontSize:"24px"}}><ArrowDown className="w-6 h-6 text-rose-600" />要注意的陷阱<span className="ml-2 text-xs bg-rose-100 text-rose-600 px-2 py-1 rounded-full border border-rose-200">P65-72</span></h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {pitfalls.map((p, i) => (
-            <div key={i} className="bg-white rounded-xl p-4 border border-rose-100 cursor-pointer hover:border-rose-300 transition-colors" onClick={() => setOpenPitfall(openPitfall === i ? null : i)}>
+            <div key={i} className="bg-white rounded-xl p-4 border border-rose-100 cursor-pointer hover:border-rose-300 transition-colors" onClick={() => setOpenPitfall(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
               <div className="flex items-center gap-2 mb-1"><span className="text-xl">{p.icon}</span><span className="font-bold text-rose-800" style={{fontSize:"15px"}}>{p.title}</span></div>
-              <AnimatePresence>{(openPitfall === i) && (
+              <AnimatePresence>{(openPitfall.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2 }}>
                   <p className="text-slate-600 text-sm mt-2 leading-relaxed">{p.detail}</p>
                 </motion.div>
@@ -272,11 +272,11 @@ export default function Chapter4() {
         <div className="space-y-3 mt-4">
           {theologyTopics.map((topic, i) => (
             <div key={i} className="bg-white rounded-2xl border border-violet-100 overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-violet-50 transition-colors" onClick={() => setOpenTheology(openTheology === i ? null : i)}>
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-violet-50 transition-colors" onClick={() => setOpenTheology(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <h4 className="font-bold text-violet-800" style={{fontSize:"18px"}}>{topic.title}</h4>
-                {openTheology === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openTheology.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{(openTheology === i) && (
+              <AnimatePresence>{(openTheology.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     <p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{topic.content}</p>
@@ -296,11 +296,11 @@ export default function Chapter4() {
         <div className="space-y-3 mt-4">
           {taiwanExamples.map((ex, i) => (
             <div key={i} className="bg-white rounded-2xl border border-orange-100 overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-orange-50 transition-colors" onClick={() => setOpenTaiwan(openTaiwan === i ? null : i)}>
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-orange-50 transition-colors" onClick={() => setOpenTaiwan(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <h4 className="font-bold text-orange-800" style={{fontSize:"18px"}}>{ex.title}</h4>
-                {openTaiwan === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openTaiwan.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{(openTaiwan === i) && (
+              <AnimatePresence>{(openTaiwan.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     <div className="bg-orange-50 rounded-xl p-4 border border-orange-100"><div className="font-bold text-orange-700 mb-2" style={{fontSize:"15px"}}>📍 情境：</div><p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{ex.scenario}</p></div>
@@ -320,11 +320,11 @@ export default function Chapter4() {
         <div className="space-y-3 mt-4">
           {weeklyChallenge.map((item, i) => (
             <div key={i} className="bg-white rounded-2xl border border-indigo-100 overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-indigo-50 transition-colors" onClick={() => setOpenChallenge(openChallenge === i ? null : i)}>
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-indigo-50 transition-colors" onClick={() => setOpenChallenge(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <div className="flex items-center gap-3"><span className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-700 font-bold text-sm">{item.week.slice(-2)}</span><h4 className="font-bold text-indigo-800" style={{fontSize:"18px"}}>{item.title}</h4></div>
-                {openChallenge === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openChallenge.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{(openChallenge === i) && (
+              <AnimatePresence>{(openChallenge.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     <div className="bg-indigo-50 rounded-xl p-4 border border-indigo-100"><div className="font-bold text-indigo-700 mb-2" style={{fontSize:"15px"}}>🎯 任務：</div><p className="text-slate-600" style={{fontSize:"16px"}}>{item.mission}</p></div>

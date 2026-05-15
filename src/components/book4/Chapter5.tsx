@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, BookOpen, ChevronDown, ChevronUp, Target, Brain, MessageSquareQuote, BookMarked, ArrowDown } from 'lucide-react';
 
 export default function Chapter5() {
-  const [openFactor, setOpenFactor] = useState<number | null>(null);
-  const [openStep, setOpenStep] = useState<number | null>(null);
-  const [openTheology, setOpenTheology] = useState<number | null>(null);
-  const [openChallenge, setOpenChallenge] = useState<number | null>(null);
-  const [openTaiwan, setOpenTaiwan] = useState<number | null>(null);
+  const [openFactor, setOpenFactor] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openStep, setOpenStep] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openTheology, setOpenTheology] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openChallenge, setOpenChallenge] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openTaiwan, setOpenTaiwan] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
 
   const goodSamaritanSummary = {
     story: "路加福音中耶穌的著名例子：一個猶太人被暴徒搶劫痛毆，昏沉地倒在路旁溝渠。祭司路過——繞過去了。利未人路過——也快步通過。然後一名撒馬利亞人（猶太人的死對頭！）路過，卻停下來：為他包紮妥當、抬上驢子、帶到客棧、付清一切費用。",
@@ -242,14 +242,14 @@ export default function Chapter5() {
         <div className="space-y-3">
           {loveDamagers.map((d, i) => (
             <div key={i} className="border border-rose-100 rounded-2xl overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 cursor-pointer bg-rose-50 hover:bg-rose-100 transition-colors" onClick={() => setOpenFactor(openFactor === i ? null : i)}>
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer bg-rose-50 hover:bg-rose-100 transition-colors" onClick={() => setOpenFactor(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">{d.icon}</span>
                   <h4 className="font-bold text-rose-800" style={{fontSize:"18px"}}>{d.num}. {d.title}</h4>
                 </div>
-                {openFactor === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openFactor.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{(openFactor === i) && (
+              <AnimatePresence>{(openFactor.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3 bg-white">
                     <div className="bg-rose-50 rounded-xl p-4 border border-rose-200"><p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>💔 <strong>問題：</strong>{d.detail}</p></div>
@@ -269,12 +269,12 @@ export default function Chapter5() {
         <h3 className="font-bold text-blue-800 mb-4 flex items-center gap-2" style={{fontSize:"24px"}}><Target className="w-6 h-6 text-blue-600" />提升愛心商數的五個步驟<span className="ml-2 text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full border border-blue-200">P79-89</span></h3>
         <div className="space-y-3">
           {boostSteps.map((s, i) => (
-            <div key={i} className="bg-white rounded-xl p-4 border border-blue-100 cursor-pointer hover:border-blue-300 transition-colors" onClick={() => setOpenStep(openStep === i ? null : i)}>
+            <div key={i} className="bg-white rounded-xl p-4 border border-blue-100 cursor-pointer hover:border-blue-300 transition-colors" onClick={() => setOpenStep(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
               <div className="flex items-center gap-3">
                 <span className="text-2xl">{s.icon}</span>
                 <span className="font-bold text-blue-800" style={{fontSize:"16px"}}>{s.step}</span>
               </div>
-              <AnimatePresence>{(openStep === i) && (
+              <AnimatePresence>{(openStep.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2 }}>
                   <p className="text-slate-600 mt-2 ml-11 leading-relaxed" style={{fontSize:"15px"}}>{s.detail}</p>
                 </motion.div>
@@ -293,11 +293,11 @@ export default function Chapter5() {
         <div className="space-y-3 mt-4">
           {theologyTopics.map((topic, i) => (
             <div key={i} className="bg-white rounded-2xl border border-violet-100 overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-violet-50 transition-colors" onClick={() => setOpenTheology(openTheology === i ? null : i)}>
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-violet-50 transition-colors" onClick={() => setOpenTheology(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <h4 className="font-bold text-violet-800" style={{fontSize:"18px"}}>{topic.title}</h4>
-                {openTheology === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openTheology.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{(openTheology === i) && (
+              <AnimatePresence>{(openTheology.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     <p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{topic.content}</p>
@@ -317,11 +317,11 @@ export default function Chapter5() {
         <div className="space-y-3 mt-4">
           {taiwanExamples.map((ex, i) => (
             <div key={i} className="bg-white rounded-2xl border border-orange-100 overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-orange-50 transition-colors" onClick={() => setOpenTaiwan(openTaiwan === i ? null : i)}>
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-orange-50 transition-colors" onClick={() => setOpenTaiwan(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <h4 className="font-bold text-orange-800" style={{fontSize:"18px"}}>{ex.title}</h4>
-                {openTaiwan === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openTaiwan.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{(openTaiwan === i) && (
+              <AnimatePresence>{(openTaiwan.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     <div className="bg-orange-50 rounded-xl p-4 border border-orange-100"><div className="font-bold text-orange-700 mb-2" style={{fontSize:"15px"}}>📍 情境：</div><p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{ex.scenario}</p></div>
@@ -341,11 +341,11 @@ export default function Chapter5() {
         <div className="space-y-3 mt-4">
           {weeklyChallenge.map((item, i) => (
             <div key={i} className="bg-white rounded-2xl border border-indigo-100 overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-indigo-50 transition-colors" onClick={() => setOpenChallenge(openChallenge === i ? null : i)}>
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-indigo-50 transition-colors" onClick={() => setOpenChallenge(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <div className="flex items-center gap-3"><span className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-700 font-bold text-sm">{item.week.slice(-2)}</span><h4 className="font-bold text-indigo-800" style={{fontSize:"18px"}}>{item.title}</h4></div>
-                {openChallenge === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openChallenge.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{(openChallenge === i) && (
+              <AnimatePresence>{(openChallenge.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     <div className="bg-indigo-50 rounded-xl p-4 border border-indigo-100"><div className="font-bold text-indigo-700 mb-2" style={{fontSize:"15px"}}>🎯 任務：</div><p className="text-slate-600" style={{fontSize:"16px"}}>{item.mission}</p></div>

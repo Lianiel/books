@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, BookOpen, ChevronDown, ChevronUp, Target, Brain, MessageSquareQuote, Layers, BookMarked, ArrowUp, ArrowDown } from 'lucide-react';
 
 export default function Chapter2() {
-  const [openReward, setOpenReward] = useState<number | null>(null);
-  const [openCost, setOpenCost] = useState<number | null>(null);
-  const [openTheology, setOpenTheology] = useState<number | null>(null);
-  const [openChallenge, setOpenChallenge] = useState<number | null>(null);
-  const [openTaiwan, setOpenTaiwan] = useState<number | null>(null);
+  const [openReward, setOpenReward] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openCost, setOpenCost] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openTheology, setOpenTheology] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openChallenge, setOpenChallenge] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
+  const [openTaiwan, setOpenTaiwan] = useState<Set<number>>(new Set([0,1,2,3,4,5,6,7,8,9]));
 
   const costBenefitIntro = {
     concept: "商業界用「本益分析」（cost/benefit analysis）來做決策——把投資和收穫逐一列舉，然後做出有根有據的決定。耶穌在路加福音十四章也提出類似方法：蓋房子前先計算花費、打仗前先估量兵力。",
@@ -263,14 +263,14 @@ export default function Chapter2() {
         <div className="space-y-3">
           {rewards.map((r, i) => (
             <div key={i} className="bg-white rounded-2xl border border-emerald-100 overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-emerald-50 transition-colors" onClick={() => setOpenReward(openReward === i ? null : i)}>
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-emerald-50 transition-colors" onClick={() => setOpenReward(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <div className="flex items-center gap-3">
                   <span className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center text-xl">{r.icon}</span>
                   <div><h4 className="font-bold text-emerald-800" style={{fontSize:"18px"}}>{r.num}. {r.title}</h4><p className="text-emerald-600 text-sm">{r.summary}</p></div>
                 </div>
-                {openReward === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openReward.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{(openReward === i) && (
+              <AnimatePresence>{(openReward.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     <p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{r.detail}</p>
@@ -292,14 +292,14 @@ export default function Chapter2() {
         <div className="space-y-3">
           {costs.map((c, i) => (
             <div key={i} className="bg-white rounded-2xl border border-rose-100 overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-rose-50 transition-colors" onClick={() => setOpenCost(openCost === i ? null : i)}>
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-rose-50 transition-colors" onClick={() => setOpenCost(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">{c.icon}</span>
                   <h4 className="font-bold text-rose-800" style={{fontSize:"18px"}}>{c.num}. {c.title}</h4>
                 </div>
-                {openCost === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openCost.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{(openCost === i) && (
+              <AnimatePresence>{(openCost.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     <div className="bg-rose-50 rounded-xl p-4 border border-rose-200"><p className="text-rose-700" style={{fontSize:"16px"}}>💸 <strong>代價：</strong>{c.detail}</p></div>
@@ -330,11 +330,11 @@ export default function Chapter2() {
         <div className="space-y-3 mt-4">
           {theologyTopics.map((topic, i) => (
             <div key={i} className="bg-white rounded-2xl border border-violet-100 overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-violet-50 transition-colors" onClick={() => setOpenTheology(openTheology === i ? null : i)}>
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-violet-50 transition-colors" onClick={() => setOpenTheology(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <h4 className="font-bold text-violet-800" style={{fontSize:"18px"}}>{topic.title}</h4>
-                {openTheology === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openTheology.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{(openTheology === i) && (
+              <AnimatePresence>{(openTheology.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     <p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{topic.content}</p>
@@ -354,11 +354,11 @@ export default function Chapter2() {
         <div className="space-y-3 mt-4">
           {taiwanExamples.map((ex, i) => (
             <div key={i} className="bg-white rounded-2xl border border-orange-100 overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-orange-50 transition-colors" onClick={() => setOpenTaiwan(openTaiwan === i ? null : i)}>
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-orange-50 transition-colors" onClick={() => setOpenTaiwan(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <h4 className="font-bold text-orange-800" style={{fontSize:"18px"}}>{ex.title}</h4>
-                {openTaiwan === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openTaiwan.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{(openTaiwan === i) && (
+              <AnimatePresence>{(openTaiwan.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     <div className="bg-orange-50 rounded-xl p-4 border border-orange-100"><div className="font-bold text-orange-700 mb-2" style={{fontSize:"15px"}}>📍 情境：</div><p className="text-slate-600 leading-relaxed" style={{fontSize:"16px"}}>{ex.scenario}</p></div>
@@ -378,11 +378,11 @@ export default function Chapter2() {
         <div className="space-y-3 mt-4">
           {weeklyChallenge.map((item, i) => (
             <div key={i} className="bg-white rounded-2xl border border-indigo-100 overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-indigo-50 transition-colors" onClick={() => setOpenChallenge(openChallenge === i ? null : i)}>
+              <div className="flex items-center justify-between px-5 py-4 cursor-pointer hover:bg-indigo-50 transition-colors" onClick={() => setOpenChallenge(prev => { const s = new Set(prev); s.has(i) ? s.delete(i) : s.add(i); return s; })}>
                 <div className="flex items-center gap-3"><span className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-700 font-bold text-sm">{item.week.slice(-2)}</span><h4 className="font-bold text-indigo-800" style={{fontSize:"18px"}}>{item.title}</h4></div>
-                {openChallenge === i ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                {openChallenge.has(i) ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
               </div>
-              <AnimatePresence>{(openChallenge === i) && (
+              <AnimatePresence>{(openChallenge.has(i)) && (
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
                   <div className="px-5 pb-5 space-y-3">
                     <div className="bg-indigo-50 rounded-xl p-4 border border-indigo-100"><div className="font-bold text-indigo-700 mb-2" style={{fontSize:"15px"}}>🎯 任務：</div><p className="text-slate-600" style={{fontSize:"16px"}}>{item.mission}</p></div>
