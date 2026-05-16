@@ -241,7 +241,8 @@ export default function Book10Ch9() {
         </p>
         {principles.map((principle, idx) => {
           const Icon = principle.icon;
-          const isOpen = openPrinciple.has(i)dx;
+       const isOpen = openPrinciple.has(idx);   
+
           const c = principle.color === 'green' ? { border: 'border-green-400', bg: 'bg-green-50', icon: 'text-green-600', title: 'text-green-900' } :
                     principle.color === 'purple' ? { border: 'border-purple-400', bg: 'bg-purple-50', icon: 'text-purple-600', title: 'text-purple-900' } :
                     principle.color === 'blue' ? { border: 'border-blue-400', bg: 'bg-blue-50', icon: 'text-blue-600', title: 'text-blue-900' } :
