@@ -27,7 +27,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book3: '向保羅學宣教',
   book4: '成為有感染力的基督徒',
   book5: '如何活出基督的樣式',
-  book6: '從歷史中看見神的啟示',
+  book6: '烈王記上-從歷史中看見神的啟示',
   book7: '基要陪讀課程',
   book8: '靈性關懷與身心健康',
   book9: '三層天禱告',
