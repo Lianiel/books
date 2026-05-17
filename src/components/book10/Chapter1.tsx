@@ -52,16 +52,14 @@ function Section({ id, icon: Icon, title, isExpanded, onToggle, children }: Sect
 }
 
 export default function Chapter1() {
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['intro','skyline','hereford','intercession','bible','power','summary']));
+  const [expandedSections, setExpandedSections] = useState<string[]>(['intro','skyline','hereford','intercession','bible','power','summary']);
 
   const toggleSection = (id: string) => {
-    const newExpanded = new Set(expandedSections);
-    if (newExpanded.has(id)) {
-      newExpanded.delete(id);
+    if (expandedSections.includes(id)) {
+      setExpandedSections(expandedSections.filter(s => s !== id));
     } else {
-      newExpanded.add(id);
+      setExpandedSections([...expandedSections, id]);
     }
-    setExpandedSections(newExpanded);
   };
 
   return (
@@ -94,7 +92,7 @@ export default function Chapter1() {
         id="intro"
         icon={Zap}
         title="被忽略的屬靈能力資源"
-        isExpanded={expandedSections.has('intro')}
+        isExpanded={expandedSections.includes('intro')}
         onToggle={() => toggleSection('intro')}
       >
         <div className="space-y-4">
@@ -248,7 +246,7 @@ export default function Chapter1() {
         id="skyline"
         icon={Globe}
         title="真實見證：天廓衛理教會的屬靈冒險"
-        isExpanded={expandedSections.has('skyline')}
+        isExpanded={expandedSections.includes('skyline')}
         onToggle={() => toggleSection('skyline')}
       >
         <div className="space-y-4">
@@ -336,7 +334,7 @@ export default function Chapter1() {
         id="hereford"
         icon={Sparkles}
         title="真實見證：德州赫里福德市的復興"
-        isExpanded={expandedSections.has('hereford')}
+        isExpanded={expandedSections.includes('hereford')}
         onToggle={() => toggleSection('hereford')}
       >
         <div className="space-y-4">
@@ -417,7 +415,7 @@ export default function Chapter1() {
         id="intercession"
         icon={Heart}
         title="何謂代禱？"
-        isExpanded={expandedSections.has('intercession')}
+        isExpanded={expandedSections.includes('intercession')}
         onToggle={() => toggleSection('intercession')}
       >
         <div className="space-y-4">
@@ -576,7 +574,7 @@ export default function Chapter1() {
         id="bible"
         icon={BookOpen}
         title="代禱的聖經基礎"
-        isExpanded={expandedSections.has('bible')}
+        isExpanded={expandedSections.includes('bible')}
         onToggle={() => toggleSection('bible')}
       >
         <div className="space-y-4">
@@ -722,7 +720,7 @@ export default function Chapter1() {
         id="power"
         icon={Shield}
         title="代禱能力的釋放"
-        isExpanded={expandedSections.has('power')}
+        isExpanded={expandedSections.includes('power')}
         onToggle={() => toggleSection('power')}
       >
         <div className="space-y-4">
@@ -884,7 +882,7 @@ export default function Chapter1() {
         id="summary"
         icon={Users}
         title="本章總結"
-        isExpanded={expandedSections.has('summary')}
+        isExpanded={expandedSections.includes('summary')}
         onToggle={() => toggleSection('summary')}
       >
         <div className="space-y-4">
