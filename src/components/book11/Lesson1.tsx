@@ -19,7 +19,7 @@ type TabId = 'intro' | 'creation' | 'endtimes';
 
 // ========== 組件定義 ==========
 
-const Section: React.FC<SectionProps> = ({ title, children, defaultOpen = false, color = "blue" }) => {
+const Section: React.FC<SectionProps> = ({ title, children, defaultOpen = true, color = "blue" }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   
   const colorMap = {
