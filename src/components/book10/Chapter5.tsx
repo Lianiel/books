@@ -215,7 +215,7 @@ export default function Book10Ch5() {
         </p>
         {barriers.map((barrier, idx) => {
           const Icon = barrier.icon;
-          const isOpen = openBarrier.has(i)dx;
+          const isOpen = openBarrier.has(idx);
           const c = barrier.color === 'red' ? { border: 'border-red-400', bg: 'bg-red-50', icon: 'text-red-600', title: 'text-red-900' } :
                     barrier.color === 'purple' ? { border: 'border-purple-400', bg: 'bg-purple-50', icon: 'text-purple-600', title: 'text-purple-900' } :
                     { border: 'border-amber-400', bg: 'bg-amber-50', icon: 'text-amber-600', title: 'text-amber-900' };
@@ -273,7 +273,7 @@ export default function Book10Ch5() {
         </p>
         {principles.map((principle, idx) => {
           const Icon = principle.icon;
-          const isOpen = openPrinciple.has(i)dx;
+          const isOpen = openPrinciple.has(idx);
 
           return (
             <div key={idx} className="rounded-xl border-l-4 border-green-400 bg-green-50 mb-3 shadow-sm overflow-hidden">

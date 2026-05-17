@@ -241,7 +241,7 @@ export default function Book10Ch3() {
         </h2>
         {reasons.map((reason, idx) => {
           const Icon = reason.icon;
-          const isOpen = openReason.has(i)dx;
+          const isOpen = openReason.has(idx);
           const borderColor = reason.color === 'red' ? 'border-red-400' : reason.color === 'purple' ? 'border-purple-400' : 'border-indigo-400';
           const bgColor = reason.color === 'red' ? 'bg-red-50' : reason.color === 'purple' ? 'bg-purple-50' : 'bg-indigo-50';
           const iconColor = reason.color === 'red' ? 'text-red-600' : reason.color === 'purple' ? 'text-purple-600' : 'text-indigo-600';
@@ -313,7 +313,7 @@ export default function Book10Ch3() {
         </p>
         {vulnerabilities.map((vul, idx) => {
           const Icon = vul.icon;
-          const isOpen = openVul.has(i)dx;
+          const isOpen = openVul.has(idx);
           return (
             <div key={idx} className="rounded-xl border-l-4 border-amber-400 bg-amber-50 mb-3 shadow-sm overflow-hidden">
               <button

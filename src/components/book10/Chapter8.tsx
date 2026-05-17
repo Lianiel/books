@@ -224,7 +224,7 @@ export default function Book10Ch8() {
         </p>
         {characteristics.map((char, idx) => {
           const Icon = char.icon;
-          const isOpen = openCharacteristic.has(i)dx;
+          const isOpen = openCharacteristic.has(idx);
           const c = char.color === 'purple' ? { border: 'border-purple-400', bg: 'bg-purple-50', icon: 'text-purple-600', title: 'text-purple-900' } :
                     char.color === 'red' ? { border: 'border-red-400', bg: 'bg-red-50', icon: 'text-red-600', title: 'text-red-900' } :
                     char.color === 'indigo' ? { border: 'border-indigo-400', bg: 'bg-indigo-50', icon: 'text-indigo-600', title: 'text-indigo-900' } :

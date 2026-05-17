@@ -241,8 +241,7 @@ export default function Book10Ch9() {
         </p>
         {principles.map((principle, idx) => {
           const Icon = principle.icon;
-       const isOpen = openPrinciple.has(idx);   
-
+          const isOpen = openPrinciple.has(idx);
           const c = principle.color === 'green' ? { border: 'border-green-400', bg: 'bg-green-50', icon: 'text-green-600', title: 'text-green-900' } :
                     principle.color === 'purple' ? { border: 'border-purple-400', bg: 'bg-purple-50', icon: 'text-purple-600', title: 'text-purple-900' } :
                     principle.color === 'blue' ? { border: 'border-blue-400', bg: 'bg-blue-50', icon: 'text-blue-600', title: 'text-blue-900' } :
@@ -310,7 +309,7 @@ export default function Book10Ch9() {
           了解這些陷阱，可以避免代禱團走向失敗。
         </p>
         {commonPitfalls.map((item, idx) => {
-          const isOpen = openPitfall.has(i)dx;
+          const isOpen = openPitfall.has(idx);
 
           return (
             <div key={idx} className="rounded-xl border-l-4 border-red-400 bg-red-50 mb-3 shadow-sm overflow-hidden">

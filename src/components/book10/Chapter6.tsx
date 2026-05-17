@@ -182,7 +182,7 @@ export default function Book10Ch6() {
         </p>
         {threeTypes.map((type, idx) => {
           const Icon = type.icon;
-          const isOpen = openType.has(i)dx;
+          const isOpen = openType.has(idx);
           const c = type.color === 'indigo' ? { border: 'border-indigo-400', bg: 'bg-indigo-50', icon: 'text-indigo-600', title: 'text-indigo-900' } :
                     type.color === 'red' ? { border: 'border-red-400', bg: 'bg-red-50', icon: 'text-red-600', title: 'text-red-900' } :
                     { border: 'border-purple-400', bg: 'bg-purple-50', icon: 'text-purple-600', title: 'text-purple-900' };
