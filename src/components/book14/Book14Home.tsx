@@ -1,96 +1,57 @@
-import React, { useState } from 'react';
-import { BookOpen, ChevronDown, ChevronUp, Heart, Target } from 'lucide-react';
+import React from 'react';
+import { BookOpen, Heart, Shield, Flame, Eye, Clock, AlertCircle, Music, Sparkles } from 'lucide-react';
 
 export default function Book14Home() {
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({
-    intro: true,
-    toc: true
-  });
-
-  const toggleSection = (id: string) => {
-    setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
-  };
+  const chapters = [
+    { num: 1, title: '序言及前言', icon: BookOpen, color: 'text-purple-600' },
+    { num: 2, title: '看清楚聖靈', icon: Eye, color: 'text-blue-600' },
+    { num: 3, title: '聖經裡的聖靈', icon: Heart, color: 'text-pink-600' },
+    { num: 4, title: '聖靈的路徑－聖潔之道', icon: Shield, color: 'text-green-600' },
+    { num: 5, title: '聖靈的路徑－成聖面面觀', icon: Flame, color: 'text-orange-600' },
+    { num: 6, title: '聖靈的路徑－靈恩生活', icon: Sparkles, color: 'text-yellow-600' },
+    { num: 7, title: '聖靈的路徑－解釋聖靈生活', icon: Clock, color: 'text-indigo-600' },
+    { num: 8, title: '聖靈，請來！', icon: Music, color: 'text-rose-600' },
+    { num: 9, title: '附錄：羅馬書第七章的『苦中人』', icon: AlertCircle, color: 'text-slate-600' },
+  ];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-4xl mx-auto px-4 py-12">
       <div className="text-center mb-12">
-        <div className="inline-block p-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl shadow-xl mb-6">
-          <BookOpen className="w-16 h-16 text-white" />
-        </div>
         <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
           活在聖靈中
         </h1>
-        <p className="text-xl text-gray-600 mb-2">作者：巴刻（J. I. Packer）</p>
-        <p className="text-sm text-gray-500">Keep in Step With the Spirit</p>
+        <p className="text-xl text-gray-600 mb-2">巴刻 (J. I. Packer)</p>
+        <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+          深入探討聖靈的位格、工作與基督徒生命。透過九章的內容，幫助信徒認識聖靈如何在我們的靈命中工作。
+        </p>
       </div>
 
-      <div className="mb-8 border rounded-lg overflow-hidden shadow-md">
-        <button
-          onClick={() => toggleSection('intro')}
-          className="w-full px-6 py-4 bg-gradient-to-r from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 flex items-center justify-between transition-all"
-        >
-          <div className="flex items-center gap-3">
-            <Heart className="w-6 h-6 text-purple-600" />
-            <span className="font-bold text-lg text-gray-800">關於本書</span>
-          </div>
-          {expanded['intro'] ? 
-            <ChevronUp className="w-6 h-6 text-gray-600" /> : 
-            <ChevronDown className="w-6 h-6 text-gray-600" />
-          }
-        </button>
-        
-        {expanded['intro'] && (
-          <div className="p-6 bg-white space-y-4 text-gray-700 leading-relaxed">
-            <p>
-              《活在聖靈中》是當代福音派神學家巴刻的重要著作之一。本書深入探討聖靈的位格、工作與基督徒生命的關係。
-            </p>
-            <p>
-              本書的核心信息是：聖靈的主要職事是體現主耶穌基督。
-            </p>
-          </div>
-        )}
-      </div>
-
-      <div className="border rounded-lg overflow-hidden shadow-md">
-        <button
-          onClick={() => toggleSection('toc')}
-          className="w-full px-6 py-4 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 flex items-center justify-between transition-all"
-        >
-          <div className="flex items-center gap-3">
-            <Target className="w-6 h-6 text-indigo-600" />
-            <span className="font-bold text-lg text-gray-800">章節目錄</span>
-          </div>
-          {expanded['toc'] ? 
-            <ChevronUp className="w-6 h-6 text-gray-600" /> : 
-            <ChevronDown className="w-6 h-6 text-gray-600" />
-          }
-        </button>
-        
-        {expanded['toc'] && (
-          <div className="p-6 bg-white space-y-3">
-            {[
-              { num: 1, title: '序言及前言' },
-              { num: 2, title: '看清楚聖靈' },
-              { num: 3, title: '聖經裡的聖靈' },
-              { num: 4, title: '聖靈的路徑－聖潔之道' },
-              { num: 5, title: '聖靈的路徑－成聖面面觀' },
-              { num: 6, title: '聖靈的路徑－靈恩生活' },
-              { num: 7, title: '聖靈的路徑－解釋聖靈生活' },
-              { num: 8, title: '聖靈，請來！' },
-              { num: 9, title: '附錄：羅馬書第七章的苦中人' }
-            ].map(chapter => (
-              <div 
-                key={chapter.num}
-                className="flex items-center gap-4 p-4 rounded-lg hover:bg-purple-50 transition-colors border border-gray-100"
-              >
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white font-bold shadow-md">
-                  {chapter.num}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        {chapters.map((ch) => {
+          const Icon = ch.icon;
+          return (
+            <div key={ch.num} className="bg-white rounded-xl p-5 border border-gray-200 hover:border-gray-400 hover:shadow-md transition-all cursor-pointer">
+              <div className="flex items-start gap-4">
+                <Icon className={`w-6 h-6 flex-shrink-0 mt-1 ${ch.color}`} />
+                <div>
+                  <h3 className="font-semibold text-gray-800">
+                    第{ch.num}章 {ch.title}
+                  </h3>
                 </div>
-                <p className="font-semibold text-gray-800">{chapter.title}</p>
               </div>
-            ))}
-          </div>
-        )}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-100">
+        <h2 className="font-bold text-lg mb-3 text-gray-800">📖 如何閱讀本書</h2>
+        <ul className="space-y-2 text-gray-700 ml-4">
+          <li>✓ 每章包含主要內容、延伸探討、反思問題和實踐方針</li>
+          <li>✓ 建議按序閱讀，但也可以按需查看特定章節</li>
+          <li>✓ 在反思問題部分停留，讓內容內化於心</li>
+          <li>✓ 完成實踐方針，將所學應用在生活中</li>
+        </ul>
       </div>
     </div>
   );
