@@ -25,8 +25,13 @@ export default function Book14Ch5() {
           {expanded.content ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
         </button>
         {expanded.content && (
-          <div className="p-4 bg-white border-t">
-            <p className="text-gray-700 mb-4">內容待填...</p>
+          <div className="p-4 bg-white border-t space-y-4">
+            <p className="text-gray-700">聖靈與禱告的生活密切相關。禱告是信徒與神親密的通道，而聖靈在禱告中幫助我們，教導我們如何禱告，將我們的祈求帶到父神面前。聖靈使我們的禱告更有力量，更貼近神的旨意。</p>
+            <div className="mt-3 p-3 bg-purple-50 border-l-4 border-purple-500 rounded">
+              <p style={{color: '#059669', fontWeight: 'bold'}} className="text-sm leading-relaxed">
+                <strong>羅馬書 8:26-27</strong> - 「況且，我們的軟弱有聖靈幫助。我們本不曉得當怎樣禱告，只是聖靈親自用說不出來的歎息替我們禱告。鑒察人心的，曉得聖靈的意思，因為聖靈照著神的旨意替聖徒祈求。」
+              </p>
+            </div>
           </div>
         )}
       </div>

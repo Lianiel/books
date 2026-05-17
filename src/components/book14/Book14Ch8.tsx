@@ -25,8 +25,13 @@ export default function Book14Ch8() {
           {expanded.content ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
         </button>
         {expanded.content && (
-          <div className="p-4 bg-white border-t">
-            <p className="text-gray-700 mb-4">內容待填...</p>
+          <div className="p-4 bg-white border-t space-y-4">
+            <p className="text-gray-700">聖靈的工作涵蓋基督徒生活的各個層面。他在我們心中重生我們，使我們成為神的兒女。他內住在我們裡面，提供不息的力量和安慰。聖靈不斷地在我們的心中動工，使我們漸漸相似基督。</p>
+            <div className="mt-3 p-3 bg-purple-50 border-l-4 border-purple-500 rounded">
+              <p style={{color: '#059669', fontWeight: 'bold'}} className="text-sm leading-relaxed">
+                <strong>羅馬書 8:9-11</strong> - 「如果神的靈住在你們心裡，你們就不屬肉體，乃屬聖靈了。人若沒有基督的靈，就不是屬基督的。基督若在你們心裡，身體就因罪而死，靈卻因義而活。然而，叫耶穌從死裡復活者的靈若住在你們心裡，那叫基督從死裡復活的，也必藉著住在你們心裡的聖靈，使你們必死的身體又活過來。」
+              </p>
+            </div>
           </div>
         )}
       </div>

@@ -25,8 +25,13 @@ export default function Book14Ch7() {
           {expanded.content ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
         </button>
         {expanded.content && (
-          <div className="p-4 bg-white border-t">
-            <p className="text-gray-700 mb-4">內容待填...</p>
+          <div className="p-4 bg-white border-t space-y-4">
+            <p className="text-gray-700">聖靈的引導是信徒生活中不可或缺的。聖靈引導我們認識神的旨意，提醒我們遵守聖經的真理，在困難中給予我們安慰和指引。聖靈的引導不是頻繁的聲音或異象，而是透過聖經、環境和平安的內在見證。</p>
+            <div className="mt-3 p-3 bg-purple-50 border-l-4 border-purple-500 rounded">
+              <p style={{color: '#059669', fontWeight: 'bold'}} className="text-sm leading-relaxed">
+                <strong>羅馬書 8:14</strong> - 「因為凡被神的靈引導的，都是神的兒子。」
+              </p>
+            </div>
           </div>
         )}
       </div>

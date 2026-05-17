@@ -25,8 +25,13 @@ export default function Book14Ch6() {
           {expanded.content ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
         </button>
         {expanded.content && (
-          <div className="p-4 bg-white border-t">
-            <p className="text-gray-700 mb-4">內容待填...</p>
+          <div className="p-4 bg-white border-t space-y-4">
+            <p className="text-gray-700">聖靈的恩賜是神賜予每一位信徒的超自然能力，為要建立教會、服事他人、榮耀基督。聖靈的恩賜涵蓋多樣的形式，每個信徒都各得各的恩賜，這些恩賜的目的是使教會這個身體和諧運作、健康成長。</p>
+            <div className="mt-3 p-3 bg-purple-50 border-l-4 border-purple-500 rounded">
+              <p style={{color: '#059669', fontWeight: 'bold'}} className="text-sm leading-relaxed">
+                <strong>哥林多前書 12:4-6</strong> - 「恩賜原有分別，聖靈卻是一位。職事也有分別，主卻是一位。功用也有分別，神卻是一位，在眾人裡面運行一切的事。」
+              </p>
+            </div>
           </div>
         )}
       </div>
