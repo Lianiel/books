@@ -1,7 +1,6 @@
 import { supabase } from '../lib/supabase'
 
 export interface Book {
-  id: number
   book_id: string
   title: string
   author?: string
@@ -11,7 +10,6 @@ export interface Book {
 }
 
 export interface Chapter {
-  id: number
   book_id: string
   chapter_id: string
   title: string
@@ -34,7 +32,7 @@ export async function fetchBooks(): Promise<Book[]> {
   const { data, error } = await supabase
     .from('books')
     .select('*')
-    .order('id')
+    .order('book_id')
 
   if (error) {
     console.error('獲取書籍失敗:', error)
