@@ -1,20 +1,8 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Zap, Brain, Users, Globe, BookOpen, TrendingUp } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { Zap, Brain, Users, Globe, BookOpen, TrendingUp } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Book15Ch5() {
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
-  const [activeTask, setActiveTask] = useState<'critical' | 'constructive'>('critical');
-
-  const toggleSection = (id: string) => {
-    const newExpanded = new Set(expandedSections);
-    if (newExpanded.has(id)) {
-      newExpanded.delete(id);
-    } else {
-      newExpanded.add(id);
-    }
-    setExpandedSections(newExpanded);
-  };
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -48,149 +36,117 @@ export default function Book15Ch5() {
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-blue-900 mb-6">神學的兩項主要任務</h2>
 
-        <div className="mb-6 bg-white border rounded-lg shadow">
-          <div className="flex">
-            <button
-              onClick={() => setActiveTask('critical')}
-              className={`flex-1 px-6 py-4 font-bold text-lg transition ${
-                activeTask === 'critical'
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              <div className="flex items-center justify-center gap-2">
-                <Brain className="w-5 h-5" />
-                批判的任務
-              </div>
-            </button>
-            <button
-              onClick={() => setActiveTask('constructive')}
-              className={`flex-1 px-6 py-4 font-bold text-lg transition ${
-                activeTask === 'constructive'
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              <div className="flex items-center justify-center gap-2">
-                <TrendingUp className="w-5 h-5" />
-                建設的任務
-              </div>
-            </button>
+        {/* Critical Task */}
+        <motion.div
+          className="mb-6 bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-lg"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <Brain className="w-6 h-6 text-blue-600" />
+            <h3 className="text-2xl font-bold text-blue-900">批判的任務：檢驗信念的真確性</h3>
           </div>
 
-          <AnimatePresence mode="wait">
-            {activeTask === 'critical' && (
-              <motion.div
-                key="critical"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="p-8 bg-gradient-to-br from-blue-50 to-cyan-50"
-              >
-                <h3 className="text-2xl font-bold text-blue-900 mb-4">批判的任務：檢驗信念的真確性</h3>
+          <div className="space-y-4">
+            <div className="bg-white p-4 rounded border-l-4 border-blue-500">
+              <h4 className="font-bold text-blue-900 mb-2">◇ 任務的本質</h4>
+              <p className="text-gray-700">
+                神學家必須批判地反省既有信念，檢驗其是否：
+              </p>
+              <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                <li>與聖經教導一致</li>
+                <li>相互協調（無內部矛盾）</li>
+                <li>符合基督徒的實際經驗</li>
+                <li>對當代問題有回應能力</li>
+              </ul>
+            </div>
 
-                <div className="space-y-4 mb-6">
-                  <div className="bg-white p-4 rounded border-l-4 border-blue-500">
-                    <h4 className="font-bold text-blue-900 mb-2">◇ 任務的本質</h4>
-                    <p className="text-gray-700">
-                      神學家必須批判地反省既有信念，檢驗其是否：
-                    </p>
-                    <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                      <li>與聖經教導一致</li>
-                      <li>相互協調（無內部矛盾）</li>
-                      <li>符合基督徒的實際經驗</li>
-                      <li>對當代問題有回應能力</li>
-                    </ul>
-                  </div>
+            <div className="bg-white p-4 rounded border-l-4 border-blue-500">
+              <h4 className="font-bold text-blue-900 mb-2">△ 重點認識</h4>
+              <p className="text-gray-700">
+                批判的任務會導致<strong>否定</strong>：有些信念必須被拒絕，因為它們：
+              </p>
+              <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                <li>與聖經相違（如有些民間信仰）</li>
+                <li>在邏輯上自相矛盾</li>
+                <li>源於誤解或虛構</li>
+              </ul>
+            </div>
 
-                  <div className="bg-white p-4 rounded border-l-4 border-blue-500">
-                    <h4 className="font-bold text-blue-900 mb-2">△ 重點認識</h4>
-                    <p className="text-gray-700">
-                      批判的任務會導致<strong>否定</strong>：有些信念必須被拒絕，因為它們：
-                    </p>
-                    <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                      <li>與聖經相違（如有些民間信仰）</li>
-                      <li>在邏輯上自相矛盾</li>
-                      <li>源於誤解或虛構</li>
-                    </ul>
-                  </div>
+            <div className="bg-blue-100 p-4 rounded border-l-4 border-blue-700">
+              <h4 className="font-bold text-blue-900 mb-2">◆ 案例：民俗信仰的檢驗</h4>
+              <p className="text-blue-800">
+                一位信徒因喪偶而相信輪迴（妻子會以新的身體重生）。神學必須批判檢驗：聖經否定輪迴，且與基督教的復活教義相違。神學家有責任指出此信念的錯誤，儘管它能提供某種安慰。
+              </p>
+            </div>
 
-                  <div className="bg-blue-100 p-4 rounded border-l-4 border-blue-700">
-                    <h4 className="font-bold text-blue-900 mb-2">◆ 案例：民俗信仰的檢驗</h4>
-                    <p className="text-blue-800">
-                      一位信徒因喪偶而相信輪迴（妻子會以新的身體重生）。神學必須批判檢驗：聖經否定輪迴，且與基督教的復活教義相違。神學家有責任指出此信念的錯誤，儘管它能提供某種安慰。
-                    </p>
-                  </div>
-                </div>
+            <div className="bg-yellow-50 p-4 rounded border border-yellow-200">
+              <p className="text-yellow-900 font-semibold">
+                ⚠️ 注意：批判不等於破壞。批判為的是除去虛假，保護屬靈健康。
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
-                <div className="bg-yellow-50 p-4 rounded border border-yellow-200">
-                  <p className="text-yellow-900 font-semibold">
-                    ⚠️ 注意：批判不等於破壞。批判為的是除去虛假，保護屬靈健康。
-                  </p>
-                </div>
-              </motion.div>
-            )}
+        {/* Constructive Task */}
+        <motion.div
+          className="mb-6 bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-lg"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <TrendingUp className="w-6 h-6 text-green-600" />
+            <h3 className="text-2xl font-bold text-green-900">建設的任務：重新表達信念</h3>
+          </div>
 
-            {activeTask === 'constructive' && (
-              <motion.div
-                key="constructive"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="p-8 bg-gradient-to-br from-green-50 to-emerald-50"
-              >
-                <h3 className="text-2xl font-bold text-green-900 mb-4">建設的任務：重新表達信念</h3>
+          <div className="space-y-4">
+            <div className="bg-white p-4 rounded border-l-4 border-green-500">
+              <h4 className="font-bold text-green-900 mb-2">◇ 任務的本質</h4>
+              <p className="text-gray-700">
+                在批判反省之後，神學家必須：
+              </p>
+              <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                <li>用現代語言重新表達基督教信念</li>
+                <li>將各信念系統地整合成協調的整體</li>
+                <li>對當代文化和問題作出應答</li>
+                <li>幫助信徒在新處境下應用信仰</li>
+              </ul>
+            </div>
 
-                <div className="space-y-4 mb-6">
-                  <div className="bg-white p-4 rounded border-l-4 border-green-500">
-                    <h4 className="font-bold text-green-900 mb-2">◇ 任務的本質</h4>
-                    <p className="text-gray-700">
-                      在批判反省之後，神學家必須：
-                    </p>
-                    <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                      <li>用現代語言重新表達基督教信念</li>
-                      <li>將各信念系統地整合成協調的整體</li>
-                      <li>對當代文化和問題作出應答</li>
-                      <li>幫助信徒在新處境下應用信仰</li>
-                    </ul>
-                  </div>
+            <div className="bg-white p-4 rounded border-l-4 border-green-500">
+              <h4 className="font-bold text-green-900 mb-2">△ 為什麼需要重新表達</h4>
+              <p className="text-gray-700 mb-3">
+                信仰不是靜態的古董，而是活生生的真理。每一代都需要：
+              </p>
+              <div className="grid grid-cols-2 gap-2 text-sm text-gray-700">
+                <div className="bg-green-50 p-2 rounded">新語言來表達</div>
+                <div className="bg-green-50 p-2 rounded">新視角來理解</div>
+                <div className="bg-green-50 p-2 rounded">新應用來回應</div>
+                <div className="bg-green-50 p-2 rounded">新綜合來整合</div>
+              </div>
+            </div>
 
-                  <div className="bg-white p-4 rounded border-l-4 border-green-500">
-                    <h4 className="font-bold text-green-900 mb-2">△ 為什麼需要重新表達</h4>
-                    <p className="text-gray-700 mb-3">
-                      信仰不是靜態的古董，而是活生生的真理。每一代都需要：
-                    </p>
-                    <div className="grid grid-cols-2 gap-2 text-sm text-gray-700">
-                      <div className="bg-green-50 p-2 rounded">新語言來表達</div>
-                      <div className="bg-green-50 p-2 rounded">新視角來理解</div>
-                      <div className="bg-green-50 p-2 rounded">新應用來回應</div>
-                      <div className="bg-green-50 p-2 rounded">新綜合來整合</div>
-                    </div>
-                  </div>
+            <div className="bg-green-100 p-4 rounded border-l-4 border-green-700">
+              <h4 className="font-bold text-green-900 mb-2">◆ 案例：三位一體教義</h4>
+              <p className="text-green-800 mb-2">
+                初期教會信徒相信父、子、聖靈（原始信念）。
+              </p>
+              <p className="text-green-800 mb-2">
+                神學家用希臘哲學概念（如homoousios = 同一本體）表達，使當代人理解。
+              </p>
+              <p className="text-green-800">
+                現代神學用「關係」、「臨在」等當代語言重新表達，使現代人更容易理解。
+              </p>
+            </div>
 
-                  <div className="bg-green-100 p-4 rounded border-l-4 border-green-700">
-                    <h4 className="font-bold text-green-900 mb-2">◆ 案例：三位一體教義</h4>
-                    <p className="text-green-800 mb-2">
-                      初期教會信徒相信父、子、聖靈（原始信念）。
-                    </p>
-                    <p className="text-green-800 mb-2">
-                      神學家用希臘哲學概念（如homoousios = 同一本體）表達，使當代人理解。
-                    </p>
-                    <p className="text-green-800">
-                      現代神學用「關係」、「臨在」等當代語言重新表達，使現代人更容易理解。
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-blue-50 p-4 rounded border border-blue-200">
-                  <p className="text-blue-900 font-semibold">
-                    ✓ 注意：建設性不等於創新。建設是用新語言表達舊真理，而非發明新信念。
-                  </p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+            <div className="bg-blue-50 p-4 rounded border border-blue-200">
+              <p className="text-blue-900 font-semibold">
+                ✓ 注意：建設性不等於創新。建設是用新語言表達舊真理，而非發明新信念。
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Relationship between tasks */}
         <motion.div
@@ -217,152 +173,104 @@ export default function Book15Ch5() {
 
         {/* Catholic Tradition */}
         <motion.div
-          className="mb-6 border rounded-lg overflow-hidden"
+          className="mb-6 border rounded-lg overflow-hidden bg-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <button
-            onClick={() => toggleSection('tradition1')}
-            className="w-full px-6 py-4 bg-red-100 hover:bg-red-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-red-100">
             <div className="flex items-center gap-3">
               <Globe className="w-5 h-5 text-red-600" />
-              <span className="font-bold text-red-900">传统一：天主教传统</span>
+              <span className="font-bold text-red-900">傳統一：天主教傳統</span>
             </div>
-            {expandedSections.has('tradition1') ?
-              <ChevronUp className="w-5 h-5 text-red-600" /> :
-              <ChevronDown className="w-5 h-5 text-red-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('tradition1') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white space-y-4"
-              >
-                <div>
-                  <h4 className="font-bold text-red-900 mb-2">◇ 特點</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1">
-                    <li>強調傳統的權威性與延續性</li>
-                    <li>聖經 + 聖傳 + 聖統（教會教導權）三位一體</li>
-                    <li>有明確的教導權（magisterium）作為最高仲裁者</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-bold text-red-900 mb-2">△ 優點</h4>
-                  <p className="text-gray-700">提供穩定、一致的教導；避免過度個人主義和多元化。</p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-red-900 mb-2">⚠️ 風險</h4>
-                  <p className="text-gray-700">過度強調傳統可能導致僵化；教導權可能阻止必要的批判反省。</p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <div className="p-6 space-y-4">
+            <div>
+              <h4 className="font-bold text-red-900 mb-2">◇ 特點</h4>
+              <ul className="list-disc list-inside text-gray-700 space-y-1">
+                <li>強調傳統的權威性與延續性</li>
+                <li>聖經 + 聖傳 + 聖統（教會教導權）三位一體</li>
+                <li>有明確的教導權（magisterium）作為最高仲裁者</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-red-900 mb-2">△ 優點</h4>
+              <p className="text-gray-700">提供穩定、一致的教導；避免過度個人主義和多元化。</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-red-900 mb-2">⚠️ 風險</h4>
+              <p className="text-gray-700">過度強調傳統可能導致僵化；教導權可能阻止必要的批判反省。</p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Orthodox Tradition */}
         <motion.div
-          className="mb-6 border rounded-lg overflow-hidden"
+          className="mb-6 border rounded-lg overflow-hidden bg-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          <button
-            onClick={() => toggleSection('tradition2')}
-            className="w-full px-6 py-4 bg-yellow-100 hover:bg-yellow-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-yellow-100">
             <div className="flex items-center gap-3">
               <BookOpen className="w-5 h-5 text-yellow-600" />
-              <span className="font-bold text-yellow-900">传统二：東正教传统</span>
+              <span className="font-bold text-yellow-900">傳統二：東正教傳統</span>
             </div>
-            {expandedSections.has('tradition2') ?
-              <ChevronUp className="w-5 h-5 text-yellow-600" /> :
-              <ChevronDown className="w-5 h-5 text-yellow-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('tradition2') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white space-y-4"
-              >
-                <div>
-                  <h4 className="font-bold text-yellow-900 mb-2">◇ 特點</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1">
-                    <li>重視全體信徒（不只神職人員）的共識</li>
-                    <li>神學更多是敬虔的沉思而非嚴格的系統</li>
-                    <li>神秘經驗與理性思考並重</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-bold text-yellow-900 mb-2">△ 優點</h4>
-                  <p className="text-gray-700">重視信仰的靈性層面和信徒的靈命；避免過度理性化。</p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-yellow-900 mb-2">⚠️ 風險</h4>
-                  <p className="text-gray-700">過度神秘化可能削弱批判能力；神秘經驗難以驗證和傳達。</p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <div className="p-6 space-y-4">
+            <div>
+              <h4 className="font-bold text-yellow-900 mb-2">◇ 特點</h4>
+              <ul className="list-disc list-inside text-gray-700 space-y-1">
+                <li>重視全體信徒（不只神職人員）的共識</li>
+                <li>神學更多是敬虔的沉思而非嚴格的系統</li>
+                <li>神秘經驗與理性思考並重</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-yellow-900 mb-2">△ 優點</h4>
+              <p className="text-gray-700">重視信仰的靈性層面和信徒的靈命；避免過度理性化。</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-yellow-900 mb-2">⚠️ 風險</h4>
+              <p className="text-gray-700">過度神秘化可能削弱批判能力；神秘經驗難以驗證和傳達。</p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Protestant Tradition */}
         <motion.div
-          className="mb-6 border rounded-lg overflow-hidden"
+          className="mb-6 border rounded-lg overflow-hidden bg-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <button
-            onClick={() => toggleSection('tradition3')}
-            className="w-full px-6 py-4 bg-blue-100 hover:bg-blue-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-blue-100">
             <div className="flex items-center gap-3">
               <Users className="w-5 h-5 text-blue-600" />
-              <span className="font-bold text-blue-900">传统三：更正教传统</span>
+              <span className="font-bold text-blue-900">傳統三：更正教傳統</span>
             </div>
-            {expandedSections.has('tradition3') ?
-              <ChevronUp className="w-5 h-5 text-blue-600" /> :
-              <ChevronDown className="w-5 h-5 text-blue-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('tradition3') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white space-y-4"
-              >
-                <div>
-                  <h4 className="font-bold text-blue-900 mb-2">◇ 特點</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1">
-                    <li>以聖經為最高權威（唯獨聖經 - sola scriptura）</li>
-                    <li>強調理性的批判反省</li>
-                    <li>重視神學的系統性和可理解性</li>
-                    <li>多元但聖經為界限</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-bold text-blue-900 mb-2">△ 優點</h4>
-                  <p className="text-gray-700">強調聖經權威；鼓勵理性探討；能更靈活地應適當代。</p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-blue-900 mb-2">⚠️ 風險</h4>
-                  <p className="text-gray-700">可能導致過度多元化；個人解經容易導致分裂。</p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <div className="p-6 space-y-4">
+            <div>
+              <h4 className="font-bold text-blue-900 mb-2">◇ 特點</h4>
+              <ul className="list-disc list-inside text-gray-700 space-y-1">
+                <li>以聖經為最高權威（唯獨聖經 - sola scriptura）</li>
+                <li>強調理性的批判反省</li>
+                <li>重視神學的系統性和可理解性</li>
+                <li>多元但聖經為界限</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-blue-900 mb-2">△ 優點</h4>
+              <p className="text-gray-700">強調聖經權威；鼓勵理性探討；能更靈活地應適當代。</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-blue-900 mb-2">⚠️ 風險</h4>
+              <p className="text-gray-700">可能導致過度多元化；個人解經容易導致分裂。</p>
+            </div>
+          </div>
         </motion.div>
       </div>
 

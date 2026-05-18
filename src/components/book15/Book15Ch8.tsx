@@ -1,21 +1,8 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Heart, Zap, Users, Lightbulb, Target, BookOpen } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { Heart, Zap, Users, Lightbulb, Target, BookOpen } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Book15Ch8() {
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
-  const [selectedPrinciple, setSelectedPrinciple] = useState<string | null>(null);
-
-  const toggleSection = (id: string) => {
-    const newExpanded = new Set(expandedSections);
-    if (newExpanded.has(id)) {
-      newExpanded.delete(id);
-    } else {
-      newExpanded.add(id);
-    }
-    setExpandedSections(newExpanded);
-  };
-
   const principles = [
     {
       id: 'relevance',
@@ -93,19 +80,17 @@ export default function Book15Ch8() {
         <h2 className="text-2xl font-bold text-rose-900 mb-6">神學生活化的四大原則</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-          {principles.map((principle) => {
+          {principles.map((principle, index) => {
             const Icon = principle.icon;
             return (
               <motion.div
                 key={principle.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -5 }}
-                className="cursor-pointer"
-                onClick={() => setSelectedPrinciple(selectedPrinciple === principle.id ? null : principle.id)}
+                transition={{ delay: index * 0.1 }}
               >
-                <div className="bg-white p-4 rounded-lg border-2 border-rose-200 hover:border-rose-400 h-full transition">
-                  <div className="flex items-start gap-3 mb-2">
+                <div className="bg-white p-4 rounded-lg border-2 border-rose-200 h-full">
+                  <div className="flex items-start gap-3 mb-3">
                     <Icon className="w-6 h-6 text-rose-600 flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-bold text-rose-900">{principle.title}</h4>
@@ -113,18 +98,9 @@ export default function Book15Ch8() {
                     </div>
                   </div>
 
-                  <AnimatePresence>
-                    {selectedPrinciple === principle.id && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="mt-3 pt-3 border-t border-rose-200"
-                      >
-                        <p className="text-gray-700 text-sm">{principle.content}</p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  <div className="mt-3 pt-3 border-t border-rose-200">
+                    <p className="text-gray-700 text-sm">{principle.content}</p>
+                  </div>
                 </div>
               </motion.div>
             );
@@ -138,205 +114,141 @@ export default function Book15Ch8() {
 
         {/* Application 1: Personal Spirituality */}
         <motion.div
-          className="mb-6 border rounded-lg overflow-hidden"
+          className="mb-6 border rounded-lg overflow-hidden bg-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <button
-            onClick={() => toggleSection('app1')}
-            className="w-full px-6 py-4 bg-rose-100 hover:bg-rose-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-rose-100">
             <div className="flex items-center gap-3">
               <Heart className="w-5 h-5 text-rose-600" />
               <span className="font-bold text-rose-900">應用一：個人靈性生活</span>
             </div>
-            {expandedSections.has('app1') ?
-              <ChevronUp className="w-5 h-5 text-rose-600" /> :
-              <ChevronDown className="w-5 h-5 text-rose-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('app1') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white space-y-4"
-              >
-                <p className="text-gray-700">
-                  神學對禱告、默想、靈修有深刻影響。例如：
-                </p>
-                <div className="bg-rose-50 p-4 rounded border-l-4 border-rose-500">
-                  <p className="text-gray-700 mb-2">
-                    <strong>對三位一體的理解</strong>如何改變禱告？
-                  </p>
-                  <p className="text-gray-700">
-                    理解聖父、聖子、聖靈各自的角色，幫助我們在禱告中更完整地對向上帝——既向父禱告，也因聖子的中保，又靠聖靈的幫助。
-                  </p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <div className="p-6 space-y-4">
+            <p className="text-gray-700">
+              神學對禱告、默想、靈修有深刻影響。例如：
+            </p>
+            <div className="bg-rose-50 p-4 rounded border-l-4 border-rose-500">
+              <p className="text-gray-700 mb-2">
+                <strong>對三位一體的理解</strong>如何改變禱告？
+              </p>
+              <p className="text-gray-700">
+                理解聖父、聖子、聖靈各自的角色，幫助我們在禱告中更完整地對向上帝——既向父禱告，也因聖子的中保，又靠聖靈的幫助。
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Application 2: Ethical Living */}
         <motion.div
-          className="mb-6 border rounded-lg overflow-hidden"
+          className="mb-6 border rounded-lg overflow-hidden bg-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          <button
-            onClick={() => toggleSection('app2')}
-            className="w-full px-6 py-4 bg-blue-100 hover:bg-blue-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-blue-100">
             <div className="flex items-center gap-3">
               <Zap className="w-5 h-5 text-blue-600" />
               <span className="font-bold text-blue-900">應用二：倫理生活</span>
             </div>
-            {expandedSections.has('app2') ?
-              <ChevronUp className="w-5 h-5 text-blue-600" /> :
-              <ChevronDown className="w-5 h-5 text-blue-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('app2') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white space-y-4"
-              >
-                <p className="text-gray-700">
-                  對神的理解深刻影響倫理判斷：
+          <div className="p-6 space-y-4">
+            <p className="text-gray-700">
+              對神的理解深刻影響倫理判斷：
+            </p>
+            <div className="space-y-3">
+              <div className="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
+                <p className="text-gray-700 mb-2">
+                  <strong>神是公義與憐憫的上帝</strong>
                 </p>
-                <div className="space-y-3">
-                  <div className="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
-                    <p className="text-gray-700 mb-2">
-                      <strong>神是公義與憐憫的上帝</strong>
-                    </p>
-                    <p className="text-gray-700">
-                      導致我們既維護社會正義（反抗不公），又實踐寬恕與復和（不為己報仇）。
-                    </p>
-                  </div>
-                  <div className="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
-                    <p className="text-gray-700 mb-2">
-                      <strong>人按上帝形象被造</strong>
-                    </p>
-                    <p className="text-gray-700">
-                      導致我們尊重每個人的尊嚴，反對一切貶低人性的做法（奴隸制、歧視、濫用）。
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                <p className="text-gray-700">
+                  導致我們既維護社會正義（反抗不公），又實踐寬恕與復和（不為己報仇）。
+                </p>
+              </div>
+              <div className="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
+                <p className="text-gray-700 mb-2">
+                  <strong>人按上帝形象被造</strong>
+                </p>
+                <p className="text-gray-700">
+                  導致我們尊重每個人的尊嚴，反對一切貶低人性的做法（奴隸制、歧視、濫用）。
+                </p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Application 3: Community Witness */}
         <motion.div
-          className="mb-6 border rounded-lg overflow-hidden"
+          className="mb-6 border rounded-lg overflow-hidden bg-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <button
-            onClick={() => toggleSection('app3')}
-            className="w-full px-6 py-4 bg-green-100 hover:bg-green-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-green-100">
             <div className="flex items-center gap-3">
               <Users className="w-5 h-5 text-green-600" />
               <span className="font-bold text-green-900">應用三：教會見證</span>
             </div>
-            {expandedSections.has('app3') ?
-              <ChevronUp className="w-5 h-5 text-green-600" /> :
-              <ChevronDown className="w-5 h-5 text-green-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('app3') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white space-y-4"
-              >
-                <p className="text-gray-700">
-                  神學影響教會的見證和宣教策略：
-                </p>
-                <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
-                  <h4 className="font-bold text-green-900 mb-2">◆ 社區參與</h4>
-                  <p className="text-gray-700">
-                    若相信上帝關心整個被造界和社會正義，教會就會投入扶貧、醫療、教育等社區服事，而非只關注靈魂得救。
-                  </p>
-                </div>
-                <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
-                  <h4 className="font-bold text-green-900 mb-2">◆ 跨文化宣教</h4>
-                  <p className="text-gray-700">
-                    對福音本質的理解影響如何向不同文化傳福音——是譯成外族語言卻保留西方表現形式，還是尊重當地文化重新表達福音？
-                  </p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <div className="p-6 space-y-4">
+            <p className="text-gray-700">
+              神學影響教會的見證和宣教策略：
+            </p>
+            <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
+              <h4 className="font-bold text-green-900 mb-2">◆ 社區參與</h4>
+              <p className="text-gray-700">
+                若相信上帝關心整個被造界和社會正義，教會就會投入扶貧、醫療、教育等社區服事，而非只關注靈魂得救。
+              </p>
+            </div>
+            <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
+              <h4 className="font-bold text-green-900 mb-2">◆ 跨文化宣教</h4>
+              <p className="text-gray-700">
+                對福音本質的理解影響如何向不同文化傳福音——是譯成外族語言卻保留西方表現形式，還是尊重當地文化重新表達福音？
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Application 4: Personal Transformation */}
         <motion.div
-          className="mb-6 border rounded-lg overflow-hidden"
+          className="mb-6 border rounded-lg overflow-hidden bg-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <button
-            onClick={() => toggleSection('app4')}
-            className="w-full px-6 py-4 bg-purple-100 hover:bg-purple-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-purple-100">
             <div className="flex items-center gap-3">
               <Lightbulb className="w-5 h-5 text-purple-600" />
               <span className="font-bold text-purple-900">應用四：生命轉變</span>
             </div>
-            {expandedSections.has('app4') ?
-              <ChevronUp className="w-5 h-5 text-purple-600" /> :
-              <ChevronDown className="w-5 h-5 text-purple-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('app4') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white space-y-4"
-              >
-                <p className="text-gray-700">
-                  最根本的應用是個人的生命改變：
-                </p>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-purple-50 p-3 rounded border-l-4 border-purple-500">
-                    <p className="text-gray-700 font-bold text-sm mb-1">懼怕 → 信心</p>
-                    <p className="text-gray-600 text-xs">理解上帝主權帶來平安</p>
-                  </div>
-                  <div className="bg-purple-50 p-3 rounded border-l-4 border-purple-500">
-                    <p className="text-gray-700 font-bold text-sm mb-1">自私 → 犧牲</p>
-                    <p className="text-gray-600 text-xs">領受恩典激勵無私服事</p>
-                  </div>
-                  <div className="bg-purple-50 p-3 rounded border-l-4 border-purple-500">
-                    <p className="text-gray-700 font-bold text-sm mb-1">內疚 → 赦免</p>
-                    <p className="text-gray-600 text-xs">體驗十字架的拯救帶來釋放</p>
-                  </div>
-                  <div className="bg-purple-50 p-3 rounded border-l-4 border-purple-500">
-                    <p className="text-gray-700 font-bold text-sm mb-1">虛空 → 目標</p>
-                    <p className="text-gray-600 text-xs">發現上帝國的永恆目的</p>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <div className="p-6 space-y-4">
+            <p className="text-gray-700">
+              最根本的應用是個人的生命改變：
+            </p>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="bg-purple-50 p-3 rounded border-l-4 border-purple-500">
+                <p className="text-gray-700 font-bold text-sm mb-1">懼怕 → 信心</p>
+                <p className="text-gray-600 text-xs">理解上帝主權帶來平安</p>
+              </div>
+              <div className="bg-purple-50 p-3 rounded border-l-4 border-purple-500">
+                <p className="text-gray-700 font-bold text-sm mb-1">自私 → 犧牲</p>
+                <p className="text-gray-600 text-xs">領受恩典激勵無私服事</p>
+              </div>
+              <div className="bg-purple-50 p-3 rounded border-l-4 border-purple-500">
+                <p className="text-gray-700 font-bold text-sm mb-1">內疚 → 赦免</p>
+                <p className="text-gray-600 text-xs">體驗十字架的拯救帶來釋放</p>
+              </div>
+              <div className="bg-purple-50 p-3 rounded border-l-4 border-purple-500">
+                <p className="text-gray-700 font-bold text-sm mb-1">虛空 → 目標</p>
+                <p className="text-gray-600 text-xs">發現上帝國的永恆目的</p>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
 

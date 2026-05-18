@@ -1,20 +1,8 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Globe, Clock, Users, Map, Star, Zap } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { Globe, Clock, Users, Map, Star, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Book15Ch7() {
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
-  const [activeContext, setActiveContext] = useState<'historical' | 'cultural' | 'ecclesiastical'>('historical');
-
-  const toggleSection = (id: string) => {
-    const newExpanded = new Set(expandedSections);
-    if (newExpanded.has(id)) {
-      newExpanded.delete(id);
-    } else {
-      newExpanded.add(id);
-    }
-    setExpandedSections(newExpanded);
-  };
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -40,183 +28,139 @@ export default function Book15Ch7() {
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-purple-900 mb-6">神學脈絡的三個維度</h2>
 
-        <div className="mb-6 bg-white border rounded-lg shadow">
-          <div className="flex flex-col sm:flex-row">
-            <button
-              onClick={() => setActiveContext('historical')}
-              className={`flex-1 px-4 py-3 sm:px-6 sm:py-4 font-bold text-sm sm:text-lg transition border-b sm:border-b-0 sm:border-r ${
-                activeContext === 'historical'
-                  ? 'bg-purple-500 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              <div className="flex items-center justify-center gap-2">
-                <Clock className="w-5 h-5" />
-                歷史脈絡
-              </div>
-            </button>
-            <button
-              onClick={() => setActiveContext('cultural')}
-              className={`flex-1 px-4 py-3 sm:px-6 sm:py-4 font-bold text-sm sm:text-lg transition border-b sm:border-b-0 sm:border-r ${
-                activeContext === 'cultural'
-                  ? 'bg-purple-500 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              <div className="flex items-center justify-center gap-2">
-                <Globe className="w-5 h-5" />
-                文化脈絡
-              </div>
-            </button>
-            <button
-              onClick={() => setActiveContext('ecclesiastical')}
-              className={`flex-1 px-4 py-3 sm:px-6 sm:py-4 font-bold text-sm sm:text-lg transition ${
-                activeContext === 'ecclesiastical'
-                  ? 'bg-purple-500 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              <div className="flex items-center justify-center gap-2">
-                <Users className="w-5 h-5" />
-                教會脈絡
-              </div>
-            </button>
+        {/* Historical Context */}
+        <motion.div
+          className="mb-6 bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-lg"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <Clock className="w-6 h-6 text-purple-600" />
+            <h3 className="text-2xl font-bold text-purple-900">1. 歷史脈絡</h3>
           </div>
 
-          <AnimatePresence mode="wait">
-            {activeContext === 'historical' && (
-              <motion.div
-                key="historical"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="p-8 bg-gradient-to-br from-purple-50 to-pink-50"
-              >
-                <h3 className="text-2xl font-bold text-purple-900 mb-4">1. 歷史脈絡</h3>
+          <div className="space-y-4">
+            <div className="bg-white p-4 rounded border-l-4 border-purple-500">
+              <h4 className="font-bold text-purple-900 mb-2">◇ 問題與事件</h4>
+              <p className="text-gray-700">
+                神學通常產生於回應特定的歷史問題或事件。例如：
+              </p>
+              <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                <li>異端挑戰（阿里烏派、聶斯多流派）→ 激發正統教義的發展</li>
+                <li>政治危機 → 政治神學的反思</li>
+                <li>科學發現 → 神學與科學關係的重新審視</li>
+              </ul>
+            </div>
 
-                <div className="space-y-4">
-                  <div className="bg-white p-4 rounded border-l-4 border-purple-500">
-                    <h4 className="font-bold text-purple-900 mb-2">◇ 問題與事件</h4>
-                    <p className="text-gray-700">
-                      神學通常產生於回應特定的歷史問題或事件。例如：
-                    </p>
-                    <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                      <li>異端挑戰（阿里烏派、聶斯多流派）→ 激發正統教義的發展</li>
-                      <li>政治危機 → 政治神學的反思</li>
-                      <li>科學發現 → 神學與科學關係的重新審視</li>
-                    </ul>
-                  </div>
+            <div className="bg-white p-4 rounded border-l-4 border-purple-500">
+              <h4 className="font-bold text-purple-900 mb-2">◆ 時代的關懷</h4>
+              <p className="text-gray-700">
+                不同時代的神學家關注不同的問題：
+              </p>
+              <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                <li><strong>初期教會：</strong>耶穌的神性與人性如何並存？</li>
+                <li><strong>宗教改革：</strong>救恩是靠行為還是靠信心？</li>
+                <li><strong>現代：</strong>神學如何回應苦難、不公義、多元宗教？</li>
+              </ul>
+            </div>
 
-                  <div className="bg-white p-4 rounded border-l-4 border-purple-500">
-                    <h4 className="font-bold text-purple-900 mb-2">◆ 時代的關懷</h4>
-                    <p className="text-gray-700">
-                      不同時代的神學家關注不同的問題：
-                    </p>
-                    <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                      <li><strong>初期教會：</strong>耶穌的神性與人性如何並存？</li>
-                      <li><strong>宗教改革：</strong>救恩是靠行為還是靠信心？</li>
-                      <li><strong>現代：</strong>神學如何回應苦難、不公義、多元宗教？</li>
-                    </ul>
-                  </div>
+            <div className="bg-purple-50 p-4 rounded border border-purple-300">
+              <p className="text-purple-900 font-semibold">
+                ✓ 應用：理解神學家所面對的歷史問題，才能真正理解他們的回應。
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
-                  <div className="bg-purple-50 p-4 rounded border border-purple-300">
-                    <p className="text-purple-900 font-semibold">
-                      ✓ 應用：理解神學家所面對的歷史問題，才能真正理解他們的回應。
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            )}
+        {/* Cultural Context */}
+        <motion.div
+          className="mb-6 bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-lg"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <Globe className="w-6 h-6 text-blue-600" />
+            <h3 className="text-2xl font-bold text-blue-900">2. 文化脈絡</h3>
+          </div>
 
-            {activeContext === 'cultural' && (
-              <motion.div
-                key="cultural"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="p-8 bg-gradient-to-br from-blue-50 to-cyan-50"
-              >
-                <h3 className="text-2xl font-bold text-blue-900 mb-4">2. 文化脈絡</h3>
+          <div className="space-y-4">
+            <div className="bg-white p-4 rounded border-l-4 border-blue-500">
+              <h4 className="font-bold text-blue-900 mb-2">◇ 哲學背景</h4>
+              <p className="text-gray-700">
+                神學家使用當時的哲學語言和概念：
+              </p>
+              <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                <li><strong>教父時期：</strong>使用柏拉圖主義概念表達信仰</li>
+                <li><strong>中世紀：</strong>亞里士多德哲學重新引入</li>
+                <li><strong>現代：</strong>實證主義、現象學、後現代主義影響神學</li>
+              </ul>
+            </div>
 
-                <div className="space-y-4">
-                  <div className="bg-white p-4 rounded border-l-4 border-blue-500">
-                    <h4 className="font-bold text-blue-900 mb-2">◇ 哲學背景</h4>
-                    <p className="text-gray-700">
-                      神學家使用當時的哲學語言和概念：
-                    </p>
-                    <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                      <li><strong>教父時期：</strong>使用柏拉圖主義概念表達信仰</li>
-                      <li><strong>中世紀：</strong>亞里士多德哲學重新引入</li>
-                      <li><strong>現代：</strong>實證主義、現象學、後現代主義影響神學</li>
-                    </ul>
-                  </div>
+            <div className="bg-white p-4 rounded border-l-4 border-blue-500">
+              <h4 className="font-bold text-blue-900 mb-2">◆ 語言與文化假設</h4>
+              <p className="text-gray-700">
+                神學表達受到所在文化的語言、思維方式和假設的深刻影響：
+              </p>
+              <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                <li>西方（希臘-羅馬）思維強調理性和個體</li>
+                <li>東方思維強調整體和和諧</li>
+                <li>非洲、亞洲脈絡帶來對祖先、社區、土地的不同理解</li>
+              </ul>
+            </div>
 
-                  <div className="bg-white p-4 rounded border-l-4 border-blue-500">
-                    <h4 className="font-bold text-blue-900 mb-2">◆ 語言與文化假設</h4>
-                    <p className="text-gray-700">
-                      神學表達受到所在文化的語言、思維方式和假設的深刻影響：
-                    </p>
-                    <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                      <li>西方（希臘-羅馬）思維強調理性和個體</li>
-                      <li>東方思維強調整體和和諧</li>
-                      <li>非洲、亞洲脈絡帶來對祖先、社區、土地的不同理解</li>
-                    </ul>
-                  </div>
+            <div className="bg-blue-50 p-4 rounded border border-blue-300">
+              <p className="text-blue-900 font-semibold">
+                ✓ 應用：同樣的信仰真理在不同文化中會有不同的表達。我們要分辨普遍真理與文化表現。
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
-                  <div className="bg-blue-50 p-4 rounded border border-blue-300">
-                    <p className="text-blue-900 font-semibold">
-                      ✓ 應用：同樣的信仰真理在不同文化中會有不同的表達。我們要分辨普遍真理與文化表現。
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            )}
+        {/* Ecclesiastical Context */}
+        <motion.div
+          className="mb-6 bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-lg"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <Users className="w-6 h-6 text-green-600" />
+            <h3 className="text-2xl font-bold text-green-900">3. 教會脈絡</h3>
+          </div>
 
-            {activeContext === 'ecclesiastical' && (
-              <motion.div
-                key="ecclesiastical"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="p-8 bg-gradient-to-br from-green-50 to-emerald-50"
-              >
-                <h3 className="text-2xl font-bold text-green-900 mb-4">3. 教會脈絡</h3>
+          <div className="space-y-4">
+            <div className="bg-white p-4 rounded border-l-4 border-green-500">
+              <h4 className="font-bold text-green-900 mb-2">◇ 神學傳統</h4>
+              <p className="text-gray-700">
+                神學家來自不同的教會傳統，各傳統有不同的強調：
+              </p>
+              <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                <li><strong>天主教：</strong>強調教會傳統和教導權</li>
+                <li><strong>東正教：</strong>強調聖傳和禮儀經驗</li>
+                <li><strong>更正教：</strong>強調聖經和信徒的理解</li>
+              </ul>
+            </div>
 
-                <div className="space-y-4">
-                  <div className="bg-white p-4 rounded border-l-4 border-green-500">
-                    <h4 className="font-bold text-green-900 mb-2">◇ 神學傳統</h4>
-                    <p className="text-gray-700">
-                      神學家來自不同的教會傳統，各傳統有不同的強調：
-                    </p>
-                    <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                      <li><strong>天主教：</strong>強調教會傳統和教導權</li>
-                      <li><strong>東正教：</strong>強調聖傳和禮儀經驗</li>
-                      <li><strong>更正教：</strong>強調聖經和信徒的理解</li>
-                    </ul>
-                  </div>
+            <div className="bg-white p-4 rounded border-l-4 border-green-500">
+              <h4 className="font-bold text-green-900 mb-2">◆ 教會的需要</h4>
+              <p className="text-gray-700">
+                神學也回應所在教會社群的實際需要：
+              </p>
+              <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                <li>牧師需要講道素材</li>
+                <li>信徒需要信仰的清晰指引</li>
+                <li>教會面臨的倫理問題需要神學回應</li>
+              </ul>
+            </div>
 
-                  <div className="bg-white p-4 rounded border-l-4 border-green-500">
-                    <h4 className="font-bold text-green-900 mb-2">◆ 教會的需要</h4>
-                    <p className="text-gray-700">
-                      神學也回應所在教會社群的實際需要：
-                    </p>
-                    <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                      <li>牧師需要講道素材</li>
-                      <li>信徒需要信仰的清晰指引</li>
-                      <li>教會面臨的倫理問題需要神學回應</li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-green-50 p-4 rounded border border-green-300">
-                    <p className="text-green-900 font-semibold">
-                      ✓ 應用：神學永遠不是抽象的；它源於教會的實際需要並回到教會的實踐。
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+            <div className="bg-green-50 p-4 rounded border border-green-300">
+              <p className="text-green-900 font-semibold">
+                ✓ 應用：神學永遠不是抽象的；它源於教會的實際需要並回到教會的實踐。
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
 
       {/* Integration */}

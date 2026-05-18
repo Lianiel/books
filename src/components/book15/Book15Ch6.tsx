@@ -1,19 +1,8 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Hammer, Book, Lightbulb, Users, Globe, Compass } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { Hammer, Book, Lightbulb, Users, Globe, Compass } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Book15Ch6() {
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
-
-  const toggleSection = (id: string) => {
-    const newExpanded = new Set(expandedSections);
-    if (newExpanded.has(id)) {
-      newExpanded.delete(id);
-    } else {
-      newExpanded.add(id);
-    }
-    setExpandedSections(newExpanded);
-  };
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -41,230 +30,166 @@ export default function Book15Ch6() {
 
         {/* Tool 1: Scripture */}
         <motion.div
-          className="mb-6 border rounded-lg overflow-hidden"
+          className="mb-6 border rounded-lg overflow-hidden bg-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <button
-            onClick={() => toggleSection('tool1')}
-            className="w-full px-6 py-4 bg-green-100 hover:bg-green-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-green-100">
             <div className="flex items-center gap-3">
               <Book className="w-5 h-5 text-green-600" />
               <span className="font-bold text-green-900">工具一：聖經</span>
             </div>
-            {expandedSections.has('tool1') ?
-              <ChevronUp className="w-5 h-5 text-green-600" /> :
-              <ChevronDown className="w-5 h-5 text-green-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('tool1') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white space-y-4"
-              >
-                <div>
-                  <h4 className="font-bold text-green-900 mb-2">◇ 地位與重要性</h4>
-                  <p className="text-gray-700">
-                    聖經是所有基督教神學的最高權威和基礎。神學必須以聖經為根據，而非相反。
-                  </p>
-                </div>
+          <div className="p-6 space-y-4">
+            <div>
+              <h4 className="font-bold text-green-900 mb-2">◇ 地位與重要性</h4>
+              <p className="text-gray-700">
+                聖經是所有基督教神學的最高權威和基礎。神學必須以聖經為根據，而非相反。
+              </p>
+            </div>
 
-                <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
-                  <h4 className="font-bold text-green-900 mb-2">◆ 使用聖經的方法</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-2">
-                    <li><strong>歷史-文法研究：</strong>理解原始的語言、文化、歷史背景</li>
-                    <li><strong>整體平衡：</strong>避免片面引用；看聖經的整體教導</li>
-                    <li><strong>文脈理解：</strong>不斷章取義；理解段落和篇章的完整意思</li>
-                    <li><strong>比較研究：</strong>不同經卷如何相互說明和驗證</li>
-                  </ul>
-                </div>
+            <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
+              <h4 className="font-bold text-green-900 mb-2">◆ 使用聖經的方法</h4>
+              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                <li><strong>歷史-文法研究：</strong>理解原始的語言、文化、歷史背景</li>
+                <li><strong>整體平衡：</strong>避免片面引用；看聖經的整體教導</li>
+                <li><strong>文脈理解：</strong>不斷章取義；理解段落和篇章的完整意思</li>
+                <li><strong>比較研究：</strong>不同經卷如何相互說明和驗證</li>
+              </ul>
+            </div>
 
-                <div className="bg-yellow-50 p-4 rounded border border-yellow-200">
-                  <p className="text-yellow-900 font-semibold">
-                    ⚠️ 陷阱：片面引用聖經證明先入為主的觀點，而非由聖經引導思想。
-                  </p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+            <div className="bg-yellow-50 p-4 rounded border border-yellow-200">
+              <p className="text-yellow-900 font-semibold">
+                ⚠️ 陷阱：片面引用聖經證明先入為主的觀點，而非由聖經引導思想。
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Tool 2: Tradition */}
         <motion.div
-          className="mb-6 border rounded-lg overflow-hidden"
+          className="mb-6 border rounded-lg overflow-hidden bg-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          <button
-            onClick={() => toggleSection('tool2')}
-            className="w-full px-6 py-4 bg-blue-100 hover:bg-blue-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-blue-100">
             <div className="flex items-center gap-3">
               <Compass className="w-5 h-5 text-blue-600" />
               <span className="font-bold text-blue-900">工具二：傳統</span>
             </div>
-            {expandedSections.has('tool2') ?
-              <ChevronUp className="w-5 h-5 text-blue-600" /> :
-              <ChevronDown className="w-5 h-5 text-blue-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('tool2') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white space-y-4"
-              >
-                <div>
-                  <h4 className="font-bold text-blue-900 mb-2">◇ 什麼是傳統？</h4>
-                  <p className="text-gray-700">
-                    過去兩千年來，基督徒對信仰的思考和實踐的總和。包括：教父、中世紀神學家、宗教改革家、現代思想家的著作與經驗。
-                  </p>
-                </div>
+          <div className="p-6 space-y-4">
+            <div>
+              <h4 className="font-bold text-blue-900 mb-2">◇ 什麼是傳統？</h4>
+              <p className="text-gray-700">
+                過去兩千年來，基督徒對信仰的思考和實踐的總和。包括：教父、中世紀神學家、宗教改革家、現代思想家的著作與經驗。
+              </p>
+            </div>
 
-                <div className="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
-                  <h4 className="font-bold text-blue-900 mb-2">◆ 傳統的價值</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-2">
-                    <li><strong>借鑑智慧：</strong>從前人的經驗和思考中學習</li>
-                    <li><strong>避免重複：</strong>不必自己重新發明已被解決的問題</li>
-                    <li><strong>提供視角：</strong>了解不同時代如何理解相同的信仰</li>
-                    <li><strong>批判的基礎：</strong>知道傳統幫助我們知道要批判什麼</li>
-                  </ul>
-                </div>
+            <div className="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
+              <h4 className="font-bold text-blue-900 mb-2">◆ 傳統的價值</h4>
+              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                <li><strong>借鑑智慧：</strong>從前人的經驗和思考中學習</li>
+                <li><strong>避免重複：</strong>不必自己重新發明已被解決的問題</li>
+                <li><strong>提供視角：</strong>了解不同時代如何理解相同的信仰</li>
+                <li><strong>批判的基礎：</strong>知道傳統幫助我們知道要批判什麼</li>
+              </ul>
+            </div>
 
-                <div className="bg-purple-50 p-4 rounded border border-purple-200">
-                  <h4 className="font-bold text-purple-900 mb-2">△ 與聖經的關係</h4>
-                  <p className="text-purple-800">
-                    傳統不與聖經平等，但也不應被忽視。傳統是對聖經的詮釋，可以幫助我們但也可能誤導我們。我們要檢驗傳統是否符合聖經。
-                  </p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+            <div className="bg-purple-50 p-4 rounded border border-purple-200">
+              <h4 className="font-bold text-purple-900 mb-2">△ 與聖經的關係</h4>
+              <p className="text-purple-800">
+                傳統不與聖經平等，但也不應被忽視。傳統是對聖經的詮釋，可以幫助我們但也可能誤導我們。我們要檢驗傳統是否符合聖經。
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Tool 3: Experience */}
         <motion.div
-          className="mb-6 border rounded-lg overflow-hidden"
+          className="mb-6 border rounded-lg overflow-hidden bg-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <button
-            onClick={() => toggleSection('tool3')}
-            className="w-full px-6 py-4 bg-purple-100 hover:bg-purple-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-purple-100">
             <div className="flex items-center gap-3">
               <Lightbulb className="w-5 h-5 text-purple-600" />
               <span className="font-bold text-purple-900">工具三：經驗</span>
             </div>
-            {expandedSections.has('tool3') ?
-              <ChevronUp className="w-5 h-5 text-purple-600" /> :
-              <ChevronDown className="w-5 h-5 text-purple-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('tool3') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white space-y-4"
-              >
-                <div>
-                  <h4 className="font-bold text-purple-900 mb-2">◇ 經驗的來源</h4>
-                  <ul className="list-disc list-inside text-gray-700 mb-3">
-                    <li>個人的靈命經歷和屬靈覺醒</li>
-                    <li>教會共同體的集體經驗</li>
-                    <li>當代的歷史事件和文化現象</li>
-                    <li>人類共同的生活經歷（痛苦、喜樂、道德等）</li>
-                  </ul>
-                </div>
+          <div className="p-6 space-y-4">
+            <div>
+              <h4 className="font-bold text-purple-900 mb-2">◇ 經驗的來源</h4>
+              <ul className="list-disc list-inside text-gray-700 mb-3">
+                <li>個人的靈命經歷和屬靈覺醒</li>
+                <li>教會共同體的集體經驗</li>
+                <li>當代的歷史事件和文化現象</li>
+                <li>人類共同的生活經歷（痛苦、喜樂、道德等）</li>
+              </ul>
+            </div>
 
-                <div className="bg-purple-50 p-4 rounded border-l-4 border-purple-500">
-                  <h4 className="font-bold text-purple-900 mb-2">◆ 經驗在神學中的角色</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-2">
-                    <li><strong>驗證信念：</strong>神學思想應該與基督徒的實際經驗相符</li>
-                    <li><strong>提出問題：</strong>現實經歷會提出聖經和傳統必須面對的新問題</li>
-                    <li><strong>提供洞見：</strong>特定的經驗（如貧困、苦難）提供獨特的神學視角</li>
-                  </ul>
-                </div>
+            <div className="bg-purple-50 p-4 rounded border-l-4 border-purple-500">
+              <h4 className="font-bold text-purple-900 mb-2">◆ 經驗在神學中的角色</h4>
+              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                <li><strong>驗證信念：</strong>神學思想應該與基督徒的實際經驗相符</li>
+                <li><strong>提出問題：</strong>現實經歷會提出聖經和傳統必須面對的新問題</li>
+                <li><strong>提供洞見：</strong>特定的經驗（如貧困、苦難）提供獨特的神學視角</li>
+              </ul>
+            </div>
 
-                <div className="bg-red-50 p-4 rounded border border-red-200">
-                  <h4 className="font-bold text-red-900 mb-2">⚠️ 危險</h4>
-                  <p className="text-red-800">
-                    個人經驗容易誤導；某人的經驗不能作為普遍真理的基礎。經驗必須被聖經檢驗和平衡。
-                  </p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+            <div className="bg-red-50 p-4 rounded border border-red-200">
+              <h4 className="font-bold text-red-900 mb-2">⚠️ 危險</h4>
+              <p className="text-red-800">
+                個人經驗容易誤導；某人的經驗不能作為普遍真理的基礎。經驗必須被聖經檢驗和平衡。
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Tool 4: Reason */}
         <motion.div
-          className="mb-6 border rounded-lg overflow-hidden"
+          className="mb-6 border rounded-lg overflow-hidden bg-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <button
-            onClick={() => toggleSection('tool4')}
-            className="w-full px-6 py-4 bg-orange-100 hover:bg-orange-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-orange-100">
             <div className="flex items-center gap-3">
               <Hammer className="w-5 h-5 text-orange-600" />
               <span className="font-bold text-orange-900">工具四：理性</span>
             </div>
-            {expandedSections.has('tool4') ?
-              <ChevronUp className="w-5 h-5 text-orange-600" /> :
-              <ChevronDown className="w-5 h-5 text-orange-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('tool4') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white space-y-4"
-              >
-                <div>
-                  <h4 className="font-bold text-orange-900 mb-2">◇ 理性的角色</h4>
-                  <p className="text-gray-700 mb-3">
-                    理性是我們思考、批判、整合、表達信仰的工具。神學需要理性的工作：邏輯分析、概念區分、論證構建。
-                  </p>
-                </div>
+          <div className="p-6 space-y-4">
+            <div>
+              <h4 className="font-bold text-orange-900 mb-2">◇ 理性的角色</h4>
+              <p className="text-gray-700 mb-3">
+                理性是我們思考、批判、整合、表達信仰的工具。神學需要理性的工作：邏輯分析、概念區分、論證構建。
+              </p>
+            </div>
 
-                <div className="bg-orange-50 p-4 rounded border-l-4 border-orange-500">
-                  <h4 className="font-bold text-orange-900 mb-2">◆ 理性的應用方式</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-2">
-                    <li><strong>邏輯檢驗：</strong>確保論證沒有自相矛盾</li>
-                    <li><strong>概念澄清：</strong>定義術語，避免模糊或混淆</li>
-                    <li><strong>整體協調：</strong>努力使各信念相互協調</li>
-                    <li><strong>當代表達：</strong>用現代人能理解的語言和概念</li>
-                  </ul>
-                </div>
+            <div className="bg-orange-50 p-4 rounded border-l-4 border-orange-500">
+              <h4 className="font-bold text-orange-900 mb-2">◆ 理性的應用方式</h4>
+              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                <li><strong>邏輯檢驗：</strong>確保論證沒有自相矛盾</li>
+                <li><strong>概念澄清：</strong>定義術語，避免模糊或混淆</li>
+                <li><strong>整體協調：</strong>努力使各信念相互協調</li>
+                <li><strong>當代表達：</strong>用現代人能理解的語言和概念</li>
+              </ul>
+            </div>
 
-                <div className="bg-yellow-50 p-4 rounded border border-yellow-200">
-                  <h4 className="font-bold text-yellow-900 mb-2">⚠️ 限制與謙虛</h4>
-                  <p className="text-yellow-800">
-                    理性有其限制；某些屬靈真理超越理性（如三位一體），但不違背理性。神學家應該理性但謙虛，承認人的理解有限。
-                  </p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+            <div className="bg-yellow-50 p-4 rounded border border-yellow-200">
+              <h4 className="font-bold text-yellow-900 mb-2">⚠️ 限制與謙虛</h4>
+              <p className="text-yellow-800">
+                理性有其限制；某些屬靈真理超越理性（如三位一體），但不違背理性。神學家應該理性但謙虛，承認人的理解有限。
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
 

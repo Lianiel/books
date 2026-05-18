@@ -1,30 +1,15 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Shield, AlertCircle, CheckCircle, Lightbulb, Heart, BookOpen } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Shield, AlertCircle, CheckCircle, Lightbulb, Heart, BookOpen } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Book15Ch4() {
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
   const [quizAnswers, setQuizAnswers] = useState<Record<string, string>>({});
-
-  const toggleSection = (id: string) => {
-    const newExpanded = new Set(expandedSections);
-    if (newExpanded.has(id)) {
-      newExpanded.delete(id);
-    } else {
-      newExpanded.add(id);
-    }
-    setExpandedSections(newExpanded);
-  };
 
   const handleQuizAnswer = (questionId: string, answer: string) => {
     setQuizAnswers(prev => ({
       ...prev,
       [questionId]: answer
     }));
-  };
-
-  const isQuizCorrect = (questionId: string, correctAnswer: string) => {
-    return quizAnswers[questionId] === correctAnswer;
   };
 
   return (
@@ -80,65 +65,49 @@ export default function Book15Ch4() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <button
-            onClick={() => toggleSection('objection1')}
-            className="w-full px-6 py-4 bg-red-100 hover:bg-red-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-red-100">
             <div className="flex items-center gap-3">
               <Shield className="w-5 h-5 text-red-600" />
               <span className="font-bold text-red-900">異議一：神學令人掃興</span>
             </div>
-            {expandedSections.has('objection1') ?
-              <ChevronUp className="w-5 h-5 text-red-600" /> :
-              <ChevronDown className="w-5 h-5 text-red-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('objection1') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white"
-              >
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-bold text-red-900 mb-2">批評的內容</h4>
-                    <p className="text-gray-700">
-                      「從未碰過神學家的基督徒有福了。」──這反映出認為神學會破壞簡單的信心和靈性的喜樂。
-                    </p>
-                  </div>
+          <div className="p-6 bg-white">
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-bold text-red-900 mb-2">批評的內容</h4>
+                <p className="text-gray-700">
+                  「從未碰過神學家的基督徒有福了。」──這反映出認為神學會破壞簡單的信心和靈性的喜樂。
+                </p>
+              </div>
 
-                  <div>
-                    <h4 className="font-bold text-red-900 mb-2">根本誤解</h4>
-                    <p className="text-gray-700">
-                      這種看法將基督教感受與客觀真理對立，卻忽略了基督教宣稱自己是<strong>以歷史事實為基礎的真理</strong>。
-                    </p>
-                  </div>
+              <div>
+                <h4 className="font-bold text-red-900 mb-2">根本誤解</h4>
+                <p className="text-gray-700">
+                  這種看法將基督教感受與客觀真理對立，卻忽略了基督教宣稱自己是<strong>以歷史事實為基礎的真理</strong>。
+                </p>
+              </div>
 
-                  <div className="bg-blue-50 p-4 rounded border-l-4 border-blue-400">
-                    <h4 className="font-bold text-blue-900 mb-2">❯ 布仁爾的類比：食物檢驗</h4>
-                    <p className="text-blue-800 mb-3">
-                      市場上的食物需要實驗室檢驗確保食用安全，但這不意味著食物只是為了分析。同樣，神學檢驗信念的真確性，但不是為了取代信仰。
-                    </p>
-                    <p className="text-blue-800 italic">
-                      神學家應該像食品檢測員一樣是鑑賞家而非單純批評家。
-                    </p>
-                  </div>
+              <div className="bg-blue-50 p-4 rounded border-l-4 border-blue-400">
+                <h4 className="font-bold text-blue-900 mb-2">❯ 布仁爾的類比：食物檢驗</h4>
+                <p className="text-blue-800 mb-3">
+                  市場上的食物需要實驗室檢驗確保食用安全，但這不意味著食物只是為了分析。同樣，神學檢驗信念的真確性，但不是為了取代信仰。
+                </p>
+                <p className="text-blue-800 italic">
+                  神學家應該像食品檢測員一樣是鑑賞家而非單純批評家。
+                </p>
+              </div>
 
-                  <div>
-                    <h4 className="font-bold text-red-900 mb-2">✓ 我們的回應</h4>
-                    <ul className="list-disc list-inside text-gray-700 space-y-2">
-                      <li>信仰必須建立在真理之上，而非盲目的感覺之上</li>
-                      <li>如同小孩子般的信心與批判審查在基督教中有不同角色</li>
-                      <li>神學檢驗幫助我們辨別虛假的或誤導性的教導</li>
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+              <div>
+                <h4 className="font-bold text-red-900 mb-2">✓ 我們的回應</h4>
+                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  <li>信仰必須建立在真理之上，而非盲目的感覺之上</li>
+                  <li>如同小孩子般的信心與批判審查在基督教中有不同角色</li>
+                  <li>神學檢驗幫助我們辨別虛假的或誤導性的教導</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Objection 2: Division */}
@@ -148,65 +117,49 @@ export default function Book15Ch4() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          <button
-            onClick={() => toggleSection('objection2')}
-            className="w-full px-6 py-4 bg-red-100 hover:bg-red-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-red-100">
             <div className="flex items-center gap-3">
               <AlertCircle className="w-5 h-5 text-red-600" />
               <span className="font-bold text-red-900">異議二：神學導致教會分裂</span>
             </div>
-            {expandedSections.has('objection2') ?
-              <ChevronUp className="w-5 h-5 text-red-600" /> :
-              <ChevronDown className="w-5 h-5 text-red-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('objection2') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white"
-              >
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-bold text-red-900 mb-2">批評的內容</h4>
-                    <p className="text-gray-700">
-                      「耶穌使人合一；神學引致分裂。」──教會歷史中確有因神學細節分裂的例子（如鈕釦vs鉤扣之爭）。
-                    </p>
-                  </div>
+          <div className="p-6 bg-white">
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-bold text-red-900 mb-2">批評的內容</h4>
+                <p className="text-gray-700">
+                  「耶穌使人合一；神學引致分裂。」──教會歷史中確有因神學細節分裂的例子（如鈕釦vs鉤扣之爭）。
+                </p>
+              </div>
 
-                  <div className="bg-yellow-50 p-4 rounded border-l-4 border-yellow-400">
-                    <p className="text-yellow-900 font-semibold">
-                      ⚠️ 部份承認：確實有神學導致不必要分裂的歷史
-                    </p>
-                  </div>
+              <div className="bg-yellow-50 p-4 rounded border-l-4 border-yellow-400">
+                <p className="text-yellow-900 font-semibold">
+                  ⚠️ 部份承認：確實有神學導致不必要分裂的歷史
+                </p>
+              </div>
 
-                  <div>
-                    <h4 className="font-bold text-red-900 mb-2">✓ 深層回應</h4>
-                    <ul className="list-disc list-inside text-gray-700 space-y-2">
-                      <li>耶穌本身也帶來分裂（太10:34）──真理必然引發抉擇</li>
-                      <li>神學的目的是維護真理，而非追求人為和諧</li>
-                      <li>神學也能帶來合一──許多宗派因深入神學對話而彼此發現共通點</li>
-                      <li>馬丁路德的座右銘：「盡可能尋求和睦，但要付出任何代價維護真理。」</li>
-                    </ul>
-                  </div>
+              <div>
+                <h4 className="font-bold text-red-900 mb-2">✓ 深層回應</h4>
+                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  <li>耶穌本身也帶來分裂（太10:34）──真理必然引發抉擇</li>
+                  <li>神學的目的是維護真理，而非追求人為和諧</li>
+                  <li>神學也能帶來合一──許多宗派因深入神學對話而彼此發現共通點</li>
+                  <li>馬丁路德的座右銘：「盡可能尋求和睦，但要付出任何代價維護真理。」</li>
+                </ul>
+              </div>
 
-                  <div className="bg-blue-50 p-4 rounded">
-                    <h4 className="font-bold text-blue-900 mb-2">❯ 案例：三位一體教義</h4>
-                    <p className="text-blue-800 mb-2">
-                      亞他拿修拒絕更改一個希臘字母（homoousios vs homoiousios），儘管被皇帝放逐五次。
-                    </p>
-                    <p className="text-blue-800">
-                      <strong>評價</strong>：後世基督徒讚同他，因為這一個字母關乎整個福音的本質──耶穌是真神還是次級的神。
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+              <div className="bg-blue-50 p-4 rounded">
+                <h4 className="font-bold text-blue-900 mb-2">❯ 案例：三位一體教義</h4>
+                <p className="text-blue-800 mb-2">
+                  亞他拿修拒絕更改一個希臘字母（homoousios vs homoiousios），儘管被皇帝放逐五次。
+                </p>
+                <p className="text-blue-800">
+                  <strong>評價</strong>：後世基督徒讚同他，因為這一個字母關乎整個福音的本質──耶穌是真神還是次級的神。
+                </p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Objection 3: Hairsplitting */}
@@ -216,67 +169,51 @@ export default function Book15Ch4() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <button
-            onClick={() => toggleSection('objection3')}
-            className="w-full px-6 py-4 bg-red-100 hover:bg-red-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-red-100">
             <div className="flex items-center gap-3">
               <BookOpen className="w-5 h-5 text-red-600" />
               <span className="font-bold text-red-900">異議三：神學只是穿鑿附會</span>
             </div>
-            {expandedSections.has('objection3') ?
-              <ChevronUp className="w-5 h-5 text-red-600" /> :
-              <ChevronDown className="w-5 h-5 text-red-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('objection3') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white"
-              >
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-bold text-red-900 mb-2">批評的內容</h4>
-                    <p className="text-gray-700">
-                      神學家沉溺於不可知的奧秘，與現實脫節。例如：「天堂用什麼家具？」「地獄溫度多高？」
-                    </p>
+          <div className="p-6 bg-white">
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-bold text-red-900 mb-2">批評的內容</h4>
+                <p className="text-gray-700">
+                  神學家沉溺於不可知的奧秘，與現實脫節。例如：「天堂用什麼家具？」「地獄溫度多高？」
+                </p>
+              </div>
+
+              <div className="bg-green-50 p-4 rounded border-l-4 border-green-400">
+                <h4 className="font-bold text-green-900 mb-2">◇ 部份承認與反思</h4>
+                <p className="text-green-800">
+                  確實存在超出聖經啟示範圍的投機性神學。但<strong>優質神學</strong>遵守聖經邊界，在神的啟示內理性工作。
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-red-900 mb-2">關鍵區別</h4>
+                <div className="grid grid-cols-2 gap-4 mt-3">
+                  <div className="bg-red-100 p-3 rounded">
+                    <p className="font-bold text-red-900 mb-1">❌ 穿鑿附會</p>
+                    <p className="text-red-800 text-sm">超越聖經啟示範圍猜測</p>
                   </div>
-
-                  <div className="bg-green-50 p-4 rounded border-l-4 border-green-400">
-                    <h4 className="font-bold text-green-900 mb-2">◇ 部份承認與反思</h4>
-                    <p className="text-green-800">
-                      確實存在超出聖經啟示範圍的投機性神學。但<strong>優質神學</strong>遵守聖經邊界，在神的啟示內理性工作。
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="font-bold text-red-900 mb-2">關鍵區別</h4>
-                    <div className="grid grid-cols-2 gap-4 mt-3">
-                      <div className="bg-red-100 p-3 rounded">
-                        <p className="font-bold text-red-900 mb-1">❌ 穿鑿附會</p>
-                        <p className="text-red-800 text-sm">超越聖經啟示範圍猜測</p>
-                      </div>
-                      <div className="bg-green-100 p-3 rounded">
-                        <p className="font-bold text-green-900 mb-1">✓ 優質神學</p>
-                        <p className="text-green-800 text-sm">在聖經邊界內理性思考</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="font-bold text-red-900 mb-2">✓ 我們的立場</h4>
-                    <p className="text-gray-700">
-                      上帝在歷史、大自然、聖經中留下見證。敬虔的理性可以利用這些資源發現關於上帝的真確知識，儘管不一定全面。
-                    </p>
+                  <div className="bg-green-100 p-3 rounded">
+                    <p className="font-bold text-green-900 mb-1">✓ 優質神學</p>
+                    <p className="text-green-800 text-sm">在聖經邊界內理性思考</p>
                   </div>
                 </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-red-900 mb-2">✓ 我們的立場</h4>
+                <p className="text-gray-700">
+                  上帝在歷史、大自然、聖經中留下見證。敬虔的理性可以利用這些資源發現關於上帝的真確知識，儘管不一定全面。
+                </p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Objection 4: No Progress */}
@@ -286,67 +223,51 @@ export default function Book15Ch4() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <button
-            onClick={() => toggleSection('objection4')}
-            className="w-full px-6 py-4 bg-red-100 hover:bg-red-200 flex items-center justify-between"
-          >
+          <div className="px-6 py-4 bg-red-100">
             <div className="flex items-center gap-3">
               <CheckCircle className="w-5 h-5 text-red-600" />
               <span className="font-bold text-red-900">異議四：神學未能引致進展</span>
             </div>
-            {expandedSections.has('objection4') ?
-              <ChevronUp className="w-5 h-5 text-red-600" /> :
-              <ChevronDown className="w-5 h-5 text-red-600" />
-            }
-          </button>
+          </div>
 
-          <AnimatePresence>
-            {expandedSections.has('objection4') && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="p-6 bg-white"
-              >
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-bold text-red-900 mb-2">批評的內容</h4>
-                    <p className="text-gray-700">
-                      初期教會有神學進展，但後來神學變得愈來愈批判而缺乏建設性解答。許多古老問題仍未解決。
-                    </p>
-                  </div>
+          <div className="p-6 bg-white">
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-bold text-red-900 mb-2">批評的內容</h4>
+                <p className="text-gray-700">
+                  初期教會有神學進展，但後來神學變得愈來愈批判而缺乏建設性解答。許多古老問題仍未解決。
+                </p>
+              </div>
 
-                  <div className="bg-purple-50 p-4 rounded border-l-4 border-purple-400">
-                    <h4 className="font-bold text-purple-900 mb-2">❯ 案例：神的受苦觀點的轉變</h4>
-                    <div className="space-y-2 text-purple-800 mt-2">
-                      <p>
-                        <strong>傳統觀點（多個世紀）：</strong>神不能受苦，因為受苦是受造物特性。
-                      </p>
-                      <p>
-                        <strong>現代轉變（20世紀中期）：</strong>廣島原子彈爆炸後，神學家們重新審視，發現耶穌的上帝是與苦難中的人類一同受苦的上帝。
-                      </p>
-                      <p>
-                        <strong>發展者：</strong>日本學者北森嘉藏、德國神學家莫特曼等人推廣。
-                      </p>
-                      <p className="italic mt-2">
-                        這說明：數十年間，一個曾被視為褻瀆的觀點，現已被大多數基督徒接受為福音真理。
-                      </p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="font-bold text-red-900 mb-2">✓ 我們的回應</h4>
-                    <ul className="list-disc list-inside text-gray-700 space-y-2">
-                      <li><strong>進展的標準問題：</strong>不能要求十億基督徒的「一致同意」──這在歷史上是不可能的</li>
-                      <li><strong>關注未解決的問題：</strong>人傾向於看未解決的（如自由意志 vs 神的主權），而忽略已解決的</li>
-                      <li><strong>緩慢但真實的進展：</strong>初期教會和宗教改革時期都有重大進展，現代也有</li>
-                      <li><strong>認識的限制：</strong>我們只能「彷彿對著鏡子觀看，模糊不清」，直到見主面</li>
-                    </ul>
-                  </div>
+              <div className="bg-purple-50 p-4 rounded border-l-4 border-purple-400">
+                <h4 className="font-bold text-purple-900 mb-2">❯ 案例：神的受苦觀點的轉變</h4>
+                <div className="space-y-2 text-purple-800 mt-2">
+                  <p>
+                    <strong>傳統觀點（多個世紀）：</strong>神不能受苦，因為受苦是受造物特性。
+                  </p>
+                  <p>
+                    <strong>現代轉變（20世紀中期）：</strong>廣島原子彈爆炸後，神學家們重新審視，發現耶穌的上帝是與苦難中的人類一同受苦的上帝。
+                  </p>
+                  <p>
+                    <strong>發展者：</strong>日本學者北森嘉藏、德國神學家莫特曼等人推廣。
+                  </p>
+                  <p className="italic mt-2">
+                    這說明：數十年間，一個曾被視為褻瀆的觀點，現已被大多數基督徒接受為福音真理。
+                  </p>
                 </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-red-900 mb-2">✓ 我們的回應</h4>
+                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  <li><strong>進展的標準問題：</strong>不能要求十億基督徒的「一致同意」──這在歷史上是不可能的</li>
+                  <li><strong>關注未解決的問題：</strong>人傾向於看未解決的（如自由意志 vs 神的主權），而忽略已解決的</li>
+                  <li><strong>緩慢但真實的進展：</strong>初期教會和宗教改革時期都有重大進展，現代也有</li>
+                  <li><strong>認識的限制：</strong>我們只能「彷彿對著鏡子觀看，模糊不清」，直到見主面</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
 
