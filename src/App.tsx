@@ -36,6 +36,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book12: '十架預言真奇妙',
   book13: '十字架跨越的智慧',
   book14: '活在聖靈中',
+  book15: '誰需要神學？',
 };
 
 // ========== 章節配置 - 新增書本時記得在這裡加入章節定義 ==========
@@ -183,6 +184,18 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter8', title: '第8章 聖靈，請來！', path: '/book14/chapter8' },
     { id: 'chapter9', title: '第9章 附錄：羅馬書第七章的『苦中人』', path: '/book14/chapter9' },
   ],
+  book15: [
+    { id: 'home', title: '簡介', path: '/book15/home' },
+    { id: 'chapter1', title: '第1章 人人都是神學家', path: '/book15/chapter1' },
+    { id: 'chapter2', title: '第2章 不是所有神學都一律平等', path: '/book15/chapter2' },
+    { id: 'chapter3', title: '第3章 界定神學', path: '/book15/chapter3' },
+    { id: 'chapter4', title: '第4章 為神學辯護', path: '/book15/chapter4' },
+    { id: 'chapter5', title: '第5章 神學的任務和傳統', path: '/book15/chapter5' },
+    { id: 'chapter6', title: '第6章 神學家的工具', path: '/book15/chapter6' },
+    { id: 'chapter7', title: '第7章 建立神學的脈絡', path: '/book15/chapter7' },
+    { id: 'chapter8', title: '第8章 神學生活化', path: '/book15/chapter8' },
+    { id: 'chapter9', title: '第9章 神學研究入門', path: '/book15/chapter9' },
+  ],
 };
 
 // ========== 導入 Book 1 章節 ==========
@@ -327,6 +340,18 @@ import Book14Ch6 from './components/book14/Book14Ch6';
 import Book14Ch7 from './components/book14/Book14Ch7';
 import Book14Ch8 from './components/book14/Book14Ch8';
 import Book14Ch9 from './components/book14/Book14Ch9';
+
+// ========== 導入 Book 15 章節 ==========
+import Book15Home from './components/book15/Book15Home';
+import Book15Ch1 from './components/book15/Book15Ch1';
+import Book15Ch2 from './components/book15/Book15Ch2';
+import Book15Ch3 from './components/book15/Book15Ch3';
+import Book15Ch4 from './components/book15/Book15Ch4';
+import Book15Ch5 from './components/book15/Book15Ch5';
+import Book15Ch6 from './components/book15/Book15Ch6';
+import Book15Ch7 from './components/book15/Book15Ch7';
+import Book15Ch8 from './components/book15/Book15Ch8';
+import Book15Ch9 from './components/book15/Book15Ch9';
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({ 
@@ -527,6 +552,19 @@ const App: React.FC = () => {
         <Route path="/book14/chapter7" element={<BookLayout bookId="book14" chapter="chapter7" chapters={BOOK_CHAPTERS.book14}><Book14Ch7 /></BookLayout>} />
         <Route path="/book14/chapter8" element={<BookLayout bookId="book14" chapter="chapter8" chapters={BOOK_CHAPTERS.book14}><Book14Ch8 /></BookLayout>} />
         <Route path="/book14/chapter9" element={<BookLayout bookId="book14" chapter="chapter9" chapters={BOOK_CHAPTERS.book14}><Book14Ch9 /></BookLayout>} />
+
+        {/* ========== Book 15 Routes ========== */}
+        <Route path="/book15/home" element={<BookLayout bookId="book15" chapter="home" chapters={BOOK_CHAPTERS.book15}><Book15Home /></BookLayout>} />
+        <Route path="/book15/chapter1" element={<BookLayout bookId="book15" chapter="chapter1" chapters={BOOK_CHAPTERS.book15}><Book15Ch1 /></BookLayout>} />
+        <Route path="/book15/chapter2" element={<BookLayout bookId="book15" chapter="chapter2" chapters={BOOK_CHAPTERS.book15}><Book15Ch2 /></BookLayout>} />
+        <Route path="/book15/chapter3" element={<BookLayout bookId="book15" chapter="chapter3" chapters={BOOK_CHAPTERS.book15}><Book15Ch3 /></BookLayout>} />
+        <Route path="/book15/chapter4" element={<BookLayout bookId="book15" chapter="chapter4" chapters={BOOK_CHAPTERS.book15}><Book15Ch4 /></BookLayout>} />
+        <Route path="/book15/chapter5" element={<BookLayout bookId="book15" chapter="chapter5" chapters={BOOK_CHAPTERS.book15}><Book15Ch5 /></BookLayout>} />
+        <Route path="/book15/chapter6" element={<BookLayout bookId="book15" chapter="chapter6" chapters={BOOK_CHAPTERS.book15}><Book15Ch6 /></BookLayout>} />
+        <Route path="/book15/chapter7" element={<BookLayout bookId="book15" chapter="chapter7" chapters={BOOK_CHAPTERS.book15}><Book15Ch7 /></BookLayout>} />
+        <Route path="/book15/chapter8" element={<BookLayout bookId="book15" chapter="chapter8" chapters={BOOK_CHAPTERS.book15}><Book15Ch8 /></BookLayout>} />
+        <Route path="/book15/chapter9" element={<BookLayout bookId="book15" chapter="chapter9" chapters={BOOK_CHAPTERS.book15}><Book15Ch9 /></BookLayout>} />
+        <Route path="/book/15" element={<BookLayout bookId="book15" chapter="home" chapters={BOOK_CHAPTERS.book15}><Book15Home /></BookLayout>} />
         <Route path="/book/14" element={<BookLayout bookId="book14" chapter="chapter1" chapters={BOOK_CHAPTERS.book14}><Book14Ch1 /></BookLayout>} />
 
         {/* ========== 首頁 - 書籍列表 ========== */}
@@ -698,6 +736,17 @@ const App: React.FC = () => {
                   chapters={9}
                   to="/book14/chapter1"
                   color="from-purple-500 to-pink-600"
+                />
+
+                {/* Book 15 - 誰需要神學？ */}
+                <BookCard
+                  number={15}
+                  title="誰需要神學？"
+                  author="史丹尼格蘭茲 (Stanley J. Grenz) & 羅傑奧遜 (Roger E. Olson)"
+                  description="神學研究入門，幫助平信徒認識優質神學的重要性，學習如何深化信仰認識"
+                  chapters={9}
+                  to="/book15/home"
+                  color="from-amber-500 to-orange-600"
                 />
 
               </div>
