@@ -239,7 +239,7 @@ export default function Book15Ch7() {
               <li><strong>歷史脈絡：</strong>異端挑戰（阿里烏派否定基督的神性）</li>
               <li><strong>文化脈絡：</strong>希臘哲學中一神論vs二元論的爭論</li>
               <li><strong>教會脈絡：</strong>教會需要明確的信仰聲明（尼西亞信經）</li>
-              <li className="mt-2"><strong>結果：</strong>三位一體教義的發展——既回應異端，也運用當時哲學，解決教會的信仰問題</strong></li>
+              <li className="mt-2"><strong>結果：</strong>三位一體教義的發展——既回應異端，也運用當時哲學，解決教會的信仰問題</li>
             </ul>
           </div>
         </div>
