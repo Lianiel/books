@@ -416,32 +416,14 @@ import Book16Ch6 from './components/book16/Book16Ch6';
 const BookCard: React.FC<BookCardProps> = ({
   number,
   title,
-  author,
-  description,
-  chapters,
   to,
   color = "from-blue-500 to-purple-600"
 }) => {
   return (
     <Link to={to} className="block">
-      <div className={`bg-gradient-to-br ${color} rounded-2xl p-6 text-white shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300`}>
-        <div className="flex items-start justify-between mb-4">
-          <div className="bg-white/20 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center">
-            <Book className="w-6 h-6" />
-          </div>
-          <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-semibold">
-            Book {number}
-          </div>
-        </div>
-        <h3 className="text-2xl font-bold mb-2">{title}</h3>
-        <p className="text-sm text-white/80 mb-3">{author}</p>
-        <p className="text-sm text-white/90 mb-4 line-clamp-2">{description}</p>
-        <div className="flex items-center justify-between text-sm">
-          <span className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
-            {chapters} {chapters > 1 ? 'chapters' : 'lesson'}
-          </span>
-          <span className="font-semibold">閱讀 →</span>
-        </div>
+      <div className={`bg-gradient-to-r ${color} rounded-lg px-3 py-2 text-white shadow hover:shadow-md transform hover:scale-105 transition-all duration-200 flex items-center gap-2`}>
+        <span className="bg-white/30 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0">{number}</span>
+        <span className="text-sm font-medium leading-tight">{title}</span>
       </div>
     </Link>
   );
@@ -692,7 +674,7 @@ const App: React.FC = () => {
 
             {!loading && (
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
                   {displayBooks.map((book) => {
                     const bookNumber = parseInt(book.book_id.replace('book', ''));
                     const firstChapter = bookChapters[book.book_id]?.[0];
