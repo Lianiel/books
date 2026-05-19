@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Book } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import BookLayout from './components/BookLayout';
+import { fetchBooks, fetchChapters, type Book as BookType, type Chapter } from './api/books_supabase';
 
 // ========== TypeScript 型別定義 ==========
 
@@ -20,7 +22,7 @@ export interface ChapterInfo {
   path: string;
 }
 
-// ========== 靜態章節資料 ==========
+// ========== 靜態章節備援資料 ==========
 export const BOOK_TITLES: Record<string, string> = {
   book1: '立界線得自由',
   book2: '情感健康的門徒',
@@ -205,6 +207,45 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter5', title: '第四章：生命內裡的轉變', path: '/book16/chapter5' },
     { id: 'chapter6', title: '第五章：靈修觀歷史概覽', path: '/book16/chapter6' },
   ],
+};
+
+// ========== 靜態首頁備援資料 ==========
+const STATIC_BOOKS = [
+  { book_id: 'book1', title: '立界線得自由', author: 'Henry Cloud & John Townsend', description: '學習設立健康的人際界線，從家庭、工作、友誼到靈性生活，活出自由與責任。', chapters_count: 17 },
+  { book_id: 'book2', title: '情感健康的門徒', author: 'Peter Scazzero', description: '整合情感健康與靈命深度，建立真實、持久的門徒訓練生命。', chapters_count: 8 },
+  { book_id: 'book3', title: '向保羅學宣教', author: '', description: '從保羅的宣教旅程和書信，學習跨文化傳福音的原則與實踐。', chapters_count: 8 },
+  { book_id: 'book4', title: '成為有感染力的基督徒', author: '', description: '探討基督徒如何在生活中真實地活出信仰，影響身邊的人。', chapters_count: 16 },
+  { book_id: 'book5', title: '如何活出基督的樣式', author: '', description: '深入思考靈命成長的核心議題，活出與基督相符的生命。', chapters_count: 6 },
+  { book_id: 'book6', title: '列王記上 從歷史中看見神的啟示', author: '', description: '透過列王記上的歷史敘述，發現神在人類歷史中的主權與啟示。', chapters_count: 8 },
+  { book_id: 'book7', title: '基要陪讀課程', author: '', description: '系統性的基要真理學習，幫助信徒建立扎實的信仰基礎。', chapters_count: 6 },
+  { book_id: 'book8', title: '靈性關懷與身心健康', author: '', description: '探討靈性照顧與身心健康的整合，提供全人關懷的框架。', chapters_count: 12 },
+  { book_id: 'book9', title: '三層天禱告', author: '', description: '深入認識禱告的層次與力量，學習突破性的禱告生活。', chapters_count: 7 },
+  { book_id: 'book10', title: '禱告的盾牌', author: '', description: '學習如何以禱告抵擋屬靈攻擊，活出得勝的基督徒生命。', chapters_count: 9 },
+  { book_id: 'book11', title: '從懷疑到相信', author: '', description: '以理性與信仰對話，幫助懷疑者找到相信的堅實根基。', chapters_count: 1 },
+  { book_id: 'book12', title: '十架預言真奇妙', author: '', description: '探索舊約中關於基督受難的預言，見證聖經的完整與奇妙。', chapters_count: 1 },
+  { book_id: 'book13', title: '十字架跨越的智慧', author: '', description: '從十字架的角度理解人生智慧，學習以基督的心志面對人生。', chapters_count: 7 },
+  { book_id: 'book14', title: '活在聖靈中', author: '巴刻 (J. I. Packer)', description: '深入探討聖靈的位格、工作與基督徒生命，認識與聖靈同行的生活。', chapters_count: 9 },
+  { book_id: 'book15', title: '誰需要神學？', author: '史丹尼·格蘭茨 & 羅傑·奧遜', description: '破除迷思，幫助每位信徒認識神學的必要性，成為更負責任的神學家。', chapters_count: 10 },
+  { book_id: 'book16', title: '拾級靈程三階', author: '孫毅', description: '帶領讀者拾級而上，領略內室、日常生活及終末的靈程三階，深化靈修操練。', chapters_count: 7 },
+];
+
+const colorMap: Record<number, string> = {
+  1: 'from-blue-500 to-cyan-600',
+  2: 'from-green-500 to-emerald-600',
+  3: 'from-purple-500 to-pink-600',
+  4: 'from-orange-500 to-red-600',
+  5: 'from-teal-500 to-cyan-600',
+  6: 'from-indigo-500 to-purple-600',
+  7: 'from-amber-500 to-orange-600',
+  8: 'from-rose-500 to-pink-600',
+  9: 'from-violet-500 to-purple-600',
+  10: 'from-purple-500 to-pink-600',
+  11: 'from-indigo-500 to-purple-600',
+  12: 'from-amber-500 to-orange-600',
+  13: 'from-teal-500 to-cyan-600',
+  14: 'from-purple-500 to-pink-600',
+  15: 'from-indigo-600 to-slate-700',
+  16: 'from-violet-600 to-purple-700',
 };
 
 // ========== 導入 Book 1 章節 ==========
@@ -407,9 +448,49 @@ const BookCard: React.FC<BookCardProps> = ({
 };
 
 const App: React.FC = () => {
+  const [books, setBooks] = useState<BookType[]>([]);
+  const [bookChapters, setBookChapters] = useState<Record<string, Chapter[]>>({});
+  const [loading, setLoading] = useState(true);
+  const [supabaseOk, setSupabaseOk] = useState(false);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const booksData = await fetchBooks();
+        if (booksData.length > 0) {
+          setBooks(booksData);
+          const chaptersMap: Record<string, Chapter[]> = {};
+          for (const book of booksData) {
+            const chapters = await fetchChapters(book.book_id);
+            chaptersMap[book.book_id] = chapters;
+          }
+          setBookChapters(chaptersMap);
+          setSupabaseOk(true);
+        }
+      } catch {
+        // Supabase 連不上，使用靜態備援資料
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadData();
+  }, []);
+
+  // 優先使用 Supabase 章節資料，連不上時用靜態備援
   const getChaptersForBook = (bookId: string): ChapterInfo[] => {
+    const supabaseChapters = bookChapters[bookId];
+    if (supabaseChapters && supabaseChapters.length > 0) {
+      return supabaseChapters.map(ch => ({
+        id: ch.chapter_id,
+        title: ch.title,
+        path: `/${bookId}/${ch.chapter_id}`
+      }));
+    }
     return BOOK_CHAPTERS[bookId] || [];
   };
+
+  // 首頁顯示的書籍：Supabase 有資料用 Supabase，否則用靜態備援
+  const displayBooks = supabaseOk ? books : STATIC_BOOKS;
 
   return (
     <Router>
@@ -591,7 +672,7 @@ const App: React.FC = () => {
         <Route path="/book16/chapter6" element={<BookLayout bookId="book16" chapter="chapter6" chapters={getChaptersForBook('book16')}><Book16Ch6 /></BookLayout>} />
         <Route path="/book/16" element={<BookLayout bookId="book16" chapter="home" chapters={getChaptersForBook('book16')}><Book16Home /></BookLayout>} />
 
-        {/* ========== 首頁 - 靜態書籍列表 ========== */}
+        {/* ========== 首頁 ========== */}
         <Route path="/" element={
           <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
             <div className="bg-white shadow-md sticky top-0 z-10">
@@ -602,26 +683,40 @@ const App: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <BookCard number={1} title="立界線得自由" author="Henry Cloud & John Townsend" description="學習設立健康的人際界線，從家庭、工作、友誼到靈性生活，活出自由與責任。" chapters={17} to="/book1/home" color="from-blue-500 to-cyan-600" />
-                <BookCard number={2} title="情感健康的門徒" author="Peter Scazzero" description="整合情感健康與靈命深度，建立真實、持久的門徒訓練生命。" chapters={8} to="/book2/chapter1" color="from-green-500 to-emerald-600" />
-                <BookCard number={3} title="向保羅學宣教" author="" description="從保羅的宣教旅程和書信，學習跨文化傳福音的原則與實踐。" chapters={8} to="/book3/chapter1" color="from-purple-500 to-pink-600" />
-                <BookCard number={4} title="成為有感染力的基督徒" author="" description="探討基督徒如何在生活中真實地活出信仰，影響身邊的人。" chapters={16} to="/book4/chapter1" color="from-orange-500 to-red-600" />
-                <BookCard number={5} title="如何活出基督的樣式" author="" description="深入思考基督徒靈命成長的核心議題，活出與基督相符的生命。" chapters={6} to="/book5/chapter1" color="from-teal-500 to-cyan-600" />
-                <BookCard number={6} title="列王記上 從歷史中看見神的啟示" author="" description="透過列王記上的歷史敘述，發現神在人類歷史中的主權與啟示。" chapters={8} to="/book6/chapter1" color="from-indigo-500 to-purple-600" />
-                <BookCard number={7} title="基要陪讀課程" author="" description="系統性的基要真理學習，幫助信徒建立扎實的信仰基礎。" chapters={6} to="/book7/chapter1" color="from-amber-500 to-orange-600" />
-                <BookCard number={8} title="靈性關懷與身心健康" author="" description="探討靈性照顧與身心健康的整合，提供全人關懷的框架。" chapters={12} to="/book8/chapter1" color="from-rose-500 to-pink-600" />
-                <BookCard number={9} title="三層天禱告" author="" description="深入認識禱告的層次與力量，學習突破性的禱告生活。" chapters={7} to="/book9/intro" color="from-violet-500 to-purple-600" />
-                <BookCard number={10} title="禱告的盾牌" author="" description="學習如何以禱告抵擋屬靈攻擊，活出得勝的基督徒生命。" chapters={9} to="/book10/chapter1" color="from-purple-500 to-pink-600" />
-                <BookCard number={11} title="從懷疑到相信" author="" description="以理性與信仰對話，幫助懷疑者找到相信的堅實根基。" chapters={1} to="/book11/lesson1" color="from-indigo-500 to-purple-600" />
-                <BookCard number={12} title="十架預言真奇妙" author="" description="探索舊約中關於基督受難的預言，見證聖經的完整與奇妙。" chapters={1} to="/book12/home" color="from-amber-500 to-orange-600" />
-                <BookCard number={13} title="十字架跨越的智慧" author="" description="從十字架的角度理解人生智慧，學習以基督的心志面對人生。" chapters={7} to="/book13/chapter1" color="from-teal-500 to-cyan-600" />
-                <BookCard number={14} title="活在聖靈中" author="巴刻 (J. I. Packer)" description="深入探討聖靈的位格、工作與基督徒生命，認識與聖靈同行的生活。" chapters={9} to="/book14/chapter1" color="from-purple-500 to-pink-600" />
-                <BookCard number={15} title="誰需要神學？" author="史丹尼·格蘭茨 & 羅傑·奧遜" description="破除迷思，幫助每位信徒認識神學的必要性，成為更負責任的神學家。" chapters={10} to="/book15/home" color="from-indigo-600 to-slate-700" />
-                <BookCard number={16} title="拾級靈程三階" author="孫毅" description="帶領讀者拾級而上，領略內室、日常生活及終末的靈程三階，深化靈修操練。" chapters={7} to="/book16/home" color="from-violet-600 to-purple-700" />
+
+            {loading && (
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+                <p className="text-gray-600">加載書籍中...</p>
               </div>
-            </div>
+            )}
+
+            {!loading && (
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {displayBooks.map((book) => {
+                    const bookNumber = parseInt(book.book_id.replace('book', ''));
+                    const firstChapter = bookChapters[book.book_id]?.[0];
+                    const staticFirst = BOOK_CHAPTERS[book.book_id]?.[0];
+                    const bookUrl = firstChapter
+                      ? `/${book.book_id}/${firstChapter.chapter_id}`
+                      : (staticFirst?.path || `/${book.book_id}`);
+                    return (
+                      <BookCard
+                        key={book.book_id}
+                        number={bookNumber}
+                        title={book.title}
+                        author={book.author}
+                        description={book.description}
+                        chapters={book.chapters_count}
+                        to={bookUrl}
+                        color={colorMap[bookNumber] || 'from-blue-500 to-purple-600'}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-600">
               <p className="text-sm">電子書房 · 數位靈修學習平台</p>
             </div>
