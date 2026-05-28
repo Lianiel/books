@@ -4,6 +4,7 @@ import { ChevronDown, ChevronUp, Users, Search, HelpCircle, Check } from 'lucide
 export default function Book17Ch4() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
     content: true,
+    application: true,
     exploration: true,
     questions: true,
     practice: true,
@@ -21,12 +22,12 @@ export default function Book17Ch4() {
         <p className="text-sm text-gray-500 mt-1">哥林多前書 三1-23</p>
       </div>
 
-      {/* 主要內容 */}
+      {/* 經文要義 */}
       <div className="mb-6 border border-purple-100 rounded-lg overflow-hidden shadow-sm">
         <button onClick={() => toggleSection('content')} className="w-full px-5 py-3 bg-gradient-to-r from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 flex items-center justify-between transition-all">
           <div className="flex items-center gap-2">
             <Users className="w-5 h-5 text-purple-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">主要內容</span>
+            <span className="font-semibold text-gray-800">經文要義</span>
           </div>
           {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
         </button>
@@ -43,6 +44,45 @@ export default function Book17Ch4() {
             <div>
               <h4 className="font-semibold text-purple-700 mb-2">三、屬於基督，基督屬於神（三18-23）</h4>
               <p className="text-gray-700 leading-relaxed">保羅再次反轉世人的智慧：若想在主裡有真智慧，先要成為世上的愚拙。所有傳道人（保羅、亞波羅、磯法）都是屬於信徒的，信徒是屬基督的，基督是屬神的。因此不需要「誇口屬某人」，因為你已擁有一切，一切都是神的恩賜。</p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* 省思與應用 */}
+      <div className="mb-6 border border-teal-100 rounded-lg overflow-hidden shadow-sm">
+        <button onClick={() => toggleSection('application')} className="w-full px-5 py-3 bg-gradient-to-r from-teal-50 to-cyan-50 hover:from-teal-100 hover:to-cyan-100 flex items-center justify-between transition-all">
+          <div className="flex items-center gap-2">
+            <Users className="w-5 h-5 text-teal-600 flex-shrink-0" />
+            <span className="font-semibold text-gray-800">省思與應用</span>
+          </div>
+          {expanded['application'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+        </button>
+        {expanded['application'] && (
+          <div className="p-5 bg-white space-y-5">
+            <div>
+              <h4 className="font-semibold text-teal-700 mb-2">屬靈與屬世的誤解</h4>
+              <p className="text-gray-700 leading-relaxed mb-3">「屬靈的人」和「屬肉體的人」這組對比，在教會中常被嚴重誤用。有人以外貌來判斷屬靈程度：同一個人，若是小腹微凸、西裝筆挺，大家覺得他是普通商人；若換上中式服裝、留著鬍子、仙風道骨，大家就覺得他「很屬靈」。外貌的確影響觀感，但與屬靈成熟毫無關係。</p>
+              <p className="text-gray-700 leading-relaxed">更嚴重的誤解是把「屬靈」、「屬肉體」、「屬血氣」當作三個等級——彷彿有些信徒永遠只能在較低的等級。但保羅在此只分兩類：在基督裡的人（有時仍像嬰孩）、和不在基督裡的人。嬰孩的問題不是無法成長，而是不肯成長。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-teal-700 mb-2">田地與農夫</h4>
+              <p className="text-gray-700 leading-relaxed mb-3">作者的岳父是農藝專家。岳父觀察，有些人以為對植物越殷勤越好，結果澆水太頻繁，植物反而枯死。植物的生長有其自身規律，農夫無論多努力，都不能替代這個過程。教會的生命成長也是如此——靠的是神，不是傳道人多努力。</p>
+              <p className="text-gray-700 leading-relaxed">這個比喻直接挑戰一個常見的錯誤：把出席人數增加等同於生命成長。教會可以「人數增加」但「生命衰退」，也可以「人數穩定」但「生命深化」。叫生命成長的是神，傳道人的責任是忠心種植和澆水，不是製造奇蹟。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-teal-700 mb-2">聖殿的建築工人</h4>
+              <p className="text-gray-700 leading-relaxed mb-3">把神的殿污穢了的人，神要毀壞。這是嚴重的警告，指向教會內部的破壞行為。有時同工之間嫉妒，一方想拆掉另一方的工作；信徒互相攻擊，教會落得兩敗俱傷。作者見過牧者辭職離開一間教會，立定心志不帶走任何信徒——這是榜樣，因為他明白教會是神的殿，不是他的產業。</p>
+              <p className="text-gray-700 leading-relaxed">開餐館的心態是：「這是我的，我決定一切。」但教會不是餐館。把商業管理的邏輯完全移植到教會，忽略了一個根本差異：教會的主是基督，不是任何人。傳道人是管家，不是老闆。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-teal-700 mb-2">智慧、富足與偶像崇拜的心理</h4>
+              <p className="text-gray-700 leading-relaxed mb-3">偶像崇拜有其深層心理：通過崇拜某人，可以哄抬自己的身份。哥林多人說「我是屬保羅的」、「我是屬亞波羅的」，其實是在說「我跟的老師比你的更好」——這是一種借力自我提升的策略。</p>
+              <p className="text-gray-700 leading-relaxed">保羅對這種心理的回應出人意表：他不說「不要崇拜任何人」，而是說「保羅、亞波羅、磯法……都是屬你們的！」換句話說：他們都是你的僕人，你不需要靠他們來抬高自己，因為你本來就已擁有一切。</p>
+            </div>
+            <div className="mt-2 p-4 bg-teal-50 rounded-lg border border-teal-100">
+              <p className="font-medium text-teal-800 mb-2">默想</p>
+              <p className="text-gray-700 leading-relaxed italic">「教會是神的田地，神的殿。傳道人是同工，不是主人。信徒是繼承人，不是追星族。當我們記住這個秩序，教會就能回到她本來的美麗。」</p>
             </div>
           </div>
         )}
@@ -92,23 +132,31 @@ export default function Book17Ch4() {
           <div className="p-5 bg-white space-y-3">
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
-              <p className="text-gray-700">保羅以「嫉妒分爭」作為屬靈不成熟的診斷。你在教會生活中，是否察覺自己或身邊人有這樣的現象？這對你有何提醒？</p>
+              <p className="text-gray-700">你是否曾以外表或風格來判斷一個人「屬不屬靈」？回想一下，這個判斷後來被印證了，還是被推翻了？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
-              <p className="text-gray-700">你如何看待你教會的傳道人？你是否有時過度期待他，認為教會的成敗取決於他的能力？這種期待符合「傳道人是同工」的聖經定位嗎？</p>
+              <p className="text-gray-700">保羅說嫉妒分爭是屬肉體的明證。你在教會生活中，是否察覺自己或身邊人有這樣的現象？這對你有何提醒？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
-              <p className="text-gray-700">「根基只有一個，就是耶穌基督」——你在教會服事中，是否曾不知不覺地把某個方法、風格或程序視為不可撼動的「根基」？</p>
+              <p className="text-gray-700">作者說「人數增加不等於生命成長」。你個人在評估一間教會的健康程度時，最看重的是什麼指標？這個指標是否符合聖經的標準？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
-              <p className="text-gray-700">末日的火試驗各人的工程——若以此標準思考你目前的服事，你認為你所建造的是「金銀寶石」還是「草木禾稭」？這個省思讓你想做什麼改變？</p>
+              <p className="text-gray-700">你是否曾見過教會內部的「破壞工程」——同工之間嫉妒、信徒互鬥？這些情況如何影響了你對教會的看法，以及你如何回應？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
-              <p className="text-gray-700">「萬物都是你們的」這個宣告讓你有何感受？你是否真的活在神兒女的豐盛中，還是仍為著屬世的爭奪和得失而掙扎？</p>
+              <p className="text-gray-700">作者說崇拜傳道人有「自我哄抬」的深層動機。你是否在某種程度上認同這個分析？這對你如何看待自己所尊敬的傳道人有何影響？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">6.</span>
+              <p className="text-gray-700">「萬物都是你們的」——這句話讓你有何感受？你是否真的活在神兒女的豐盛中，還是仍為著屬世的爭奪和得失而掙扎？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">7.</span>
+              <p className="text-gray-700">末日的火試驗各人的工程——若以此標準思考你目前的服事，你認為你所建造的是「金銀寶石」還是「草木禾稭」？這個省思讓你想做什麼改變？</p>
             </div>
           </div>
         )}
@@ -126,27 +174,36 @@ export default function Book17Ch4() {
         {expanded['practice'] && (
           <div className="p-5 bg-white space-y-4">
             <div>
-              <h4 className="font-semibold text-green-700 mb-2">🎯 為傳道人禱告並感謝神</h4>
+              <h4 className="font-semibold text-green-700 mb-2">🎯 為傳道人禱告並鼓勵</h4>
               <p className="text-gray-700 mb-2">這週以「傳道人是神的同工」的眼光，做以下的事：</p>
               <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
-                <li>為你的牧師/傳道人代禱，感謝神差遣他/她來到你的教會</li>
-                <li>鼓勵他/她——一句話、一封短信，或一個具體的感謝</li>
-                <li>不把教會問題都歸咎於傳道人，而是問「我在這根基上建造了什麼？」</li>
+                <li>為你的牧師或傳道人代禱，感謝神差遣他們</li>
+                <li>用一句話、一封短信具體感謝他們的服事</li>
+                <li>不把教會的問題都歸咎於傳道人，而是問自己「我在這根基上建造了什麼？」</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-green-700 mb-2">📖 服事品質的省察</h4>
-              <p className="text-gray-700 mb-2">回顧你目前參與的服事，問自己：</p>
+              <h4 className="font-semibold text-green-700 mb-2">📖 服事動機的省察</h4>
+              <p className="text-gray-700 mb-2">回顧你目前的服事，誠實問自己：</p>
               <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
-                <li>這服事的動機是榮耀神，還是維持形式/展示能力？</li>
-                <li>若在末日被火試驗，哪些部分可能是「草木禾稭」？</li>
-                <li>下週我可以在哪一個服事項目上更用心建造「金銀寶石」？</li>
+                <li>我服事的動機——是要榮耀神，還是要被人看見、被人認可？</li>
+                <li>若這份服事今天被取消，我的反應是釋懷還是難受？</li>
+                <li>下週我可以在哪個地方更用心建造「有永恆價值的工程」？</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">💬 教會關係的修復</h4>
+              <p className="text-gray-700 mb-2">若你與教會某位同工或信徒之間有嫌隙，考慮這週主動做一件事：</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
+                <li>傳一則真誠的問候或感謝</li>
+                <li>在心裡原諒對方，讓嫉妒或怨恨不再成為你服事的攔阻</li>
+                <li>把這關係交託給神，求祂修復</li>
               </ul>
             </div>
             <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-100">
               <p className="text-sm text-green-800 font-medium mb-1">本週禱告</p>
-              <p className="text-gray-700 text-sm leading-relaxed italic">
-                「主啊，感謝祢在教會中興起傳道人作祢的同工。求祢讓我不以他們代替祢，也不輕看祢藉他們做的工作。讓我在教會根基上建造有永恆價值的事工，不為自己的名，只為祢的榮耀。讓我記住：萬物都是我的，因我是屬基督的，基督是屬神的。奉主耶穌的名求，阿們。」
+              <p className="text-gray-700 text-lg leading-relaxed italic">
+                「主啊，感謝祢在教會中興起傳道人作祢的同工。求祢讓我不以他們代替祢，也不輕看祢藉他們所做的工。讓我在教會的根基上建造有永恆價值的事工，不為自己的名，只為祢的榮耀。幫助我記住：萬物都是我的，因我是屬基督的，基督是屬神的。奉主耶穌的名求，阿們。」
               </p>
             </div>
           </div>

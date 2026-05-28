@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Star, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, Star, Users, Search, HelpCircle, Check } from 'lucide-react';
 
 export default function Book17Ch7() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
     content: true,
+    application: true,
     exploration: true,
     questions: true,
     practice: true,
@@ -21,12 +22,12 @@ export default function Book17Ch7() {
         <p className="text-sm text-gray-500 mt-1">哥林多前書 六1-20</p>
       </div>
 
-      {/* 主要內容 */}
+      {/* 經文要義 */}
       <div className="mb-6 border border-purple-100 rounded-lg overflow-hidden shadow-sm">
         <button onClick={() => toggleSection('content')} className="w-full px-5 py-3 bg-gradient-to-r from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 flex items-center justify-between transition-all">
           <div className="flex items-center gap-2">
             <Star className="w-5 h-5 text-purple-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">主要內容</span>
+            <span className="font-semibold text-gray-800">經文要義</span>
           </div>
           {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
         </button>
@@ -39,6 +40,41 @@ export default function Book17Ch7() {
             <div>
               <h4 className="font-semibold text-purple-700 mb-2">二、身體的淫亂問題（六12-20）</h4>
               <p className="text-gray-700 leading-relaxed">保羅針對一些人的口號「凡事我都可行」，指出兩個限制：「但不都有益處」和「我不受它的轄制」。食物的例子是過渡，重點是淫亂——身體的結合（「二人成為一體」）有屬靈的維度，不只是生理行為。信徒的身體是聖靈的殿，是神買來的，要在身體上榮耀神。</p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* 省思與應用 */}
+      <div className="mb-6 border border-teal-100 rounded-lg overflow-hidden shadow-sm">
+        <button onClick={() => toggleSection('application')} className="w-full px-5 py-3 bg-gradient-to-r from-teal-50 to-cyan-50 hover:from-teal-100 hover:to-cyan-100 flex items-center justify-between transition-all">
+          <div className="flex items-center gap-2">
+            <Users className="w-5 h-5 text-teal-600 flex-shrink-0" />
+            <span className="font-semibold text-gray-800">省思與應用</span>
+          </div>
+          {expanded['application'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+        </button>
+        {expanded['application'] && (
+          <div className="p-5 bg-white space-y-5">
+            <div>
+              <h4 className="font-semibold text-teal-700 mb-2">犯罪的基督徒可否進神的國？</h4>
+              <p className="text-gray-700 leading-relaxed mb-3">哥林多前書六章9-11節列舉不義的人「不能承受神的國」，其中包括淫亂者、同性戀者等。然而緊接著保羅說：「你們中間有人從前也是這樣，但如今你們奉主耶穌基督的名，並藉著我們神的靈，已經洗淨了，成聖了，稱義了。」這段話處理了一個深刻的張力：因信稱義（保羅在加拉太書、羅馬書的核心教導）與成聖（過聖潔生命的要求）之間，並不矛盾。</p>
+              <p className="text-gray-700 leading-relaxed">值得注意的是，「洗淨」、「成聖」、「稱義」這三個動詞在原文都是被動式過去式——是已經完成的事。哥林多信徒雖然仍有許多問題，保羅仍然確認他們的蒙恩地位。這告訴我們：這些罪的列舉，不是要讓信徒活在罪疚中，而是要他們認識自己已承受的改變，並繼續活出與新身份相符的生命。對於哥林多信徒中各種問題，保羅有多種處理方式，而這是其中之一。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-teal-700 mb-2">打官司展現傲慢與無知</h4>
+              <p className="text-gray-700 leading-relaxed mb-3">教會打官司的問題不只是哥林多時代才有。東南亞有些教會把房產登記在本地同工名下，後來那位同工離開教會，把房產賣掉，引發法律糾紛。美國的衛理公會、長老會、聖公會，都因為同性戀婚姻等議題產生宗派分裂，訴諸法庭爭奪教會財產。作者也提到有信徒合夥開糕餅店，後來因利益糾紛對簿公堂，讓局外人看笑話。</p>
+              <p className="text-gray-700 leading-relaxed">保羅的真正針對對象，是「欺負人的一方」——那些主動傷害弟兄姊妹的人。他並不是說受害者絕對不能尋求法律保護，而是說教會應優先嘗試庭外和解。在能夠化解的情況下，寧可吃虧，也不讓教會見證受損。</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-teal-700 mb-2">性自由是對自由的濫用</h4>
+              <p className="text-gray-700 leading-relaxed mb-3">同性戀問題在今日教會引發激烈爭論。反對派引用羅馬書一章26-27節和哥林多前書六章9節，主張聖經清楚禁止同性性行為。贊成派有兩個主要論點：其一，這些經文只是針對特定文化中的雜亂性行為，不適用於忠貞的同性伴侶關係；其二，同性戀傾向是天生的，神既然如此創造，就不應反對。</p>
+              <p className="text-gray-700 leading-relaxed mb-3">對於基因論，作者提出一個嚴肅的反問：若「基因決定論」成立（某行為因基因而生，故不應受道德判斷），那麼當研究顯示某人對兒童有性吸引力也是「基因決定」時，社會是否也應接受？這個反例說明，「天生如此」本身不足以成為道德許可的理由。</p>
+              <p className="text-gray-700 leading-relaxed">保羅在此段的正面教導是：真正的自由，不是放縱身體，而是在身體上榮耀神。身體是聖靈的殿、是基督用寶血買來的——這是基督徒性倫理最深的神學根基。性行為的問題，最終是一個敬拜的問題：我的身體是榮耀神的，還是榮耀自己欲望的？</p>
+            </div>
+            <div className="mt-2 p-4 bg-teal-50 rounded-lg border border-teal-100">
+              <p className="font-medium text-teal-800 mb-2">默想</p>
+              <p className="text-gray-700 leading-relaxed italic">「真自由，不是為所欲為，而是在神旨意中的自由。真智慧，不是保護自己的利益，而是以愛解決紛爭。我的身體是聖靈的殿——這個宣告改變了我看待自己、看待自由的每一個角度。」</p>
             </div>
           </div>
         )}
@@ -88,23 +124,31 @@ export default function Book17Ch7() {
           <div className="p-5 bg-white space-y-3">
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
-              <p className="text-gray-700">「寧可受虧損，也不要捍衛自己的權益」——這個原則在你的日常人際關係中有多難實踐？有沒有一個具體情境，讓你感到很難「甘願吃虧」？</p>
+              <p className="text-gray-700">保羅說信徒之間的官司是「已經失敗了」。你是否曾在與弟兄姊妹的糾紛中，優先考慮「我的利益」而非「教會的見證」？那次的結果如何？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
-              <p className="text-gray-700">你如何在個人生活中辨別「這件事可行，但是否有益？」這個問題對你目前的某個習慣或娛樂有何應用？</p>
+              <p className="text-gray-700">「寧可受虧損，也不要捍衛自己的權益」——這個原則在現實中有多難？你認為這是否適用於所有情況？有沒有例外？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
-              <p className="text-gray-700">「你們的身子是聖靈的殿」——這個真理如何影響你對待自己身體的方式？飲食、睡眠、運動、性，你在哪些方面仍需要更認真對待這個真理？</p>
+              <p className="text-gray-700">作者對「基因決定論」提出了反問（若基因決定同性戀，那由基因決定的兒童性侵傾向是否也應被接受？）。你認為這個論點有力嗎？你如何在尊重人的同時，持守聖經的性倫理立場？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
-              <p className="text-gray-700">現代文化強調「我的身體，我的選擇」。保羅卻說「你們的身子不是自己的，是重價買來的」。這兩種世界觀在你心中如何交戰？</p>
+              <p className="text-gray-700">「你的身體是聖靈的殿」——這個真理讓你對自己身體的看法有何改變？飲食、睡眠、運動、性，你在哪些方面仍需要更認真對待這個真理？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
-              <p className="text-gray-700">「在身體上榮耀神」延伸到所有身體的使用。你的日常生活（飲食、休息、工作方式）有多少程度是刻意以榮耀神為考量的？</p>
+              <p className="text-gray-700">現代文化強調「我的身體，我的選擇」。保羅卻說「你們的身子不是自己的，是重價買來的」。這兩種世界觀在你心中如何交戰？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">6.</span>
+              <p className="text-gray-700">六章11節說哥林多信徒「已經洗淨了、成聖了、稱義了」——這個確認對那些因過去的罪仍活在罪疚中的信徒有何意義？你是否有某些過去的罪，仍然難以相信神已完全赦免？</p>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-amber-600 font-bold flex-shrink-0">7.</span>
+              <p className="text-gray-700">「在身體上榮耀神」延伸到所有身體的使用。你的日常生活（飲食、休息、工作方式、身體接觸的界限）有多少程度是刻意以榮耀神為考量的？</p>
             </div>
           </div>
         )}
@@ -132,17 +176,26 @@ export default function Book17Ch7() {
             </div>
             <div>
               <h4 className="font-semibold text-green-700 mb-2">📖 身體是聖靈的殿——全人聖潔的功課</h4>
-              <p className="text-gray-700 mb-2">選擇一個身體生活的領域（飲食、睡眠、螢幕時間、身體接觸界線），本週：</p>
+              <p className="text-gray-700 mb-2">選擇一個身體生活的領域（飲食、睡眠、螢幕時間、身體接觸界限），本週：</p>
               <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
                 <li>承認目前的狀況是否榮耀神</li>
                 <li>設立一個具體的改善目標（不是完美，而是朝向榮耀神的方向）</li>
                 <li>每天睡前感謝神賜下這個身體，求祂幫助你善用它</li>
               </ul>
             </div>
+            <div>
+              <h4 className="font-semibold text-green-700 mb-2">💚 在糾紛中選擇和解</h4>
+              <p className="text-gray-700 mb-2">若你目前與某人（信徒或非信徒）有未解決的糾紛或嫌隙：</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
+                <li>問自己：這件事是否可以在庭外（或私下）和解，而不必訴諸公開衝突？</li>
+                <li>若對方有錯，問：我是否願意「寧可受虧」，讓這件事就此平息？</li>
+                <li>把和解的意願帶到禱告中，求神賜智慧和愛心</li>
+              </ul>
+            </div>
             <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-100">
               <p className="text-sm text-green-800 font-medium mb-1">本週禱告</p>
-              <p className="text-gray-700 text-sm leading-relaxed italic">
-                「主，我的身子是聖靈的殿。我承認有時我忘記了這個尊貴的身份，以為身體可以隨意支配。求祢讓我記住，我是被祢的寶血買來的，不屬於自己。幫助我在身體的每個使用上，都問一句：這榮耀祢嗎？讓我真正活出「在身體上榮耀神」的生命。奉主耶穌的名求，阿們。」
+              <p className="text-gray-700 text-lg leading-relaxed italic">
+                「主，我的身子是聖靈的殿。我承認有時我忘記了這個尊貴的身份，以為身體可以隨意支配。求祢讓我記住，我是被祢的寶血買來的，不屬於自己。在我面對自由的邊界時，讓我問：這榮耀祢嗎？在面對與人的糾紛時，讓我問：這見證祢的愛嗎？讓我真正活出「在身體上榮耀神」的生命。奉主耶穌的名求，阿們。」
               </p>
             </div>
           </div>
