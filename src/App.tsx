@@ -41,6 +41,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book15: '誰需要神學？',
   book16: '拾級靈程三階',
   book17: '十架牧養學：從哥林多前書學習教會建造',
+  book18: '與撒但爭戰',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -228,6 +229,22 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter16', title: '第16章 帶著復活的盼望而活著（十五1-58）', path: '/book17/chapter16' },
     { id: 'chapter17', title: '第17章 成為有愛心的群體（十六1-24）', path: '/book17/chapter17' },
   ],
+  book18: [
+    { id: 'home', title: '書本簡介', path: '/book18/home' },
+    { id: 'chapter1', title: '第1章 聖戰', path: '/book18/chapter1' },
+    { id: 'chapter2', title: '第2章 舊約中的撒但', path: '/book18/chapter2' },
+    { id: 'chapter3', title: '第3章 新約中的撒但', path: '/book18/chapter3' },
+    { id: 'chapter4', title: '第4章 教會歷史中的撒但', path: '/book18/chapter4' },
+    { id: 'chapter5', title: '第5章 今天的撒但', path: '/book18/chapter5' },
+    { id: 'chapter6', title: '第6章 撒但的將來', path: '/book18/chapter6' },
+    { id: 'chapter7', title: '第7章 建造堅固防線', path: '/book18/chapter7' },
+    { id: 'chapter8', title: '第8章 主動發起進攻', path: '/book18/chapter8' },
+    { id: 'chapter9', title: '第9章 撒但的策略與伎倆', path: '/book18/chapter9' },
+    { id: 'chapter10', title: '第10章 直面撒但的四大策略', path: '/book18/chapter10' },
+    { id: 'chapter11', title: '第11章 我們作為信徒的挑戰', path: '/book18/chapter11' },
+    { id: 'chapter12', title: '第12章 我們作為教會成員的挑戰', path: '/book18/chapter12' },
+    { id: 'chapter13', title: '第13章 我們作為國家公民的挑戰', path: '/book18/chapter13' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -249,6 +266,7 @@ const STATIC_BOOKS = [
   { book_id: 'book15', title: '誰需要神學？', author: '史丹尼·格蘭茨 & 羅傑·奧遜', description: '破除迷思，幫助每位信徒認識神學的必要性，成為更負責任的神學家。', chapters_count: 10 },
   { book_id: 'book16', title: '拾級靈程三階', author: '孫毅', description: '帶領讀者拾級而上，領略內室、日常生活及終末的靈程三階，深化靈修操練。', chapters_count: 7 },
   { book_id: 'book17', title: '十架牧養學：從哥林多前書學習教會建造', author: '陳濟民', description: '從哥林多前書探討十架牧養智慧，學習建造合神心意的教會群體。', chapters_count: 18 },
+  { book_id: 'book18', title: '與撒但爭戰', author: '周必克（Joel Beeke）', description: '認識撒但的弱點、策略和失敗，以全副軍裝和禱告在基督裡得勝。', chapters_count: 14 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -269,6 +287,7 @@ const colorMap: Record<number, string> = {
   15: 'from-indigo-600 to-slate-700',
   16: 'from-violet-600 to-purple-700',
   17: 'from-amber-600 to-orange-700',
+  18: 'from-red-600 to-rose-700',
 };
 
 // ========== 導入 Book 1 章節 ==========
@@ -455,6 +474,22 @@ import Book17Ch14 from './components/book17/Book17Ch14';
 import Book17Ch15 from './components/book17/Book17Ch15';
 import Book17Ch16 from './components/book17/Book17Ch16';
 import Book17Ch17 from './components/book17/Book17Ch17';
+
+// ========== 導入 Book 18 章節 ==========
+import Book18Home from './components/book18/Book18Home';
+import Book18Ch1 from './components/book18/Book18Ch1';
+import Book18Ch2 from './components/book18/Book18Ch2';
+import Book18Ch3 from './components/book18/Book18Ch3';
+import Book18Ch4 from './components/book18/Book18Ch4';
+import Book18Ch5 from './components/book18/Book18Ch5';
+import Book18Ch6 from './components/book18/Book18Ch6';
+import Book18Ch7 from './components/book18/Book18Ch7';
+import Book18Ch8 from './components/book18/Book18Ch8';
+import Book18Ch9 from './components/book18/Book18Ch9';
+import Book18Ch10 from './components/book18/Book18Ch10';
+import Book18Ch11 from './components/book18/Book18Ch11';
+import Book18Ch12 from './components/book18/Book18Ch12';
+import Book18Ch13 from './components/book18/Book18Ch13';
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({
@@ -718,6 +753,23 @@ const App: React.FC = () => {
         <Route path="/book17/chapter16" element={<BookLayout bookId="book17" chapter="chapter16" chapters={getChaptersForBook('book17')}><Book17Ch16 /></BookLayout>} />
         <Route path="/book17/chapter17" element={<BookLayout bookId="book17" chapter="chapter17" chapters={getChaptersForBook('book17')}><Book17Ch17 /></BookLayout>} />
         <Route path="/book/17" element={<BookLayout bookId="book17" chapter="home" chapters={getChaptersForBook('book17')}><Book17Home /></BookLayout>} />
+
+        {/* ========== Book 18 - 與撒但爭戰 ========== */}
+        <Route path="/book18/home" element={<BookLayout bookId="book18" chapter="home" chapters={getChaptersForBook('book18')}><Book18Home /></BookLayout>} />
+        <Route path="/book18/chapter1" element={<BookLayout bookId="book18" chapter="chapter1" chapters={getChaptersForBook('book18')}><Book18Ch1 /></BookLayout>} />
+        <Route path="/book18/chapter2" element={<BookLayout bookId="book18" chapter="chapter2" chapters={getChaptersForBook('book18')}><Book18Ch2 /></BookLayout>} />
+        <Route path="/book18/chapter3" element={<BookLayout bookId="book18" chapter="chapter3" chapters={getChaptersForBook('book18')}><Book18Ch3 /></BookLayout>} />
+        <Route path="/book18/chapter4" element={<BookLayout bookId="book18" chapter="chapter4" chapters={getChaptersForBook('book18')}><Book18Ch4 /></BookLayout>} />
+        <Route path="/book18/chapter5" element={<BookLayout bookId="book18" chapter="chapter5" chapters={getChaptersForBook('book18')}><Book18Ch5 /></BookLayout>} />
+        <Route path="/book18/chapter6" element={<BookLayout bookId="book18" chapter="chapter6" chapters={getChaptersForBook('book18')}><Book18Ch6 /></BookLayout>} />
+        <Route path="/book18/chapter7" element={<BookLayout bookId="book18" chapter="chapter7" chapters={getChaptersForBook('book18')}><Book18Ch7 /></BookLayout>} />
+        <Route path="/book18/chapter8" element={<BookLayout bookId="book18" chapter="chapter8" chapters={getChaptersForBook('book18')}><Book18Ch8 /></BookLayout>} />
+        <Route path="/book18/chapter9" element={<BookLayout bookId="book18" chapter="chapter9" chapters={getChaptersForBook('book18')}><Book18Ch9 /></BookLayout>} />
+        <Route path="/book18/chapter10" element={<BookLayout bookId="book18" chapter="chapter10" chapters={getChaptersForBook('book18')}><Book18Ch10 /></BookLayout>} />
+        <Route path="/book18/chapter11" element={<BookLayout bookId="book18" chapter="chapter11" chapters={getChaptersForBook('book18')}><Book18Ch11 /></BookLayout>} />
+        <Route path="/book18/chapter12" element={<BookLayout bookId="book18" chapter="chapter12" chapters={getChaptersForBook('book18')}><Book18Ch12 /></BookLayout>} />
+        <Route path="/book18/chapter13" element={<BookLayout bookId="book18" chapter="chapter13" chapters={getChaptersForBook('book18')}><Book18Ch13 /></BookLayout>} />
+        <Route path="/book/18" element={<BookLayout bookId="book18" chapter="home" chapters={getChaptersForBook('book18')}><Book18Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
         <Route path="/" element={
