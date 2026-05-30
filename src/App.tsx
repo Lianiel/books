@@ -244,6 +244,7 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter11', title: '第11章 我們作為信徒的挑戰', path: '/book18/chapter11' },
     { id: 'chapter12', title: '第12章 我們作為教會成員的挑戰', path: '/book18/chapter12' },
     { id: 'chapter13', title: '第13章 我們作為國家公民的挑戰', path: '/book18/chapter13' },
+    { id: 'summary', title: '重點總結整理', path: '/book18/summary' },
   ],
 };
 
@@ -490,6 +491,7 @@ import Book18Ch10 from './components/book18/Book18Ch10';
 import Book18Ch11 from './components/book18/Book18Ch11';
 import Book18Ch12 from './components/book18/Book18Ch12';
 import Book18Ch13 from './components/book18/Book18Ch13';
+import Book18Summary from './components/book18/Book18Summary';
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({
@@ -769,6 +771,7 @@ const App: React.FC = () => {
         <Route path="/book18/chapter11" element={<BookLayout bookId="book18" chapter="chapter11" chapters={getChaptersForBook('book18')}><Book18Ch11 /></BookLayout>} />
         <Route path="/book18/chapter12" element={<BookLayout bookId="book18" chapter="chapter12" chapters={getChaptersForBook('book18')}><Book18Ch12 /></BookLayout>} />
         <Route path="/book18/chapter13" element={<BookLayout bookId="book18" chapter="chapter13" chapters={getChaptersForBook('book18')}><Book18Ch13 /></BookLayout>} />
+        <Route path="/book18/summary" element={<BookLayout bookId="book18" chapter="summary" chapters={getChaptersForBook('book18')}><Book18Summary /></BookLayout>} />
         <Route path="/book/18" element={<BookLayout bookId="book18" chapter="home" chapters={getChaptersForBook('book18')}><Book18Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
