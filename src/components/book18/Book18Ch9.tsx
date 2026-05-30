@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, BookOpen, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, BookOpen, Search, HelpCircle, Check, Star } from 'lucide-react';
 
 export default function Book18Ch9() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
@@ -126,14 +126,17 @@ export default function Book18Ch9() {
                 <div className="border-l-4 border-purple-300 pl-4">
                   <h4 className="font-semibold text-gray-800 mb-1">（1）撒但的屬靈本質及智力能力</h4>
                   <p className="text-gray-700 leading-relaxed">
-                    人們彼此試探時採用明顯的行動，但撒但是個靈，可以直接侵入我們心靈。他進入了猶大的心（約13:2），充滿了亞拿尼亞的心（徒5:3）。撒但雖然墮落，仍是天使，在智力上高過我們。愛德華滋說：「魔鬼在宇宙中最好的神學院，即天堂中的天堂，受過教育。」加爾文稱魔鬼為「精明的神學家」。撒但能把致命的智力毒藥隱藏在「美麗而閃光的外表」之下。
+                    人們彼此試探時採用明顯的行動——比如約瑟通過讓管家把自己的杯子藏在便雅憫的袋子裡，來試探兄弟們對最小弟弟的喜愛程度。然而撒但是個靈，不必使用顯而易見的行動，可以直接侵入我們心靈。他進入了猶大的心（約13:2），充滿了亞拿尼亞的心（徒5:3）。撒但雖然墮落，仍是天使，在智力上高過我們。愛德華滋說：「魔鬼在宇宙中最好的神學院，即天堂中的天堂，受過教育。」加爾文稱魔鬼為「精明的神學家」。撒但能把致命的智力毒藥隱藏在「美麗而閃光的外表」之下。撒但高超的智力和狡詐的騙術應當使我們特別謹慎，因為我們知道自己不能靠著自己有限的智力能力打敗他。
                   </p>
                 </div>
 
                 <div className="border-l-4 border-purple-300 pl-4">
                   <h4 className="font-semibold text-gray-800 mb-1">（2）撒但的豐富經歷</h4>
                   <p className="text-gray-700 leading-relaxed">
-                    撒但年老但不體弱。多少個世紀以來，他已掌握了邪惡的藝術。他知道釣什麼魚用什麼誘餌：用美麗誘惑年輕人，用金錢誘惑節儉的人，用權勢誘惑有野心的人。威廉·詹金說：「他用蘋果誘惑夏娃，用葡萄酒誘惑挪亞，用衣裳誘惑基哈西，用錢袋誘惑猶大。」司布斯托說，就像畫家阿佩利斯只畫了安提哥納王的一半臉（隱藏了沒有眼睛的那一半），撒但也只畫罪的一半臉。他使我們的防線改變方向，也自信地攻擊最聖潔的信徒。「撒但如果不能熄滅他們的燈火，就會竭力使他們的光彩變得暗淡；如果不能使船沉沒，就會竭力發動風暴。」
+                    撒但年老但不體弱。他的誘惑就像善射之勇士的箭，很少徒然返回（耶50:9）。多少個世紀以來，他已掌握了邪惡的藝術，憑經驗知道何時是射箭的最佳時機。他知道釣什麼魚用什麼誘餌：用美麗誘惑年輕人，用金錢誘惑節儉的人，用權勢誘惑有野心的人。威廉·詹金說：「他用蘋果誘惑夏娃，用葡萄酒誘惑挪亞，用衣裳誘惑基哈西，用錢袋誘惑猶大。」司布斯托說，就像畫家阿佩利斯只畫了安提哥納王的一半臉（隱藏了沒有眼睛的那一半），撒但也只畫罪的一半臉。
+                  </p>
+                  <p className="text-gray-700 leading-relaxed mt-2">
+                    撒但擅於使我們的防線改變方向。信徒受到試探時常常感到震驚和困惑，因為撒但對於他們關於犯罪的辯論反應迅速而有效。撒但的迅捷反應告訴我們，應當立刻徹底拒絕他，而不是與他辯論。撒但如果不能使信徒離開天堂，就在地上千方百計地使天堂遠離信徒。「撒但如果不能熄滅他們的燈火，就會竭力使他們的光彩變得暗淡；如果不能使船沉沒，就會竭力發動風暴；如果不能改變他們喜樂的終點，就在途中騷擾他們。」撒但是個自信而經驗豐富的敵手——與他摔過跤的人，誰沒有受傷呢？如果像挪亞、羅得、大衛和彼得那樣的偉人都在撒但的試探下跌倒了，我們怎能盼望靠著自己的力量抵擋那試探人的呢？
                   </p>
                 </div>
 
@@ -147,7 +150,10 @@ export default function Book18Ch9() {
                 <div className="border-l-4 border-purple-300 pl-4">
                   <h4 className="font-semibold text-gray-800 mb-1">（4）撒但擁有一個邪靈的國度</h4>
                   <p className="text-gray-700 leading-relaxed">
-                    保羅說我們是與「那些執政的，掌權的，管轄這幽暗世界的，以及天空屬靈氣的惡魔爭戰」（弗6:12）。撒但的國度有目的地聯合在一起——每個邪靈都憎恨上帝的榮耀和我們的喜樂。撒但國度中沒有紛爭（太12:26），沒有因低薪而引發的暴動，沒有在執行艱難使命時來自內部的阻礙。司布斯托說：「毀滅的罪人是地獄唯一的戰利品和報酬。」邪靈的團契常常勝過聖徒的團契，這是令人悲哀的事。
+                    《但以理書》第7章10節說侍奉上帝的天使有「千千」，在他面前侍立的有「萬萬」。保羅說我們是與「那些執政的，掌權的，管轄這幽暗世界的，以及天空屬靈氣的惡魔爭戰」（弗6:12），暗示墮落天使的數目眾多。撒但的國度有目的地聯合在一起——每個邪靈都憎恨上帝的榮耀和我們的喜樂。所有的邪靈都聯合起來增進撒但的教義、撒但的聲望、撒但的統治和撒但的宴樂；所有的邪靈都聯合起來反對上帝的地位、上帝的誡命、上帝的純潔和上帝的子民。撒但的國度中沒有紛爭（太12:26），沒有因低薪而引發的暴動，沒有因艱苦行軍而引發的抱怨，在執行艱難使命時沒有來自內部的阻礙。
+                  </p>
+                  <p className="text-gray-700 leading-relaxed mt-2">
+                    既然邪靈裡面充滿驕傲、憤怒、嫉妒和苦毒，他們怎能如此團結呢？正如地上的敵人可以因著對共同第三方的憎恨聯合起來，撒但的邪靈也因著對上帝和人的憎恨而聯合起來。正如善天使因罪人的悔改而喜樂，惡天使因罪人的毀滅而喜樂。司布斯托說：「毀滅的罪人是地獄唯一的戰利品和報酬。」地獄中的邪靈比地上的教會更團結，這難道不值得我們注意嗎？邪靈的團契常常勝過聖徒的團契，這是令人悲哀的事。
                   </p>
                 </div>
 
@@ -200,6 +206,32 @@ export default function Book18Ch9() {
 
           </div>
         )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-teal-100 rounded-lg overflow-hidden shadow-sm">
+        <div className="px-5 py-3 bg-gradient-to-r from-teal-50 to-cyan-50 flex items-center gap-2">
+          <Star className="w-5 h-5 text-teal-600 flex-shrink-0" />
+          <span className="font-semibold text-gray-800">重點總結</span>
+        </div>
+        <div className="p-5 bg-white space-y-3">
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">1</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">木馬警告——識別撒但的偽裝策略：</span>如同特洛伊木馬，撒但最致命的攻擊從不以明顯的邪惡面目出現。他化裝為「光明的天使」（2Cor 11:14），用合理的藉口、漸進的妥協、看似無害的起點引誘人踏入陷阱。路德說：「撒但先在禮拜堂門外建立小教堂」——先讓人接受邊緣的偏差，再逐漸取代核心真理。識別這種偽裝需要對神話語的深刻認識，因為只有真光才能辨別假光。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">2</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">四層詞彙框架——從目標到解藥的系統理解：</span>清教徒分析撒但攻擊的四層詞彙：（1）目標（Goal）——撒但的最終目的（破壞信徒與神的關係，使人失落或靈命枯死）；（2）策略（Strategy）——達成目標的整體計畫（如：先軟化人對罪的敏感）；（3）手段/器具（Device）——具體使用的工具（如：誘惑、控告、疑惑）；（4）解藥（Remedy）——每種手段對應的聖經回應。斯柏司多（Spurstowe）在《撒但的迷惑》中系統整理了這個框架，是清教徒屬靈爭戰神學的代表作。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">3</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">斯柏司多的六個原因——撒但為何擅長試探：</span>（1）在人類歷史上有數千年攻擊靈魂的經驗積累；（2）深刻了解人性弱點，知道每個人的「性情、氣質、職業」的破口；（3）能選擇最有利的時機（「可乘之機」Eph 4:27）；（4）能協調多方因素形成組合攻擊；（5）不知疲倦，從不因失敗而氣餒；（6）以謙卑溫和的外表起步（「老鼠夾上的起司看起來是免費的」）。認識這六點使信徒對自己的脆弱有正確的謙遜。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">4</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">六位清教徒來源的屬靈爭戰寶庫：</span>本章所引用的清教徒資源代表了16-17世紀屬靈爭戰神學的精華：（1）湯姆·布魯克斯（Thomas Brooks）《撒但的誘騙》；（2）威廉·斯柏司多（William Spurstowe）《撒但的迷惑》；（3）約翰·歐文（John Owen）《試探與罪》；（4）理查·吉利斯比（Richard Gilpin）《魔鬼的誘惑》；（5）托馬斯·古德溫（Thomas Goodwin）《撒但的工作》；（6）塞繆爾·路得福（Samuel Rutherford）書信中的屬靈爭戰討論。這些著作今日仍是無可替代的靈修資源。</p>
+          </div>
+        </div>
       </div>
 
       {/* 延伸探討 */}

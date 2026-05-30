@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Users, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, Users, Search, HelpCircle, Check, Star } from 'lucide-react';
 
 export default function Book18Ch4() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
@@ -76,7 +76,7 @@ export default function Book18Ch4() {
                 教會第一位系統神學家奧利金說露西弗（賽14：12-15）是撒但，他因為驕傲而背叛了上帝，因而從天上墜落下來，但上帝仍然憐憫他。奧古斯丁同意撒但是露西弗，但拒絕奧利金的認為撒但可以與上帝重新和好的奇想。奧古斯丁相信撒但煽動人犯罪作惡，擁有相當多的知識，有能力攻擊人。托馬斯·阿奎那認為撒但曾經是地位最高的天使，因為驕傲，在被創造後立刻墮落，並誘使那些追隨者成為他的臣民。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
-                馬丁·路德雖然反對中世紀教會過分強調撒但，卻把很多事情都歸於撒但。他尤其反對驅鬼者這一職分。路德說，我們不像基督和使徒那樣，「我們自己沒有能力逐出邪靈，我們也不必嘗試那樣做」。然而，只要我們相信聖經並禱告，就足以抵擋撒但。路德寫道：「撒但憎恨上帝的聖言勝過別的一切。」他在《上帝是我們堅固保障》中寫道：「這個世界的王也許仍然殘忍兇猛，卻不能傷害我們中任何人，他已經受到審判；這事已經成就；一句話就可以擊倒他。」
+                馬丁·路德雖然反對中世紀教會過分強調撒但，卻把很多事情都歸於撒但。他尤其反對驅鬼者這一職分。路德說，我們不像基督和使徒那樣，「我們自己沒有能力逐出邪靈，我們也不必嘗試那樣做」。然而，路德確實相信有邪靈出沒於「樹林、水中、沼澤地和荒涼的地方」，他們一直在策劃攪擾我們的生活，破壞我們的福益。他認為只要我們相信聖經並禱告，就足以抵擋撒但。路德寫道：「撒但憎恨上帝的聖言勝過別的一切。」他在《上帝是我們堅固保障》中寫道：「我們不必戰兢，也不必害怕疾病；他們必不能勝過我們。這個世界的王也許仍然殘忍兇猛，卻不能傷害我們中任何人，他已經受到審判；這事已經成就；一句話就可以擊倒他。」
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
                 約翰·加爾文駁斥了那些「毫無根據地說邪靈只是不良情緒」的人，指出了許多證明撒但和邪靈存在的經文。他主張，聖經關於撒但及其邪靈的教導應當喚醒我們「警惕他們的計謀」（《基督徒敬虔學》1：14：13-19），尤其要用保羅在《以弗所書》第6章10至18節中所闡述的信心、禱告以及軍裝的其他部分來裝備我們自己。加爾文和路德一樣反對像羅馬天主教那樣過度關注魔鬼的活動；他避免了那個時代盛行的各種迷信，但仍然認為邪靈附體是真實存在的。
@@ -95,7 +95,7 @@ export default function Book18Ch4() {
                 就連經常去教會的人也把魔鬼從他們常用的詞彙中剔除了。根據最近的調查結果表明，英國聖公會信徒中有76%的人否認魔鬼的真實存在。具有諷刺意味的是，在這些教會人士和神學家否認魔鬼之真實存在的同時，人們對於巫術、占星術、異教信仰和撒但教的興趣卻在日益激增。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
-                現代撒但教是由阿萊斯特·克勞利（Aleister Crowley，生於1875年）引入美國的。加德納以及後來的安東·拉維伊（Anton LaVey，生於1930年）於1966年建立了撒但教會。「上帝死了，撒但活著」是拉維伊的許多當地洞室或教會的口令。有些作者指出，僅在美國就有500個可以確認的撒但教團體，在全世界有10000個。
+                現代撒但教是由阿萊斯特·克勞利（Aleister Crowley，生於1875年）引入美國的。克勞利生長於英國一個敬虔的基督徒家庭，著名的神秘主義者以利法·李維（Eliphas Levi）向他介紹了神秘主義的思想和修煉。克勞利教導說，撒但比上帝更有能力，他還經常在藥物的作用下表演怪異的宗教和性愛儀式，這一切影響了另一個名叫格拉爾德·加德納（Gerald Gardner）的英國人——一個自封的巫師，他的書籍幫助建立了以「母神」（Mother Goddess）為基礎的現代巫術儀式。加德納以及後來的安東·拉維伊（Anton LaVey，生於1930年）於1966年建立了撒但教會，推廣他們敬拜的神巴弗蔑（Baphomet）的畫像，以之作為巫術和撒但教的象徵。「上帝死了，撒但活著」是拉維伊的許多當地洞室或教會的口令。20世紀70年代以來，很多團體從拉維依教會中分離出來，組成了別的崇拜撒但的團體。有些作者指出，僅在美國就有500個可以確認的撒但教團體，在全世界有10000個。
               </p>
               <p className="text-gray-700 leading-relaxed">
                 五旬節派和靈恩派界於否認撒但和敬拜撒但之間，越來越強調撒但的真實存在和屬靈爭戰的重要性。他們經常會錯誤地鼓勵對邪靈的不健康的興趣。他們認為在所面臨的每個問題背後都有一個邪靈；個人的責任讓位於邪靈的影響。各種迷信的應對辦法，比如測繪靈界地圖，舉行趕鬼儀式，變得比認罪、悔改和重新順服基督這些合乎聖經的解決方法更盛行。對於以上帝的聖言為中心的福音主義信徒來說，今天恰恰是一個傳講合乎聖經的平衡的主張的機會，既不要否認其存在，也不要執迷其中。
@@ -103,6 +103,32 @@ export default function Book18Ch4() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-teal-100 rounded-lg overflow-hidden shadow-sm">
+        <div className="px-5 py-3 bg-gradient-to-r from-teal-50 to-cyan-50 flex items-center gap-2">
+          <Star className="w-5 h-5 text-teal-600 flex-shrink-0" />
+          <span className="font-semibold text-gray-800">重點總結</span>
+        </div>
+        <div className="p-5 bg-white space-y-3">
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">1</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">內部腐敗比外部逼迫更危險：</span>教會歷史一再證明，撒但從內部蠶食比從外部打擊更有效。德爾圖良（Tertullian）說：「教會的血是種子」——逼迫往往使教會更強壯。然而當撒但從教義純正、敬拜形式、道德標準、教會紀律內部滲透腐蝕時，教會才面臨真正的危機。主耶穌在啟示錄致七教會書信中，對每一間教會的警告幾乎都指向內部問題，而非外部威脅。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">2</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">改革宗傳統的堅定立場：</span>加爾文、清教徒、荷蘭改革宗神學家一致相信撒但是真實、活躍的靈界存在，不是神話或比喻。他們對撒但的認識既非中世紀的迷信恐懼，也非現代主義的理性否認，而是建立在聖經神學的嚴謹研究上。改革宗傳統提供了一條中間道路：認真對待屬靈爭戰，卻不陷入二元論或鬼怪崇拜。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">3</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">正確的平衡立場——既非輕忽也非高估：</span>一方面要承認撒但的真實性與危險性，不可因現代理性主義而淡化聖經的警告；另一方面，撒但終究是受造物，受神主權完全管制，他的行動都在神的許可範圍內（參：約伯記1-2章，路22:31-32）。信徒應當警醒，卻不必活在恐懼中——因為「那在你們裡面的，比那在世界上的更大」（1Jn 4:4）。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">4</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">學習屬靈爭戰的正確動機：</span>研究撒但學問的唯一正當目的是更深認識基督、更有效服事神、更成熟幫助會眾。如果研究結果是讓人更怕鬼不怕神，或是迷上屬靈捆綁解放，那就偏離了方向。保羅說「我們並不是不知道他的詭計」（2 Cor 2:11）——知識的目的是防禦，使教會不被欺騙，而非滿足獵奇心理。</p>
+          </div>
+        </div>
       </div>
 
       {/* 延伸探討 */}

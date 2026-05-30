@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Shield, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, Shield, Search, HelpCircle, Check, Star } from 'lucide-react';
 
 export default function Book18Ch10() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
@@ -84,7 +84,7 @@ export default function Book18Ch10() {
                 <div className="bg-purple-50 rounded-lg p-4">
                   <p className="font-semibold text-purple-700 mb-2">詭計⑥：故意淡化罪的嚴重性，帶領人犯更大的罪</p>
                   <p className="text-gray-700 leading-relaxed mb-1">司布斯托說：「撒但從來不突然把人從信仰告白的山頂扔到罪惡的深淵，而是逐漸帶領人下坡和轉彎，越來越低，直到他們到達地獄。」</p>
-                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>布魯克斯說：「即使最小的罪也違背了上帝的律法、本性、本質和榮耀。」「使人犯罪的誘惑越小，罪越大，因為屈服於小罪是對上帝最大的不友善——使上帝悲歎，使基督流血，使聖靈擔憂。」告訴撒但：你不會因向最大的仇敵屈服來讓你最偉大的朋友難過。</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>布魯克斯說：「即使最小的罪也違背了上帝的律法、本性、本質和榮耀。」從理論上來說，不存在小罪，因為不存在可以犯罪冒犯的小上帝。「使人犯罪的誘惑越小，罪越大，因為屈服於小罪是對上帝最大的不友善——使上帝悲歎，使基督流血，使聖靈擔憂。」告訴撒但：你不會因向最大的仇敵屈服來讓你最偉大的朋友難過，那位朋友為你所有的罪——包括最小的罪——獻上了自己的生命。此外，布魯克斯警告說：「小罪常常潛入靈魂，在靈魂裡發展壯大，悄悄地不知不覺地做工，直到它們變得非常強大，足以踐踏靈魂，割斷靈魂的喉嚨。」你一旦開始犯罪，就不知道自己何時、何地、如何才能停止犯那個罪。</p>
                 </div>
               </div>
             </div>
@@ -172,6 +172,9 @@ export default function Book18Ch10() {
 
             <div>
               <h3 className="font-bold text-gray-900 mb-3 text-lg">布魯克斯的十個應對辦法——總結</h3>
+              <p className="text-gray-700 leading-relaxed mb-2">
+                唐納德·格雷·巴恩豪斯寫道：「不必忽視魔鬼的詭計，因為上帝的聖言中明明白白地談到那些詭計，而且我們周圍隨處可見。」許許多多書中清清楚楚地揭露了那些詭計，尤其是清教徒所寫的關於這些主題的著作。
+              </p>
               <p className="text-gray-700 leading-relaxed mb-3">
                 布魯克斯在《寶貴的應對辦法》中，依據整本聖經概括了基督徒對付撒但詭計的十個辦法：
               </p>
@@ -218,6 +221,32 @@ export default function Book18Ch10() {
 
           </div>
         )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-teal-100 rounded-lg overflow-hidden shadow-sm">
+        <div className="px-5 py-3 bg-gradient-to-r from-teal-50 to-cyan-50 flex items-center gap-2">
+          <Star className="w-5 h-5 text-teal-600 flex-shrink-0" />
+          <span className="font-semibold text-gray-800">重點總結</span>
+        </div>
+        <div className="p-5 bg-white space-y-3">
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">1</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">策略一：引誘犯罪——六種手段與五種解藥：</span>撒但使人犯罪的六種手段：（1）放大罪的吸引力遮掩後果；（2）以神的憐憫為罪找藉口；（3）從小罪開始漸進式侵蝕；（4）在信徒與神親近後趁虛而入；（5）利用恩賜才能引發驕傲；（6）在最強的時刻製造最大試探（山邊故事——最接近懸崖才最危險）。五種解藥：默想罪的苦毒後果、記念基督受苦、保持日常靈命操練、逃離試探場所、即時向神認罪悔改。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">2</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">策略二至四：妨礙靈修、扭曲神的形象、阻礙成聖：</span>策略二是妨礙屬靈操練——使禱告冷漠、讀經形式化、敬拜分心；解藥是規律的靈修紀律加上對神的渴慕。策略三是扭曲神的形象——或使人視神為過分嚴苛的審判者（導致恐懼和疏離），或視神為毫無標準的寬容者（導致放縱）；查諾克說：「撒但最大的成就是製造人對神的錯誤認識」；解藥是系統性地認識神的屬性。策略四是阻礙成聖——使信徒安於靈命停滯，用「夠好了」的假安慰替代「更像基督」的呼召；19世紀信徒故事顯示持守聖化決心如何打退撒但。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">3</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">布魯克斯的十個解藥——主動防禦的完整體系：</span>托馬斯·布魯克斯在《珍貴的療方》中提供了十個解藥，構成主動防禦的系統：（1）默想罪的本質與嚴重性；（2）記念基督為罪所付的代價；（3）保持謙遜，不高估自己的抵擋能力；（4）在神面前保持良心的清潔；（5）經常閱讀和默想神的話語；（6）維持與真信徒的弟兄姊妹關係；（7）警惕第一個試探的入口；（8）積極服事和使用恩賜；（9）在試探來臨時立刻呼求神；（10）記念屬靈爭戰最終是神的戰事。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">4</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">彼得前書5:8-9的三層分析：</span>「你們要謹守、儆醒，因為你們的仇敵魔鬼，如同吼叫的獅子，遍地遊行，尋找可吞噬的人。你們要用堅固的信心抵擋他」——三層含義：（1）「謹守、儆醒」——雙重指令，強調持續警戒的必要性，不可鬆懈；（2）「如同吼叫的獅子」——描述撒但的主動性、兇猛性和持續性，他不等人來找他，他主動「遍地遊行」；（3）「用堅固的信心抵擋」——不是靠自己的勇氣，乃是靠信心連結於基督的勝利；「堅固」意味著根紮在神的話語和應許中，不被搖動。</p>
+          </div>
+        </div>
       </div>
 
       {/* 延伸探討 */}

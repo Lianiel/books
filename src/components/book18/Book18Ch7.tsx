@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Shield, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, Shield, Search, HelpCircle, Check, Star } from 'lucide-react';
 
 export default function Book18Ch7() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
@@ -56,8 +56,11 @@ export default function Book18Ch7() {
               <p className="text-gray-700 leading-relaxed mb-3">
                 然而，僅僅頭腦有真理是不夠的，我們還必須擁有心靈的真知識。若要成功地與魔鬼爭戰，不僅我們必須掌握真理，而且真理必須掌握我們。除了上帝之外，撒但可能是宇宙中最有能力的頭腦。人類的智慧和理性不足以與撒但抗衡，但記錄在聖經中並由上帝的兒子賦予了人性的真理，抵擋撒但綽綽有餘。
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-3">
                 湯瑪斯·布魯克斯在《寶貴的應對辦法》中說：「人可以合法地買賣自己的房子、土地和珠寶，但真理是無價之寶，千萬不可賣」（21頁）。耶穌說：「你們必曉得真理，真理必叫你們得以自由」（約8：32）。撒但的第一大弱點是他是以謊言為根基的，謊言最終無法抵擋真理。
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                《箴言》第23章23節教導我們：「你當買真理……也都不可賣。」我們需要用真理來與撒但爭戰，因為現今太多人憑感覺行事。儘管他們需要真正的神學，但卻「被一切異教之風搖動」（弗4：14）。要認識真理、愛慕真理、活出真理。常在真理基督裡面，你就會勝過撒但。惡鬼可以攻擊我們，但如果我們以基督和他的真理為根基，他們必不能勝過我們。基督之復活的能力遠勝過撒但的能力；你的腳牢牢站在永不動搖的磐石上，撒但沒有抵擋真理的有效武器。
               </p>
             </div>
 
@@ -72,8 +75,14 @@ export default function Book18Ch7() {
               <p className="text-gray-700 leading-relaxed mb-3">
                 保羅說他一生中最大的目標就是得著基督，「並且得以在他裡面，不是有自己因律法而得的義，乃是有信基督的義，就是因信上帝而來的義」（腓3：9）。正如讚美詩所唱的：「我的盼望惟獨建立在耶穌的寶血和公義之上。」
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-3">
                 撒但圖謀攔阻我們在基督的公義中安息。他企圖誘惑我們把救恩的盼望建立在自己的感覺之上。然後，當我們的感覺消失了或變得不冷不熱時，撒但便會對我們耳語：「你不是上帝的孩子——否則你不會有這樣的感覺。」感覺不是我們救恩的根基，先要有信心。感覺是信靠基督之公義所結的果子。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                沒有一個人能夠做到公義的任何一方面——誰能為死亡和地獄付上永恆的贖價？誰能完美地遵行上帝的律法？所以每個罪人都必須倚靠基督來替他滿足上帝的公義。基督可以代替罪人做到這一點，因為他也是上帝，所以他的受苦和順服律法具有無限的價值。我們每個人都迫切而絕望地需要藉著聖靈生髮出信心，接受基督的公義。如果我們擁有了基督的公義，就可以得到赦免和永生；如果我們缺乏基督的公義，就將在自己的罪中滅亡。
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                我們必須學會迅速披上基督為我們所成就的義。正如詩歌所唱：「我的盼望惟獨建立在耶穌的寶血和公義之上」；「我不敢信靠最甜美的心境，而是完全倚賴耶穌之名。我站在堅固的磐石基督之上，其他一切根基都是下沉的沙土。」保羅在《腓立比書》3章9節說他一生最大的目標是得著基督，「並且得以在他裡面，不是有自己因律法而得的義，乃是有信基督的義，就是因信上帝而來的義」。一切屬己的義都是糞土；基督的公義才是我們的護心鏡。
               </p>
             </div>
 
@@ -108,8 +117,11 @@ export default function Book18Ch7() {
                   <p className="text-gray-700">基督的寶血是我們藤牌表面的防火層。我們在與撒但爭戰過程中最大的問題是我們忘記抓牢信德的藤牌。要信靠他。他永遠不會離開你或拋棄你。</p>
                 </div>
               </div>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                據說：「地獄中最有天才的戰略家制定的戰略計畫也不能勝過信心。所有燃燒的可怕的火箭撞到信心的藤牌上，都只能徒然落下，不能造成任何傷害。」如果沒有使用信心的藤牌——換言之，生活在不信之中——無疑是非常危險的。不信會使我們蒙羞，使我們變得軟弱，毀掉我們的安慰，妨礙我們成為有用的器皿。要拒絕你的疑惑，滅掉你的疑問。
+              </p>
               <p className="text-gray-700 leading-relaxed">
-                據說：「地獄中最有天才的戰略家制定的戰略計畫也不能勝過信心。所有燃燒的可怕的火箭撞到信心的藤牌上，都只能徒然落下，不能造成任何傷害。」如果沒有使用信心的藤牌——換言之，生活在不信之中——無疑是非常危險的。不信會使我們蒙羞，使我們變得軟弱，毀掉我們的安慰。
+                撒但的目標是把你的藤牌推到一邊，然後在你的軍裝下刺傷你。不要讓他得逞。要藉著信心生活來照看好你的藤牌。要在基督裡面安息——在基督裡面聽見、看到、信靠、獲得、認識、信奉、喜樂、愛慕、得勝。要像指環緊緊依附鑽石那樣緊緊依靠基督——指環本身毫無價值，但鑽石使它成為珍寶；信心本身也毫無功德，但信心的對象基督賦予了它一切意義。倚賴他的應許。信心榮耀基督，使我們堅強，安慰我們，使我們成為有用的器皿，確保打敗撒但。
               </p>
             </div>
 
@@ -124,12 +136,44 @@ export default function Book18Ch7() {
               <p className="text-gray-700 leading-relaxed mb-3">
                 對付這種火箭的惟一回答是我們將來得救的盼望。救恩在過去是稱義，救恩在如今是成聖，救恩在將來是得榮。得榮是保羅此時所思念的。當撒但使你覺得想要放棄與罪的爭戰時，戴上盼望的頭盔。相信你已經得救，正在得救，將要得救。
               </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                《羅馬書》第8章29至30節描述了救恩從永恆的過去到永恆的將來的過程。救恩的鏈條不可能斷開，每一環都是用上帝永恆的、預定的愛固定起來的：「他預先所知道的人……預先定下……又召他們來……稱他們為義……又叫他們得榮耀」——預定、呼召、稱義、成聖、得榮這些環節都是緊密聯繫在一起的。沒有人能把你從上帝的手中奪去，也沒有人能把你從基督的手中奪去（約10：28-29）。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                保羅說，當撒但使你覺得想要放棄與罪的爭戰時，戴上盼望的頭盔。相信你已經得救，正在得救，將要得救。緊緊依靠你惟一的盼望耶穌基督（提前1：1），他是昔在、今在、永在並且永不改變的上帝。藉著耶穌基督的復活，你被重生了，有了活潑的盼望（彼前1：3-4），而且會藉著聖靈越來越有盼望（羅15：13）。
+              </p>
               <p className="text-gray-700 leading-relaxed">
-                《羅馬書》第8章29至30節描述了救恩從永恆的過去到永恆的將來的過程。救恩的鏈條不可能斷開，每一環都是用上帝永恆的、預定的愛固定起來的。預定、呼召、信心、稱義、成聖、得榮這些環節都是緊密聯繫在一起的。沒有人能把你從上帝的手中奪去，也沒有人能把你從基督的手中奪去（約10：28-29）。
+                抬起頭，讓盼望做你的裝飾，你永恆勝利的羽毛。你的爭戰就要結束。撒但就要被永遠壓碎。你將要與救恩的元帥一起作王。你將走出大患難，穿上在基督的寶血中變白的長袍。你將站在上帝的寶座前，讚美上帝的羔羊。羔羊將會帶領你來到永生的泉水邊；你將永遠沉浸在他的微笑中，沐浴在他的榮耀裡，享受他的同在。你將會發現與基督團契是天堂的本質。你將會永遠以認識、看見、愛慕、讚美和榮耀基督為樂。這盼望讓你在激烈的爭戰中仍能站立得住。
               </p>
             </div>
           </div>
         )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-teal-100 rounded-lg overflow-hidden shadow-sm">
+        <div className="px-5 py-3 bg-gradient-to-r from-teal-50 to-cyan-50 flex items-center gap-2">
+          <Star className="w-5 h-5 text-teal-600 flex-shrink-0" />
+          <span className="font-semibold text-gray-800">重點總結</span>
+        </div>
+        <div className="p-5 bg-white space-y-3">
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">1</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">全副軍裝的整體目的與穿戴方式：</span>以弗所書6:13「拿起神所賜的全副軍裝，好在磨難的日子抵擋仇敵，並且成就了一切，還能站立得住」——全副軍裝不是進攻武器，而是「站立得住」的防禦體系。每件裝備對應撒但的一種具體攻擊策略，缺少任何一件都會暴露破口。保羅特別強調「全副」（panoplia），因為撒但會找最薄弱的防線突破。穿戴的方式是每日禱告與順服，不是一次性的決志。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">2</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">真理帶與胸甲的神學意涵：</span>「真理帶」（belt of truth）有雙重意義：客觀真理（神的話語與福音教義）和主觀誠實（內心無偽裝的真實）。撒但是「謊言之父」（Jn 8:44），真理是對抗他的第一防線。「仁義的胸甲」指基督的義（稱義）與信徒的聖潔（成聖）兩者——清教徒稱之為基督的「雙重順服」（double obedience）：主動順服（完全遵行律法）和被動順服（代替我們受死）。胸甲保護心臟，即靈命的核心。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">3</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">信心盾牌的雙重功能：</span>保羅說「拿著信德當作藤牌，可以滅盡那惡者一切的火箭」（Eph 6:16）。羅馬軍盾（thureos，門形大盾）可保護全身並連排組成城牆。信心的雙重功能：一是防禦（抵擋懷疑、控告、絕望的「火箭」——含有燃燒液體的箭，代表撒但刻意使人靈命燃燒起火的攻擊）；二是進攻（信心的禱告和宣告使撒但退後，雅4:7「抵擋魔鬼，魔鬼就必離開你們逃跑了」）。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">4</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">救恩頭盔與黃金鏈條（羅8:29-30）：</span>「救恩的頭盔」保護信徒最脆弱的部位——思想和確信。撒但最愛攻擊信徒確信：「你真的是神的兒女嗎？」、「你會不會最終失喪？」。頭盔的防禦是救恩確信的神學根基，即加爾文所說的「黃金鏈條」：「神預先所知道的人就預先定下……預先定下的人又召他們來；所召來的人又稱他們為義；所稱為義的人又叫他們得榮耀」（Rom 8:29-30）——預知、預定、呼召、稱義、得榮，環環相扣，一個也不失落。</p>
+          </div>
+        </div>
       </div>
 
       {/* 延伸探討 */}

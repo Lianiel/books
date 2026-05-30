@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Shield, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, Shield, Search, HelpCircle, Check, Star } from 'lucide-react';
 
 export default function Book18Ch1() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
@@ -88,6 +88,32 @@ export default function Book18Ch1() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-teal-100 rounded-lg overflow-hidden shadow-sm">
+        <div className="px-5 py-3 bg-gradient-to-r from-teal-50 to-cyan-50 flex items-center gap-2">
+          <Star className="w-5 h-5 text-teal-600 flex-shrink-0" />
+          <span className="font-semibold text-gray-800">重點總結</span>
+        </div>
+        <div className="p-5 bg-white space-y-3">
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">1</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">屬靈爭戰的三個本質特徵：</span>激烈（是生死之戰，沒有任何中立的空間）、屬靈（我們對付的不是有血有肉的人，乃是天空屬靈氣的惡魔，弗6:12）、必要（每個信徒都置身其中，無法迴避，必須主動認識和裝備）。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">2</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">撒但憎恨信徒的兩個原因：</span>第一，信徒身上有基督的形象——我們的存在本身就是對他最深的冒犯；第二，信徒是從撒但的國度中被基督搶救出來的——每一個得救的靈魂都是他的損失，他決不甘心。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">3</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">托馬斯·布魯克斯的四大必修課題：</span>（1）基督的榮美——認識我們的救主；（2）聖經的奧秘——深研上帝的話語；（3）自己的心——誠實認識自己的軟弱與傾向；（4）撒但的詭計——認識仇敵的策略。研讀撒但不是選修課，而是屬靈成熟不可缺少的一環。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">4</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">正確的研讀動機：</span>認識撒但的目的，不是要迷戀屬靈爭戰或著迷於撒但的事，而是更加清楚地看見基督的得勝，從而更有效地倚靠他——認識仇敵的最終目的，是更深地認識並倚靠我們的救主。</p>
+          </div>
+        </div>
       </div>
 
       {/* 延伸探討 */}

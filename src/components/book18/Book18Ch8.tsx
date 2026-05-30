@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Target, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, Target, Search, HelpCircle, Check, Star } from 'lucide-react';
 
 export default function Book18Ch8() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
@@ -57,8 +57,14 @@ export default function Book18Ch8() {
                   <p className="text-gray-700 leading-relaxed">聖靈的寶劍，就是上帝的道，給了我們清晰的指導、大能的動機、豐富的鼓勵和有益的榜樣，為我們提供了精良的裝備，使我們能夠勇敢而冷靜地面對撒但。要通過每日學習和背誦聖經，使自己非常熟悉聖經。藉著恒切的禱告使寶劍時刻準備好投入戰鬥。大膽地說話，勇敢地為聖經真理作見證。把上帝的聖道之光帶到黑暗的世界，在每個黑暗的角落發光。</p>
                 </div>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-3">
                 班揚在《天路歷程》中生動描述了基督徒在屈辱穀中的經歷：「但是，仿佛出於天意，正當魔王要給他最後的一擊時，基督徒敏捷地伸手抓起他的利劍，一面說：『我的仇敵啊，不要向我誇耀；我雖跌倒，卻要起來。』說著他向對方狠狠地刺了一下，魔王像一個受到致命創傷的人那樣往後倒退。基督徒接著再刺一下，說：『然而靠著愛我們的主，在這一切的事上，已經得勝有餘了。』正說著的時候，魔王倏地展開他的翅膀，逃之夭夭，基督徒再也看不見他了。」
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                我們如何使寶劍保持鋒利？通過每日學習和背誦聖經，使自己非常熟悉聖經；通過每日活出聖經真理，使上帝的劍保持鋒利光亮；藉著恒切的禱告使寶劍時刻準備好投入戰鬥。大膽地說話，勇敢地為聖經真理作見證。把上帝的聖道之光帶到黑暗的世界，在每個黑暗的角落發光。
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                要祈求聖靈的智慧來幫助你向撒但揮動聖道之寶劍。聖靈是上帝聖道的真正作者和解說者，所以要尋求他的智慧。聖靈喜歡幫助我們向他的聖道敞開心扉，他會教導我們如何使用他聖道的寶劍來與撒但爭戰。《希伯來書》第4章12節中說，上帝的道「是活潑的，有功效的，比一切兩刃的劍更快，甚至魂與靈……都能刺入、剖開。」當你靈巧地使用上帝的道來對付撒但的攻擊時，撒但將會感到聖靈的寶劍刺入了他的骨節與髓，斷掉了他的力量，粉碎了他一切最狡詐的計畫。
               </p>
             </div>
 
@@ -68,7 +74,7 @@ export default function Book18Ch8() {
                 「靠著聖靈隨時多方禱告祈求」（弗6：18上）。禱告是第二件主動攻擊撒但的武器。馬丁·路德說：「禱告是教會堅固的圍牆和堡壘，是敬虔基督徒的武器。」約翰·班揚說：「上帝寶庫中最強大的武器就是禱告。」
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
-                禱告是非常關鍵的，因為離開禱告，基督徒其他軍事裝備都毫無用處。禱告就像油一樣。沒有油，發動機各個部件都毫無用處；沒有禱告，基督徒戰鬥中所使用的各種裝備也都徒然無益。關於藉著禱告抵擋撒但，保羅告訴我們要做到以下幾點：
+                禱告是非常關鍵的，因為離開禱告，基督徒其他軍事裝備都毫無用處。禱告就像油一樣——沒有油，發動機各個部件都毫無用處；沒有禱告，基督徒戰鬥中所使用的各種裝備也都徒然無益。與撒但爭戰卻不禱告，就像大衛穿著掃羅的軍裝與歌利亞打仗一樣。鐘馬田說：「我們基督徒生活中所做的一切事情都比禱告更容易。」司布真說：「我們必須使自己沉浸在禱告之中。」關於藉著禱告抵擋撒但，保羅告訴我們要做到以下幾點：
               </p>
               <div className="ml-4 space-y-4">
                 <div className="border-l-4 border-indigo-300 pl-4">
@@ -121,16 +127,52 @@ export default function Book18Ch8() {
             <div>
               <h3 className="font-bold text-gray-800 mb-3 text-lg">4. 為耶穌而爭戰</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                撒母耳·魯瑟福說：「撒但只是上帝用來教導我們如何使用武器的高超的擊劍者。」司提反·查諾克寫道，當魔鬼「想要成為你的毀滅者」時，上帝使魔鬼成為你的「磨練者」。上帝應許要在兇惡的日子裡幫助你，並確保你會取得最後的勝利。你在勝利的一方，最終，如威廉·格諾爾所寫的：「上帝讓魔鬼作繭自縛。」
+                撒母耳·魯瑟福說：「撒但只是上帝用來教導我們如何使用武器的高超的擊劍者。」司提反·查諾克寫道，當魔鬼「想要成為你的毀滅者」時，上帝使魔鬼成為你的「磨練者」。上帝應許要在兇惡的日子裡幫助你，並確保你會取得最後的勝利。你在勝利的一方，最終，如威廉·格諾爾所寫的：「上帝讓魔鬼作繭自縛。」你也許會在一些小的遭遇戰中失利，但藉著耶穌基督，你將會贏得整個戰爭。
               </p>
-              <div className="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
+              <p className="text-gray-700 leading-relaxed mb-3">
+                值得注意的是，先知以賽亞在舊約中已經描述了基督親自穿著《以弗所書》第6章中的全副軍裝：彌賽亞以公義為腰帶，以信實為他脅下的帶子（賽11：5）；耶和華戴上公義的護心鏡，拯救他的百姓脫離罪的捆綁（賽59：17）；耶和華親自降臨，腳上穿著鞋子，為那些處在罪和審判之下的人帶來平安的福音（賽52：7）；聖靈的寶劍出自彌賽亞之口，他是救拔萬國脫離黑暗權勢的僕人（賽49：2）。基督親自佩戴了這些裝備，聖靈使之適合我們，成為為我們量身定做的軍裝。
+              </p>
+              <div className="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg mb-3">
                 <p className="text-gray-700 leading-relaxed italic">
                   「爭戰，為耶穌爭戰，惟獨靠他的力量爭戰。屬血氣的軍裝只能帶給你失敗，你不要依靠自己的力量。穿戴福音的軍裝，藉著禱告披戴整齊。那裡有天召，那裡有危險，但那裡必不致缺乏。」
                 </p>
               </div>
+              <div className="bg-indigo-50 border-l-4 border-indigo-400 p-4 rounded-r-lg">
+                <p className="font-semibold text-indigo-800 mb-2">清教徒禱告</p>
+                <p className="text-gray-700 leading-relaxed italic text-sm">
+                  「哦，禰的每個應許都是香膏，求禰用生命的觸摸，靠近禰疲憊的戰士，求禰更新我，使我能夠重新起來投入爭戰，永不疲憊，直到我的仇敵被踩在腳下。求禰使我與禰親密相契，使我能夠抵擋撒但、疑惑、肉體和世界……那麼，我的手就永遠不會軟弱，我的腳就永遠不會絆倒，我的劍永遠不會停息，我的盾牌永遠不會生銹，我的頭盔永遠不會破碎，我的護心鏡永遠不會掉下，因為我的力量在於禰無限的大能。」
+                </p>
+                <p className="text-right text-indigo-600 text-xs mt-2">——《異象穀》（Valley of Vision），181頁</p>
+              </div>
             </div>
           </div>
         )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-teal-100 rounded-lg overflow-hidden shadow-sm">
+        <div className="px-5 py-3 bg-gradient-to-r from-teal-50 to-cyan-50 flex items-center gap-2">
+          <Star className="w-5 h-5 text-teal-600 flex-shrink-0" />
+          <span className="font-semibold text-gray-800">重點總結</span>
+        </div>
+        <div className="p-5 bg-white space-y-3">
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">1</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">進攻是必要的，不只是可選的：</span>保羅在以弗所書6:17-18中列出兩件進攻性武器：聖靈的寶劍（神的話語）和各種禱告。「全副軍裝」的前五件是防禦性的，最後兩件是進攻性的——這個順序意義深遠：先站穩（防禦），再奪回（進攻）。清教徒查諾克（Charnock）說：「信徒不能只停留在防守陣地，每一個真信徒都有能力且有責任主動出擊，以神的道和禱告攻打撒但的陣地。」</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">2</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">聖靈寶劍的雙重維度：</span>「聖靈的寶劍，就是神的道」（Eph 6:17）。第一維度是防禦——主耶穌在曠野每次以「經上記著說」回應撒但的試探（Matt 4:4, 7, 10），以聖經真理阻斷謊言。第二維度是進攻——宣講神的話語奪回被撒但控制的心靈領域，傳福音使人從黑暗的權勢下歸向神（Col 1:13）。路德說：「一句神的話語足以讓他（撒但）落荒而逃」——寶劍的鋒利在乎正確使用（右手持劍），而非擁有（劍放在鞘中）。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">3</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">禱告的四大特質（Eph 6:18）：</span>保羅描述有效的屬靈爭戰禱告具備四個特質：（1）「各種禱告」——讚美、感恩、代求、懺悔各類禱告；（2）「靠著聖靈」——不以肉體之力，乃在聖靈引導和能力中禱告（Rom 8:26-27）；（3）「警醒」——不可放鬆警惕，因撒但等待信徒禱告怠惰的空隙；（4）「為眾聖徒」——代禱是屬靈爭戰的集體行動，個人禱告擴展為教會整體的屬靈力量。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">4</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">儆醒的四個面向（路得福的洞見）：</span>盧瑟福（Samuel Rutherford）曾警告說：「撒但從來不度假」（Satan never takes a holiday）。儆醒包含：（1）認識試探來臨的信號（感情冷淡、靈命驕傲、孤立脫離教會）；（2）在試探尚未成形時就以禱告預先防禦；（3）在脆弱時刻（疲憊、悲傷、成功後）格外謹慎；（4）誠實面對自己靈命的軟弱，不掩飾、不自欺，因撒但最擅長攻擊人不肯承認的弱點。</p>
+          </div>
+        </div>
       </div>
 
       {/* 延伸探討 */}

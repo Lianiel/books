@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Users, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, Users, Search, HelpCircle, Check, Star } from 'lucide-react';
 
 export default function Book18Ch12() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
@@ -38,7 +38,7 @@ export default function Book18Ch12() {
                 「惟獨聖經」是宗教改革時期的戰鬥口號。改教者教導說，聖經是完美的、完全的、清楚的、權威的、無謬的，全部由聖靈默示。要在教會中打敗撒但，我們應當根據聖經改革教會，說明教會逐漸趨於完美。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
-                對教會而言，僅僅在理論上肯定聖經的可靠性是不夠的。上帝的聖言是教會與撒但及其國度爭戰的最強有力的武器。路德寫道：「上帝的大衛投向撒但的歌利亞的所有石頭，都取自聖經的溪流。」
+                對教會而言，僅僅在理論上肯定聖經的可靠性、無謬性和權威性是不夠的。教會不能任憑聖職人員歪曲聖經教導，否定聖經中的神跡奇事，或贊同不合乎聖經的生活方式。上帝的聖言是教會與撒但及其國度爭戰的最強有力的武器。路德寫道：「上帝的大衛投向撒但的歌利亞的所有石頭，都取自聖經的溪流。」教會成員必須真誠而謙卑地表現出，儘管別的書可以教導人甚至改變人，但惟有一本書可以徹底改變人，使之擁有基督的形像。我們只有作為「基督的活信」，才能盼望在當今時代為聖經贏得這場戰爭。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
                 當今時代的教會應當在講道、禱告、敬拜和生活方面更多地以聖經為中心。亨利·史密斯說：「我們應當時刻把上帝的聖道當作標準擺在我們面前，只相信聖經所教導的，只愛慕聖經所吩咐的，只憎恨聖經所禁止的，只去做聖經所命令的。」弗拉維爾說：「聖經教導了我們卓越的生活方式，最高貴的受苦方式，最舒適的死亡方式。」
@@ -73,17 +73,38 @@ export default function Book18Ch12() {
                 萬斯·哈夫納說，撒但對那些不以聖經為中心的教會：「他不與這些教會爭戰，而是正在與他們為伍。他撒下雜草的種子比拔出麥子所帶來的危害更大，他利用贗品比公然反對所造成的破壞更多。」
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
-                教會也需要復興。《使徒行傳》3章19節告訴我們，復興是「從主面前來到的安舒的日子」。真正的復興有九個標誌：聖靈主權的作為、禱告的傾注、從教會內部開始的運動、合乎聖經的講道、悔改、信心、以基督為中心、宣講福音、愛心。
+                教會也需要復興。《使徒行傳》3章19節告訴我們，復興是「從主面前來到的安舒的日子」。真正的復興並非完全不同於教會的日常經歷，差別在於程度——聖靈以非凡的方式澆灌，許許多多人獲得真正的重生，信徒對罪的確信更加深刻，更加感覺到上帝的同在，更加愛上帝和他人。真正的復興有以下九個標誌：
               </p>
+              <div className="space-y-2 ml-4 mb-3">
+                {[
+                  '聖靈主權的作為——復興的存在、深度、時間和次數由上帝決定（徒2:47）',
+                  '禱告的不尋常的傾注（徒1:14；2:1）',
+                  '從教會內部開始的運動——通常伴隨著已重生之人的再覺醒和蒙光照（徒2:2-4）',
+                  '合乎聖經的講道——彼得五旬節講道共24節，12節引自詩篇和先知書',
+                  '悔改——對靈魂誠實，呼召悔改，伴隨著對真理的重新發現（徒2:38）',
+                  '信心——信心的能力與真理和悔改的能力聯合在一起',
+                  '以基督為中心——復興總是以經歷性的方式以基督為中心',
+                  '宣講福音——當教會復興時，她在各處傳播福音（徒13:48-49）',
+                  '愛心——復興促進對上帝榮耀和他人靈魂的大愛'
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-2">
+                    <span className="text-purple-600 font-bold flex-shrink-0">({i + 1})</span>
+                    <p className="text-gray-700 text-sm">{item}</p>
+                  </div>
+                ))}
+              </div>
               <p className="text-gray-700 leading-relaxed">
-                沒有改革的復興促進的是「沒有光的熱」；沒有復興的改革可能最終變得非常醜陋，甚至殘酷無情。教會需要「改革的復興」和「復興的改革」。
+                沒有改革的復興促進的是「沒有光的熱」和不可靠的熱心；沒有復興的改革可能最終變得非常醜陋，甚至殘酷無情。教會需要「改革的復興」和「復興的改革」，同時禱告祈求改革，也禱告祈求復興。
               </p>
             </div>
 
             <div>
               <h3 className="font-bold text-gray-900 mb-3 text-lg">決心四：在基督面前過合一的生活</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                有人在飛機上坐在一位禱告的男人旁邊。交談後才知道，那人正在向撒但禱告，祈求「撒但在這個星期能夠成功地使北美的至少三十位牧師與他們的教會決裂」。「那個人禱告時看起來非常真誠，比我禱告的大多數時候都更迫切。」——撒但喜歡分裂，喜歡撕碎基督的身體。
+                有一天，有個教區居民給我打電話，她非常沮喪。她說她前幾天乘飛機時，旁邊坐著個正在禱告的男人。當他禱告結束時，她熱情地問：「這樣看來你是個基督徒？」「不是，」他迅速答道。「我以為你剛才在禱告，」她堅持說。「我剛才是在禱告，」他說。過了幾分鐘，她問道：「先生，我可以問一下你剛才是在向誰禱告嗎？」他頓了一下，然後說：「我剛才是在向撒但禱告。」「你究竟為什麼向撒但禱告？」她驚奇地問。他回答說：「我剛才禱告願撒但在這個星期能夠成功地使北美的至少三十位牧師與他們的教會決裂。」我的那位教區居民驚得目瞪口呆。「那個人禱告時看起來非常真誠，」她對我說，「他似乎比我禱告的大多數時候都更迫切。」
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                撒但喜歡分裂，喜歡撕碎基督的身體。為了抵擋撒但，教會必須努力實現在基督裡的合一，挫敗撒但試圖分裂教會的陰謀。正如撒母耳·魯瑟福所警告的：「因為基督奧秘的身體上有瑕疵而在上面製造裂縫或破洞，是一種可怕的罪。」這樣的不和冒犯了聖父、冒犯了為打破敵意之牆而獻上生命的聖子、也冒犯了住在信徒裡面來幫助信徒生活在合一中的聖靈。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
                 《尼西亞信經》宣告「一個教會」——建立在一塊磐石、一位彌賽亞、一份信仰告白之上。《威斯敏斯德信條》說教會的合一仰賴耶穌基督：「無形的大公教會……由過去、現在和未來在教會的元首基督之下所召集的合而為一的全體選民構成。」
@@ -98,6 +119,32 @@ export default function Book18Ch12() {
 
           </div>
         )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-teal-100 rounded-lg overflow-hidden shadow-sm">
+        <div className="px-5 py-3 bg-gradient-to-r from-teal-50 to-cyan-50 flex items-center gap-2">
+          <Star className="w-5 h-5 text-teal-600 flex-shrink-0" />
+          <span className="font-semibold text-gray-800">重點總結</span>
+        </div>
+        <div className="p-5 bg-white space-y-3">
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">1</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">唯獨聖經——教會爭戰的終極武器與最高權威：</span>路德在沃木斯（Worms）宣告「除非聖經或清楚的理性使我信服，否則我不能撤回」，代表改教最核心的立場。撒但攻擊教會最常見的方式是用傳統、理性、經歷、感動來取代或凌駕聖經權威。路德的比喻：「聖經是流出清泉活水的溪流，人的傳統是遠離源頭的死水池塘」。教會抵擋撒但的第一步是確立聖經在所有生命和教義問題上的最高裁判權。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">2</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">對基督的信心——教會是「醫院」而非「博物館」：</span>教會不是陳列已得救好基督徒的博物館，而是收納仍在爭戰的罪人的醫院——人人都是帶著傷痕來到基督面前。撒但利用教會的完美主義文化（只接待光鮮的信徒、對軟弱者冷漠）拆毀肢體的聯結。對基督的集體信心意味著教會以共同的脆弱為恥轉化為共同依靠基督為榮，每個成員的掙扎都是整體呼求大醫師的邀請。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">3</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">改革與復興必須並行——九個復興記號：</span>改革（Reform）是結構和教義的更新；復興（Revival）是聖靈的澆灌與生命的復甦。兩者缺一則不完全——有改革無復興是空洞的正統主義；有復興無改革是感性主義。九個真正復興的記號：（1）對罪深刻的悔罪；（2）對基督的愛加深；（3）對聖經話語的渴慕；（4）禱告的增加；（5）福音的廣傳；（6）肢體關係的更新；（7）對神話語的順服；（8）社會道德的改變；（9）持續的果子（不只是短暫的情感）。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">4</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">在基督裡的合一——飛機上的撒但崇拜者故事的教訓：</span>一位撒但崇拜者在飛機上對貝克博士說：「撒但的跟隨者比基督徒更忠誠，更彼此相愛，更有紀律」——這句話是嚴肅的挑戰。教會的合一不是表面和諧，而是基於共同承認基督為主、共同服在聖經權威下的深度連結。撒但藉著門派之爭、個人主義、種族文化隔閡分裂教會；合一的守護需要主動謙遜、互相承擔、以他人益處高過自己利益（腓2:3-4）。</p>
+          </div>
+        </div>
       </div>
 
       {/* 延伸探討 */}

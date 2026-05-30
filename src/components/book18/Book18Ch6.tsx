@@ -52,6 +52,9 @@ export default function Book18Ch6() {
               <p className="text-gray-700 leading-relaxed">
                 《路加福音》第8章31節告訴我們，惡鬼央求耶穌不要吩咐他們到「無底坑」，也就是地獄的深淵裡去。他們知道地獄的深淵是他們最終的歸宿。《猶大書》第6節也告訴我們，基督為在天上叛逆的邪靈預備了永遠的鎖鏈。
               </p>
+              <p className="text-gray-700 leading-relaxed">
+                馬塞勒斯·凱克（Marcellus Keck）寫道：「那些被魔鬼欺騙的人將會怎樣歡迎撒但啊！咒詛、謾駡、辱駡、斥責、申斥將會怎樣堆積在他頭上啊！他將被咒詛之湖團團包圍。他將永遠被憎恨、被輕視、被棄絕。」（《得勝的末世論》，248頁）。
+              </p>
             </div>
 
             <div>
@@ -73,10 +76,22 @@ export default function Book18Ch6() {
                 上帝所愛的孩子啊，要剛強壯膽。無論撒但怎樣竭力攪擾，基督的後裔都不會滅亡。你的勝利者基督永遠不會失敗。撒但有其局限性。「魔鬼永遠也不能把他的頭抬得高過聖徒的腳跟，」威廉·格諾爾寫道。撒但和他的惡鬼雖然大有能力，但卻並不是無所不能、無所不知、無所不在的。撒但不可能同時在所有的地方。他是一個墮落的天使，不是墮落的上帝；他很有能力，但卻不是全能的。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
-                基督是全能者，他不會拋棄自己手中的工作。他的事業是確定的。他的再臨已經臨近。如果你不認識基督，要當心，當撒但被扔到永遠的火湖中去時，不信基督的人將會與他一起滅亡。
+                基督是全能者，他不會拋棄自己手中的工作。他的事業是確定的。他的再臨已經臨近。如果你不認識基督，要當心，當撒但被扔到永遠的火湖中去時，不信基督的人將會與他一起滅亡。如果你去了地獄，你就永遠失去了仁慈的上帝，永遠跟譴責人的撒但在一起。在地獄中，你無法躲避撒但的傷害、不死之蟲那令人難以忍受的噬咬和那惡者的詭計。正如《希伯來書》第2章3節告訴我們的：「我們若忽略這麼大的救恩，怎能逃罪呢？」
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                我們要記得，如果路德說魔鬼是上帝的魔鬼這話是對的，那麼地獄也是上帝的地獄。掌管陰間鑰匙的，是耶穌基督，而不是撒但。落在永生的萬王之王手中，卻沒有預備好去見他，是非常可怕的。要逃離地獄，永保平安，我們必須是屬於基督的後裔。你是撒但的後裔還是基督的後裔？沒有其他種類的後裔。你或者屬於基督，或者屬於撒但。你要趕快回答這個問題。你仍然生活在恩典時代、救恩時代，上帝仍然把女人的後裔基督擺在你面前。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                如果你在生活中感覺到撒但的權勢，請允許我用兩條建議來結束本章：
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-2">
+                （1）逃往代求者耶穌基督那裡去。他是全能的辯護者，完美的安慰者，他應許在你的一切需要上幫助你。他是你惟一的盼望，惟一的堡壘。在基督裡面，撒但已經被擊敗。像撒但定你的罪那樣定自己的罪，但是然後帶著你的一切不配來到天父面前的辯護者那裡。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                （2）用上帝的聖言和應許抵擋撒但。不要與撒但談條件或向撒但的誘惑讓步。司布真寫道：「在兩個惡之間，一個也不要選。要學會說『不。』這對你來說，比會讀拉丁文更有用。」要站立得穩。要用上帝的軍裝保護自己。向上帝展示他自己聖言中的話，以此來抵擋撒但。要記得撒但在鎖鏈的捆綁之中，而你屬於比撒但更有能力的基督。
               </p>
               <p className="text-gray-700 leading-relaxed">
-                羅伯特·霍爾單在解釋《羅馬書》第16章20節時說：「在與撒但的爭戰中，可以獲得兩個勝利。第一，他的頭將被耶穌基督踐踏在腳下；第二，他身體的其餘部分將被信徒踐踏在腳下。」願藉著我們榮耀的三一上帝的力量，這些重要真理幫助你在與撒但爭戰時堅持到底。
+                要謹守，要警醒，盼望最後的結果。不要過於自信，也不要膽怯，而是小心警惕蛇的後裔。要記得撒但是因驕傲而墮落的，他的目標一直是在我們裡面複製他的罪，為此他誘惑我們在生活中不倚賴上帝，仿佛我們自己是上帝一樣。我們要留心，以免跌倒。讓我們在上帝面前信心堅定，保持謙卑。讓我們提醒自己：生命短暫，試探也會轉瞬即逝。我們很快就會消逝，並且認識到《羅馬書》第16章20節中的真理：「賜平安的上帝快要將撒但踐踏在你們腳下。」羅伯特·霍爾單在解釋這節經文時說：「在與撒但的爭戰中，可以獲得兩個勝利。第一，他的頭將被耶穌基督踐踏在腳下；第二，他身體的其餘部分將被信徒踐踏在腳下。」願藉著我們榮耀的三一上帝的力量，這些重要真理幫助你在與撒但爭戰時堅持到底。
               </p>
             </div>
 
@@ -88,6 +103,32 @@ export default function Book18Ch6() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-teal-100 rounded-lg overflow-hidden shadow-sm">
+        <div className="px-5 py-3 bg-gradient-to-r from-teal-50 to-cyan-50 flex items-center gap-2">
+          <Star className="w-5 h-5 text-teal-600 flex-shrink-0" />
+          <span className="font-semibold text-gray-800">重點總結</span>
+        </div>
+        <div className="p-5 bg-white space-y-3">
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">1</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">象棋比喻揭示爭戰的真實格局：</span>神與撒但之爭如同一局棋——撒但以為他在主導棋局，以為能藉逼迫、試探、高舉自己來取得最終勝利。然而棋局的主宰始終是神，每一步都在神的預知與計畫之中。撒但最大的自欺，是以為他的「勝利時刻」（耶穌被釘十字架）正是他徹底失敗的時刻。這個比喻教導信徒：我們所見的局部困境，在神的全局視野中早有定論。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">2</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">撒但的最終命運已被確定（啟示錄20:10）：</span>「魔鬼被扔在硫磺的火湖裡，就是獸和假先知所在的地方，他們必晝夜受痛苦，直到永永遠遠」。這不是威脅或象徵，而是確定的預言——撒但的末日已被宣告，他清楚知道時間有限（Rev 12:12「因為知道自己的時候不多了」）。信徒在爭戰中可以確信：對手的最終失敗早已寫定，我們是站在勝利者一方爭戰。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">3</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">撒但的根本限制——非全能、非全知、非全在：</span>撒但不具備神的三大屬性。他的能力有限，需要差遣群魔（他無法同時在世界各地親自行動）；他的知識有限，不能讀人心思（只能透過觀察行為和環境猜測）；他的存在有限，一次只能在一個地方。他的「全球影響力」透過組織化的邪靈網絡運作，不是他個人無所不在。這些限制意味著：撒但對你的攻擊是計算後的，不是隨機的；正因如此，警醒格外重要。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">4</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">哈丹（Haldane）所見的兩個勝利：</span>第一個勝利發生在十字架——「現在要審判這世界，這世界的王要被趕出去」（Jn 12:31），撒但對信徒的法律控告權被廢除；第二個勝利將發生在末日基督再來——撒但被永久投入火湖。信徒生活在這兩個勝利之間，第一個勝利是我們的根基，第二個勝利是我們的盼望。因此信徒爭戰的心態是「站穩已得之地」，而非「不確定能否獲勝」。</p>
+          </div>
+        </div>
       </div>
 
       {/* 延伸探討 */}

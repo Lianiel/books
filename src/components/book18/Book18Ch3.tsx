@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, BookOpen, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, BookOpen, Search, HelpCircle, Check, Star } from 'lucide-react';
 
 export default function Book18Ch3() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
@@ -96,13 +96,19 @@ export default function Book18Ch3() {
                 魔鬼與女人後裔之間的衝突的中心就是道成肉身這一歷史事件。耶穌基督在時候滿足的時刻降臨，這是上帝在屬靈爭戰中對撒但所採取的最重要的行動。在聖經中，耶穌談到撒但和邪靈的次數比其他任何人都多。在四十天的時間裡，撒但用肉體的情欲、眼目的情欲和今生的驕傲來攻擊耶穌，企圖使耶穌那聖潔的人性降服在他的轄制之下（太4：1-11）。撒但用獨立（4：3-4）、放縱（4：5-7）和拜偶像（4：8-10）來試探耶穌。他企圖誘惑耶穌背離天父的旨意、上帝的聖言和十字架。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
-                在客西馬尼園，撒但動用了地獄的一切權勢。他使上帝的兒子耶穌俯伏在地，像蟲子一樣爬行，滴下血汗來，在痛苦中呼喊：「我父啊，倘若可行，求你叫這杯離開我」（太26：39）。最後，在各各他，撒但再次動用了所有邪惡的力量。耶穌在痛苦中發出的深不可測的呼喊響徹了黑暗的國度：「我的上帝，我的上帝，為什麼離棄我？」（太27：46）。
+                在客西馬尼園，撒但動用了地獄的一切權勢。他使上帝的兒子耶穌俯伏在地，像蟲子一樣爬行，滴下血汗來，在痛苦中呼喊：「我父啊，倘若可行，求你叫這杯離開我」（太26：39）。在撒但的器皿加略人猶大的手中，基督的靈魂經歷了怎樣的打擊！難怪他對撒但的手下說：「現在卻是你們的時候，黑暗掌權了」（路22：53）。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                在各各他，撒但再次動用了所有邪惡的力量。巴珊的公牛困住了受難的彌賽亞（詩22：12）。當基督被掛在十字架上，處在天父的烈怒下，被天地棄絕，遭受地獄的權勢攻擊時，殘忍的士兵、無情的觀眾、穿著聖袍的自私的祭司和長老都是撒但的器皿，一起嘲笑耶穌。他在痛苦中發出的深不可測的呼喊響徹了黑暗的國度：「我的上帝，我的上帝，為什麼離棄我？」（太27：46）。路德有一次曾經用了整整一個上午的時間來試圖理解這種痛苦的感覺，最後他不得不直起膝蓋，承認：「上帝離棄上帝，誰能測透呢？」
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
                 但我們知道的是：撒但在十字架上被打敗了，永遠失敗了。《希伯來書》第2章14節說：「他（基督）特要藉著死敗壞那掌死權的，就是魔鬼。」耶穌在《約翰福音》第12章31至32節中談到十字架在普世性地驅逐魔鬼方面所發揮的作用：「現在這世界受審判，這世界的王要被趕出去。我若從地上被舉起來，就要吸引萬人來歸我。」勝利屬於基督，因為他在經歷撒但發起的最嚴酷的試探中完美地順服了上帝的旨意。
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-3">
                 基督藉著他的生命、死亡、復活和升天，獨自擊敗了壓迫者的權勢。撒但喪失了對世上各民族的令人窒息的統治。在舊約時代，光明的閃電偶爾劃破黑暗。但現在，在基督裡面並藉著基督，破曉的光明已經出現。基督的永恆之光已經勝過了撒但殘存的邪惡和黑暗。
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                約翰·菲力浦斯在解釋《創世記》第3章15節時說：「撒但在自己的死亡宣判中，終於發現自己以前聰明過度。撒但企圖為上帝把他逐出天堂而向上帝復仇，但卻為上帝開闢了永遠解決不公之謎的道路。女人的後裔將會終結罪惡和撒但。突然之間，地球在宇宙中具有了可畏的重要性」（《探索創世記》，Exploring Genesis，61頁）。基督復活之後，被高舉的基督手裡拿著死亡、陰間和墳墓的鑰匙。教會在基督裡面是安全的，因為在他裡面有確定的勝利。
               </p>
             </div>
 
@@ -117,6 +123,32 @@ export default function Book18Ch3() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-teal-100 rounded-lg overflow-hidden shadow-sm">
+        <div className="px-5 py-3 bg-gradient-to-r from-teal-50 to-cyan-50 flex items-center gap-2">
+          <Star className="w-5 h-5 text-teal-600 flex-shrink-0" />
+          <span className="font-semibold text-gray-800">重點總結</span>
+        </div>
+        <div className="p-5 bg-white space-y-3">
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">1</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">新約聖經對撒但的多重描述：</span>新約以多種名字揭示撒但本質——「魔鬼」（διάβολος，誹謗者）、「試探者」（Matt 4:3）、「這世界的王」（Jn 12:31）、「空中掌權者」（Eph 2:2）、「那惡者」（1Jn 5:19）、「吞噬的獅子」（1 Pet 5:8）。每個名字都揭示他攻擊人類靈魂的不同策略與角色。他不是抽象的惡，乃是有位格的靈界君王，主動而系統地敵對神的子民。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">2</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">撒但的完整人格特質：</span>撒但具備智識（設計精密圈套）、情感（憎恨神和信徒）、意志（主動謀劃）；他驕傲、欺詐、殘忍、頑固。路德稱他是「世上有力的惡者」，但他的本質是受造物——有位格、有目的、卻不具神性三屬性（非全能、非全知、非全在）。認識他的真實本質，是既不輕忽也不高估的關鍵。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">3</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">撒但攻擊的三條主要渠道：</span>第一，透過世界（罪的文化系統）——用物質主義、享樂主義、人文主義麻醉靈魂；第二，透過肉體（人內在的罪性）——激發本性中的驕傲、情慾、自我中心；第三，直接靈界攻擊——疑惑、控告、試探、轄制。三條渠道相互配合，形成整體攻擊體系，因此屬靈爭戰需在多個層面同時警戒。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">4</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">十字架作為決定性勝利：</span>希伯來書2:14明言基督藉死「廢掉那掌死權的，就是魔鬼」；約翰福音12:31宣告「這世界的王要被趕出去」。十字架不是暫時壓制，乃是屬靈上的決定性打擊——撒但的法律索賠（控告罪人的權柄）被寶血永久廢除。信徒的爭戰建立在已得勝的根基上，而非在不確定的戰場中掙扎求存。</p>
+          </div>
+        </div>
       </div>
 
       {/* 延伸探討 */}

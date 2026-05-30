@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, BookOpen, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, BookOpen, Search, HelpCircle, Check, Star } from 'lucide-react';
 
 export default function Book18Ch2() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
@@ -109,6 +109,32 @@ export default function Book18Ch2() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-teal-100 rounded-lg overflow-hidden shadow-sm">
+        <div className="px-5 py-3 bg-gradient-to-r from-teal-50 to-cyan-50 flex items-center gap-2">
+          <Star className="w-5 h-5 text-teal-600 flex-shrink-0" />
+          <span className="font-semibold text-gray-800">重點總結</span>
+        </div>
+        <div className="p-5 bg-white space-y-3">
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">1</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">「撒但」名字的三重含義：</span>控告者（在上帝的法庭前控告我們，如伯1-2章）、敵人（積極對抗上帝一切計畫的活躍反對者）、抵擋者（專門攔阻上帝旨意的實現）——三個名字合起來，描繪出一個在法庭、戰場、道路上三面圍攻我們的仇敵。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">2</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">撒但墮落的根本原因——驕傲：</span>以西結書28章揭示撒但原本是完美的受造物（智慧完備、全然美麗），卻因為驕傲（以自我代替上帝，說「我要升到最高處」）而墮落。這說明驕傲是一切罪的根源，也是撒但至今最核心的動機。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">3</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">伊甸園試探的四個永恆模式：</span>（1）歪曲上帝的誡命（把「不可吃」改為「不可吃也不可摸」）；（2）質疑上帝的品格與動機（「上帝是嫉妒你們」）；（3）引誘人追求自主（「你們將如上帝」）；（4）使罪看起來美善有益（「好作食物」「使人有智慧」）——這四個模式在今天依然原封不動地被使用。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">4</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">舊約一貫的主權神學：</span>撒但在整個舊約中雖然積極活動，卻始終在上帝的主權掌管之下，必須得到上帝的許可才能行動（如約伯記的框架）。加爾文說：「魔鬼甚至也可以當我們的醫生」——上帝使撒但的攻擊反過來服侍信徒的益處。</p>
+          </div>
+        </div>
       </div>
 
       {/* 延伸探討 */}

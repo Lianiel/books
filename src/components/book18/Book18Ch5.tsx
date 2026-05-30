@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Target, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, Target, Search, HelpCircle, Check, Star } from 'lucide-react';
 
 export default function Book18Ch5() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
@@ -103,10 +103,16 @@ export default function Book18Ch5() {
             <div>
               <h3 className="font-bold text-gray-800 mb-3 text-lg">3. 受傷戰士的盼望</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                受傷的戰士常常擔心自己會在抵擋撒但的爭戰中失敗。他們厭倦了爭戰，要退出戰場，結果卻發現自己沿著罪的斜坡滑向毀滅。有時，靈命上的貧困和軟弱威脅要勝過他們。那試探者緊隨其後，傷害他們的腳跟。
+                受傷的戰士常常擔心自己會在抵擋撒但的爭戰中失敗。他們厭倦了爭戰，要退出戰場，結果卻發現自己沿著罪的斜坡滑向毀滅。有時，靈命上的貧困和軟弱威脅要勝過他們。那試探者緊隨其後，傷害他們的腳跟。受傷的戰士像大衛一樣呻吟，一邊祈求，一邊哭喊：「必有一日我死在掃羅手裡」（撒上27：1）。上帝之手似乎隱藏起來，地獄的邊緣卻似乎顯現出來。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
-                然而，福音中令人驚異的是，儘管信徒自我定罪，上帝卻藉著女人的後裔——得勝的基督取得了勝利。正如《創世記》第3章15節告訴我們的：「女人的後裔（基督）要傷你的頭。」撒但對腳跟的傷害，對信徒而言確實很沉重，但不是致命的，因為上帝為了選民的益處，使撒但的一切努力都歸於無效。
+                撒但是個說謊者，但可悲的是，他對信徒耳語的大部分譴責話都是真實的。良心譴責信徒。律法命令並咒詛信徒。上帝的公義沒有得到滿足。受傷的信徒不能用受傷的腳跟走路。他們如果沒有意識到自己不能幫助自己，就只能跌倒。他們必須向自己而死，宣判自己的死刑，承認上帝永遠拋棄他們是公義的。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                然而，福音中令人驚異的是，儘管信徒自我定罪，上帝卻藉著女人的後裔——得勝的基督取得了勝利。正如《創世記》第3章15節告訴我們的：「女人的後裔（基督）要傷你的頭。」撒但對腳跟的傷害，對信徒而言確實很沉重，但不是致命的，因為上帝為了選民的益處，使撒但的一切努力都歸於無效。通過舍己降服，就能夠在基督裡得勝。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                基督藉著他贖罪之死傷了撒但的頭。當撒但在髑髏地傷了基督的腳跟時，基督傷了撒但的頭（創3：15）。正如《希伯來書》第2章14節所說：「特要藉著死敗壞那掌死權的，就是魔鬼」（參西2：13-15）。此外，基督在他勝利的復活中也傷了撒但的頭——撒但不能使得勝者基督一直在墳墓中，因為上帝自己的兒子不會朽壞。被高舉的基督手裡拿著死亡、陰間和墳墓的鑰匙。教會在基督裡面是安全的，因為在他裡面有確定的勝利。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
                 基督召集那些被撒但反復侵擾的人。他用自己堅強的臂膀保護信徒，對他們說：「親愛的羊，撒但也許會傷害你的腳跟，但我已經藉著我的受死和復活以及上帝的審判，為你而傷了撒但的頭。」
@@ -135,6 +141,32 @@ export default function Book18Ch5() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-teal-100 rounded-lg overflow-hidden shadow-sm">
+        <div className="px-5 py-3 bg-gradient-to-r from-teal-50 to-cyan-50 flex items-center gap-2">
+          <Star className="w-5 h-5 text-teal-600 flex-shrink-0" />
+          <span className="font-semibold text-gray-800">重點總結</span>
+        </div>
+        <div className="p-5 bg-white space-y-3">
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">1</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">啟示錄20章「撒但被捆綁」的正確詮釋：</span>千禧年主義者常誤以為撒但現在完全無法行動，但聖經清楚顯示他現今仍「如同吼叫的獅子」（1Pet 5:8）。「捆綁」是特定意義的限制——撒但無法阻止福音傳遍全球各族萬民，無法攔截神揀選之人歸向基督。他仍可攻擊個人信徒，卻無法阻擋神救恩計畫的整體推進。現今是他被部分限制的時代，末日審判前他將有短暫釋放（啟20:7-10）。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">2</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">撒但對個人信徒的七種具體攻擊：</span>（1）試探引人犯罪（Matt 4:1-11）；（2）控告使人陷入絕望（Rev 12:10）；（3）疑惑使人對神不信（Gen 3:1「神豈是說了嗎？」）；（4）迫害透過人或環境（Eph 6:12）；（5）纏擾使人靈命枯乾；（6）欺騙教導錯謬教義（2Cor 11:14）；（7）收割軟弱時機——在人疲憊、孤立、遭遇失敗時趁虛而入。認識這七種攻擊模式是防禦第一步。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">3</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">兩個核心應對原則：</span>第一，逃向基督（flee to Christ）——不倚靠自己的意志力，而是立刻轉向那已得勝的主，依靠祂的寶血、祂的名、祂為我們的代禱（Heb 7:25, 1Jn 2:1-2）。第二，使用神的話（use the Word）——效法主耶穌在曠野「經上記著說」（Matt 4:4, 7, 10）的範式，以具體的聖經真理對抗撒但的每一個謊言和試探。這兩個原則缺一不可。</p>
+          </div>
+          <div className="flex gap-3">
+            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-white text-xs font-bold">4</span>
+            <p className="text-gray-700 leading-relaxed"><span className="font-semibold">羅馬書16:20的應許是爭戰的終極盼望：</span>「賜平安的神快要將撒但踐踏在你們腳下」——這節經文同時包含兩個確認：一是「賜平安的神」（撒但攻擊不改變神對我們的心意），二是「快要踐踏」（最終勝利確定且將臨）。這是創世記3:15「女人的後裔要傷你的頭」的新約應驗宣告，給所有在爭戰中疲憊的信徒一個確切的盼望錨點。</p>
+          </div>
+        </div>
       </div>
 
       {/* 延伸探討 */}
