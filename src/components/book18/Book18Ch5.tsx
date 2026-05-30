@@ -16,9 +16,8 @@ export default function Book18Ch5() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-red-600 to-rose-700 bg-clip-text text-transparent">第五章</h1>
+        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent">第五章</h1>
         <h2 className="text-xl font-semibold text-gray-700">今天的撒但</h2>
-        <p className="text-sm text-gray-500 mt-2">第一部分：認識敵人</p>
       </div>
 
       {/* 主要內容 */}
@@ -32,117 +31,108 @@ export default function Book18Ch5() {
         </button>
         {expanded['content'] && (
           <div className="p-5 bg-white space-y-6">
-
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">今天的撒但：真實而活躍</h3>
+              <h3 className="font-bold text-gray-800 mb-3 text-lg">撒但已被捆綁，但仍在工作</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                許多人對撒但的看法走向兩個極端：一端是視撒但為民間神話或心理象徵，另一端是對撒但過度著迷，在一切困難中都看見邪靈的直接干預。聖經和正確的神學在這兩個極端之間保持平衡：撒但是真實的個人存在，在今天仍然積極活躍，但他完全在神的主權之下，藉著基督的十字架已被擊敗。
+                自從基督受死和復活之後，撒但已經被捆綁。上帝在《創世記》第3章15節中對於撒但的宣判已經執行。《啟示錄》第20章中說，撒但不再能夠迷惑列國。這意味著撒但不再能夠阻止福音在列國的傳播。耶穌基督的受死和復活已經把撒但捆綁起來。福音在列國傳播的重大阻礙——撒但對於列國的迷惑——已經消除了。
               </p>
               <p className="text-gray-700 leading-relaxed">
-                彼得前書5:8的警告是給今天的信徒的：「務要謹守，警醒。你們的仇敵魔鬼，如同吼叫的獅子，遍地遊行，尋找可吞吃的人。」這不是一個過時的比喻，而是今天仍然有效的屬靈現實。撒但今天攻擊信徒的方式，與他在新約時代攻擊的方式並無本質差異，雖然在形式和包裝上有所變化。
+                但這並不是說撒但停止了在當今世界的工作。現在上帝仍然允許撒但繼續在當今世界工作。各種邪靈仍然繼續遵行撒但的命令，沒有得救的人也在侍奉撒但，就連上帝的選民，也一次又一次陷入撒但的網羅之中。在上帝旨意的允許下，撒但藉著當今邪惡的世界制度轄制非信徒（林後4：3-4；弗2：2；西1：13）。
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">附鬼現象在今天</h3>
+              <h3 className="font-bold text-gray-800 mb-3 text-lg">1. 當今的邪靈附體</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                真實的附鬼（demon possession）現象今天是否仍然存在？從牧養和宣教的實際經驗來看，答案是肯定的，尤其在非洲、亞洲、拉丁美洲等地，傳道人和宣教士報告了他們目睹的真實案例。這些案例通常出現在剛從拜偶像或巫術背景中出來的人身上。
+                如今偶爾有宣教士報告邪靈附體的事例，尤其是那些在異教地區傳福音的宣教士。隨著人們越來越回歸異教思想，轉向神秘宗教，我們將來聽到這樣的例子也不必感到驚奇。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
-                然而，在評估任何可能的附鬼案例時，牧師和基督徒輔導者都必須非常謹慎。許多被認為是「附鬼」的情況，實際上可能是嚴重的精神疾病（如精神分裂症、解離性身份障礙等），需要專業的心理醫療介入，而非驅魔儀式。混淆這兩者不僅對受苦者無益，還可能造成傷害。
+                弗雷德里克·萊西總結說，當今時代的邪靈附體既有自願的，也有非自願的，既有永久性的，也有陣發性的。一般來說，或是人格受到壓抑，或是出現雙重人格。在這兩種情況中，魔鬼都使用受害人作為他的器皿，邪靈附體與精神錯亂有明顯的區別。邪靈附體之人的解脫往往是突然發生的，得醫治的人似乎不能回想起自己說過的話和做過的事（《逐出撒但》，Satan Cast Out，80，90，91頁）。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                耶穌和使徒趕鬼與當今盛行的趕鬼有天壤之別，當今很多人的趕鬼源於異教的作法。萊西寫道：「異教的趕鬼只不過是撒但使人越來越深地處於他的權勢之下的詭計。巫師裡面更強大的鬼，當然能夠趕出被鬼附體的人裡面的鬼，但那個人並沒有得醫治。他並沒有被從仇敵的權勢之下救拔出來。被趕出去的鬼還可能回來」（103頁）。
               </p>
               <p className="text-gray-700 leading-relaxed">
-                清教徒傳統的智慧在此仍然適用：與其糾結於某種現象是否「附鬼」，不如專注於向那個人傳揚基督，呼召他/她悔改信主，尋求聖靈的充滿。聖靈的同在和基督的權能是應對任何形式邪靈攻擊的最終答案。
+                現在的牧師和普通信徒都不應當充當趕鬼者的角色。輕率趕鬼會導致極大的危險。其中一個危險是有可能使人進入幻境，導致精神錯亂。萊西總結說，「在永久性的逐出邪靈之前，受害人必須先要有屬靈的重新佔領。」這種屬靈的重新佔領是藉著聖道和聖靈的工作產生的（路10：1及以下經文）。被基督的聖靈充滿，傳講基督的聖言，比撒但的一切權勢都更有能力（路4：36）。
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">撒但對基督徒的七種攻擊</h3>
-              <p className="text-gray-700 leading-relaxed mb-2">
-                撒但雖然不能附在真正的信徒身上，但他對基督徒的攻擊是真實和多樣的。以下七個方面概括了他常用的攻擊模式：
+              <h3 className="font-bold text-gray-800 mb-3 text-lg">2. 撒但與當今基督徒</h3>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                撒但及其邪靈仍然與上帝的子民處於持續的衝突之中，試探他們，企圖敗壞和毀滅他們的生命、信心和見證（林前5：5；約壹5：16）。
               </p>
-
-              <div className="space-y-4 mt-3">
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">1. 試探犯罪</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    這是最基本的攻擊方式。撒但引誘信徒犯罪，破壞與神的關係，削弱靈命的活力。他利用我們天然的慾望（食慾、性慾、對舒適和成功的渴望），將其引向罪的方向。保羅在哥林多前書10:13提醒我們：「你們所遇見的試探，無非是人所能受的；神是信實的，必不叫你們受試探過於所能受的，在受試探的時候，總要給你們開一條出路，叫你們能忍受得住。」
-                  </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                真正的基督徒永遠也不會否認撒但的存在。如果上帝對於信徒來說是真實的，那麼撒但對於信徒來說也是真實的。《創世記》第3章15節中所預言的女人的後裔與蛇的後裔之間的爭戰，一直在每一個真信徒的靈魂中繼續著。每個信徒都知道這個爭戰的存在。就像利百加腹中有雙子在彼此相爭，上帝的子民也經常感覺到兩種不同的後裔在自己裡面相爭，努力要迸發出來，直到他們在絕望中大喊：「若是這樣，我為什麼活著呢？」（創25：22）。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                在認識基督之前，我們不知道這些爭戰。只有在成為信徒之後，我們才曉得這個聖戰的存在。上帝的子民深刻地瞭解到撒但每日都企圖傷害他們。作為上帝的孩子，你在下面幾種情況下尤其容易受到傷害：
+              </p>
+              <div className="ml-4 space-y-3">
+                <div className="flex gap-3">
+                  <span className="text-red-600 font-bold flex-shrink-0">（1）</span>
+                  <p className="text-gray-700">撒但把褻瀆的思想放進你的大腦裡，然後對你說，你如果有這樣的思想，就不可能是上帝的孩子。</p>
                 </div>
-
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">2. 製造驕傲</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    驕傲是撒但自己的原罪（以賽亞書14:12-14），也是他對信徒最成功的攻擊之一。他使信徒以屬靈的成就自誇，輕看他人，依賴自己的力量而非神的恩典。保羅在提摩太前書3:6提到監督不可是初入教的，「恐怕他自高自大，就落在魔鬼所受的刑罰裡」——驕傲使人走上與撒但相同的道路。
-                  </p>
+                <div className="flex gap-3">
+                  <span className="text-red-600 font-bold flex-shrink-0">（2）</span>
+                  <p className="text-gray-700">撒但使你置疑上帝之應許的真實性，讓你懷疑一直恩待你的上帝是否真的有憐憫。</p>
                 </div>
-
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">3. 製造絕望和定罪感</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    在成功引誘信徒犯罪之後，撒但往往轉變策略，從誘惑者變成控告者，使信徒陷入過深的定罪感和絕望。他低語：「你犯了這樣的罪，神不可能饒恕你」、「你不值得被愛」。這是一種謊言——約翰一書1:9明確說：「我們若認自己的罪，神是信實的，是公義的，必要赦免我們的罪。」認識撒但的控告和聖靈的扎心之間的區別，是屬靈健康的關鍵。
-                  </p>
+                <div className="flex gap-3">
+                  <span className="text-red-600 font-bold flex-shrink-0">（3）</span>
+                  <p className="text-gray-700">撒但企圖使你相信，你在救恩上無份，因為你只是在開始的時候有主，主沒有一直陪伴你。</p>
                 </div>
-
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">4. 在信徒之間製造紛爭</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    以弗所書4:26-27說「不可含怒到日落，也不可給魔鬼留地步」——怒氣和不饒恕為撒但在教會中製造分裂提供了機會。教會歷史上許多嚴重的分裂，其根源不是神學差異，而是未解決的人際衝突、驕傲和不願饒恕。撒但深知，分裂的教會是無力的教會。
-                  </p>
+                <div className="flex gap-3">
+                  <span className="text-red-600 font-bold flex-shrink-0">（4）</span>
+                  <p className="text-gray-700">撒但與你辯論說，上帝的孩子沒有像你這樣的：信心如此軟弱、如此敗壞、如此剛硬不禱告、如此愚蠢虛妄。</p>
                 </div>
-
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">5. 攪擾屬靈操練</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但積極阻礙信徒的禱告、讀經、參加敬拜和教會生活。他使讀經枯燥無味，使禱告感覺像是對著牆壁說話，在崇拜時引入分心的念頭。清教徒托馬斯·曼頓說：「撒但的策略之一，是使信徒忽略私下的靈修，因為他知道若信徒在密室中得到力量，他就更難在公開場合擊敗他們。」
-                  </p>
+                <div className="flex gap-3">
+                  <span className="text-red-600 font-bold flex-shrink-0">（5）</span>
+                  <p className="text-gray-700">撒但作為控告者來到你面前，使你絕望，或者作為光明天使來到你面前，使你狂傲自大。</p>
                 </div>
-
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">6. 試圖動搖信心的確據</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但試圖使信徒懷疑自己是否真正得救，懷疑神是否真正愛他們，懷疑神的應許是否可靠。這種「靈魂的黑夜」（dark night of the soul）是許多信徒的真實經歷。認識這是撒但的攻擊，並緊緊抓住神客觀的應許（而不是依靠自己的感覺），是得勝的關鍵。
-                  </p>
+                <div className="flex gap-3">
+                  <span className="text-red-600 font-bold flex-shrink-0">（6）</span>
+                  <p className="text-gray-700">撒但把世界以美麗的樣子呈現在你面前，企圖誘惑你回到屬世的習俗、友誼和虛榮中去。</p>
                 </div>
-
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">7. 透過文化和媒體的影響</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    今天的撒但大量使用文化媒介——大眾傳媒、社交網絡、娛樂產業——來傳播與聖經真理相悖的世界觀。他不需要公開地宣傳無神論，只需讓信徒每天浸泡在世俗主義的價值觀中，使他們的思想漸漸被「這世界的模樣」塑造（羅馬書12:2）。數位時代使這種影響比以往任何時代都更廣泛、更深入。
-                  </p>
+                <div className="flex gap-3">
+                  <span className="text-red-600 font-bold flex-shrink-0">（7）</span>
+                  <p className="text-gray-700">撒但壓抑你，使你沉迷於肉體的情欲、眼目的情欲和今生的驕傲之中。</p>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">今天撒但教和神秘主義的興起</h3>
+              <h3 className="font-bold text-gray-800 mb-3 text-lg">3. 受傷戰士的盼望</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                在一個宣稱「世俗化」的時代，一個明顯的矛盾現象是：公開的撒但崇拜和各種神秘主義、占星術、靈媒正在廣泛復興。在美國，撒但教會（Church of Satan）1966年由安東·拉維（Anton LaVey）創立；各種新異教（Wicca, Neo-paganism）在年輕人中快速增長；占星術、塔羅牌、靈媒諮詢在主流文化中被接受為娛樂甚至「靈性探索」。
+                受傷的戰士常常擔心自己會在抵擋撒但的爭戰中失敗。他們厭倦了爭戰，要退出戰場，結果卻發現自己沿著罪的斜坡滑向毀滅。有時，靈命上的貧困和軟弱威脅要勝過他們。那試探者緊隨其後，傷害他們的腳跟。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
-                聖經對這些做法的立場是清晰的：申命記18:10-12列出各種占卜、巫術、降靈的做法，稱之為神「所憎惡的」。這些做法的危險不只是表面的「迷信」，而是它們實際上涉及與邪靈的接觸，使人進入撒但的影響範圍。
+                然而，福音中令人驚異的是，儘管信徒自我定罪，上帝卻藉著女人的後裔——得勝的基督取得了勝利。正如《創世記》第3章15節告訴我們的：「女人的後裔（基督）要傷你的頭。」撒但對腳跟的傷害，對信徒而言確實很沉重，但不是致命的，因為上帝為了選民的益處，使撒但的一切努力都歸於無效。
               </p>
-              <p className="text-gray-700 leading-relaxed">
-                對基督徒的警示：這種文化趨勢意味著我們的朋友、家人或同事中，可能有人正在試驗這些做法。我們需要清楚地知道聖經的立場，能夠溫和但清楚地指出這些做法的屬靈危險，並以基督的福音作為真正的回應。
+              <p className="text-gray-700 leading-relaxed mb-3">
+                基督召集那些被撒但反復侵擾的人。他用自己堅強的臂膀保護信徒，對他們說：「親愛的羊，撒但也許會傷害你的腳跟，但我已經藉著我的受死和復活以及上帝的審判，為你而傷了撒但的頭。」
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">面對今天的撒但：正確的態度</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                認識了今天撒但的真實攻擊後，信徒應當持什麼樣的態度？
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                <strong>不過度恐懼</strong>：若林多前書10:13確保我們「神是信實的，必不叫你們受試探過於所能受的」，約翰一書4:4說「那在你們裡面的，比那在世界上的更大」——聖靈的能力大過撒但的能力。恐懼是撒但希望在信徒心中產生的反應，它使我們癱瘓，失去信心和行動力。
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                <strong>不輕敵</strong>：彼得前書5:8說要「謹守，警醒」——這表示需要主動的靈性覺知，不能掉以輕心。許多信徒在屬靈爭戰中受傷，是因為他們不相信有爭戰，沒有準備好防衛。
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                <strong>倚靠基督的得勝</strong>：最終的答案是以弗所書6:10「你們要靠著主，倚賴他的大能大力作剛強的人」。我們的力量不是自己的，我們的信心是基於基督已成就的得勝，而非我們自己的屬靈表現。
-              </p>
+              <h3 className="font-bold text-gray-800 mb-3 text-lg">4. 兩條應對撒但的建議</h3>
+              <div className="ml-4 space-y-4">
+                <div className="border-l-4 border-green-300 pl-4">
+                  <p className="font-semibold text-gray-800 mb-1">（1）逃往代求者耶穌基督那裡去</p>
+                  <p className="text-gray-700 leading-relaxed">他是全能的辯護者，完美的安慰者，他應許在你的一切需要上幫助你。他是你惟一的盼望，惟一的堡壘。在基督裡面，撒但已經被擊敗。像撒但定你的罪那樣定自己的罪，但是然後帶著你的一切不配來到天父面前的辯護者那裡。</p>
+                </div>
+                <div className="border-l-4 border-green-300 pl-4">
+                  <p className="font-semibold text-gray-800 mb-1">（2）用上帝的聖言和應許抵擋撒但</p>
+                  <p className="text-gray-700 leading-relaxed">不要與撒但談條件或向撒但的誘惑讓步。司布真寫道：「在兩個惡之間，一個也不要選。要學會說『不。』這對你來說，比會讀拉丁文更有用。」要站立得穩。要用上帝的軍裝保護自己。向上帝展示他自己聖言中的話，以此來抵擋撒但。要記得撒但在鎖鏈的捆綁之中，而你屬於比撒但更有能力的基督。</p>
+                </div>
+              </div>
             </div>
 
+            <div className="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
+              <p className="text-gray-700 leading-relaxed italic">
+                「要謹守，要警醒，盼望最後的結果。不要過於自信，也不要膽怯，而是小心警惕蛇的後裔……讓我們在上帝面前信心堅定，保持謙卑。讓我們提醒自己：生命短暫，試探也會轉瞬即逝。我們很快就會消逝，並且認識到『賜平安的上帝快要將撒但踐踏在你們腳下』（羅16：20）。」
+              </p>
+              <p className="text-right text-gray-500 text-sm mt-2">——周必克</p>
+            </div>
           </div>
         )}
       </div>
@@ -158,35 +148,30 @@ export default function Book18Ch5() {
         </button>
         {expanded['exploration'] && (
           <div className="p-5 bg-white space-y-5">
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">如何分辨撒但的控告與聖靈的扎心</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">「撒但被捆綁」的千禧年論含義</h4>
               <p className="text-gray-700 leading-relaxed">
-                這個辨別能力對信徒的屬靈健康至關重要，因為混淆兩者會導致兩種錯誤：要麼壓制聖靈的真實扎心（導致繼續在罪中），要麼陷入撒但製造的無根據定罪感（導致絕望和失去得救確據）。清教徒和改革宗神學家提供了幾個辨別原則：第一，聖靈的扎心是針對具體罪行的，清楚指出哪裡錯了，並指向認罪和悔改的出路；撒但的控告是模糊的、全面否定性的（「你整個人都是失敗的」），沒有具體的出路。第二，聖靈扎心後有平安（認罪後得赦免的確據）；撒但的控告即使在認罪後仍不停止，繼續壓迫。第三，聖靈的扎心使人轉向基督；撒但的控告使人轉向自己（自我譴責、絕望、想放棄信仰）。記住這些區分，能幫助信徒在面對定罪感時做出正確的回應。
+                作者採用的是無千禧年（amillennial）或歷史前千禧年的觀點：撒但的「捆綁」（啟20：1-3）在基督第一次降臨時已經發生，意思是他不再能阻止福音傳到萬民。這解釋了為何使徒時代開始後，福音能跨越文化界限廣傳——這在舊約時代幾乎是不可能的。撒但被捆綁不意味著他無法活動，而是指他迷惑列國的特定能力受到了限制。不同千禧年論立場對「撒但被捆綁」有不同詮釋，但各立場都同意撒但目前仍活躍。
               </p>
             </div>
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">數位時代的屬靈爭戰：新挑戰</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">撒但針對基督徒的七種攻擊模式</h4>
               <p className="text-gray-700 leading-relaxed">
-                互聯網和社交媒體的出現，為撒但提供了前所未有的工具。色情內容比以往任何時代都更容易獲取，引發廣泛的性慾罪和婚姻破壞；社交媒體的設計本身激發嫉妒、比較和表演性虔誠；演算法推薦的內容越來越多地強化偏見和憤怒；網絡社群使人更容易匿名地中傷他人。特別值得注意的是：研究顯示，智能手機使用與憂鬱、焦慮的增加有顯著關聯，而這些正是撒但攻擊信徒的有效切入點。數字時代的基督徒需要發展特定的屬靈實踐：有意識地限制媒體消費、練習數字齋戒、在網絡互動中保持基督徒的見證、以及認識到每次拿起手機都是一個對靈命可能有影響的選擇。
+                作者列出的七種攻擊揭示了撒但的心理戰術：他針對信徒的確信（1、2、3種）、自我認識（4種）、屬靈狀態（5種）、與世界的關係（6種）和肉體軟弱（7種）。值得注意的是，攻擊1-5都是認知性的——他試圖改變你對自己屬靈狀態的看法。這說明信徒的心智是最主要的屬靈戰場。保羅因此強調「更新你們的心」（羅12：2）和「抵擋撒但堅守信心」（彼前5：9）。
               </p>
             </div>
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">精神健康與屬靈戰爭：整合的視角</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">用聖言抵擋撒但的實踐</h4>
               <p className="text-gray-700 leading-relaxed">
-                一個重要但常被誤處理的問題是：憂鬱症、焦慮症等精神健康問題，是屬靈問題還是醫療問題？過於簡化的答案（「都是屬靈問題，只需禱告」或「都是大腦化學問題，只需藥物」）都不夠準確。聖經顯示，先知以利亞在靈命高峰後陷入嚴重的情緒崩潰（列王記上19章），神的回應是先照顧他的身體需要（睡眠和食物），然後才是屬靈的重建。心理學研究也顯示，長期的罪（如色情成癮、憤怒）確實影響大腦迴路；反過來，大腦化學失衡也確實影響人的屬靈狀態。健康的整合視角是：在尋求屬靈幫助的同時，不排除必要時的專業心理/精神醫療協助，認識到神可以通過醫療工具施行祂的醫治。
+                作者引用司布真的建議「學會說不」，但更根本的方法是用聖經話語。路德的《上帝是我們堅固保障》中說「一句話就可以擊倒他」，指的就是上帝的話語。馬丁·路德本人在試探中的習慣是大聲說出：「我受洗了！我受洗了！」——用上帝的客觀承諾對抗撒但對其屬靈狀態的攻擊。這是具體、個人化地使用聖言應對特定試探的實例。
               </p>
             </div>
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">新時代運動：當代的宗教混合主義</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">「受傷戰士」的真實性與盼望</h4>
               <p className="text-gray-700 leading-relaxed">
-                「新時代」（New Age）運動是二十世紀末以來對西方文化影響最廣泛的偽靈性現象之一。它吸收了東方宗教（佛教、印度教的元素）、古代神秘主義和西方心理學，創造出一個以「自我實現」和「靈性探索」為中心的宗教混合體。它的吸引力在於：不要求對任何權威（包括神或聖經）的服從，只要「向自己的高我連結」，強調個人體驗超過客觀真理。從基督教的視角看，新時代運動的核心問題是：它以「你就是神」（或「神就在你裡面」）取代了聖經的「你是被造物，神是創造主」，這是對伊甸園最初謊言的現代包裝：「你們便如神能知道善惡」（創世記3:5）。面對新時代思想，基督徒需要能夠清楚地解釋為何聖經的世界觀（創造-墮落-救贖-更新）比新時代的「靈性探索」更能回答人生的根本問題。
+                作者對「受傷戰士」的描述——懷疑、掙扎、疲倦、覺得自己不配——是對信仰生命現實的誠實描繪。清教徒文學充滿了這種靈命掙扎的記錄，例如理查·巴克斯特（Richard Baxter）的《聖徒永恆的安息》和約翰·班揚的《天路歷程》中的「絕望泥沼」。這種誠實與膚淺基督教形成鮮明對比——後者暗示真正的信徒不應有這樣的掙扎。事實上，越是靈命真實的人，往往越能感受到這場爭戰的激烈。
               </p>
             </div>
-
           </div>
         )}
       </div>
@@ -204,27 +189,27 @@ export default function Book18Ch5() {
           <div className="p-5 bg-white space-y-4">
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
-              <p className="text-gray-700">本章列出撒但對基督徒的七種攻擊。哪一種目前對你最具挑戰？你有什麼具體的跡象使你認識到他正從這個方向攻擊你？</p>
+              <p className="text-gray-700">作者列出了撒但攻擊基督徒的七種方式。其中哪一、兩種是你最常遭受的攻擊？你通常如何應對？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
-              <p className="text-gray-700">你如何分辨一個內心的定罪感是來自聖靈的扎心，還是來自撒但的控告？在過去，你是否曾把聖靈的扎心當成撒但的攻擊（因而壓制了悔改），或把撒但的控告當成聖靈的聲音（因而陷入不必要的絕望）？</p>
+              <p className="text-gray-700">作者說「在認識基督之前，我們不知道這些爭戰。只有在成為信徒之後，我們才曉得這個聖戰的存在。」這個描述符合你的信仰經歷嗎？信主後你感受到了什麼新的掙扎？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
-              <p className="text-gray-700">今天的媒體和數字文化在多大程度上影響著你的思維模式、價值觀和屬靈狀態？若要誠實評估，社交媒體或娛樂平台對你的靈命是「喂養」還是「消耗」？</p>
+              <p className="text-gray-700">撒但既「使人絕望」又「使人狂傲自大」——兩個看似相反的攻擊。你認為這兩種攻擊是如何在同一個人身上交替出現的？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
-              <p className="text-gray-700">你周圍的人（非基督徒朋友、家人、同事）是否有接觸占星、塔羅、靈媒或其他神秘主義做法的？面對這種情況，你的回應通常是什麼？你如何在不製造距離的同時，清楚地傳達聖經的立場？</p>
+              <p className="text-gray-700">作者建議「逃往代求者耶穌基督那裡」和「用上帝的聖言抵擋撒但」。在你遇到最激烈的試探時，你實際上是怎麼做的？這兩個建議有多難實踐？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
-              <p className="text-gray-700">「不過度恐懼，也不輕敵」——在這個平衡上，你目前更傾向哪一邊？過度恐懼撒但，還是輕視了屬靈爭戰的真實性？這種傾向對你的信仰生活有什麼具體影響？</p>
+              <p className="text-gray-700">「受傷的戰士」的描述——懷疑、疲倦、覺得不配——是否描述了你有時候的感受？你如何在這樣的狀態中仍然持守信仰？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">6.</span>
-              <p className="text-gray-700">約翰一書4:4說「那在你們裡面的，比那在世界上的更大」——這個確據在你面對實際的誘惑或撒但攻擊時，有多真實？你如何使這個神學真理成為你實際的屬靈資源，而不只是一句口號？</p>
+              <p className="text-gray-700">司布真說「在兩個惡之間，一個也不要選。要學會說不。」在你生命中，有哪些情況是你需要學習清楚地說「不」的？</p>
             </div>
           </div>
         )}
@@ -241,59 +226,41 @@ export default function Book18Ch5() {
         </button>
         {expanded['practice'] && (
           <div className="p-5 bg-white space-y-5">
-
             <div>
-              <h4 className="font-semibold text-green-700 mb-2">🎯 識別你的「弱點區域」</h4>
-              <p className="text-gray-700 mb-2">花一段時間認真自我評估，撒但最常透過哪些「門」進入你的生命。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>回顧過去一個月，你最常在哪方面向試探屈服（性慾、憤怒、驕傲、貪心、懶惰、憂慮）？</li>
-                <li>識別「觸發點」：什麼情況、場合、情緒狀態最容易使你犯罪？</li>
-                <li>思考：你是否在某些關係、某些媒體消費或某些習慣上「給撒但留了地步」？</li>
-                <li>為你識別出的弱點寫下具體的防衛策略（例如：若某類網站是試探，安裝過濾軟件）</li>
+              <h4 className="font-semibold text-green-700 mb-2">🎯 辨認並命名你的試探</h4>
+              <p className="text-gray-700 mb-2">本週每天花10分鐘，對照本章的七種攻擊模式，記錄今天遭受了哪種攻擊：</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
+                <li>撒但今天放了什麼思想到我腦裡？</li>
+                <li>我今天懷疑上帝的哪個應許或屬性？</li>
+                <li>我今天有沒有被誘惑走回屬世的方式？</li>
+                <li>我用什麼方式回應了這些攻擊？</li>
               </ul>
             </div>
-
             <div>
-              <h4 className="font-semibold text-green-700 mb-2">⏰ 一周的數字齋戒</h4>
-              <p className="text-gray-700 mb-2">嘗試一次有意識的數字媒體限制實驗，觀察它對你靈命的影響。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>選擇一天（如主日），完全不使用社交媒體和娛樂性媒體</li>
-                <li>將原本刷手機的時間改為讀經、禱告、或與家人深度交流</li>
-                <li>一周後，評估這個實踐對你的心境、屬靈狀態和人際關係的影響</li>
-                <li>考慮是否可以將某種形式的「數字安息日」納入常規生活</li>
+              <h4 className="font-semibold text-green-700 mb-2">📖 建立你的「屬靈武器庫」</h4>
+              <p className="text-gray-700 mb-2">針對你最常遭受的1-2種撒但攻擊，找出對應的聖經真理：</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
+                <li>對「你不是上帝的孩子」：讀約1：12；羅8：15-16</li>
+                <li>對「上帝不再關心你」：讀詩136；羅8：38-39</li>
+                <li>對「你太壞了，上帝不能接受你」：讀路15；提前1：15</li>
+                <li>把這些經文抄寫，放在你每天容易看到的地方</li>
               </ul>
             </div>
-
             <div>
-              <h4 className="font-semibold text-green-700 mb-2">📖 對抗控告的聖經武庫</h4>
-              <p className="text-gray-700 mb-2">建立一個個人的「回應撒但控告」聖經經文清單，在被攻擊時使用。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li><strong>羅馬書8:1</strong>——「如今，那些在基督耶穌裡的，就不定罪了」</li>
-                <li><strong>羅馬書8:33-34</strong>——「誰能控告神所揀選的人呢？有神稱他們為義了」</li>
-                <li><strong>約翰一書1:9</strong>——「我們若認自己的罪，神是信實的，是公義的，必要赦免我們的罪」</li>
-                <li><strong>約翰一書4:4</strong>——「那在你們裡面的，比那在世界上的更大」</li>
-                <li>把這些經文寫在小卡片上，放在容易看到的地方；當感到被定罪攻擊時，大聲宣讀</li>
+              <h4 className="font-semibold text-green-700 mb-2">⏰ 每日「逃往基督」的操練</h4>
+              <p className="text-gray-700 mb-2">每天早晨選一個時刻（起床後、早餐前），做三分鐘的「逃往代求者」禱告：</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
+                <li>承認今天面對的軟弱和可能的試探</li>
+                <li>宣告基督是你的辯護者和保護者</li>
+                <li>領受上帝的接納——不是因為自己的配得，而是因為基督的功勞</li>
               </ul>
             </div>
-
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">🛡️ 建立代禱夥伴關係</h4>
-              <p className="text-gray-700 mb-2">找一位可信任的同性肢體，建立定期的互相代禱和問責關係。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>每隔一到兩週，分享彼此在屬靈爭戰中的掙扎和得勝</li>
-                <li>互相提問：「這週在哪方面你需要抵抗撒但？」</li>
-                <li>為對方的弱點區域代禱，也接受對方為你的代禱</li>
-                <li>記住：孤立是撒但最希望你處於的狀態；屬靈夥伴關係削弱了他的攻擊效果</li>
-              </ul>
-            </div>
-
-            <div className="bg-green-50 rounded-lg p-4 mt-2">
-              <h4 className="font-semibold text-green-800 mb-2">🙏 禱告詞</h4>
-              <p className="text-gray-700 leading-relaxed italic text-sm">
-                「天父，我承認今天撒但仍然是真實的、活躍的仇敵。我感謝祢，祢已在基督裡給我得勝的應許。在我的弱點之處——那些我最容易被試探的地方——求祢的靈特別保守我。當我面對他的控告時，讓我的眼目不在自己的失敗上，而在十字架上基督已完成的救贖上。願我今日的生命，靠著祢的恩典，成為撒但計謀失敗的見證。奉主耶穌得勝的名，阿們。」
+            <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+              <h4 className="font-semibold text-green-700 mb-2">🙏 本章禱告</h4>
+              <p className="text-gray-700 leading-relaxed italic">
+                「主耶穌，我承認我是一個受傷的戰士。我有時懷疑，有時疲倦，有時被撒但的謊言迷惑。但感謝祢是我的辯護者，是站在天父右邊為我代求的那一位。撒但說我不配，而我承認那是真的——但我也宣告：我有基督的公義，這是撒但奪不走的。求祢讓我學會用祢的話語回應每一個謊言。我要謹守警醒，靠祢的力量站立。奉耶穌的名祈求，阿們。」
               </p>
             </div>
-
           </div>
         )}
       </div>

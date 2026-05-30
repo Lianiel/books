@@ -16,9 +16,8 @@ export default function Book18Ch10() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-red-600 to-rose-700 bg-clip-text text-transparent">第十章</h1>
+        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">第十章</h1>
         <h2 className="text-xl font-semibold text-gray-700">直面撒但的四大策略</h2>
-        <p className="text-sm text-gray-500 mt-2">第三部分：認識撒但的策略</p>
       </div>
 
       {/* 主要內容 */}
@@ -34,176 +33,186 @@ export default function Book18Ch10() {
           <div className="p-5 bg-white space-y-6">
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">四大策略的概覽</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                上一章我們從清教徒傳統學習了撒但如何「設置裝置」的一般原則。本章更加聚焦，根據清教徒的分析，特別是理查·吉爾平的《論撒但的試探》，識別撒但在信徒生命中使用的四個主要、可辨識的策略領域：
+              <p className="text-gray-700 leading-relaxed italic border-l-4 border-purple-200 pl-4">
+                「你不能阻止鳥兒飛過你的頭頂，」路德寫道，「但你可以不讓他們落在你頭上做窩。」
               </p>
-              <div className="grid grid-cols-1 gap-3 mt-3">
-                <div className="flex items-center gap-3 bg-red-50 rounded-lg px-4 py-3">
-                  <div className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
-                  <span className="font-semibold text-gray-800">誘惑犯罪——用試探引入罪</span>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-gray-900 mb-3 text-lg">策略一：撒但誘惑我們犯罪</h3>
+
+              <div className="space-y-4">
+                <div className="bg-purple-50 rounded-lg p-4">
+                  <p className="font-semibold text-purple-700 mb-2">詭計①：以快樂為誘餌，其中隱藏罪的毒鉤</p>
+                  <p className="text-gray-700 leading-relaxed mb-2">
+                    撒但給了亞當和夏娃一個水果來交換伊甸園，包藏在水果裡的毒鉤導致了懲罰和死亡。正如妻子看到兩隻老鼠小心地吃捕鼠器上的花生醬，前兩天的成功使它們粗心大膽，兩天後早晨卻死在捕鼠器上。
+                  </p>
+                  <p className="text-gray-700 leading-relaxed mb-1 font-semibold">應對辦法（5項）：</p>
+                  <ul className="space-y-1 text-gray-700 ml-2">
+                    <li>（1）牢記向誘惑屈服的後果。「在世上吃的許多東西要到地獄裡去消化。」（布魯克斯）「每個誘惑中都閃爍著地獄的火花。」（格諾爾）</li>
+                    <li>（2）盡力遠離試探。知道自己的軟弱領域並儘量避免。不要問你可以離罪多近而不犯罪，而是盡可能遠離。「你若不想讓魔鬼用禁果誘惑你，最好遠離他的果園。」</li>
+                    <li>（3）積極參與成長和侍奉。大衛不在自己當處的戰場上時特別容易受試探（撒下11）。「怠惰的時間是魔鬼的運動場。」</li>
+                    <li>（4）與知己的基督徒朋友分享持續出現的試探。罪在秘密中更猖獗；把試探帶到光明之中能打破罪的權勢。孤獨的巡邏兵常常成為死亡的巡邏兵。</li>
+                    <li>（5）記得你不可能對任何試探保持中立。每個試探或使你更接近上帝，或使你遠離上帝。「我們對罪的反應精確表明了我們對上帝的愛。」（歐文·盧茨爾）</li>
+                  </ul>
                 </div>
-                <div className="flex items-center gap-3 bg-red-50 rounded-lg px-4 py-3">
-                  <div className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
-                  <span className="font-semibold text-gray-800">攔阻靈修——使屬靈操練失效</span>
+
+                <div className="bg-purple-50 rounded-lg p-4">
+                  <p className="font-semibold text-purple-700 mb-2">詭計②：使罪看起來是一種美德</p>
+                  <p className="text-gray-700 leading-relaxed mb-1">驕傲變成了自尊，貪婪變成了有抱負，酗酒變成了善於交往。</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>罪在掩飾和偽裝之下更危險，但終究會失去偽裝。我們必須像在臨終床上一樣看待罪的一切黑暗，也記得罪的赦免是以救主的寶血為代價的。</p>
                 </div>
-                <div className="flex items-center gap-3 bg-red-50 rounded-lg px-4 py-3">
-                  <div className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
-                  <span className="font-semibold text-gray-800">歪曲真理——用謊言腐蝕信仰</span>
+
+                <div className="bg-purple-50 rounded-lg p-4">
+                  <p className="font-semibold text-purple-700 mb-2">詭計③：說悔改是容易的事</p>
+                  <p className="text-gray-700 leading-relaxed mb-1">撒但藉著淡化悔改的難度，淡化罪的可怕性，鼓勵我們犯罪。</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>布魯克斯說：「悔改不是生長在自然花園中的花朵。」「為罪悔改就像不犯罪一樣困難，是恩典之工。」悔改是一生每日都必須進行的工作，使整個人逐漸由罪轉向上帝——為罪憂傷、羞恥、承認、拋棄，最終惟獨奔向基督。</p>
                 </div>
-                <div className="flex items-center gap-3 bg-red-50 rounded-lg px-4 py-3">
-                  <div className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
-                  <span className="font-semibold text-gray-800">阻礙成聖——使靈命成長停滯</span>
+
+                <div className="bg-purple-50 rounded-lg p-4">
+                  <p className="font-semibold text-purple-700 mb-2">詭計④：鼓勵我們與世俗的人交朋友</p>
+                  <p className="text-gray-700 leading-relaxed mb-1">撒但知道交往能產生同化作用，藉著不敬虔的友誼引誘我們犯罪。</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>《箴言》4:14-15說：「不可行惡人的路，不要走壞人的道。要躲避，不可經過；要轉身而去。」</p>
+                </div>
+
+                <div className="bg-purple-50 rounded-lg p-4">
+                  <p className="font-semibold text-purple-700 mb-2">詭計⑤：使未歸正者看起來享福、信徒看起來多憂</p>
+                  <p className="text-gray-700 leading-relaxed mb-1">企圖使人相信侍奉上帝是徒然的（詩73:1-15）。</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>掃羅王被定罪時外在卻似乎蒙福，約伯被上帝深愛時外在卻似乎遭棄——上帝常為使所愛的人得永恆益處而管教他們（來12:5-6）。「萬事都互相效力，叫愛上帝的人得益處」（羅8:28）。信徒內在的喜樂往往遠大於外在可見的，而邪惡之人的內在需要總大於他們外在的喜樂。</p>
+                </div>
+
+                <div className="bg-purple-50 rounded-lg p-4">
+                  <p className="font-semibold text-purple-700 mb-2">詭計⑥：故意淡化罪的嚴重性，帶領人犯更大的罪</p>
+                  <p className="text-gray-700 leading-relaxed mb-1">司布斯托說：「撒但從來不突然把人從信仰告白的山頂扔到罪惡的深淵，而是逐漸帶領人下坡和轉彎，越來越低，直到他們到達地獄。」</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>布魯克斯說：「即使最小的罪也違背了上帝的律法、本性、本質和榮耀。」「使人犯罪的誘惑越小，罪越大，因為屈服於小罪是對上帝最大的不友善——使上帝悲歎，使基督流血，使聖靈擔憂。」告訴撒但：你不會因向最大的仇敵屈服來讓你最偉大的朋友難過。</p>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">策略一：誘惑犯罪</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                這是撒但最基本、最直接的策略——通過試探，引導信徒犯下具體的罪。吉爾平識別了撒但在這個策略上的幾種常用手段：
-              </p>
-              <div className="space-y-3">
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">利用身體的需要</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但在最基本的身體需要（饑餓、疲勞、性慾、舒適）最迫切時出手試探，就像他試探禁食四十天後的耶穌（馬太福音4:3）。身體的需要本身不是罪，但撒但試圖將合理的需要引向罪的滿足。
-                  </p>
-                </div>
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">利用機會和環境</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但製造或利用環境機會，使罪看起來容易又低風險。大衛在王宮屋頂看見拔示巴洗澡（撒母耳記下11:2）——這個機會是撒但的精心安排嗎？清教徒提醒我們：「把自己放在試探的場合中，就是在試探神。」（哥林多前書6:18的「逃跑」原則）
-                  </p>
-                </div>
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">連結性的試探鏈</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但很少用孤立的試探，而是建立一個「試探鏈」——每一個小的讓步都使下一個更大的試探更容易屈服。雅各書1:14-15說：「但各人被試探，乃是被自己的私慾牽引誘惑的。私慾既懷了胎，就生出罪來；罪既長成，就生出死來。」罪的滑坡是真實的。
-                  </p>
-                </div>
-              </div>
+              <h3 className="font-bold text-gray-900 mb-3 text-lg">策略二：撒但攔阻我們靈修</h3>
 
-              <div className="mt-4 bg-blue-50 rounded-lg p-4">
-                <h4 className="font-semibold text-blue-800 mb-2">應對辦法</h4>
-                <ul className="space-y-1 text-gray-700 text-sm">
-                  <li>• 預防性地避開試探的場合（「逃離邪情私慾」提摩太後書2:22）</li>
-                  <li>• 在試探出現的第一刻就拒絕，不讓私慾「懷胎」</li>
-                  <li>• 用神的話直接回應（如耶穌的「經上記著說」）</li>
-                  <li>• 藉禱告尋求出路（哥林多前書10:13）</li>
-                  <li>• 對信任的肢體承擔問責（雅各書5:16「彼此認罪」）</li>
-                </ul>
+              <div className="space-y-4">
+                <div className="bg-pink-50 rounded-lg p-4">
+                  <p className="font-semibold text-pink-700 mb-2">詭計①：使我們覺得靈修非常艱難</p>
+                  <p className="text-gray-700 leading-relaxed mb-1">撒但讓我們以為，與其以敷衍了事的方式靈修，不如乾脆不做。</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>藉著專注上帝關於操練靈修的命令來抵擋這種推理。要記得靈修的益處：藉著禱告、讀經、與信徒團契，我們榮耀並享受上帝，遇見並擁抱基督，堅固頭腦，抵擋罪。我們的懼怕消散，盼望升起。多仰望冠冕，少盯著十字架；多仰望將來的榮耀，少盯著現在的苦難。</p>
+                </div>
+
+                <div className="bg-pink-50 rounded-lg p-4">
+                  <p className="font-semibold text-pink-700 mb-2">詭計②：用虛妄思想分散我們的注意力</p>
+                  <p className="text-gray-700 leading-relaxed mb-1">靈修時撒但令人憂傷困惑，以致厭倦履行神聖的職責。</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>當接近上帝時，專注于上帝威嚴的聖潔。路德說，他想要魔鬼知道自己與上帝的團契是認真的，所以大聲地進行靈修——大聲說話可以幫助集中注意力。如果生命中堆滿了世俗責任，應當減少屬世責任，直到每天都有時間尋求上帝。</p>
+                </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">策略二：攔阻靈修</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                撒但深知，一個有強健靈修生活的基督徒是他難以撼動的；因此，他積極攔阻讀經、禱告、崇拜和其他屬靈操練。吉爾平說：「撒但知道，若他能使信徒忽略私下的靈修，公開的事奉就容易被攻破。」
-              </p>
-              <div className="space-y-3">
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">使屬靈操練感覺枯燥無味</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但使讀經感覺機械、毫無生氣；使禱告感覺是對著牆壁說話；使崇拜感覺空洞。他的目標是使信徒失去對神話語和禱告的渴慕。當這些操練失去甜蜜，撒但就成功地削弱了我們的屬靈武裝。
-                  </p>
-                </div>
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">用世俗的忙碌排擠屬靈空間</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但不需要讓我們做明顯的惡事，只需讓我們的生活塞滿「緊急但不重要」的事，使讀經和禱告被一再推遲。路加福音10:41-42「馬大，馬大，你為許多的事思慮煩擾，但是不可少的只有一件」——繁忙本身可以成為撒但使信徒靈命飢餓的工具。
-                  </p>
-                </div>
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">用分心打斷讀經和禱告</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    許多信徒報告，在試圖讀經或禱告時，腦中突然湧現各種念頭和計劃；剛坐下來讀經，手機就響了；剛開始禱告，就想起一件「緊急的事」。清教徒認為這些不全是巧合——撒但積極地引入分心以打斷靈修。
-                  </p>
-                </div>
-              </div>
+              <h3 className="font-bold text-gray-900 mb-3 text-lg">策略三：撒但歪曲上帝及其真理</h3>
 
-              <div className="mt-4 bg-blue-50 rounded-lg p-4">
-                <h4 className="font-semibold text-blue-800 mb-2">應對辦法</h4>
-                <ul className="space-y-1 text-gray-700 text-sm">
-                  <li>• 將靈修固定在每天特定的時間，建立不易被打斷的習慣</li>
-                  <li>• 即使在枯燥無感的時期，也持守靈修的紀律——情感會跟隨意志，而非相反</li>
-                  <li>• 在靈修前做短暫的靜默準備，排除分心</li>
-                  <li>• 記住：讀經禱告是屬靈爭戰的預備，不是選項——不讀經禱告就上戰場，是赤手空拳的士兵</li>
-                </ul>
+              <div className="space-y-4">
+                <div className="bg-indigo-50 rounded-lg p-4">
+                  <p className="font-semibold text-indigo-700 mb-2">詭計①：把上帝描繪成殘酷的工頭</p>
+                  <p className="text-gray-700 leading-relaxed mb-1">撒但告訴許多人，聖潔公義的上帝不會憐憫他們，因為他們罪惡太深。</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>愛德華滋說，大衛以自己的大罪為基礎祈求赦免——正如乞丐以自己的赤貧為根基祈求麵包，處於屬靈貧困中的人呼求上帝的憐憫。上帝是「三一上帝願意接納乞丐」的上帝。要記得「撒但把自己的顏色塗在上帝身上。」（查諾克）</p>
+                </div>
+
+                <div className="bg-indigo-50 rounded-lg p-4">
+                  <p className="font-semibold text-indigo-700 mb-2">詭計②：宣揚三一上帝中各位格對拯救罪人的意願不同</p>
+                  <p className="text-gray-700 leading-relaxed mb-1">有講道人只宣講基督願意拯救，而聖父聖靈似乎有所保留。</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>聖父非常願意拯救我們，因此賜下自己的獨生愛子；聖靈也非常願意拯救我們，因此以驚人的耐心在各種罪人的心裡做工。三一上帝完全合一地愛罪人、救罪人。</p>
+                </div>
+
+                <div className="bg-indigo-50 rounded-lg p-4">
+                  <p className="font-semibold text-indigo-700 mb-2">詭計③：只強調上帝的慈愛，忽略上帝的公義</p>
+                  <p className="text-gray-700 leading-relaxed mb-1">撒但說，既然上帝大有憐憫，何必在意罪？</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>布魯克斯說，上帝「首先掛出憐憫的白旗」，但若人拒絕憐憫，上帝就「拿出公義和審判的紅旗」。「世上使人最不像聖徒卻最像撒但的事，就是從上帝的憐憫出發為犯罪辯護——這就是魔鬼的邏輯。」信徒應當把上帝的憐憫視為保守自己遠離罪的最強有力的根據（詩26:3-5；羅6:1-2）。</p>
+                </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">策略三：歪曲真理</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                第九章第三章說撒但是謊言之父（約翰福音8:44）；他試圖歪曲關於神、關於自我和關於救恩的真理。他的謊言有時是公然的否定，更多時候是對真理的微妙扭曲。
-              </p>
-              <div className="space-y-3">
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">歪曲神的性情</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但試圖使我們對神的認識出現偏差：或是只看見神的慈愛而忽略祂的公義（導致道德鬆懈），或是只看見神的公義而忽略祂的慈愛（導致恐懼和絕望）。他可能使我們把神想像成一個遙遠冷漠的審判者，而非一個近在咫尺的愛父。
-                  </p>
-                </div>
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">歪曲救恩的確據</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但試圖使信徒懷疑自己的得救——「你真的是基督徒嗎？你的信心是真實的嗎？看你這樣的生活，你真的得救了嗎？」他的目標是使信徒生活在不確定性中，缺乏能夠行動的信心。
-                  </p>
-                </div>
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">引入神學錯誤</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    哥林多後書11:3說保羅擔心信徒「的心或偏於邪，失去那向基督所存純一清潔的心」。撒但透過虛假的教師、混合的教義、或將世俗智慧滲入教會，使信仰失去其純正。
-                  </p>
-                </div>
-              </div>
+              <h3 className="font-bold text-gray-900 mb-3 text-lg">策略四：撒但反對成聖</h3>
 
-              <div className="mt-4 bg-blue-50 rounded-lg p-4">
-                <h4 className="font-semibold text-blue-800 mb-2">應對辦法</h4>
-                <ul className="space-y-1 text-gray-700 text-sm">
-                  <li>• 建立對聖經全本的整體認識，使謊言一進入就能被識別</li>
-                  <li>• 對新奇的「屬靈教導」保持辨別力，以聖經為最終標準</li>
-                  <li>• 用神的話語主動更新思想（羅馬書12:2）</li>
-                  <li>• 在一個有穩固神學基礎的教會群體中紮根</li>
-                </ul>
+              <div className="space-y-4">
+                <div className="bg-green-50 rounded-lg p-4">
+                  <p className="font-semibold text-green-700 mb-2">詭計①：攔阻信徒得到救贖性知識，讓人像彼得一樣不認主</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>為靈命的衰退而悔改，回到上帝面前，以起初的愛心行當行的事（啟2:4-5）。專心研讀聖經和好的屬靈書籍。多多禱告，求上帝使自己行事堅定。</p>
+                </div>
+
+                <div className="bg-green-50 rounded-lg p-4">
+                  <p className="font-semibold text-green-700 mb-2">詭計②：強調頭腦知識就足夠了，阻止心靈的經歷性認識</p>
+                  <p className="text-gray-700 leading-relaxed mb-1">華森寫道：「只要講道沒有在你的良心中做工，撒但並不介意你聽了多少次講道。」</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>不要滿足於沒有在心靈中經歷基督的救恩（林前1:30）。《約翰福音》17:3所說的「認識」是深刻的、永久性的關係，不只是頭腦的資訊。</p>
+                </div>
+
+                <div className="bg-green-50 rounded-lg p-4">
+                  <p className="font-semibold text-green-700 mb-2">詭計③：使成聖看起來不切實際、太難理解</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>救恩和成聖都是白白的恩賜。即使當我們擔心自己的聖潔只有芥菜子那麼小時，上帝的靈仍在帶領我們走在聖潔之路上。這個聖潔的交換是美麗、單純、神奇的——基督把自己賜給我們，我們把自己獻給他，他的禮物貴重許多，但這交換是真實的。</p>
+                </div>
+
+                <div className="bg-green-50 rounded-lg p-4">
+                  <p className="font-semibold text-green-700 mb-2">詭計④：使我們以為救恩依賴自己的靈性、聖潔和行為</p>
+                  <p className="text-gray-700 leading-relaxed mb-1">撒但混淆信心與行為、福音與律法之間的真正關係。</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>一個十九世紀的信徒說：「我以為自己必須遵守律法，於是去找摩西談判，但他立刻把我打倒了……絕望之中，我來到了髑髏地，在那裡找到了同情我的那位，他赦免了我的罪。現在我回去告訴摩西，他對我微笑，握手，非常親切——從那以後再也沒有把我打倒過。」救恩惟獨仰賴恩典。每日憑著信心和悔改在罪人的救主基督裡尋求庇護。</p>
+                </div>
+
+                <div className="bg-green-50 rounded-lg p-4">
+                  <p className="font-semibold text-green-700 mb-2">詭計⑤：說今生努力追求成聖是不必要的，等死後自然聖潔</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>聖經呼召信徒要在恩典中長進，忘記背後，努力向前追求靈命成熟。「我們或者憑著信心勝過世界，或者被世界所勝過，此外沒有別的出路。」（出14:13-14）</p>
+                </div>
+
+                <div className="bg-green-50 rounded-lg p-4">
+                  <p className="font-semibold text-green-700 mb-2">詭計⑥：藉著世俗使我們麻木，讓我們與自己相比而非以聖經為標準</p>
+                  <p className="text-gray-700 leading-relaxed mb-1">世俗就像惡性腫瘤，常常直到晚期才被發現。</p>
+                  <p className="text-gray-700 leading-relaxed"><span className="font-semibold">應對辦法：</span>弗拉維爾在《保守心靈》中說：「在出入你心靈的每個門口，都當設一個守衛。」一個人問：你能離山邊緣多近而不掉下去？只有第四個候選人說：「我選擇儘量遠離邊緣」——他得到了工作。一旦察覺到自己的罪就立刻承認，只有清潔的良心才能與上帝保持清楚的團契。</p>
+                </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">策略四：阻礙成聖</h3>
+              <h3 className="font-bold text-gray-900 mb-3 text-lg">布魯克斯的十個應對辦法——總結</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                撒但的最終目標之一，是阻止信徒在基督的形象上成長——因為一個越來越像基督的信徒，對撒但的策略越來越有辨識力和抵抗力。吉爾平說：「撒但憎恨信徒的成聖，因為它是神形象在地上的恢復。」
+                布魯克斯在《寶貴的應對辦法》中，依據整本聖經概括了基督徒對付撒但詭計的十個辦法：
               </p>
-              <div className="space-y-3">
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">製造屬靈的自滿</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但說：「你已經做得足夠好了，你不需要再成長了。」啟示錄3:17老底嘉教會「說：我是富足，已經發了財，一樣都不缺」，卻不知道自己其實「是那困苦、可憐、貧窮、瞎眼、赤身的」——這是撒但製造屬靈自滿最成功的例子。
-                  </p>
-                </div>
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">使人把屬靈事奉與成聖混淆</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但使信徒忙於「做屬靈的事」（講道、服事、做見證），卻忽略了內心的成聖——靈命內在的更新與改變。結果是外表活躍但內心枯竭的「無花果樹」（馬可福音11:13）。
-                  </p>
-                </div>
-                <div className="border-l-4 border-red-400 pl-4">
-                  <h4 className="font-semibold text-gray-800 mb-1">使人放棄對罪的爭戰</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    在長期爭戰一個慣性的罪之後，撒但試圖使人放棄：「你已經試過這麼多次，你改不了了，乾脆放棄吧。」他將靈命的疲乏轉化為對罪的接受，使人把「難以改變」變成「不需要改變」。
-                  </p>
-                </div>
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  '以聖經為標準行事',
+                  '不要使聖靈擔憂',
+                  '追求屬天的智慧',
+                  '立刻抵擋撒但的第一個提議',
+                  '竭力追求被聖靈充滿',
+                  '保持謙卑',
+                  '始終保持警醒',
+                  '保持與上帝的團契',
+                  '靠著基督的力量抵擋撒但',
+                  '多多禱告'
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-2 bg-purple-50 rounded-lg p-2">
+                    <span className="text-purple-600 font-bold flex-shrink-0">{i + 1}.</span>
+                    <p className="text-gray-700 text-sm">{item}</p>
+                  </div>
+                ))}
               </div>
+            </div>
 
-              <div className="mt-4 bg-blue-50 rounded-lg p-4">
-                <h4 className="font-semibold text-blue-800 mb-2">應對辦法</h4>
-                <ul className="space-y-1 text-gray-700 text-sm">
-                  <li>• 保持對自己靈命誠實的自我評估，不允許自滿（腓立比書3:12-14「向著標竿直跑」）</li>
-                  <li>• 以基督的形象作為成聖的標準，而非與他人比較</li>
-                  <li>• 記住成聖是神的工作，不只是自己的努力——倚靠聖靈（加拉太書5:16）</li>
-                  <li>• 在跌倒後立即悔改並重新站起，不讓失敗成為放棄的理由</li>
-                </ul>
+            <div>
+              <h3 className="font-bold text-gray-900 mb-3 text-lg">彼得簡練的總結（彼前5:8-9）</h3>
+              <div className="bg-purple-50 rounded-lg p-4 mb-3">
+                <p className="text-gray-700 italic leading-relaxed">
+                  「務要謹守，警醒；因為你們的仇敵魔鬼，如同吼叫的獅子，遍地遊行，尋找可吞吃的人。你們要用堅固的信心抵擋它。」
+                </p>
+              </div>
+              <ul className="space-y-2 text-gray-700">
+                <li><span className="font-semibold">「務要謹守」：</span>清楚而認真地思考，最重要的是，要依據聖經思考。</li>
+                <li><span className="font-semibold">「警醒」：</span>小心提防，警惕敵人存在、活動和目的的跡象。</li>
+                <li><span className="font-semibold">「抵擋」魔鬼：</span>撒但的圖謀向來是邪惡的，他會得寸進尺。布魯克斯說：「撒但許諾的是最好的，但給予的是最差的；許諾的是尊榮，給予的是羞辱；許諾的是喜樂，給予的是痛苦；許諾的是生命，給予的是死亡。」</li>
+                <li><span className="font-semibold">保持「堅固的信心」：</span>不動搖，不屈服，使用上帝兒子裡面的信心和上帝的聖言做盾牌。布魯克斯總結說：「要牢記，生命短暫，任重道遠，幫助是巨大的，回報是確定的；因此不要灰心喪氣，要堅持不懈，多行善事，天堂將會使所有人變得完全。」</li>
+              </ul>
+              <div className="mt-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-4">
+                <p className="text-gray-700 leading-relaxed font-medium">
+                  最後，你真的想在自己生命中看到撒但的失敗嗎？專心仰望基督。靠著在基督裡面的信心勝過世界。在生活中，基督就是你的一切。
+                </p>
               </div>
             </div>
 
@@ -222,35 +231,30 @@ export default function Book18Ch10() {
         </button>
         {expanded['exploration'] && (
           <div className="p-5 bg-white space-y-5">
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">「屬靈操練」與「律法主義」的區分</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">「離邊緣越遠越好」——罪的漸進性與邊界的重要性</h4>
               <p className="text-gray-700 leading-relaxed">
-                有人可能質疑：強調讀經、禱告、成聖的紀律，是否會滑向律法主義——靠自己的努力「賺取」神的悅納？改革宗神學的回答是清晰的：屬靈操練（spiritual disciplines）和律法主義的本質區別在於動機和信靠的對象。律法主義靠自己的努力來取悅神或使神接納我；屬靈操練是信徒回應神已給予的恩典，在神的能力中成長。就像一個孩子學習語言不是為了「賺取」父母的愛，而是回應父母的愛並與他們更深地交通；基督徒讀經禱告不是為了「賺取」神的悅納，而是在已有的關係中成長和倚靠。達拉斯·威拉德（Dallas Willard）的洞見很有幫助：「恩典不是反對努力，恩典是反對賺取（Grace is not opposed to effort; grace is opposed to earning）。」紀律和努力的目標是開放我們的心，使聖靈能工作；紀律本身不能帶來成聖，但忽略紀律則關上了聖靈工作的管道。
+                本章中「山頂司機」的比喻精準地揭示了一個重要真理：屬靈的邊界不是用來考驗我們能走多近，而是要盡可能遠離。現代文化有一種「灰色地帶」的思維——只要沒有明確犯罪，似乎就沒有問題。但司布斯托警告，撒但從來不突然把人從山頂扔到深淵，而是「逐漸帶領人下坡和轉彎」。罪的誘惑常常始於一個看似無害的選擇，然後一步一步。《箴言》5:8說「你所行的道要離她遠，不可就近她的房門」——不是「不要進去」，而是「不要靠近」。這種預防性的智慧，遠比在邊緣掙扎更有效也更實際。
               </p>
             </div>
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">「罪的滑坡」：連結性試探的心理機制</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">「白旗與紅旗」——上帝憐憫的正確理解</h4>
               <p className="text-gray-700 leading-relaxed">
-                現代心理學對「罪的滑坡」（slippery slope of sin）的解釋，印證了清教徒的觀察。心理學研究顯示，每一次的道德妥協都會降低下一次妥協的門檻——這個機制被稱為「道德許可效應」（moral licensing）和「認知失調的合理化」。當一個人第一次說謊，他的道德標準受到挫傷；若他不處理這個失敗，下一次說謊就更容易；若繼續，謊言就成為習慣性的應對機制。這正是雅各書1:15所描述的：「私慾既懷了胎，就生出罪來；罪既長成，就生出死來」。應對罪的滑坡，不是在底部（罪已成習慣時）才干預，而是在頂部（第一個念頭出現時）就攔截。基督徒的成聖訓練，從某種意義上就是訓練在試探的早期階段就做出正確選擇的能力。
+                布魯克斯的「白旗與紅旗」意象深刻地捕捉了上帝憐憫的雙重性質。許多人以上帝的憐憫為藉口，以為「反正上帝會饒恕，我可以繼續犯罪」——這正是撒但最成功的詭計之一，因為它用的是真實的神學概念（上帝的確憐憫人），卻得出了扭曲的結論。保羅在《羅馬書》6:1-2回應這個問題：「我們可以仍在罪中，叫恩典顯多嗎？斷乎不可！」真正理解上帝憐憫的人，會被憐憫所激勵而更加遠離罪，而不是更加放縱罪。上帝的憐憫是救恩的動力，不是犯罪的許可。
               </p>
             </div>
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">「屬靈的黑夜」：靈修枯燥是信心的試驗</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">「從髑髏地來到西奈山」——律法與福音的正確關係</h4>
               <p className="text-gray-700 leading-relaxed">
-                十六世紀西班牙神秘主義者十字架的若望（John of the Cross）描述了「靈魂的黑夜」（Dark Night of the Soul）——一種靈修中深刻的乾枯和感覺上與神距離的時期。改革宗神學家雖然不完全接受其神秘主義框架，但承認信徒確實有靈命的低谷期——禱告毫無感覺，讀經枯燥，神似乎遠離。這種枯燥可能有幾種來源：撒但的攻擊（使靈修感覺徒勞）、神的試煉（建造在感覺以外的信心）、身體的疲乏（影響屬靈敏感性）、未認罪的罪（造成與神的隔閡）。清教徒提供的洞見是：在這種時期，紀律性的持守靈修（即使毫無感覺）本身就是信心的行動，是對「神的話是真實的，不依賴我的感受」的宣告。約伯在最深的苦難中說「他雖殺我，我仍信靠他」（約伯記13:15）——這是在感受死去時，信心仍然存活的樣本。
+                那個十九世紀信徒的見證極其生動：他先去找摩西（律法），但律法只能把他打倒；然後絕望中來到髑髏地（福音），在那裡得到了赦免和醫治；再回去見摩西時，摩西不再是審判他的，而是對他微笑。這正是宗教改革的核心洞見：律法的功用是「把人逼到基督那裡」（加3:24），而不是救人。一旦靠著信心在基督裡得救，我們遵守律法的動機也從「害怕定罪」轉變為「感恩的愛」。正如改革宗神學所強調的：我們不是為了得救而遵守律法，而是因為已經得救而遵守律法。
               </p>
             </div>
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">成聖的「神聖—人道」合作：聖靈的工作與人的努力</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">「頭腦知識」與「心靈知識」的區分</h4>
               <p className="text-gray-700 leading-relaxed">
-                腓立比書2:12-13提供了成聖神學的最佳概述：「你們要恐懼戰兢，做成你們得救的工夫；因為你們立志行事，都是神在你們心裡運行，為要成就他的美意。」這兩節經文同時說「你們要…做成」（人的努力）和「神在你們心裡運行」（神的工作）——兩者不是矛盾，而是合作。清教徒神學將此稱為「神聖的合作」（divine synergy）：神的恩典使我們有意願和能力，我們在那意願和能力中積極行動。這個神學平衡既避免了「一切靠神，人不需做什麼」的被動主義，也避免了「一切靠自己努力」的律法主義。成聖是神真實的工作，同時也需要信徒真實的努力——就像植物的生長需要陽光和雨水（神的恩典），但農夫也需要澆水和除草（人的努力）。撒但攻擊這個平衡的兩個方向：或使人依賴自己的努力而疲憊（律法主義），或使人依賴被動等待神的感動而懶散（被動主義）。
+                本章提到撒但「不介意我們繼續瞭解基督，但竭力阻止我們明白成聖的真道」——這個區分有深刻的神學意義。華森說：「只要講道沒有在你的良心中做工，撒但並不介意你聽了多少次講道。」信息的傳遞與靈命的轉化是兩回事。一個人可以能夠背誦許多經文、通曉系統神學，卻從未讓真理真正改變他的心靈和生活。約翰福音17:3中的「認識」（ginosko）不是課堂上的資訊學習，而是婚姻式的親密關係。真正的屬靈知識必然帶來生命的改變；如果知道了卻沒有改變，我們需要問自己：我真的「認識」了嗎？
               </p>
             </div>
-
           </div>
         )}
       </div>
@@ -265,30 +269,30 @@ export default function Book18Ch10() {
           {expanded['questions'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
         </button>
         {expanded['questions'] && (
-          <div className="p-5 bg-white space-y-4">
+          <div className="p-5 bg-white space-y-3">
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
-              <p className="text-gray-700">四大策略中，哪一個目前對你的屬靈生命影響最大——誘惑犯罪、攔阻靈修、歪曲真理，還是阻礙成聖？你有什麼具體的跡象讓你這樣判斷？</p>
+              <p className="text-gray-700">撒但引誘我們犯罪的六個詭計中，你認為哪一個在你的生命中最有效果？為什麼那個特定的詭計對你特別有效？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
-              <p className="text-gray-700">策略二（攔阻靈修）——誠實評估：過去一個月你的讀經和禱告的質量和規律性如何？撒但是通過哪種方式最有效地打斷你的靈修（忙碌、枯燥感、分心或其他）？</p>
+              <p className="text-gray-700">本章提到要「積極參與成長和侍奉」來避免試探，因為大衛的跌倒發生在他不在自己當處的戰場上。回想你在信仰上最容易跌倒的時期，那時你的靈修生活和事奉狀態如何？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
-              <p className="text-gray-700">策略三（歪曲真理）——你對神的認識中，有哪些可能被撒但歪曲的地方？你對神的形象主要是父親、審判者、還是其他？這個形象是否符合聖經的全貌？</p>
+              <p className="text-gray-700">「撒但把自己的顏色塗在上帝身上」——你對上帝的形象中有哪些可能是被扭曲的？你如何更真實地認識聖經中啟示的上帝？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
-              <p className="text-gray-700">策略四（阻礙成聖）——你是否在某些罪上已經「停止爭戰」，接受它為「自己改不了的」？什麼使你放棄爭戰？腓立比書2:12-13的應許（神在你裡面運行）如何重新點燃爭戰的動力？</p>
+              <p className="text-gray-700">你有沒有用過上帝的憐憫來為自己的犯罪辯護，哪怕只是在心裡？那個時刻對你與上帝的關係有什麼影響？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
-              <p className="text-gray-700">「屬靈自滿」（老底嘉教會）——你在靈命上是否有「我已經做得夠好了」的感覺？這種自滿是如何悄悄產生的？以基督的形象為標準，你看見自己哪方面仍然有很大的成長空間？</p>
+              <p className="text-gray-700">布魯克斯的十個應對辦法中，哪三個你認為在你目前的屬靈生命中最需要加強？你打算如何具體地加強它們？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">6.</span>
-              <p className="text-gray-700">完成了第三部分「認識撒但的策略」的兩章後，你認識了撒但的許多具體手段。這些認識讓你感到更加謹慎和警醒，還是感到沉重和疲憊？你如何在認識敵人的同時，仍然保持在基督裡的喜樂和平安？</p>
+              <p className="text-gray-700">彼得在彼前5:8-9中說「保持堅固的信心」來抵擋魔鬼。對你來說，什麼時候你的信心最容易動搖？是什麼幫助你在那些時刻保持堅固？</p>
             </div>
           </div>
         )}
@@ -305,59 +309,42 @@ export default function Book18Ch10() {
         </button>
         {expanded['practice'] && (
           <div className="p-5 bg-white space-y-5">
-
             <div>
-              <h4 className="font-semibold text-green-700 mb-2">🎯 針對四大策略的個人防禦計劃</h4>
-              <p className="text-gray-700 mb-2">根據你的自我評估，為你最脆弱的策略領域制定具體的防禦計劃。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>選擇你認為目前受到最大攻擊的一個策略領域</li>
-                <li>列出三個具體的防禦行動（例如：若是「攔阻靈修」→ 每天固定時間讀經、關閉手機通知、找靈修夥伴問責）</li>
-                <li>為每個行動設定可衡量的具體指標（「每天早晨六點讀經30分鐘」比「多讀聖經」更具體）</li>
-                <li>與一位肢體分享這個計劃，邀請對方問責</li>
+              <h4 className="font-semibold text-green-700 mb-2">🎯 識別自己的「軟弱地圖」</h4>
+              <p className="text-gray-700 mb-2">本週花時間誠實地繪製自己的屬靈軟弱地圖：</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
+                <li>列出你最容易受試探的三個領域（可以很具體：網路、言語、金錢、驕傲等）</li>
+                <li>為每個領域寫下撒但通常使用的「詭計」：是以美好外表包裝？還是逐漸麻木良心？</li>
+                <li>為每個軟弱領域制定一個「遠離邊緣」的具體措施</li>
+                <li>把這個地圖帶入禱告，請求上帝的保守</li>
               </ul>
             </div>
-
             <div>
-              <h4 className="font-semibold text-green-700 mb-2">📖 「罪的滑坡地圖」練習</h4>
-              <p className="text-gray-700 mb-2">針對你一個慣性的罪，畫出它的「滑坡地圖」——從第一個念頭到最終行動的全過程。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>識別「觸發點」：什麼情境、情緒或念頭通常出現在罪之前？</li>
-                <li>識別「妥協步驟」：你通常是如何一步步走向最終的行為？</li>
-                <li>識別「最佳攔截點」：在哪個早期步驟，若你做出不同的選擇，就能打斷整個鏈條？</li>
-                <li>在「最佳攔截點」設置具體的替代行動（如：若觸發點是「孤單時瀏覽不當網站」→ 孤單時立即給朋友發信息或打開一本書）</li>
+              <h4 className="font-semibold text-green-700 mb-2">📖 落實布魯克斯的十個應對辦法</h4>
+              <p className="text-gray-700 mb-2">從布魯克斯的十個應對辦法中選擇本週最需要的兩個，制定具體計畫：</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
+                <li>「以聖經為標準行事」：選擇一段與你的試探領域相關的經文，每天晨起默想</li>
+                <li>「保持與上帝的團契」：設定固定的靈修時間，哪怕只有15分鐘，不讓世俗責任侵佔</li>
+                <li>「多多禱告」：在覺察到試探的當下立即禱告，不等到「有心情」才禱告</li>
               </ul>
             </div>
-
             <div>
-              <h4 className="font-semibold text-green-700 mb-2">🛡️ 重新點燃靈修渴慕的練習</h4>
-              <p className="text-gray-700 mb-2">若你的靈修生活已變得枯燥，嘗試以下方法重新點燃渴慕。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>換一個讀經方式：若你習慣默讀，嘗試大聲朗讀；若你習慣讀完整章節，嘗試深讀一節並慢慢默想</li>
-                <li>以詩篇禱告：選擇詩篇中的一首，用它的語言向神禱告，使禱告不再只是你自己的話</li>
-                <li>在大自然中靈修：換一個靈修環境，讓神的創造激發你對創造主的渴慕</li>
-                <li>閱讀一個信徒的靈命故事（如奥古斯丁的《懺悔錄》摘段），讓他人的真實靈命旅程激勵你</li>
-                <li>給神寫一封信，誠實地說出你靈修的掙扎和渴望</li>
+              <h4 className="font-semibold text-green-700 mb-2">⏰ 建立「靈性健康檢查」習慣</h4>
+              <p className="text-gray-700 mb-2">每週六晚上花10分鐘做一週的靈性回顧：</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
+                <li>我這週在哪裡「讓鳥兒做了窩」——屈服了哪些試探？</li>
+                <li>我這週在哪裡「不讓鳥兒做窩」——成功抵擋了哪些試探？上帝如何幫助了我？</li>
+                <li>我的靈修（禱告、讀經）這週是否有被撒但攔阻？如何被攔阻的？</li>
+                <li>我對上帝的認識有沒有被誤導或扭曲？需要重新校正什麼？</li>
+                <li>把回顧的結果帶入主日的敬拜和禱告</li>
               </ul>
             </div>
-
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">✝️ 成聖的里程碑評估</h4>
-              <p className="text-gray-700 mb-2">花時間誠實地評估你過去一年靈命成長的具體面向。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>與一年前相比，你在哪些具體的性情或行為上有明顯的成長？（愛心更多？耐心更強？更少憤怒？）</li>
-                <li>哪些方面你感到幾乎沒有成長，甚至可能退步了？</li>
-                <li>這種自我評估讓你感到什麼？（謙卑？感恩？憂愁？）</li>
-                <li>根據這個評估，為接下來三個月設定一個具體的成聖目標（針對一個你希望在基督形象上成長的特定領域）</li>
-              </ul>
-            </div>
-
-            <div className="bg-green-50 rounded-lg p-4 mt-2">
-              <h4 className="font-semibold text-green-800 mb-2">🙏 禱告詞</h4>
-              <p className="text-gray-700 leading-relaxed italic text-sm">
-                「天父，謝謝祢在祢的話語中揭示了仇敵的策略，使我不至被他的計謀所愚弄。我承認，我在四個領域都有軟弱：有時被試探引入罪，有時讓靈修生活被忙碌擠走，有時接受了關於祢的謊言，有時停止了對成聖的追求。求聖靈更新我——不是靠我自己的努力，而是靠祢在我裡面運行的大能。讓我每天以戰士的眼光醒來，知道爭戰是真實的，但基督的得勝更加真實。奉得勝主的名，阿們。」
+            <div className="bg-green-50 rounded-lg p-4 mt-4">
+              <h4 className="font-semibold text-green-700 mb-2">🙏 禱告</h4>
+              <p className="text-gray-700 italic leading-relaxed">
+                主耶穌，你是得勝的主，是我唯一的盼望和力量。我承認自己軟弱，在撒但的許多詭計面前常常跌倒。感謝你的寶血赦免了我一切的罪，也感謝你應許使我成聖。求你幫助我在每一個試探面前，先想到你的榮耀，再想到罪的後果；先奔向你的憐憫，再面對自己的軟弱。使我越來越認識你，不只是頭腦上的認識，而是心靈深處真實的相交。奉你聖名，阿們。
               </p>
             </div>
-
           </div>
         )}
       </div>

@@ -16,9 +16,8 @@ export default function Book18Ch9() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-red-600 to-rose-700 bg-clip-text text-transparent">第九章</h1>
+        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">第九章</h1>
         <h2 className="text-xl font-semibold text-gray-700">撒但的策略與伎倆</h2>
-        <p className="text-sm text-gray-500 mt-2">第三部分：認識撒但的策略</p>
       </div>
 
       {/* 主要內容 */}
@@ -34,121 +33,169 @@ export default function Book18Ch9() {
           <div className="p-5 bg-white space-y-6">
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">清教徒論撒但的策略</h3>
+              <h3 className="font-bold text-gray-900 mb-3 text-lg">特洛伊木馬——撒但的行事方式</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                保羅在哥林多後書2:11說「我們並非不曉得他的詭計」（his schemes，his devices）——這暗示信徒有責任認識撒但的策略，使他的陰謀無法得逞。正如孫子兵法所說「知己知彼，百戰百勝」，認識仇敵的戰術是屬靈爭戰不可或缺的一部分。
+                布魯斯·弗雷德里克森在其《撒但教》一書中寫道：「在特洛伊木馬故事中，希臘士兵沒有直接攻擊特洛伊城，而是造了一個巨大的空心木馬。他們把木馬放在特洛伊城城門前。特洛伊人以為那個木馬是個禮物，就把它推進城裡去展示。特洛伊人睡著之後，藏在木馬裡的希臘士兵悄悄爬了出來，出其不意地佔領了特洛伊城。撒但經常這樣行事——出乎人們意料地從後面或裡面進行攻擊。」
               </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                清教徒先賢在這方面留下了寶貴的財富。本章主要借鑒以下幾位清教徒對撒但策略的深入分析：
+              <p className="text-gray-700 leading-relaxed">
+                我們越是經歷上帝的恩典，也越容易遇到撒但的策略和詭計，因為撒但非常不願意看到真正的基督徒與上帝團契。正如路德所說：「凡是上帝建教堂的地方，撒但都會在那裡建一個分堂。魔鬼是個模仿者」——他甚至會模仿上帝。
               </p>
-              <ul className="space-y-2 mt-2 text-gray-700 text-sm">
-                <li className="border-l-4 border-red-300 pl-3"><strong>湯瑪斯·布魯克斯</strong>（Thomas Brooks，1608-1680）：《對付撒但詭計的寶貴應對辦法》（Precious Remedies Against Satan's Devices）</li>
-                <li className="border-l-4 border-red-300 pl-3"><strong>理查·吉爾平</strong>（Richard Gilpin，1625-1700）：《論撒但的試探》（Daemonologia Sacra: A Treatise of Satan's Temptations）</li>
-                <li className="border-l-4 border-red-300 pl-3"><strong>威廉·司布斯托</strong>（William Spurstowe，1605-1666）：《撒但的詭計》（The Wiles of Satan）</li>
-                <li className="border-l-4 border-red-300 pl-3"><strong>約翰·道內姆</strong>（John Downname，1571-1652）：《基督徒的爭戰》（The Christian Warfare）</li>
-                <li className="border-l-4 border-red-300 pl-3"><strong>威廉·古諾爾</strong>（William Gurnall，1617-1679）：《穿戴全副軍裝的基督徒》（The Christian in Complete Armour）</li>
-                <li className="border-l-4 border-red-300 pl-3"><strong>湯瑪斯·古德溫</strong>（Thomas Goodwin，1600-1680）：《作品集》中關於屬靈爭戰的章節</li>
-              </ul>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">撒但為何如此善於策略</h3>
+              <h3 className="font-bold text-gray-900 mb-3 text-lg">六位清教徒的智慧結晶</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                在具體分析撒但的策略之前，清教徒指出了撒但在策略上的幾個優勢，使信徒需要特別警醒：
+                清教徒經歷了很多與上帝的親密團契，非常熟悉撒但的策略和詭計。在他們的作品中，常常深刻地談到屬靈爭戰。以下六位清教徒及其作品是本章的主要資料來源：
               </p>
-
-              <div className="space-y-3">
-                <div className="bg-red-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-red-800 mb-1">一、長達幾千年的試驗積累</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但自從人類被造就開始試探人類，幾千年來他研究了無數人的心理弱點、性情特徵和在不同情況下的反應。他對人性的了解遠超任何心理學家——不是通過同情，而是通過幾千年的惡意觀察和試驗。清教徒吉爾平說：「他是一個試驗老到的老手，沒有任何類型的人是他不曾試過的。」
-                  </p>
+              <div className="space-y-2 ml-4">
+                <div className="flex gap-3">
+                  <span className="text-purple-600 font-bold flex-shrink-0">①</span>
+                  <p className="text-gray-700"><span className="font-semibold">湯瑪斯·布魯克斯</span>——《對付撒但詭計的寶貴應對辦法》，著名經典，多次由真理之旗出版社再版。</p>
                 </div>
-
-                <div className="bg-red-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-red-800 mb-1">二、針對個人弱點的量身訂製</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但不使用一刀切的策略；他針對每個人的特定弱點、性情、處境和靈命狀況量身訂製試探。他知道什麼最容易使一個驕傲的人跌倒，什麼最容易使一個抑鬱的人絕望，什麼最容易使一個貪財的人妥協。清教徒司布斯托說：「撒但是一個精明的獵人，知道每種獵物最容易被哪種誘餌吸引。」
-                  </p>
+                <div className="flex gap-3">
+                  <span className="text-purple-600 font-bold flex-shrink-0">②</span>
+                  <p className="text-gray-700"><span className="font-semibold">理查·吉爾平</span>——《論撒但的試探》，五百頁的經典作品，最近由惟獨上帝之榮耀出版社再版。</p>
                 </div>
-
-                <div className="bg-red-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-red-800 mb-1">三、選擇最有利的時機</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但是試探的時機大師。他不在信徒靈命高昂時正面進攻，而是等待最脆弱的時刻——疲憊時、成功後的自滿、孤獨時、悲傷或憤怒中、長期爭戰後的疲乏。彼得前書5:8說他「往來遊行，尋找可吞吃的人」——這個「尋找」暗示他在研究何時出手最有效。
-                  </p>
+                <div className="flex gap-3">
+                  <span className="text-purple-600 font-bold flex-shrink-0">③</span>
+                  <p className="text-gray-700"><span className="font-semibold">威廉·司布斯托</span>——《撒但的詭計》，罕見的小書，短小精悍，大有幫助。</p>
                 </div>
-
-                <div className="bg-red-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-red-800 mb-1">四、以光明天使偽裝</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    哥林多後書11:14說「撒但也裝作光明的天使」。他最成功的策略往往是偽裝成有益的，而非顯明地邪惡的。他可以包裝一個罪為「自我照顧」，包裝驕傲為「正當的自信」，包裝貪財為「為家人負責任的規劃」。這個偽裝使信徒很難在當下認出他的工作。
-                  </p>
+                <div className="flex gap-3">
+                  <span className="text-purple-600 font-bold flex-shrink-0">④</span>
+                  <p className="text-gray-700"><span className="font-semibold">約翰·道內姆</span>——《基督徒的爭戰》，兩卷共1800頁的長篇巨著，十七世紀以來未曾再版。</p>
                 </div>
-
-                <div className="bg-red-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-red-800 mb-1">五、利用第三方</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    撒但常常不直接行動，而是通過其他人——朋友的不良建議、媒體的誘惑性內容、不敬虔的同伴影響。耶穌稱彼得為「撒但」（馬太福音16:23），因為彼得（無意中）成了撒但試探基督的工具。最危險的試探，往往來自我們最信任的人。
-                  </p>
+                <div className="flex gap-3">
+                  <span className="text-purple-600 font-bold flex-shrink-0">⑤</span>
+                  <p className="text-gray-700"><span className="font-semibold">威廉·格諾爾</span>——《穿戴全副軍裝的基督徒》，詳細解釋《以弗所書》第6章，由真理之旗出版社再版。</p>
                 </div>
-
-                <div className="bg-red-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-red-800 mb-1">六、持之以恆、不知疲倦</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    啟示錄12:12說撒但「知道自己的時候不多，就氣忿忿地下到你們那裡去了」。他的憤怒使他持之以恆，從不因失敗而放棄。他可能暫時撤退（路加福音4:13說「魔鬼就離開他，再等候時機」），但他永遠不會永久放棄。信徒不能在屬靈爭戰中「退休」。
-                  </p>
+                <div className="flex gap-3">
+                  <span className="text-purple-600 font-bold flex-shrink-0">⑥</span>
+                  <p className="text-gray-700"><span className="font-semibold">湯瑪斯·古德文</span>——《行走在黑暗中的光明之子》，關於撒但活動的章節對處在屬靈黑暗中的人極有幫助。</p>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">布魯克斯論撒但的試探裝置（Devices）</h3>
+              <h3 className="font-bold text-gray-900 mb-3 text-lg">用捕鼠器理解「策略、詭計與應對辦法」</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                湯瑪斯·布魯克斯在《對付撒但詭計的寶貴應對辦法》中，列出了撒但使用的大量具體「裝置」（devices，即策略或手段）。以下是其中最重要的幾個：
+                有一週，作者家裡來了一些不知確切數目的老鼠家庭。他與妻子相對冷靜和理性地畫了四個同心圓處理這個問題：
+              </p>
+              <div className="bg-purple-50 rounded-lg p-4 space-y-2 mb-3">
+                <div className="flex gap-3">
+                  <span className="text-purple-600 font-bold flex-shrink-0">第一圓</span>
+                  <p className="text-gray-700"><span className="font-semibold">目標：</span>清除家裡所有的老鼠。</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-purple-600 font-bold flex-shrink-0">第二圓</span>
+                  <p className="text-gray-700"><span className="font-semibold">策略：</span>找捕鼠器——咬合捕鼠器、有毒捕鼠器、粘性捕鼠器。</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-purple-600 font-bold flex-shrink-0">第三圓</span>
+                  <p className="text-gray-700"><span className="font-semibold">計謀/誘餌：</span>用乳酪或花生醬來誘惑老鼠落入圈套。</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-purple-600 font-bold flex-shrink-0">第四圓</span>
+                  <p className="text-gray-700"><span className="font-semibold">應對辦法：</span>把死老鼠處理掉；活老鼠拿出去殺死；找到被毒死的老鼠並清除。</p>
+                </div>
+              </div>
+              <p className="text-gray-700 leading-relaxed">
+                撒但就像對待這些老鼠一樣對待我們，只是他的四個同心圓的內容更複雜。他的最大目標是損害上帝的榮耀，包括：毀滅我們（因我們承受上帝形像）、顛覆上帝的國度、繼續控制屬他的臣民、重新奪回失去的勢力範圍。
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-gray-900 mb-3 text-lg">詞彙辨析：策略、詭計、計謀</h3>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                「詭計」（device）這個詞的希臘語是「noema」，指用來欺騙別人的思想或行為——如戰爭中的伏擊、運動中的假動作或辯論中的錯誤推理。保羅在《哥林多後書》第2章11節說：「免得撒但趁著機會勝過我們，因我們並非不曉得它的詭計。」
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                撒但的第一個詭計是鼓勵鬆懈的管教（導致哥林多教會的混亂）；教會悔改後，他的下一個詭計則是提倡嚴厲、不饒恕的管教。撒但一直使用同一個策略，但計謀不同。
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                「詭計」的同義詞還有：「wiles」（源自希臘語「methodeia」，《以弗所書》4:14；6:11）、「schemes」（陰謀）、「stratagem」（計謀）——四個詞含義相近，都指撒但帶有欺騙性的手段。
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-gray-900 mb-3 text-lg">撒但善於試探的六大原因（司布斯托）</h3>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                威廉·司布斯托指出，以下六個原因使撒但如此善於通過各種詭計誘惑我們犯罪：
               </p>
 
               <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-2">裝置一：將罪呈現為微小的</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-2">
-                    撒但說：「這只是一件小事；神不會在乎這點點的罪；其他人做了更多更壞的事。」他使罪看起來微不足道，使良知的警示顯得過度敏感。
-                  </p>
-                  <p className="text-gray-700 text-sm leading-relaxed italic">
-                    <strong>應對辦法</strong>（布魯克斯）：記住，沒有「小罪」——每一個罪都是對無限聖潔神的冒犯，每一個微小的罪都足以使人下地獄（雅各書2:10）。大衛的「小小」眼目淫亂，最終導致了姦淫、謀殺和數年的屬靈黑暗。一點點的酵能發起全團。
+                <div className="border-l-4 border-purple-300 pl-4">
+                  <h4 className="font-semibold text-gray-800 mb-1">（1）撒但的屬靈本質及智力能力</h4>
+                  <p className="text-gray-700 leading-relaxed">
+                    人們彼此試探時採用明顯的行動，但撒但是個靈，可以直接侵入我們心靈。他進入了猶大的心（約13:2），充滿了亞拿尼亞的心（徒5:3）。撒但雖然墮落，仍是天使，在智力上高過我們。愛德華滋說：「魔鬼在宇宙中最好的神學院，即天堂中的天堂，受過教育。」加爾文稱魔鬼為「精明的神學家」。撒但能把致命的智力毒藥隱藏在「美麗而閃光的外表」之下。
                   </p>
                 </div>
 
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-2">裝置二：將罪呈現為甜蜜和令人愉快的</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-2">
-                    撒但遮蓋罪惡的後果，只呈現眼前的樂趣。他不讓你看見隱藏在誘惑後面的苦毒和破壞。
-                  </p>
-                  <p className="text-gray-700 text-sm leading-relaxed italic">
-                    <strong>應對辦法</strong>：看見罪的全圖——不只是眼前的甜蜜，也要看見它的後果（破壞的關係、失去的純潔、神的不悅、良心的控訴）。希伯來書11:25描述摩西選擇「寧可與神的百姓同受苦害，也不願暫時享受罪中之樂」——他看見了「暫時」二字。
+                <div className="border-l-4 border-purple-300 pl-4">
+                  <h4 className="font-semibold text-gray-800 mb-1">（2）撒但的豐富經歷</h4>
+                  <p className="text-gray-700 leading-relaxed">
+                    撒但年老但不體弱。多少個世紀以來，他已掌握了邪惡的藝術。他知道釣什麼魚用什麼誘餌：用美麗誘惑年輕人，用金錢誘惑節儉的人，用權勢誘惑有野心的人。威廉·詹金說：「他用蘋果誘惑夏娃，用葡萄酒誘惑挪亞，用衣裳誘惑基哈西，用錢袋誘惑猶大。」司布斯托說，就像畫家阿佩利斯只畫了安提哥納王的一半臉（隱藏了沒有眼睛的那一半），撒但也只畫罪的一半臉。他使我們的防線改變方向，也自信地攻擊最聖潔的信徒。「撒但如果不能熄滅他們的燈火，就會竭力使他們的光彩變得暗淡；如果不能使船沉沒，就會竭力發動風暴。」
                   </p>
                 </div>
 
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-2">裝置三：在犯罪後，使神的憐憫顯得廉價</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-2">
-                    「神是慈愛的，祂必饒恕」——撒但使用這個真理來鼓勵預謀的罪。他在試探之前說「神會饒恕的」，在犯罪之後又說「你真是無藥可救的罪人」。
-                  </p>
-                  <p className="text-gray-700 text-sm leading-relaxed italic">
-                    <strong>應對辦法</strong>：神的恩典是真實的，但「繼續犯罪，使恩典顯多」的邏輯是錯誤的（羅馬書6:1-2）。真正的恩典使人離罪，不是鼓勵犯罪。同時，在犯罪後，要記住神的饒恕是真實的——不可讓撒但用已認罪、已得赦免的罪繼續定罪你。
+                <div className="border-l-4 border-purple-300 pl-4">
+                  <h4 className="font-semibold text-gray-800 mb-1">（3）撒但精力充沛、不知疲倦</h4>
+                  <p className="text-gray-700 leading-relaxed">
+                    撒但誘惑我們懈怠，但他自己卻從不懈怠。他有個偏狹的頭腦，一心一意要使自己成為可怕的。一條古老的義大利諺語說：「主啊，救我脫離只有一件事可做的人。」司布斯托寫道：「使人相信謹慎行事是我們的本分，相信在自己的呼召上勤勉是防止靈魂被情欲敗壞或抵擋那位勤勉的試探者之侵襲的最佳辦法，這是多麼艱難的事啊！」
                   </p>
                 </div>
 
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-2">裝置四：轉移注意力到別人的罪</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-2">
-                    「你看看那些假冒為善的基督徒！他們比你更差。」撒但使人把注意力放在他人的失敗上，而非自己的罪和神的聖潔。
+                <div className="border-l-4 border-purple-300 pl-4">
+                  <h4 className="font-semibold text-gray-800 mb-1">（4）撒但擁有一個邪靈的國度</h4>
+                  <p className="text-gray-700 leading-relaxed">
+                    保羅說我們是與「那些執政的，掌權的，管轄這幽暗世界的，以及天空屬靈氣的惡魔爭戰」（弗6:12）。撒但的國度有目的地聯合在一起——每個邪靈都憎恨上帝的榮耀和我們的喜樂。撒但國度中沒有紛爭（太12:26），沒有因低薪而引發的暴動，沒有在執行艱難使命時來自內部的阻礙。司布斯托說：「毀滅的罪人是地獄唯一的戰利品和報酬。」邪靈的團契常常勝過聖徒的團契，這是令人悲哀的事。
                   </p>
-                  <p className="text-gray-700 text-sm leading-relaxed italic">
-                    <strong>應對辦法</strong>：我要向神交帳，不是向其他人的標準交帳。其他人的罪不能為我的罪辯護。在審判席前，「但其他人……」不是有效的答辯。眼目轉向基督，而非橫向比較。
+                </div>
+
+                <div className="border-l-4 border-purple-300 pl-4">
+                  <h4 className="font-semibold text-gray-800 mb-1">（5）撒但的暗示幾乎無法與我們自己的敗壞區分</h4>
+                  <p className="text-gray-700 leading-relaxed">
+                    有時很難知道某個罪惡的想法是來自撒但，還是源自我們自己。古老的箴言說：「魔鬼不會自我聲張。」司布斯托說，母鳥會孵化一個鳥蛋並養育幼鳥，直到發現那只幼鳥並不是自己的孩子，然後才把入侵者趕出巢穴。如果我們能辨別撒但強加進來的暗示，我們也會拒絕它。如果大衛王知道是撒但在激動他數點以色列民，他必定會立刻停止（代上21:1）。
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-purple-300 pl-4">
+                  <h4 className="font-semibold text-gray-800 mb-1">（6）撒但善於為暗示配上我們敗壞的理由</h4>
+                  <p className="text-gray-700 leading-relaxed">
+                    撒但不能靠武力征服我們的靈魂；他的成功靠的是使我們分辨不清他那些暗示的來源。「撒但可以誘惑我們，惟有上帝能夠有效地改變我們，但沒有人能夠強迫我們。」撒但非常善於誘使我們相信自己想要相信的：使無神論者相信敬拜是心靈空虛者的拐杖；使已歸正者相信只要有一點信心就足夠了；使掛名基督徒相信悟性的信心就夠了；使真信徒相信世俗之人不像公義之人那樣受苦。
+                  </p>
+                  <p className="text-gray-700 leading-relaxed mt-2 italic">
+                    司布斯托總結說：「那個邪惡的撒種者撒下一些誘惑的種子，而心靈恰好因著住在裡面的敗壞的律，是適宜的土壤，那些誘惑的種子很快就會發芽長出行動，然後生根，結出惡毒和苦惱的果子。」
                   </p>
                 </div>
               </div>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-gray-900 mb-3 text-lg">撒但的四大主要策略（預告）</h3>
+              <p className="text-gray-700 leading-relaxed mb-2">
+                在本書的第三部分，作者將仔細探討撒但的四個主要策略：
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                <div className="bg-purple-50 rounded-lg p-3">
+                  <p className="font-semibold text-purple-700">策略一</p>
+                  <p className="text-gray-700 text-sm">引誘我們犯罪</p>
+                </div>
+                <div className="bg-purple-50 rounded-lg p-3">
+                  <p className="font-semibold text-purple-700">策略二</p>
+                  <p className="text-gray-700 text-sm">攔阻我們的靈修</p>
+                </div>
+                <div className="bg-purple-50 rounded-lg p-3">
+                  <p className="font-semibold text-purple-700">策略三</p>
+                  <p className="text-gray-700 text-sm">曲解上帝和真理</p>
+                </div>
+                <div className="bg-purple-50 rounded-lg p-3">
+                  <p className="font-semibold text-purple-700">策略四</p>
+                  <p className="text-gray-700 text-sm">反對我們的成聖</p>
+                </div>
+              </div>
+              <p className="text-gray-700 leading-relaxed mt-3">
+                正如軍隊的領導人必須記錄戰爭中敵人的策略和計謀，真正的基督徒也必須熟知仇敵撒但及其戰略戰術，以便思考和實施上帝在聖經中啟示的應對辦法。
+              </p>
             </div>
 
           </div>
@@ -166,35 +213,30 @@ export default function Book18Ch9() {
         </button>
         {expanded['exploration'] && (
           <div className="p-5 bg-white space-y-5">
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">湯瑪斯·布魯克斯的《寶貴應對辦法》：清教徒屬靈心理學的巔峰</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">清教徒文學的屬靈爭戰傳統</h4>
               <p className="text-gray-700 leading-relaxed">
-                布魯克斯的《對付撒但詭計的寶貴應對辦法》（1652年）是清教徒屬靈文學中最重要的作品之一。這本書的獨特之處在於，它以「問題—解決方案」的格式組織：首先描述撒但的一個具體「裝置」（如何試探人），然後提供多個具體的「應對辦法」（如何抵制那個試探）。布魯克斯在序言中說：「撒但的最大技巧就是在試探中隱藏毒藥，用甜蜜的糖衣包裹苦藥。」他對人性心理的洞察遠超他的時代，預見了後來心理學對防禦機制、認知偏誤等現象的描述。今天，這本書仍然是了解撒但策略和如何回應的最佳實踐指南之一。司布真說：「那些從不讀古老書籍的人，在屬靈判斷力上是可憐的。布魯克斯的書是每個基督徒必須擁有的。」
+                十七世紀的清教徒之所以能寫出如此豐富的屬靈爭戰文學，是因為他們在教會受逼迫、社會動盪的背景下親身經歷了與撒但的激烈爭戰。布魯克斯的《對付撒但詭計的寶貴應對辦法》（1652年）成書於英國清教徒革命後期，道內姆的《基督徒的爭戰》（1612年）則是在宗教改革後教會重建的時期寫就。這些作者不是在象牙塔裡做神學抽象思考，而是在屬靈牧養和個人爭戰的火爐中鍛煉出來的智慧。他們的著作之所以歷久彌新，正是因為他們所描述的撒但策略在每個時代都保持不變。
               </p>
             </div>
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">「試探」與「測試」的神學區分：神試煉與撒但試探</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">撒但的「模仿策略」——假冒為善</h4>
               <p className="text-gray-700 leading-relaxed">
-                雅各書1:2-4和1:13-15描述了兩種完全不同的「考驗」：神的試煉（testing）和撒但的試探（temptation）。希臘文同一個詞（peirasmos）可以指兩者，但中文通常翻譯為兩個不同的詞。神的試煉目的是建造信心和品格（雅各書1:3），使人更加成熟；撒但的試探目的是引誘人犯罪（雅各書1:14-15）。神「試驗」亞伯拉罕（創世記22章），不是要他犯罪，而是要建造他的信心；撒但試探耶穌（馬太福音4章），是想使祂放棄神旨意的路。兩種「考驗」的反應不同：面對神的試煉，應當「忍受」（雅各書1:12），因為它結出好果子；面對撒但的試探，應當「逃跑」（哥林多前書6:18，提摩太後書2:22）或「抵擋」（雅各書4:7）。辨別當前的困難是神的試煉還是撒但的試探，對應當如何回應有實際意義。
+                路德說「撒但是個模仿者」，這一洞見極其深刻。撒但不只是直接攻擊，更常採用模仿和偽裝。他建「分堂」，不是要打倒教堂，而是要讓人分不清哪個是真的。保羅說撒但能裝作「光明天使」（林後11:14）。這意味著撒但最危險的詭計往往不是顯而易見的惡，而是看起來很美善的偽善。假先知、假福音、半真半假的神學，都是撒但建立的「分堂」。因此，辨別能力（discernment）是屬靈爭戰中最重要的武器之一，需要深入認識上帝話語的標準。
               </p>
             </div>
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">「裝作光明天使」：靈性辨別的必要性</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">從心理學視角看撒但的「第六個原因」</h4>
               <p className="text-gray-700 leading-relaxed">
-                哥林多後書11:14說撒但能「裝作光明的天使」，這使靈性辨別（discernment）成為一個關鍵的屬靈恩賜和紀律。約翰一書4:1說「不要信服一切的靈，總要試驗那些靈是出於神的不是，因為世上有許多假先知已經出來了」。靈性辨別的能力如何培養？首先，深知聖經——許多偽靈性的東西，只要熟悉聖經就能辨別其矛盾之處。其次，注意果子——馬太福音7:16說「憑著他們的果子，就可以認出他們來」；良善的屬靈教導結出聖潔、謙卑、愛基督的果子，偽靈性結出驕傲、屬靈上癮、或道德上的妥協。第三，在靈命成熟的群體中尋求集體的辨別——重要的屬靈問題不應只靠個人判斷。第四，以神的榮耀為標準——任何使自我中心化、削弱聖經權威、或繞過基督而直接靠近神的教導，都應當警惕。
+                司布斯托的第六個原因——「撒但善於為暗示配上我們自己敗壞的理由」——在現代認知心理學中有對應的描述，稱為「確認偏誤」（confirmation bias）。我們天然傾向於尋找支持自己已有信念的資訊，過濾掉反對的聲音。撒但深諳此道，他不是用明顯的謊言，而是用我們內心已有的慾望和偏見來建構誘惑。因此，屬靈成熟的標誌之一是能夠在禱告和上帝話語的光照下，誠實地質問自己的動機和想法。「我是在跟隨上帝的心意，還是在為自己的慾望找理由？」
               </p>
             </div>
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">神允許試探的目的：信心的精煉</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">邪靈的「高度團結」與教會的分裂</h4>
               <p className="text-gray-700 leading-relaxed">
-                一個深刻的問題是：如果神是全能的，為何祂允許撒但試探信徒？清教徒提供了幾個神學上的回答：第一，試探揭示我們心中真實的狀況——約伯的試探顯出了他信心的真實；我們只有在壓力下才知道自己真正相信什麼。第二，成功抵擋試探是信心操練的機會——就像肌肉在阻力下才能增強，信心在試探的抵擋中才能深化。第三，通過試探，我們更深地體驗基督的同在和能力——保羅的「肉中刺」（可能的邪靈攻擊）最終使他體驗「我的能力是在人的軟弱上顯得完全」（哥林多後書12:9）。第四，我們的得勝見證榮耀了神，也激勵其他信徒（啟示錄12:11說他們「因自己所見證的道，並不愛惜性命，直到於死」）。但這些原因不應成為輕視試探或不尋求幫助的藉口——神允許試探，但祂也應許了出路（哥林多前書10:13）。
+                司布斯托的觀察令人警醒：「邪靈的團契常常勝過聖徒的團契。」地獄因著對上帝共同的憎恨而高度團結，天上的善天使也彼此合一；但地上的教會卻常常四分五裂。這一反差提醒我們：教會的分裂和紛爭本身就是撒但的勝利。《約翰福音》第17章中耶穌的大祭司禱告——「使他們合而為一」——不只是一個理想，也是對抗撒但的屬靈策略。當基督徒彼此爭鬥時，我們給了撒但最大的便利。保羅勸告以弗所人「竭力保守聖靈所賜合而為一的心」（弗4:3），正是基於這一屬靈現實。
               </p>
             </div>
-
           </div>
         )}
       </div>
@@ -209,30 +251,30 @@ export default function Book18Ch9() {
           {expanded['questions'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
         </button>
         {expanded['questions'] && (
-          <div className="p-5 bg-white space-y-4">
+          <div className="p-5 bg-white space-y-3">
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
-              <p className="text-gray-700">本章說撒但「針對每個人的特定弱點量身訂製試探」。誠實地回顧，你自己的性情、背景和靈命狀況的哪些方面，讓你特別容易受到哪些類型的試探？認識這一點如何幫助你更好地防衛？</p>
+              <p className="text-gray-700">回想你生命中曾遭遇撒但「特洛伊木馬式」攻擊的時刻——那個看似美好、卻從內部造成破壞的試探是什麼？你是如何發現它真正性質的？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
-              <p className="text-gray-700">布魯克斯的第一個裝置：「將罪呈現為微小的」。在你的生活中，有哪些你已經習慣的「小罪」，可能已經不再感覺是罪？神的聖潔如何重新校準你對罪嚴重性的認識？</p>
+              <p className="text-gray-700">撒但的第二個原因指出他「只畫罪的一半臉」——使罪看起來美好而隱藏其後果。在你的生活中，哪些罪惡或誘惑常常以美好的外表出現？你如何學習看見它被隱藏的那一半？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
-              <p className="text-gray-700">「神是慈愛的，祂必饒恕」——你是否曾（有意或無意地）用神的恩典來合理化繼續在某個罪中？這個「廉價恩典」的心態，與真正體驗神赦罪恩典後想要離罪的心態，有什麼根本不同？</p>
+              <p className="text-gray-700">司布斯托說撒但「誘惑我們懈怠，但他自己卻從不懈怠」。你在屬靈生活中最容易懈怠的領域是哪裡？這與撒但不知疲倦地攻擊有什麼關係？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
-              <p className="text-gray-700">撒但選擇最脆弱的時刻出手——回想你曾有過的最嚴重的靈命失敗，當時你是在什麼狀態下（疲憊？孤單？剛剛有了成功？長期壓力後？）？認識這個規律如何幫助你預防？</p>
+              <p className="text-gray-700">你如何在實際生活中分辨一個罪惡的念頭是來自撒但的誘惑，還是源自自己內心的敗壞？這種分辨對你的禱告和靈修有什麼影響？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
-              <p className="text-gray-700">「試探」與「測試」的區分——你目前面對的最大困難，是更像神的試煉（建造你的信心），還是更像撒但的試探（引誘你犯罪）？你如何分辨，又如何相應地回應？</p>
+              <p className="text-gray-700">本章提到邪靈的團結常常勝過聖徒的團契。你所在的教會群體中有哪些紛爭或分裂？你認為撒但在其中扮演了什麼角色？你可以做什麼來促進合一？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">6.</span>
-              <p className="text-gray-700">撒但「持之以恆，從不放棄」——你在屬靈爭戰中是否也有類似的持之以恆？你是否曾因疲乏而放鬆了對某些試探的防守，讓它慢慢成為習慣性的罪？如何重新建立警戒？</p>
+              <p className="text-gray-700">挪亞、羅得、大衛、彼得這些偉大的信心前輩都在撒但的試探下跌倒過。這個事實對你認識自己的屬靈軟弱和對上帝的倚靠有何提醒？</p>
             </div>
           </div>
         )}
@@ -249,60 +291,41 @@ export default function Book18Ch9() {
         </button>
         {expanded['practice'] && (
           <div className="p-5 bg-white space-y-5">
-
             <div>
-              <h4 className="font-semibold text-green-700 mb-2">📖 閱讀布魯克斯的《寶貴應對辦法》</h4>
-              <p className="text-gray-700 mb-2">嘗試閱讀這部清教徒經典的部分章節，深化對撒但策略的認識。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>選擇前三個「裝置及其應對辦法」作為入門閱讀</li>
-                <li>注意布魯克斯如何從聖經引用大量例證</li>
-                <li>對每個「裝置」問自己：「撒但曾用這個手段對付過我嗎？」</li>
-                <li>對每個「應對辦法」問：「這個建議在我的處境中如何實際應用？」</li>
-                <li>如果中文版難以獲得，可搜尋「Thomas Brooks Precious Remedies 中文」</li>
+              <h4 className="font-semibold text-green-700 mb-2">📖 研讀清教徒屬靈爭戰著作</h4>
+              <p className="text-gray-700 mb-2">本章介紹了六位清教徒的著作，選擇其中一本開始閱讀：</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
+                <li>優先考慮湯瑪斯·布魯克斯的《對付撒但詭計的寶貴應對辦法》（已有中譯本）</li>
+                <li>每天讀一小段，記錄撒但的一個詭計和對應的應對辦法</li>
+                <li>把讀到的詭計與自己的實際經歷相對照</li>
               </ul>
             </div>
-
             <div>
-              <h4 className="font-semibold text-green-700 mb-2">🎯 個人「試探模式分析」</h4>
-              <p className="text-gray-700 mb-2">花時間做一個誠實的個人試探模式分析，識別你最脆弱的時刻和領域。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>回顧過去三個月內你最常犯的罪，找出共同的模式</li>
-                <li>問：這些罪通常發生在什麼時刻？（疲憊、飢餓、孤獨、剛有壓力等）</li>
-                <li>問：通常有什麼「觸發點」（特定的媒體、人際關係、情境）？</li>
-                <li>問：撒但在引導你到犯罪之前，通常先說什麼謊言讓你放鬆防守？</li>
-                <li>為你識別的「脆弱時刻」制定具體的保護計劃</li>
+              <h4 className="font-semibold text-green-700 mb-2">🎯 建立「試探日誌」</h4>
+              <p className="text-gray-700 mb-2">本週開始記錄你所遇到的試探：</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
+                <li>寫下試探的性質：它以什麼外貌出現？是透過人、媒體、還是內心的念頭？</li>
+                <li>嘗試辨別：這更像是撒但的外部誘惑，還是自己內心敗壞的慾望？</li>
+                <li>記錄你的回應：你如何抵擋？結果如何？</li>
+                <li>在週末禱告中把這週的試探帶到上帝面前，尋求祂的光照</li>
               </ul>
             </div>
-
             <div>
-              <h4 className="font-semibold text-green-700 mb-2">🛡️ 學習辨別「神的試煉」與「撒但的試探」</h4>
-              <p className="text-gray-700 mb-2">選擇你目前最大的一個困難，按照以下問題進行辨別分析。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>這個困難是否在引誘我犯罪（向謊言妥協、放棄信心、選擇自我保護勝過信靠神）？→ 可能是試探</li>
-                <li>這個困難是否在操練我的信心、耐心或謙卑，雖然過程痛苦但結果是成長？→ 可能是神的試煉</li>
-                <li>雅各書1:2-4的「全然喜樂」如何能夠在我的處境中成真？</li>
-                <li>哥林多前書10:13的「出路」在我的處境中是什麼？</li>
+              <h4 className="font-semibold text-green-700 mb-2">🤝 在信任的弟兄姊妹中建立問責關係</h4>
+              <p className="text-gray-700 mb-2">撒但善用孤立和黑暗。在光中行走、彼此問責是對抗他的有效武器：</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
+                <li>找一位信任的弟兄（或姊妹找姊妹），每週相互問責</li>
+                <li>分享你這週在哪個領域感到試探特別強烈</li>
+                <li>彼此為對方的軟弱禱告，提醒對方福音的應許</li>
+                <li>記住：邪靈高度團結，聖徒更需要彼此扶持</li>
               </ul>
             </div>
-
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">✝️ 建立「罪的完整圖像」的習慣</h4>
-              <p className="text-gray-700 mb-2">對抗「罪被呈現為甜蜜」的裝置，學習在面對試探時看見罪的完整後果。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>下次面對試探時，先停下來，問自己：「若我屈服，接下來一小時、一天、一個月、一年內會發生什麼？」</li>
-                <li>寫下一個你曾因屈服試探而付出代價的具體例子，作為對自己的提醒</li>
-                <li>默想希伯來書11:25——摩西選擇「寧可與神的百姓同受苦害，也不願暫時享受罪中之樂」</li>
-                <li>建立一個「後果清單」：若我屈服這個慣性的罪，它對我的靈命、關係、見證有什麼長期影響？</li>
-              </ul>
-            </div>
-
-            <div className="bg-green-50 rounded-lg p-4 mt-2">
-              <h4 className="font-semibold text-green-800 mb-2">🙏 禱告詞</h4>
-              <p className="text-gray-700 leading-relaxed italic text-sm">
-                「主，我承認撒但是一個狡猾的仇敵，遠比我更了解我的弱點。但感謝祢，祢比他更全知，更強大，更愛我。求祢賜我屬靈的辨別力，使我能認出撒但的裝置，在他說謊時說『我知道你的詭計』。在每次試探臨到時，讓我先停下來，看見罪的真實代價，而非只看眼前的甜蜜。讓保羅的話在我心中有分量：『你們所遇見的試探，無非是人所能受的；神是信實的，必不叫你們受試探過於所能受的。』奉基督的名，阿們。」
+            <div className="bg-green-50 rounded-lg p-4 mt-4">
+              <h4 className="font-semibold text-green-700 mb-2">🙏 禱告</h4>
+              <p className="text-gray-700 italic leading-relaxed">
+                主耶穌，感謝你讓我認識到仇敵撒但的策略和詭計。我承認自己在智力和經歷上遠不及那古蛇，常常在不知不覺中被他的計謀所迷惑。求你賜我辨別的靈，使我能分清什麼是真正從你而來的，什麼是撒但用美麗外表包裝的欺騙。也求你保守我與弟兄姊妹同心合一，不給仇敵留地步。奉你的名求，阿們。
               </p>
             </div>
-
           </div>
         )}
       </div>

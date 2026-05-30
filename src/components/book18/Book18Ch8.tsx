@@ -16,9 +16,9 @@ export default function Book18Ch8() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-red-600 to-rose-700 bg-clip-text text-transparent">第八章</h1>
+        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent">第八章</h1>
         <h2 className="text-xl font-semibold text-gray-700">主動發起進攻</h2>
-        <p className="text-sm text-gray-500 mt-2">第二部分：認識撒但的弱點</p>
+        <p className="text-sm text-gray-500 mt-2">以弗所書6：17下-18</p>
       </div>
 
       {/* 主要內容 */}
@@ -32,116 +32,103 @@ export default function Book18Ch8() {
         </button>
         {expanded['content'] && (
           <div className="p-5 bg-white space-y-6">
-
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">從防禦到進攻</h3>
+              <h3 className="font-bold text-gray-800 mb-3 text-lg">屬靈的黑手黨</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                上一章我們研究了以弗所書6:14-17所描述的五件防禦性裝備——腰帶、胸甲、鞋、盾牌和頭盔。這些裝備使信徒能夠「站立得住」，抵擋撒但的攻擊。但屬靈爭戰不只是防守；神也呼召信徒主動發起進攻。
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                以弗所書6:17b-18描述兩件進攻性武器：「聖靈的寶劍，就是神的道；靠著聖靈，隨時多方禱告祈求。」這兩件武器——神的話語和禱告——不只是保護我們不受攻擊，更使我們能夠主動出擊，在撒但的陣地上奪取勝利。
+                2002年1月，作者在東歐做了救恩論講座之後回到公寓時，遭到了兩個人的襲擊，他們把他打倒在地，捆住他並塞上了他的嘴，用一把刀在他的背後上下摩擦，一直在喊「黑手黨，黑手黨！」在那45分鐘的嚴酷考驗裡，上帝恩慈地搭救了他。
               </p>
               <p className="text-gray-700 leading-relaxed">
-                清教徒神學家深刻理解這個區分。古諾爾說：「一個只防守的士兵不能贏得戰爭；必須進攻才能取得勝利。」在屬靈意義上，只是努力不犯罪（防守）還不夠；我們必須積極地操練禱告、研讀神的話、傳福音——這些是主動向撒但的陣地發起進攻的行動。
+                然而，黑手黨並不總是這麼明目張膽地公開挑釁。更多時候，他們像撒但一樣，總是利用偽裝的組織行事。撒但屬靈的黑手黨控制著民眾和國家——有時公開地行事，但更多時候是以偽裝的方式達到目的。我們需要智慧和力量，不僅保護自己免受他的攻擊，而且要主動尋找他，靠著上帝的力量攻擊他。保羅在《以弗所書》第6章17至18節中為我們指出了三件很有威力的進攻武器。
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">第六件：聖靈的寶劍——神的道（以弗所書6:17b）</h3>
+              <h3 className="font-bold text-gray-800 mb-3 text-lg">1. 聖靈的寶劍——上帝的道</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                「聖靈的寶劍，就是神的道」——這是以弗所書6章唯一既可用於防守又可用於進攻的武器。羅馬士兵的短劍（machaira）是近身戰鬥的武器，有兩面刃，鋒利而致命。希伯來書4:12說神的話「是活潑的，是有功效的，比一切兩刃的劍更快，甚至魂與靈，骨節與骨髓，都能刺入、剖開，連心中的思念和主意都能辨別出來」。
+                聖靈的寶劍，就是上帝的道（弗6：17下），是與撒但爭戰中所使用的一件獨特的軍事裝備，因為它不僅能夠攻擊敵人，而且能夠擊退敵人。上帝的道大有能力，上帝把它用作兩刃的劍（來4：12）。聖靈「默示」了上帝的道，並使我們能夠明白並使用這道。
               </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                耶穌在曠野受試探時使用這件武器的方式是最完美的示範：每一次，撒但試探，耶穌就回應「經上記著說……」（馬太福音4:4,7,10）。祂不是靠理性爭辯擊退撒但，而是靠神話語的直接宣告。
+              <div className="ml-4 space-y-4 mb-3">
+                <div className="border-l-4 border-red-300 pl-4">
+                  <p className="font-semibold text-gray-800 mb-1">（1）聖道是抵擋撒但的防衛裝備</p>
+                  <p className="text-gray-700 leading-relaxed">耶穌在曠野裡用「經上記著說」來回答撒但的每一個誘惑（太4：1-11）。他從聖經上引用的話像鋼刀一樣插進撒但心臟。我們也應當這樣回擊撒但。撒但不能打敗憑著信心使用聖經應許的信徒。當撒但說：「有一天你將會落入我的手中」，信心舉起聖道寶劍說：「我深信那在我心裡動了善工的，必成全這工，直到耶穌基督的日子」（腓1：6）。加爾文寫道：「戰勝撒但的惟一辦法，是完全持守上帝的聖道。」</p>
+                </div>
+                <div className="border-l-4 border-red-300 pl-4">
+                  <p className="font-semibold text-gray-800 mb-1">（2）聖道是攻擊撒但的武器</p>
+                  <p className="text-gray-700 leading-relaxed">聖靈的寶劍，就是上帝的道，給了我們清晰的指導、大能的動機、豐富的鼓勵和有益的榜樣，為我們提供了精良的裝備，使我們能夠勇敢而冷靜地面對撒但。要通過每日學習和背誦聖經，使自己非常熟悉聖經。藉著恒切的禱告使寶劍時刻準備好投入戰鬥。大膽地說話，勇敢地為聖經真理作見證。把上帝的聖道之光帶到黑暗的世界，在每個黑暗的角落發光。</p>
+                </div>
+              </div>
+              <p className="text-gray-700 leading-relaxed">
+                班揚在《天路歷程》中生動描述了基督徒在屈辱穀中的經歷：「但是，仿佛出於天意，正當魔王要給他最後的一擊時，基督徒敏捷地伸手抓起他的利劍，一面說：『我的仇敵啊，不要向我誇耀；我雖跌倒，卻要起來。』說著他向對方狠狠地刺了一下，魔王像一個受到致命創傷的人那樣往後倒退。基督徒接著再刺一下，說：『然而靠著愛我們的主，在這一切的事上，已經得勝有餘了。』正說著的時候，魔王倏地展開他的翅膀，逃之夭夭，基督徒再也看不見他了。」
               </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                神的道作為攻擊性武器，有幾個面向的應用：
-              </p>
-              <ul className="space-y-3 mt-2">
-                <li className="border-l-4 border-purple-300 pl-4">
-                  <strong className="text-gray-800">面對試探時</strong>：用與試探方向相關的聖經經文直接回應。這需要我們事先熟悉聖經——你不能在戰場上現找劍。
-                </li>
-                <li className="border-l-4 border-purple-300 pl-4">
-                  <strong className="text-gray-800">面對謊言時</strong>：用真理宣告打破謊言的捆綁。這包括宣告神的應許，即使感受說相反。
-                </li>
-                <li className="border-l-4 border-purple-300 pl-4">
-                  <strong className="text-gray-800">傳福音時</strong>：「神的道」傳出去就是奪取撒但陣地的進攻——每一個信主的靈魂都是從撒但的國度搶奪出來的。以賽亞書55:11說神的話「必不徒然返回，卻要成就我所喜悅的，在我發它去成就的事上必然亨通」。
-                </li>
-                <li className="border-l-4 border-purple-300 pl-4">
-                  <strong className="text-gray-800">個人靈修時</strong>：每天的讀經和默想，是持續磨利這把劍的過程——荒廢讀經的信徒是拿著鈍劍上戰場的士兵。
-                </li>
-              </ul>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">第七件：禱告（以弗所書6:18）</h3>
+              <h3 className="font-bold text-gray-800 mb-3 text-lg">2. 靠著聖靈禱告</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                「靠著聖靈，隨時多方禱告祈求，並要在此警醒不倦，為眾聖徒祈求。」禱告是以弗所書6章屬靈軍裝的第七件武器，也是最後一件——但可以說是最重要的一件，因為它是穿戴和使用所有其他裝備的能力來源。
+                「靠著聖靈隨時多方禱告祈求」（弗6：18上）。禱告是第二件主動攻擊撒但的武器。馬丁·路德說：「禱告是教會堅固的圍牆和堡壘，是敬虔基督徒的武器。」約翰·班揚說：「上帝寶庫中最強大的武器就是禱告。」
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
-                古諾爾說：「禱告是屬靈爭戰中最強大的武器。」雅各書5:16說「義人祈禱所發的力量，是大有功效的」。不禱告的信徒，就像一名穿著完整盔甲卻沒有進入戰場的士兵——所有的裝備都有了，卻沒有實際投入爭戰的行動。
+                禱告是非常關鍵的，因為離開禱告，基督徒其他軍事裝備都毫無用處。禱告就像油一樣。沒有油，發動機各個部件都毫無用處；沒有禱告，基督徒戰鬥中所使用的各種裝備也都徒然無益。關於藉著禱告抵擋撒但，保羅告訴我們要做到以下幾點：
               </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                保羅在這節經文中描述禱告的四個面向：
-              </p>
-
-              <div className="space-y-4 mt-2">
-                <div className="bg-purple-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-purple-800 mb-1">一、「靠著聖靈」禱告</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    真正的禱告不是自己的努力，而是聖靈的工作。羅馬書8:26說「聖靈用說不出來的嘆息替我們禱告」，幫助我們的軟弱。「靠著聖靈」意味著禱告是在聖靈的引導和能力中進行的，而不是自說自話。這樣的禱告是與神真實的溝通，不是宗教性的例行公事。
-                  </p>
+              <div className="ml-4 space-y-4">
+                <div className="border-l-4 border-indigo-300 pl-4">
+                  <p className="font-semibold text-gray-800 mb-1">（1）隨時禱告</p>
+                  <p className="text-gray-700 leading-relaxed">幾個世紀以前，一個牧師問一個年輕的使女是否知道「不住禱告」（帖前5：17）的含義。使女回答說：「我早上起床的時候，禱告祈求公義的太陽今天帶著醫治的翅膀在我頭上升起。我穿衣服的時候，禱告祈求自己可以披上基督的公義……先生，我每天都這樣不住地禱告，因為禱告是我的呼吸，我的生命。」不住的禱告是指既要有定時性的禱告，也要在一天中隨時向上帝發出簡短的祈求。</p>
                 </div>
-
-                <div className="bg-purple-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-purple-800 mb-1">二、「隨時」禱告</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    不是「偶爾」或「只在困難時」，而是「隨時」（at all times）。帖撒羅尼迦前書5:17說「不住地禱告」。這不意味著我們一直在進行正式的禱告，而是一種持續的與神同行的意識——隨時將心意向神傾吐，在一天中隨時短禱，在每個決定前仰望神。這種「隨時禱告」是對撒但最有效的防禦，因為它使我們持續活在神的同在中，不給撒但的謊言「落地」的機會。
-                  </p>
+                <div className="border-l-4 border-indigo-300 pl-4">
+                  <p className="font-semibold text-gray-800 mb-1">（2）懇切的禱告祈求</p>
+                  <p className="text-gray-700 leading-relaxed">保羅是在說：「由衷地禱告，帶著祈求禱告。懇切地禱告。」不幸的是，我們經常沒能成功地使用禱告這件武器，撒但可以在我們空洞的禱告旁邊打瞌睡。撒母耳·魯瑟福說，禱告時心靈的狀態比我們所說的話更重要。他寫道：「啞巴乞丐比會說話的乞丐得到的施捨更多。眼淚有舌頭、語法和語言，這些在上帝面前比話語更有意義。」</p>
                 </div>
-
-                <div className="bg-purple-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-purple-800 mb-1">三、「多方」禱告</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    「多方」（all kinds of prayers）包括各種形式的禱告：讚美、感謝、認罪、祈求、代禱等。屬靈成熟的禱告不只是「求神給我……」，而是廣泛的與神的溝通。特別值得強調的是代禱——為他人禱告是一種進攻性的屬靈爭戰行動，因為我們的代禱在天上有真實的屬靈效果（啟示錄8:3-5描述聖徒的禱告呈在神面前）。
-                  </p>
+                <div className="border-l-4 border-indigo-300 pl-4">
+                  <p className="font-semibold text-gray-800 mb-1">（3）多方禱告</p>
+                  <p className="text-gray-700 leading-relaxed">這是指把你的一切需要帶到上帝面前，無論大小。就像瑪麗·溫斯洛告訴她兒子的：「把你的一切都告訴上帝，仿佛他對你一無所知一樣，但心裡卻要明白他無所不知。」如果你想在大大小小的事情上都打敗撒但，就要把你自己和你的一切需要都交托在上帝全備的手中。</p>
                 </div>
-
-                <div className="bg-purple-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-purple-800 mb-1">四、「為眾聖徒祈求」</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    以弗所書6:18特別提到要為「眾聖徒」代禱。屬靈爭戰是整個教會的事，不只是個人的事。當我們為其他信徒代禱，我們是在為整個軍隊的力量禱告。保羅在接下來的v.19自己請求讀者為他代禱，顯示即使是使徒也需要肢體的代禱支持。
-                  </p>
+                <div className="border-l-4 border-indigo-300 pl-4">
+                  <p className="font-semibold text-gray-800 mb-1">（4）靠著聖靈禱告</p>
+                  <p className="text-gray-700 leading-relaxed">《羅馬書》第8章26節說，聖靈幫助我們的軟弱，親自用說不出來的歎息替我們禱告。就像父親手把手教兒子駕船一樣，聖靈在我們禱告中抓住我們的心，帶領我們的心思意念，幫助我們行駛在他為我們制定的航海路線上。沒有聖靈的幫助，我們不能正確地禱告。讓我們信靠聖靈，追求被聖靈充滿（弗5：18）。</p>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">「警醒不倦」：禱告的挑戰</h3>
+              <h3 className="font-bold text-gray-800 mb-3 text-lg">3. 警醒不倦</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                保羅說「在此警醒不倦」——「警醒」和「不倦」這兩個詞揭示了禱告的最大挑戰：注意力的分散（需要警醒）和持之以恆的疲乏（需要不倦）。
+                「並要在此警醒不倦，為眾聖徒祈求」（弗6：18下）。真正的戰士必須在自己的崗位上保持警醒；他必須時刻警惕，小心提防。同樣，基督的精兵也必須警醒禱告，抵擋撒但的攻擊。保羅把禱告和警醒聯繫在一起，因為這二者的確是密不可分的。耶穌說：「警醒禱告」（太26：41）。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
-                清教徒托馬斯·古德溫（Thomas Goodwin）說：「撒但最積極阻礙的，就是信徒的禱告生活——因為他知道，一個真正禱告的信徒是他最危險的對手。」撒但透過各種方式攻擊我們的禱告：引入分心的思想、製造緊急的事務使禱告被推遲、使禱告感覺枯燥和機械性、讓人覺得「我很忙，沒有時間禱告」。
+                魔鬼喜歡攻擊昏昏欲睡的基督徒。愚拙的童女錯過了迎接新郎的機會，因為她們的燈裡沒有油了。在《天路歷程》中，班揚的基督徒在睡著時丟失了象徵信心確據的那本小冊子。我們只有警醒禱告才能打敗撒但，為此我們必須做到以下幾點：
               </p>
-              <p className="text-gray-700 leading-relaxed">
-                對抗這些攻擊，需要有意識的禱告紀律。馬丁·路德說：「我有太多的事要做，如果我不先花三個小時禱告，就根本無法完成。」這不是禱告的公式，而是一種態度：禱告不是百忙中的一個任務，而是使一切其他任務都能完成的動力來源。
-              </p>
+              <div className="ml-4 space-y-3">
+                <div className="flex gap-3">
+                  <span className="text-red-600 font-bold flex-shrink-0">（1）</span>
+                  <p className="text-gray-700">保持警醒——清楚地知道自己心裡在想什麼以及我們家人、教會、國家的需要。</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-red-600 font-bold flex-shrink-0">（2）</span>
+                  <p className="text-gray-700">為別人代禱——應當為牧師和福音的進展禱告，並「為眾聖徒祈求」（18節）。T.J.巴赫說，我們當中的很多人的腳不能親自踏入宣道領域，但我們可以藉著跪下禱告到達那裡。</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-red-600 font-bold flex-shrink-0">（3）</span>
+                  <p className="text-gray-700">堅忍——「不懈地追求，直到你得到了你的獵物」。要堅持一直敲上帝的恩典之門。要像班揚《天路歷程》中的那位憐憫那樣，堅持敲門到暈倒的那一刻，直到上帝回應了她。</p>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-red-600 font-bold flex-shrink-0">（4）</span>
+                  <p className="text-gray-700">凡事謹慎——E.M.邦茲寫道：「我們不僅要在看到他的行動、懼怕他的存在時保持高度警醒，而且還要在看不見他時保持高度警醒，無論他以任何偽裝或掩飾出現，都毫不留情地擊退他。」</p>
+                </div>
+              </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-gray-800 mb-3">進攻性爭戰的整體圖像</h3>
+              <h3 className="font-bold text-gray-800 mb-3 text-lg">4. 為耶穌而爭戰</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                結合第七章的防禦性裝備和本章的進攻性武器，我們得到屬靈爭戰的完整圖像：信徒同時是被保護的（穿著全副軍裝）和主動進攻的（使用神的道和禱告）。
+                撒母耳·魯瑟福說：「撒但只是上帝用來教導我們如何使用武器的高超的擊劍者。」司提反·查諾克寫道，當魔鬼「想要成為你的毀滅者」時，上帝使魔鬼成為你的「磨練者」。上帝應許要在兇惡的日子裡幫助你，並確保你會取得最後的勝利。你在勝利的一方，最終，如威廉·格諾爾所寫的：「上帝讓魔鬼作繭自縛。」
               </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                馬太福音16:18說教會要「攻破陰間的門」——這不是防守的語言，而是進攻的語言。陰間的門是防守的，教會是進攻的。我們不是被圍困在城堡中等待救援，而是一支主動出征的軍隊，奉大使命去「使萬民作我的門徒」（馬太福音28:19）。
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                每一次的福音傳揚，每一次真誠的代禱，每一次用神的道對抗謊言——這些都是進攻撒但陣地的行動。在每一個信主的靈魂中，神國度的疆界擴大了，撒但的領地縮小了。這就是屬靈爭戰最終的意義和目的。
-              </p>
+              <div className="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
+                <p className="text-gray-700 leading-relaxed italic">
+                  「爭戰，為耶穌爭戰，惟獨靠他的力量爭戰。屬血氣的軍裝只能帶給你失敗，你不要依靠自己的力量。穿戴福音的軍裝，藉著禱告披戴整齊。那裡有天召，那裡有危險，但那裡必不致缺乏。」
+                </p>
+              </div>
             </div>
-
           </div>
         )}
       </div>
@@ -157,35 +144,30 @@ export default function Book18Ch8() {
         </button>
         {expanded['exploration'] && (
           <div className="p-5 bg-white space-y-5">
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">聖經記憶：磨利屬靈寶劍的實踐</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">寶劍作為唯一「雙向武器」的意義</h4>
               <p className="text-gray-700 leading-relaxed">
-                耶穌在曠野能夠用聖經回應撒但，是因為祂深知聖經——不只是片段的引用，而是理解每段話的上下文和神學意義。今天許多基督徒面對試探時，腦中找不到合適的聖經話語，因為他們從未系統地記憶聖經。聖經記憶（Scripture memorization）曾經是教會教育的核心，今天這個紀律在許多教會中已幾乎消失。恢復這個紀律的方法：選擇特定主題的關鍵經文（如關於試探、關於身份認同、關於恐懼、關於神的應許），每週背誦一節，並持續複習。研究顯示，通過間隔重複（spaced repetition）的方法記憶的聖經，更容易在需要的時候被提取。應用程式（如Scripture Typer）可以幫助這個過程。目標不是炫耀，而是使神的話語真正「住在你們心裡」（歌羅西書3:16），成為隨時可用的屬靈武器。
+                在全副軍裝的八件裝備中，前七件都是防禦性的，只有聖靈的寶劍（上帝的道）和禱告具有攻擊性。值得注意的是，寶劍是唯一可以「兩刃」同時作用的武器——既能防守又能進攻。這說明聖道不只是讓我們被動承受撒但的攻擊，更是主動出擊、奪回失地的力量。傳福音本身就是一種屬靈進攻行動——把人從撒但的管轄下帶到基督的國度。
               </p>
             </div>
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">清教徒的禱告神學：在神面前謙卑與大膽的結合</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">禱告作為「油」的比喻</h4>
               <p className="text-gray-700 leading-relaxed">
-                清教徒神學家對禱告有深刻的神學思考。他們強調禱告的兩個看似矛盾的面向：謙卑和大膽。謙卑，因為我們是罪人，來到聖潔神的面前；大膽，因為我們是在基督裡被接納的兒女，有「坦然無懼進到施恩寶座前」的特權（希伯來書4:16）。清教徒約翰·班揚（John Bunyan）在他的《禱告論》中說：「禱告是發自靈魂的呻吟，由聖靈攪動，向著神心中的憐憫發出。」這個定義捕捉了真正禱告的本質——不是背誦的公式，而是靈魂真實的呼喊。清教徒也強調「禱告的藝術」必須學習：研讀主禱文的結構，學習聖詩的語言，使用詩篇的語言來禱告，都是加深禱告生命的方法。他們的根本洞見是：禱告的能力不在於禱告的長度或華麗的措辭，而在於禱告者與神之間的真實關係和對神話語的信靠。
+                作者說禱告如油——沒有它，所有其他裝備都失靈。這比喻有多重意義：（1）油是潤滑劑，使機器各部件協調運作——沒有禱告，聖言的操練、信心的堅守、盼望的仰望都會變得乾澀、僵硬；（2）油是能量來源——禱告是信徒與力量之源（上帝）連結的管道；（3）油無法積存使用——我們無法提前儲備禱告，而是需要每日持續的連結。班揚的觀察深刻：「在禱告之後，你不僅僅可以禱告；但在禱告之前，你只能禱告。」
               </p>
             </div>
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">禱告與主權：如果神已定好計劃，為何禱告仍有效？</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">班揚《天路歷程》中屈辱穀之戰的神學意義</h4>
               <p className="text-gray-700 leading-relaxed">
-                這是一個改革宗神學中常被問到的問題：若神是主權的，一切都在祂的掌控中，禱告怎麼可能「改變」任何事？改革宗神學家的回答是：神的主權並不排除禱告的效力，因為神在祂的主權計劃中已將禱告定為實現某些目的的手段。就像農夫知道神賜雨，但仍然播種和澆水——神通過手段工作，但神依然是一切的根源。約翰·加爾文說：「禱告的目的不是告知神，而是藉著祈求，舉起我們的心向神，表達我們的依靠，並體驗祂的恩典。」更深的答案是：禱告是一種真實的因果關係，神確實回應禱告（雅各書5:16），同時一切都在神的主權之下。這個張力不是矛盾，而是神作為一個真實的人格神（不是機械的決定論）的表達。如果神已決定無論如何都做同樣的事，禱告就沒有意義；聖經顯示，禱告真的有差異，同時神仍然是主權的。這是屬靈而非邏輯的奧祕。
+                基督徒在屈辱穀中與魔王亞玻倫的激戰，是基督教文學中最生動的屬靈爭戰描繪。特別值得注意的是：基督徒幾乎被打倒，但當他「敏捷地伸手抓起他的利劍」時，局勢立刻扭轉。這說明屬靈爭戰不是被動的靈修，而是主動的、積極的抵抗。他使用的聖經話語（「我雖跌倒，卻要起來」來自彌7：8；「得勝有餘」來自羅8：37）是精準的屬靈武器，而非一般性的安慰話語。
               </p>
             </div>
-
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">代禱：屬靈爭戰的集體武器</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">代禱作為反抗撒但的行動</h4>
               <p className="text-gray-700 leading-relaxed">
-                啟示錄8:3-5有一個驚人的圖像：天使將眾聖徒的禱告（如香）呈在神的寶座前，然後「把香爐拿起來，盛滿了壇上的火，扔在地上，隨有雷轟、大聲、閃電、地震」。這個圖像顯示，地上信徒的代禱在天上有真實的屬靈影響，甚至以某種方式參與在神的歷史性行動中。使徒行傳12:1-17記載，當教會為彼得的被囚「迫切」禱告時，神差天使釋放了彼得——這是代禱在屬靈爭戰中真實效力的示範。保羅在多處請求教會為他代禱（羅馬書15:30-32，以弗所書6:19，歌羅西書4:3），顯示即使最有能力的宣教士也需要並且重視肢體的代禱。今天的宣教實踐也顯示，支持宣教士最有效的方式之一就是有規律的代禱——許多宣教士報告，他們感受到代禱的屬靈支持，並能看見代禱如何打開福音的門。
+                作者特別強調「為眾聖徒祈求」是警醒不倦的一部分。代禱不只是個人靈修，更是屬靈爭戰的策略。當信徒為別人代禱時，他直接對抗了撒但「使人孤立和自私」的目標。撒但希望每個信徒只關心自己的掙扎，而代禱打破了這種孤立，在整個教會建立了互相守護的屬靈防線。E.M.邦茲的著作《禱告的能力》（Power Through Prayer）專門論述這一主題，是代禱神學的經典。
               </p>
             </div>
-
           </div>
         )}
       </div>
@@ -203,27 +185,27 @@ export default function Book18Ch8() {
           <div className="p-5 bg-white space-y-4">
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">1.</span>
-              <p className="text-gray-700">你目前對聖經的熟悉程度——你能在面對試探時，快速調取相關的聖經話語嗎？你的聖經記憶情況如何？這對你的屬靈爭戰有什麼具體影響？</p>
+              <p className="text-gray-700">耶穌用聖經話語回應撒但的每一個試探。你有沒有在被試探時，具體地使用聖經話語來抵擋？效果如何？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">2.</span>
-              <p className="text-gray-700">保羅形容禱告是「靠著聖靈」的——誠實地評估，你的禱告更多時候是靈裡的真實溝通，還是宗教性的例行公事？是什麼讓禱告有時感覺有生命，有時感覺枯燥？</p>
+              <p className="text-gray-700">作者說「禱告是油，沒有它，其他裝備都失靈。」在你的生命中，禱告生活的品質如何影響了你整體的屬靈爭戰能力？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">3.</span>
-              <p className="text-gray-700">「隨時禱告」的呼召——在你每天的生活中，你是否有「隨時」的禱告習慣，還是禱告只限於特定的「禱告時間」？如何在生活的忙碌中保持禱告的心？</p>
+              <p className="text-gray-700">那位使女說「禱告是我的呼吸，我的生命」。禱告對你來說是「呼吸」（自然、持續、無需刻意）還是「特殊活動」（有意識地安排）？你希望禱告成為什麼？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">4.</span>
-              <p className="text-gray-700">「為眾聖徒祈求」——在你的禱告生活中，代禱占多少比重？你是否有規律地為特定的人（家人、朋友、宣教士、教會領袖）代禱？代禱如何改變了你對那些人的態度和關心？</p>
+              <p className="text-gray-700">魯瑟福說「心靈的狀態比我們所說的話更重要」。你在禱告時，心靈通常是什麼狀態？你如何在禱告前讓自己的心靈進入真誠的狀態？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">5.</span>
-              <p className="text-gray-700">本章說屬靈爭戰是進攻性的——教會是去「攻破陰間的門」，不是被陰間的門攻破。你的信仰生活，是否有主動進攻的姿態（傳福音、代禱、服事）？還是更多是防禦性的（只求自己不犯罪、不受攻擊）？</p>
+              <p className="text-gray-700">魔鬼喜歡攻擊昏昏欲睡的基督徒。你認為你的屬靈警醒程度如何？哪些習慣或模式讓你容易「屬靈睡著」？</p>
             </div>
             <div className="flex gap-3">
               <span className="text-amber-600 font-bold flex-shrink-0">6.</span>
-              <p className="text-gray-700">撒但最積極阻礙的就是禱告——你能想到在你生命中，撒但如何具體地試圖阻礙你的禱告生活（通過分心、懶惰、繁忙或對禱告的懷疑）？你如何回應這些阻礙？</p>
+              <p className="text-gray-700">撒母耳·魯瑟福說「撒但只是上帝用來教導我們如何使用武器的高超的擊劍者。」你能否從自己的屬靈爭戰經歷中，舉出一個試探或攻擊反而幫助你在信仰上成長的例子？</p>
             </div>
           </div>
         )}
@@ -240,61 +222,42 @@ export default function Book18Ch8() {
         </button>
         {expanded['practice'] && (
           <div className="p-5 bg-white space-y-5">
-
             <div>
-              <h4 className="font-semibold text-green-700 mb-2">📖 開始系統性聖經記憶計劃</h4>
-              <p className="text-gray-700 mb-2">選擇一個「主題式聖經記憶清單」，針對你最常受攻擊的領域背誦相關經文。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>建議從以弗所書6:10-18開始，背熟整段屬靈軍裝的描述</li>
-                <li>接著選3-5個你最需要的主題（身份認同、神的應許、對付恐懼、對付誘惑等）</li>
-                <li>每週背誦一節，每天複習前幾週所背的（間隔重複法）</li>
-                <li>把新背的經文作為早晨禱告的一部分，反復默想</li>
-                <li>嘗試在面對試探的當下，默念或宣讀相關經文</li>
+              <h4 className="font-semibold text-green-700 mb-2">📖 建立「聖道武器庫」</h4>
+              <p className="text-gray-700 mb-2">針對你最常遭受的試探，建立專屬的聖經應對庫：</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
+                <li>選出3-5個最常困擾你的試探類型</li>
+                <li>為每個試探找出1-2節聖經話語（最好背誦）</li>
+                <li>把這些「聖道劍法」寫在小卡片上，隨身攜帶</li>
+                <li>每次遭受那個試探時，大聲（或心裡）說出那節經文</li>
               </ul>
             </div>
-
             <div>
-              <h4 className="font-semibold text-green-700 mb-2">🙏 建立「結構性禱告」的習慣</h4>
-              <p className="text-gray-700 mb-2">使用ACTS或其他框架，使你的禱告更豐富、更有深度。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li><strong>A</strong>（Adoration 敬拜）：先讚美神的性情，不求任何事</li>
-                <li><strong>C</strong>（Confession 認罪）：誠實地承認今天的罪和軟弱</li>
-                <li><strong>T</strong>（Thanksgiving 感謝）：感謝神具體的恩典，至少說三件事</li>
-                <li><strong>S</strong>（Supplication 祈求）：為自己和他人的需要禱告</li>
-                <li>嘗試這個框架一周，觀察它如何改變你的禱告質量</li>
+              <h4 className="font-semibold text-green-700 mb-2">🙏 升級你的禱告生活</h4>
+              <p className="text-gray-700 mb-2">選擇以下一項具體改變，在接下來兩週堅持：</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
+                <li>每天增加15分鐘的「懇切禱告」時間（不只是例行的），為具體的事情代禱</li>
+                <li>建立「隨時禱告」習慣：每次換場合（如進辦公室、上車、吃飯前）發出簡短的祈求</li>
+                <li>每週為一個非信徒的朋友或家人每天代禱，為他/她的屬靈眼睛被開啟</li>
               </ul>
             </div>
-
             <div>
-              <h4 className="font-semibold text-green-700 mb-2">🎯 建立代禱名單</h4>
-              <p className="text-gray-700 mb-2">建立一個有組織的代禱清單，每天為特定的人和事工禱告。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>分類：家人（每天）、朋友（每週某天）、教會領袖和牧師（每週）、宣教士（每月特定日）、未得之民（特定族群）</li>
-                <li>為每個人記下具體的代禱事項，而不只是泛泛的「祝福他們」</li>
-                <li>定期跟進禱告的回應，記錄神的答覆（增強你對禱告效力的信心）</li>
-                <li>選擇一個近親或朋友，為他/她的福音需要每天代禱一個月，觀察發生什麼</li>
+              <h4 className="font-semibold text-green-700 mb-2">⏰ 培養警醒的日常操練</h4>
+              <p className="text-gray-700 mb-2">為自己建立一個每日「屬靈警醒清單」，每晚回顧：</p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2">
+                <li>今天我有沒有感到靈命「昏昏欲睡」？</li>
+                <li>今天有什麼試探讓我措手不及？我用什麼回應了？</li>
+                <li>今天我有沒有積極地為別人代禱？</li>
+                <li>明天我需要在哪些地方更加警醒？</li>
               </ul>
             </div>
-
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">⏰ 「屬靈爭戰」時刻表</h4>
-              <p className="text-gray-700 mb-2">評估並重組你的屬靈操練時間表，確保「進攻性」的爭戰有足夠的空間。</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>每天：讀經和晨禱（至少15分鐘），睡前感恩禱告</li>
-                <li>每週：更長的禱告時間（30-60分鐘），代禱為教會肢體</li>
-                <li>每月：禱告靜修（至少一個下午），靜默反思靈命狀況</li>
-                <li>定期：參與教會的禱告聚會，在群體中爭戰</li>
-                <li>問自己：我每天花多少時間在媒體上，與花在讀經禱告上的時間相比如何？</li>
-              </ul>
-            </div>
-
-            <div className="bg-green-50 rounded-lg p-4 mt-2">
-              <h4 className="font-semibold text-green-800 mb-2">🙏 禱告詞</h4>
-              <p className="text-gray-700 leading-relaxed italic text-sm">
-                「主耶穌，感謝祢給了我屬靈爭戰的武器——祢的話語和禱告。讓祢的道深深住在我心中，使我在受試探時能立刻調取祢的真理；讓我的禱告生命不是例行公事，而是真實的靈裡交通。今天，我不只要防守，也要主動進攻：用祢的話宣告真理，用禱告為家人、教會和迷失的人爭戰。讓我每天帶著一個士兵的意志：不懈怠、不退縮、因為我知道誰已得勝。奉得勝主耶穌的名，阿們。」
+            <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+              <h4 className="font-semibold text-green-700 mb-2">🙏 本章禱告（引用清教徒禱告文）</h4>
+              <p className="text-gray-700 leading-relaxed italic">
+                「哦，禰的每個應許都是香膏，求禰用生命的觸摸，靠近禰疲憊的戰士，求禰更新我，使我能夠重新起來投入爭戰，永不疲憊，直到我的仇敵被踩在腳下。求禰使我與禰親密相契，使我能夠抵擋撒但、疑惑、肉體和世界……那麼，我的手就永遠不會軟弱，我的腳就永遠不會絆倒，我的劍永遠不會停息，因為我的力量在於禰無限的大能。阿們。」
               </p>
+              <p className="text-right text-gray-500 text-sm mt-2">——《異象穀》（Valley of Vision）</p>
             </div>
-
           </div>
         )}
       </div>
