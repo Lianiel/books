@@ -16,20 +16,20 @@ interface BookLayoutProps {
 
 type FontSize = 'sm' | 'base' | 'lg' | 'xl' | '2xl';
 
-const fontSizeClasses: Record<FontSize, string> = {
-  'sm': 'text-sm',
-  'base': 'text-base',
-  'lg': 'text-lg',
-  'xl': 'text-xl',
-  '2xl': 'text-2xl'
+const fontSizePx: Record<FontSize, string> = {
+  'sm': '24px',
+  'base': '28px',
+  'lg': '32px',
+  'xl': '36px',
+  '2xl': '40px'
 };
 
 const fontSizeLabels: Record<FontSize, string> = {
-  'sm': '14',    // 14px
-  'base': '16',  // 16px
-  'lg': '18',    // 18px
-  'xl': '20',    // 20px
-  '2xl': '24'    // 24px
+  'sm': '24',
+  'base': '28',
+  'lg': '32',
+  'xl': '36',
+  '2xl': '40'
 };
 
 
@@ -38,7 +38,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   const location = useLocation();
   
   // 字體縮放
-  const [fontSize, setFontSize] = useState<FontSize>('base');
+  const [fontSize, setFontSize] = useState<FontSize>('sm');
   
   // 工具列顯示/隱藏
   const [showToolbar, setShowToolbar] = useState(true);
@@ -348,7 +348,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       </div>
 
       {/* ========== 主要內容區 ========== */}
-      <main className={`${fontSizeClasses[fontSize]} px-4 py-8`}>
+      <main className="px-4 py-8" style={{ fontSize: fontSizePx[fontSize] }}>
         {children}
       </main>
 
