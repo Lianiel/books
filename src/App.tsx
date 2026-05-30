@@ -42,6 +42,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book16: '拾級靈程三階',
   book17: '十架牧養學：從哥林多前書學習教會建造',
   book18: '與撒但爭戰',
+  book19: '新生命',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -246,6 +247,15 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter13', title: '第13章 我們作為國家公民的挑戰', path: '/book18/chapter13' },
     { id: 'summary', title: '重點總結整理', path: '/book18/summary' },
   ],
+  book19: [
+    { id: 'home', title: '書本簡介', path: '/book19/home' },
+    { id: 'chapter1', title: '主題一：🌱 新生命的基礎', path: '/book19/chapter1' },
+    { id: 'chapter2', title: '主題二：⚔️ 勝過罪與世界', path: '/book19/chapter2' },
+    { id: 'chapter3', title: '主題三：💎 聖潔生活的品格', path: '/book19/chapter3' },
+    { id: 'chapter4', title: '主題四：🔥 在聖靈裡的能力', path: '/book19/chapter4' },
+    { id: 'chapter5', title: '主題五：🙏 基督徒的實踐', path: '/book19/chapter5' },
+    { id: 'chapter6', title: '主題六：📈 生命的持續長進', path: '/book19/chapter6' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -268,6 +278,7 @@ const STATIC_BOOKS = [
   { book_id: 'book16', title: '拾級靈程三階', author: '孫毅', description: '帶領讀者拾級而上，領略內室、日常生活及終末的靈程三階，深化靈修操練。', chapters_count: 7 },
   { book_id: 'book17', title: '十架牧養學：從哥林多前書學習教會建造', author: '陳濟民', description: '從哥林多前書探討十架牧養智慧，學習建造合神心意的教會群體。', chapters_count: 18 },
   { book_id: 'book18', title: '與撒但爭戰', author: '周必克（Joel Beeke）', description: '認識撒但的弱點、策略和失敗，以全副軍裝和禱告在基督裡得勝。', chapters_count: 14 },
+  { book_id: 'book19', title: '新生命', author: '慕安德列（Andrew Murray）', description: '為初信者系統闡述新生命的基本真理，原著52章重組為六大生命主題，探索在基督裡豐盛得勝的生命。', chapters_count: 7 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -289,6 +300,7 @@ const colorMap: Record<number, string> = {
   16: 'from-violet-600 to-purple-700',
   17: 'from-amber-600 to-orange-700',
   18: 'from-red-600 to-rose-700',
+  19: 'from-emerald-500 to-teal-600',
 };
 
 // ========== 導入 Book 1 章節 ==========
@@ -492,6 +504,15 @@ import Book18Ch11 from './components/book18/Book18Ch11';
 import Book18Ch12 from './components/book18/Book18Ch12';
 import Book18Ch13 from './components/book18/Book18Ch13';
 import Book18Summary from './components/book18/Book18Summary';
+
+// ========== 導入 Book 19 章節 ==========
+import Book19Home from './components/book19/Book19Home';
+import Book19Ch1 from './components/book19/Book19Ch1';
+import Book19Ch2 from './components/book19/Book19Ch2';
+import Book19Ch3 from './components/book19/Book19Ch3';
+import Book19Ch4 from './components/book19/Book19Ch4';
+import Book19Ch5 from './components/book19/Book19Ch5';
+import Book19Ch6 from './components/book19/Book19Ch6';
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({
@@ -773,6 +794,16 @@ const App: React.FC = () => {
         <Route path="/book18/chapter13" element={<BookLayout bookId="book18" chapter="chapter13" chapters={getChaptersForBook('book18')}><Book18Ch13 /></BookLayout>} />
         <Route path="/book18/summary" element={<BookLayout bookId="book18" chapter="summary" chapters={getChaptersForBook('book18')}><Book18Summary /></BookLayout>} />
         <Route path="/book/18" element={<BookLayout bookId="book18" chapter="home" chapters={getChaptersForBook('book18')}><Book18Home /></BookLayout>} />
+
+        {/* ========== Book 19 - 新生命 ========== */}
+        <Route path="/book19/home" element={<BookLayout bookId="book19" chapter="home" chapters={getChaptersForBook('book19')}><Book19Home /></BookLayout>} />
+        <Route path="/book19/chapter1" element={<BookLayout bookId="book19" chapter="chapter1" chapters={getChaptersForBook('book19')}><Book19Ch1 /></BookLayout>} />
+        <Route path="/book19/chapter2" element={<BookLayout bookId="book19" chapter="chapter2" chapters={getChaptersForBook('book19')}><Book19Ch2 /></BookLayout>} />
+        <Route path="/book19/chapter3" element={<BookLayout bookId="book19" chapter="chapter3" chapters={getChaptersForBook('book19')}><Book19Ch3 /></BookLayout>} />
+        <Route path="/book19/chapter4" element={<BookLayout bookId="book19" chapter="chapter4" chapters={getChaptersForBook('book19')}><Book19Ch4 /></BookLayout>} />
+        <Route path="/book19/chapter5" element={<BookLayout bookId="book19" chapter="chapter5" chapters={getChaptersForBook('book19')}><Book19Ch5 /></BookLayout>} />
+        <Route path="/book19/chapter6" element={<BookLayout bookId="book19" chapter="chapter6" chapters={getChaptersForBook('book19')}><Book19Ch6 /></BookLayout>} />
+        <Route path="/book/19" element={<BookLayout bookId="book19" chapter="home" chapters={getChaptersForBook('book19')}><Book19Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
         <Route path="/" element={
