@@ -43,6 +43,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book17: '十架牧養學：從哥林多前書學習教會建造',
   book18: '與撒但爭戰',
   book19: '新生命',
+  book20: '安慰人的靈魂',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -256,6 +257,15 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter5', title: '主題五：🙏 基督徒的實踐', path: '/book19/chapter5' },
     { id: 'chapter6', title: '主題六：📈 生命的持續長進', path: '/book19/chapter6' },
   ],
+  book20: [
+    { id: 'home', title: '書本簡介', path: '/book20/home' },
+    { id: 'chapter1', title: '第1章：緒論', path: '/book20/chapter1' },
+    { id: 'chapter2', title: '第2章：靈性的本質與需求', path: '/book20/chapter2' },
+    { id: 'chapter3', title: '第3章：靈性關懷師與基督教靈性照顧', path: '/book20/chapter3' },
+    { id: 'chapter4', title: '第4章：研究方法', path: '/book20/chapter4' },
+    { id: 'chapter5', title: '第5章：研究結果', path: '/book20/chapter5' },
+    { id: 'chapter6', title: '第6章：結論與建議', path: '/book20/chapter6' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -279,6 +289,7 @@ const STATIC_BOOKS = [
   { book_id: 'book17', title: '十架牧養學：從哥林多前書學習教會建造', author: '陳濟民', description: '從哥林多前書探討十架牧養智慧，學習建造合神心意的教會群體。', chapters_count: 18 },
   { book_id: 'book18', title: '與撒但爭戰', author: '周必克（Joel Beeke）', description: '認識撒但的弱點、策略和失敗，以全副軍裝和禱告在基督裡得勝。', chapters_count: 14 },
   { book_id: 'book19', title: '新生命', author: '慕安德列（Andrew Murray）', description: '為初信者系統闡述新生命的基本真理，原著52章重組為六大生命主題，探索在基督裡豐盛得勝的生命。', chapters_count: 7 },
+  { book_id: 'book20', title: '安慰人的靈魂', author: '范銀絲', description: '基督信仰靈性關懷師照顧末期病人的實務歷程研究，探討靈性的本質、末期病人的靈性需求，及全人靈性照顧的原則。', chapters_count: 7 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -301,6 +312,7 @@ const colorMap: Record<number, string> = {
   17: 'from-amber-600 to-orange-700',
   18: 'from-red-600 to-rose-700',
   19: 'from-emerald-500 to-teal-600',
+  20: 'from-teal-600 to-cyan-700',
 };
 
 // ========== Book 1 章節（懶加載） ==========
@@ -512,6 +524,15 @@ const Book19Ch3 = lazy(() => import('./components/book19/Book19Ch3'));
 const Book19Ch4 = lazy(() => import('./components/book19/Book19Ch4'));
 const Book19Ch5 = lazy(() => import('./components/book19/Book19Ch5'));
 const Book19Ch6 = lazy(() => import('./components/book19/Book19Ch6'));
+
+// ========== Book 20 章節（懶加載） ==========
+const Book20Home = lazy(() => import('./components/book20/Book20Home'));
+const Book20Ch1 = lazy(() => import('./components/book20/Book20Ch1'));
+const Book20Ch2 = lazy(() => import('./components/book20/Book20Ch2'));
+const Book20Ch3 = lazy(() => import('./components/book20/Book20Ch3'));
+const Book20Ch4 = lazy(() => import('./components/book20/Book20Ch4'));
+const Book20Ch5 = lazy(() => import('./components/book20/Book20Ch5'));
+const Book20Ch6 = lazy(() => import('./components/book20/Book20Ch6'));
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({
@@ -811,6 +832,16 @@ const App: React.FC = () => {
         <Route path="/book19/chapter5" element={<BookLayout bookId="book19" chapter="chapter5" chapters={getChaptersForBook('book19')}><Book19Ch5 /></BookLayout>} />
         <Route path="/book19/chapter6" element={<BookLayout bookId="book19" chapter="chapter6" chapters={getChaptersForBook('book19')}><Book19Ch6 /></BookLayout>} />
         <Route path="/book/19" element={<BookLayout bookId="book19" chapter="home" chapters={getChaptersForBook('book19')}><Book19Home /></BookLayout>} />
+
+        {/* ========== Book 20: 安慰人的靈魂 ========== */}
+        <Route path="/book20/home" element={<BookLayout bookId="book20" chapter="home" chapters={getChaptersForBook('book20')}><Book20Home /></BookLayout>} />
+        <Route path="/book20/chapter1" element={<BookLayout bookId="book20" chapter="chapter1" chapters={getChaptersForBook('book20')}><Book20Ch1 /></BookLayout>} />
+        <Route path="/book20/chapter2" element={<BookLayout bookId="book20" chapter="chapter2" chapters={getChaptersForBook('book20')}><Book20Ch2 /></BookLayout>} />
+        <Route path="/book20/chapter3" element={<BookLayout bookId="book20" chapter="chapter3" chapters={getChaptersForBook('book20')}><Book20Ch3 /></BookLayout>} />
+        <Route path="/book20/chapter4" element={<BookLayout bookId="book20" chapter="chapter4" chapters={getChaptersForBook('book20')}><Book20Ch4 /></BookLayout>} />
+        <Route path="/book20/chapter5" element={<BookLayout bookId="book20" chapter="chapter5" chapters={getChaptersForBook('book20')}><Book20Ch5 /></BookLayout>} />
+        <Route path="/book20/chapter6" element={<BookLayout bookId="book20" chapter="chapter6" chapters={getChaptersForBook('book20')}><Book20Ch6 /></BookLayout>} />
+        <Route path="/book/20" element={<BookLayout bookId="book20" chapter="home" chapters={getChaptersForBook('book20')}><Book20Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
         <Route path="/" element={
