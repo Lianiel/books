@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Book } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import BookLayout from './components/BookLayout';
 import { fetchBooks, fetchChapters, type Book as BookType, type Chapter } from './api/books_supabase';
 
@@ -303,216 +303,215 @@ const colorMap: Record<number, string> = {
   19: 'from-emerald-500 to-teal-600',
 };
 
-// ========== 導入 Book 1 章節 ==========
-import Book1Home from './components/book1/SectionHome';
-import Book1Definition from './components/book1/SectionDefinition';
-import Book1Development from './components/book1/SectionDevelopment';
-import Book1Myths from './components/book1/SectionMyths';
-import Book1Diagnosis from './components/book1/SectionDiagnosis';
-import Book1Laws from './components/book1/SectionLaws';
-import Book1Ch7 from './components/book1/SectionCh7';
-import Book1Ch8 from './components/book1/SectionCh8';
-import Book1Ch9 from './components/book1/SectionCh9';
-import Book1Ch10 from './components/book1/SectionCh10';
-import Book1Ch11 from './components/book1/SectionCh11';
-import Book1Ch12 from './components/book1/SectionCh12';
-import Book1Ch13 from './components/book1/SectionCh13';
-import Book1Ch14 from './components/book1/SectionCh14';
-import Book1Ch15 from './components/book1/SectionCh15';
-import Book1Ch16 from './components/book1/SectionCh16';
-import Book1Ch17 from './components/book1/SectionCh17';
+// ========== Book 1 章節（懶加載） ==========
+const Book1Home = lazy(() => import('./components/book1/SectionHome'));
+const Book1Definition = lazy(() => import('./components/book1/SectionDefinition'));
+const Book1Development = lazy(() => import('./components/book1/SectionDevelopment'));
+const Book1Myths = lazy(() => import('./components/book1/SectionMyths'));
+const Book1Diagnosis = lazy(() => import('./components/book1/SectionDiagnosis'));
+const Book1Laws = lazy(() => import('./components/book1/SectionLaws'));
+const Book1Ch7 = lazy(() => import('./components/book1/SectionCh7'));
+const Book1Ch8 = lazy(() => import('./components/book1/SectionCh8'));
+const Book1Ch9 = lazy(() => import('./components/book1/SectionCh9'));
+const Book1Ch10 = lazy(() => import('./components/book1/SectionCh10'));
+const Book1Ch11 = lazy(() => import('./components/book1/SectionCh11'));
+const Book1Ch12 = lazy(() => import('./components/book1/SectionCh12'));
+const Book1Ch13 = lazy(() => import('./components/book1/SectionCh13'));
+const Book1Ch14 = lazy(() => import('./components/book1/SectionCh14'));
+const Book1Ch15 = lazy(() => import('./components/book1/SectionCh15'));
+const Book1Ch16 = lazy(() => import('./components/book1/SectionCh16'));
+const Book1Ch17 = lazy(() => import('./components/book1/SectionCh17'));
 
-// ========== 導入 Book 2 章節 ==========
-import Book2Ch1 from './components/book2/Chapter1';
-import Book2Ch2 from './components/book2/Chapter2';
-import Book2Ch3 from './components/book2/Chapter3';
-import Book2Ch4 from './components/book2/Chapter4';
-import Book2Ch5 from './components/book2/Chapter5';
-import Book2Ch6 from './components/book2/Chapter6';
-import Book2Ch7 from './components/book2/Chapter7';
-import Book2Ch8 from './components/book2/Chapter8';
+// ========== Book 2 章節（懶加載） ==========
+const Book2Ch1 = lazy(() => import('./components/book2/Chapter1'));
+const Book2Ch2 = lazy(() => import('./components/book2/Chapter2'));
+const Book2Ch3 = lazy(() => import('./components/book2/Chapter3'));
+const Book2Ch4 = lazy(() => import('./components/book2/Chapter4'));
+const Book2Ch5 = lazy(() => import('./components/book2/Chapter5'));
+const Book2Ch6 = lazy(() => import('./components/book2/Chapter6'));
+const Book2Ch7 = lazy(() => import('./components/book2/Chapter7'));
+const Book2Ch8 = lazy(() => import('./components/book2/Chapter8'));
 
-// ========== 導入 Book 3 章節 ==========
-import Book3Ch1 from './components/book3/Chapter1';
-import Book3Ch2 from './components/book3/Chapter2';
-import Book3Ch3 from './components/book3/Chapter3';
-import Book3Ch4 from './components/book3/Chapter4';
-import Book3Ch5 from './components/book3/Chapter5';
-import Book3Ch6 from './components/book3/Chapter6';
-import Book3Ch7 from './components/book3/Chapter7';
-import Book3Ch8 from './components/book3/Chapter8';
+// ========== Book 3 章節（懶加載） ==========
+const Book3Ch1 = lazy(() => import('./components/book3/Chapter1'));
+const Book3Ch2 = lazy(() => import('./components/book3/Chapter2'));
+const Book3Ch3 = lazy(() => import('./components/book3/Chapter3'));
+const Book3Ch4 = lazy(() => import('./components/book3/Chapter4'));
+const Book3Ch5 = lazy(() => import('./components/book3/Chapter5'));
+const Book3Ch6 = lazy(() => import('./components/book3/Chapter6'));
+const Book3Ch7 = lazy(() => import('./components/book3/Chapter7'));
+const Book3Ch8 = lazy(() => import('./components/book3/Chapter8'));
 
-// ========== 導入 Book 4 章節 ==========
-import Book4Ch1 from './components/book4/Chapter1';
-import Book4Ch2 from './components/book4/Chapter2';
-import Book4Ch3 from './components/book4/Chapter3';
-import Book4Ch4 from './components/book4/Chapter4';
-import Book4Ch5 from './components/book4/Chapter5';
-import Book4Ch6 from './components/book4/Chapter6';
-import Book4Ch7 from './components/book4/Chapter7';
-import Book4Ch8 from './components/book4/Chapter8';
-import Book4Ch9 from './components/book4/Chapter9';
-import Book4Ch10 from './components/book4/Chapter10';
-import Book4Ch11 from './components/book4/Chapter11';
-import Book4Ch12 from './components/book4/Chapter12';
-import Book4Ch13 from './components/book4/Chapter13';
-import Book4Ch14 from './components/book4/Chapter14';
-import Book4Ch15 from './components/book4/Chapter15';
-import Book4Ch16 from './components/book4/Chapter16';
+// ========== Book 4 章節（懶加載） ==========
+const Book4Ch1 = lazy(() => import('./components/book4/Chapter1'));
+const Book4Ch2 = lazy(() => import('./components/book4/Chapter2'));
+const Book4Ch3 = lazy(() => import('./components/book4/Chapter3'));
+const Book4Ch4 = lazy(() => import('./components/book4/Chapter4'));
+const Book4Ch5 = lazy(() => import('./components/book4/Chapter5'));
+const Book4Ch6 = lazy(() => import('./components/book4/Chapter6'));
+const Book4Ch7 = lazy(() => import('./components/book4/Chapter7'));
+const Book4Ch8 = lazy(() => import('./components/book4/Chapter8'));
+const Book4Ch9 = lazy(() => import('./components/book4/Chapter9'));
+const Book4Ch10 = lazy(() => import('./components/book4/Chapter10'));
+const Book4Ch11 = lazy(() => import('./components/book4/Chapter11'));
+const Book4Ch12 = lazy(() => import('./components/book4/Chapter12'));
+const Book4Ch13 = lazy(() => import('./components/book4/Chapter13'));
+const Book4Ch14 = lazy(() => import('./components/book4/Chapter14'));
+const Book4Ch15 = lazy(() => import('./components/book4/Chapter15'));
+const Book4Ch16 = lazy(() => import('./components/book4/Chapter16'));
 
-// ========== 導入 Book 5 章節 ==========
-import Book5Ch1 from './components/book5/Chapter1';
-import Book5Ch2 from './components/book5/Chapter2';
-import Book5Ch3 from './components/book5/Chapter3';
-import Book5Ch4 from './components/book5/Chapter4';
-import Book5Ch5 from './components/book5/Chapter5';
-import Book5Ch6 from './components/book5/Chapter6';
+// ========== Book 5 章節（懶加載） ==========
+const Book5Ch1 = lazy(() => import('./components/book5/Chapter1'));
+const Book5Ch2 = lazy(() => import('./components/book5/Chapter2'));
+const Book5Ch3 = lazy(() => import('./components/book5/Chapter3'));
+const Book5Ch4 = lazy(() => import('./components/book5/Chapter4'));
+const Book5Ch5 = lazy(() => import('./components/book5/Chapter5'));
+const Book5Ch6 = lazy(() => import('./components/book5/Chapter6'));
 
-// ========== 導入 Book 6 章節 ==========
-import Book6Ch1 from './components/book6/Chapter1';
-import Book6Ch2 from './components/book6/Chapter2';
-import Book6Ch3 from './components/book6/Chapter3';
-import Book6Ch4 from './components/book6/Chapter4';
-import Book6Ch5 from './components/book6/Chapter5';
-import Book6Ch6 from './components/book6/Chapter6';
-import Book6Ch7 from './components/book6/Chapter7';
-import Book6Ch8 from './components/book6/Chapter8';
+// ========== Book 6 章節（懶加載） ==========
+const Book6Ch1 = lazy(() => import('./components/book6/Chapter1'));
+const Book6Ch2 = lazy(() => import('./components/book6/Chapter2'));
+const Book6Ch3 = lazy(() => import('./components/book6/Chapter3'));
+const Book6Ch4 = lazy(() => import('./components/book6/Chapter4'));
+const Book6Ch5 = lazy(() => import('./components/book6/Chapter5'));
+const Book6Ch6 = lazy(() => import('./components/book6/Chapter6'));
+const Book6Ch7 = lazy(() => import('./components/book6/Chapter7'));
+const Book6Ch8 = lazy(() => import('./components/book6/Chapter8'));
 
-// ========== 導入 Book 7 章節 ==========
-import Book7Ch1 from './components/book7/Chapter1';
-import Book7Ch2 from './components/book7/Chapter2';
-import Book7Ch3 from './components/book7/Chapter3';
-import Book7Ch4 from './components/book7/Chapter4';
-import Book7Ch5 from './components/book7/Chapter5';
-import Book7Ch6 from './components/book7/Chapter6';
+// ========== Book 7 章節（懶加載） ==========
+const Book7Ch1 = lazy(() => import('./components/book7/Chapter1'));
+const Book7Ch2 = lazy(() => import('./components/book7/Chapter2'));
+const Book7Ch3 = lazy(() => import('./components/book7/Chapter3'));
+const Book7Ch4 = lazy(() => import('./components/book7/Chapter4'));
+const Book7Ch5 = lazy(() => import('./components/book7/Chapter5'));
+const Book7Ch6 = lazy(() => import('./components/book7/Chapter6'));
 
-// ========== 導入 Book 8 章節 ==========
-import Book8Ch1 from './components/book8/Chapter1';
-import Book8Ch2 from './components/book8/Chapter2';
-import Book8Ch3 from './components/book8/Chapter3';
-import Book8Ch4 from './components/book8/Chapter4';
-import Book8Ch5 from './components/book8/Chapter5';
-import Book8Ch6 from './components/book8/Chapter6';
-import Book8Ch7 from './components/book8/Chapter7';
-import Book8Ch8 from './components/book8/Chapter8';
-import Book8Ch9 from './components/book8/Chapter9';
-import Book8Ch10 from './components/book8/Chapter10';
-import Book8Ch11 from './components/book8/Chapter11';
-import Book8Ch12 from './components/book8/Chapter12';
+// ========== Book 8 章節（懶加載） ==========
+const Book8Ch1 = lazy(() => import('./components/book8/Chapter1'));
+const Book8Ch2 = lazy(() => import('./components/book8/Chapter2'));
+const Book8Ch3 = lazy(() => import('./components/book8/Chapter3'));
+const Book8Ch4 = lazy(() => import('./components/book8/Chapter4'));
+const Book8Ch5 = lazy(() => import('./components/book8/Chapter5'));
+const Book8Ch6 = lazy(() => import('./components/book8/Chapter6'));
+const Book8Ch7 = lazy(() => import('./components/book8/Chapter7'));
+const Book8Ch8 = lazy(() => import('./components/book8/Chapter8'));
+const Book8Ch9 = lazy(() => import('./components/book8/Chapter9'));
+const Book8Ch10 = lazy(() => import('./components/book8/Chapter10'));
+const Book8Ch11 = lazy(() => import('./components/book8/Chapter11'));
+const Book8Ch12 = lazy(() => import('./components/book8/Chapter12'));
 
-// ========== 導入 Book 9 章節 ==========
-import Book9Intro from './components/book9/Intro';
-import Book9Ch1 from './components/book9/Chapter1';
-import Book9Ch2 from './components/book9/Chapter2';
-import Book9Ch3 from './components/book9/Chapter3';
-import Book9Ch4 from './components/book9/Chapter4';
-import Book9Ch5 from './components/book9/Chapter5';
-import Book9Ch6 from './components/book9/Chapter6';
+// ========== Book 9 章節（懶加載） ==========
+const Book9Intro = lazy(() => import('./components/book9/Intro'));
+const Book9Ch1 = lazy(() => import('./components/book9/Chapter1'));
+const Book9Ch2 = lazy(() => import('./components/book9/Chapter2'));
+const Book9Ch3 = lazy(() => import('./components/book9/Chapter3'));
+const Book9Ch4 = lazy(() => import('./components/book9/Chapter4'));
+const Book9Ch5 = lazy(() => import('./components/book9/Chapter5'));
+const Book9Ch6 = lazy(() => import('./components/book9/Chapter6'));
 
-// ========== 導入 Book 10 章節 ==========
-import Book10Ch1 from './components/book10/Chapter1';
-import Book10Ch2 from './components/book10/Chapter2';
-import Book10Ch3 from './components/book10/Chapter3';
-import Book10Ch4 from './components/book10/Chapter4';
-import Book10Ch5 from './components/book10/Chapter5';
-import Book10Ch6 from './components/book10/Chapter6';
-import Book10Ch7 from './components/book10/Chapter7';
-import Book10Ch8 from './components/book10/Chapter8';
-import Book10Ch9 from './components/book10/Chapter9';
+// ========== Book 10 章節（懶加載） ==========
+const Book10Ch1 = lazy(() => import('./components/book10/Chapter1'));
+const Book10Ch2 = lazy(() => import('./components/book10/Chapter2'));
+const Book10Ch3 = lazy(() => import('./components/book10/Chapter3'));
+const Book10Ch4 = lazy(() => import('./components/book10/Chapter4'));
+const Book10Ch5 = lazy(() => import('./components/book10/Chapter5'));
+const Book10Ch6 = lazy(() => import('./components/book10/Chapter6'));
+const Book10Ch7 = lazy(() => import('./components/book10/Chapter7'));
+const Book10Ch8 = lazy(() => import('./components/book10/Chapter8'));
+const Book10Ch9 = lazy(() => import('./components/book10/Chapter9'));
 
-// ========== 導入 Book 11 章節 ==========
-import Book11Lesson1 from './components/book11/Lesson1';
+// ========== Book 11 章節（懶加載） ==========
+const Book11Lesson1 = lazy(() => import('./components/book11/Lesson1'));
 
-// ========== 導入 Book 12 章節 ==========
-import Book12Home from './components/book12/Book12Home';
+// ========== Book 12 章節（懶加載） ==========
+const Book12Home = lazy(() => import('./components/book12/Book12Home'));
 
-// ========== 導入 Book 13 章節 ==========
-import Book13Ch1 from './components/book13/Chapter1';
-import Book13Ch2 from './components/book13/Chapter2';
-import Book13Ch3 from './components/book13/Chapter3';
-import Book13Ch4 from './components/book13/Chapter4';
-import Book13Ch5 from './components/book13/Chapter5';
-import Book13Ch6 from './components/book13/Chapter6';
-import Book13Ch7 from './components/book13/Chapter7';
+// ========== Book 13 章節（懶加載） ==========
+const Book13Ch1 = lazy(() => import('./components/book13/Chapter1'));
+const Book13Ch2 = lazy(() => import('./components/book13/Chapter2'));
+const Book13Ch3 = lazy(() => import('./components/book13/Chapter3'));
+const Book13Ch4 = lazy(() => import('./components/book13/Chapter4'));
+const Book13Ch5 = lazy(() => import('./components/book13/Chapter5'));
+const Book13Ch6 = lazy(() => import('./components/book13/Chapter6'));
+const Book13Ch7 = lazy(() => import('./components/book13/Chapter7'));
 
-// ========== 導入 Book 14 章節 ==========
-import Book14Ch1 from './components/book14/Book14Ch1';
-import Book14Ch2 from './components/book14/Book14Ch2';
-import Book14Ch3 from './components/book14/Book14Ch3';
-import Book14Ch4 from './components/book14/Book14Ch4';
-import Book14Ch5 from './components/book14/Book14Ch5';
-import Book14Ch6 from './components/book14/Book14Ch6';
-import Book14Ch7 from './components/book14/Book14Ch7';
-import Book14Ch8 from './components/book14/Book14Ch8';
-import Book14Ch9 from './components/book14/Book14Ch9';
+// ========== Book 14 章節（懶加載） ==========
+const Book14Ch1 = lazy(() => import('./components/book14/Book14Ch1'));
+const Book14Ch2 = lazy(() => import('./components/book14/Book14Ch2'));
+const Book14Ch3 = lazy(() => import('./components/book14/Book14Ch3'));
+const Book14Ch4 = lazy(() => import('./components/book14/Book14Ch4'));
+const Book14Ch5 = lazy(() => import('./components/book14/Book14Ch5'));
+const Book14Ch6 = lazy(() => import('./components/book14/Book14Ch6'));
+const Book14Ch7 = lazy(() => import('./components/book14/Book14Ch7'));
+const Book14Ch8 = lazy(() => import('./components/book14/Book14Ch8'));
+const Book14Ch9 = lazy(() => import('./components/book14/Book14Ch9'));
 
-// ========== 導入 Book 15 章節 ==========
-import Book15Home from './components/book15/Book15Home';
-import Book15Ch1 from './components/book15/Book15Ch1';
-import Book15Ch2 from './components/book15/Book15Ch2';
-import Book15Ch3 from './components/book15/Book15Ch3';
-import Book15Ch4 from './components/book15/Book15Ch4';
-import Book15Ch5 from './components/book15/Book15Ch5';
-import Book15Ch6 from './components/book15/Book15Ch6';
-import Book15Ch7 from './components/book15/Book15Ch7';
-import Book15Ch8 from './components/book15/Book15Ch8';
-import Book15Ch9 from './components/book15/Book15Ch9';
+// ========== Book 15 章節（懶加載） ==========
+const Book15Home = lazy(() => import('./components/book15/Book15Home'));
+const Book15Ch1 = lazy(() => import('./components/book15/Book15Ch1'));
+const Book15Ch2 = lazy(() => import('./components/book15/Book15Ch2'));
+const Book15Ch3 = lazy(() => import('./components/book15/Book15Ch3'));
+const Book15Ch4 = lazy(() => import('./components/book15/Book15Ch4'));
+const Book15Ch5 = lazy(() => import('./components/book15/Book15Ch5'));
+const Book15Ch6 = lazy(() => import('./components/book15/Book15Ch6'));
+const Book15Ch7 = lazy(() => import('./components/book15/Book15Ch7'));
+const Book15Ch8 = lazy(() => import('./components/book15/Book15Ch8'));
+const Book15Ch9 = lazy(() => import('./components/book15/Book15Ch9'));
 
-// ========== 導入 Book 16 章節 ==========
-import Book16Home from './components/book16/Book16Home';
+// ========== Book 16 章節（懶加載） ==========
+const Book16Home = lazy(() => import('./components/book16/Book16Home'));
+const Book16Ch1 = lazy(() => import('./components/book16/Book16Ch1'));
+const Book16Ch2 = lazy(() => import('./components/book16/Book16Ch2'));
+const Book16Ch3 = lazy(() => import('./components/book16/Book16Ch3'));
+const Book16Ch4 = lazy(() => import('./components/book16/Book16Ch4'));
+const Book16Ch5 = lazy(() => import('./components/book16/Book16Ch5'));
+const Book16Ch6 = lazy(() => import('./components/book16/Book16Ch6'));
 
-import Book16Ch1 from './components/book16/Book16Ch1';
-import Book16Ch2 from './components/book16/Book16Ch2';
-import Book16Ch3 from './components/book16/Book16Ch3';
-import Book16Ch4 from './components/book16/Book16Ch4';
-import Book16Ch5 from './components/book16/Book16Ch5';
-import Book16Ch6 from './components/book16/Book16Ch6';
+// ========== Book 17 章節（懶加載） ==========
+const Book17Home = lazy(() => import('./components/book17/Book17Home'));
+const Book17Ch1 = lazy(() => import('./components/book17/Book17Ch1'));
+const Book17Ch2 = lazy(() => import('./components/book17/Book17Ch2'));
+const Book17Ch3 = lazy(() => import('./components/book17/Book17Ch3'));
+const Book17Ch4 = lazy(() => import('./components/book17/Book17Ch4'));
+const Book17Ch5 = lazy(() => import('./components/book17/Book17Ch5'));
+const Book17Ch6 = lazy(() => import('./components/book17/Book17Ch6'));
+const Book17Ch7 = lazy(() => import('./components/book17/Book17Ch7'));
+const Book17Ch8 = lazy(() => import('./components/book17/Book17Ch8'));
+const Book17Ch9 = lazy(() => import('./components/book17/Book17Ch9'));
+const Book17Ch10 = lazy(() => import('./components/book17/Book17Ch10'));
+const Book17Ch11 = lazy(() => import('./components/book17/Book17Ch11'));
+const Book17Ch12 = lazy(() => import('./components/book17/Book17Ch12'));
+const Book17Ch13 = lazy(() => import('./components/book17/Book17Ch13'));
+const Book17Ch14 = lazy(() => import('./components/book17/Book17Ch14'));
+const Book17Ch15 = lazy(() => import('./components/book17/Book17Ch15'));
+const Book17Ch16 = lazy(() => import('./components/book17/Book17Ch16'));
+const Book17Ch17 = lazy(() => import('./components/book17/Book17Ch17'));
 
-// ========== 導入 Book 17 章節 ==========
-import Book17Home from './components/book17/Book17Home';
-import Book17Ch1 from './components/book17/Book17Ch1';
-import Book17Ch2 from './components/book17/Book17Ch2';
-import Book17Ch3 from './components/book17/Book17Ch3';
-import Book17Ch4 from './components/book17/Book17Ch4';
-import Book17Ch5 from './components/book17/Book17Ch5';
-import Book17Ch6 from './components/book17/Book17Ch6';
-import Book17Ch7 from './components/book17/Book17Ch7';
-import Book17Ch8 from './components/book17/Book17Ch8';
-import Book17Ch9 from './components/book17/Book17Ch9';
-import Book17Ch10 from './components/book17/Book17Ch10';
-import Book17Ch11 from './components/book17/Book17Ch11';
-import Book17Ch12 from './components/book17/Book17Ch12';
-import Book17Ch13 from './components/book17/Book17Ch13';
-import Book17Ch14 from './components/book17/Book17Ch14';
-import Book17Ch15 from './components/book17/Book17Ch15';
-import Book17Ch16 from './components/book17/Book17Ch16';
-import Book17Ch17 from './components/book17/Book17Ch17';
+// ========== Book 18 章節（懶加載） ==========
+const Book18Home = lazy(() => import('./components/book18/Book18Home'));
+const Book18Ch1 = lazy(() => import('./components/book18/Book18Ch1'));
+const Book18Ch2 = lazy(() => import('./components/book18/Book18Ch2'));
+const Book18Ch3 = lazy(() => import('./components/book18/Book18Ch3'));
+const Book18Ch4 = lazy(() => import('./components/book18/Book18Ch4'));
+const Book18Ch5 = lazy(() => import('./components/book18/Book18Ch5'));
+const Book18Ch6 = lazy(() => import('./components/book18/Book18Ch6'));
+const Book18Ch7 = lazy(() => import('./components/book18/Book18Ch7'));
+const Book18Ch8 = lazy(() => import('./components/book18/Book18Ch8'));
+const Book18Ch9 = lazy(() => import('./components/book18/Book18Ch9'));
+const Book18Ch10 = lazy(() => import('./components/book18/Book18Ch10'));
+const Book18Ch11 = lazy(() => import('./components/book18/Book18Ch11'));
+const Book18Ch12 = lazy(() => import('./components/book18/Book18Ch12'));
+const Book18Ch13 = lazy(() => import('./components/book18/Book18Ch13'));
+const Book18Summary = lazy(() => import('./components/book18/Book18Summary'));
 
-// ========== 導入 Book 18 章節 ==========
-import Book18Home from './components/book18/Book18Home';
-import Book18Ch1 from './components/book18/Book18Ch1';
-import Book18Ch2 from './components/book18/Book18Ch2';
-import Book18Ch3 from './components/book18/Book18Ch3';
-import Book18Ch4 from './components/book18/Book18Ch4';
-import Book18Ch5 from './components/book18/Book18Ch5';
-import Book18Ch6 from './components/book18/Book18Ch6';
-import Book18Ch7 from './components/book18/Book18Ch7';
-import Book18Ch8 from './components/book18/Book18Ch8';
-import Book18Ch9 from './components/book18/Book18Ch9';
-import Book18Ch10 from './components/book18/Book18Ch10';
-import Book18Ch11 from './components/book18/Book18Ch11';
-import Book18Ch12 from './components/book18/Book18Ch12';
-import Book18Ch13 from './components/book18/Book18Ch13';
-import Book18Summary from './components/book18/Book18Summary';
-
-// ========== 導入 Book 19 章節 ==========
-import Book19Home from './components/book19/Book19Home';
-import Book19Ch1 from './components/book19/Book19Ch1';
-import Book19Ch2 from './components/book19/Book19Ch2';
-import Book19Ch3 from './components/book19/Book19Ch3';
-import Book19Ch4 from './components/book19/Book19Ch4';
-import Book19Ch5 from './components/book19/Book19Ch5';
-import Book19Ch6 from './components/book19/Book19Ch6';
+// ========== Book 19 章節（懶加載） ==========
+const Book19Home = lazy(() => import('./components/book19/Book19Home'));
+const Book19Ch1 = lazy(() => import('./components/book19/Book19Ch1'));
+const Book19Ch2 = lazy(() => import('./components/book19/Book19Ch2'));
+const Book19Ch3 = lazy(() => import('./components/book19/Book19Ch3'));
+const Book19Ch4 = lazy(() => import('./components/book19/Book19Ch4'));
+const Book19Ch5 = lazy(() => import('./components/book19/Book19Ch5'));
+const Book19Ch6 = lazy(() => import('./components/book19/Book19Ch6'));
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({
@@ -578,6 +577,14 @@ const App: React.FC = () => {
 
   return (
     <Router>
+      <Suspense fallback={
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+          <div className="text-center">
+            <div className="w-12 h-12 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-slate-600 font-medium">載入中...</p>
+          </div>
+        </div>
+      }>
       <Routes>
         {/* ========== Book 1 - 立界線得自由 ========== */}
         <Route path="/book1/home" element={<BookLayout bookId="book1" chapter="home" chapters={getChaptersForBook('book1')}><Book1Home /></BookLayout>} />
@@ -856,6 +863,7 @@ const App: React.FC = () => {
           </div>
         } />
       </Routes>
+      </Suspense>
     </Router>
   );
 };
