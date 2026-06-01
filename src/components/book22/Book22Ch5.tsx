@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Users, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, Users, Star, Search, HelpCircle, Check } from 'lucide-react';
 
 export default function Book22Ch5() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
     content: true,
+    summary: true,
     exploration: true,
     questions: true,
     practice: true,
@@ -30,40 +31,70 @@ export default function Book22Ch5() {
           {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
         </button>
         {expanded['content'] && (
-          <div className="p-5 bg-white space-y-4">
+          <div className="p-5 bg-white space-y-6">
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">一、教會是什麼？</h3>
               <p className="text-gray-700 leading-relaxed">
-                加爾文給教會的定義是：「凡是上帝的話被宣講和聆聽、聖禮被正確施行的地方，那裡就有教會。」這是一個動態的概念——教會不只是建築物或組織，而是一個持續發生的事件：上帝的話被宣講，信徒真實地聆聽和回應，聖禮被施行。
+                「教會」這個詞，在中文讓人聯想到建築物（教會堂）或組織（某某教會）。但希臘文原文「ekklesia」的意思是「被召出來的群體」——指被上帝從世界中呼召出來、聚集在一起的人。教會不是一個人自發組成的社群，而是因上帝的主動呼召而存在的。這個定義有深刻的意涵：教會的主動者是上帝，而非人；教會的根基是上帝的召選，而非人的決定。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                希臘文「教會」（ekklesia）的原意是「被召出來的群體」，指被上帝從世界中召出、聚集在一起的人。教會不是一個自發形成的社群，而是由上帝的呼召而存在的。
+                加爾文給教會的經典定義是：「凡是上帝的話被宣講和聆聽、聖禮被正確施行的地方，那裡就有教會。」這是一個動態的概念——教會不是靜態的建築或組織，而是一個持續發生的「事件」：上帝透過祂的話語向人說話，人真實地聆聽和回應，聖禮被照著基督的設立施行。這個定義簡潔有力，既排除了只有外在組織形式卻無實質的假教會，也開放了各種形式的真教會。
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">二、「成為」真教會：更新的教會</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">二、有形教會與無形教會</h3>
               <p className="text-gray-700 leading-relaxed">
-                教會分為「有形的教會」（visible church，實際存在的教會組織）和「無形的教會」（invisible church，真正蒙恩得救的信徒群體，只有上帝完全知道）。我們參與有形的教會，但需要謙卑地認識到並非所有外在的教會成員都是無形教會的成員。
+                奧古斯丁最先明確區分了「有形的教會」（visible church）和「無形的教會」（invisible church）。有形教會是我們看得見的、歷史上實際存在的教會組織和群體；無形教會則是真正蒙上帝揀選、得著救恩的信徒群體，只有上帝完全知道其成員是誰。這個區分的歷史背景是對抗多納特主義（Donatism）——他們主張只有道德清白的基督徒才算是真教會。奧古斯丁指出，有形教會就像麥子與稗子同在的麥田（太13:24-30），最終的分別屬於上帝，人無法完全判定。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                改革宗傳統的格言「教會永遠在更新中」（ecclesia semper reformanda）提醒我們：教會從來不是完美的，需要不斷地按著上帝的話語更新和改革。
+                改革宗傳統的格言「教會永遠在更新中」（Ecclesia semper reformanda est）提醒我們：有形教會從來不是完美的，需要不斷地按照上帝話語的標準進行自我省察和改革。這個格言有時被誤解為「我可以不斷地更換教會，直到找到完美的教會」，但其真正意思是：我所在的教會需要持續更新，而我是這個更新過程的一部分，而非旁觀的批評者。
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">三、教會的功能</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">三、教會的五大功能</h3>
               <p className="text-gray-700 leading-relaxed">
-                教會有五大功能：交誼（Koinonia，彼此相交、群體生活）、教育（Didache，教導信仰、門徒訓練）、服務（Diakonia，服事社會、關懷弱勢）、傳道（Kerygma，宣揚福音）、禮拜（Leiturgia，崇拜上帝）。
+                新約聖經描述教會的功能，可以歸納為五個希臘文術語。交誼（Koinonia）：彼此相交、分享生命的群體生活，超越表面的點頭之交；教育（Didache）：教導信仰、門徒訓練，幫助信徒在真理中成長；服務（Diakonia）：服事社會、關懷弱勢，將上帝的愛實踐在具體的需要上；傳道（Kerygma）：宣揚福音，將耶穌基督的好消息帶給尚未認識的人；禮拜（Leiturgia）：崇拜上帝，承認上帝的主權和恩典。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                這五個功能缺一不可，但禮拜是最根本的——教會首先是一個崇拜上帝的群體，其他功能都從崇拜中流出。一個只有服務而沒有禮拜的教會，容易失去方向；一個只有禮拜而沒有服務的教會，則脫離了世界。
+                這五個功能不是平等排列的，而是以禮拜為根基和中心。教會首先是一個崇拜上帝的群體，其他四個功能都從崇拜中流出、也流向崇拜。一個只有服務（Diakonia）而沒有禮拜（Leiturgia）的教會，容易變成一個NGO；一個只有禮拜而沒有服務的教會，則脫離了上帝呼召我們進入世界的使命。五個功能的均衡，是健康教會的標誌。
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">四、教會與文化</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">四、教會與文化：澎湖馬公的故事</h3>
               <p className="text-gray-700 leading-relaxed">
-                教會與文化的關係是雙向影響的。教會成長於特定文化中，不可避免地受文化塑造；但教會也應該以福音轉化文化。澎湖馬公教會的例子說明教會可以深刻影響地方文化（一百年來產生大量醫生）；但教會也可能被文化同化，失去先知性的聲音。
+                林鴻信引用澎湖馬公教會的故事作為教會影響文化的具體例子。馬公教會長期培育出大量醫療人才，使澎湖地區有遠超其規模的醫療資源。這個例子說明：一個忠心宣揚福音、培育門徒的地方教會，可以在數十年間深刻地轉化一個地方的文化和社會。教會對文化的影響，往往不是透過政治力量或媒體運動，而是透過一代代忠心的門徒，在各自的崗位上活出福音的價值。
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-2">
+                然而教會與文化的關係是雙向的。教會在影響文化的同時，也不可避免地受文化塑造。台灣教會受儒家文化影響，可能過分強調尊卑位階而壓制恩賜；受商業文化影響，可能把教會當成服務消費者的機構。教會需要有持續的自我省察：我們在哪些方面是在「轉化文化」，在哪些方面是被「文化同化」？先知性的聲音，往往在這種自我省察中誕生。
               </p>
             </div>
+          </div>
+        )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
+        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
+          <div className="flex items-center gap-2">
+            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
+            <span className="font-semibold text-gray-800">重點總結</span>
+          </div>
+          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+        </button>
+        {expanded['summary'] && (
+          <div className="p-5 bg-white space-y-3">
+            {[
+              '「教會」（ekklesia）是「被召出來的群體」：主動者是上帝而非人，教會的根基是上帝的呼召，而非人自發組成的契約關係。',
+              '加爾文的教會定義：「上帝的話被宣講和聆聽、聖禮被正確施行的地方就有教會」——這是動態的、事件性的，而非靜態的建築或組織。',
+              '有形教會（可見的組織）與無形教會（上帝所知的真信徒）的區分：教會是麥子與稗子同在，最終分別屬於上帝；「教會永遠在更新中」呼召我們成為更新的參與者而非批評者。',
+              '教會的五大功能：交誼（Koinonia）、教育（Didache）、服務（Diakonia）、傳道（Kerygma）、禮拜（Leiturgia）——以禮拜為根基，五者缺一則失衡。',
+              '教會與文化是雙向影響：忠心的教會能深刻轉化地方文化（如馬公醫療），但教會也需持續自我省察，辨別自己是在轉化文化還是被文化同化。',
+            ].map((point, i) => (
+              <div key={i} className="flex gap-3">
+                <span className="text-sky-600 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-gray-700 leading-relaxed">{point}</p>
+              </div>
+            ))}
           </div>
         )}
       </div>

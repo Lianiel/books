@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Heart, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, Heart, Star, Search, HelpCircle, Check } from 'lucide-react';
 
 export default function Book22Ch7() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
     content: true,
+    summary: true,
     exploration: true,
     questions: true,
     practice: true,
@@ -30,34 +31,61 @@ export default function Book22Ch7() {
           {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
         </button>
         {expanded['content'] && (
-          <div className="p-5 bg-white space-y-4">
+          <div className="p-5 bg-white space-y-6">
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">一、耶穌基督與基督教信仰</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">一、耶穌基督：認識的四個角度</h3>
               <p className="text-gray-700 leading-relaxed">
-                基督教信仰的核心是耶穌基督這個歷史人物。認識耶穌可以從四個角度：
+                基督教信仰的核心是耶穌基督這個歷史人物。「耶穌」是祂的人名，希伯來文Yeshua，意思是「上帝拯救」；「基督」是祂的職分，即希臘文的「彌賽亞」（Messiah），意思是「受膏者」——在舊約中，先知、祭司、君王都以膏立為記，耶穌集這三種職分於一身。認識耶穌基督，可以從四個角度切入：從上帝的角度（耶穌是道成肉身的上帝主動進入歷史）、從人的角度（耶穌是完全的人，活出了上帝形象的完全）、從個人意義的角度（耶穌是個人救主）、從群體意義的角度（基督是教會的頭，建立新的群體）。
               </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 mt-2">
-                <li><span className="font-medium">上帝的角度</span>：耶穌是「上帝的道成肉身」（約1:14），是上帝主動進入人類歷史的行動</li>
-                <li><span className="font-medium">人的角度</span>：耶穌是完全的人，代表理想的人性，活出了上帝形象的完全</li>
-                <li><span className="font-medium">對個人的意義</span>：耶穌是個人的救主，使每個人與上帝和好成為可能</li>
-                <li><span className="font-medium">對群體的意義</span>：基督是教會的頭，把分散的人聚合為新群體</li>
-              </ul>
+              <p className="text-gray-700 leading-relaxed mt-2">
+                約翰福音1:14的宣告極為震撼：「道成了肉身，住在我們中間，充充滿滿地有恩典有真理。」「道」（Logos）在希臘哲學中是宇宙的理性原則，在希伯來傳統中是上帝的創造和啟示能力；「成肉身」（incarnation）是說這個永恆的道，真實地進入了時間、空間和物質性的人類生命。這是基督教信仰中最驚天動地的宣告——上帝沒有遠遠地對人說話，而是親自來了。
+              </p>
             </div>
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">二、歷史的耶穌與上帝國</h3>
               <p className="text-gray-700 leading-relaxed">
-                耶穌的宣教核心是「上帝國」（Kingdom of God）。上帝國不只是死後的天堂，而是上帝的統治和管治——已經在耶穌的降臨中開始（「上帝國就在你們中間」，路17:21），卻還未完全實現，等待基督再來時的完全成就（「已然」與「未然」的張力）。
+                耶穌的宣教核心是「上帝國」（Kingdom of God，或「天國」）的宣告。這個主題在四福音書中重複出現，是耶穌宣講的心臟。上帝國不只是死後的天堂，而是上帝的統治和管治秩序進入歷史——祂的公義、慈愛和真理在這個世界成為現實。耶穌宣告上帝國在祂的降臨中已經開始（「上帝國就在你們中間」，路17:21；「我若靠著上帝的靈趕鬼，這就是上帝國臨到你們了」，太12:28），但還未完全實現，等待基督再來時的完全成就。這是神學家所說的「已然」（already）與「未然」（not yet）的張力。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                耶穌的教導和行動——醫病、趕鬼、與罪人同席、宣揚貧窮人有福——都是上帝國進入歷史的具體表現。十字架是上帝國最深刻的矛盾：上帝的王，卻以受苦和死亡來征服罪和死亡。復活則是上帝對十字架的肯定，是上帝國最終勝利的頭期款。
+                耶穌的教導和行動都是上帝國的具體表現：醫治病人宣告上帝國的更新力量；趕逐污鬼宣告上帝國勝過黑暗的能力；與稅吏和罪人同席宣告上帝國接納邊緣人；宣揚貧窮人有福宣告上帝國顛覆世界的秩序。十字架是上帝國最深刻的矛盾和啟示：上帝的王，卻以受苦和死亡來征服罪和死亡。上帝不用壓倒性的武力，而用犧牲的愛，打敗了最深的仇敵。復活則是上帝對十字架的肯定和翻轉，是上帝國最終勝利的頭期款。
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">三、基督論的核心：真神真人</h3>
               <p className="text-gray-700 leading-relaxed">
-                教會傳統確立了基督的本質：祂是完全的神，也是完全的人（chalcedon 信條，451年）。這兩個「完全」都不能減損。若基督不是完全的神，祂就沒有能力拯救我們；若基督不是完全的人，祂就沒有資格代替我們。「耶穌」是祂的人名（意思是「上帝拯救」），「基督」是祂的職分（彌賽亞，受膏者）。
+                教會早期花了幾百年的時間，在爭論和辯論中澄清了基督的本質。451年的迦克墩大公會議（Council of Chalcedon）確立了正統的基督論：耶穌基督是完全的神，也是完全的人，兩性（神性與人性）在一個位格中結合，「不混淆、不改變、不分割、不分離」。這四個「不」排除了各種異端——既不能說神性吸收了人性（基督只有一性），也不能說神性和人性是分開的兩個人格。
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-2">
+                這個教義的意涵是救贖性的：若基督不是完全的神，祂就沒有能力拯救我們（有限的人無法救贖有限的人）；若基督不是完全的人，祂就沒有資格代替我們承擔審判（只有人才能為人付出代價）。「真神真人」不只是抽象的教義，而是福音的基礎：因為這位代替我們的，是完全代表上帝的神，又是完全代表人類的人，祂的死亡和復活才具有無限的救贖意義。
               </p>
             </div>
+          </div>
+        )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
+        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
+          <div className="flex items-center gap-2">
+            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
+            <span className="font-semibold text-gray-800">重點總結</span>
+          </div>
+          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+        </button>
+        {expanded['summary'] && (
+          <div className="p-5 bg-white space-y-3">
+            {[
+              '「耶穌」是人名（上帝拯救），「基督」是職分（彌賽亞/受膏者），認識耶穌需要從四個角度：上帝的行動、完全的人性、個人的救主、群體的頭。',
+              '約1:14「道成肉身」是基督信仰最震撼的宣告：永恆的道真實地進入時間與空間，上帝沒有遠遠地說話，而是親自降臨，「住在我們中間」。',
+              '耶穌宣教的核心是「上帝國」：不只是死後的天堂，而是上帝的統治已在耶穌的降臨中開始（「已然」），卻未完全實現（「未然」），等待再來時的完成。',
+              '十字架是上帝國最深的矛盾與啟示：上帝用犧牲的愛而非武力征服罪惡與死亡；復活是上帝對十字架的肯定，是最終勝利的頭期款。',
+              '迦克墩信條（451年）確立「真神真人」：不混淆、不改變、不分割、不分離——若非完全的神，無力救贖；若非完全的人，無資格代替，這是福音的救贖基礎。',
+            ].map((point, i) => (
+              <div key={i} className="flex gap-3">
+                <span className="text-sky-600 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-gray-700 leading-relaxed">{point}</p>
+              </div>
+            ))}
           </div>
         )}
       </div>

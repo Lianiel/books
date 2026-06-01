@@ -4,6 +4,7 @@ import { ChevronDown, ChevronUp, Star, Search, HelpCircle, Check } from 'lucide-
 export default function Book22Ch6() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
     content: true,
+    summary: true,
     exploration: true,
     questions: true,
     practice: true,
@@ -30,34 +31,70 @@ export default function Book22Ch6() {
           {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
         </button>
         {expanded['content'] && (
-          <div className="p-5 bg-white space-y-4">
+          <div className="p-5 bg-white space-y-6">
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">誰是偶像？</h3>
               <p className="text-gray-700 leading-relaxed">
-                路德說：「你所信任的，你所寄託的，就是你的上帝。」蒂利希（Tillich）說：「偶像是終極關切的扭曲——將一個有限的事物當作終極。」偶像可以是金錢、地位、關係、甚至宗教本身。真正的上帝與偶像的根本差別在於：真正的上帝不受我們操控，祂是主宰；而偶像是我們設計來服務自己需要的。
+                路德說：「你所信任的，你所寄託的，就是你的上帝。」這個定義揭示了偶像的本質——偶像不一定是神像或宗教物品，可以是任何我們寄予終極信任的事物。蒂利希（Paul Tillich）進一步深化這個定義：「偶像是終極關切的扭曲——將一個有限的事物當作終極。」金錢、地位、成功、健康、甚至家庭，都可能成為偶像。偶像的識別方式是：當它被奪去時，你是否覺得生命失去意義？
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-2">
+                真正的上帝與偶像的根本差別在於：真正的上帝是主宰，不受我們操控，祂按著祂的旨意行事；而偶像是我們設計來服務自己需要的工具，我們通過儀式、行為或奉獻來「管理」偶像，使它為我們工作。認識真正的三一上帝，必然要求我們放棄操控上帝的企圖，學習在祂的主權下臣服。
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">三一上帝的教義</h3>
               <p className="text-gray-700 leading-relaxed">
-                「三一」教義說：上帝是三位一體——「三中有一，一中有三」。父、子、聖靈是三個位格（persons），但只有一個本質（essence）。這不是說三個神合而為一，也不是說一個神以三種方式顯現，而是說上帝的存在本來就是關係性的、群體性的。
+                三一論是基督教最獨特、也最難理解的教義：上帝是三位一體——「三中有一，一中有三」。父、子、聖靈是三個位格（persons，希臘文 hypostaseis），但只有一個本質（essence，希臘文 ousia）。這不是說有三個上帝（三神論），也不是說同一個上帝以三種方式顯現（形態論），而是說上帝的存在本來就是關係性的、群體性的。三個位格在永恆中彼此相愛、相交、相互內住（perichoresis），這是上帝本質的描述。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                三一論有其禱告的基礎：我們向父禱告，透過子進入父的面前，在聖靈的感動和幫助下禱告（羅8:26-27）。三一論也有其聖經根基：馬太28:19的「奉父子聖靈的名」；約翰福音14-16章中耶穌對父和聖靈的描述；使徒行傳的洗禮和聖靈的工作。
+                三一論有紮實的聖經根基，不只是教義傳統的推論。耶穌在約翰福音14-16章詳述了祂與父的關係，以及聖靈的工作；馬太28:19命令門徒「奉父子聖靈的名」為人施洗；哥林多後書13:13的「三一式祝福」（主耶穌基督的恩惠、上帝的慈愛、聖靈的感動）見證了初代教會的三一信仰。這些聖經資料促使教會在幾百年的神學討論中，逐步形成了我們今天的三一論教義。
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">認識上帝：擬人法的使用</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">認識上帝：擬人法與上帝的真實</h3>
               <p className="text-gray-700 leading-relaxed">
-                聖經用擬人的方式描述上帝（如「上帝的手」、「上帝後悔了」），這不是說上帝真的有手或情緒像人一樣，而是用人類能理解的語言，類比性地描述超越性的上帝與人的互動。加爾文說上帝「屈尊俯就」（accommodation）我們的認知侷限，用我們能理解的語言向我們說話。
+                聖經用擬人的方式描述上帝（如「上帝的手」、「上帝的眼」、「上帝後悔了」）。這種描述方式不是說上帝真的有手或情緒，而是用人類能理解的語言類比性地描述無限上帝與人的互動。加爾文稱此為上帝的「屈尊俯就」（accommodatio）——上帝像慈愛的父母對幼兒說話一樣，用孩子能理解的語言來溝通，而不是用超越孩子理解力的方式說話。
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-2">
+                這個原則對讀聖經有重要意義：我們一方面需要認真對待聖經的描述（這確實是上帝向我們說的話），另一方面需要謙卑地認識到這些描述是類比性的，不能推到極端（例如因為聖經說「上帝後悔了」就認為上帝對未來一無所知）。在無限的上帝與有限的人之間，語言本身有其局限；正確的神學需要在「誠實接受聖經的話」和「謙卑承認我們的理解有限」之間保持張力。
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">避免兩種扭曲的上帝觀</h3>
               <p className="text-gray-700 leading-relaxed">
-                人們對上帝常有兩種扭曲：一是將上帝視為「絕對強者」——遙遠、威嚴、冷酷的審判官，只有恐懼，沒有親密。二是將上帝視為「有求必應者」——像自動販賣機，投入祈禱就應當得到所要的，否則就懷疑上帝的存在。真正的上帝既是全能的創造主，也是慈愛的天父；既是公義的審判者，也是憐憫的救主。
+                人們對上帝常有兩種典型的扭曲。第一種是「絕對強者」的上帝觀：遙遠、威嚴、冷酷的審判官，人只能在恐懼中接近祂，關係是義務性的而非親密的。這種上帝觀往往產生律法主義的信仰——努力做好才能得到上帝的接納，稍有失敗就充滿罪咎。第二種是「有求必應者」的上帝觀：上帝像自動販賣機，投入祈禱、奉獻或行為就應當得到想要的結果，否則就懷疑上帝的存在或良善。
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-2">
+                真正的三一上帝既不是嚴厲的審判官，也不是服務我們需求的自動販賣機。祂是全能的創造主，也是慈愛的天父（以父子關係為比喻）；祂是公義的審判者（罪不能在祂面前通過），也是憐憫的救主（差派聖子代替我們承擔審判）。三一論宣告：上帝的本質是愛的群體——父愛子，子順服父，聖靈在這愛的關係中同在。信徒進入三一上帝的關係，就是進入這永恆的愛的群體。
               </p>
             </div>
+          </div>
+        )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
+        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
+          <div className="flex items-center gap-2">
+            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
+            <span className="font-semibold text-gray-800">重點總結</span>
+          </div>
+          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+        </button>
+        {expanded['summary'] && (
+          <div className="p-5 bg-white space-y-3">
+            {[
+              '偶像的本質（路德/蒂利希）：你所終極信任、寄託生命意義的就是你的上帝；偶像是將有限的事物當作終極的扭曲——識別方式是：失去它是否生命失去意義？',
+              '三一論的核心：父、子、聖靈是三個位格（hypostaseis）但同一本質（ousia）——不是三個上帝（三神論），也不是同一上帝的三種面貌（形態論），而是關係性的、群體性的上帝存在。',
+              '三一論有聖經根基：約翰福音14-16章（父、子、靈的關係）、太28:19（奉父子聖靈的名）、林後13:13（三一式祝福）——不只是推論，而是初代教會的實際信仰。',
+              '加爾文「屈尊俯就」原則：上帝用人類能理解的語言（擬人法）向我們說話，我們需認真對待聖經的描述，同時謙卑地承認這些描述是類比性的，不可推到極端。',
+              '避免兩種扭曲：「嚴厲審判官」（產生律法主義）和「有求必應機」（產生消費主義信仰）——真正的三一上帝是全能的創造主、慈愛的天父、公義的審判者，也是憐憫的救主。',
+            ].map((point, i) => (
+              <div key={i} className="flex gap-3">
+                <span className="text-sky-600 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-gray-700 leading-relaxed">{point}</p>
+              </div>
+            ))}
           </div>
         )}
       </div>

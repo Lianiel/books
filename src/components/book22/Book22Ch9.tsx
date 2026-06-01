@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Compass, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, Compass, Star, Search, HelpCircle, Check } from 'lucide-react';
 
 export default function Book22Ch9() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
     content: true,
+    summary: true,
     exploration: true,
     questions: true,
     practice: true,
@@ -30,40 +31,70 @@ export default function Book22Ch9() {
           {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
         </button>
         {expanded['content'] && (
-          <div className="p-5 bg-white space-y-4">
+          <div className="p-5 bg-white space-y-6">
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">一、盼望的優先性</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">一、盼望的優先性與能動性</h3>
               <p className="text-gray-700 leading-relaxed">
-                希伯來書11:1說：「信就是所望之事的實底，是未見之事的確據。」盼望不是被動等待，而是主動的力量——人因盼望什麼，就朝什麼方向發展。農夫種樹是因為盼望後代能乘涼；清教徒移民新大陸是因為盼望建立更接近上帝國的社會。
+                希伯來書11:1的定義是對盼望最精簡的描述：「信就是所望之事的實底，是未見之事的確據。」盼望在聖經中不是被動的等待，而是主動塑造現在的力量。林鴻信引用一個深刻的觀察：傳統的因果觀認為「過去決定現在」——我的過去（家庭背景、教育、創傷）決定了我現在是誰；但基督教的盼望觀提出了另一種時間觀：「未來的盼望塑造現在」——我盼望成為什麼樣的人，今天就朝著那個方向生活和選擇。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                傳統的因果觀是「過去決定現在」，但基督教的盼望觀是「未來的盼望塑造現在」。我們今天怎麼生活，取決於我們盼望將來成為什麼樣的人。信仰本身就是一種盼望——對上帝和上帝國的盼望。
+                這種「盼望塑造現在」的力量，在歷史上有許多見證。農夫種樹是因為盼望後代能乘涼——他不會在有生之年看到大樹，但盼望的現實使他今天就行動。清教徒移民新大陸，是因為盼望建立一個更接近上帝國的社會。美國黑人在奴役和苦難中透過黑人靈歌和末世盼望維持尊嚴。台灣在歷史傷痛中需要這種「活潑的盼望」——既不否認過去的苦難，又不被苦難困住，在上帝國的盼望中繼續前行。
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">二、信仰與盼望的歷史見證</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">二、基督教的死亡觀：死人復活</h3>
               <p className="text-gray-700 leading-relaxed">
-                歷史上有許多信仰與盼望的見證：初代教會在末日盼望中過著對主再來的期待生活；清教徒懷著上帝國的盼望，移民北美建立「新英格蘭」（雖然未完全成功，但盼望的精神值得學習）；美國非裔在奴役和苦難中，透過聖經的終末期盼維持盼望（黑人靈歌的「將來有人在樹下乘涼」）；台灣在二二八等歷史傷痛中，呼召基督徒以上帝國的盼望回應，而非以迎合或逃避來面對。
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-800 mb-2">三、死後的盼望：基督教死亡觀</h3>
-              <p className="text-gray-700 leading-relaxed">
-                聖經的死亡觀不是靈魂不死（希臘哲學）而是「死人復活」。舊約的「陰間」（Sheol）是死者所在之處，是遠離生命和上帝的地方；肉體和靈魂是生命共同體，人死後並非靈魂繼續活動而是「如睡了」（路德的觀點）。
+                許多基督徒（甚至教牧）持有一種隱性的希臘式靈魂不死論：人死後，靈魂離開身體「上天堂」，身體腐朽無關緊要。但聖經的死亡觀與此根本不同。聖經視人為身體與靈魂的整合體，死亡是整個人的暫時停止——路德甚至用「如睡了」來形容死亡的狀態。舊約的「陰間」（Sheol）是遠離上帝生命之源的黑暗之地，死亡在聖經中是一個嚴肅的敵人（「死是末了所要廢去的仇敵」，林前15:26），而非靈魂的解放。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                基督的復活是「死人復活的初熟果子」（林前15:20），是對信徒復活的保證。「身體的復活」不是舊身體的翻新，而是全新的生命形式（如種子與植物的關係，林前15:42-44）。基督徒的終末盼望是：死亡暫時得勝，但在主再來時，死亡被永遠勝過（林前15:55）。
+                基督的復活改變了一切。保羅宣告基督是「死人復活的初熟果子」（林前15:20）——祂的復活不只是個人的神蹟，而是對所有信徒將來復活的保證和預示。「身體的復活」不是舊身體的簡單修復，而是全新的生命形式。保羅用種子與植物的比喻說明：種下的是必死的、軟弱的、屬血氣的，復活的卻是不朽的、強壯的、屬靈的（林前15:42-44）。這個盼望意味著：基督徒不是期待「靈魂永遠漂浮在天上」，而是期待在最終的新天新地中，以新的身體繼續在上帝的同在中生活。
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">四至五、苦難中的盼望與跟隨耶穌</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">三、苦難中的活潑盼望</h3>
               <p className="text-gray-700 leading-relaxed">
-                金恩博士（Martin Luther King Jr.）的〈我有一個夢〉演講，是苦難中活潑盼望的最佳見證。他不逃避苦難，卻在盼望中繼續抗爭。黑人靈歌《沒有人知道我的苦惱》把苦難與「榮耀哈利路亞」交織，表達了基督徒在苦難中的盼望。
+                「活潑的盼望」（彼前1:3，living hope）這個詞的力量，在苦難的處境中最能彰顯。林鴻信特別引用馬丁·路德·金恩博士（Martin Luther King Jr.）的〈我有一個夢〉演講作為苦難中活潑盼望的最佳見證。金恩博士不是在安全舒適的環境中做夢，而是在長期的種族歧視、暴力威脅和持續的苦難中，仍然宣告一個根植於聖經（以賽亞書40:4-5）的終末期盼。他的盼望不是逃避現實，而是在現實中積極抗爭的動力。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                盼望的根基是跟隨耶穌基督：耶穌是歷史的中心（啟示、復活、再臨），基督徒的盼望必須以耶穌為中心，而非只是對特定日期的預測。羅馬書14:7-8：「無論活著死去，都是主的人。」這是基督徒盼望的底線——我們在一切境況中，都在主的手中。
+                黑人靈歌《沒有人知道我的苦惱》把苦難與「榮耀哈利路亞」奇妙地交織在一起——苦難不被否認，但也不是最後的話。這種在苦難中保持盼望的能力，正是「活潑的盼望」的真義：不是否認苦難的真實，而是在苦難中確信上帝的公義必然實現、祂的應許必然成就。羅馬書14:7-8宣告：「無論活著死去，都是主的人。」這是基督徒盼望的底線——在任何境況中，我們都在主的手中，這是不能被奪去的確信。
               </p>
             </div>
+            <div>
+              <h3 className="font-semibold text-gray-800 mb-2">四、盼望的根基：跟隨耶穌基督</h3>
+              <p className="text-gray-700 leading-relaxed">
+                基督徒的盼望不是對特定末日日期的預測，也不是對烏托邦社會的幻想，而是根植於耶穌基督的歷史事件——祂的道成肉身、受死、復活，以及祂所應許的再來。這三個「基督事件」（啟示、復活、再臨）構成了歷史的中心點，也是盼望的根基：上帝已經在基督裡行動了（過去），上帝現在透過聖靈繼續工作（現在），上帝將在基督再來時完全成就祂的應許（未來）。
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-2">
+                這種盼望的實際意義，是在今天就開始活出盼望所描繪的生命形式。「前人種樹，後人乘涼」的精神，是基督徒盼望最美的比喻之一：我們可能不會看到我們的努力在今生結出完全的果子，但我們相信後代將在我們今天種下的種子所長成的樹下乘涼。在種族和解、環境保護、教育、醫療、社會公義等議題上，基督徒的盼望不是等待上帝從天降下神蹟解決問題，而是在盼望的激勵下，今天就積極地參與上帝在世界中的更新工作。
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
+        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
+          <div className="flex items-center gap-2">
+            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
+            <span className="font-semibold text-gray-800">重點總結</span>
+          </div>
+          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+        </button>
+        {expanded['summary'] && (
+          <div className="p-5 bg-white space-y-3">
+            {[
+              '基督教的時間觀顛覆了傳統因果論：不是「過去決定現在」，而是「未來的盼望塑造現在」——我盼望成為什麼樣的人，今天就朝那個方向生活和選擇。',
+              '聖經的死亡觀是「死人復活」而非「靈魂不死」：死亡是整個人的停止（非靈魂的解放），基督復活是「初熟果子」，保證信徒將以全新身體形式（非靈魂漂浮）在新天新地中復活。',
+              '「活潑的盼望」（彼前1:3）在苦難中最有力：金恩博士在種族歧視的苦難中仍宣告根植於聖經的夢想，黑人靈歌把苦難與讚美交織——盼望不否認苦難，但確信上帝的公義必然實現。',
+              '「無論活著死去，都是主的人」（羅14:8）是基督徒盼望的底線：在任何境況中，我們都在主的手中，這是不能被奪去的確信，是苦難中持守的根基。',
+              '盼望的實踐：「前人種樹，後人乘涼」的精神——今天就積極參與社會更新，不等待神蹟從天降臨，因為上帝的更新工作需要信徒作為祂在世界的手腳。',
+            ].map((point, i) => (
+              <div key={i} className="flex gap-3">
+                <span className="text-sky-600 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-gray-700 leading-relaxed">{point}</p>
+              </div>
+            ))}
           </div>
         )}
       </div>

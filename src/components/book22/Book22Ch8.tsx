@@ -4,6 +4,7 @@ import { ChevronDown, ChevronUp, Star, Search, HelpCircle, Check } from 'lucide-
 export default function Book22Ch8() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
     content: true,
+    summary: true,
     exploration: true,
     questions: true,
     practice: true,
@@ -30,40 +31,67 @@ export default function Book22Ch8() {
           {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
         </button>
         {expanded['content'] && (
-          <div className="p-5 bg-white space-y-4">
+          <div className="p-5 bg-white space-y-6">
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">一、聖靈的工作</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">一、聖靈的位格與工作</h3>
               <p className="text-gray-700 leading-relaxed">
-                聖靈的工作廣泛而深刻，包括對個人和對群體的工作：在知性方面（使人更加認識真理，使徒行傳五旬節的口才）、在感性方面（開啟喜樂熱切之情，使人能感受上帝的愛）、在行動方面（帶出決定和行動，從理論進入實踐）。
+                聖靈（希伯來文 ruach，希臘文 pneuma，原意「風」、「氣息」、「靈」）在聖經中不是一種非人格化的力量或能量，而是三一上帝的第三位格。耶穌在約翰福音14-16章詳細描述聖靈的位格性：聖靈被稱為「保惠師」（Paraclete，保護者、倡導者、安慰者），「祂要引導你們明白一切的真理」（16:13），並且能「使世人因罪、因義、因審判，自己責備自己」（16:8）。這些描述都是人格性的行為，不是力量或能量所能做到的。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                聖靈不只做工在個人層面，也做工在群體層面。哥林多前書6章指出，基督徒的身體是「聖靈的殿」；哥林多前書3章則指出，整個教會群體是「上帝的殿，聖靈住在你們裡頭」。因此，追求個人靈恩之外，還需要追求聖靈在群體中的同在。
+                聖靈的工作廣泛而深刻，並且同時作用於個人和群體兩個層面。在個人層面：聖靈使人重生（約3:5）、引導人認罪悔改、使人確信上帝是父（羅8:15-16）、在禱告中幫助我們代禱（羅8:26-27）、使人明白聖經的真理、培育生命的果子（加5:22-23）。在群體層面：哥林多前書3章說整個教會群體是「上帝的殿，聖靈住在你們裡頭」（3:16），聖靈不只居住在個人心中，更居住在信徒的群體中。
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">二、聖靈恩賜與聖靈果子</h3>
               <p className="text-gray-700 leading-relaxed">
-                聖靈恩賜（charismata）是上帝按著祂的心意分配給信徒的服事能力（林前12章：先知、教師、行異能、醫病、說方言等）。聖靈果子（加5:22-23）是在聖靈感動下，基督徒生命長期凝聚而成的品格：仁愛、喜樂、和平、忍耐、恩慈、良善、信實、溫柔、節制。
+                新約聖經區分了兩種聖靈工作的表現，它們有重要的差別。聖靈恩賜（charismata，林前12章）是上帝按著祂的心意分配給信徒的服事能力：先知講道、教導、行異能、醫病、說方言、翻方言等。這些恩賜是功能性的——為了建立教會、服事他人，是上帝白白給予的工具，不是屬靈成熟的標誌。聖靈果子（加5:22-23）則是不同性質的：仁愛、喜樂、和平、忍耐、恩慈、良善、信實、溫柔、節制，這九種品格是在聖靈感動下、在基督徒生命中長期凝聚而成的品格特質。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                恩賜與果子的關鍵差別：恩賜是功能性的（服事能力），可以短效；果子是生命性的（品格），需要長期培育。追求聖靈的「更大恩賜」（林前12:31），要同時配合追求所有的聖靈果子——特別是愛（林前13章）。
+                恩賜與果子的關鍵差別在於：恩賜是功能性的、可以短效；果子是生命性的、需要長期培育。保羅特別指出，在哥林多教會中，恩賜（尤其是說方言）被高度追求，但果子（尤其是愛）卻貧乏（林前13章）。他的結論極有震撼力：「我若能說萬人的方言，並天使的話語，卻沒有愛，我就成了鳴的鑼，響的鈸一般。」恩賜若沒有果子，就淪為宗教表演；果子的培育，比追求特別恩賜更是屬靈成熟的核心。
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">三、靈恩運動：三波的省思</h3>
               <p className="text-gray-700 leading-relaxed">
-                廿世紀發生了三波靈恩運動：1900年代的五旬節運動（強調說方言）、1960年代的聖靈更新運動（在各宗派內部）、1980年代的第三波靈恩運動（福音派教會）。這些運動見證了聖靈在當代的工作，帶領許多人得到豐盛的靈恩體驗。
+                二十世紀見證了三波大型靈恩運動。第一波（1900年代起）是五旬節運動：以1906年加州阿蘇薩街復興為象徵，強調說方言（glossolalia）作為受洗在聖靈的初期憑據，形成了五旬節宗派（如神召會）。第二波（1960年代起）是聖靈更新運動（Charismatic Renewal）：靈恩運動進入傳統宗派（天主教、聖公會、更正教），不脫離原有宗派而注入靈恩體驗。第三波（1980年代起）是在福音派教會中的靈恩運動，強調神蹟奇事和先知性的服事。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                兩個重要提醒：（1）不要害怕恐懼——不要因為一些過激現象就拒絕聖靈的工作；（2）不要狂熱追求——不要強迫所有人有相同的靈恩體驗，也不應以某種恩賜作為屬靈成熟的唯一標準。
+                面對靈恩運動，林鴻信提出兩個重要提醒。不要因為一些過激現象就全面拒絕聖靈的工作——聖靈是真實的，靈恩體驗可以是真實的聖靈同在的表現。但也不要狂熱追求特定恩賜——不應強迫所有人有相同的靈恩體驗，也不應以某種恩賜（如說方言）作為衡量屬靈成熟的唯一標準。正如加爾文所強調：聖靈的工作必須透過上帝的話語來檢驗，一切靈性體驗都需要在聖經的光照下被辨別。
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">四、辨別聖靈感動的標準</h3>
               <p className="text-gray-700 leading-relaxed">
-                愛德華滋（Jonathan Edwards）提出辨別真實聖靈感動的四個標準：（1）愈來愈能愛上帝；（2）愈來愈喜愛真理；（3）愈來愈信守諾言；（4）增加對罪的敏感。真正的聖靈感動帶來對上帝更深的愛、對人際關係的成熟、以及對罪更敏銳的感知，而非只是激動的情緒或特殊的現象。
+                美國清教徒神學家愛德華滋（Jonathan Edwards，1703-1758）在親身經歷大覺醒運動之後，深思如何辨別真實的聖靈感動與人的激動或鬼靈的作為。他提出了四個辨別標準，至今仍有深刻的參考價值：（1）愈來愈能愛上帝——真正的聖靈感動加深人對上帝的愛，而非只是對宗教體驗的迷戀；（2）愈來愈喜愛真理——真正的聖靈感動使人更渴望讀聖經、更渴望真理；（3）愈來愈信守諾言——真正的聖靈感動在人際關係中表現為更大的忠信；（4）增加對罪的敏感——真正的聖靈感動使人對罪更有警覺，而非自以為已超越罪的領域。
               </p>
             </div>
+          </div>
+        )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
+        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
+          <div className="flex items-center gap-2">
+            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
+            <span className="font-semibold text-gray-800">重點總結</span>
+          </div>
+          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+        </button>
+        {expanded['summary'] && (
+          <div className="p-5 bg-white space-y-3">
+            {[
+              '聖靈是三一上帝的第三位格，不是非人格化的力量：耶穌稱祂為「保惠師」，祂能引導、責備、代禱——這些都是人格性的行為。',
+              '聖靈恩賜（charismata）是功能性的服事能力（先知、教導、醫病等），聖靈果子（加5:22-23）是生命性的品格（愛、喜樂、忍耐等）——保羅警告：沒有愛的恩賜只是鳴鑼，果子比恩賜更是成熟的核心。',
+              '三波靈恩運動見證了聖靈在當代的工作：五旬節運動（說方言）、聖靈更新（進入傳統宗派）、第三波（福音派）——每次運動都有真實的聖靈工作，也有過激和偏差的危險。',
+              '加爾文的平衡：聖靈與上帝的話語必須同工——靈恩體驗需要聖經檢驗（避免狂熱），聖經也需要聖靈感動才能真實理解（避免純學術式研究）。',
+              '愛德華滋的四個辨別標準：真正的聖靈感動使人（1）更愛上帝、（2）更喜愛真理、（3）更信守承諾、（4）對罪更敏感——而非只是情緒激動。',
+            ].map((point, i) => (
+              <div key={i} className="flex gap-3">
+                <span className="text-sky-600 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-gray-700 leading-relaxed">{point}</p>
+              </div>
+            ))}
           </div>
         )}
       </div>

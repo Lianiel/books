@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Users, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, Users, Star, Search, HelpCircle, Check } from 'lucide-react';
 
 export default function Book22Ch3() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
     content: true,
+    summary: true,
     exploration: true,
     questions: true,
     practice: true,
@@ -30,43 +31,79 @@ export default function Book22Ch3() {
           {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
         </button>
         {expanded['content'] && (
-          <div className="p-5 bg-white space-y-4">
+          <div className="p-5 bg-white space-y-6">
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">一、人的本質：個人與團體</h3>
               <p className="text-gray-700 leading-relaxed">
-                希伯來文「亞當」（Adam）既是人類始祖的名字，也是「人」（humanity）的意思。這告訴我們：聖經的人觀從來不只是關於個人，而是關於整個人類群體。個人永遠存在於關係與群體之中——與上帝的關係、與他人的關係、與自然的關係。
+                聖經的人觀從一開始就是群體性的。希伯來文「亞當」（Adam）既是人類始祖的名字，也是「人」（humanity）的集體名詞。這個語言事實揭示了一個深刻的真理：人從來不只是一個孤立的個體，而是整個人類群體的代表。個人永遠存在於三重關係網絡之中——與上帝的關係（垂直）、與他人的關係（水平）、與自然的關係（生態）。這三重關係在創造時都是和諧美好的，在墮落時都遭到破壞，在救贖中都需要得到更新。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                西方文化（尤其是啟蒙以後）強調個人主義，視個人為最基本的單位。但聖經的人觀強調：人是在關係中存在的，「獨處不好」（創二18）不只是談婚姻，而是一個更廣泛的原則：人本來就是為了關係而被造的。
+                啟蒙運動以來的西方文化強調個人主義（individualism），視個人為最基本的單位，社群是個人主動選擇組成的契約關係。但聖經的人觀深刻地挑戰這種個人主義：「那人獨居不好，我要為他造一個配偶幫助他」（創2:18），這句話不只是談婚姻制度，更是聲明了一個更廣泛的原則——人是為關係而被造的，孤立不是人的正常狀態。真正的人性，只能在關係中得到充分表達。
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">二、人的罪：關係的破壞</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">二、上帝的形象：人的尊嚴根基</h3>
               <p className="text-gray-700 leading-relaxed">
-                罪的本質是關係的破壞：破壞了與上帝的關係（靈命的死亡）、破壞了人與人之間的關係（互相怪罪，創三12）、破壞了人與自然的關係（勞苦耕種，創三17-19）。
+                創世記1:27說「上帝按著自己的形象造人」（Imago Dei），這是聖經人觀最核心的宣告。它意味著每一個人，無論種族、性別、能力高低，都具有來自上帝的尊嚴和價值，這種尊嚴不依賴於人的成就或能力，而是源於上帝的創造行動。神學傳統對「上帝形象」的詮釋有多種：實體性詮釋（人具有理性、道德判斷力等上帝賦予的能力）、功能性詮釋（人受命代表上帝管理受造界）、關係性詮釋（人被造為能與上帝建立位格關係的存在）。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                奧古斯丁強調罪的根源是「驕傲」（pride）——將自己放在上帝的位置，以自我為中心。路德強調罪的根源是「不信」（unbelief）——最根本的罪是不信任上帝，轉而信任自己或偶像。德國神學家尼布爾（Niebuhr）則指出個人的罪與社會性罪惡的關係：個人的罪往往放大成群體性的壓迫與不義。
+                改革宗傳統強調：上帝形象雖因墮落而受損（人的理性、道德判斷、與上帝的關係都受到罪的扭曲），卻未完全消失。即使是罪人，仍保有某種程度的上帝形象，這是為何我們仍能欣賞美、追求真、渴望善。而在基督裡，上帝形象得以恢復和更新——基督是完全的上帝形象（西1:15），跟隨基督的過程，就是恢復上帝形象的過程（羅8:29）。
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">三、文化處境下的罪</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">三、罪的本質：關係的破壞</h3>
               <p className="text-gray-700 leading-relaxed">
-                二戰後德國教會發表《斯圖佳認罪宣言》，承認教會在納粹暴行中的罪責，這是個人罪擴大為集體罪的典型例子。台灣的二二八事件、中國的文化大革命、日本對侵略歷史的否認，都是集體罪惡的例子。基督教的罪觀不只談個人道德失敗，也要面對集體性的罪惡。
+                罪的本質是關係的全面破壞。創世記3章描述了墮落的後果：與上帝的關係破壞了（人逃避上帝，靈命死亡）；人與人之間的關係破壞了（亞當怪責夏娃，3:12）；人與自然的關係破壞了（勞苦耕種，3:17-19）。罪不只是道德行為的失敗，更是存在性的扭曲——人的整個存在取向從上帝轉向自我。
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-2">
+                神學傳統對罪的根源有不同強調。奧古斯丁認為罪的根源是「驕傲」（superbia）——人試圖取代上帝的位置，以自我為宇宙中心。路德則強調罪的根源是「不信」（unbelief）——最根本的罪是不信任上帝、轉而信任自己或其他事物。德國神學家尼布爾（Reinhold Niebuhr）進一步指出個人的罪如何放大成群體性的罪惡：當驕傲和不信透過社會結構、意識形態被組織化，就造成制度性的不義和壓迫。這三種觀點不是互相矛盾，而是對罪的多維度描述。
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">四、命運觀的比較</h3>
               <p className="text-gray-700 leading-relaxed">
-                民間宗教的命運觀傾向循環（生命如輪回）、宿命（命中注定）、俗世化（注重現世福氣）。基督教的命運觀是直線型、向前的、向上的：歷史有起點（創造）、有方向（救贖）、有終點（更新萬物）。「重生」（新生命）不是「改運」（改變命盤），而是進入上帝國的新生命秩序。
+                台灣的民間宗教文化對許多人的人觀有深刻影響，尤其是命運觀。民間宗教的命運觀往往是循環式的（生命如輪迴，今生的苦是前世的報應）、宿命式的（命中注定，難以改變）、俗世化的（關注現世的福氣和禍害）。算命、改運、拜祖先等行為，都是在這種命運觀框架下對命運的回應方式。
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-2">
+                基督教的命運觀則根本不同：歷史是直線型的，有創造的起點、救贖的中心（基督）和更新萬物的終點；人不是命運的被動承受者，而是在上帝的呼召下積極回應的行動者；「重生」（約3:3）是真正的新生命，不只是「改運」（改變命盤），而是進入上帝國的全新存在秩序。這兩種命運觀的差異，深刻影響著人如何面對苦難、死亡和未來。
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">五、自卑的必升為高</h3>
               <p className="text-gray-700 leading-relaxed">
-                路加福音18章9-14節的法利賽人與稅吏禱告的比喻，提供了清晰的對比：自以為義的法利賽人以自己為高，卻被貶低；謙卑認罪的稅吏自卑，卻被高舉。上帝國的邏輯顛倒了世界的邏輯——真正的高升，來自在上帝面前的謙卑和誠實。
+                路加福音18:9-14記載了法利賽人與稅吏同在聖殿禱告的比喻。法利賽人的禱告是一份驕傲的履歷表：「我感謝祢，我不像別人……我每週禁食兩次，凡我所得的都獻上十分之一。」他的禱告不是對上帝說話，而是在上帝面前表揚自己。相比之下，稅吏遠遠地站著，連眼睛也不敢舉向天，只是捶著胸說：「上帝啊，開恩可憐我這個罪人！」耶穌的評語令人震驚：「這人回家去，比那人更稱義了。」
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-2">
+                這個比喻深刻地反映了上帝國的邏輯，它顛覆了人類社會「強者得勝、弱者被棄」的邏輯。在上帝面前，真正的謙卑——承認自己的罪與需要、完全倚靠上帝的憐憫——反而是得到上帝悅納的路徑。這不是鼓勵消極的自我貶低，而是指出一種真實：在上帝面前的誠實，是與上帝建立真實關係的起點。上帝國的價值觀就是「凡自高的，必降為卑；自卑的，必升為高」（路18:14）。
               </p>
             </div>
+          </div>
+        )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
+        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
+          <div className="flex items-center gap-2">
+            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
+            <span className="font-semibold text-gray-800">重點總結</span>
+          </div>
+          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+        </button>
+        {expanded['summary'] && (
+          <div className="p-5 bg-white space-y-3">
+            {[
+              '聖經的人觀是關係性的：人被造為在三重關係中存在——與上帝（垂直）、與他人（水平）、與自然（生態），三者在墮落中都受損，在救贖中都需更新。',
+              '「上帝形象」（Imago Dei）是每個人不可剝奪的尊嚴根基：無論種族、性別或能力，每人都具有來自上帝創造的內在價值，不依賴人的成就。',
+              '罪的本質是三重關係的全面破壞：奧古斯丁強調驕傲（自我取代上帝），路德強調不信（不信任上帝），尼布爾強調社會性的罪（個人罪惡被制度化放大）。',
+              '基督教的命運觀與民間宗教根本不同：歷史不是循環而是直線，人不是命運的被動承受者，「重生」是進入上帝國的全新存在，而非命盤的改變。',
+              '法利賽人與稅吏的比喻宣告了上帝國的邏輯：在上帝面前誠實地承認自己的罪與需要，比宗教履歷表更能得到上帝的悅納，「自卑的必升為高」。',
+            ].map((point, i) => (
+              <div key={i} className="flex gap-3">
+                <span className="text-sky-600 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-gray-700 leading-relaxed">{point}</p>
+              </div>
+            ))}
           </div>
         )}
       </div>

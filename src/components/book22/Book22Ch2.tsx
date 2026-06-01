@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, BookOpen, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, BookOpen, Star, Search, HelpCircle, Check } from 'lucide-react';
 
 export default function Book22Ch2() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
     content: true,
+    summary: true,
     exploration: true,
     questions: true,
     practice: true,
@@ -30,34 +31,61 @@ export default function Book22Ch2() {
           {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
         </button>
         {expanded['content'] && (
-          <div className="p-5 bg-white space-y-4">
+          <div className="p-5 bg-white space-y-6">
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">什麼是神學？</h3>
               <p className="text-gray-700 leading-relaxed">
-                「神學」（Theology）字面意思是「關於上帝的學問」（theos = 上帝，logos = 道/學問）。但神學不只是關於上帝的理論，更是一種生命的探索——在信仰中思考上帝、思考人、思考世界，以及三者之間的關係。
+                「神學」（Theology）字面意思是「關於上帝的學問」（theos = 上帝，logos = 道/學問）。但神學不只是關於上帝的理論，更是一種生命的探索——在信仰中思考上帝、思考人、思考世界，以及三者之間的關係。許多人一聽到「神學」便感到距離，以為那是學者在書齋中鑽研的抽象學問，與日常信仰生活毫無關係。但事實上，每個思考過「上帝為何讓我受苦？」或「信仰和科學矛盾嗎？」的人，都已經在做神學了。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                中世紀神學家安瑟倫（Anselm）將神學定義為「尋求理解的信仰」（fides quaerens intellectum，faith seeking understanding）。這個定義強調：神學不是用理性來取代信仰，而是信仰主動地尋求更深、更清晰的理解。
+                中世紀神學家安瑟倫（Anselm of Canterbury，1033-1109）將神學定義為「尋求理解的信仰」（fides quaerens intellectum，faith seeking understanding）。這個定義精準地確立了神學的本質：它的出發點是信仰，而非懷疑；它的動力是愛——因為愛上帝，所以渴望更深地認識上帝。理性不是信仰的法官，而是信仰的僕人，幫助我們更清楚地看見所信的對象。這與後啟蒙時代「先用理性評估、再決定信不信」的認識論截然不同。
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">為什麼需要神學？</h3>
               <p className="text-gray-700 leading-relaxed">
-                有些人認為神學是「學者的事」，一般信徒不需要神學。然而，每個基督徒都是神學家——只要你相信上帝，你就已經有了關於上帝的某種理解，也就是在做神學。問題不是「做不做神學」，而是「做好的神學還是差的神學」。
+                有些基督徒認為神學是「學者的事」，一般信徒只需要「愛主」就夠了，不需要神學。然而這個觀點本身就是一種神學立場——只是一種未加反思的神學。林鴻信指出：每個基督徒都是神學家，因為只要你相信上帝，你就已經持有某種關於上帝的理解。問題不是「做不做神學」，而是「做好的神學還是差的神學」。差的神學往往是不自知的神學——不清楚自己信的是什麼，為什麼這樣信。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                好的神學幫助我們：更準確地認識上帝；更清楚地理解聖經；更有力地面對人生的困難與疑問；更有智慧地與這個時代對話。
+                好的神學能幫助信徒：（1）更準確地認識上帝，避免偶像崇拜式的扭曲；（2）更清楚地理解聖經，超越字面的誤解；（3）更有力地面對人生困境，因為有紮實的神學基礎；（4）更有智慧地與這個時代對話，回應科學、哲學、社會議題的挑戰，而不只是退縮到「我們相信就好了」的封閉態度。神學的目標不是把信仰複雜化，而是把信仰建立在更穩固的基礎上。
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">如何做神學？</h3>
               <p className="text-gray-700 leading-relaxed">
-                好的神學需要幾個基本態度：以聖經為根基，透過傳統（教會歷史中信徒的智慧）來理解；在具體的文化處境中思考（神學必須貼近生活）；以整合的方式對待信仰——不在知識與體驗之間撕裂，而是讓二者相互補足。
+                好的神學需要幾個基本態度和資源的整合。首先，以聖經為根基——聖經是神學最終的裁判和標準，任何神學主張必須能被聖經支持。其次，透過傳統（Tradition）來理解聖經——教會兩千年來的信仰傳承是上帝恩典保守的智慧，不可輕易棄置。第三，在具體的文化處境（Context）中思考——神學不是在真空中進行的，而是在特定的歷史和文化中回應真實的問題；台灣的神學就必須面對台灣的文化和歷史。第四，以整合的方式對待信仰，讓知性理解與生命經驗相互補足。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                神學思考的對象包括：上帝（論上帝）、人（論人）、救恩（論救贖）、教會（論教會）、末日（論末世）等。本書的九個探險，正是從這些角度出發，進行系統性的神學思考。
+                林鴻信特別強調「處境化神學」的重要性：神學不能只引用西方的概念，也要與台灣的歷史傷痛（如二二八）、宗教文化（如民間宗教的命運觀）以及當代社會議題對話。神學思考的對象包括：上帝論（論上帝的本質與工作）、人論（論人的本質與罪）、救贖論（論基督的拯救）、教會論（論教會的本質與使命）、末世論（論歷史的終點與盼望）等。本書的九個探險，正是從這些角度出發，進行系統性而又具處境性的神學思考。
               </p>
             </div>
+          </div>
+        )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
+        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
+          <div className="flex items-center gap-2">
+            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
+            <span className="font-semibold text-gray-800">重點總結</span>
+          </div>
+          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+        </button>
+        {expanded['summary'] && (
+          <div className="p-5 bg-white space-y-3">
+            {[
+              '神學不是學者的專利，而是每個信徒的事：凡持有關於上帝的任何信念，就已在做神學。問題是做好的神學還是差的神學。',
+              '安瑟倫的定義最為精準：神學是「尋求理解的信仰」——以信仰為出發點，用理性深化理解，而非用理性審判信仰。',
+              '好的神學有四個資源：聖經（最高權威）、傳統（教會歷史的智慧）、理性（系統思考）、經驗（生命實踐）——四者需要整合而非偏廢。',
+              '處境化神學的核心：神學必須在具體的文化處境中思考，台灣的神學要與台灣的歷史、文化和社會議題對話，而非照搬西方框架。',
+              '神學的目的不是把信仰複雜化，而是幫助信徒更準確地認識上帝、更清楚地讀聖經、更有力地回應人生困境與時代挑戰。',
+            ].map((point, i) => (
+              <div key={i} className="flex gap-3">
+                <span className="text-sky-600 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-gray-700 leading-relaxed">{point}</p>
+              </div>
+            ))}
           </div>
         )}
       </div>

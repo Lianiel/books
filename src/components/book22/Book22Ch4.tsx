@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Heart, Search, HelpCircle, Check } from 'lucide-react';
+import { ChevronDown, ChevronUp, Heart, Star, Search, HelpCircle, Check } from 'lucide-react';
 
 export default function Book22Ch4() {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({
     content: true,
+    summary: true,
     exploration: true,
     questions: true,
     practice: true,
@@ -30,37 +31,70 @@ export default function Book22Ch4() {
           {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
         </button>
         {expanded['content'] && (
-          <div className="p-5 bg-white space-y-4">
+          <div className="p-5 bg-white space-y-6">
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">一、崇拜的態度：用心靈和真理</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">一、崇拜的本質：用心靈和真理</h3>
               <p className="text-gray-700 leading-relaxed">
-                約翰福音4:24說：「上帝是靈，所以拜祂的人，必須用心靈和真理拜祂。」「心靈」（pneuma, Spirit）指的是在聖靈中、在聖靈的感動下敬拜；「真理」（aletheia）指的是在真實中，在現實中，不虛偽地敬拜。
+                約翰福音4章記載了耶穌與撒馬利亞婦人的對話。這位婦人提出了一個宗教爭議：「我們的祖宗在這山上禮拜，你們倒說，應當禮拜的地方是在耶路撒冷。」這是關於敬拜「地點」的問題。耶穌的回答卻把問題提升到另一個層次：「時候將到，你們拜父，也不在這山上，也不在耶路撒冷……時候將到，如今就是了，那真正拜父的，要用心靈和真理拜祂」（約4:21-23）。耶穌宣告了一個劃時代的轉變：真正的敬拜不被地點和儀式所限定，而在乎敬拜的本質。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                真正的敬拜不是形式主義的表演，也不是情緒化的激動，而是在聖靈的感動中，以真實的心靈向上帝獻上讚美、認罪和感謝。
+                「心靈」（pneuma）在原文可指人的靈，也可指聖靈。多數學者認為這裡指在聖靈的感動和引導下敬拜——真正的敬拜需要聖靈的參與，不是人的宗教努力或情緒激動，而是聖靈引導人進入與上帝的真實相遇。「真理」（aletheia）在約翰福音中與耶穌基督緊密相連（「我就是真理」，14:6），因此「在真理中敬拜」可以理解為「在基督裡敬拜」——唯有透過基督，我們才能真實地進入父上帝的面前。
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-800 mb-2">二、崇拜的關係：十字架的形狀</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">二、崇拜的結構：十字架的形狀</h3>
               <p className="text-gray-700 leading-relaxed">
-                崇拜的結構可以用十字架來比喻：垂直線代表人與上帝的關係（向上的崇拜），水平線代表人與人之間的關係（彼此連結的團契）。真正的崇拜必須兼顧這兩個維度。只有垂直而無水平，崇拜就變成個人主義的靈修；只有水平而無垂直，聚會就變成人的社交活動，失去崇拜上帝的核心。
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-800 mb-2">三、崇拜的方向：奉耶穌的名</h3>
-              <p className="text-gray-700 leading-relaxed">
-                「奉耶穌的名」不只是禱告結束時的公式，而是說明了崇拜進入上帝面前的通道。耶穌是「道路、真理、生命」（約14:6），唯有透過祂，我們才能進到父上帝面前。崇拜的方向性意味著：我們的目標是認識上帝、與上帝相交，而非只是尋求感動或宗教體驗。
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-800 mb-2">四至六、主日、禮拜傳統與聖禮</h3>
-              <p className="text-gray-700 leading-relaxed">
-                德文「feiern」（慶祝）與英文「celebrate」有相通的意思，提醒我們崇拜的性質是喜樂的慶祝，而非沉重的責任。主日禮拜是慶祝基督復活的喜樂聚會。
+                林鴻信以十字架的形狀來描述崇拜的結構，這個比喻極為深刻。十字架的垂直線代表人與上帝之間的關係——向上的崇拜、禱告、頌讚、聆聽上帝的話。水平線代表人與人之間的關係——團契、彼此代禱、相互扶持。真正的崇拜必須同時包含這兩個維度，缺一則失衡。
               </p>
               <p className="text-gray-700 leading-relaxed mt-2">
-                基督教有三個主要禮拜傳統：以聖禮為中心（天主教/聖公會）、以講道為中心（更正教）、以屬靈體驗為中心（靈恩派）。每個傳統各有貢獻，也各有偏差。洗禮象徵與基督同死同活的新生命，聖餐是記念基督受難、等候再來的感恩宴席（「聖餐」Eucharist 源自希臘文「感謝」）。
+                只有垂直而無水平：崇拜就變成個人主義式的靈修，人躲進自己與上帝的私密空間，忽視了上帝呼召我們進入群體生命這個事實。只有水平而無垂直：聚會就淪為人際社交活動，雖然熱鬧，卻失去了敬拜上帝的核心目的。真正的崇拜，是在聖靈的引導下，以基督為中心，垂直地朝向上帝、水平地彼此連結——這正是十字架所象徵的生命形狀。
               </p>
             </div>
+            <div>
+              <h3 className="font-semibold text-gray-800 mb-2">三、崇拜是慶祝而非責任</h3>
+              <p className="text-gray-700 leading-relaxed">
+                德文「feiern」（慶祝）與英文「celebrate」有相通的意思，都帶有喜樂、紀念重要事件的意味。林鴻信提醒我們，崇拜的性質本是喜樂的慶祝——慶祝基督的復活勝過死亡，慶祝上帝的恩典拯救罪人，慶祝上帝國的到來。主日禮拜的英文名稱「Sunday worship」也反映這一點：主日（Sunday）是基督復活的日子，每週的禮拜是對復活的週期性慶祝。
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-2">
+                然而，對許多基督徒而言，去禮拜更像是履行宗教義務，帶著「應該去」的沉重感，而非「迫不及待要慶祝」的喜樂。這種心態的轉變，需要我們重新思考：我去禮拜，是為了「盡責任」（我應該做的），還是因為我真的渴望與上帝相遇、與弟兄姊妹一同慶祝基督已成就的救恩？崇拜的心態，往往反映了我們對上帝恩典的真實感受。
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-800 mb-2">四、三個禮拜傳統與聖禮</h3>
+              <p className="text-gray-700 leading-relaxed">
+                基督教的禮拜傳統主要有三種形式，各有其神學重點。以聖禮為中心（天主教、聖公會傳統）：強調物質性的聖禮（洗禮、聖餐）作為恩典的媒介，禮拜的高潮是領受聖餐。以講道為中心（更正教傳統）：強調上帝的話語透過講道向會眾說話，禮拜的核心是聆聽聖經的宣講和詮釋。以屬靈體驗為中心（靈恩派傳統）：強調聖靈的即時感動和信徒的靈性體驗，禮拜注重敬拜音樂和聖靈的運動。每個傳統各有其聖經根基，也各有其偏差的危險。
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-2">
+                洗禮和聖餐是基督所設立的兩個核心聖禮。洗禮象徵信徒與基督同死同活（羅6:3-4），是進入基督身體（教會）的記號。聖餐（Eucharist，希臘文「感謝」）是記念基督在十架上的受難，宣告基督的死直到祂再來（林前11:26）。聖餐不只是個人的靈修行動，更是整個信仰群體的共同行動——一同紀念、一同期待、一同在基督裡相連。
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* 重點總結 */}
+      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
+        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
+          <div className="flex items-center gap-2">
+            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
+            <span className="font-semibold text-gray-800">重點總結</span>
+          </div>
+          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+        </button>
+        {expanded['summary'] && (
+          <div className="p-5 bg-white space-y-3">
+            {[
+              '耶穌宣告真正的敬拜超越地點和儀式，在乎「心靈和真理」：在聖靈的感動下，在基督裡進入與父上帝的真實相遇。',
+              '崇拜的結構如十字架：垂直線（人與上帝）和水平線（人與人）缺一不可——只有垂直就成個人主義靈修，只有水平就淪為社交活動。',
+              '崇拜的本質是喜樂的慶祝，而非沉重的義務：每次主日禮拜是慶祝基督復活的週期性行動，心態的差別反映對上帝恩典的真實感受。',
+              '三個禮拜傳統各有貢獻：聖禮中心（天主教）、講道中心（更正教）、體驗中心（靈恩派），健全的敬拜需要整合，不偏廢任何一個維度。',
+              '洗禮象徵與基督同死同活、進入教會；聖餐（Eucharist）是感恩的群體行動，記念基督受難、宣告祂的死直到再來——二者是基督親自設立的核心聖禮。',
+            ].map((point, i) => (
+              <div key={i} className="flex gap-3">
+                <span className="text-sky-600 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-gray-700 leading-relaxed">{point}</p>
+              </div>
+            ))}
           </div>
         )}
       </div>
