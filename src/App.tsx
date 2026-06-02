@@ -46,6 +46,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book20: '安慰人的靈魂',
   book21: '基督徒須知',
   book22: '認識上帝與認識人的九個探險',
+  book23: '舊約聖經人物圖鑑',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -287,6 +288,9 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter8', title: '第8章：聖靈大能', path: '/book22/chapter8' },
     { id: 'chapter9', title: '第9章：活潑的盼望', path: '/book22/chapter9' },
   ],
+  book23: [
+    { id: 'home', title: '人物圖鑑', path: '/book23/home' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -313,6 +317,7 @@ const STATIC_BOOKS = [
   { book_id: 'book20', title: '安慰人的靈魂', author: '范銀絲', description: '基督信仰靈性關懷師照顧末期病人的實務歷程研究，探討靈性的本質、末期病人的靈性需求，及全人靈性照顧的原則。', chapters_count: 7 },
   { book_id: 'book21', title: '基督徒須知', author: '巴刻（J. I. Packer）', description: '透過使徒信經、洗禮、主禱文和十誡四大支柱，系統介紹基督信仰的核心內容。半世紀以來被世界各地教會廣泛採用的信仰入門經典。', chapters_count: 5 },
   { book_id: 'book22', title: '認識上帝與認識人的九個探險', author: '林鴻信', description: '透過九個探險，深入探討上帝、人、教會、聖靈與盼望，以加爾文神學傳統為根基，結合台灣文化處境的系統神學入門著作。', chapters_count: 10 },
+  { book_id: 'book23', title: '舊約聖經人物圖鑑', author: '小堀真一郎（監修）', description: '收錄兩百七十六位舊約聖經人物，以圖像化方式呈現每位人物的故事、身分和特色，並提供可搜尋的互動式人物百科全書。', chapters_count: 1 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -338,6 +343,7 @@ const colorMap: Record<number, string> = {
   20: 'from-teal-600 to-cyan-700',
   21: 'from-amber-600 to-yellow-700',
   22: 'from-blue-600 to-teal-700',
+  23: 'from-amber-600 to-red-700',
 };
 
 // ========== Book 1 章節（懶加載） ==========
@@ -577,6 +583,9 @@ const Book22Ch6 = lazy(() => import('./components/book22/Book22Ch6'));
 const Book22Ch7 = lazy(() => import('./components/book22/Book22Ch7'));
 const Book22Ch8 = lazy(() => import('./components/book22/Book22Ch8'));
 const Book22Ch9 = lazy(() => import('./components/book22/Book22Ch9'));
+
+// ========== Book 23 章節（懶加載） ==========
+const Book23Home = lazy(() => import('./components/book23/Book23Home'));
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({
@@ -907,6 +916,10 @@ const App: React.FC = () => {
         <Route path="/book22/chapter8" element={<BookLayout bookId="book22" chapter="chapter8" chapters={getChaptersForBook('book22')}><Book22Ch8 /></BookLayout>} />
         <Route path="/book22/chapter9" element={<BookLayout bookId="book22" chapter="chapter9" chapters={getChaptersForBook('book22')}><Book22Ch9 /></BookLayout>} />
         <Route path="/book/22" element={<BookLayout bookId="book22" chapter="home" chapters={getChaptersForBook('book22')}><Book22Home /></BookLayout>} />
+
+        {/* ========== Book 23: 舊約聖經人物圖鑑 ========== */}
+        <Route path="/book23/home" element={<BookLayout bookId="book23" chapter="home" chapters={getChaptersForBook('book23')}><Book23Home /></BookLayout>} />
+        <Route path="/book/23" element={<BookLayout bookId="book23" chapter="home" chapters={getChaptersForBook('book23')}><Book23Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
         <Route path="/" element={
