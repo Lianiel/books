@@ -290,6 +290,16 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
   ],
   book23: [
     { id: 'home', title: '人物圖鑑', path: '/book23/home' },
+    { id: 'adam', title: '亞當', path: '/book23/adam' },
+    { id: 'eve', title: '夏娃', path: '/book23/eve' },
+    { id: 'cain', title: '該隱', path: '/book23/cain' },
+    { id: 'abel', title: '亞伯', path: '/book23/abel' },
+    { id: 'seth', title: '塞特', path: '/book23/seth' },
+    { id: 'enoch-cain', title: '以諾等（該隱後代）', path: '/book23/enoch-cain' },
+    { id: 'enosh-etc', title: '以挪士、瑪土撒拉、拉麥', path: '/book23/enosh-etc' },
+    { id: 'enoch', title: '以諾（塞特後代）', path: '/book23/enoch' },
+    { id: 'noah', title: '挪亞', path: '/book23/noah' },
+    { id: 'nebuchadnezzar', title: '尼布甲尼撒', path: '/book23/nebuchadnezzar' },
   ],
 };
 
@@ -586,6 +596,16 @@ const Book22Ch9 = lazy(() => import('./components/book22/Book22Ch9'));
 
 // ========== Book 23 章節（懶加載） ==========
 const Book23Home = lazy(() => import('./components/book23/Book23Home'));
+const Book23Adam = lazy(() => import('./components/book23/Book23Adam'));
+const Book23Eve = lazy(() => import('./components/book23/Book23Eve'));
+const Book23Cain = lazy(() => import('./components/book23/Book23Cain'));
+const Book23Abel = lazy(() => import('./components/book23/Book23Abel'));
+const Book23Seth = lazy(() => import('./components/book23/Book23Seth'));
+const Book23EnochCain = lazy(() => import('./components/book23/Book23EnochCain'));
+const Book23EnoshEtc = lazy(() => import('./components/book23/Book23EnoshEtc'));
+const Book23Enoch = lazy(() => import('./components/book23/Book23Enoch'));
+const Book23Noah = lazy(() => import('./components/book23/Book23Noah'));
+const Book23Nebuchadnezzar = lazy(() => import('./components/book23/Book23Nebuchadnezzar'));
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({
@@ -919,6 +939,16 @@ const App: React.FC = () => {
 
         {/* ========== Book 23: 舊約聖經人物圖鑑 ========== */}
         <Route path="/book23/home" element={<BookLayout bookId="book23" chapter="home" chapters={getChaptersForBook('book23')}><Book23Home /></BookLayout>} />
+        <Route path="/book23/adam" element={<BookLayout bookId="book23" chapter="adam" chapters={getChaptersForBook('book23')}><Book23Adam /></BookLayout>} />
+        <Route path="/book23/eve" element={<BookLayout bookId="book23" chapter="eve" chapters={getChaptersForBook('book23')}><Book23Eve /></BookLayout>} />
+        <Route path="/book23/cain" element={<BookLayout bookId="book23" chapter="cain" chapters={getChaptersForBook('book23')}><Book23Cain /></BookLayout>} />
+        <Route path="/book23/abel" element={<BookLayout bookId="book23" chapter="abel" chapters={getChaptersForBook('book23')}><Book23Abel /></BookLayout>} />
+        <Route path="/book23/seth" element={<BookLayout bookId="book23" chapter="seth" chapters={getChaptersForBook('book23')}><Book23Seth /></BookLayout>} />
+        <Route path="/book23/enoch-cain" element={<BookLayout bookId="book23" chapter="enoch-cain" chapters={getChaptersForBook('book23')}><Book23EnochCain /></BookLayout>} />
+        <Route path="/book23/enosh-etc" element={<BookLayout bookId="book23" chapter="enosh-etc" chapters={getChaptersForBook('book23')}><Book23EnoshEtc /></BookLayout>} />
+        <Route path="/book23/enoch" element={<BookLayout bookId="book23" chapter="enoch" chapters={getChaptersForBook('book23')}><Book23Enoch /></BookLayout>} />
+        <Route path="/book23/noah" element={<BookLayout bookId="book23" chapter="noah" chapters={getChaptersForBook('book23')}><Book23Noah /></BookLayout>} />
+        <Route path="/book23/nebuchadnezzar" element={<BookLayout bookId="book23" chapter="nebuchadnezzar" chapters={getChaptersForBook('book23')}><Book23Nebuchadnezzar /></BookLayout>} />
         <Route path="/book/23" element={<BookLayout bookId="book23" chapter="home" chapters={getChaptersForBook('book23')}><Book23Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
