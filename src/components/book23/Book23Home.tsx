@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Search, X, BookOpen, Users, ChevronDown, ChevronUp, Map, Clock } from 'lucide-react';
+import { getCharacterDetail } from './Book23CharacterDetails';
 
 type Tab = 'intro' | 'characters';
 
@@ -749,16 +750,57 @@ export default function Book23Home() {
                 <span className="text-sm text-gray-600">出現於：<span className="font-medium text-gray-800">{selected.books}</span></span>
               </div>
 
-              {/* Description */}
-              <div>
-                <p className="text-gray-700 leading-relaxed text-sm">{selected.description}</p>
-              </div>
+              {/* Description or Detail */}
+              {(() => {
+                const ext = getCharacterDetail(selected.id);
+                return (
+                  <div>
+                    <p className="text-gray-700 leading-relaxed text-sm">{ext?.detail || selected.description}</p>
+                  </div>
+                );
+              })()}
+
+              {/* Let's read */}
+              {(() => {
+                const ext = getCharacterDetail(selected.id);
+                if (!ext?.letsRead) return null;
+                return (
+                  <div className="border-l-4 border-red-400 bg-red-50 rounded-r-xl p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">Let's read</span>
+                      <span className="font-semibold text-red-800 text-xs">{ext.letsRead.title}</span>
+                    </div>
+                    <p className="text-gray-700 text-xs leading-relaxed">{ext.letsRead.content}</p>
+                  </div>
+                );
+              })()}
+
+              {/* Episodes */}
+              {(() => {
+                const ext = getCharacterDetail(selected.id);
+                if (!ext?.episodes?.length) return null;
+                return (
+                  <div className="space-y-3">
+                    {ext.episodes.map(ep => (
+                      <div key={ep.number} className="border border-orange-200 rounded-xl overflow-hidden">
+                        <div className="bg-orange-50 px-4 py-2 flex items-center gap-2">
+                          <span className="bg-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded">episode {ep.number}</span>
+                          <span className="font-semibold text-orange-900 text-xs">{ep.title}</span>
+                        </div>
+                        <div className="px-4 py-3 bg-white">
+                          <p className="text-gray-700 text-xs leading-relaxed">{ep.content}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })()}
 
               {/* Fact */}
               {selected.fact && (
                 <div className="bg-amber-50 border border-amber-100 rounded-xl p-3">
                   <p className="text-xs text-amber-900 leading-relaxed">
-                    <span className="font-semibold">💡 小知識：</span>{selected.fact}
+                    <span className="font-semibold">📌 小知識：</span>{selected.fact}
                   </p>
                 </div>
               )}
