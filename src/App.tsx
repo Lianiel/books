@@ -594,18 +594,7 @@ const Book22Ch7 = lazy(() => import('./components/book22/Book22Ch7'));
 const Book22Ch8 = lazy(() => import('./components/book22/Book22Ch8'));
 const Book22Ch9 = lazy(() => import('./components/book22/Book22Ch9'));
 
-// ========== Book 23 章節（懶加載） ==========
-const Book23Home = lazy(() => import('./components/book23/Book23Home'));
-const Book23Adam = lazy(() => import('./components/book23/Book23Adam'));
-const Book23Eve = lazy(() => import('./components/book23/Book23Eve'));
-const Book23Cain = lazy(() => import('./components/book23/Book23Cain'));
-const Book23Abel = lazy(() => import('./components/book23/Book23Abel'));
-const Book23Seth = lazy(() => import('./components/book23/Book23Seth'));
-const Book23EnochCain = lazy(() => import('./components/book23/Book23EnochCain'));
-const Book23EnoshEtc = lazy(() => import('./components/book23/Book23EnoshEtc'));
-const Book23Enoch = lazy(() => import('./components/book23/Book23Enoch'));
-const Book23Noah = lazy(() => import('./components/book23/Book23Noah'));
-const Book23Nebuchadnezzar = lazy(() => import('./components/book23/Book23Nebuchadnezzar'));
+
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({
