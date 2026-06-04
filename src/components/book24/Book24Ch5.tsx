@@ -191,7 +191,7 @@ export default function Book24Ch5() {
         <button onClick={() => toggleSection('questions')} className="w-full px-5 py-3 bg-gradient-to-r from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 flex items-center justify-between transition-all">
           <div className="flex items-center gap-2">
             <HelpCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-            <span className="font-semibold text="gray-800">反思問題</span>
+            <span className="font-semibold text-gray-800">反思問題</span>
           </div>
           {expanded['questions'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
         </button>
