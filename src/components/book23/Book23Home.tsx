@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, X, BookOpen, Users, ChevronDown, ChevronUp, Map, Clock } from 'lucide-react';
+import { Search, X, BookOpen, Users, Map, Clock } from 'lucide-react';
 import { getCharacterDetail } from './Book23CharacterDetails';
 
 type Tab = 'intro' | 'characters';
@@ -379,21 +379,9 @@ const eraButtonColors: Record<Era, string> = {
 
 export default function Book23Home() {
   const [activeTab, setActiveTab] = useState<Tab>('intro');
-  const [openSections, setOpenSections] = useState<Set<string>>(
-    new Set(['whatIsOT', 'charactersIntro', 'religions'])
-  );
   const [search, setSearch] = useState('');
   const [selectedEra, setSelectedEra] = useState<Era>('全部');
   const [selected, setSelected] = useState<Character | null>(null);
-
-  const toggleSection = (id: string) => {
-    setOpenSections(prev => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id); else next.add(id);
-      return next;
-    });
-  };
-  const isOpen = (id: string) => openSections.has(id);
 
   const filtered = useMemo(() => {
     const s = search.trim().toLowerCase();
@@ -440,188 +428,167 @@ export default function Book23Home() {
 
           {/* 1. 舊約聖經是本怎樣的讀物？ */}
           <div className="border border-amber-200 rounded-xl overflow-hidden shadow-sm">
-            <button onClick={() => toggleSection('whatIsOT')} className="w-full px-5 py-3.5 bg-gradient-to-r from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 flex items-center justify-between transition-all">
+            <div className="w-full px-5 py-3.5 bg-gradient-to-r from-amber-50 to-orange-50 flex items-center">
               <div className="flex items-center gap-2"><BookOpen className="w-5 h-5 text-amber-600 flex-shrink-0" /><span className="font-bold text-gray-800">舊約聖經是本怎樣的讀物？</span></div>
-              {isOpen('whatIsOT') ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
-            </button>
-            {isOpen('whatIsOT') && (
-              <div className="p-5 bg-white space-y-4">
-                <p className="text-gray-700 leading-relaxed">聖經有「舊約」和「新約」兩種，不過這是基督教觀點的說法，兩者都意指上帝與人的契約。最早一本記錄上帝和以色列人立約這段歷史的書就是舊約聖經。</p>
-                <div className="bg-amber-50 border-l-4 border-amber-400 pl-4 py-3 rounded-r-lg">
-                  <p className="font-bold text-amber-800 mb-1 text-sm">寫於西元前一○○○年至西元前一五○年左右。作者不詳</p>
-                  <p className="text-gray-700 text-sm leading-relaxed">舊約聖經記錄的年代大約始於三千年前（西元前一○○○年左右），橫跨八百五十年間，幾乎全是以「希伯來文」寫成。排在最前面的五卷被稱為「摩西五經」的經書。一般認為作者是先知摩西，不過較為可能的推論，是西元前六世紀至西元前五世紀間有人將口傳有關摩西的故事記述下來。其他以人名命名的書卷，如「撒母耳記」，多半也是作者不詳。</p>
-                </div>
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-3">
-                  <p className="text-sm text-gray-600 italic">💡 舊約聖經由於有多位作者，記述的又是久遠且漫長的歷史，因此內容有許多矛盾之處。</p>
-                </div>
+            </div>
+            <div className="p-5 bg-white space-y-4">
+              <p className="text-gray-700 leading-relaxed">聖經有「舊約」和「新約」兩種，不過這是基督教觀點的說法，兩者都意指上帝與人的契約。最早一本記錄上帝和以色列人立約這段歷史的書就是舊約聖經。</p>
+              <div className="bg-amber-50 border-l-4 border-amber-400 pl-4 py-3 rounded-r-lg">
+                <p className="font-bold text-amber-800 mb-1">寫於西元前一○○○年至西元前一五○年左右。作者不詳</p>
+                <p className="text-gray-700 leading-relaxed">舊約聖經記錄的年代大約始於三千年前（西元前一○○○年左右），橫跨八百五十年間，幾乎全是以「希伯來文」寫成。排在最前面的五卷被稱為「摩西五經」的經書。一般認為作者是先知摩西，不過較為可能的推論，是西元前六世紀至西元前五世紀間有人將口傳有關摩西的故事記述下來。其他以人名命名的書卷，如「撒母耳記」，多半也是作者不詳。</p>
               </div>
-            )}
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                <p className="text-gray-600 italic">💡 舊約聖經由於有多位作者，記述的又是久遠且漫長的歷史，因此內容有許多矛盾之處。</p>
+              </div>
+            </div>
           </div>
 
           {/* 2. 出場人物 */}
           <div className="border border-amber-200 rounded-xl overflow-hidden shadow-sm">
-            <button onClick={() => toggleSection('charactersIntro')} className="w-full px-5 py-3.5 bg-gradient-to-r from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 flex items-center justify-between transition-all">
+            <div className="w-full px-5 py-3.5 bg-gradient-to-r from-amber-50 to-orange-50 flex items-center">
               <div className="flex items-center gap-2"><Users className="w-5 h-5 text-amber-600 flex-shrink-0" /><span className="font-bold text-gray-800">出場人物　主要是以色列人（猶太人）</span></div>
-              {isOpen('charactersIntro') ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
-            </button>
-            {isOpen('charactersIntro') && (
-              <div className="p-5 bg-white space-y-3">
-                <p className="text-gray-700 leading-relaxed">在摩西五經的「創世記」中，亞伯拉罕的孫子雅各被上帝改名「以色列」。從此，舊約聖經的故事便以以色列人為中心展開。帶領淪為埃及奴隸的以色列人逃出埃及的摩西；從民族英雄搖身一變為以色列王國君主的大衛；為王國帶來安泰的所羅門等，許多人即便沒讀過舊約聖經也都聽過他們的名字。</p>
-                <p className="text-gray-700 leading-relaxed">另外，在以色列王國分裂後，居住在北國以色列和南國猶大的人及周邊各國的統治者、先知們，也經常在舊約聖經中登場。而當南方猶大王國遭到新巴比倫國入侵，人民被擄往巴比倫，王國覆滅，以色列人從此被改稱為「猶太人」。</p>
-              </div>
-            )}
+            </div>
+            <div className="p-5 bg-white space-y-3">
+              <p className="text-gray-700 leading-relaxed">在摩西五經的「創世記」中，亞伯拉罕的孫子雅各被上帝改名「以色列」。從此，舊約聖經的故事便以以色列人為中心展開。帶領淪為埃及奴隸的以色列人逃出埃及的摩西；從民族英雄搖身一變為以色列王國君主的大衛；為王國帶來安泰的所羅門等，許多人即便沒讀過舊約聖經也都聽過他們的名字。</p>
+              <p className="text-gray-700 leading-relaxed">另外，在以色列王國分裂後，居住在北國以色列和南國猶大的人及周邊各國的統治者、先知們，也經常在舊約聖經中登場。而當南方猶大王國遭到新巴比倫國入侵，人民被擄往巴比倫，王國覆滅，以色列人從此被改稱為「猶太人」。</p>
+            </div>
           </div>
 
           {/* 3. 猶太教的經典 */}
           <div className="border border-amber-200 rounded-xl overflow-hidden shadow-sm">
-            <button onClick={() => toggleSection('religions')} className="w-full px-5 py-3.5 bg-gradient-to-r from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 flex items-center justify-between transition-all">
+            <div className="w-full px-5 py-3.5 bg-gradient-to-r from-amber-50 to-orange-50 flex items-center">
               <div className="flex items-center gap-2"><BookOpen className="w-5 h-5 text-amber-600 flex-shrink-0" /><span className="font-bold text-gray-800">猶太教的經典，與基督教和伊斯蘭教也有關係</span></div>
-              {isOpen('religions') ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
-            </button>
-            {isOpen('religions') && (
-              <div className="p-5 bg-white space-y-3">
-                {[
-                  { name: '猶太教', desc: '舊約聖經是唯一的宗教經典。敬拜主耶和華為唯一的真神。猶太人和信仰猶太教的人在日常生活中尊重摩西的律法，等待救世主（彌賽亞）的誕生。' },
-                  { name: '基督教', desc: '舊約聖經和新約聖經同為宗教經典。視耶穌為救世主（彌賽亞＝基督）、「上帝之子」加以崇拜。同時將舊約聖經看作是了解耶穌譜系的重要書籍。' },
-                  { name: '伊斯蘭教', desc: '集整創教始祖穆罕默德教誨的古蘭經，是唯一的宗教經典。將舊約聖經的摩西五經視為早於古蘭經的重要書卷。' },
-                ].map(r => (
-                  <div key={r.name} className="flex gap-3">
-                    <span className="font-bold text-amber-700 flex-shrink-0">●</span>
-                    <p className="text-gray-700 text-sm"><span className="font-bold">{r.name}／</span>{r.desc}</p>
-                  </div>
-                ))}
-                <p className="text-xs text-gray-500 mt-1">※ 這三大宗教的主要聖地都是位於以色列的耶路撒冷。</p>
-              </div>
-            )}
+            </div>
+            <div className="p-5 bg-white space-y-3">
+              {[
+                { name: '猶太教', desc: '舊約聖經是唯一的宗教經典。敬拜主耶和華為唯一的真神。猶太人和信仰猶太教的人在日常生活中尊重摩西的律法，等待救世主（彌賽亞）的誕生。' },
+                { name: '基督教', desc: '舊約聖經和新約聖經同為宗教經典。視耶穌為救世主（彌賽亞＝基督）、「上帝之子」加以崇拜。同時將舊約聖經看作是了解耶穌譜系的重要書籍。' },
+                { name: '伊斯蘭教', desc: '集整創教始祖穆罕默德教誨的古蘭經，是唯一的宗教經典。將舊約聖經的摩西五經視為早於古蘭經的重要書卷。' },
+              ].map(r => (
+                <div key={r.name} className="flex gap-3">
+                  <span className="font-bold text-amber-700 flex-shrink-0">●</span>
+                  <p className="text-gray-700"><span className="font-bold">{r.name}／</span>{r.desc}</p>
+                </div>
+              ))}
+              <p className="text-gray-500 mt-1">※ 這三大宗教的主要聖地都是位於以色列的耶路撒冷。</p>
+            </div>
           </div>
 
           {/* 4. 三十九卷經書 */}
           <div className="border border-red-200 rounded-xl overflow-hidden shadow-sm">
-            <button onClick={() => toggleSection('books39')} className="w-full px-5 py-3.5 bg-gradient-to-r from-red-50 to-orange-50 hover:from-red-100 hover:to-orange-100 flex items-center justify-between transition-all">
+            <div className="w-full px-5 py-3.5 bg-gradient-to-r from-red-50 to-orange-50 flex items-center">
               <div className="flex items-center gap-2"><BookOpen className="w-5 h-5 text-red-600 flex-shrink-0" /><span className="font-bold text-gray-800">舊約聖經包括三十九卷經書</span></div>
-              {isOpen('books39') ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
-            </button>
-            {isOpen('books39') && (
-              <div className="p-5 bg-white space-y-6">
-                {[
-                  { title: '摩西五經（五卷）', color: 'amber', intro: '別名「律法（妥拉）」，是猶太人應遵守的戒律根源。相傳作者為摩西，許多沒讀過「舊約聖經」的人也聽過的著名故事主要都記載在本書裡。', books: pentateuchBooks },
-                  { title: '歷史書（十二卷）', color: 'blue', intro: '因大衛像聞名的民族英雄大衛和以色列王國的所羅門王大施拳腳、王國南北分裂及覆亡，淪為巴比倫之囚，獲得自由……無疑是滿載以色列人歷史的十二卷經書。', books: historyBooksData },
-                  { title: '智慧文學（五卷）', color: 'emerald', intro: '內含讚美上帝的詩歌、生命智慧、教訓等的五卷經書。', books: wisdomBooksData },
-                ].map(section => (
-                  <div key={section.title}>
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className={`w-2 h-6 bg-${section.color}-500 rounded-full`} />
-                      <h3 className="font-bold text-gray-800">{section.title}</h3>
-                    </div>
-                    <p className="text-xs text-gray-500 mb-3 pl-4">{section.intro}</p>
-                    <div className="space-y-2 pl-4">
-                      {section.books.map((b: {name: string; desc: string}) => (
-                        <div key={b.name} className="flex gap-2">
-                          <span className={`font-bold text-${section.color}-700 bg-${section.color}-100 px-2 py-0.5 rounded text-xs flex-shrink-0 whitespace-nowrap`}>{b.name}</span>
-                          <p className="text-xs text-gray-700 leading-relaxed">{b.desc}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-                <div>
+            </div>
+            <div className="p-5 bg-white space-y-6">
+              {[
+                { title: '摩西五經（五卷）', color: 'amber', intro: '別名「律法（妥拉）」，是猶太人應遵守的戒律根源。相傳作者為摩西，許多沒讀過「舊約聖經」的人也聽過的著名故事主要都記載在本書裡。', books: pentateuchBooks },
+                { title: '歷史書（十二卷）', color: 'blue', intro: '因大衛像聞名的民族英雄大衛和以色列王國的所羅門王大施拳腳、王國南北分裂及覆亡，淪為巴比倫之囚，獲得自由……無疑是滿載以色列人歷史的十二卷經書。', books: historyBooksData },
+                { title: '智慧文學（五卷）', color: 'emerald', intro: '內含讚美上帝的詩歌、生命智慧、教訓等的五卷經書。', books: wisdomBooksData },
+              ].map(section => (
+                <div key={section.title}>
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="w-2 h-6 bg-purple-500 rounded-full" />
-                    <h3 className="font-bold text-gray-800">先知書（十七卷）</h3>
+                    <div className={`w-2 h-6 bg-${section.color}-500 rounded-full`} />
+                    <h3 className="font-bold text-gray-800">{section.title}</h3>
                   </div>
-                  <p className="text-xs text-gray-500 mb-3 pl-4">傳達上帝意旨的先知書選集。以賽亞書、耶利米書、以西結書、但以理書為「四大先知書」，除此以外的十二卷為「十二小先知書」（哀歌除外）。</p>
+                  <p className="text-gray-500 mb-3 pl-4">{section.intro}</p>
                   <div className="space-y-2 pl-4">
-                    {prophetBooksData.map(b => (
+                    {section.books.map((b: {name: string; desc: string}) => (
                       <div key={b.name} className="flex gap-2">
-                        <div className="flex-shrink-0 flex items-start gap-1">
-                          <span className="font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded text-xs whitespace-nowrap">{b.name}</span>
-                          {b.tag === '四大' && <span className="text-xs text-red-600 font-bold mt-0.5">四大</span>}
-                        </div>
-                        <p className="text-xs text-gray-700 leading-relaxed">{b.desc}</p>
+                        <span className={`font-bold text-${section.color}-700 bg-${section.color}-100 px-2 py-0.5 rounded flex-shrink-0 whitespace-nowrap`}>{b.name}</span>
+                        <p className="text-gray-700 leading-relaxed">{b.desc}</p>
                       </div>
                     ))}
                   </div>
                 </div>
+              ))}
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-2 h-6 bg-purple-500 rounded-full" />
+                  <h3 className="font-bold text-gray-800">先知書（十七卷）</h3>
+                </div>
+                <p className="text-gray-500 mb-3 pl-4">傳達上帝意旨的先知書選集。以賽亞書、耶利米書、以西結書、但以理書為「四大先知書」，除此以外的十二卷為「十二小先知書」（哀歌除外）。</p>
+                <div className="space-y-2 pl-4">
+                  {prophetBooksData.map(b => (
+                    <div key={b.name} className="flex gap-2">
+                      <div className="flex-shrink-0 flex items-start gap-1">
+                        <span className="font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded whitespace-nowrap">{b.name}</span>
+                        {b.tag === '四大' && <span className="text-red-600 font-bold mt-0.5">四大</span>}
+                      </div>
+                      <p className="text-gray-700 leading-relaxed">{b.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            )}
+            </div>
           </div>
 
           {/* 5. 次經 */}
           <div className="border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-            <button onClick={() => toggleSection('apocrypha')} className="w-full px-5 py-3.5 bg-gray-50 hover:bg-gray-100 flex items-center justify-between transition-all">
+            <div className="w-full px-5 py-3.5 bg-gray-50 flex items-center">
               <div className="flex items-center gap-2"><BookOpen className="w-5 h-5 text-gray-500 flex-shrink-0" /><span className="font-bold text-gray-800">舊約聖經存在「次經」</span></div>
-              {isOpen('apocrypha') ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
-            </button>
-            {isOpen('apocrypha') && (
-              <div className="p-5 bg-white space-y-3">
-                <p className="text-gray-700 leading-relaxed text-sm">所謂「次經」，簡單說就是「未被選入正典的書卷」。希伯來文版的舊約聖經被視為猶太教正典據說是在一世紀末。在更早以前，從西元前三世紀左右起，以希伯來文寫成的各書卷便經常被翻譯成希臘文。翻譯後的聖經被稱作「七十士譯本」。「次經」雖含在「七十士譯本」內，但未被收錄進舊約聖經的正典，又有「舊約聖經續編」等的別名。</p>
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-3">
-                  <p className="text-sm text-gray-600">代表性的書卷有「多俾亞傳」、「友弟德傳」、「馬加比傳」等，這些在天主教和希臘正教被視為正典的一部分。</p>
-                </div>
+            </div>
+            <div className="p-5 bg-white space-y-3">
+              <p className="text-gray-700 leading-relaxed">所謂「次經」，簡單說就是「未被選入正典的書卷」。希伯來文版的舊約聖經被視為猶太教正典據說是在一世紀末。在更早以前，從西元前三世紀左右起，以希伯來文寫成的各書卷便經常被翻譯成希臘文。翻譯後的聖經被稱作「七十士譯本」。「次經」雖含在「七十士譯本」內，但未被收錄進舊約聖經的正典，又有「舊約聖經續編」等的別名。</p>
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                <p className="text-gray-600">代表性的書卷有「多俾亞傳」、「友弟德傳」、「馬加比傳」等，這些在天主教和希臘正教被視為正典的一部分。</p>
               </div>
-            )}
+            </div>
           </div>
 
           {/* 6. 故事背景 */}
           <div className="border border-amber-200 rounded-xl overflow-hidden shadow-sm">
-            <button onClick={() => toggleSection('geography')} className="w-full px-5 py-3.5 bg-gradient-to-r from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 flex items-center justify-between transition-all">
+            <div className="w-full px-5 py-3.5 bg-gradient-to-r from-amber-50 to-orange-50 flex items-center">
               <div className="flex items-center gap-2"><Map className="w-5 h-5 text-amber-600 flex-shrink-0" /><span className="font-bold text-gray-800">舊約聖經的故事背景　在西亞至埃及東北部</span></div>
-              {isOpen('geography') ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
-            </button>
-            {isOpen('geography') && (
-              <div className="p-5 bg-white space-y-4">
-                <p className="text-gray-700 text-sm leading-relaxed">撰寫舊約聖經的是以色列人（猶太人），其祖先是上帝所揀選的亞伯拉罕。上帝賜予他的應許之地迦南，便成了舊約聖經故事發生的中心地。其範圍廣大，北邊到達相傳為挪亞乘著方舟停靠的「亞拉特山」；東邊到達相傳為伊甸園所在地「蘇薩」；南邊到達摩西領受十誡的「西奈山」；西邊到達約瑟當上宰相的「埃及」。</p>
-                {geographyAreas.map(area => (
-                  <div key={area.area}>
-                    <h4 className="font-bold text-amber-800 mb-2 text-sm">📍 {area.area} <span className="text-xs font-normal text-gray-500">— {area.note}</span></h4>
-                    <div className="space-y-1.5 pl-4">
-                      {area.items.map(item => (
-                        <div key={item.name} className="flex gap-2">
-                          <span className="font-semibold text-gray-800 text-sm flex-shrink-0">▸ {item.name}</span>
-                          <span className="text-xs text-gray-600 leading-relaxed">{item.desc}</span>
-                        </div>
-                      ))}
-                    </div>
+            </div>
+            <div className="p-5 bg-white space-y-4">
+              <p className="text-gray-700 leading-relaxed">撰寫舊約聖經的是以色列人（猶太人），其祖先是上帝所揀選的亞伯拉罕。上帝賜予他的應許之地迦南，便成了舊約聖經故事發生的中心地。其範圍廣大，北邊到達相傳為挪亞乘著方舟停靠的「亞拉特山」；東邊到達相傳為伊甸園所在地「蘇薩」；南邊到達摩西領受十誡的「西奈山」；西邊到達約瑟當上宰相的「埃及」。</p>
+              {geographyAreas.map(area => (
+                <div key={area.area}>
+                  <h4 className="font-bold text-amber-800 mb-2">📍 {area.area} <span className="font-normal text-gray-500">— {area.note}</span></h4>
+                  <div className="space-y-1.5 pl-4">
+                    {area.items.map(item => (
+                      <div key={item.name} className="flex gap-2">
+                        <span className="font-semibold text-gray-800 flex-shrink-0">▸ {item.name}</span>
+                        <span className="text-gray-600 leading-relaxed">{item.desc}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            )}
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* 7. 歷史年表 */}
           <div className="border border-amber-200 rounded-xl overflow-hidden shadow-sm">
-            <button onClick={() => toggleSection('timeline')} className="w-full px-5 py-3.5 bg-gradient-to-r from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 flex items-center justify-between transition-all">
+            <div className="w-full px-5 py-3.5 bg-gradient-to-r from-amber-50 to-orange-50 flex items-center">
               <div className="flex items-center gap-2"><Clock className="w-5 h-5 text-amber-600 flex-shrink-0" /><span className="font-bold text-gray-800">以色列人（猶太人）的歷史軌跡</span></div>
-              {isOpen('timeline') ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
-            </button>
-            {isOpen('timeline') && (
-              <div className="p-5 bg-white">
-                <p className="text-xs text-gray-500 mb-3">舊約聖經的內容同時也是古代以色列人的歷史。</p>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-xs border-collapse">
-                    <thead>
-                      <tr className="bg-amber-100">
-                        <th className="text-left p-2 font-bold text-amber-800 border border-amber-200 w-1/4">年代</th>
-                        <th className="text-left p-2 font-bold text-amber-800 border border-amber-200 w-1/2">主要事件</th>
-                        <th className="text-left p-2 font-bold text-amber-800 border border-amber-200">周邊地區動態</th>
+            </div>
+            <div className="p-5 bg-white">
+              <p className="text-gray-500 mb-3">舊約聖經的內容同時也是古代以色列人的歷史。</p>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="bg-amber-100">
+                      <th className="text-left p-2 font-bold text-amber-800 border border-amber-200 w-1/4">年代</th>
+                      <th className="text-left p-2 font-bold text-amber-800 border border-amber-200 w-1/2">主要事件</th>
+                      <th className="text-left p-2 font-bold text-amber-800 border border-amber-200">周邊地區動態</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {timelineData.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-amber-50/40'}>
+                        <td className="p-2 font-medium text-amber-700 border border-amber-100">{row.period}</td>
+                        <td className="p-2 text-gray-700 border border-amber-100">
+                          {row.events.map((e, j) => <div key={j}>・{e}</div>)}
+                        </td>
+                        <td className="p-2 text-gray-600 border border-amber-100">{row.surr}</td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      {timelineData.map((row, i) => (
-                        <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-amber-50/40'}>
-                          <td className="p-2 font-medium text-amber-700 border border-amber-100">{row.period}</td>
-                          <td className="p-2 text-gray-700 border border-amber-100">
-                            {row.events.map((e, j) => <div key={j}>・{e}</div>)}
-                          </td>
-                          <td className="p-2 text-gray-600 border border-amber-100">{row.surr}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-                <p className="text-xs text-gray-400 mt-3">※「以色列」這名稱是上帝授予亞伯拉罕的孫子雅各的稱號，後來居住在應許之地的人稱作「以色列人」。</p>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-            )}
+              <p className="text-gray-400 mt-3">※「以色列」這名稱是上帝授予亞伯拉罕的孫子雅各的稱號，後來居住在應許之地的人稱作「以色列人」。</p>
+            </div>
           </div>
 
         </div>
