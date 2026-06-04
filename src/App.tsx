@@ -677,8 +677,10 @@ const App: React.FC = () => {
     return BOOK_CHAPTERS[bookId] || [];
   };
 
-  // 首頁顯示的書籍：Supabase 有資料用 Supabase，否則用靜態備援
-  const displayBooks = supabaseOk ? books : STATIC_BOOKS;
+  // 首頁顯示的書籍：Supabase 有資料時合併靜態備援（確保新書不遺漏），否則純用靜態備援
+  const displayBooks = supabaseOk
+    ? [...books, ...STATIC_BOOKS.filter(sb => !books.find(b => b.book_id === sb.book_id))]
+    : STATIC_BOOKS;
 
   return (
     <Router>
