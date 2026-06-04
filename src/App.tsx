@@ -47,6 +47,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book21: '基督徒須知',
   book22: '認識上帝與認識人的九個探險',
   book23: '舊約聖經人物圖鑑',
+  book24: '盼望和教導',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -293,6 +294,18 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'nebuchadnezzar', title: '尼布甲尼撒', path: '/book23/nebuchadnezzar' },
     { id: 'relation-chart', title: '人物關係圖', path: '/book23/relation-chart' },
   ],
+  book24: [
+    { id: 'home', title: '書本簡介', path: '/book24/home' },
+    { id: 'chapter1', title: '第1章 前言與末世的警告', path: '/book24/chapter1' },
+    { id: 'chapter2', title: '第2章 你可能會問的問題', path: '/book24/chapter2' },
+    { id: 'chapter3', title: '第3章 尼比魯、外星人與屬靈爭戰', path: '/book24/chapter3' },
+    { id: 'chapter4', title: '第4章 辨認叛徒與神的保護', path: '/book24/chapter4' },
+    { id: 'chapter5', title: '第5章 末世關鍵時刻', path: '/book24/chapter5' },
+    { id: 'chapter6', title: '第6章 耶穌對卡羅爾的深情告白', path: '/book24/chapter6' },
+    { id: 'chapter7', title: '第7章 如何渡過大災難', path: '/book24/chapter7' },
+    { id: 'chapter8', title: '第8章 神的主權與最終供應', path: '/book24/chapter8' },
+    { id: 'chapter9', title: '第9章 接受饒恕與逃避追捕', path: '/book24/chapter9' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -320,6 +333,7 @@ const STATIC_BOOKS = [
   { book_id: 'book21', title: '基督徒須知', author: '巴刻（J. I. Packer）', description: '透過使徒信經、洗禮、主禱文和十誡四大支柱，系統介紹基督信仰的核心內容。半世紀以來被世界各地教會廣泛採用的信仰入門經典。', chapters_count: 5 },
   { book_id: 'book22', title: '認識上帝與認識人的九個探險', author: '林鴻信', description: '透過九個探險，深入探討上帝、人、教會、聖靈與盼望，以加爾文神學傳統為根基，結合台灣文化處境的系統神學入門著作。', chapters_count: 10 },
   { book_id: 'book23', title: '舊約聖經人物圖鑑', author: '小堀真一郎（監修）', description: '收錄兩百七十六位舊約聖經人物，以圖像化方式呈現每位人物的故事、身分和特色，並提供可搜尋的互動式人物百科全書。', chapters_count: 3 },
+  { book_id: 'book24', title: '盼望和教導', author: '珂萊爾（Corinne）', description: '末世時代的靈魂盼望——耶穌透過靈修日誌傳達的末世教導、屬靈爭戰指引與信仰告白，幫助信徒在大災難前做好靈魂準備。', chapters_count: 10 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -346,6 +360,7 @@ const colorMap: Record<number, string> = {
   21: 'from-amber-600 to-yellow-700',
   22: 'from-blue-600 to-teal-700',
   23: 'from-amber-600 to-red-700',
+  24: 'from-blue-700 to-indigo-800',
 };
 
 // ========== Book 1 章節（懶加載） ==========
@@ -590,6 +605,18 @@ const Book22Ch9 = lazy(() => import('./components/book22/Book22Ch9'));
 const Book23Home = lazy(() => import('./components/book23/Book23Home'));
 const Book23Nebuchadnezzar = lazy(() => import('./components/book23/Book23Nebuchadnezzar'));
 const Book23RelationChart = lazy(() => import('./components/book23/Book23RelationChart'));
+
+// ========== Book 24 章節（懶加載） ==========
+const Book24Home = lazy(() => import('./components/book24/Book24Home'));
+const Book24Ch1 = lazy(() => import('./components/book24/Book24Ch1'));
+const Book24Ch2 = lazy(() => import('./components/book24/Book24Ch2'));
+const Book24Ch3 = lazy(() => import('./components/book24/Book24Ch3'));
+const Book24Ch4 = lazy(() => import('./components/book24/Book24Ch4'));
+const Book24Ch5 = lazy(() => import('./components/book24/Book24Ch5'));
+const Book24Ch6 = lazy(() => import('./components/book24/Book24Ch6'));
+const Book24Ch7 = lazy(() => import('./components/book24/Book24Ch7'));
+const Book24Ch8 = lazy(() => import('./components/book24/Book24Ch8'));
+const Book24Ch9 = lazy(() => import('./components/book24/Book24Ch9'));
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({
@@ -926,6 +953,19 @@ const App: React.FC = () => {
         <Route path="/book23/nebuchadnezzar" element={<BookLayout bookId="book23" chapter="nebuchadnezzar" chapters={getChaptersForBook('book23')}><Book23Nebuchadnezzar /></BookLayout>} />
         <Route path="/book23/relation-chart" element={<BookLayout bookId="book23" chapter="relation-chart" chapters={getChaptersForBook('book23')}><Book23RelationChart /></BookLayout>} />
         <Route path="/book/23" element={<BookLayout bookId="book23" chapter="home" chapters={getChaptersForBook('book23')}><Book23Home /></BookLayout>} />
+
+        {/* ========== Book 24: 盼望和教導 ========== */}
+        <Route path="/book24/home" element={<BookLayout bookId="book24" chapter="home" chapters={getChaptersForBook('book24')}><Book24Home /></BookLayout>} />
+        <Route path="/book24/chapter1" element={<BookLayout bookId="book24" chapter="chapter1" chapters={getChaptersForBook('book24')}><Book24Ch1 /></BookLayout>} />
+        <Route path="/book24/chapter2" element={<BookLayout bookId="book24" chapter="chapter2" chapters={getChaptersForBook('book24')}><Book24Ch2 /></BookLayout>} />
+        <Route path="/book24/chapter3" element={<BookLayout bookId="book24" chapter="chapter3" chapters={getChaptersForBook('book24')}><Book24Ch3 /></BookLayout>} />
+        <Route path="/book24/chapter4" element={<BookLayout bookId="book24" chapter="chapter4" chapters={getChaptersForBook('book24')}><Book24Ch4 /></BookLayout>} />
+        <Route path="/book24/chapter5" element={<BookLayout bookId="book24" chapter="chapter5" chapters={getChaptersForBook('book24')}><Book24Ch5 /></BookLayout>} />
+        <Route path="/book24/chapter6" element={<BookLayout bookId="book24" chapter="chapter6" chapters={getChaptersForBook('book24')}><Book24Ch6 /></BookLayout>} />
+        <Route path="/book24/chapter7" element={<BookLayout bookId="book24" chapter="chapter7" chapters={getChaptersForBook('book24')}><Book24Ch7 /></BookLayout>} />
+        <Route path="/book24/chapter8" element={<BookLayout bookId="book24" chapter="chapter8" chapters={getChaptersForBook('book24')}><Book24Ch8 /></BookLayout>} />
+        <Route path="/book24/chapter9" element={<BookLayout bookId="book24" chapter="chapter9" chapters={getChaptersForBook('book24')}><Book24Ch9 /></BookLayout>} />
+        <Route path="/book/24" element={<BookLayout bookId="book24" chapter="home" chapters={getChaptersForBook('book24')}><Book24Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
         <Route path="/" element={
