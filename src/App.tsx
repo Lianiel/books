@@ -50,6 +50,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book24: '盼望和教導',
   book25: '教會動力大轉化',
   book26: '言語的力量與神的奇妙',
+  book27: '人如何改變',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -333,6 +334,21 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter6', title: '第6章 奇妙的言語：當我們歌唱時', path: '/book26/chapter6' },
     { id: 'chapter7', title: '第7章 講者對談', path: '/book26/chapter7' },
   ],
+  book27: [
+    { id: 'home', title: '書本簡介', path: '/book27/home' },
+    { id: 'chapter1', title: '第1課 這是神要帶領你去的地方', path: '/book27/chapter1' },
+    { id: 'chapter2', title: '第2課 是的，你是基督所愛的人', path: '/book27/chapter2' },
+    { id: 'chapter3', title: '第3課 改變需要群體的生活', path: '/book27/chapter3' },
+    { id: 'chapter4', title: '第4課 神眼中的生活，神手中的改變', path: '/book27/chapter4' },
+    { id: 'chapter5', title: '第5課 現實世界中的真神（炎熱篇上）', path: '/book27/chapter5' },
+    { id: 'chapter6', title: '第6課 現實世界中真實的你（炎熱篇下）', path: '/book27/chapter6' },
+    { id: 'chapter7', title: '第7課 什麼事情纏累著你（荊棘篇上）', path: '/book27/chapter7' },
+    { id: 'chapter8', title: '第8課 為什麼你會被纏累（荊棘篇下）', path: '/book27/chapter8' },
+    { id: 'chapter9', title: '第9課 全新的身分，全新的潛能（十架篇上）', path: '/book27/chapter9' },
+    { id: 'chapter10', title: '第10課 十字架與日常生活（十架篇下）', path: '/book27/chapter10' },
+    { id: 'chapter11', title: '第11課 內心真實的改變（果實篇上）', path: '/book27/chapter11' },
+    { id: 'chapter12', title: '第12課 令人耳目一新的善果（果實篇下）', path: '/book27/chapter12' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -363,6 +379,7 @@ const STATIC_BOOKS = [
   { book_id: 'book24', title: '盼望和教導', author: '珂萊爾（Corinne）', description: '末世時代的靈魂盼望——耶穌透過靈修日誌傳達的末世教導、屬靈爭戰指引與信仰告白，幫助信徒在大災難前做好靈魂準備。', chapters_count: 10 },
   { book_id: 'book25', title: '教會動力大轉化', author: '卜冀曼・賀伯陛博士・高爾文博士', description: '五步轉型門徒訓練——從定義真正的門徒，到建立關係性門徒訓練體系，幫助每間教會從領人歸主，轉型為培育能帶出門徒的門徒。', chapters_count: 13 },
   { book_id: 'book26', title: '言語的力量與神的奇妙', author: '約翰・派博 & 賈斯汀・泰勒 編輯', description: '六位當代神學家探討基督徒言語生活——言語與人心、舌頭的管治、雄辯與十字架、尖銳的言語、故事的力量、歌唱的奧祕，從不同角度呈現以神的榮耀為準則的言語神學。', chapters_count: 8 },
+  { book_id: 'book27', title: '人如何改變', author: '提姆連恩 & 保羅區普（CCEF）', description: '以HEAT模式（炎熱→荊棘藪→十字架→果實）探討基督徒改變的神學——從耶利米書17章出發，揭示心的偶像如何在試煉中顯露，及十字架恩典如何帶來真實而持久的生命更新。', chapters_count: 13 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -392,6 +409,7 @@ const colorMap: Record<number, string> = {
   24: 'from-blue-700 to-indigo-800',
   25: 'from-blue-500 to-purple-600',
   26: 'from-rose-600 to-red-700',
+  27: 'from-emerald-500 to-green-600',
 };
 
 // ========== Book 1 章節（懶加載） ==========
@@ -671,6 +689,21 @@ const Book26Ch4 = lazy(() => import('./components/book26/Book26Ch4'));
 const Book26Ch5 = lazy(() => import('./components/book26/Book26Ch5'));
 const Book26Ch6 = lazy(() => import('./components/book26/Book26Ch6'));
 const Book26Ch7 = lazy(() => import('./components/book26/Book26Ch7'));
+
+// ========== Book 27 章節（懶加載） ==========
+const Book27Home = lazy(() => import('./components/book27/Book27Home'));
+const Book27Ch1 = lazy(() => import('./components/book27/Book27Ch1'));
+const Book27Ch2 = lazy(() => import('./components/book27/Book27Ch2'));
+const Book27Ch3 = lazy(() => import('./components/book27/Book27Ch3'));
+const Book27Ch4 = lazy(() => import('./components/book27/Book27Ch4'));
+const Book27Ch5 = lazy(() => import('./components/book27/Book27Ch5'));
+const Book27Ch6 = lazy(() => import('./components/book27/Book27Ch6'));
+const Book27Ch7 = lazy(() => import('./components/book27/Book27Ch7'));
+const Book27Ch8 = lazy(() => import('./components/book27/Book27Ch8'));
+const Book27Ch9 = lazy(() => import('./components/book27/Book27Ch9'));
+const Book27Ch10 = lazy(() => import('./components/book27/Book27Ch10'));
+const Book27Ch11 = lazy(() => import('./components/book27/Book27Ch11'));
+const Book27Ch12 = lazy(() => import('./components/book27/Book27Ch12'));
 
 // BookCard 組件
 const BookCard: React.FC<BookCardProps> = ({
@@ -1047,6 +1080,22 @@ const App: React.FC = () => {
         <Route path="/book26/chapter6" element={<BookLayout bookId="book26" chapter="chapter6" chapters={getChaptersForBook('book26')}><Book26Ch6 /></BookLayout>} />
         <Route path="/book26/chapter7" element={<BookLayout bookId="book26" chapter="chapter7" chapters={getChaptersForBook('book26')}><Book26Ch7 /></BookLayout>} />
         <Route path="/book/26" element={<BookLayout bookId="book26" chapter="home" chapters={getChaptersForBook('book26')}><Book26Home /></BookLayout>} />
+
+        {/* ========== Book 27 - 人如何改變 ========== */}
+        <Route path="/book27/home" element={<BookLayout bookId="book27" chapter="home" chapters={getChaptersForBook('book27')}><Book27Home /></BookLayout>} />
+        <Route path="/book27/chapter1" element={<BookLayout bookId="book27" chapter="chapter1" chapters={getChaptersForBook('book27')}><Book27Ch1 /></BookLayout>} />
+        <Route path="/book27/chapter2" element={<BookLayout bookId="book27" chapter="chapter2" chapters={getChaptersForBook('book27')}><Book27Ch2 /></BookLayout>} />
+        <Route path="/book27/chapter3" element={<BookLayout bookId="book27" chapter="chapter3" chapters={getChaptersForBook('book27')}><Book27Ch3 /></BookLayout>} />
+        <Route path="/book27/chapter4" element={<BookLayout bookId="book27" chapter="chapter4" chapters={getChaptersForBook('book27')}><Book27Ch4 /></BookLayout>} />
+        <Route path="/book27/chapter5" element={<BookLayout bookId="book27" chapter="chapter5" chapters={getChaptersForBook('book27')}><Book27Ch5 /></BookLayout>} />
+        <Route path="/book27/chapter6" element={<BookLayout bookId="book27" chapter="chapter6" chapters={getChaptersForBook('book27')}><Book27Ch6 /></BookLayout>} />
+        <Route path="/book27/chapter7" element={<BookLayout bookId="book27" chapter="chapter7" chapters={getChaptersForBook('book27')}><Book27Ch7 /></BookLayout>} />
+        <Route path="/book27/chapter8" element={<BookLayout bookId="book27" chapter="chapter8" chapters={getChaptersForBook('book27')}><Book27Ch8 /></BookLayout>} />
+        <Route path="/book27/chapter9" element={<BookLayout bookId="book27" chapter="chapter9" chapters={getChaptersForBook('book27')}><Book27Ch9 /></BookLayout>} />
+        <Route path="/book27/chapter10" element={<BookLayout bookId="book27" chapter="chapter10" chapters={getChaptersForBook('book27')}><Book27Ch10 /></BookLayout>} />
+        <Route path="/book27/chapter11" element={<BookLayout bookId="book27" chapter="chapter11" chapters={getChaptersForBook('book27')}><Book27Ch11 /></BookLayout>} />
+        <Route path="/book27/chapter12" element={<BookLayout bookId="book27" chapter="chapter12" chapters={getChaptersForBook('book27')}><Book27Ch12 /></BookLayout>} />
+        <Route path="/book/27" element={<BookLayout bookId="book27" chapter="home" chapters={getChaptersForBook('book27')}><Book27Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
         <Route path="/" element={
