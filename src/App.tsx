@@ -396,7 +396,7 @@ const STATIC_BOOKS = [
   { book_id: 'book25', title: '教會動力大轉化', author: '卜冀曼・賀伯陛博士・高爾文博士', description: '五步轉型門徒訓練——從定義真正的門徒，到建立關係性門徒訓練體系，幫助每間教會從領人歸主，轉型為培育能帶出門徒的門徒。', chapters_count: 13 },
   { book_id: 'book26', title: '言語的力量與神的奇妙', author: '約翰・派博 & 賈斯汀・泰勒 編輯', description: '六位當代神學家探討基督徒言語生活——言語與人心、舌頭的管治、雄辯與十字架、尖銳的言語、故事的力量、歌唱的奧祕，從不同角度呈現以神的榮耀為準則的言語神學。', chapters_count: 8 },
   { book_id: 'book27', title: '人如何改變', author: '提姆連恩 & 保羅區普（CCEF）', description: '以HEAT模式（炎熱→荊棘藪→十字架→果實）探討基督徒改變的神學——從耶利米書17章出發，揭示心的偶像如何在試煉中顯露，及十字架恩典如何帶來真實而持久的生命更新。', chapters_count: 13 },
-  { book_id: 'book28', title: '人如何改變（教師本）', author: '提姆連恩 & 保羅區普（CCEF）', description: '《人如何改變》課程的教師本（Facilitator's Guide）——為帶領者設計的實用指南。包含帶領流程、時間分配、關鍵教學點、討論引導技巧，及應對常見挑戰的策略，幫助帶領者有效引導學員經歷真實的屬靈改變。', chapters_count: 13 },
+  { book_id: 'book28', title: '人如何改變（教師本）', author: '提姆連恩 & 保羅區普（CCEF）', description: '《人如何改變》課程的教師本（Facilitator Guide）——為帶領者設計的實用指南。包含帶領流程、時間分配、關鍵教學點、討論引導技巧，及應對常見挑戰的策略，幫助帶領者有效引導學員經歷真實的屬靈改變。', chapters_count: 13 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -763,38 +763,19 @@ const App: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        // 為 Supabase 調用添加 3 秒超時
-        const timeoutPromise = new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('Timeout')), 3000)
-        );
-
-        const booksData = await Promise.race([
-          fetchBooks(),
-          timeoutPromise as Promise<any>
-        ]);
-
+        const booksData = await fetchBooks();
         if (booksData.length > 0) {
           setBooks(booksData);
           const chaptersMap: Record<string, Chapter[]> = {};
           for (const book of booksData) {
-            try {
-              const chapterTimeout = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error('Timeout')), 2000)
-              );
-              const chapters = await Promise.race([
-                fetchChapters(book.book_id),
-                chapterTimeout as Promise<any>
-              ]);
-              chaptersMap[book.book_id] = chapters;
-            } catch {
-              // 單本書章節載入失敗，跳過
-            }
+            const chapters = await fetchChapters(book.book_id);
+            chaptersMap[book.book_id] = chapters;
           }
           setBookChapters(chaptersMap);
           setSupabaseOk(true);
         }
       } catch {
-        // Supabase 連不上或超時，使用靜態備援資料
+        // Supabase 連不上，使用靜態備援資料
       } finally {
         setLoading(false);
       }
