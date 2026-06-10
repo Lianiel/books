@@ -134,7 +134,7 @@ export default function Book28Ch04() {
         <div className="space-y-3">
           <div className="bg-white p-4 rounded border border-orange-200">
             <p><strong>挑戰：</strong>學員認為「自我成長方案」太複雜，抗拒填寫。</p>
-            <p className="text-sm text-orange-700 mt-2"><strong>技巧：</strong>強調「不需要完美」——哪怕只填完前兩欄（炎熱和荊棘），本週也是進步。帶領者可以說：「我第一次填這個方案時，也覺得很難，但越填越習慣了。先從你最大的一個炎熱開始，只填兩行就好。」</strong></p>
+            <p className="text-sm text-orange-700 mt-2"><strong>技巧：</strong>強調「不需要完美」——哪怕只填完前兩欄（炎熱和荊棘），本週也是進步。帶領者可以說：「我第一次填這個方案時，也覺得很難，但越填越習慣了。先從你最大的一個炎熱開始，只填兩行就好。」</p>
           </div>
           <div className="bg-white p-4 rounded border border-orange-200">
             <p><strong>挑戰：</strong>學員對整個改變模式（炎熱→荊棘→十字架→果實）感到混淆。</p>
