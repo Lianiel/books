@@ -763,19 +763,38 @@ const App: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const booksData = await fetchBooks();
+        // 為 Supabase 調用添加 3 秒超時
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('Timeout')), 3000)
+        );
+
+        const booksData = await Promise.race([
+          fetchBooks(),
+          timeoutPromise as Promise<any>
+        ]);
+
         if (booksData.length > 0) {
           setBooks(booksData);
           const chaptersMap: Record<string, Chapter[]> = {};
           for (const book of booksData) {
-            const chapters = await fetchChapters(book.book_id);
-            chaptersMap[book.book_id] = chapters;
+            try {
+              const chapterTimeout = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('Timeout')), 2000)
+              );
+              const chapters = await Promise.race([
+                fetchChapters(book.book_id),
+                chapterTimeout as Promise<any>
+              ]);
+              chaptersMap[book.book_id] = chapters;
+            } catch {
+              // 單本書章節載入失敗，跳過
+            }
           }
           setBookChapters(chaptersMap);
           setSupabaseOk(true);
         }
       } catch {
-        // Supabase 連不上，使用靜態備援資料
+        // Supabase 連不上或超時，使用靜態備援資料
       } finally {
         setLoading(false);
       }
