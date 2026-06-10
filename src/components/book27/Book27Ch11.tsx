@@ -1,242 +1,236 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Heart, Star, Search, HelpCircle, Check } from 'lucide-react';
+import React from 'react';
+import { BookOpen, Star, MessageCircle, Lightbulb, Heart, Sprout, Target, Users } from 'lucide-react';
 
 export default function Book27Ch11() {
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({
-    content: true,
-    summary: true,
-    exploration: true,
-    questions: true,
-    practice: true,
-  });
-
-  const toggleSection = (id: string) => {
-    setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
-  };
-
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">第十一課</h1>
-        <h2 className="text-xl font-semibold text-gray-700">內心真實的改變（果實篇上）</h2>
-        <p className="text-sm text-gray-500 mt-2">腓立比書 4:4–9；馬太福音 7:15–20</p>
-      </div>
+    <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+      <h1 className="text-3xl font-bold text-emerald-700 mb-2">第11課：內心真實的改變——果實篇（上）</h1>
+      <p className="text-gray-500 text-sm">學員本 · 《人如何改變》保羅·區普</p>
 
-      {/* 主要內容 */}
-      <div className="mb-6 border border-emerald-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('content')} className="w-full px-5 py-3 bg-gradient-to-r from-emerald-50 to-green-50 hover:from-emerald-100 hover:to-green-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Heart className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">主要內容</span>
+      {/* 複習/作業討論 */}
+      <section className="border-l-4 border-emerald-400 bg-emerald-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <BookOpen className="w-6 h-6 text-emerald-600" />
+          <h2 className="text-xl font-bold text-emerald-700">複習與整體回顧</h2>
+        </div>
+        <div className="bg-white p-4 rounded border border-emerald-200 space-y-3 text-gray-700">
+          <p><strong>整體複習：</strong>我們已經走過了整個改變的大圖畫——炎熱（神的工具）、荊棘（我們的罪性回應）、十字架（改變的樞紐）。現在我們到達最後一站：果實。果實是真實改變的結果，但今天我們要先問：什麼樣的「心」才會結出好果實？</p>
+          <p><strong>作業討論：</strong>分享你完整的「自我成長方案」——四個部分都填好了嗎？在填寫「果實」那一欄時，你最渴望在自己身上看到的改變是什麼？</p>
+        </div>
+      </section>
+
+      {/* CPR */}
+      <section className="border-l-4 border-teal-400 bg-teal-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Target className="w-6 h-6 text-teal-600" />
+          <h2 className="text-xl font-bold text-teal-700">重點與應用（CPR）</h2>
+        </div>
+        <div className="space-y-3 text-gray-700">
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">核心要點（Central Point）</p>
+            <p>馬可福音12章29-31節（愛神、愛人的大誡命）和耶利米書31章、以西結書36章（新心的應許）告訴我們：真正的果實不是靠意志力外在地做出正確行為，而是來自一顆被神改變的心——一顆愛神、愛人的心。神的應許是把「新心」放在我們裡面，使我們從內而外地改變。</p>
           </div>
-          {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['content'] && (
-          <div className="p-5 bg-white space-y-6">
-            <div>
-              <h3 className="text-lg font-semibold text-emerald-700 mb-3">「從心中所流露出來的」</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                我們來到了HEAT模式的最後一個字母：果實（Fruit）。前面我們看了炎熱（處境）、荊棘藪（罪性回應）、十字架（基督恩典）。現在要問的是：當一個人持續倚靠十字架，持續操練信心悔改，他的生命會結出什麼樣的果子？
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                馬太福音7:15-20是這個主題的核心圖像：「憑著他們的果子，可以認出他們來……凡好樹都結好果子，惟獨壞樹結壞果子。」耶穌這裡說的「樹」指的是人的心——樹是什麼，果子就是什麼。荊棘藪的樹結荊棘的果，好果樹的樹結好的果。改變的標誌不是行為的外在遵守，而是從心裡自然流露的生命品質。
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                這個比喻的關鍵在「自然流露」四個字。好樹結好果，不是努力裝出來的，而是因為樹的本質改變了。當一個人的心真正被福音改變，好果子是自然的流露，而非表演。這也是HEAT模式最終要帶我們到的地方：不只是行為的修正，而是心的更新，使改變成為從裡到外的真實轉化。
-              </p>
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">個人應用（Personal）</p>
+            <p>你的「好行為」主要是出於什麼動機？是對神的愛和感恩？是對人的真實關心？還是為了維持形象、避免麻煩、或尋求認可？誠實地面對這個問題。</p>
+          </div>
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">人際應用（Relational）</p>
+            <p>在你最重要的關係中，你的服事和付出是出於真實的愛，還是出於責任感、愧疚感、或害怕後果？這個動機上的差別如何影響你的關係品質？</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 主要問題 */}
+      <section className="text-center bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 p-8 rounded-xl">
+        <Sprout className="w-10 h-10 text-emerald-600 mx-auto mb-3" />
+        <h2 className="text-xl font-bold text-emerald-800 mb-3">本課主要問題</h2>
+        <p className="text-2xl font-bold text-emerald-700 leading-relaxed">
+          「什麼樣的心，<br />會產生好果實？」
+        </p>
+      </section>
+
+      {/* 課程內容 */}
+      <section className="border-l-4 border-cyan-400 bg-cyan-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Lightbulb className="w-6 h-6 text-cyan-600" />
+          <h2 className="text-xl font-bold text-cyan-700">課程內容</h2>
+        </div>
+        <div className="space-y-5 text-gray-700">
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">一、「婚姻比喻」的延伸——單身女員工和老闆</h3>
+            <div className="bg-white p-4 rounded border border-cyan-200">
+              <p className="font-bold text-sm text-cyan-700 mb-2">比喻場景</p>
+              <p className="text-sm text-gray-700 mb-2">有一位工作盡責的單身女員工，她的老闆對她非常好——不只付她優厚的薪水，還在她生病時探望，在她有難時幫助，把她當作寶貴的夥伴而不只是員工。</p>
+              <p className="font-bold text-sm text-cyan-700 mb-2">兩種服事的動機</p>
+              <p className="text-sm text-gray-700 mb-2">假設這個女員工有兩個朋友：</p>
+              <ul className="list-disc list-inside space-y-1 text-sm text-gray-700 ml-2 mb-2">
+                <li><strong>朋友甲：</strong>「我也想在那裡工作——聽說薪水很高，還有很多福利。我要讓老闆覺得我很有用，這樣我就能得到那些好處了。」</li>
+                <li><strong>朋友乙（後來和老闆結婚了）：</strong>「我做這一切是因為我愛他，我知道他愛我。不是因為薪水，也不是因為福利，而是因為他是誰，以及他為我做了什麼。」</li>
+              </ul>
+              <p className="font-bold text-sm text-cyan-700 mb-2">應用</p>
+              <p className="text-sm text-gray-700">朋友甲代表「宗教性」的服事——用努力換取好處；朋友乙代表「福音性」的服事——出於愛和感恩。我們對神的服事，更像哪一種？真正的果實只能從「乙型」的心中生長出來。</p>
             </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-emerald-700 mb-3">腓立比書研習：喜樂從何而來</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                腓立比書是本課的主要研習材料。保羅在獄中寫了這封信，卻全書充滿「喜樂」（腓立比書出現「喜樂」超過16次）。這是一個最真實的「果實」範例：在極端困難的「炎熱」中，心仍然能結出喜樂的果子。
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                腓立比書4:4-9給了我們一份「好果樹的清單」，是從心中自然流露的果子：
-              </p>
-
-              <div className="space-y-3">
-                <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-200">
-                  <h4 className="font-semibold text-emerald-700 text-sm mb-1">喜樂（腓4:4）</h4>
-                  <p className="text-gray-600 text-sm">「你們要靠主常常喜樂；我再說，你們要喜樂。」注意「靠主」——喜樂的根源是主，不是環境。保羅在監獄裡仍能喜樂，是因為他的喜樂不依賴於處境，而依賴於「主近了」（腓4:5）這個事實。</p>
-                </div>
-
-                <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-200">
-                  <h4 className="font-semibold text-emerald-700 text-sm mb-1">溫和謙讓（腓4:5）</h4>
-                  <p className="text-gray-600 text-sm">「當叫眾人知道你們謙讓的心。」謙讓（epieikēs）包含了不過分堅持自己的權利，甚至在被不公平對待時仍能溫和回應。這是荊棘藪「以惡報惡」的正面對照。</p>
-                </div>
-
-                <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-200">
-                  <h4 className="font-semibold text-emerald-700 text-sm mb-1">禱告中的平安（腓4:6-7）</h4>
-                  <p className="text-gray-600 text-sm">「應當一無掛慮，只要凡事藉著禱告、祈求和感謝，將你們所要的告訴神。神所賜出人意外的平安……」平安不是沒有問題，而是在問題中禱告、感謝、把重擔交給神，然後那「出人意外的平安」就來保守心懷意念。</p>
-                </div>
-
-                <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-200">
-                  <h4 className="font-semibold text-emerald-700 text-sm mb-1">思念美善（腓4:8）</h4>
-                  <p className="text-gray-600 text-sm">「凡是真實的、可敬的、公義的、清潔的、可愛的、有美名的事；若有什麼德行，若有什麼稱讚，這些事你們都要思念。」思念的內容影響心的狀態，心的狀態影響生命的果子。</p>
-                </div>
-
-                <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-200">
-                  <h4 className="font-semibold text-emerald-700 text-sm mb-1">知足的秘訣（腓4:11-12）</h4>
-                  <p className="text-gray-600 text-sm">「我學會了，無論在什麼狀態可以知足，這是很要緊的。」知足是「學會的」，不是天生的，也不是強迫自己的。保羅說他「靠著那加給我力量的，凡事都能做」（腓4:13）——知足是靠基督的力量學會的果子。</p>
-                </div>
+          </div>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">二、腓立比書研習——保羅在腓立比監獄的信心</h3>
+            <p className="mb-2">保羅寫腓立比書時身在監獄，這是他的「炎熱」。然而這封信充滿了喜樂和感謝。這就是「果實」在最艱難的炎熱中的表現：</p>
+            <div className="space-y-3">
+              <div className="bg-white p-3 rounded border border-cyan-200">
+                <p className="font-bold text-sm">問題1：喜樂的根源（腓立比書4章4-7節）</p>
+                <p className="text-sm text-gray-700 mt-1">「你們要靠主常常喜樂；我再說，你們要喜樂。」（4節）——保羅不是說「等到情況好了你就會喜樂」，而是說「靠主常常喜樂」。他的喜樂不取決於環境，而取決於他的信靠對象。在你的炎熱中，你的喜樂建立在什麼基礎上？</p>
+              </div>
+              <div className="bg-white p-3 rounded border border-cyan-200">
+                <p className="font-bold text-sm">問題2：滿足的秘訣（腓立比書4章11-13節）</p>
+                <p className="text-sm text-gray-700 mt-1">「我學會了，無論在什麼狀態可以知足，這是極大的益處。我知道怎樣處卑賤，也知道怎樣處豐富；或飽足、或飢餓、或有餘、或缺乏，在各事上並在一切事上，我都得了秘訣。」（11-12節）——這個「秘訣」是「學會」的，不是天生的。你在你的炎熱中正在學什麼？</p>
+              </div>
+              <div className="bg-white p-3 rounded border border-cyan-200">
+                <p className="font-bold text-sm">問題3：思想的管理（腓立比書4章8節）</p>
+                <p className="text-sm text-gray-700 mt-1">「弟兄們，那些真實的、可敬的、公義的、清潔的、可愛的、有美名的事，若有什麼德行，若有什麼稱讚，這些事你們都要思念。」——保羅的「心理健康」秘訣就是管理思想的焦點。你在炎熱中的思想主要在哪裡？如何應用這節經文？</p>
+              </div>
+              <div className="bg-white p-3 rounded border border-cyan-200">
+                <p className="font-bold text-sm">問題4：感謝的操練（腓立比書4章6節）</p>
+                <p className="text-sm text-gray-700 mt-1">「應當一無掛慮，只要凡事藉著禱告、祈求和感謝，將你們所要的告訴神。」——感謝是禱告的一部分，不是情緒好的時候才有的。在你的炎熱中，你現在可以感謝什麼？（即使很小也算）</p>
+              </div>
+              <div className="bg-white p-3 rounded border border-cyan-200">
+                <p className="font-bold text-sm">問題5：群體中的喜樂（腓立比書1章3-11節）</p>
+                <p className="text-sm text-gray-700 mt-1">「我每逢想念你們，就感謝我的神……我為你們眾人有這樣的意念，是應當的。」（3-7節）——保羅在炎熱中的喜樂部分來自他對腓立比信徒的愛和連結。你的炎熱中，群體（教會、小組）如何成為你喜樂的來源？</p>
+              </div>
+              <div className="bg-white p-3 rounded border border-cyan-200">
+                <p className="font-bold text-sm">問題6：果實的外顯（腓立比書2章3-4節）</p>
+                <p className="text-sm text-gray-700 mt-1">「凡事不可結黨，不可貪圖虛浮的榮耀；只要存心謙卑，各人看別人比自己強。各人不要單顧自己的事，也要顧別人的事。」——這是「心的改變」在具體行動上的表現。在你的關係中，哪個方面你最難做到「看別人比自己強」？</p>
+              </div>
+              <div className="bg-white p-3 rounded border border-cyan-200">
+                <p className="font-bold text-sm">問題7：以基督的心為心（腓立比書2章5-8節）</p>
+                <p className="text-sm text-gray-700 mt-1">「你們當以基督耶穌的心為心：他本有神的形像，不以自己與神同等為強奪的……反倒虛己，取了奴僕的形像……自己卑微，存心順服，以至於死，且死在十字架上。」——這是果實最高的標準：基督自己的樣式。在你的炎熱中，你如何可以更接近這個樣式？</p>
               </div>
             </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-emerald-700 mb-3">果實不是努力的結果，是根的結果</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                本課一個重要的神學釐清：果實（好果子）不是信徒努力的結果，而是根（心被基督更新）的自然流露。這不是說信徒不需要努力，而是說努力的方向是更新根，而非貼上假果子。
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                腓立比書2:12-13說得很清楚：「這樣看來，我親愛的弟兄，你們既是常順服的……就當恐懼戰兢地做成你們得救的工夫；因為你們立志行事，都是神在你們心裡運行，為要成就他的美意。」神在裡面運行，信徒在外面順服——這是內外合一的改變，不是外在努力遮蓋內在荊棘。
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                這也是為什麼本書叫做《人如何改變》，而非《人如何管理自己的行為》。真正的改變是從心的根本更新開始，是神的工作，信徒是在神的工作中配合行動，而非靠自己的意志力生產出「屬靈果子」。
-              </p>
+          </div>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">三、申命記6章4-6節與馬可福音12章28-31節：愛的大誡命</h3>
+            <div className="bg-white p-4 rounded border border-cyan-200 italic text-sm mb-2">
+              <p>「以色列啊，你要聽！耶和華我們神是獨一的主。你要盡心、盡性、盡力愛耶和華你的神。」（申命記6章4-6節）</p>
+              <p className="mt-2">「你要盡心、盡性、盡意、盡力愛主你的神。……愛人如己。再沒有比這兩條誡命更大的了。」（馬可福音12章30-31節）</p>
             </div>
+            <p className="mb-2">保羅·區普指出，一切「果實」的最終標準就是這兩條誡命：<strong>愛神，愛人</strong>。所有外在的好行為，如果不是從這兩個愛出發，都只是「宗教行為」，不是真正的果實。</p>
+            <p>真正的果實的特徵：不是表現的完美，而是動機的純正；不是外在的正確，而是內心的愛。當我們的荊棘反應減少，當我們更快地悔改，當我們在炎熱中更多地信靠，當我們的關係更多地流露出愛和忍耐——這些就是果實的跡象。</p>
           </div>
-        )}
-      </div>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">四、耶利米書31章31-34節與以西結書36章24-28節：新心的應許</h3>
+            <div className="space-y-3">
+              <div className="bg-white p-4 rounded border border-cyan-200 italic text-sm">
+                <p>「耶和華說：那些日子以後，我與以色列家所立的約乃是這樣：我要將我的律法放在他們裡面，寫在他們心上……他們各人不再教導自己的鄰舍和自己的弟兄說：你該認識耶和華，因為他們從最小的到至大的都必認識我……」（耶利米書31章33-34節）</p>
+              </div>
+              <div className="bg-white p-4 rounded border border-cyan-200 italic text-sm">
+                <p>「我也要賜給你們一個新心，將新靈放在你們裡面；又從你們的肉體中除掉石心，賜給你們肉心。我必將我的靈放在你們裡面，使你們順從我的律例，謹守遵行我的典章。」（以西結書36章26-27節）</p>
+              </div>
+            </div>
+            <p className="mt-2">這兩段舊約的應許都指向同一件事：真正的改變是從內而外的——不是外在的規則約束，而是內心的更新。神的應許是：「我要把我自己（我的律法、我的靈）放在你裡面。」果實的根源是「神住在我們裡面」，這是聖靈的工作。</p>
+            <p className="mt-2">這意味著：我們的責任不是「努力結果實」，而是「讓聖靈充滿和引導我們」（以弗所書5章18節）——農夫不能讓果實生長，但他可以澆水、施肥、除草，提供生長的最佳條件。</p>
+          </div>
+        </div>
+      </section>
 
-      {/* 重點總結 */}
-      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">重點總結</span>
-          </div>
-          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['summary'] && (
-          <div className="p-5 bg-white">
-            <ul className="space-y-2">
-              {[
-                '「果實」是HEAT模式的最後一個字母，指信徒在持續倚靠十字架中，心所自然結出的生命品質，不是表演，而是真實的內在更新。',
-                '馬太福音7:15-20：樹是什麼，果子就是什麼。真正的改變標誌是從心裡自然流露，而非外在行為的管理。',
-                '腓立比書4:4-9提供了好果樹的清單：喜樂、謙讓、禱告中的平安、思念美善、知足。這些不是道德努力的目標，而是倚靠基督的心所結的果子。',
-                '保羅「在監獄裡喜樂」是最真實的果實範例——在最艱難的炎熱中，喜樂仍然可能，因為喜樂的根源是主，不是環境。',
-                '果實是根（心被基督更新）的結果，不是努力的結果。腓立比書2:12-13：神在裡面運行，信徒在外面順服——這是內外合一的真實改變。',
-              ].map((point, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="w-5 h-5 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
-                  <p className="text-gray-700">{point}</p>
-                </li>
-              ))}
+      {/* 作業 */}
+      <section className="border-l-4 border-green-400 bg-green-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Heart className="w-6 h-6 text-green-600" />
+          <h2 className="text-xl font-bold text-green-700">作業：果實的根源與腓立比書的研習</h2>
+        </div>
+        <div className="space-y-4">
+          <div className="bg-white p-4 rounded border border-green-200">
+            <h3 className="font-bold text-green-700 mb-2">完整閱讀腓立比書</h3>
+            <p className="text-gray-700 mb-2">這週讀完整本腓立比書（4章），並回答：</p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700">
+              <li>在保羅的生命中，你看到了哪些具體的「果實」？（以具體的行為、態度、或話語為證據）</li>
+              <li>保羅的「炎熱」（監獄、迫害、死亡的威脅）如何使他的果實顯得更加真實和有力？</li>
+              <li>3章12-14節中保羅說：「這不是說我已經得著了，已經完全了……向著標竿直跑，要得神在基督耶穌裡從上面召我來得的獎賞。」這如何平衡「果實已有」和「仍在成長」這兩個真理？</li>
             </ul>
           </div>
-        )}
-      </div>
+          <div className="bg-white p-4 rounded border border-green-200">
+            <h3 className="font-bold text-green-700 mb-2">辨識自己的果實跡象</h3>
+            <p className="text-gray-700 mb-2">誠實地回顧過去幾個月（從開始這個課程到現在），回答：</p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700">
+              <li>你在哪個關係中，看到了自己態度或行為的改變？（給出具體的例子）</li>
+              <li>在你最大的炎熱中，你的回應是否有所不同？哪些地方有改進，哪些仍然掙扎？</li>
+              <li>你的禱告生活是否有變化？你如何在炎熱中更多地依靠神？</li>
+              <li>你對別人的愛（包括難以愛的人）是否有任何增長的跡象？</li>
+            </ul>
+          </div>
+          <div className="bg-white p-4 rounded border border-green-200">
+            <h3 className="font-bold text-green-700 mb-2">研讀耶利米書31章31-34節</h3>
+            <p className="text-gray-700 mb-2">這是「新約」的預言，在基督裡完全應驗了。回答：</p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700">
+              <li>「我要將我的律法放在他們裡面，寫在他們心上」——這和「外在的規條約束」有什麼根本的不同？在你的生活中，你更像哪一種？</li>
+              <li>「他們各人不再教導自己的鄰舍……因為他們都必認識我」——直接認識神是什麼樣的？你有沒有這種直接和神同在的經歷？</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-      {/* 延伸探討 */}
-      <div className="mb-6 border border-indigo-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('exploration')} className="w-full px-5 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Search className="w-5 h-5 text-indigo-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">延伸探討</span>
-          </div>
-          {expanded['exploration'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['exploration'] && (
-          <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-indigo-700 mb-2">喜樂與快樂的神學區別</h4>
-              <p className="text-gray-700 leading-relaxed text-sm">
-                腓立比書4:4的「喜樂」（chairō）與世俗的「快樂」（happiness）有根本的區別。「快樂」依賴於外在環境——事情順利就快樂，事情不順就不快樂。「喜樂」是一種深層的、以神為根源的滿足感，可以在痛苦中共存。這正是保羅在監獄裡能寫下腓立比書的原因。喜樂不是情感上的強迫（「我要假裝快樂」），而是一種對神信實性的信心回應（「即使現在這樣，神仍然是好的」）。
-              </p>
+      {/* 重點總結 */}
+      <section className="bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-200 p-6 rounded-xl">
+        <div className="flex items-center gap-3 mb-4">
+          <Star className="w-6 h-6 text-yellow-500 fill-yellow-500" />
+          <h2 className="text-xl font-bold text-sky-800">重點總結</h2>
+        </div>
+        <div className="space-y-3">
+          {[
+            '真正的果實不是外在的好行為，而是從一顆被神改變的心中自然流露的生命表現——動機的純正比表現的完美更重要',
+            '「婚姻比喻」說明：以「換取好處」為動機的服事（宗教型），和以「愛和感恩」為動機的服事（福音型），在外表上可能相同，但本質完全不同',
+            '腓立比書是保羅在炎熱中結出果實的最佳示範：在監獄裡，他擁有喜樂、知足、感謝、和對人的愛——這些都是「炎熱中的果實」',
+            '愛神、愛人（大誡命）是一切果實的最終標準——不是完美的表現，而是從愛出發的服事和生活',
+            '耶利米書和以西結書的「新心應許」指向聖靈的工作：真正的改變是從內而外的，是神把自己的靈放在我們裡面的結果',
+            '我們的責任是「讓聖靈充滿」（提供成長的條件），不是「努力結果實」（靠意志力製造外在的表現）',
+          ].map((point, i) => (
+            <div key={i} className="flex items-start gap-3">
+              <span className="bg-sky-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">{i + 1}</span>
+              <p className="text-gray-700">{point}</p>
             </div>
-            <div>
-              <h4 className="font-semibold text-indigo-700 mb-2">「思念」的力量：心理與屬靈的交叉點</h4>
-              <p className="text-gray-700 leading-relaxed text-sm">
-                腓立比書4:8的「思念」（logizomai）在現代心理學中也有對應的洞見：我們習慣性地思念什麼，就塑造了我們的情緒和行為模式。若我們習慣性地思念「我的困難、我的傷害、我的失去」，心就會被塑造成荊棘藪的模式；若我們習慣性地思念「真實的、可敬的、公義的」，心就被塑造成好果樹的模式。這不是「正向思考」的自我欺騙，而是選擇把我們的思念錨定在真實的神學現實上。
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-indigo-700 mb-2">「知足」是學習，不是天賦</h4>
-              <p className="text-gray-700 leading-relaxed text-sm">
-                腓立比書4:11的「我學會了」（emathon）是一個關鍵的動詞——「學會」意味著這是一個過程，需要時間、嘗試、失敗和再嘗試。知足不是突然頓悟，而是在每一次炎熱中練習選擇信靠神而非追求偶像所積累的智慧。保羅說他「在各事上並在一切事上，我都得了秘訣」（腓4:12）——「秘訣」（mueomai）原意是「被引入奧秘」，指一個漸進的學習過程。知足是在十字架恩典中一步步學習的生命功課。
-              </p>
-            </div>
-          </div>
-        )}
-      </div>
+          ))}
+        </div>
+      </section>
 
-      {/* 反思問題 */}
-      <div className="mb-6 border border-amber-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('questions')} className="w-full px-5 py-3 bg-gradient-to-r from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <HelpCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">反思問題</span>
+      {/* 延伸CPR */}
+      <section className="border-l-4 border-indigo-400 bg-indigo-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <MessageCircle className="w-6 h-6 text-indigo-600" />
+          <h2 className="text-xl font-bold text-indigo-700">延伸反思</h2>
+        </div>
+        <div className="space-y-3 text-gray-700">
+          <div className="bg-white p-4 rounded border border-indigo-200">
+            <p className="font-bold text-indigo-700 mb-2">「我學會了」——保羅的成長觀</p>
+            <p>腓立比書4章11節說：「我學會了，無論在什麼狀態可以知足。」「學會了」是一個過去式，意思是保羅不是天生就知足的——他是在炎熱的過程中，一步步學習的。你目前在生命的「學校」裡，正在學習的最主要的功課是什麼？</p>
           </div>
-          {expanded['questions'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['questions'] && (
-          <div className="p-5 bg-white space-y-3">
-            {[
-              '腓立比書5種好果子（喜樂、謙讓、禱告中的平安、思念美善、知足），哪一種在你的生命中目前最稀缺？你覺得這是什麼原因？',
-              '你有沒有某些「屬靈行為」（如禱告、讀經、服事）是出於對人的表演，而非出於心對神的愛？這種表演和真實的果子有什麼不同？',
-              '「我學會了知足」——在你生命中，什麼「炎熱」的處境最難讓你知足？你在這個領域「學習知足」的進展如何？',
-              '腓立比書4:8說要思念「凡是真實的、可敬的、公義的」——你日常習慣性思念的，更多是這些，還是你的困難、傷害、和失去？',
-              '你如何區分「真實的果子」（心的更新所流露）和「貼上的假果子」（行為上的努力表演）？這個區別對你的自我評估有什麼影響？',
-              '如果你知道神「在你心裡運行」（腓2:13），這對你看待自己的成長和失敗有什麼不同？',
-            ].map((q, i) => (
-              <div key={i} className="flex gap-3">
-                <span className="text-amber-600 font-bold flex-shrink-0">{i + 1}.</span>
-                <p className="text-gray-700">{q}</p>
-              </div>
-            ))}
+          <div className="bg-white p-4 rounded border border-indigo-200">
+            <p className="font-bold text-indigo-700 mb-2">果實是給別人看的</p>
+            <p>果實的意義在於它是給別人吃的，不是給自己欣賞的。馬太福音5章16節說：「你們的光也當這樣照在人前，叫他們看見你們的好行為，便將榮耀歸給你們在天上的父。」你的「果實」讓誰得到了益處？你的改變對你身邊的人有什麼具體的正面影響？</p>
           </div>
-        )}
-      </div>
+        </div>
+      </section>
 
-      {/* 具體實踐方針 */}
-      <div className="mb-6 border border-green-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('practice')} className="w-full px-5 py-3 bg-gradient-to-r from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">具體實踐方針</span>
-          </div>
-          {expanded['practice'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['practice'] && (
-          <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">🌱 果實日記</h4>
-              <p className="text-gray-700 text-sm mb-2">本週每天記錄一個「好果樹的時刻」——一個你的回應更像好果樹而非荊棘藪的具體例子：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>處境是什麼（炎熱）？</li>
-                <li>我的回應是什麼（果子）？</li>
-                <li>是什麼讓這個回應成為可能？（是靠自己的努力，還是靠了神的恩典？）</li>
-              </ul>
+      {/* 生活實踐 */}
+      <section className="border-l-4 border-lime-400 bg-lime-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Users className="w-6 h-6 text-lime-600" />
+          <h2 className="text-xl font-bold text-lime-700">生活實踐方針</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            { label: 'a. 每日的感謝禱告', desc: '每天找出三件可以感謝神的事（即使是在炎熱中），讓感謝成為心的訓練，而不只是形式' },
+            { label: 'b. 動機的自我審視', desc: '本週每次服事或幫助別人之後，誠實問自己：「我這樣做的主要動機是什麼？」這個練習幫助你辨識是福音型還是宗教型的服事' },
+            { label: 'c. 讀腓立比書2章', desc: '每天早上讀腓立比書2章1-11節，讓「以基督的心為心」成為你這一天的目標，並注意你在哪裡最難做到' },
+            { label: 'd. 在炎熱中數算祝福', desc: '針對你目前最大的炎熱，列出至少5件神透過這個炎熱已經給你帶來或教導你的事（果實的跡象）' },
+            { label: 'e. 向別人說出他們的果實', desc: '本週主動告訴小組的一位成員，你在他/她身上看見的一個屬靈成長的跡象——彼此鼓勵是群體生命的重要功能' },
+            { label: 'f. 祈求聖靈充滿', desc: '每天早晨以以弗所書5章18節禱告：「主，求祢今天用聖靈充滿我，使我的生命結出祢的果實。」' },
+          ].map((item, i) => (
+            <div key={i} className="bg-white p-4 rounded border border-lime-200">
+              <p className="font-bold text-lime-700 mb-1">{item.label}</p>
+              <p className="text-gray-700 text-sm">{item.desc}</p>
             </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">📖 腓立比書通讀</h4>
-              <p className="text-gray-700 text-sm mb-2">本週一次讀完腓立比書，留意：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>保羅提到了哪些「炎熱」（試煉、困難）？</li>
-                <li>他的心如何回應這些炎熱（好果樹還是荊棘藪）？</li>
-                <li>他靠什麼力量結出這些果子？</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">💚 思念美善的練習</h4>
-              <p className="text-gray-700 text-sm mb-2">每天早晨花5分鐘，根據腓立比書4:8做「思念更新」：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>列出今天值得感謝的3件事（真實的）</li>
-                <li>想一個你欽佩的人的一個美好品質（可敬的）</li>
-                <li>想一個神為你已成就的事（公義的、可愛的）</li>
-                <li>用一句禱告把這些帶到神面前</li>
-              </ul>
-            </div>
-            <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-              <h4 className="font-semibold text-green-700 mb-2">🙏 禱告</h4>
-              <p className="text-gray-600 text-sm italic">
-                「主啊，我渴望我的生命結出真實的好果子——不是表演給人看的，而是從心裡自然流露的。但我知道這不是靠我的努力，而是靠祢在我心裡的運行。求祢繼續更新我心的根——讓我越來越以祢為喜樂、以謙讓待人、以禱告代替憂慮、以感謝代替抱怨。讓我在每一個炎熱中都能像保羅一樣，說：『我靠著那加給我力量的，凡事都能做。』奉主名，阿們。」
-              </p>
-            </div>
-          </div>
-        )}
-      </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

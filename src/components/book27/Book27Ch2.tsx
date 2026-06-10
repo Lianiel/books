@@ -1,181 +1,202 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Heart, Star, Search, HelpCircle, Check } from 'lucide-react';
+import React from 'react';
+import { BookOpen, Star, MessageCircle, Lightbulb, Heart, Users } from 'lucide-react';
 
 export default function Book27Ch2() {
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({
-    content: true, summary: true, exploration: true, questions: true, practice: true,
-  });
-  const toggleSection = (id: string) => setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
-
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">第2課</h1>
-        <h2 className="text-xl font-semibold text-gray-700">是的，你是基督所愛的人</h2>
-        <p className="text-sm text-gray-500 mt-1">在基督裡的豐富資源</p>
-      </div>
+    <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+      <h1 className="text-3xl font-bold text-emerald-700 mb-2">第2課：是的，你是基督的新婦</h1>
+      <p className="text-gray-500 text-sm">學員本 · 《人如何改變》保羅·區普</p>
 
-      {/* 主要內容 */}
-      <div className="mb-6 border border-emerald-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('content')} className="w-full px-5 py-3 bg-gradient-to-r from-emerald-50 to-green-50 hover:from-emerald-100 hover:to-green-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Heart className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">主要內容</span>
+      {/* 複習/作業討論 */}
+      <section className="border-l-4 border-emerald-400 bg-emerald-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-3">
+          <BookOpen className="w-5 h-5 text-emerald-600" />
+          <h2 className="text-xl font-bold text-emerald-700">複習／作業討論（30分鐘）</h2>
+        </div>
+        <p className="text-gray-700 mb-2">請在小組中分享你在上一課「生活實踐」中所做的事，以及你的收穫。</p>
+        <p className="text-gray-700">請一起閱讀「複習」、「重點與應用」及「主要問題」的部分。</p>
+      </section>
+
+      {/* 複習 */}
+      <section className="bg-white border border-emerald-200 p-6 rounded">
+        <h2 className="text-xl font-bold text-emerald-700 mb-4">複習</h2>
+        <p className="text-gray-700 mb-3">在第一課，我們確立了神對我們的終極目標：讓我們完全像基督的樣式。這個目標既是今生持續的過程，也是將來完全實現的盼望。我們看見，腓立比書一章6節保證神所開始的善工必然完成。</p>
+        <p className="text-gray-700 mb-3">在第二課，我們要深入探討：神如何達成這個目標？答案不是給我們更多宗教責任，而是與我們建立一種最深刻、最親密的關係——婚姻的關係。這個比喻幫助我們理解，改變的希望從哪裡來，以及為什麼只有耶穌基督才能使我們真正改變。</p>
+        <p className="text-gray-700">人類的核心問題有三個層面：（1）我們需要被救贖（稱義）；（2）我們的心需要被更新（成聖）；（3）我們的生命需要得力量（能力）。耶穌在這三個方面都是我們的答案。</p>
+      </section>
+
+      {/* 重點與應用 CPR */}
+      <section className="border-l-4 border-teal-400 bg-teal-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Users className="w-5 h-5 text-teal-600" />
+          <h2 className="text-xl font-bold text-teal-700">重點與應用（CPR）</h2>
+        </div>
+        <div className="space-y-3">
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">重點提要：</p>
+            <p className="text-gray-700">個人成長與改變的希望，來自於我與「那一位」——耶穌基督的關係上面。祂大有能力地動工，目的是為了改變我的心，讓我的心思意念與祂越來越相通。</p>
           </div>
-          {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['content'] && (
-          <div className="p-5 bg-white space-y-5">
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">個人應用：</p>
+            <p className="text-gray-700">我必須持續不斷地省察自己，何處是神正呼召我要以十字架為中心的眼光，來回應我生命中的炎熱。</p>
+          </div>
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">人際應用：</p>
+            <p className="text-gray-700">我必須幫助他人認識到，在實際的日常生活中，銘記基督在他們裡面活著的重要性。</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 主要問題 */}
+      <section className="text-center py-8 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl border border-emerald-200">
+        <h2 className="text-2xl font-bold text-emerald-800 mb-4">主要問題</h2>
+        <p className="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">因為你已許配給基督成為祂的新婦，你每日所得到的好處是什麼？</p>
+      </section>
+
+      {/* 課程內容 */}
+      <section className="border-l-4 border-cyan-400 bg-cyan-50 p-6 rounded">
+        <h2 className="text-xl font-bold text-cyan-700 mb-4">課程內容</h2>
+        <div className="bg-white p-3 rounded border border-cyan-200 mb-4">
+          <p className="font-bold text-cyan-700">DVD（35分鐘）</p>
+        </div>
+        <div className="bg-white p-4 rounded border border-cyan-200">
+          <p className="font-bold text-cyan-700 mb-3">小組活動（30分鐘）</p>
+          <div className="space-y-4 text-gray-700">
             <div>
-              <h3 className="font-bold text-emerald-700 mb-2">基督在一切之上——歌羅西書的大宣告</h3>
-              <p className="text-gray-700 leading-relaxed">歌羅西書1:15-23是一首讚美基督崇高地位的詩篇。保羅宣告，基督是「那不能看見之神的像」，是「首生的，在一切被造的以先」（西1:15）。萬有都是借著祂造的，為祂造的，也都靠祂維持。在教會中，祂是元首；在死裡復活這件事上，祂是「首生的」。保羅的核心宣告是：「因為父喜歡叫一切的豐盛在祂裡面居住」（西1:19）。</p>
-              <p className="text-gray-700 leading-relaxed mt-2">這不只是一個關於基督的神學陳述；它有直接的牧養含義。如果一切的豐盛都在基督裡，那麼在我們與基督的聯合中，我們也就有份於這豐盛。這正是保羅在歌羅西書2章1至15節所展開的：「你們在祂裡面也得了豐盛」（西2:10）。</p>
+              <p className="font-medium mb-2">1. 請一起查考歌羅西書一章15至23節，並回答：</p>
+              <p className="ml-4 text-gray-600">a. 在這段經文中，基督是誰？祂做了什麼？（15-19節）</p>
+              <p className="ml-4 text-gray-600 mt-1">b. 21至23節描述了我們「從前」的狀態和「如今」的狀態。這個改變是如何發生的？對你的日常生活有什麼含義？</p>
             </div>
             <div>
-              <h3 className="font-bold text-emerald-700 mb-2">三重資源：稱義、智慧、力量</h3>
-              <p className="text-gray-700 leading-relaxed">本課圍繞一個核心問題：在改變的掙扎中，我需要什麼？根據歌羅西書，在基督裡我們有三重豐富的資源：</p>
-              <ul className="mt-3 space-y-3">
-                <li className="bg-blue-50 rounded-lg p-3 border border-blue-100">
-                  <p className="font-semibold text-blue-700">① 稱義（過去的保障）</p>
-                  <p className="text-gray-700 text-sm mt-1">基督「藉著祂肉身受死，叫你們與自己和好」（西1:22），使我們在神面前「聖潔沒有瑕疵，無可指責」。這是我們的法律地位——不是因為我們表現完美，而是因為基督的義算在我們帳上。知道我們已被完全接納，使我們不必再為了贏得神的愛而努力表現，也不必因失敗而陷入絕望。</p>
-                </li>
-                <li className="bg-purple-50 rounded-lg p-3 border border-purple-100">
-                  <p className="font-semibold text-purple-700">② 智慧（當下的引導）</p>
-                  <p className="text-gray-700 text-sm mt-1">在基督裡「藏著一切智慧知識的寶藏」（西2:3）。面對生活的複雜性，我們不是單靠自己的判斷；我們有神話語的智慧、聖靈的引導，以及身邊有智慧的弟兄姊妹。這智慧幫助我們辨別表面問題背後的心靈問題，做出符合神旨意的選擇。</p>
-                </li>
-                <li className="bg-green-50 rounded-lg p-3 border border-green-100">
-                  <p className="font-semibold text-green-700">③ 力量（每日的能力）</p>
-                  <p className="text-gray-700 text-sm mt-1">「因為神的一切豐盛，都有形有體的居住在基督裡面，你們在祂裡面也得了豐盛」（西2:9-10）。基督住在我們心裡，祂的能力每天都向我們開放。這不是抽象的神學，而是每天早晨可以支取的真實力量，幫助我們面對那一天的挑戰。</p>
-                </li>
-              </ul>
+              <p className="font-medium mb-2">2. 神婚姻的比喻揭示了什麼？在婚姻關係中，你的伴侶是誰，以及這意味著你每天可以支取什麼資源？</p>
             </div>
             <div>
-              <h3 className="font-bold text-emerald-700 mb-2">資產與負債：一個顛覆性的視角</h3>
-              <p className="text-gray-700 leading-relaxed">本課引入一個有力的圖像——「資產與負債表」。在這個世界的會計邏輯中，我們首先評估自己的「資產」（家庭背景、才能、教育、成就、良好關係）和「負債」（失敗的過去、傷害、缺乏、弱點）。我們常常用這張表來評估自己改變的潛能：我有沒有足夠的資產來成功？</p>
-              <p className="text-gray-700 leading-relaxed mt-2">但福音告訴我們，這張表需要根本性的重寫。在基督裡，我們最大的「資產」不是我們的天賦或努力，而是基督自己——祂的稱義、祂的智慧、祂的大能。同時，我們最大的「負債」——罪和與神的分離——已經在十字架上被基督完全支付清楚了。</p>
-              <p className="text-gray-700 leading-relaxed mt-2">這意味著什麼？意味著我的改變潛能不是由我的過去或我的才能決定的，而是由住在我裡面的基督決定的。一個有傷痛過去的人，一個才能有限的人，一個反覆失敗的人——在基督裡，都可以經歷真實且深刻的改變。</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-emerald-700 mb-2">改變的核心動力：認識基督</h3>
-              <p className="text-gray-700 leading-relaxed">保羅在腓立比書3:10說他最大的渴望是「要認識基督」。這不是指頭腦上的知識，而是持續深入的關係性認識——認識祂的大能，認識祂受苦的樣式，與祂有份。這種認識本身就是改變的動力。當我們真正認識基督的愛是多麼廣闊長深高（弗3:18），我們就越來越願意離棄那些假冒的滿足，回到那真正能滿足的源頭。</p>
+              <p className="font-medium mb-2">3. 在你的生活中，你是否有「支取基督資源」的習慣？如果沒有，是什麼阻礙了你？</p>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      </section>
+
+      {/* 作業 - 主要內容 */}
+      <section className="border-l-4 border-green-400 bg-green-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Lightbulb className="w-5 h-5 text-green-600" />
+          <h2 className="text-xl font-bold text-green-700">作業：新婦的身分與資源</h2>
+        </div>
+        <div className="space-y-6 text-gray-700">
+          <div>
+            <h3 className="font-bold text-green-800 text-lg mb-3">一、人類的核心問題</h3>
+            <p className="mb-3">在我們談論改變之前，我們首先需要誠實地面對：我們真正的問題是什麼？很多人認為他們的問題是環境不好、家庭功能失調、缺乏意志力，或是遇到了壞人。這些因素確實有影響，但聖經告訴我們，問題更深。</p>
+            <p className="mb-3">人類面對三個根本問題。第一，我們需要被稱義——我們在神面前是罪人，需要被赦免和稱義。第二，我們的心是彎曲的——耶利米書十七章9節說「人心比萬物都詭詐，壞到極處」，我們的動機、慾望和信念都扭曲了，需要被更新。第三，我們缺乏能力——即使我們知道什麼是對的，我們常常做不到，我們需要超越自然的力量。</p>
+            <p>耶穌基督回應了這三個需要。祂的死使我們在神面前被稱義（稱義）；祂的聖靈在我們心中更新我們（成聖）；祂的力量使我們能夠生活（能力）。所以，真正的改變不是從「我要更努力」開始，而是從「我需要基督」開始。</p>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-green-800 text-lg mb-3">二、婚姻的比喻：你是基督的新婦</h3>
+            <p className="mb-3">聖經用婚姻來描述基督與教會（信徒）的關係，這是一個非常深刻的比喻。在婚姻裡，兩個人不再是孤立的個體，他們共享彼此的生命、資源和未來。同樣地，當你相信耶穌，你就「嫁給」了基督——你分享祂的義、祂的能力、祂的智慧，以及祂的榮耀。</p>
+            <p className="mb-3">歌羅西書一章15至23節描繪了這位「丈夫」是誰：「他是那不能看見之神的像，是首生的，在一切被造的以先。因為萬有都是靠他造的……他也是教會全體之首，他是元始，是從死裡首先復生的，使他可以在凡事上居首位。」（15-18節）。這位宇宙的創造者和統治者，選擇成為你的丈夫！</p>
+            <p className="mb-3">然後，21至23節說到我們「從前」的狀態：「你們從前與神隔絕，因著惡行，心裡與他為敵。」但「如今」：「他藉著基督的肉身受死，叫你們與自己和好，把你們引到自己面前，聖潔沒有瑕疵，無可責備。」</p>
+            <p>這「如今」改變了一切！你不再是神的仇敵，你是祂所珍愛的新婦。這個身分不是你努力得來的，而是基督為你做了的——祂付了全部的代價，讓這段關係成為可能。</p>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-green-800 text-lg mb-3">三、新婦每日支取的資源</h3>
+            <p className="mb-3">當你真正明白自己是基督的新婦時，你對每天的生活就有了全新的資源。一個剛結婚的女子，突然可以支取她丈夫的一切資源——不是因為她配得，而是因為她是他的妻子，他選擇了她，並且把一切都給了她。同樣，在基督裡的你，每天可以支取：</p>
+            <ul className="space-y-2 ml-4">
+              <li>• <strong>稱義：</strong>你不需要靠自己的表現換取神的接納，因為你已經在基督裡被完全接納。</li>
+              <li>• <strong>智慧：</strong>雅各書一章5節：「你們中間若有缺少智慧的，應當求那厚賜與眾人……的神。」這個智慧不是靠我們自己想出來的，而是從神那裡領受的。</li>
+              <li>• <strong>力量：</strong>腓立比書四章13節：「我靠著那加給我力量的，凡事都能做。」這力量不是靠我們的意志力，而是靠內住的基督。</li>
+              <li>• <strong>安慰：</strong>哥林多後書一章4節：神「安慰我們在一切患難中，叫我們能用神所賜的安慰去安慰那遭各樣患難的人。」</li>
+            </ul>
+            <p className="mt-3">每天，在你面對誘惑、困難、失敗時，這些資源都在等著你支取。問題不是神是否提供這些，而是你是否知道去支取，以及是否真的信靠祂。</p>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-green-800 text-lg mb-3">四、反思問題</h3>
+            <div className="space-y-3 ml-2">
+              <p className="text-gray-800">❓ 1. 在你的日常生活中，你更傾向於靠自己解決問題，還是向基督支取資源？是什麼使你傾向那個方向？</p>
+              <p className="text-gray-800">❓ 2. 「你是基督的新婦」這個身分，對你的自我認識有什麼影響？你是否真正把自己當作被神完全接納的人？</p>
+              <p className="text-gray-800">❓ 3. 在你目前面對的挑戰中，你最需要支取基督的哪一種資源（稱義、智慧、力量、安慰）？具體說說你打算如何支取它。</p>
+              <p className="text-gray-800">❓ 4. 歌羅西書一章23節說要持守信心，「不移動，不搖撼，常在所聽見福音的盼望上堅固」。在你的生活中，是什麼事情最容易讓你「移動和搖撼」？</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 重點總結 */}
-      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">重點總結</span>
-          </div>
-          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['summary'] && (
-          <div className="p-5 bg-white">
-            <ul className="space-y-2">
-              {[
-                '基督是「一切豐盛」的居所，與基督聯合的信徒在祂裡面也得了豐盛（歌羅西書2:10）。',
-                '在改變的掙扎中，我們在基督裡有三重資源：稱義（過去的保障）、智慧（當下的引導）、力量（每日的能力）。',
-                '知道自己已被完全接納（稱義），使我們從表現壓力中釋放，能夠從愛而非恐懼出發去尋求改變。',
-                '我們的改變潛能不是由過去的資產與負債決定，而是由住在我們裡面的基督決定。',
-                '持續深入地「認識基督」是改變的核心動力，不是知識上的了解，而是關係上的親密。',
-              ].map((point, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="w-5 h-5 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
-                  <p className="text-gray-700">{point}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
+      <section className="bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-200 p-6 rounded-xl">
+        <div className="flex items-center gap-3 mb-4">
+          <Star className="w-6 h-6 text-sky-500" fill="currentColor" />
+          <h2 className="text-xl font-bold text-sky-700">重點總結</h2>
+        </div>
+        <div className="space-y-3">
+          {[
+            '人類面對三個核心問題：需要稱義、心需要更新、缺乏能力——耶穌基督在這三方面都是我們的答案。',
+            '聖經用婚姻比喻基督與信徒的關係：你是基督的新婦，分享祂的義、智慧、力量和榮耀，這是白白賜予的恩典。',
+            '歌羅西書一章21至23節揭示了「從前」（與神為敵）和「如今」（被帶到神面前）的根本改變，全是因著基督的工作。',
+            '每天，基督的資源——稱義、智慧、力量、安慰——都在等待信徒去支取；問題不是資源是否存在，而是我們是否真正信靠。',
+            '改變的根基是身分，不是努力：先認識「我是誰」（基督的新婦），才能知道「我能做什麼」（憑著祂的資源生活）。',
+          ].map((point, i) => (
+            <div key={i} className="flex gap-3 items-start">
+              <span className="bg-sky-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">{i + 1}</span>
+              <p className="text-gray-700 text-sm">{point}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      {/* 延伸探討 */}
-      <div className="mb-6 border border-indigo-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('exploration')} className="w-full px-5 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Search className="w-5 h-5 text-indigo-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">延伸探討</span>
+      {/* 延伸的重點與應用CPR */}
+      <section className="border-l-4 border-indigo-400 bg-indigo-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <MessageCircle className="w-5 h-5 text-indigo-600" />
+          <h2 className="text-xl font-bold text-indigo-700">延伸的重點與應用CPR</h2>
+        </div>
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-bold text-indigo-700 mb-2">重點提要</h3>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700 ml-2">
+              <li>我的改變和成長不是靠我有多少意志力，而是靠我越來越深刻地認識和支取基督在我裡面的生命。</li>
+              <li>基督是我的稱義：在神面前，我不需要靠自己的義，而是靠祂完全的義；這個事實改變了我對罪的回應。</li>
+              <li>基督是我的力量：我不再被「靠自己改變」的壓力所壓垮，因為那改變我的力量來自於祂，不是來自於我。</li>
+            </ol>
           </div>
-          {expanded['exploration'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['exploration'] && (
-          <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">「與基督聯合」的神學意涵</h4>
-              <p className="text-gray-700 leading-relaxed">「與基督聯合」（Union with Christ）是改革宗神學的核心概念。加爾文稱之為「一切福分的源頭」。當我們信靠基督，聖靈使我們與祂聯合，使基督的生命成為我們生命的根基和資源。這不只是法律上的關係（我們的罪歸給祂，祂的義歸給我們），更是生命上的連結——就像枝子與葡萄樹的關係（約15:5）。這種聯合是稱義、成聖和最終榮耀化的基礎。</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">恩典與努力的平衡</h4>
-              <p className="text-gray-700 leading-relaxed">強調「在基督裡的豐盛」是否意味著不需要努力？完全不是。保羅在腓立比書2:12-13說：「當恐懼戰兢，作成你們得救的工夫；因為你們立志行事都是神在你們心裡運行，為要成就祂的美意。」神的動工和我們的努力是同時並行的，但次序很重要：是神先在我們心裡動工，我們才有意願和能力去努力。我們的努力是對神恩典的回應，而不是贏得恩典的手段。</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">過去的傷害如何影響改變？</h4>
-              <p className="text-gray-700 leading-relaxed">許多人認為，過去的創傷和傷害是他們無法真正改變的理由。本課提供了一個重要的平衡視角：一方面，我們的過去確實真實地影響了我們，我們的生長環境、受過的傷害和形成的習慣，都在我們身上留下了印記。另一方面，在基督裡，神的大能遠遠超過這些影響。我們不否認過去的現實，但我們也不讓過去成為現在的定義。「神所開始的善工，祂必完成」——包括在破碎的人生中也是如此。</p>
-            </div>
+          <div>
+            <h3 className="font-bold text-indigo-700 mb-2">個人應用</h3>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700 ml-2">
+              <li>每天早晨，我要提醒自己：「我是基督的新婦，今天的一切挑戰，我可以憑著祂的資源來面對。」</li>
+              <li>當我面對誘惑或失敗時，我要學習立刻轉向基督，不是靠意志力抵擋，而是支取祂的智慧和力量。</li>
+              <li>我要讀歌羅西書一章，讓這幅關於基督的壯闊圖畫，深植在我的心中，成為每天行動的基礎。</li>
+            </ol>
           </div>
-        )}
-      </div>
+          <div>
+            <h3 className="font-bold text-indigo-700 mb-2">人際應用</h3>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700 ml-2">
+              <li>當我幫助他人面對困難時，我要先問：「他們是否清楚認識自己在基督裡的身分和資源？」</li>
+              <li>我要避免只給人「更努力、更自律」的建議，而是幫助他們看見基督是他們的力量來源。</li>
+              <li>我要在我的關係中，成為一個幫助他人「支取基督資源」的人，而不是讓他們依賴我。</li>
+            </ol>
+          </div>
+        </div>
+      </section>
 
-      {/* 反思問題 */}
-      <div className="mb-6 border border-amber-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('questions')} className="w-full px-5 py-3 bg-gradient-to-r from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <HelpCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">反思問題</span>
+      {/* 生活實踐 */}
+      <section className="border-l-4 border-lime-400 bg-lime-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Heart className="w-5 h-5 text-lime-600" />
+          <h2 className="text-xl font-bold text-lime-700">生活實踐</h2>
+        </div>
+        <div className="space-y-3 text-gray-700">
+          <div className="bg-white p-4 rounded border border-lime-200">
+            <p><strong>一、</strong>這週，每天早晨花5分鐘默想這個真理：「我是基督的新婦，祂把祂的一切資源給了我。」然後具體問自己：今天，我最需要支取祂的哪一種資源（稱義、智慧、力量、安慰）？並在禱告中向祂支取。</p>
           </div>
-          {expanded['questions'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['questions'] && (
-          <div className="p-5 bg-white space-y-3">
-            {[
-              '如果要你列出自己的「資產與負債表」，你會列什麼？這些資產和負債如何影響你對自己改變潛能的看法？',
-              '稱義的確據——知道你已被完全接納——在你日常面對失敗時，實際上有多大的影響力？',
-              '你有沒有在生活中的某個困境中，真實地「支取」了基督的智慧或力量？那次的經歷是怎樣的？',
-              '「認識基督」對你來說意味著什麼？你目前如何在實際生活中加深對祂的認識？',
-              '你有沒有用「我的過去太複雜了」或「我就是這樣的人」這樣的想法，限制了自己改變的可能性？',
-            ].map((q, i) => (
-              <div key={i} className="flex gap-3">
-                <span className="text-amber-600 font-bold flex-shrink-0">{i + 1}.</span>
-                <p className="text-gray-700">{q}</p>
-              </div>
-            ))}
+          <div className="bg-white p-4 rounded border border-lime-200">
+            <p><strong>二、</strong>讀歌羅西書一章15至23節三遍。每讀一遍，注意不同的細節：第一遍注意基督是誰，第二遍注意祂做了什麼，第三遍注意你「如今」的新狀態。寫下你最受震動的一點。</p>
           </div>
-        )}
-      </div>
-
-      {/* 具體實踐方針 */}
-      <div className="mb-6 border border-green-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('practice')} className="w-full px-5 py-3 bg-gradient-to-r from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">具體實踐方針</span>
+          <div className="bg-white p-4 rounded border border-lime-200">
+            <p><strong>三、</strong>「自我成長方案」：這週開始，選擇生命中一個你最想改變的具體領域（例如：憤怒、焦慮、自私）。在這個領域，誠實地問自己：我通常靠什麼來應對這個問題（意志力、逃避、靠他人）？基督提供了什麼資源，可以幫助我在這個領域真正改變？</p>
           </div>
-          {expanded['practice'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['practice'] && (
-          <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">📋 重寫你的資產負債表</h4>
-              <p className="text-gray-700 mb-2">在紙上畫兩欄：「世界的眼光」和「在基督裡的眼光」。在第一欄列出你習慣用來評估自己的資產（才能、成就、關係）和負債（失敗、弱點、傷害）。在第二欄，根據本課的教導，重新描述你在基督裡真正的地位和資源。</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">📖 歌羅西書2:6-15 默想操練</h4>
-              <p className="text-gray-700 mb-2">每天花10分鐘讀歌羅西書2:6-15，選一節讓你特別觸動的經文，用自己的話改寫它，將其變成今天具體情境的應用。例如：「你們在祂裡面也得了豐盛」可以改寫為：「今天面對這個困難的對話，我有基督的智慧可以倚靠。」</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">✍️ 認同宣告</h4>
-              <p className="text-gray-700 mb-2">寫一句關於你在基督裡身分的「認同宣告」，貼在鏡子或手機桌面上，每天早晨提醒自己。例如：「我是基督所愛的人。我已被完全接納。我在基督裡有一切所需的。」</p>
-            </div>
-            <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
-              <h4 className="font-semibold text-green-700 mb-2">🙏 禱告詞</h4>
-              <p className="text-gray-700 italic leading-relaxed text-sm">「主耶穌，感謝祢，我在祢裡面有一切的豐盛。感謝祢為我的罪完全付清了代價，使我在神面前站立。求祢幫助我在面對困難和失敗時，不是往內看自己的不足，而是往上看祢的豐盛。願我今天的生活，是建立在我是祢所愛的人這個確實的根基上。阿們。」</p>
-            </div>
-          </div>
-        )}
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,179 +1,204 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Map, Star, Search, HelpCircle, Check } from 'lucide-react';
+import React from 'react';
+import { BookOpen, Star, MessageCircle, Lightbulb, Heart, Map } from 'lucide-react';
 
 export default function Book27Ch4() {
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({
-    content: true, summary: true, exploration: true, questions: true, practice: true,
-  });
-  const toggleSection = (id: string) => setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
-
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">第4課</h1>
-        <h2 className="text-xl font-semibold text-gray-700">神眼中的生活，神手中的改變</h2>
-        <p className="text-sm text-gray-500 mt-1">耶利米書17:5-10 ｜ 改變模式全覽</p>
-      </div>
+    <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+      <h1 className="text-3xl font-bold text-emerald-700 mb-2">第4課：神眼中的生活，神手中的改變</h1>
+      <p className="text-gray-500 text-sm">學員本 · 《人如何改變》保羅·區普</p>
 
-      {/* 主要內容 */}
-      <div className="mb-6 border border-emerald-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('content')} className="w-full px-5 py-3 bg-gradient-to-r from-emerald-50 to-green-50 hover:from-emerald-100 hover:to-green-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Map className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">主要內容</span>
-          </div>
-          {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['content'] && (
-          <div className="p-5 bg-white space-y-5">
-            <div>
-              <h3 className="font-bold text-emerald-700 mb-2">耶利米書17:5-10：兩棵樹的對比</h3>
-              <p className="text-gray-700 leading-relaxed">這段經文是本書整個改變模式的聖經基礎。先知耶利米以兩棵樹作對比，描繪了兩種截然不同的生命狀態：</p>
-              <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-red-50 rounded-lg p-4 border border-red-100">
-                  <p className="font-semibold text-red-700 mb-2">荒漠的杜松（倚靠人）</p>
-                  <p className="text-gray-700 text-sm">「倚靠人血肉的膀臂，心中離開耶和華的，那人有禍了！因他必像沙漠的杜松，不見福樂來到；卻要住曠野乾旱之處，鹽鹼無人居住之地。」（耶17:5-6）心靠別處，即使身在「可住之地」也如同身在荒漠。</p>
-                </div>
-                <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-100">
-                  <p className="font-semibold text-emerald-700 mb-2">水旁的樹（倚靠神）</p>
-                  <p className="text-gray-700 text-sm">「倚靠耶和華、以耶和華為可靠的，那人有福了！他必像樹栽於水旁，在河邊紮根，炎熱來到並不懼怕，葉子仍必青翠；在乾旱之年毫無掛慮，而且結果不止。」（耶17:7-8）炎熱仍然來到，但有根的樹不懼怕。</p>
-                </div>
-              </div>
-              <p className="text-gray-700 leading-relaxed mt-3">耶利米的觀察揭示了一個重要真理：炎熱（困難）是兩棵樹都會面對的，差異不在於環境，而在於根紮在哪裡。這就是「炎熱→荊棘→十字架→果實」模式的聖經核心。</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-emerald-700 mb-2">人心的本質：耶利米書17:9-10</h3>
-              <p className="text-gray-700 leading-relaxed">「心比萬物都詭詐，壞到極處，誰能識透呢？我耶和華是鑑察人心、試驗人肺腑的，要照各人所行的和他做事的結果報應他。」（耶17:9-10）</p>
-              <p className="text-gray-700 leading-relaxed mt-2">這節經文是「人如何改變」整個框架的核心假設：人心本是詭詐的。這不是悲觀主義，而是現實主義。我們無法完全客觀地評估自己；我們的自我認知充滿了盲點、合理化和自欺。這就是為什麼我們需要神的話語、神的靈，以及群體中誠實的弟兄姊妹，來幫助我們看清自己。</p>
-              <p className="text-gray-700 leading-relaxed mt-2">但注意，接下來的話語（耶17:10）充滿盼望：神是「鑑察人心、試驗人肺腑的」。神完全了解我們的心，即使在那些詭詐和幽暗之處。祂不是以審判官的眼光冷酷地鑑察，而是以慈父的眼光，知道我們的軟弱，並且要「照各人所行的報應他」——這在基督裡已經轉化為恩典：基督已經承擔了我們應得的報應，使我們能在恩典中改變。</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-emerald-700 mb-2">哥林多前書10：以色列的歷史是我們的鏡子</h3>
-              <p className="text-gray-700 leading-relaxed">哥林多前書10:1-14用以色列在曠野的歷史作為警戒。以色列人經歷了神的奇妙帶領（雲柱、火柱、嗎哪、磐石出水），卻仍然反覆地抱怨、拜偶像、淫亂。保羅說：「這些事都是我們的鑑戒，叫我們不要貪戀惡事，像他們那樣貪戀的。」（林前10:6）</p>
-              <p className="text-gray-700 leading-relaxed mt-2">這段經文揭示了炎熱（曠野的艱苦）如何暴露心中的偶像（渴望舒適、渴望控制、渴望埃及的食物）。以色列人的荊棘反應（抱怨、叛逆）不是因為曠野太苦，而是因為他們的心靠向了別處。反過來，摩西的反應則顯示了十字架中心的生命：即使在最大的壓力下，他仍然轉向神。</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-emerald-700 mb-2">哥林多後書1：患難是服事的培育</h3>
-              <p className="text-gray-700 leading-relaxed">哥林多後書1:2-12描述保羅在亞西亞所遭遇的、使他「甚至絕了生路」的極大患難（林後1:8）。在這個極端的「炎熱」中，保羅學到了什麼？「叫我們不靠自己，只靠叫死人復活的神」（林後1:9）。</p>
-              <p className="text-gray-700 leading-relaxed mt-2">更進一步，保羅說他所經歷的患難，使他有能力「用神所賜的安慰，去安慰那遭各樣患難的人」（林後1:4）。這是果實！神允許炎熱來到，不只是為了改變保羅自己，也是為了透過改變後的保羅，結出服事他人的果實。改變從來不只是個人的事；它總是有向外服事的面向。</p>
-            </div>
-          </div>
-        )}
-      </div>
+      <section className="border-l-4 border-emerald-400 bg-emerald-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-3">
+          <BookOpen className="w-5 h-5 text-emerald-600" />
+          <h2 className="text-xl font-bold text-emerald-700">複習／作業討論（30分鐘）</h2>
+        </div>
+        <p className="text-gray-700 mb-2">請在小組中分享：你這週是否邀請了一個人進入你的「自我成長方案」領域？那次對話有什麼收穫或挑戰？</p>
+        <p className="text-gray-700">請一起閱讀「複習」、「重點與應用」及「主要問題」的部分。</p>
+      </section>
 
-      {/* 重點總結 */}
-      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">重點總結</span>
+      <section className="bg-white border border-emerald-200 p-6 rounded">
+        <h2 className="text-xl font-bold text-emerald-700 mb-4">複習</h2>
+        <p className="text-gray-700 mb-3">在前三課，我們建立了三個基礎：（1）神的終極目標是使我們像基督；（2）這個改變在與基督的關係中發生；（3）改變需要在真實的群體中進行。</p>
+        <p className="text-gray-700 mb-3">在第四課，我們要把這一切放到一個更大的架構中來看——神的大圖畫。我們要從「神的眼光」來看我們所處的生活，並理解「神的手」是如何在其中工作的。</p>
+        <p className="text-gray-700">這課引入了一個核心模式，即<strong>炎熱（Heat）→ 荊棘（Thorns）→ 十字架（Cross）→ 果實（Fruit）</strong>，這是整本書的主幹。理解這個模式，將幫助你從神的角度看待你生命中發生的一切。</p>
+      </section>
+
+      <section className="border-l-4 border-teal-400 bg-teal-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Map className="w-5 h-5 text-teal-600" />
+          <h2 className="text-xl font-bold text-teal-700">重點與應用（CPR）</h2>
+        </div>
+        <div className="space-y-3">
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">重點提要：</p>
+            <p className="text-gray-700">從「神的大圖畫」的眼光來看我們的生活與世界，我們就能得著切合實際的盼望、安慰與尋求的方向。</p>
           </div>
-          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['summary'] && (
-          <div className="p-5 bg-white">
-            <ul className="space-y-2">
-              {[
-                '耶利米書17:5-10以兩棵樹對比「倚靠人」與「倚靠神」的生命，揭示炎熱（困難）是兩者都會面對的，差異在於根紮在哪裡。',
-                '人心是詭詐的（耶17:9），我們需要神的話、神的靈和群體的幫助，才能真正認識自己的動機和渴望。',
-                '以色列在曠野的歷史顯示，炎熱（艱苦環境）如何暴露心中的偶像，他們的荊棘反應是對我們的鑑戒（哥林多前書10）。',
-                '神允許炎熱，不是要懲罰我們，而是要透過它教導我們「不靠自己，只靠神」（哥林多後書1:9）。',
-                '改變的果實從來不只是個人的益處，它總是外溢成為服事他人的能力（用親身經歷的安慰去安慰別人）。',
-              ].map((point, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="w-5 h-5 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
-                  <p className="text-gray-700">{point}</p>
-                </li>
-              ))}
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">個人應用：</p>
+            <p className="text-gray-700">當我面對生活的炎熱時，我要問自己：我通常用什麼眼光來詮釋這些困難——是神的眼光，還是只看表面？這個詮釋如何影響我的回應？</p>
+          </div>
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">人際應用：</p>
+            <p className="text-gray-700">當我幫助他人時，我要幫助他們也學會用神的眼光來詮釋他們的炎熱，而不只是幫他們解決眼前的問題。</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="text-center py-8 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl border border-emerald-200">
+        <h2 className="text-2xl font-bold text-emerald-800 mb-4">主要問題</h2>
+        <p className="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">在你生命中目前的困難和挑戰中，神的大圖畫如何給你帶來不同的眼光和盼望？</p>
+      </section>
+
+      <section className="border-l-4 border-cyan-400 bg-cyan-50 p-6 rounded">
+        <h2 className="text-xl font-bold text-cyan-700 mb-4">課程內容</h2>
+        <div className="bg-white p-3 rounded border border-cyan-200 mb-4">
+          <p className="font-bold text-cyan-700">DVD（35分鐘）</p>
+        </div>
+        <div className="bg-white p-4 rounded border border-cyan-200">
+          <p className="font-bold text-cyan-700 mb-3">小組活動（30分鐘）</p>
+          <div className="space-y-4 text-gray-700">
+            <p className="font-medium">請根據DVD所介紹的HEAT模式（炎熱→荊棘→十字架→果實），回答以下問題：</p>
+            <div>
+              <p className="font-medium mb-2">1. 在你的生活中，什麼是你現在正在面對的「炎熱」（困難、壓力、苦難）？</p>
+            </div>
+            <div>
+              <p className="font-medium mb-2">2. 在這個炎熱中，你通常的「荊棘」反應是什麼（逃避、憤怒、抱怨、控制、麻木）？</p>
+            </div>
+            <div>
+              <p className="font-medium mb-2">3. 十字架如何改變你對這個炎熱的詮釋和回應的可能性？</p>
+            </div>
+            <div>
+              <p className="font-medium mb-2">4. 如果你以信心和悔改來回應，在這個處境中，可能結出什麼「果實」？</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-l-4 border-green-400 bg-green-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Lightbulb className="w-5 h-5 text-green-600" />
+          <h2 className="text-xl font-bold text-green-700">作業：神的大圖畫與HEAT模式</h2>
+        </div>
+        <div className="space-y-6 text-gray-700">
+          <div>
+            <h3 className="font-bold text-green-800 text-lg mb-3">一、神眼中的世界：一個破碎但有盼望的地方</h3>
+            <p className="mb-3">如果你要明白神的手如何在你生命中工作，你首先需要了解神眼中的世界是什麼樣的。聖經給我們一個既現實又充滿盼望的世界觀。</p>
+            <p className="mb-3">一方面，聖經直視世界的破碎：創世記三章的墮落不只是一個歷史事件，它的後果滲透了整個受造界——包括我們的關係、我們的身體、我們的心和我們的環境。羅馬書八章22節說：「我們知道一切受造之物一同嘆息、勞苦，直到如今。」生活中的炎熱——疾病、破裂的關係、失敗、不公正——都是這個現實的一部分。</p>
+            <p className="mb-3">另一方面，聖經充滿了盼望：神沒有放棄祂的受造物。祂差遣了祂的兒子，藉著十字架開始了救贖的工程，並且應許要使萬物都歸正。啟示錄二十一章5節：「看哪，我將一切都更新了！」</p>
+            <p>生活在這個「已然/未然」之間——我們已經被救贖，但還沒有完全得榮耀——是基督徒的現實處境。在這個現實中，神的手是如何工作的？這正是HEAT模式要回答的。</p>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-green-800 text-lg mb-3">二、炎熱（Heat）：神使用的工具</h3>
+            <p className="mb-3">「炎熱」是指生活中所有的壓力、困難、挑戰和試煉。這包括：健康問題、財務壓力、破裂的關係、工作的失敗、失去所愛的人、被誤解和傷害……凡是讓你感到不舒服、不安、痛苦的事，都是「炎熱」。</p>
+            <p className="mb-3">但聖經告訴我們，炎熱不是偶然的，也不是純粹負面的。雅各書一章2至4節說：「我的弟兄們，你們落在各種試煉中，都要以為大喜樂；因為知道你們的信心經過試驗，就生忍耐。但忍耐也當成功，使你們成全、完備，毫無缺欠。」炎熱是神塑造我們的工具。</p>
+            <p>神用炎熱來暴露我們心裡的真實狀態。當一切順利時，我們很難知道自己真正信靠什麼、真正愛什麼、真正追求什麼。但炎熱像X光一樣，照出我們內心最深處的東西。這就是為什麼炎熱是改變過程不可缺少的一部分。</p>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-green-800 text-lg mb-3">三、荊棘（Thorns）：我們有罪的回應</h3>
+            <p className="mb-3">「荊棘」是指我們對炎熱的有罪回應。當我們面對壓力和困難時，我們的心會自然地傾向於罪性的反應——這些反應就是荊棘。常見的荊棘包括：</p>
+            <ul className="space-y-2 ml-4 mb-3">
+              <li>• <strong>否認：</strong>拒絕承認問題的存在，假裝一切都好。</li>
+              <li>• <strong>逃避：</strong>用忙碌、娛樂、成癮或其他方式逃離痛苦。</li>
+              <li>• <strong>憤怒：</strong>把痛苦轉化為對他人或對神的憤怒。</li>
+              <li>• <strong>控制：</strong>試圖靠自己掌控局面，消除不確定性。</li>
+              <li>• <strong>自我憐憫：</strong>沉浸在「為什麼是我」的問題中，無法前進。</li>
+              <li>• <strong>自以為義：</strong>靠自己的努力應對，並為此感到驕傲。</li>
             </ul>
+            <p>荊棘的本質，是我們在炎熱中沒有轉向神，而是轉向自己或其他替代品。荊棘不能解決炎熱，反而會讓問題更複雜，並在我們的生命中製造更多的破壞。</p>
           </div>
-        )}
-      </div>
 
-      {/* 延伸探討 */}
-      <div className="mb-6 border border-indigo-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('exploration')} className="w-full px-5 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Search className="w-5 h-5 text-indigo-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">延伸探討</span>
+          <div>
+            <h3 className="font-bold text-green-800 text-lg mb-3">四、十字架（Cross）與果實（Fruit）：改變的關鍵</h3>
+            <p className="mb-3">十字架是改變的樞紐。基督在十字架上為我們成就了救贖，給了我們新的身分和能力，使我們能夠在炎熱中以不同的方式回應。十字架告訴我們：（1）我已被赦免，不需要靠自己解決問題；（2）基督住在我裡面，我有改變的能力；（3）這一切炎熱都在神的掌管中，有一個更大的目的。</p>
+            <p className="mb-3">當我們相信並應用十字架的真理時，我們就能結出「果實」——這是屬靈成長在生活中具體的表現。果實包括：在困難中的平安、對他人的寬恕、真實的悔改、對神的信靠、對他人的服事……這些不是靠努力產生的，而是從一顆被十字架更新的心自然流露出來的。</p>
+            <p>所以，改變的路是：炎熱（神使用的工具）→ 荊棘（我們被暴露的罪性）→ 十字架（改變的能力）→ 果實（屬靈改變的結果）。這個循環在我們一生中不斷發生，每一次都讓我們更像基督。</p>
           </div>
-          {expanded['exploration'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['exploration'] && (
-          <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">「炎熱」為何是神恩典的工具？</h4>
-              <p className="text-gray-700 leading-relaxed">現代基督教文化有時傳遞一種信息：信了耶穌，生活就應該越來越順利，困難是信心不足的標誌。但聖經呈現的圖景截然不同。耶穌說：「在世上你們有苦難，但你們可以放心，我已經勝了世界」（約16:33）。雅各說：「你們遭遇各種試煉，都要以為大喜樂」（雅1:2）。「炎熱」是神用來磨練我們、暴露我們心中偶像、使我們更深倚靠祂的工具。拒絕炎熱或急著逃離炎熱，可能會錯過神在其中的工作。</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">「心比萬物都詭詐」的實際含義</h4>
-              <p className="text-gray-700 leading-relaxed">這不是說我們所做的每一件事都是惡意的。而是說，我們天然的傾向是用我們自己的框架來解釋一切——包括我們的動機。我們很容易相信自己的理由是好的，即使實際上我們是在自私、恐懼或驕傲中行事。這就是為什麼我們需要謙卑，持續地邀請神話語的光照（詩139:23-24：「神啊，求祢鑑察我，知道我的心思……看在我裡面有什麼惡行沒有」），以及接受群體的回饋。</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">苦難能被「浪費」嗎？</h4>
-              <p className="text-gray-700 leading-relaxed">是的，苦難是可以被「浪費」的。當我們在苦難中只是抱怨、逃避、或陷入自憐，而沒有讓苦難把我們帶到基督那裡，我們就「浪費」了神設計要在苦難中完成的工作。另一方面，當我們在苦難中主動地轉向神、讓苦難暴露我們的偶像、並倚靠基督而不是自己，苦難就成為深刻成長和服事的土壤。保羅的苦難培育出了一個能用真實的話語安慰他人的僕人。</p>
-            </div>
-          </div>
-        )}
-      </div>
 
-      {/* 反思問題 */}
-      <div className="mb-6 border border-amber-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('questions')} className="w-full px-5 py-3 bg-gradient-to-r from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <HelpCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">反思問題</span>
+          <div>
+            <h3 className="font-bold text-green-800 text-lg mb-3">五、反思問題</h3>
+            <div className="space-y-3 ml-2">
+              <p className="text-gray-800">❓ 1. 請在學員本前面的圖4-1至4-9（HEAT模式圖），找一個最符合你目前處境的圖，並解釋為什麼。</p>
+              <p className="text-gray-800">❓ 2. 在你目前的「炎熱」中，你最常出現的「荊棘」反應是哪一種（否認、逃避、憤怒、控制、自我憐憫、自以為義）？這個反應帶來了什麼後果？</p>
+              <p className="text-gray-800">❓ 3. 如果你真正相信「十字架」的真理應用在你的炎熱中，你的回應會有什麼不同？具體說明。</p>
+              <p className="text-gray-800">❓ 4. 回想生命中一個你看見「果實」的時期——你在困難中仍然選擇了信心和順服。那段時間是什麼幫助你做出那樣的選擇？</p>
+            </div>
           </div>
-          {expanded['questions'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['questions'] && (
-          <div className="p-5 bg-white space-y-3">
-            {[
-              '回顧你生命中一次重大的「炎熱」（困難）。那次困難暴露了你心中哪些你原本不知道自己有的東西？',
-              '你更像耶利米書中的哪棵樹——「沙漠的杜松」還是「水旁的樹」？在生活中的哪些具體領域，你的根更紮在別處而非神那裡？',
-              '以色列人在曠野「抱怨」，而摩西在同樣的壓力下卻轉向神。你在遇到困難時，通常更像哪一個？',
-              '保羅說患難讓他學會「不靠自己，只靠神」。你是否有過這種類似的體驗，某個困境讓你不得不更深地倚靠神？',
-              '你曾有沒有把你的苦難「浪費掉」——只是抱怨或逃避，而沒有讓神在其中完成祂的工作？現在想起來，你覺得有什麼可以不一樣？',
-            ].map((q, i) => (
-              <div key={i} className="flex gap-3">
-                <span className="text-amber-600 font-bold flex-shrink-0">{i + 1}.</span>
-                <p className="text-gray-700">{q}</p>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+        </div>
+      </section>
 
-      {/* 具體實踐方針 */}
-      <div className="mb-6 border border-green-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('practice')} className="w-full px-5 py-3 bg-gradient-to-r from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">具體實踐方針</span>
+      <section className="bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-200 p-6 rounded-xl">
+        <div className="flex items-center gap-3 mb-4">
+          <Star className="w-6 h-6 text-sky-500" fill="currentColor" />
+          <h2 className="text-xl font-bold text-sky-700">重點總結</h2>
+        </div>
+        <div className="space-y-3">
+          {[
+            '炎熱→荊棘→十字架→果實，這是神塑造我們的核心模式：困難暴露我們，十字架改變我們，順服帶來果實。',
+            '炎熱不是偶然的，而是神用來暴露我們內心真實狀態的工具——雅各書一章2至4節說試煉帶來忍耐和成全。',
+            '荊棘（罪性回應）的本質是在炎熱中轉向自己而非神，包括否認、逃避、憤怒、控制、自我憐憫和自以為義。',
+            '十字架是改變的關鍵：它給我們赦免（不需靠自己解決）、能力（基督住在我裡面）和目的（炎熱在神掌管中）。',
+            '果實是從十字架更新的心自然流露出來的結果，不是靠努力產生的，而是信心和順服帶來的屬靈改變。',
+          ].map((point, i) => (
+            <div key={i} className="flex gap-3 items-start">
+              <span className="bg-sky-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">{i + 1}</span>
+              <p className="text-gray-700 text-sm">{point}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-l-4 border-indigo-400 bg-indigo-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <MessageCircle className="w-5 h-5 text-indigo-600" />
+          <h2 className="text-xl font-bold text-indigo-700">延伸的重點與應用CPR</h2>
+        </div>
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-bold text-indigo-700 mb-2">重點提要</h3>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700 ml-2">
+              <li>從神的大圖畫來看生活，使我們得著切合實際的盼望——不是忽視現實的樂觀主義，而是在破碎中看見神的目的。</li>
+              <li>當我明白HEAT模式，我就能在炎熱來臨時不被它淹沒，而是開始問：神想要在我身上做什麼？</li>
+              <li>改變不是我努力去達到某個標準，而是我在炎熱中不斷地轉向十字架，讓神在我裡面工作。</li>
+            </ol>
           </div>
-          {expanded['practice'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['practice'] && (
-          <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">🗺️ 套用「人如何改變」模式</h4>
-              <p className="text-gray-700 mb-2">選擇一個你目前正在經歷的困境，用「炎熱→荊棘→十字架→果實」的模式來分析它：（1）炎熱：具體的情況是什麼？（2）荊棘：你通常如何回應？（3）十字架：基督的哪個真理可以在這裡帶來不同？（4）果實：如果你以十字架為中心回應，會結出什麼樣的果子？</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">📖 讀耶利米書17:7-8的禱告</h4>
-              <p className="text-gray-700 mb-2">每天早晨，把耶利米書17:7-8改寫成一個關於你當天的禱告宣告：「主啊，今天我面對___（今日的炎熱），我選擇像栽於水旁的樹，把根紮在祢身上，相信祢的供應足夠。」</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">🔎 鑑察自己的心</h4>
-              <p className="text-gray-700 mb-2">這週每晚睡前，用詩篇139:23-24禱告，邀請神光照你當天的動機：「今天我在___事上，我真正的動機是什麼？我是出於對神的愛，還是對別人認可的渴望？是出於信靠，還是出於恐懼？」</p>
-            </div>
-            <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
-              <h4 className="font-semibold text-green-700 mb-2">🙏 禱告詞</h4>
-              <p className="text-gray-700 italic leading-relaxed text-sm">「主啊，求祢讓我成為那棵栽於水旁的樹，根紮在祢的話語和祢的恩典上。感謝祢允許炎熱來到，不是要傷害我，而是要培育我、改變我。幫助我在困難中不轉向別處尋求滿足，而是更深地回到祢那裡。願我在苦難中所學到的，成為日後服事他人的資源。阿們。」</p>
-            </div>
+          <div>
+            <h3 className="font-bold text-indigo-700 mb-2">個人應用</h3>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700 ml-2">
+              <li>這週，每當我遇到任何「炎熱」時，我要停下來問：我現在的回應是「荊棘」還是「朝向十字架」？</li>
+              <li>我要把HEAT模式應用到我在「自我成長方案」中選擇的領域，繪製出我目前在這個模式中的位置。</li>
+              <li>我要每天禱告，求神在我的炎熱中工作，讓我不只是逃脫炎熱，而是在其中結出果實。</li>
+            </ol>
           </div>
-        )}
-      </div>
+          <div>
+            <h3 className="font-bold text-indigo-700 mb-2">人際應用</h3>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700 ml-2">
+              <li>當我的朋友或家人面對困難時，我要幫助他們看見神在其中的目的，而不只是同情他們的痛苦。</li>
+              <li>我要學習辨識他人的「荊棘」反應，並在適當的時機，溫和地幫助他們看見更好的回應方式。</li>
+              <li>我要在我的關係中，成為一個在炎熱中能夠「結果實」的榜樣——讓他人從我的回應中看見十字架的力量。</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-l-4 border-lime-400 bg-lime-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Heart className="w-5 h-5 text-lime-600" />
+          <h2 className="text-xl font-bold text-lime-700">生活實踐</h2>
+        </div>
+        <div className="space-y-3 text-gray-700">
+          <div className="bg-white p-4 rounded border border-lime-200">
+            <p><strong>一、</strong>拿出一張紙，畫出HEAT的四個階段。然後，把你目前生命中的一個具體情況放入這個模式中：（1）炎熱是什麼？（2）你的荊棘反應是什麼？（3）十字架給你什麼新的眼光和能力？（4）你盼望結出的果實是什麼？把這張紙留著，作為這個課程期間的「改變地圖」。</p>
+          </div>
+          <div className="bg-white p-4 rounded border border-lime-200">
+            <p><strong>二、</strong>這週，每天花5分鐘讀羅馬書八章18至25節。讓這段經文的「已然/未然」張力，成為你面對炎熱的框架：現在的苦楚不足以比較將來要顯於我們的榮耀。在困難中，你如何看見「盼望」？</p>
+          </div>
+          <div className="bg-white p-4 rounded border border-lime-200">
+            <p><strong>三、</strong>「自我成長方案」進一步：在你選擇的領域，辨識出你最常見的「荊棘」反應。然後，寫下一個具體的計畫：當你再次看見這個荊棘反應出現時，你打算如何「轉向十字架」？具體到「我要……」的行動步驟。</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

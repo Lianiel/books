@@ -1,243 +1,231 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, BookOpen, Star, Search, HelpCircle, Check } from 'lucide-react';
+import React from 'react';
+import { BookOpen, Star, MessageCircle, Lightbulb, Heart, RefreshCw, Target, Users } from 'lucide-react';
 
 export default function Book27Ch10() {
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({
-    content: true,
-    summary: true,
-    exploration: true,
-    questions: true,
-    practice: true,
-  });
-
-  const toggleSection = (id: string) => {
-    setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
-  };
-
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">第十課</h1>
-        <h2 className="text-xl font-semibold text-gray-700">十字架與日常生活（十架篇下）</h2>
-        <p className="text-sm text-gray-500 mt-2">約翰一書 2:1–2；3:1–3；路加福音 15:11–24</p>
-      </div>
+    <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+      <h1 className="text-3xl font-bold text-emerald-700 mb-2">第10課：十字架與日常生活——十架篇（下）</h1>
+      <p className="text-gray-500 text-sm">學員本 · 《人如何改變》保羅·區普</p>
 
-      {/* 主要內容 */}
-      <div className="mb-6 border border-emerald-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('content')} className="w-full px-5 py-3 bg-gradient-to-r from-emerald-50 to-green-50 hover:from-emerald-100 hover:to-green-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">主要內容</span>
+      {/* 複習/作業討論 */}
+      <section className="border-l-4 border-emerald-400 bg-emerald-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <BookOpen className="w-6 h-6 text-emerald-600" />
+          <h2 className="text-xl font-bold text-emerald-700">複習與作業討論</h2>
+        </div>
+        <div className="bg-white p-4 rounded border border-emerald-200 space-y-3 text-gray-700">
+          <p><strong>複習：</strong>上一課我們從加拉太書2章20節建立了「以十字架為中心的生活」的神學基礎：救贖的事實、現今的實際、每日的結果。今天我們要看：如何在日常生活的具體情境中實踐這個真理？信心和悔改如何具體運作？</p>
+          <p><strong>作業討論：</strong>分享你在自我成長方案中「十字架在哪裡」這一欄的填寫——你如何把十字架的真理具體應用到你的炎熱和荊棘中？有什麼讓你感到困難或解放的地方？</p>
+        </div>
+      </section>
+
+      {/* CPR */}
+      <section className="border-l-4 border-teal-400 bg-teal-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Target className="w-6 h-6 text-teal-600" />
+          <h2 className="text-xl font-bold text-teal-700">重點與應用（CPR）</h2>
+        </div>
+        <div className="space-y-3 text-gray-700">
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">核心要點（Central Point）</p>
+            <p>以十字架為中心的日常生活靠兩個實踐運行：信心（相信並活出福音的真理）和悔改（不斷回到神面前，承認偏離並轉向）。這兩者不是一次性的決定，而是每天、甚至每小時的選擇。約翰一書清楚地說明：我們有一個常常可以回去的地方——不是靠自己努力，而是靠基督的血和祂的義。</p>
           </div>
-          {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['content'] && (
-          <div className="p-5 bg-white space-y-6">
-            <div>
-              <h3 className="text-lg font-semibold text-emerald-700 mb-3">約翰一書：恩典中的日常認罪</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                上一課我們看到十字架的宏大神學——加拉太書2:20的身分宣告。但十字架如何進入每一天的生活？約翰一書2:1-2給了我們一個驚人實際的答案：「我的小子們哪，我將這些話寫給你們，是要叫你們不犯罪。若有人犯了罪，在父那裡我們有一位中保，就是那義者耶穌基督；他為我們的罪作了挽回祭，不是單為我們的罪，也是為普天下人的罪。」
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                約翰寫這話的語境，是面對信徒的日常失敗。他沒有說：「如果你犯了罪，你就不是真信徒」；也沒有說：「只要你盡力就好」。他說：「我們有一位中保」——現在時態，持續有效的中保。每一次的失敗，每一次落入荊棘藪，都有一個解決方案：那義者耶穌基督在父那裡為我們代求。
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                約翰一書3:1-3更進一步：「你看父賜給我們是何等的慈愛，使我們得稱為神的兒女……親愛的弟兄啊，我們現在是神的兒女，將來如何，還未顯明；但我們知道，主若顯現，我們必要像他，因為必得見他的真體。凡向他有這指望的，就潔淨自己，像他潔淨一樣。」我們的身分（神的兒女）和我們的盼望（將來像祂），正是日常潔淨生命的動力。
-              </p>
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">個人應用（Personal）</p>
+            <p>你的「悔改」通常是什麼樣子的？是真實的轉向，還是表面的「對不起」然後一切照舊？你上一次真正悔改（改變方向）是什麼時候？</p>
+          </div>
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">人際應用（Relational）</p>
+            <p>悔改在你的關係中是什麼樣子的？你是否能夠在關係中真正承認錯誤（不帶條件和辯解），並且真正改變行為？</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 主要問題 */}
+      <section className="text-center bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 p-8 rounded-xl">
+        <RefreshCw className="w-10 h-10 text-emerald-600 mx-auto mb-3" />
+        <h2 className="text-xl font-bold text-emerald-800 mb-3">本課主要問題</h2>
+        <p className="text-2xl font-bold text-emerald-700 leading-relaxed">
+          「你是誰？<br />你在基督裡的新身分是什麼？」
+        </p>
+      </section>
+
+      {/* 課程內容 */}
+      <section className="border-l-4 border-cyan-400 bg-cyan-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Lightbulb className="w-6 h-6 text-cyan-600" />
+          <h2 className="text-xl font-bold text-cyan-700">課程內容</h2>
+        </div>
+        <div className="space-y-5 text-gray-700">
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">一、「喬的案例」——十字架如何在日常改變一個人</h3>
+            <div className="bg-white p-4 rounded border border-cyan-200">
+              <p className="font-bold text-sm text-cyan-700 mb-2">案例背景</p>
+              <p className="text-sm text-gray-700 mb-2">喬是一個基督徒，婚姻出了問題。他的妻子說他「情感上很冷漠，從不溝通」。喬一開始的反應是憤怒和防衛：「我已經盡力了，她要求太多了。」</p>
+              <p className="font-bold text-sm text-cyan-700 mb-2">炎熱→荊棘的分析</p>
+              <p className="text-sm text-gray-700 mb-2">喬的炎熱：婚姻的衝突和妻子的批評。喬的荊棘：憤怒和防衛（以惡報惡）。喬的偶像：控制感（他不喜歡被批評，因為批評威脅了他「我是一個好丈夫」的自我形象）。</p>
+              <p className="font-bold text-sm text-cyan-700 mb-2">十字架如何改變喬</p>
+              <p className="text-sm text-gray-700">當喬開始把自己的憤怒帶到神面前，他看見了幾件事：（1）他的防衛心是因為他把自我形象放在了神的位置；（2）他的妻子的話裡有部分是真的——他確實不善於情感溝通；（3）他在基督裡被完全接納，所以不需要靠自己的「好丈夫形象」來找安全感。這個認識使他能夠放下防衛，真正去聽妻子的感受，並且悔改地改變。</p>
             </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-emerald-700 mb-3">信心悔改的三步驟</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                本課介紹了一個把十字架應用於日常失敗的具體框架：信心悔改三步驟。這三步驟不是一個機械式的程序，而是福音邏輯的自然流動：
-              </p>
-
-              <div className="space-y-4">
-                <div className="bg-red-50 rounded-lg p-4 border-l-4 border-red-400">
-                  <h4 className="font-semibold text-red-700 mb-2">第一步：承認（Acknowledge）</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-2">
-                    誠實地承認自己落入了荊棘藪——不只是承認「行為不好」，更要承認「心走錯了方向」。「主啊，我承認我剛才對孩子發脾氣，背後是因為我把自己的方便看得比他的需要更重要。這是驕傲，是一種偶像崇拜。」
-                  </p>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    承認要誠實，不自我辯護（「但是他也有問題」），也不自我定罪（「我真是個壞父親/壞母親」）。承認就是把真相擺在神面前，不多也不少。
-                  </p>
+          </div>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">二、約翰一書：稱義與收納</h3>
+            <p className="mb-2">約翰一書給了我們兩個關於「在基督裡」的重要真理，它們是日常悔改和成長的基礎：</p>
+            <div className="space-y-3">
+              <div className="bg-white p-4 rounded border border-cyan-200">
+                <p className="font-bold text-cyan-700 mb-1">稱義的保證（約翰一書2章1-2節）</p>
+                <div className="italic text-sm mb-2">
+                  <p>「我小子們哪，我將這些話寫給你們，是要叫你們不犯罪。若有人犯罪，在父那裡我們有一位中保，就是那義者耶穌基督。他為我們的罪作了挽回祭，不是單為我們的罪，也是為普天下人的罪。」</p>
                 </div>
-
-                <div className="bg-yellow-50 rounded-lg p-4 border-l-4 border-yellow-400">
-                  <h4 className="font-semibold text-yellow-700 mb-2">第二步：悔改（Repent）</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-2">
-                    悔改是心的轉向，不只是行為的修正。悔改包含兩個方向：「轉離」（turning from）——轉離那個偶像，轉離那個荊棘藪的回應；「轉向」（turning to）——轉向基督，轉向十字架，轉向祂的恩典。
-                  </p>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    真正的悔改不是「下定決心以後不這樣做了」，而是「我承認我的心走錯了方向，我選擇重新把心轉向那位已經為我成就一切的基督」。悔改是一個心的動作，行為的改變是它自然的果子。
-                  </p>
+                <p className="text-sm text-gray-700">應用：當我犯罪（荊棘反應），我不需要陷入無止境的定罪感或自我懲罰。我有一位中保——基督已經為我的罪付上了代價。我可以帶著這個確信去悔改，而不是帶著恐懼或羞愧去悔改。</p>
+              </div>
+              <div className="bg-white p-4 rounded border border-cyan-200">
+                <p className="font-bold text-cyan-700 mb-1">收納的確信（約翰一書3章1-3節）</p>
+                <div className="italic text-sm mb-2">
+                  <p>「你看父賜給我們是何等的慈愛，使我們得稱為神的兒女；我們也真是他的兒女……親愛的弟兄啊，我們現在是神的兒女，將來如何，還未顯明；但我們知道，主若顯現，我們必要像他，因為必得見他的真體。凡向他有這指望的，就潔淨自己，像他潔淨一樣。」</p>
                 </div>
-
-                <div className="bg-green-50 rounded-lg p-4 border-l-4 border-green-400">
-                  <h4 className="font-semibold text-green-700 mb-2">第三步：相信（Believe）</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-2">
-                    相信十字架的恩典是夠用的——不只是相信「罪被赦免了」，更是相信「我有能力在下一個相似的炎熱中做不同的選擇」。約翰一書2:1說基督是我們的中保，這意味著：我不需要靠自我定罪來懲罰自己，也不需要把這次的失敗「抹去」才能繼續前行。中保已經處理了這件事。
-                  </p>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    相信不是一種情感（「我感覺被赦免了」），而是一種根據事實的選擇（「無論我感覺如何，基督確實已經為這個罪付上代價，我選擇相信這個真實」）。
-                  </p>
-                </div>
+                <p className="text-sm text-gray-700">應用：我的身分不建立在我的表現上，而建立在「神的兒女」這個不可撤銷的位置上。同時，這個確信不是讓我安於現狀，而是激發我「潔淨自己」的渴望——因為我知道將來要像他！</p>
               </div>
             </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-emerald-700 mb-3">浪子的比喻：悔改的形象</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                路加福音15:11-24的「浪子比喻」是信心悔改三步驟最生動的圖像。小兒子（路加15:17-20）：「他醒悟過來，就說：我父親有多少的雇工，口糧有餘，我倒在這裡餓死嗎？我要起來，到我父親那裡去，向他說：父親哪，我得罪了天，又得罪了你；從今以後，我不配稱為你的兒子，把我當作一個雇工吧。於是他起來，往他父親那裡去。」
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                注意浪子的心路歷程：「他醒悟過來」——這是承認（第一步）。「我要起來，到我父親那裡去」——這是悔改，心的轉向（第二步）。「父親哪，我得罪了天，又得罪了你」——這是誠實的認罪，不自我辯護。而父親的回應（路加15:20-24）是信心悔改第三步「相信」的基礎：父親在遠處看見他，跑去迎接，吩咐人拿袍子給他穿，給他戴戒指，吃喜筵歡樂。
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                父親沒有等兒子完成一個「補過計畫」才接納他。父親在他「還離得很遠的時候」就跑去擁抱他。這就是十字架恩典的邏輯：悔改帶來的不是「試察期」，而是立即的、完全的、喜慶式的接納。這個確信，是信心悔改三步驟能夠持續進行的基礎。
-              </p>
+          </div>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">三、路加福音15章：浪子悔改的三步驟</h3>
+            <p className="mb-2">路加福音15章的浪子故事是悔改最完整的圖畫。保羅·區普指出浪子的悔改有三個關鍵步驟：</p>
+            <div className="space-y-3">
+              <div className="bg-white p-4 rounded border border-cyan-200">
+                <p className="font-bold text-emerald-700 mb-1">第一步：覺醒——「醒悟過來」（路加福音15章17節）</p>
+                <p className="text-sm text-gray-700 mb-1">「他醒悟過來，就說：我父親有多少的雇工，口糧有餘，我倒在這裡餓死嗎？」</p>
+                <p className="text-sm text-gray-700">悔改的第一步是「醒悟」——從麻木或自欺中醒來，清醒地看見自己真實的處境。浪子不是在豬圈裡感覺「還可以」，他如實地看見：「我要餓死了。」對我們來說，覺醒是：「我真的有問題。我的荊棘反應傷害了別人，也傷害了我自己。我需要幫助。」</p>
+              </div>
+              <div className="bg-white p-4 rounded border border-cyan-200">
+                <p className="font-bold text-emerald-700 mb-1">第二步：正視真相——「我得罪了天，又得罪了你」（路加福音15章18節）</p>
+                <p className="text-sm text-gray-700 mb-1">「我要起來，到我父親那裡去，向他說：父親哪，我得罪了天，又得罪了你……」</p>
+                <p className="text-sm text-gray-700">真正的悔改不只是承認「我犯了一個錯誤」，而是承認「我得罪了神和人」。浪子沒有說「是我父親太嚴格了」或「是環境迫使我這樣做的」——他直接承認了自己的責任。這是悔改的誠實核心。</p>
+              </div>
+              <div className="bg-white p-4 rounded border border-cyan-200">
+                <p className="font-bold text-emerald-700 mb-1">第三步：改變重心——「起來，回父親那裡去」（路加福音15章18節）</p>
+                <p className="text-sm text-gray-700 mb-1">「我要起來，到我父親那裡去……」然後「他就起來，往他父親那裡去。」（第20節）</p>
+                <p className="text-sm text-gray-700">真正的悔改不只是感到後悔，而是真實的行動改變——「起來，走。」浪子不只是在豬圈裡嘆息，他真的起來走回家了。悔改包含方向的改變：從背對父親（神），轉向父親（神）。</p>
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded border border-emerald-200 mt-3">
+              <p className="font-bold text-emerald-700 mb-1">父親的回應（路加福音15章20節）</p>
+              <p className="text-sm text-gray-700">「他離得還遠，他父親看見，就動了慈心，跑去抱著他的頸項，連連與他親嘴。」</p>
+              <p className="text-sm text-gray-700 mt-1">父親不是在等候懲罰，也不是先要求解釋——他看見兒子「離得還遠」就跑去迎接。這是神對我們悔改的回應：歡迎、接納、恢復。這個保證使悔改成為可能——我們回去，不是因為我們值得，而是因為父親在等待。</p>
             </div>
           </div>
-        )}
-      </div>
-
-      {/* 重點總結 */}
-      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">重點總結</span>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">四、霍雷修斯·博納（Horatius Bonar）的引語</h3>
+            <div className="bg-white p-4 rounded border border-cyan-200 italic">
+              <p>「給我看你如何看待罪，我就告訴你你對十字架的理解有多深。」</p>
+              <p className="mt-2 text-sm not-italic text-gray-600">——霍雷修斯·博納（19世紀蘇格蘭神學家）</p>
+            </div>
+            <p className="mt-2">這句話的意思是：我們對罪的看法（我是否真正認識它的嚴重性？我是否真正感受到它對關係的傷害？）直接反映了我們對十字架的理解。如果我們把罪看得輕，說明我們還沒有真正看見十字架付出的代價有多大；如果我們真的看見了十字架的代價，我們就會對罪有更深的悔恨，和更深的感恩。</p>
           </div>
-          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['summary'] && (
-          <div className="p-5 bg-white">
-            <ul className="space-y-2">
-              {[
-                '約翰一書2:1-2告訴我們：日常失敗（落入荊棘藪）有一個持續有效的解決方案——耶穌基督這位義者在父那裡為我們代求。悔改不是一次性的，而是基督徒生命的持續節奏。',
-                '信心悔改三步驟：承認（誠實地說出心走錯的方向）、悔改（心的轉向，從偶像轉向基督）、相信（相信十字架的恩典夠用，可以前行）。',
-                '真正的悔改不是「下定決心不再犯」（意志力）而是「把心的方向從偶像轉向基督」（信心）。行為的改變是心轉向的自然果子。',
-                '浪子比喻是信心悔改最生動的形象：「醒悟過來」（承認）→「起來往父親那裡去」（悔改）→「父親跑去迎接、立即接納」（相信恩典夠用）。',
-                '相信不依賴情感，而是根據事實的選擇：「無論我感覺如何，基督確實已經為這個罪付上代價，我選擇相信這個真實，繼續前行。」',
-              ].map((point, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="w-5 h-5 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
-                  <p className="text-gray-700">{point}</p>
-                </li>
-              ))}
+        </div>
+      </section>
+
+      {/* 作業 */}
+      <section className="border-l-4 border-green-400 bg-green-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Heart className="w-6 h-6 text-green-600" />
+          <h2 className="text-xl font-bold text-green-700">作業：悔改的實踐與身分的確認</h2>
+        </div>
+        <div className="space-y-4">
+          <div className="bg-white p-4 rounded border border-green-200">
+            <h3 className="font-bold text-green-700 mb-2">路加福音15章的研讀</h3>
+            <p className="text-gray-700 mb-2">細讀整個路加福音15章（迷羊、失錢、浪子），並回答：</p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700">
+              <li>浪子的故事中，哪個角色最像你目前的狀態？（流浪在外的兒子？在家卻心生苦毒的大兒子？慈愛等待的父親？）為什麼？</li>
+              <li>大兒子（路加福音15章28-30節）的抱怨揭示了什麼？他的問題和小兒子的問題有什麼根本的相同之處？</li>
+              <li>父親對大兒子說的話（31-32節）如何同樣應用在你身上？</li>
+              <li>根據浪子的三步驟，你目前在你最大的困難或荊棘中，需要「悔改」的是什麼？</li>
             </ul>
           </div>
-        )}
-      </div>
+          <div className="bg-white p-4 rounded border border-green-200">
+            <h3 className="font-bold text-green-700 mb-2">約翰一書研讀：我的新身分</h3>
+            <p className="text-gray-700 mb-2">閱讀約翰一書1章5節至2章6節，找出所有關於「在基督裡的身分」的宣告，並回答：</p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700">
+              <li>約翰一書1章8-10節關於「認罪」的教導如何平衡「完全接納」和「繼續成長」這兩個真理？</li>
+              <li>2章1-2節的「中保」概念如何改變你面對罪之後的反應？</li>
+              <li>寫出5個「我在基督裡是___」的句子，以約翰一書的具體語言為基礎</li>
+            </ul>
+          </div>
+          <div className="bg-white p-4 rounded border border-green-200">
+            <h3 className="font-bold text-green-700 mb-2">完成自我成長方案的「果實」部分</h3>
+            <p className="text-gray-700 mb-2">現在完整填寫自我成長方案的第四部分：「我期望的果實是什麼？」</p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700">
+              <li>如果你在這個炎熱中以信心回應（而非荊棘），你的行為和關係會是什麼樣子？（要具體，不要泛泛而言）</li>
+              <li>你最渴望在這個具體情境中，哪個屬基督特質能夠在你身上更清楚地顯現出來？（如：忍耐、饒恕、謙卑、喜樂）</li>
+              <li>如果這個改變發生了，對你最近的關係會有什麼具體的影響？</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-      {/* 延伸探討 */}
-      <div className="mb-6 border border-indigo-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('exploration')} className="w-full px-5 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Search className="w-5 h-5 text-indigo-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">延伸探討</span>
-          </div>
-          {expanded['exploration'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['exploration'] && (
-          <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-indigo-700 mb-2">「中保」的神學意涵</h4>
-              <p className="text-gray-700 leading-relaxed text-sm">
-                約翰一書2:1的「中保」（paraklētos，有時譯「保惠師」）在法庭比喻中是站在被告旁邊為其辯護的律師。耶穌作為我們的中保，不是說「這個人沒有罪」（祂比任何人更清楚我們有罪），而是說「這個人的罪，我已經付上了代價」。這個理解對日常悔改非常重要：悔改不是去說服神不生氣，而是向父說「我知道我的中保已經處理了這件事，我來到祢面前是靠祂的功勞，不是靠我的悔改的品質」。
-              </p>
+      {/* 重點總結 */}
+      <section className="bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-200 p-6 rounded-xl">
+        <div className="flex items-center gap-3 mb-4">
+          <Star className="w-6 h-6 text-yellow-500 fill-yellow-500" />
+          <h2 className="text-xl font-bold text-sky-800">重點總結</h2>
+        </div>
+        <div className="space-y-3">
+          {[
+            '以十字架為中心的日常生活靠信心（相信福音的真理）和悔改（不斷回到神）這兩個實踐運行，這是每天、甚至每小時的選擇',
+            '約翰一書提供兩個基礎：稱義的保證（我有一位中保）和收納的確信（我是神的兒女）——這使得真實的悔改成為可能而不致令人絕望',
+            '路加福音15章浪子的悔改三步驟：覺醒（如實看見自己）、正視真相（承認罪的責任）、改變重心（真實的行動轉向），這是完整悔改的圖畫',
+            '悔改不只是感到後悔，而是真實的方向改變——從背對神，轉向神；從老的行為模式，轉向新的可能',
+            '神如慈父等待我們回家：當我們悔改時，他不是冷冷等待，而是「跑去迎接」——這個確信使悔改成為喜樂而非負擔',
+            '「給我看你如何看待罪，我就告訴你你對十字架的理解有多深」——對罪的認識深度直接反映了我們對基督救贖的理解深度',
+          ].map((point, i) => (
+            <div key={i} className="flex items-start gap-3">
+              <span className="bg-sky-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">{i + 1}</span>
+              <p className="text-gray-700">{point}</p>
             </div>
-            <div>
-              <h4 className="font-semibold text-indigo-700 mb-2">悔改與假悔改的區別</h4>
-              <p className="text-gray-700 leading-relaxed text-sm">
-                哥林多後書7:10區分了「依著神的意思憂愁」（真悔改）和「世俗的憂愁」（假悔改）。世俗的憂愁是「我因為失敗而為自己難過」——焦點仍在自己的形象和感受；真悔改是「我因為我的罪傷了神的心而難過」——焦點在關係和神的榮耀。世俗的憂愁往往伴隨長期的自我定罪，卻沒有真正的改變；真悔改帶來「熱心、自訴、自恨」，然後立即站起來繼續前行（哥後7:11）。浪子的悔改是真悔改：他起來了，去見父親了，沒有在豬圈裡繼續自憐。
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-indigo-700 mb-2">大兒子的荊棘藪</h4>
-              <p className="text-gray-700 leading-relaxed text-sm">
-                浪子比喻還有一個常被忽略的部分：大兒子的反應（路加15:25-32）。大兒子代表了另一種荊棘藪——不是明顯的放蕩，而是「自以為義的順從」。他在父親旁邊，卻不認識父親的心；他從未「離家出走」，卻也從未真正「在家」。他的問題是：他服事父親是為了「這麼多年服事你，從來沒有違背你的命」這個自我形象，而非出於對父親的愛。父親對兩個兒子都奔跑——大兒子也是蒙恩典的對象，但他沉浸在自憐和義憤中，拒絕進去享受筵席。這是對那些「外表遵守規矩，內心卻遠離神」的人的嚴肅提醒。
-              </p>
-            </div>
-          </div>
-        )}
-      </div>
+          ))}
+        </div>
+      </section>
 
-      {/* 反思問題 */}
-      <div className="mb-6 border border-amber-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('questions')} className="w-full px-5 py-3 bg-gradient-to-r from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <HelpCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">反思問題</span>
+      {/* 延伸CPR */}
+      <section className="border-l-4 border-indigo-400 bg-indigo-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <MessageCircle className="w-6 h-6 text-indigo-600" />
+          <h2 className="text-xl font-bold text-indigo-700">延伸反思</h2>
+        </div>
+        <div className="space-y-3 text-gray-700">
+          <div className="bg-white p-4 rounded border border-indigo-200">
+            <p className="font-bold text-indigo-700 mb-2">假悔改 vs 真悔改</p>
+            <p>保羅在哥林多後書7章10節說：「因為依著神的意思憂愁，就生出沒有後悔的懊悔來，以致得救；但世俗的憂愁是叫人死。」假悔改（「世俗的憂愁」）是因為被抓到、因為後果、因為丟臉。真悔改是因為認識到我得罪了神，傷害了別人，並且真正渴望改變。你最近的「悔改」更像哪一種？</p>
           </div>
-          {expanded['questions'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['questions'] && (
-          <div className="p-5 bg-white space-y-3">
-            {[
-              '你對「約翰一書2:1我們有一位中保」這個真理的認識，是讓你更容易承認失敗（因為有解決方案），還是讓你不把罪當回事（因為反正有赦免）？這兩種極端各反映了什麼樣的對福音的誤解？',
-              '在信心悔改三步驟中，哪一步對你最困難？為什麼？',
-              '你的「悔改」更像哥林多後書7:10的「依著神的意思憂愁」（焦點在與神的關係），還是「世俗的憂愁」（焦點在自己的形象和感受）？',
-              '浪子「醒悟過來」（路加15:17）——你有沒有在某個荊棘藪模式中，也有過這樣的「醒悟時刻」？那個時刻是如何發生的？',
-              '大兒子的故事，讓你在自己的生命中看到什麼？你有沒有以「遵守規矩」取代「認識父親的心」的情況？',
-              '「相信」這一步要求我們相信恩典夠用，繼續前行。有沒有某些罪，是你覺得「需要先懲罰自己一段時間」才能被赦免的？這個想法來自哪裡？',
-            ].map((q, i) => (
-              <div key={i} className="flex gap-3">
-                <span className="text-amber-600 font-bold flex-shrink-0">{i + 1}.</span>
-                <p className="text-gray-700">{q}</p>
-              </div>
-            ))}
+          <div className="bg-white p-4 rounded border border-indigo-200">
+            <p className="font-bold text-indigo-700 mb-2">你的「身分名片」</p>
+            <p>如果有人問你「你是誰？」你通常會怎麼介紹自己？（我的職業、我的家庭角色、我的成就？）現在嘗試用「在基督裡」的語言回答：「我是___（你在基督裡的身分）」。這個練習揭示了你的身分感主要建立在哪裡。</p>
           </div>
-        )}
-      </div>
+        </div>
+      </section>
 
-      {/* 具體實踐方針 */}
-      <div className="mb-6 border border-green-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('practice')} className="w-full px-5 py-3 bg-gradient-to-r from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">具體實踐方針</span>
-          </div>
-          {expanded['practice'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['practice'] && (
-          <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">🔄 信心悔改三步驟每日操練</h4>
-              <p className="text-gray-700 text-sm mb-2">每晚睡前，花10分鐘回顧當天，對最明顯的荊棘藪回應做三步驟：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li><strong>承認</strong>：「今天我在___情況中，做了___（行為），因為我的心在追求___ （偶像）」</li>
-                <li><strong>悔改</strong>：「主啊，我把心從這個偶像轉向祢。我不再要求___，我選擇信靠祢」</li>
-                <li><strong>相信</strong>：「感謝祢，耶穌已為這個罪付上代價。我選擇接受赦免，明天繼續前行」</li>
-              </ul>
+      {/* 生活實踐 */}
+      <section className="border-l-4 border-lime-400 bg-lime-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Users className="w-6 h-6 text-lime-600" />
+          <h2 className="text-xl font-bold text-lime-700">生活實踐方針</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            { label: 'a. 每日悔改的時刻', desc: '每晚睡前用5分鐘做「今日悔改」：今天我在哪裡偏離了？我需要把什麼帶到十字架面前？' },
+            { label: 'b. 用三步驟悔改', desc: '本週當你發現自己出現荊棘反應，用浪子的三步驟（覺醒、正視、改變）進行具體的悔改' },
+            { label: 'c. 讀約翰一書', desc: '這週讀整本約翰一書，每讀到「我們是神的兒女」或類似的宣告，就停下來默想這對你意味著什麼' },
+            { label: 'd. 向關係中的人真誠道歉', desc: '如果你的荊棘傷害了某人，用三步驟悔改的方式，不帶條件地向對方道歉，並問：「我可以如何改善？」' },
+            { label: 'e. 完成自我成長方案', desc: '完整填寫自我成長方案的全部四欄，準備在下次小組時分享你的成長方案' },
+            { label: 'f. 記住父親的臉', desc: '每次感到羞愧或定罪時，提醒自己路加福音15章20節：父親「跑去」迎接回頭的兒子——神是這樣迎接你的悔改的' },
+          ].map((item, i) => (
+            <div key={i} className="bg-white p-4 rounded border border-lime-200">
+              <p className="font-bold text-lime-700 mb-1">{item.label}</p>
+              <p className="text-gray-700 text-sm">{item.desc}</p>
             </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">📖 浪子比喻的默想</h4>
-              <p className="text-gray-700 text-sm mb-2">讀路加福音15:11-32，把自己放進故事裡：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>你有沒有像小兒子一樣，遠離神在「豬圈」（荊棘藪）中？你的「醒悟時刻」是什麼？</li>
-                <li>你有沒有像大兒子一樣，表面在父親旁邊，內心卻不認識父親的心？</li>
-                <li>父親「從遠處看見他，就跑去」——這幅圖像對你意味著什麼？</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">🤝 與群體同行悔改</h4>
-              <p className="text-gray-700 text-sm mb-2">找一個屬靈同伴，本週一起做：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>各自分享一個本週落入的荊棘藪，用三步驟框架表達</li>
-                <li>互相說：「我相信神的恩典對你是夠用的」</li>
-                <li>一起為彼此禱告，求神讓信心悔改成為生命的節奏</li>
-              </ul>
-            </div>
-            <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-              <h4 className="font-semibold text-green-700 mb-2">🙏 禱告</h4>
-              <p className="text-gray-600 text-sm italic">
-                「父啊，感謝祢像那位父親一樣，在我還離得很遠的時候就跑去迎接我。我承認我有時活得像大兒子，表面服事祢，內心卻不認識祢的心；有時活得像小兒子，在豬圈裡不肯起來回家。求祢讓信心悔改成為我每天的節奏——不是沉重的功課，而是回家的路。感謝祢在耶穌基督裡，永遠有一個中保在祢面前為我代求。奉主名，阿們。」
-              </p>
-            </div>
-          </div>
-        )}
-      </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

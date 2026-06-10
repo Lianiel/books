@@ -1,192 +1,195 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Target, Star, Search, HelpCircle, Check } from 'lucide-react';
+import React from 'react';
+import { BookOpen, Star, MessageCircle, Lightbulb, Heart, Target } from 'lucide-react';
 
 export default function Book27Ch1() {
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({
-    content: true, summary: true, exploration: true, questions: true, practice: true,
-  });
-  const toggleSection = (id: string) => setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
-
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">第1課</h1>
-        <h2 className="text-xl font-semibold text-gray-700">這是神要帶領你去的地方</h2>
-      </div>
+    <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+      <h1 className="text-3xl font-bold text-emerald-700 mb-2">第1課：這是神要帶領你去的地方</h1>
+      <p className="text-gray-500 text-sm">學員本 · 《人如何改變》保羅·區普</p>
 
-      {/* 主要內容 */}
-      <div className="mb-6 border border-emerald-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('content')} className="w-full px-5 py-3 bg-gradient-to-r from-emerald-50 to-green-50 hover:from-emerald-100 hover:to-green-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Target className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">主要內容</span>
+      {/* 複習/作業討論 */}
+      <section className="border-l-4 border-emerald-400 bg-emerald-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-3">
+          <BookOpen className="w-5 h-5 text-emerald-600" />
+          <h2 className="text-xl font-bold text-emerald-700">複習／作業討論（30分鐘）</h2>
+        </div>
+        <p className="text-gray-700">這是課程的第一課，歡迎加入！請在小組中互相介紹，並分享：你加入這個課程最大的期待是什麼？請一起閱讀「複習」、「重點與應用」及「主要問題」的部分。</p>
+      </section>
+
+      {/* 複習 */}
+      <section className="bg-white border border-emerald-200 p-6 rounded">
+        <h2 className="text-xl font-bold text-emerald-700 mb-4">複習</h2>
+        <p className="text-gray-700 mb-3">這本書以一個非常具體的問題開始：神想要在你的生命中做什麼？更重要的問題是：祂正在做什麼？要回答這些問題，我們需要從「神的大圖畫」開始——從一個終極的、永恆的角度來看我們的生命。</p>
+        <p className="text-gray-700 mb-3">整個課程圍繞著一個核心模式——<strong>炎熱、荊棘、十字架、果實</strong>——這個模式描述了神在我們生命中工作的方式。在第一課，我們首先確立：神改變我們的終極目標是什麼？</p>
+        <p className="text-gray-700">記住，這個課程不是提供一些「讓生活更美好」的技巧，而是幫助你看見神在你生命中正在做的驚人事業——祂要使你像基督的樣式！</p>
+      </section>
+
+      {/* 重點與應用 CPR */}
+      <section className="border-l-4 border-teal-400 bg-teal-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Target className="w-5 h-5 text-teal-600" />
+          <h2 className="text-xl font-bold text-teal-700">重點與應用（CPR）</h2>
+        </div>
+        <div className="space-y-3">
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">重點提要：</p>
+            <p className="text-gray-700">神的終極目標是讓我們完全像基督的樣式。這個目標既是今生持續的過程，也是將來完全實現的盼望。</p>
           </div>
-          {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['content'] && (
-          <div className="p-5 bg-white space-y-5">
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">個人應用：</p>
+            <p className="text-gray-700">當我看見神要改變我像基督，我對自己人生目標和每日選擇的看法，將會如何改變？</p>
+          </div>
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">人際應用：</p>
+            <p className="text-gray-700">當我幫助他人時，我是否記得神對他們的最終目標？這個認識將如何改變我對待他們的方式？</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 主要問題 */}
+      <section className="text-center py-8 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl border border-emerald-200">
+        <h2 className="text-2xl font-bold text-emerald-800 mb-4">主要問題</h2>
+        <p className="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">是什麼樣的盼望與目標，決定你的人生方向？</p>
+      </section>
+
+      {/* 課程內容 */}
+      <section className="border-l-4 border-cyan-400 bg-cyan-50 p-6 rounded">
+        <h2 className="text-xl font-bold text-cyan-700 mb-4">課程內容</h2>
+        <div className="bg-white p-3 rounded border border-cyan-200 mb-4">
+          <p className="font-bold text-cyan-700">DVD（40分鐘）</p>
+        </div>
+        <div className="bg-white p-4 rounded border border-cyan-200">
+          <p className="font-bold text-cyan-700 mb-3">小組活動（20分鐘）</p>
+          <div className="space-y-4 text-gray-700">
             <div>
-              <h3 className="font-bold text-emerald-700 mb-2">神改變的終極目標</h3>
-              <p className="text-gray-700 leading-relaxed">腓立比書1:3-11是本課的核心經文。保羅在其中描述了他為腓立比信徒的禱告，揭示了神改變計劃的最終目標：使我們在基督日子來臨時，「多結仁義的果子」，充滿「因耶穌基督所結的仁義果子」（腓1:11）。神的目標不只是讓我們外表行為改善，而是要我們整個人——包括最深處的心思、動機和渴望——都轉化成為像基督的樣式。</p>
-              <p className="text-gray-700 leading-relaxed mt-2">當我們思考「改變」這個字的時候，我們可能想到的是具體的行為改變：不再生氣、不再撒謊、不再抱怨。但神眼中的改變遠遠超過這些外在的調整。神所要帶我們去的地方，是一種從心靈深處湧出的、以基督為中心的生命——一種不靠自己努力維持，而是自然從與神的關係中流露出來的生命。</p>
+              <p className="font-medium mb-2">1. 請一起查考啟示錄七章9至17節，並回答：</p>
+              <p className="ml-4 text-gray-600">a. 這段經文描繪了什麼景象？這幅圖畫中哪些讓你嚮往？</p>
+              <p className="ml-4 text-gray-600 mt-1">b. 「不再飢、不再渴」（16節）、「抹去他們一切的眼淚」（17節）代表什麼意義？神的終極目標是什麼？</p>
             </div>
             <div>
-              <h3 className="font-bold text-emerald-700 mb-2">改變的三大基石</h3>
-              <p className="text-gray-700 leading-relaxed">根據腓立比書1章和整本書的神學脈絡，神改變計劃建立在三個不可或缺的基石上：</p>
-              <ul className="mt-2 space-y-3">
-                <li className="flex gap-3">
-                  <span className="text-emerald-600 font-bold flex-shrink-0 mt-0.5">1.</span>
-                  <div>
-                    <span className="font-semibold text-gray-800">救贖主（基督）：</span>
-                    <span className="text-gray-700">改變的動力和根基完全來自基督。沒有祂在十字架上完成的工，沒有祂今天在我們心裡活著，任何真實的改變都是不可能的。保羅說「我靠著那加給我力量的，凡事都能做」（腓4:13），這種能力不是靠意志力，而是靠那加給力量的主。</span>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-emerald-600 font-bold flex-shrink-0 mt-0.5">2.</span>
-                  <div>
-                    <span className="font-semibold text-gray-800">群體（教會）：</span>
-                    <span className="text-gray-700">改變不是孤獨地發生的。神設計讓改變在信徒的群體生活中進行。我們需要弟兄姊妹的幫助、陪伴、誠實的話語和禱告，才能真正成長。腓立比書本身就是寫給一個群體的，保羅感謝他們「在福音上的同工」（腓1:5）。</span>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-emerald-600 font-bold flex-shrink-0 mt-0.5">3.</span>
-                  <div>
-                    <span className="font-semibold text-gray-800">過程（一生）：</span>
-                    <span className="text-gray-700">真實的改變是一個終生持續的過程，不是一次的決志或一個突破就完成的。保羅說神「在你們心裡動了善工，必成全這工，直到耶穌基督的日子」（腓1:6）。神是主動的動工者，祂不會放棄這個工程，直到那日完成。</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-emerald-700 mb-2">「人如何改變」的模式概覽</h3>
-              <p className="text-gray-700 leading-relaxed">本書使用取自耶利米書17:5-10的核心模式來理解改變的動態：<strong>炎熱→荊棘→十字架→果實</strong>。這個模式描述了在我們日常生活中，改變的發生過程。</p>
-              <p className="text-gray-700 leading-relaxed mt-2"><strong>炎熱（環境處境）</strong>：我們所面對的生活景況，包括壓力、關係困難、疾病、失敗、衝突等。炎熱本身不是問題的根源，但它像一面鏡子，照出我們心中真實的狀態。</p>
-              <p className="text-gray-700 leading-relaxed mt-2"><strong>荊棘（有罪的回應）</strong>：當我們的心靈沒有被恩典更新時，我們對炎熱的回應往往是罪性的——抱怨、逃避、憤怒、控制或絕望。這些回應顯示我們心中真正敬拜的對象。</p>
-              <p className="text-gray-700 leading-relaxed mt-2"><strong>十字架（恩典的供應）</strong>：改變的關鍵轉折點是我們以十字架為中心來回應炎熱。當我們把眼光從問題轉向基督，信靠祂的恩典和能力，新的可能性就打開了。</p>
-              <p className="text-gray-700 leading-relaxed mt-2"><strong>果實（更新的生命）</strong>：以十字架為中心的生活，自然結出美好的果實——愛、喜樂、和平、忍耐、恩慈、良善、信實、溫柔、節制（加5:22-23）。這些果實不是靠努力維持的，而是從一顆被恩典更新的心中自然流露的。</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-emerald-700 mb-2">神完全了解你的處境</h3>
-              <p className="text-gray-700 leading-relaxed">從腓立比書1章，我們也看到保羅在監獄中寫作，面臨生死未卜的困境。然而他充滿喜樂和盼望，這不是因為他的環境改變了，而是因為他已學會在任何景況下倚靠基督。這給了我們盼望：神完全了解我們的處境（每一個困難、每一種痛苦），而且祂主動在我們的景況中動工，不是要使我們逃離困境，而是要透過困境改變我們，使我們越來越像祂的兒子。</p>
+              <p className="font-medium mb-2">2. 請一起查考腓立比書一章3至11節，並回答：</p>
+              <p className="ml-4 text-gray-600">a. 保羅在什麼環境中寫信？他對腓立比信徒有什麼信心？</p>
+              <p className="ml-4 text-gray-600 mt-1">b. 一章6節：「那在你們心裡動了善工的，必成全這工。」這告訴我們改變的動力和保證從何而來？</p>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      </section>
+
+      {/* 作業 - 主要內容 */}
+      <section className="border-l-4 border-green-400 bg-green-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Lightbulb className="w-5 h-5 text-green-600" />
+          <h2 className="text-xl font-bold text-green-700">作業：神的大圖畫</h2>
+        </div>
+        <div className="space-y-6 text-gray-700">
+          <div>
+            <h3 className="font-bold text-green-800 text-lg mb-3">一、終極目標：榮耀的完全</h3>
+            <p className="mb-3">每個人的生命都有一個方向。你每天所做的選擇、每一段關係的建立，都受到某個「終極目標」的驅動。有些人活著是為了成功、財富、被認可，或讓家人過得更好。這些目標本身並不壞，但問題是：它們能夠支撐你整個人生嗎？能讓你在面對失去、痛苦和死亡時仍然站立得住嗎？</p>
+            <p className="mb-3">聖經告訴我們，神對我們的生命有一個宏大的計畫。保羅在羅馬書八章29節說：「因為他預先所知道的人，就預先定下效法他兒子的模樣，使他兒子在許多弟兄中作長子。」神的目標，是要讓你成為像耶穌基督一樣的人！這不是小事，而是宇宙中最宏大的工程。</p>
+            <p className="mb-3">啟示錄七章9至17節給了我們旅程終點的圖畫：「有許多的人，沒有人能數過來，是從各國、各族、各民、各方來的，站在寶座和羔羊面前，身穿白衣，手拿棕樹枝，大聲喊著說：願救恩歸與坐在寶座上我們的神，也歸與羔羊！」（9-10節）。神的目標是帶我們到完全榮耀、永與神同在的境界。</p>
+            <p>這個終極目標改變了我們對今生的看法。今生的每一個挑戰、每一次失敗、每一段艱難，都不是目的地，而是旅途的一部分——神正在用這些事情，將我們塑造成「那最後的樣式」。</p>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-green-800 text-lg mb-3">二、改變的保證：腓立比書一章3至11節</h3>
+            <p className="mb-3">保羅寫這封信時身在羅馬監獄，面對可能的死刑。然而，在信的開頭，他不是在抱怨自己的處境，而是在感謝神，並且充滿了對腓立比信徒未來的盼望和信心。這是為什麼？因為保羅看見的，不只是眼前的炎熱，他看見了神正在做的事。</p>
+            <p className="mb-3">一章6節是整段的核心：「我深信那在你們心裡動了善工的，必成全這工，直到耶穌基督的日子。」這節經文說明了幾個重要的真理：（1）善工是神開始的，不是我們自己開始的；（2）神必然完成這工，不是也許，而是必然；（3）這工將在「耶穌基督的日子」完全實現——這是一個永恆的視野。</p>
+            <p>一章9至11節記錄了保羅的禱告：他祈求信徒的愛「更加增長，在知識和各事上多有聰明，使你們能分別是非，作誠實無過的人，直到基督的日子，並靠著耶穌基督結滿了仁義的果子，叫榮耀稱讚歸與神。」這個禱告不是為了他們的舒適，而是為了他們成為基督樣式——這正是神的大圖畫。</p>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-green-800 text-lg mb-3">三、兩種購屋者的比喻</h3>
+            <p className="mb-3">想像兩個家庭正在找房子。第一個家庭找到了他們非常喜愛的房子，位置絕佳，設計美觀。他們買了這棟房子，並把全部精力和金錢用在裝修上。然而，他們不知道這棟房子被規劃為都市更新地段，五年後將被拆除。他們所有的投資，最終化為烏有。</p>
+            <p className="mb-3">第二個家庭找到了一棟「過渡屋」——簡陋，但有個特別條件：屋主承諾，住滿十年可免費得到一棟豪宅。這第二個家庭不會為過渡屋的缺陷感到沮喪，因為他們看見的是將來那棟豪宅的應許。</p>
+            <p>這個比喻描述了兩種人生觀。以今生為終點的人，為今生的財富、地位傾盡全力，卻忘記這一切都會過去。以今生為旅程的人，不忽視今生的挑戰，但用永恆眼光詮釋一切。保羅在腓立比書中正是如此——即使身在監獄，他仍然充滿盼望，因為他知道自己在旅途中，目的地是榮耀的終點。</p>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-green-800 text-lg mb-3">四、反思問題</h3>
+            <div className="space-y-3 ml-2">
+              <p className="text-gray-800">❓ 1. 在你的日常生活中，有哪些具體的「目標」或「盼望」在驅動你的選擇和行動？這些目標是暫時的還是永恆的？</p>
+              <p className="text-gray-800">❓ 2. 腓立比書一章9至11節，保羅的禱告重點是什麼？這個重點與你現在最重視的事情有何不同？</p>
+              <p className="text-gray-800">❓ 3. 想一想生命中某個困難時期。回顧那段時間，你是否看見神曾藉著那段「炎熱」在改變你？請具體說明。</p>
+              <p className="text-gray-800">❓ 4. 請用自己的話說明：為什麼外在行為的改變，若沒有內心動機的改變，是不夠的？</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 重點總結 */}
-      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">重點總結</span>
-          </div>
-          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['summary'] && (
-          <div className="p-5 bg-white">
-            <ul className="space-y-2">
-              {[
-                '神改變的終極目標是讓我們整個人轉化成像基督的樣式，不只是外在行為的調整。',
-                '真實的改變建立在三個基石上：救贖主基督（動力與根基）、群體教會（場所與支持）、一生的過程（神持續動工）。',
-                '「炎熱→荊棘→十字架→果實」是理解日常生活中改變動態的核心模式，源自耶利米書17:5-10。',
-                '環境（炎熱）本身不導致罪；是我們心中的渴望和動機決定了我們如何回應炎熱。',
-                '神在我們的困境中主動動工，保羅在監獄中的喜樂見證了倚靠基督可以在任何景況下有真實改變。',
-              ].map((point, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="w-5 h-5 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
-                  <p className="text-gray-700">{point}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
+      <section className="bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-200 p-6 rounded-xl">
+        <div className="flex items-center gap-3 mb-4">
+          <Star className="w-6 h-6 text-sky-500" fill="currentColor" />
+          <h2 className="text-xl font-bold text-sky-700">重點總結</h2>
+        </div>
+        <div className="space-y-3">
+          {[
+            '神對我們的終極目標是使我們完全像基督的樣式——這是宇宙中最宏大的改變工程，由神親自負責完成。',
+            '腓立比書一章6節保證：神所開始的善工，必然完成——改變的動力和保證都在神身上，而非靠人的努力。',
+            '啟示錄七章9至17節給我們看見旅程的終點：完全的救贖、榮耀的相聚、永遠的安慰——這是我們在苦難中仍有盼望的根基。',
+            '真正的改變從心開始：必須有正確的終極目標；只追求今生舒適和成功，是以「過渡屋」當成「豪宅」的錯誤。',
+            '即使在困難中，如保羅在獄中，以永恆眼光看待今生的炎熱，能給我們超越環境的平安與盼望。',
+          ].map((point, i) => (
+            <div key={i} className="flex gap-3 items-start">
+              <span className="bg-sky-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">{i + 1}</span>
+              <p className="text-gray-700 text-sm">{point}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      {/* 延伸探討 */}
-      <div className="mb-6 border border-indigo-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('exploration')} className="w-full px-5 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Search className="w-5 h-5 text-indigo-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">延伸探討</span>
+      {/* 延伸的重點與應用CPR */}
+      <section className="border-l-4 border-indigo-400 bg-indigo-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <MessageCircle className="w-5 h-5 text-indigo-600" />
+          <h2 className="text-xl font-bold text-indigo-700">延伸的重點與應用CPR</h2>
+        </div>
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-bold text-indigo-700 mb-2">重點提要</h3>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700 ml-2">
+              <li>當我看見神的終極目標，並甘心樂意為此而活時，在每日的景況和人際關係中，會充滿盼望與正確的眼光。</li>
+              <li>個人成長與改變的希望，來自於我與耶穌基督的關係；祂大有能力地動工，為了改變我的心，使我的心思意念與祂越來越相通。</li>
+              <li>我的炎熱處境（困難、挑戰、痛苦）不是偶然的；神常常藉著這些，讓我更清楚看見自己的心，並更深地靠賴祂。</li>
+            </ol>
           </div>
-          {expanded['exploration'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['exploration'] && (
-          <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">為什麼行為改變不等於真實的改變？</h4>
-              <p className="text-gray-700 leading-relaxed">很多基督徒把努力維持良好行為當作屬靈成熟的標誌，卻發現這種努力令人精疲力竭，也不持久。原因是：外在的行為只是心靈狀態的果子。如果心靈的方向沒有改變，即使暫時壓制了某些行為，根本的問題仍然存在。耶穌在登山寶訓中教導，憤怒和殺人一樣嚴重，淫念和通姦一樣有罪（太5:21-30），因為神看的是心。真正的改變必須從心開始。</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">「成聖」的神學背景</h4>
-              <p className="text-gray-700 leading-relaxed">基督教神學將救恩分為三個階段：稱義（過去，一次完成）、成聖（現在，持續進行）、榮耀化（將來，完全完成）。本書所探討的「改變」主要涉及成聖的過程。成聖有兩個層面：「確定性的成聖」（我們在基督裡已被分別為聖）和「漸進性的成聖」（我們在生活中越來越活出這個地位）。這個課程幫助我們理解如何積極地配合神在成聖工作上的動工。</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">耶利米書17:5-10的神學意涵</h4>
-              <p className="text-gray-700 leading-relaxed">耶利米書17:5-10描述了人心的兩種狀態：倚靠人（心靈像曠野的杜松，在鹽地生長，不見好處）與倚靠神（心靈像栽於水旁的樹，不怕炎熱，年年結果）。先知進一步說：「心比萬物都詭詐，壞到極處，誰能識透呢？我耶和華是鑑察人心、試驗人肺腑的」（耶17:9-10）。這段經文成為整個「人如何改變」模式的聖經基礎，揭示了改變必須觸及心靈的深處，而只有神能真正認識並更新人心。</p>
-            </div>
+          <div>
+            <h3 className="font-bold text-indigo-700 mb-2">個人應用</h3>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700 ml-2">
+              <li>本週，我要對照腓立比書一章9至11節，誠實地問自己：我最渴望的改變，是在行為上還是在心裡？</li>
+              <li>我要在禱告中感謝神，祂在我心裡所開始的工作必然完成，並求祂幫助我配合祂的工作。</li>
+              <li>我要開始用「我在旅途中」的眼光看待目前的困難，問自己：神想要藉這件事讓我學習什麼？</li>
+            </ol>
           </div>
-        )}
-      </div>
+          <div>
+            <h3 className="font-bold text-indigo-700 mb-2">人際應用</h3>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700 ml-2">
+              <li>當我幫助或陪伴正在受苦的人時，我要記得：神的目標不是讓他們立刻「感覺好一點」，而是讓他們成長得更像基督。</li>
+              <li>在對話中，我要多詢問：「你在這件事上看見神想要做什麼？」而不只是提供解決方案。</li>
+              <li>我要學習用感謝和讚美鼓勵他人看見神在其生命中的善工，即使那善工現在看起來很痛苦。</li>
+            </ol>
+          </div>
+        </div>
+      </section>
 
-      {/* 反思問題 */}
-      <div className="mb-6 border border-amber-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('questions')} className="w-full px-5 py-3 bg-gradient-to-r from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <HelpCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">反思問題</span>
+      {/* 生活實踐 */}
+      <section className="border-l-4 border-lime-400 bg-lime-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Heart className="w-5 h-5 text-lime-600" />
+          <h2 className="text-xl font-bold text-lime-700">生活實踐</h2>
+        </div>
+        <div className="space-y-3 text-gray-700">
+          <div className="bg-white p-4 rounded border border-lime-200">
+            <p><strong>一、</strong>在日記或手機裡，寫下你現在生命中最大的一個挑戰。然後在旁邊寫：「神可能要藉著這件事讓我更像基督的地方是……」試著填滿這個句子。</p>
           </div>
-          {expanded['questions'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['questions'] && (
-          <div className="p-5 bg-white space-y-3">
-            {[
-              '當你想到「屬靈成長」或「改變」，你腦海中浮現的是什麼樣的圖像？是行為上的改進，還是更深層的東西？',
-              '在你生命中，有哪些「炎熱」（困難的處境）是你目前正在經歷的？這些處境暴露了你心中什麼樣的渴望或恐懼？',
-              '你有沒有曾經嘗試靠自己的努力改變某個行為或習慣，卻發現改變很短暫？那次的經歷帶給你什麼反思？',
-              '「改變需要群體」這個概念對你而言是真實的嗎？你在弟兄姊妹當中有沒有人知道你真實的掙扎？',
-              '保羅在監獄中仍能寫出充滿喜樂的書信。你認為他的喜樂從哪裡來？這對你面對困境有什麼啟示？',
-              '如果神的目標是要你「越來越像基督」而不是讓你「生活越來越舒適」，這會如何改變你看待生命中困難的方式？',
-            ].map((q, i) => (
-              <div key={i} className="flex gap-3">
-                <span className="text-amber-600 font-bold flex-shrink-0">{i + 1}.</span>
-                <p className="text-gray-700">{q}</p>
-              </div>
-            ))}
+          <div className="bg-white p-4 rounded border border-lime-200">
+            <p><strong>二、</strong>慢慢地讀啟示錄七章9至17節，默想這幅終點的圖畫。然後禱告，告訴神你對這個終點的感受——是渴望、懷疑，還是困惑？讓這段禱告成為你整個課程學習的開始。</p>
           </div>
-        )}
-      </div>
-
-      {/* 具體實踐方針 */}
-      <div className="mb-6 border border-green-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('practice')} className="w-full px-5 py-3 bg-gradient-to-r from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">具體實踐方針</span>
+          <div className="bg-white p-4 rounded border border-lime-200">
+            <p><strong>三、</strong>找一個你信任的人，分享你今天在這課中最有共鳴的一點，以及你對這個課程的期待。如果可以，請這個人在課程期間為你禱告。</p>
           </div>
-          {expanded['practice'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['practice'] && (
-          <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">🎯 繪製你的「炎熱地圖」</h4>
-              <p className="text-gray-700 mb-2">花15分鐘，在紙上列出你目前生活中三個主要的「炎熱」（壓力、困難、挑戰）。對每一個炎熱，問自己：我通常如何回應？我的回應顯示我心中真正渴望的是什麼？</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">📖 每日讀經操練</h4>
-              <p className="text-gray-700 mb-2">在本週每天讀腓立比書第一章，特別關注保羅如何在困境中仍然充滿盼望。每次讀完，寫下一句話：「今天我要靠著基督，用什麼方式回應我的困境？」</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">💬 找一位同伴</h4>
-              <p className="text-gray-700 mb-2">找一位信任的弟兄或姊妹，分享你這週從本課學到的一個洞見，以及你目前面對的一個「炎熱」。請他們為你禱告，也邀請他們在本課程中與你同行。</p>
-            </div>
-            <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
-              <h4 className="font-semibold text-green-700 mb-2">🙏 禱告詞</h4>
-              <p className="text-gray-700 italic leading-relaxed text-sm">「天父，我承認我常常只想改變外在的行為，卻忽略了我內心真正的狀態。感謝祢在基督裡為我成就了一切所需，並且應許要持續在我心裡動工，直到那日完成。求祢幫助我在這個課程中，真實地看見自己，也真實地看見祢豐盛的恩典。願我的改變不是靠自己的努力，而是藉著信靠祢的大能。奉耶穌的名禱告，阿們。」</p>
-            </div>
-          </div>
-        )}
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

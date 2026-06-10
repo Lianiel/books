@@ -1,283 +1,263 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Search, Star, HelpCircle, Check } from 'lucide-react';
+import React from 'react';
+import { BookOpen, Star, MessageCircle, Lightbulb, Heart, Search, Target, Users } from 'lucide-react';
 
 export default function Book27Ch8() {
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({
-    content: true,
-    summary: true,
-    exploration: true,
-    questions: true,
-    practice: true,
-  });
-
-  const toggleSection = (id: string) => {
-    setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
-  };
-
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">第八課</h1>
-        <h2 className="text-xl font-semibold text-gray-700">為什麼你會被纏累（荊棘篇下）</h2>
-        <p className="text-sm text-gray-500 mt-2">申命記 5:6–21；雅各書 4:1–4</p>
-      </div>
+    <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+      <h1 className="text-3xl font-bold text-emerald-700 mb-2">第8課：為什麼你會被纏累——荊棘篇（下）</h1>
+      <p className="text-gray-500 text-sm">學員本 · 《人如何改變》保羅·區普</p>
 
-      {/* 主要內容 */}
-      <div className="mb-6 border border-emerald-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('content')} className="w-full px-5 py-3 bg-gradient-to-r from-emerald-50 to-green-50 hover:from-emerald-100 hover:to-green-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Search className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">主要內容</span>
+      {/* 複習/作業討論 */}
+      <section className="border-l-4 border-emerald-400 bg-emerald-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <BookOpen className="w-6 h-6 text-emerald-600" />
+          <h2 className="text-xl font-bold text-emerald-700">複習與作業討論</h2>
+        </div>
+        <div className="bg-white p-4 rounded border border-emerald-200 space-y-3 text-gray-700">
+          <p><strong>複習：</strong>上一課我們認識了六種荊棘反應，以及以弗所書所描述的「舊人」和「新人」的對比。今天我們要更深入地探問：<strong>為什麼</strong>我們會有這些荊棘反應？荊棘的根源在哪裡？</p>
+          <p><strong>作業討論：</strong>分享你本週的「荊棘偵測」日記——在哪個時刻你最感到被自己的荊棘模式困住？什麼情境最容易觸發你的荊棘反應？</p>
+        </div>
+      </section>
+
+      {/* CPR */}
+      <section className="border-l-4 border-teal-400 bg-teal-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Target className="w-6 h-6 text-teal-600" />
+          <h2 className="text-xl font-bold text-teal-700">重點與應用（CPR）</h2>
+        </div>
+        <div className="space-y-3 text-gray-700">
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">核心要點（Central Point）</p>
+            <p>荊棘的根源不在於外在的情況或他人的行為，而在於我們內心的「偶像」——那些我們渴望得到、以至於當得不到時就以罪性方式反應的事物。雅各書4章1-4節說得清楚：我們的紛爭和衝突來自我們內心爭戰的「私慾」。辨識我們的偶像，是改變的關鍵一步。</p>
           </div>
-          {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['content'] && (
-          <div className="p-5 bg-white space-y-6">
-            <div>
-              <h3 className="text-lg font-semibold text-emerald-700 mb-3">問題不在行為，在乎心</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                上一課我們認識了荊棘藪的「表現形式」——五種罪性回應模式。但這一課要問一個更深的問題：為什麼我們的心會走向這些荊棘藪？是什麼在驅動這些反應？
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                雅各書4:1-4提供了一個精準的診斷：「你們中間的爭戰鬥毆是從哪裡來的呢？不是從你們百體中戰鬥之私慾來的嗎？你們貪戀，還是得不著；你們殺害嫉妒，又不能得；你們爭戰鬥毆，也不能得，因為你們不求……你們求也得不著，是因為你們妄求，要浪費在你們的宴樂中。」（雅各書4:1-3）
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                雅各的答案是：荊棘藪的根源是「私慾」（原文 hēdonē，即「快樂主義」）——心渴望某樣東西超過渴望神，並且願意用各種方式去得到它。這就是心的偶像問題。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-emerald-700 mb-3">X光掃描：三十四個診斷問題</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                在本課中，作者提供了一套「X光問題」，幫助我們掃描自己的心，找出荊棘藪背後的偶像。申命記5章的十誡是這套X光的基礎——十誡揭示了人心可能以神以外的東西為「神」的各種領域。
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                這些問題按照十誡的結構排列，每個誡命對應幾個心靈診斷問題。它們不是讓人定罪的工具，而是幫助我們識別：「在這個炎熱處境中，我的心把什麼看得比神更重要？」
-              </p>
-
-              <div className="space-y-3">
-                <div className="bg-gray-50 rounded-lg p-4 border-l-4 border-gray-400">
-                  <h4 className="font-semibold text-gray-700 mb-2 text-sm">第一至第二誡：神以外的神</h4>
-                  <ul className="text-gray-600 text-sm space-y-1">
-                    <li>• 在這個處境中，什麼對我來說是不可或缺的（除了神以外）？</li>
-                    <li>• 如果我得不到這樣東西，我的生命感覺會沒有意義？</li>
-                    <li>• 我把什麼當作安全感的來源（而非神）？</li>
-                    <li>• 我的情緒是被什麼控制的？是神，還是某個人、某件事、某種結果？</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gray-50 rounded-lg p-4 border-l-4 border-gray-400">
-                  <h4 className="font-semibold text-gray-700 mb-2 text-sm">第三誡：神的名</h4>
-                  <ul className="text-gray-600 text-sm space-y-1">
-                    <li>• 我有沒有用「神的旨意」來合理化我自私的決定？</li>
-                    <li>• 我的屬靈語言是真實的，還是表演給人看的？</li>
-                    <li>• 我有沒有用禱告來說服神按我的意思行，而非真心求祂旨意成就？</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gray-50 rounded-lg p-4 border-l-4 border-gray-400">
-                  <h4 className="font-semibold text-gray-700 mb-2 text-sm">第五誡：孝敬父母（一切權威關係）</h4>
-                  <ul className="text-gray-600 text-sm space-y-1">
-                    <li>• 我對權威（父母、老闆、教會領袖）的反應，是服從還是反抗？背後的動機是什麼？</li>
-                    <li>• 我有沒有在心裡把自己設立為「終極法官」，評判所有人的決定？</li>
-                    <li>• 當有人對我有權威時，我的第一反應是抗拒還是信靠神在此中的主權？</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gray-50 rounded-lg p-4 border-l-4 border-gray-400">
-                  <h4 className="font-semibold text-gray-700 mb-2 text-sm">第六誡：殺人（憤怒與心中的殺意）</h4>
-                  <ul className="text-gray-600 text-sm space-y-1">
-                    <li>• 我有沒有在心裡傷害某人——用言語、態度、或默默的蔑視？</li>
-                    <li>• 我希望某人受苦或失敗嗎？</li>
-                    <li>• 我的憤怒是出於對義的渴望，還是出於自我利益被威脅？</li>
-                    <li>• 我有沒有用「義憤」來包裝我對某人的怨恨？</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gray-50 rounded-lg p-4 border-l-4 border-gray-400">
-                  <h4 className="font-semibold text-gray-700 mb-2 text-sm">第七誡：姦淫（對人的慾望與物化）</h4>
-                  <ul className="text-gray-600 text-sm space-y-1">
-                    <li>• 我有沒有在心裡把某人（或某事物）當作滿足自己需要的工具？</li>
-                    <li>• 我的人際關係中，有多少是「我能從中得到什麼」的計算？</li>
-                    <li>• 我有沒有對某人的「功能」產生依賴，而非真心關愛他這個人？</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gray-50 rounded-lg p-4 border-l-4 border-gray-400">
-                  <h4 className="font-semibold text-gray-700 mb-2 text-sm">第八至第九誡：偷盜與作假見證</h4>
-                  <ul className="text-gray-600 text-sm space-y-1">
-                    <li>• 我有沒有奪取本不屬於我的——別人的讚美、功勞、時間、注意力？</li>
-                    <li>• 我有沒有扭曲真相來保護自己的形象？</li>
-                    <li>• 我說話時，有多少是為了讓自己看起來更好？</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gray-50 rounded-lg p-4 border-l-4 border-gray-400">
-                  <h4 className="font-semibold text-gray-700 mb-2 text-sm">第十誡：貪心</h4>
-                  <ul className="text-gray-600 text-sm space-y-1">
-                    <li>• 我的滿足感是否依賴於擁有某樣東西（別人的婚姻、工作、才能、認可）？</li>
-                    <li>• 「如果只要……我就會快樂」這個句子的空白，我填的是什麼？</li>
-                    <li>• 我對神所賜給我的，是感恩還是不足？</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-emerald-700 mb-3">X光的目的：診斷不是定罪</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                這些問題不是要讓我們陷入定罪感，而是要幫助我們看清：「在這個具體的情況下，我的心到底在追求什麼？」只有當我們誠實地識別出心裡的偶像，我們才能把它帶到十字架前。
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                作者提醒：X光的結果需要在群體中分享。一個人很難客觀地看清自己的心，因為「人心比萬物都詭詐，壞到極處，誰能識透呢？」（耶利米書17:9）我們需要彼此誠實的群體，幫助我們看見自己的盲點。
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                最終，X光問題指向的不是更努力的自我管理，而是更深刻的悔改——轉離那些佔據了神的位置的偶像，轉向那位配受我們全心的神。
-              </p>
-            </div>
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">個人應用（Personal）</p>
+            <p>在你最常出現荊棘反應的情境中，思考：是什麼你極度渴望得到、卻未能如願的東西，觸發了你的反應？（控制感？被尊重？安全感？被愛？）</p>
           </div>
-        )}
-      </div>
-
-      {/* 重點總結 */}
-      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">重點總結</span>
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">人際應用（Relational）</p>
+            <p>你的偶像（心中的私慾）如何破壞你的關係？當你的私慾在關係中沒有被滿足時，你通常如何對待對方？</p>
           </div>
-          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['summary'] && (
-          <div className="p-5 bg-white">
-            <ul className="space-y-2">
-              {[
-                '荊棘藪的根源是心的「私慾」（雅各書4:1-3）——渴望某樣東西超過渴望神，並為了得到它而付出代價。',
-                'X光問題以十誡為框架，幫助我們識別炎熱中心的偶像——「在這個處境中，我把什麼看得比神更重要？」',
-                'X光問題的目的是診斷而非定罪，是引導悔改而非增加羞恥感。識別偶像是改變的第一步。',
-                '申命記5章（十誡）揭示了人心可能把神以外的事物「神化」的各種領域，提供了全面的心靈診斷框架。',
-                '心的診斷需要群體的幫助，因為人心難以客觀地看清自己（耶利米書17:9）。分享我們的X光結果是群體生命的重要功能。',
-              ].map((point, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="w-5 h-5 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
-                  <p className="text-gray-700">{point}</p>
-                </li>
-              ))}
+        </div>
+      </section>
+
+      {/* 主要問題 */}
+      <section className="text-center bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 p-8 rounded-xl">
+        <Search className="w-10 h-10 text-emerald-600 mx-auto mb-3" />
+        <h2 className="text-xl font-bold text-emerald-800 mb-3">本課主要問題</h2>
+        <p className="text-2xl font-bold text-emerald-700 leading-relaxed">
+          「是什麼事物擄獲了你的心？」
+        </p>
+      </section>
+
+      {/* 課程內容 */}
+      <section className="border-l-4 border-cyan-400 bg-cyan-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Lightbulb className="w-6 h-6 text-cyan-600" />
+          <h2 className="text-xl font-bold text-cyan-700">課程內容</h2>
+        </div>
+        <div className="space-y-5 text-gray-700">
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">一、申命記5章6-21節：十誡的心理層面</h3>
+            <p className="mb-2">十誡不只是一份「禁止做這些事」的清單，它揭示了神對人心的深刻認識。特別值得注意的是第一條和最後一條的關係：</p>
+            <div className="bg-white p-4 rounded border border-cyan-200 italic text-sm mb-2">
+              <p>「除我以外，你不可有別的神。」（申命記5章7節）</p>
+              <p className="mt-2">「不可貪戀……凡你鄰舍所有的。」（申命記5章21節）</p>
+            </div>
+            <p className="mb-2">保羅·區普指出，十誡的結構本身就告訴我們：<strong>所有外在的罪行（第2-9條），都有一個共同的根源——貪戀（第10條），而貪戀的原因是我們沒有讓神成為我們的第一（第1條）。</strong></p>
+            <p>當神不是我們生命的中心，我們就會以各種「神的替代品」（偶像）來填充那個位置。當這些替代品讓我們失望時（它們終究會），我們的荊棘反應就出現了。</p>
+          </div>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">二、羅馬書1章25節：偶像的定義</h3>
+            <div className="bg-white p-4 rounded border border-cyan-200 italic text-sm mb-2">
+              <p>「他們將神的真實變為虛謊，去敬拜、事奉受造之物，不事奉那造物的主，主乃是可稱頌的，直到永遠。阿們。」（羅馬書1章25節）</p>
+            </div>
+            <p className="mb-2">保羅在這裡定義了「偶像」：偶像是我們把對神的崇拜、信靠、和渴望轉移到任何受造之物上的結果。現代的偶像不一定是石頭雕像，而可能是：</p>
+            <ul className="list-disc list-inside space-y-1 ml-2">
+              <li><strong>舒適與安全：</strong>「只要我的生活安穩，我就沒事。」</li>
+              <li><strong>讚美與認可：</strong>「只要別人覺得我好，我就沒事。」</li>
+              <li><strong>掌控與秩序：</strong>「只要事情按我的計畫走，我就沒事。」</li>
+              <li><strong>愛與被需要：</strong>「只要重要的人愛我，我就沒事。」</li>
+              <li><strong>成就與卓越：</strong>「只要我表現優秀，我就沒事。」</li>
+            </ul>
+            <p className="mt-2">提摩太·凱勒（Timothy Keller）說：「罪是以任何替代神的事物作為救主和主的行動。」</p>
+          </div>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">三、雅各書4章1-4節：衝突的根源</h3>
+            <div className="bg-white p-4 rounded border border-cyan-200 italic text-sm mb-2">
+              <p>「你們中間的爭戰鬥毆是從哪裡來的呢？不是從你們百體中戰鬥之私慾來的嗎？你們貪戀，還是得不著；你們殺害、嫉妒，又不能得；你們爭戰鬥毆。你們得不著，是因為你們不求。你們求也得不著，是因為你們妄求，要浪費在你們的宴樂中。你們這些淫亂的人哪，豈不知與世俗為友就是與神為敵嗎？所以凡想要與世俗為友的，就是與神為敵了。」（雅各書4章1-4節）</p>
+            </div>
+            <p className="mb-2">這段經文揭示了荊棘的深層動力：</p>
+            <ul className="list-disc list-inside space-y-2 ml-2">
+              <li><strong>「百體中戰鬥之私慾」：</strong>衝突和問題的根源不在外面，而在我們內心的私慾。我們的身體（本性）充滿了對神以外的事物的渴望。</li>
+              <li><strong>「貪戀，還是得不著」：</strong>私慾的本質是永不滿足——我們越得到，越渴望更多。這是偶像的本性：它們總是要求更多，卻從不真正滿足。</li>
+              <li><strong>「不求」或「妄求」：</strong>我們的禱告問題揭示我們的偶像——我們不禱告（不依賴神），或者我們禱告只是為了讓神服事我們的私慾。真正的禱告是把自己的私慾帶到神面前，讓神改變我們的慾望。</li>
             </ul>
           </div>
-        )}
-      </div>
-
-      {/* 延伸探討 */}
-      <div className="mb-6 border border-indigo-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('exploration')} className="w-full px-5 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Search className="w-5 h-5 text-indigo-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">延伸探討</span>
-          </div>
-          {expanded['exploration'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['exploration'] && (
-          <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-indigo-700 mb-2">「私慾」的神學含義</h4>
-              <p className="text-gray-700 leading-relaxed text-sm">
-                雅各書4:1的「私慾」（hēdonē）原指感官快樂，但在新約的倫理框架中，它指任何讓心偏離神的渴望。馬丁路德在討論第一誡時說：「你所倚靠、仰賴的是什麼，那就是你的神。」這把「偶像崇拜」從宗教儀式擴展到日常生活的每個角落——金錢、關係、成就、安全感，都可能成為「神」。X光問題正是幫助我們用第一誡的眼光審視自己的心。
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-indigo-700 mb-2">十誡作為心靈地圖</h4>
-              <p className="text-gray-700 leading-relaxed text-sm">
-                十誡通常被視為行為規範，但本課把它用作「心靈地圖」——揭示心可能走錯的各種方向。這與耶穌對十誡的詮釋一致：祂把「殺人」擴展到心中的怒氣，把「姦淫」擴展到眼中的慾望（馬太福音5:21-30）。耶穌的詮釋告訴我們：律法從來不只是關於外在行為，而是關於心的向度。X光問題是把這個洞見應用到具體生活情境的工具。
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-indigo-700 mb-2">診斷與醫治的次序</h4>
-              <p className="text-gray-700 leading-relaxed text-sm">
-                作者強調X光診斷必須帶到十字架前，而非帶到更努力的自我改善前。這個次序很重要：先診斷（看清偶像），然後認罪（承認這是罪，不只是軟弱），然後轉向十字架（相信基督已為我們的偶像崇拜付上代價），然後以信心接受聖靈的更新。如果跳過認罪直接「努力改變」，會落入行為主義；如果只認罪卻不轉向恩典，會落入絕望主義。
-              </p>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* 反思問題 */}
-      <div className="mb-6 border border-amber-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('questions')} className="w-full px-5 py-3 bg-gradient-to-r from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <HelpCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">反思問題</span>
-          </div>
-          {expanded['questions'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['questions'] && (
-          <div className="p-5 bg-white space-y-3">
-            {[
-              '「如果只要……我就會快樂」——請誠實地把這個句子的空白填完。你填進去的東西，透露了你心裡的什麼？',
-              '在三十四個X光問題中，哪一個問題讓你感到不舒服或抗拒？這種反應本身告訴你什麼？',
-              '你有沒有某個長期的荊棘藪模式（例如：容易動怒、習慣性地批評他人、說話誇大其詞）？當你用X光問題來掃描它，你看到什麼樣的偶像在背後？',
-              '雅各書說我們「不求，所以得不著」。你的禱告生活是否反映了雅各書4:2-3所說的問題——要麼根本不求神，要麼求是為了滿足自己的私慾？',
-              '你有沒有曾經在「群體」中分享過你的X光結果？是什麼讓你覺得這很困難？',
-              '如果你真的相信神是夠用的（足以滿足你所有深層的需要），你今天的行為和反應會有什麼不同？',
-            ].map((q, i) => (
-              <div key={i} className="flex gap-3">
-                <span className="text-amber-600 font-bold flex-shrink-0">{i + 1}.</span>
-                <p className="text-gray-700">{q}</p>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">四、「X光問題」——探測你的偶像</h3>
+            <p className="mb-2">大衛·鮑利生（David Powlison）和提摩太·凱勒（Timothy Keller）發展了一系列「X光問題」，幫助我們透過外在的行為看見內心的偶像。以下是34個問題中最核心的幾個：</p>
+            <div className="space-y-3">
+              <div className="bg-white p-4 rounded border border-cyan-200">
+                <p className="font-bold text-cyan-700 mb-2">關於欲求（渴望）</p>
+                <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+                  <li>什麼讓你最沮喪、最憤怒、最焦慮？（你最怕失去的，往往就是你的偶像）</li>
+                  <li>如果你能改變你的情況，你最想改變什麼？為什麼？</li>
+                  <li>你夢想中的「完美生活」是什麼樣子？那個「完美」裡面，神佔多大的比例？</li>
+                  <li>你花最多時間擔心的是什麼？</li>
+                </ul>
               </div>
-            ))}
+              <div className="bg-white p-4 rounded border border-cyan-200">
+                <p className="font-bold text-cyan-700 mb-2">關於行為（荊棘的來源）</p>
+                <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+                  <li>在哪些情境下，你最容易失控（憤怒、崩潰、操控別人）？那個觸發點背後，你渴望的是什麼？</li>
+                  <li>你最難饒恕的是什麼樣的傷害？為什麼這種傷害特別難接受？（你保護的，往往就是你的偶像）</li>
+                  <li>你願意說謊（或隱瞞真相）是為了得到什麼？</li>
+                </ul>
+              </div>
+              <div className="bg-white p-4 rounded border border-cyan-200">
+                <p className="font-bold text-cyan-700 mb-2">關於信靠（偶像的替代品）</p>
+                <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+                  <li>如果神永遠不解決你目前最大的問題，你還能說神是好的嗎？</li>
+                  <li>當你不確定某件事時，你第一個尋求的是什麼（或是誰）的確保？</li>
+                  <li>是什麼給你帶來最深的滿足感和成就感？那個來源是神，還是其他事物？</li>
+                </ul>
+              </div>
+            </div>
           </div>
-        )}
-      </div>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">五、「塞車比喻」——偶像在關係中的表現</h3>
+            <p className="mb-2">保羅·區普用「塞車比喻」說明偶像如何在日常關係中製造衝突：</p>
+            <div className="bg-white p-4 rounded border border-cyan-200">
+              <p className="italic text-sm mb-2">想像你被塞車困住，趕不上一個重要的會議。你的反應是什麼？你是否對同車的人發脾氣，或者在心裡咒罵前方的駕駛？</p>
+              <p className="text-sm text-gray-700">塞車不是你的問題的根源——你對「準時」或「掌控」的渴望才是根源。如果準時對你不那麼重要，塞車只是一個不方便；但如果「準時」已經成為你的偶像（你的身分感、你的安全感依附在上面），那麼任何阻礙準時的事物都會觸發你的荊棘反應。</p>
+              <p className="text-sm text-gray-700 mt-2">同樣的道理適用於所有的人際衝突：你對配偶的憤怒、對孩子的失望、對朋友的失望——它們背後都有一個「偶像」在說：「你應該讓我的渴望得到滿足！」</p>
+            </div>
+          </div>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">六、荊棘中的六種典型藉口</h3>
+            <p className="mb-2">當我們的荊棘反應出現後，我們通常用藉口來保護自己：</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {[
+                { excuse: '「我就是這種人。」', response: '這是認命，不是誠實。基督改變人的心，你不必永遠是「這種人」。' },
+                { excuse: '「要不是因為那個人（那件事）……」', response: '把責任全推給外在因素，讓你永遠不需要改變自己。' },
+                { excuse: '「我已經盡力了。」', response: '這可能是真的，但也可能是停止成長的藉口。神的恩典夠不夠？' },
+                { excuse: '「你不了解我經歷了什麼。」', response: '你的苦難是真實的，但苦難不能成為荊棘反應的藉口。' },
+                { excuse: '「這只是我的個性。」', response: '個性可以影響表現形式，但不能為罪性反應辯護。' },
+                { excuse: '「我有改善了，只是還不夠完美。」', response: '進步是好的，但「比以前好」不等於「不需要繼續改變」。' },
+              ].map((item, i) => (
+                <div key={i} className="bg-white p-3 rounded border border-orange-200">
+                  <p className="font-bold text-orange-700 text-sm mb-1">藉口：{item.excuse}</p>
+                  <p className="text-sm text-gray-700">回應：{item.response}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* 具體實踐方針 */}
-      <div className="mb-6 border border-green-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('practice')} className="w-full px-5 py-3 bg-gradient-to-r from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">具體實踐方針</span>
+      {/* 作業 */}
+      <section className="border-l-4 border-green-400 bg-green-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Heart className="w-6 h-6 text-green-600" />
+          <h2 className="text-xl font-bold text-green-700">作業：偶像探測與自我成長方案深化</h2>
+        </div>
+        <div className="space-y-4">
+          <div className="bg-white p-4 rounded border border-green-200">
+            <h3 className="font-bold text-green-700 mb-2">完成「X光問題」練習</h3>
+            <p className="text-gray-700 mb-2">誠實地回答以下問題，並思考它們揭示了你心中什麼樣的偶像：</p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700">
+              <li>你目前生命中最大的恐懼是什麼？（害怕失去什麼？）</li>
+              <li>當事情不按你的計畫走時，你第一個反應是什麼？這個反應揭示了你最深的渴望是什麼？</li>
+              <li>在你最親密的關係中，你最常期望對方做到什麼？當對方做不到時你的反應如何？</li>
+              <li>如果明天你的＿＿＿（填入你認為最重要的東西）被奪去，你的人生還有意義嗎？</li>
+            </ul>
           </div>
-          {expanded['practice'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['practice'] && (
-          <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">🔦 X光自我掃描功課</h4>
-              <p className="text-gray-700 text-sm mb-2">選擇一個你目前正面對的困難（炎熱），用以下問題掃描你的心：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>在這個情況中，我最害怕失去什麼？</li>
-                <li>我最渴望得到什麼（除了神的榮耀以外）？</li>
-                <li>如果我得不到這個，我的反應是什麼？（憤怒？絕望？操控？）</li>
-                <li>這個渴望本身是罪嗎，還是它的優先次序錯了？</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">📝 十誡個人默想</h4>
-              <p className="text-gray-700 text-sm mb-2">本週讀申命記5章，把每一條誡命應用到你目前最困難的人際關係：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>在這段關係中，我有沒有把神放在第一位？</li>
-                <li>我有沒有把這個人（或他們的認可）當作「神」來對待？</li>
-                <li>我對這個人的言語是誠實的、造就人的嗎？</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">✍️ 認罪禱告日記</h4>
-              <p className="text-gray-700 text-sm mb-2">每天花5分鐘，把X光問題掃描出的偶像寫下來，然後用以下格式禱告：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>「主啊，我承認我今天把___看得比祢更重要」</li>
-                <li>「這讓我做了/想了___」</li>
-                <li>「感謝祢在基督裡赦免了我的偶像崇拜」</li>
-                <li>「求祢讓我的心重新以祢為最大的渴望」</li>
-              </ul>
-            </div>
-            <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-              <h4 className="font-semibold text-green-700 mb-2">🙏 禱告</h4>
-              <p className="text-gray-600 text-sm italic">
-                「主啊，祢是那位鑒察人心的神，祢認識我比我認識自己更深。求祢用祢的話語如X光般照射我的心，讓我看見那些取代了祢位置的偶像。我承認我的心詭詐，我需要祢的光才能看清自己。感謝祢在基督裡為我的一切罪和偶像付上代價。求祢讓我的心越來越以祢為滿足，不再尋求別處的安慰。奉主耶穌的名，阿們。」
-              </p>
-            </div>
+          <div className="bg-white p-4 rounded border border-green-200">
+            <h3 className="font-bold text-green-700 mb-2">深化自我成長方案</h3>
+            <p className="text-gray-700 mb-2">針對你目前最大的炎熱和荊棘，現在深化分析：</p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700">
+              <li>你的荊棘反應背後，是什麼偶像（渴望）在驅動？</li>
+              <li>這個偶像是真實美好的事物（如家庭、工作）還是自私的渴望？（注意：偶像常常是好事物被放在了錯誤的位置）</li>
+              <li>你願意把這個「偶像」帶到神面前，求祂改變你的渴望嗎？</li>
+            </ul>
           </div>
-        )}
-      </div>
+          <div className="bg-white p-4 rounded border border-green-200">
+            <h3 className="font-bold text-green-700 mb-2">研讀雅各書4章1-10節</h3>
+            <p className="text-gray-700 mb-2">閱讀雅各書4章1-10節，特別注意第7-10節雅各給出的回應之道：</p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700">
+              <li>「順服神」（第7節）在你目前的情境中意味著什麼？</li>
+              <li>「抵擋魔鬼」（第7節）——魔鬼如何在你的具體情境中誘惑你走向荊棘反應？</li>
+              <li>「親近神」（第8節）——你目前如何在你的炎熱中親近神？</li>
+              <li>「在主面前自卑」（第10節）——具體地說，這對你意味著什麼行動？</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* 重點總結 */}
+      <section className="bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-200 p-6 rounded-xl">
+        <div className="flex items-center gap-3 mb-4">
+          <Star className="w-6 h-6 text-yellow-500 fill-yellow-500" />
+          <h2 className="text-xl font-bold text-sky-800">重點總結</h2>
+        </div>
+        <div className="space-y-3">
+          {[
+            '荊棘的根源不在外面，而在我們內心的「偶像」——那些我們把對神的渴望轉移到受造之物上的結果（羅馬書1:25）',
+            '申命記十誡的結構揭示：所有外在的罪（第2-9條）根源於貪戀（第10條），貪戀根源於沒有讓神作第一（第1條）',
+            '雅各書4章1-4節清楚指出：我們的衝突和荊棘反應，來自內心「私慾」的爭戰，而非外在情況的問題',
+            '「X光問題」幫助我們透過荊棘的表現，回溯到背後的偶像——我們最害怕失去的、最渴望得到的，往往就是我們的偶像',
+            '典型的藉口（「我就是這種人」「這是別人的錯」）阻礙我們看見自己的責任，也阻礙真實的改變',
+            '辨識偶像不是為了定罪，而是為了悔改和更新——把我們錯誤的渴望帶到神面前，讓神改變我們的心',
+          ].map((point, i) => (
+            <div key={i} className="flex items-start gap-3">
+              <span className="bg-sky-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">{i + 1}</span>
+              <p className="text-gray-700">{point}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 延伸CPR */}
+      <section className="border-l-4 border-indigo-400 bg-indigo-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <MessageCircle className="w-6 h-6 text-indigo-600" />
+          <h2 className="text-xl font-bold text-indigo-700">延伸反思</h2>
+        </div>
+        <div className="space-y-3 text-gray-700">
+          <div className="bg-white p-4 rounded border border-indigo-200">
+            <p className="font-bold text-indigo-700 mb-2">當好事物成為偶像</p>
+            <p>提摩太·凱勒提醒我們：偶像通常不是壞事物，而是好事物被放在了錯誤的位置。家庭是好的，但如果家庭的和睦成為我生命的終極意義，那麼家庭就成了偶像——當它出問題時，我的整個世界就崩潰了。你有沒有把一個好事物放在只有神才能佔據的位置上？</p>
+          </div>
+          <div className="bg-white p-4 rounded border border-indigo-200">
+            <p className="font-bold text-indigo-700 mb-2">從偶像到神：重新定向的禱告</p>
+            <p>當我們辨識了偶像之後，下一步是禱告——不是求神去除我們的問題，而是求神成為我們在那個領域的滿足。如果你的偶像是「被認可」，禱告可以是：「主啊，求祢成為我身分的根基，使我不再需要人的認可來感到安全。」這種禱告本身就是悔改的開始。</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 生活實踐 */}
+      <section className="border-l-4 border-lime-400 bg-lime-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Users className="w-6 h-6 text-lime-600" />
+          <h2 className="text-xl font-bold text-lime-700">生活實踐方針</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            { label: 'a. 寫下你的偶像清單', desc: '誠實地列出你心中最重要的3件事（你最怕失去的），然後問：這些佔了神的位置嗎？' },
+            { label: 'b. 偶像悔改禱告', desc: '針對你辨識出的主要偶像，每天用5分鐘做「重新定向的禱告」，求神成為那個空缺的滿足' },
+            { label: 'c. 讀申命記5章1-21節', desc: '從偶像的角度重新讀十誡，看你在哪些誡命上最掙扎，那就是你偶像所在的領域' },
+            { label: 'd. 注意你的觸發點', desc: '本週記錄：每當你出現荊棘反應，停下來問「我被剝奪了什麼？我渴望的是什麼？」' },
+            { label: 'e. 向信任的人坦承', desc: '分享你辨識出的偶像給一位信任的弟兄姐妹，請他們與你一起禱告並互相問責' },
+            { label: 'f. 更新自我成長方案', desc: '把「我的偶像是___」加入你的自我成長方案，讓荊棘的分析更完整、更誠實' },
+          ].map((item, i) => (
+            <div key={i} className="bg-white p-4 rounded border border-lime-200">
+              <p className="font-bold text-lime-700 mb-1">{item.label}</p>
+              <p className="text-gray-700 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

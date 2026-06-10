@@ -1,249 +1,262 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Star, Search, HelpCircle, Check } from 'lucide-react';
+import React from 'react';
+import { BookOpen, Star, MessageCircle, Lightbulb, Heart, Sun, Target, Users } from 'lucide-react';
 
 export default function Book27Ch12() {
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({
-    content: true,
-    summary: true,
-    exploration: true,
-    questions: true,
-    practice: true,
-  });
-
-  const toggleSection = (id: string) => {
-    setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
-  };
-
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">第十二課</h1>
-        <h2 className="text-xl font-semibold text-gray-700">令人耳目一新的善果（果實篇下）</h2>
-        <p className="text-sm text-gray-500 mt-2">詩篇 4篇；以賽亞書 58:1–12；何西阿書 14:1–9</p>
-      </div>
+    <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+      <h1 className="text-3xl font-bold text-emerald-700 mb-2">第12課：令人耳目一新的善果——果實篇（下）</h1>
+      <p className="text-gray-500 text-sm">學員本 · 《人如何改變》保羅·區普</p>
 
-      {/* 主要內容 */}
-      <div className="mb-6 border border-emerald-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('content')} className="w-full px-5 py-3 bg-gradient-to-r from-emerald-50 to-green-50 hover:from-emerald-100 hover:to-green-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Star className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">主要內容</span>
-          </div>
-          {expanded['content'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['content'] && (
-          <div className="p-5 bg-white space-y-6">
-            <div>
-              <h3 className="text-lg font-semibold text-emerald-700 mb-3">詩篇4篇：在炎熱中結出平安的果子</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                詩篇4篇是大衛在一個嚴峻炎熱中所寫的詩：他被誣告，被仇敵圍攻，可能正是押沙龍叛亂的時期。但這首詩展示了一個在極度炎熱中，心仍然倚靠神所結出的「令人耳目一新的善果」。
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                詩篇4:1-5：「神啊，你是我公義的神，我呼求的時候，求你應允我……你們愛虛榮……你們親近謊言……要知道耶和華已經分別虔誠人歸他自己；我呼求耶和華，他必聽我。你們應當畏懼，不可犯罪；在床上的時候，要心裡思想，並要肅靜。你們當以公義獻祭，且當倚靠耶和華。」
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                大衛的心路歷程是HEAT模式的完整示範：炎熱（被誣告，仇敵攻擊）→ 他選擇的不是荊棘藪（報復、逃避、自憐），而是→ 轉向神呼求（十字架式的信靠）→ 結出平安的果子（詩篇4:8：「我必安然躺下睡覺，因為獨有你耶和華使我安然居住」）。
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                詩篇4:7-8是果實的最終描述：「你使我心裡快樂，勝過那豐收五穀新酒的人。我必安然躺下睡覺，因為獨有你耶和華使我安然居住。」這種在炎熱中的「安然」，不是環境的安然，而是心倚靠神的安然。這就是「令人耳目一新的善果」。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-emerald-700 mb-3">大衛與押沙龍：果實的真實考驗</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                如果說詩篇4篇是屬靈果實的詩歌描述，那麼大衛與押沙龍的故事（撒母耳記下15-18章）就是它最嚴峻的現實考驗。押沙龍，大衛自己的兒子，陰謀奪取他的王位，迫使他在人生最低谷逃離耶路撒冷。
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                在這個炎熱中，大衛的回應令人驚訝：當示每咒罵他、丟石頭，亞比篩說「讓我去砍下他的頭」，大衛說：「由他咒罵，因為耶和華吩咐他咒罵大衛。」（撒下16:11）這是好果樹的回應——不以惡報惡，相信神的主權在最屈辱的炎熱中仍然運行。
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                當押沙龍戰死，大衛的回應又令人意外：他不是勝利慶祝，而是哭泣（撒下18:33：「我兒押沙龍啊，我兒，我兒押沙龍啊！我恨不得替你死」）。這是一顆被神愛感化的心——即使仇敵是傷害他最深的人，他仍然愛他。這就是最令人耳目一新的善果：愛仇敵，愛那傷害你最深的人。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-emerald-700 mb-3">以賽亞書58：真實的果子，不是宗教表演</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                以賽亞書58章是先知對以色列人發出的嚴肅批評：他們禁食禱告，但卻是為了「使人看見」的表演（賽58:3-4）。神說：「你們禁食的日子，仍求利益，勒索你們的工人。你們禁食，卻彼此爭鬧，用惡拳打人。」（賽58:3-4）這是「假果子」——宗教外表，荊棘內心。
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                神所要的「真禁食」（賽58:6-7）是：「鬆開兇惡的繩，解下軛上的索，使被欺壓的得自由，折斷一切的軛；要把你的餅分給飢餓的人，將漂流的窮人接到你家中；見赤身的給他衣服遮體，顧恤自己的骨肉而不掩面。」這是真果實——從被神的愛感化的心中流露出來的公義、憐憫和慷慨。
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                神接著應許（賽58:8-11）：「這樣，你的光就必發現如早晨……你必像澆灌的園子，又像水流不絕的發源之地。」這是「好果樹」的圖像——不是偶爾結出一兩個果子，而是持續「像澆灌的園子」，源源不絕。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-emerald-700 mb-3">何西阿書14：悔改之後的豐盛果實</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                何西阿書14章是全書的高潮，也是整個《人如何改變》的結語。神呼召以色列悔改（何14:1-3），然後應許悔改後的豐盛更新（何14:4-8）：
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3 italic border-l-4 border-emerald-300 pl-4">
-                「我必醫治他們背道的病，甘心愛他們，因為我的怒氣向他們轉消了。我必向以色列如甘露，他必如百合花開放，如黎巴嫩的樹木扎根……他的枝條必延伸，他的榮華如橄欖樹，他的香氣如黎巴嫩的香柏木。」（何14:4-6）
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                這是對HEAT模式最美麗的總結：當一個人真正悔改，從荊棘藪轉向十字架，神的恩典就「如甘露」澆灌，使他像「百合花開放」，像「黎巴嫩的樹木扎根」，結出「如橄欖樹」的榮華果實。
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                何西阿書14:9是全書最後的智慧呼召：「誰是智慧人，可以明白這些事；誰是通達人，可以知道這一切。因為耶和華的道是正直的；義人必在其上行走，罪人卻在其上跌倒。」這是一個邀請：走在神的道上，是義人（好果樹）的道路；拒絕這條路，是罪人（荊棘藪）的跌倒。《人如何改變》的答案，最終是：靠著神的恩典，一步步走在這條道路上。
-              </p>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* 重點總結 */}
-      <div className="mb-6 border border-sky-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('summary')} className="w-full px-5 py-3 bg-gradient-to-r from-sky-50 to-blue-50 hover:from-sky-100 hover:to-blue-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Star className="w-5 h-5 text-sky-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">重點總結</span>
-          </div>
-          {expanded['summary'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['summary'] && (
-          <div className="p-5 bg-white">
-            <ul className="space-y-2">
-              {[
-                '詩篇4篇：大衛在政治危機（押沙龍叛亂）中，選擇倚靠神而非荊棘藪，結出「安然躺下睡覺」的平安果子——這是在炎熱中最令人驚訝的善果。',
-                '大衛對押沙龍的愛（撒下18:33）是最高的果實示範：愛那傷害你最深的人。這種愛不是情感的強迫，而是被神的愛感化後自然流露的結果。',
-                '以賽亞書58章區分了「假果子」（宗教表演）和「真果實」（從被神愛感化的心流露的公義、憐憫、慷慨）。神要的是真果實，不是屬靈的排場。',
-                '何西阿書14章是HEAT模式的最終圖景：悔改的人，神的恩典「如甘露」澆灌，使他像百合花開放、如橄欖樹結果，「像澆灌的園子」持續豐盛。',
-                '《人如何改變》的最終答案：靠著神的恩典，在炎熱中一次次選擇轉向十字架而非荊棘藪，漸漸成為一棵結果豐盛的好果樹——這是一生的旅程，也是神對每位信徒的心意。',
-              ].map((point, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="w-5 h-5 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
-                  <p className="text-gray-700">{point}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-
-      {/* 延伸探討 */}
-      <div className="mb-6 border border-indigo-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('exploration')} className="w-full px-5 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Search className="w-5 h-5 text-indigo-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">延伸探討</span>
-          </div>
-          {expanded['exploration'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['exploration'] && (
-          <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-indigo-700 mb-2">大衛的失敗與果實：不是道德英雄</h4>
-              <p className="text-gray-700 leading-relaxed text-sm">
-                大衛是聖經中「按照神心意的人」（使徒行傳13:22），但他也犯下了姦淫和謀殺（拔示巴/烏利亞的故事）。他的押沙龍問題部分也是他自己不當家庭管理的後果。然而神仍然在他生命中工作，讓他結出詩篇4篇那樣的果子。這告訴我們：「果實」不是完美主義的成就，而是一個有失敗歷史的人，持續悔改、持續倚靠神所漸漸結出的真實成長。大衛的生命是《人如何改變》最真實的活教材。
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-indigo-700 mb-2">以賽亞書58與社會公義</h4>
-              <p className="text-gray-700 leading-relaxed text-sm">
-                以賽亞書58的「真禁食」呼召信徒關注社會公義——「使被欺壓的得自由、把餅分給飢餓的人、接漂流的窮人到家」。這揭示了一個重要的屬靈事實：真正的屬靈果實必然有社會向度。一個生命真的被福音改變的人，不只是在個人靈修上有所成長，也必然在對社會最弱勢的人的態度上有所改變。屬靈的更新與社會的憐憫，在聖經中從來不是分離的。
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-indigo-700 mb-2">何西阿書的終末盼望</h4>
-              <p className="text-gray-700 leading-relaxed text-sm">
-                何西阿書14章「百合花開放、黎巴嫩扎根、橄欖樹榮華」的圖像，不只是個人改變的描述，也指向末世的盼望——神國完全實現時的豐盛景象。《人如何改變》所描述的HEAT模式改變，是這個終末盼望的「預嘗」（foretaste）：當信徒在炎熱中倚靠十字架結出果實，他們的生命成為了「已然而未然」神國的活見證。每一次真實的改變，都是末世盼望在現今時代的一道閃光。
-              </p>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* 反思問題 */}
-      <div className="mb-6 border border-amber-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('questions')} className="w-full px-5 py-3 bg-gradient-to-r from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <HelpCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">反思問題</span>
-          </div>
-          {expanded['questions'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['questions'] && (
-          <div className="p-5 bg-white space-y-3">
+      {/* 複習/作業討論 */}
+      <section className="border-l-4 border-emerald-400 bg-emerald-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <BookOpen className="w-6 h-6 text-emerald-600" />
+          <h2 className="text-xl font-bold text-emerald-700">整體回顧與課程總結</h2>
+        </div>
+        <div className="bg-white p-4 rounded border border-emerald-200 space-y-3 text-gray-700">
+          <p><strong>課程回顧：</strong>這是最後一課。我們走完了整個旅程：</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
             {[
-              '詩篇4:8「我必安然躺下睡覺」——你的睡眠反映了你的心靈狀態嗎？你能坦然把重擔交給神，安然入睡，還是你的心在夜裡仍然為炎熱憂愁翻騰？',
-              '大衛對傷害他最深的人（仇敵示每、甚至逆子押沙龍）的回應，讓你看到了什麼？在你生命中，有沒有一個「押沙龍」——一個傷害你最深的人？你的回應更像荊棘藪還是大衛的果實？',
-              '以賽亞書58章的「假果子與真果實」對照，讓你看到自己屬靈生命的哪些部分是表演給人看的？',
-              '「像澆灌的園子，像水流不絕的發源之地」（賽58:11）——這個圖像描述了一種持續豐盛的生命。你的生命更像這個圖像，還是更像一棵偶爾結果、大多時候乾枯的樹？是什麼造成這個差異？',
-              '回顧整本《人如何改變》（HEAT模式），哪一個字母（炎熱、荊棘藪、十字架、果實）對你最有啟發，或最有挑戰？',
-              '何西阿書14:9說「誰是智慧人，可以明白這些事」——經過這十二課的學習，你認識到的「神的道」是什麼？你打算如何把它應用在你接下來的生命旅程中？',
-            ].map((q, i) => (
-              <div key={i} className="flex gap-3">
-                <span className="text-amber-600 font-bold flex-shrink-0">{i + 1}.</span>
-                <p className="text-gray-700">{q}</p>
+              { label: '炎熱', desc: '神的工具（第4-6課）' },
+              { label: '荊棘', desc: '罪的根源（第7-8課）' },
+              { label: '十字架', desc: '改變的樞紐（第9-10課）' },
+              { label: '果實', desc: '成長的結果（第11-12課）' },
+            ].map((item, i) => (
+              <div key={i} className="bg-emerald-50 p-3 rounded border border-emerald-300 text-center">
+                <p className="font-bold text-emerald-700">{item.label}</p>
+                <p className="text-xs text-gray-600">{item.desc}</p>
               </div>
             ))}
           </div>
-        )}
-      </div>
+          <p className="mt-2"><strong>作業討論：</strong>分享你在腓立比書研習中最有共鳴的一個段落，以及你在整個課程中看見自己生命中的哪些「果實跡象」。</p>
+        </div>
+      </section>
 
-      {/* 具體實踐方針 */}
-      <div className="mb-6 border border-green-100 rounded-lg overflow-hidden shadow-sm">
-        <button onClick={() => toggleSection('practice')} className="w-full px-5 py-3 bg-gradient-to-r from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 flex items-center justify-between transition-all">
-          <div className="flex items-center gap-2">
-            <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
-            <span className="font-semibold text-gray-800">具體實踐方針</span>
+      {/* CPR */}
+      <section className="border-l-4 border-teal-400 bg-teal-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Target className="w-6 h-6 text-teal-600" />
+          <h2 className="text-xl font-bold text-teal-700">重點與應用（CPR）</h2>
+        </div>
+        <div className="space-y-3 text-gray-700">
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">核心要點（Central Point）</p>
+            <p>詩篇4篇（大衛在危機中的禱告）和以賽亞書55章（神白白的邀請）告訴我們：生命中真正令人耳目一新的善果，往往不是來自環境的改善，而是來自一顆學會了在艱難中仍然信靠神的心。這樣的心能夠在炎熱中數算恩典，在荊棘中謙卑悔改，在十字架前重新得力，最終在意想不到的地方結出豐盛的果實。</p>
           </div>
-          {expanded['practice'] ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
-        </button>
-        {expanded['practice'] && (
-          <div className="p-5 bg-white space-y-4">
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">🌿 HEAT模式回顧</h4>
-              <p className="text-gray-700 text-sm mb-2">完成這個課程後，選擇你目前生命中最重要的一個「炎熱」，用HEAT完整框架分析：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li><strong>H（炎熱）</strong>：具體的處境是什麼？神在其中可能的旨意是什麼？</li>
-                <li><strong>T（荊棘藪）</strong>：我目前最常落入的回應模式是哪種？背後的偶像是什麼？</li>
-                <li><strong>C（十字架）</strong>：加拉太書2:20的哪個要素，是我在這個炎熱中最需要抓住的？</li>
-                <li><strong>F（果實）</strong>：如果我真的靠十字架回應這個炎熱，我的生命會結出什麼樣的果實？</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">📖 詩篇4篇與何西阿書14章背誦</h4>
-              <p className="text-gray-700 text-sm mb-2">嘗試背誦以下兩節經文，作為果實生命的提醒：</p>
-              <div className="space-y-2">
-                <div className="bg-emerald-50 rounded p-3 text-sm text-gray-700 italic">
-                  「我必安然躺下睡覺，因為獨有你耶和華使我安然居住。」（詩篇4:8）
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">個人應用（Personal）</p>
+            <p>在這個課程結束時，你最大的收穫是什麼？你在自己的生命中看到了什麼樣的改變？你最渴望繼續在哪個方面成長？</p>
+          </div>
+          <div className="bg-white p-4 rounded border border-teal-200">
+            <p className="font-bold text-teal-700 mb-1">人際應用（Relational）</p>
+            <p>這個課程如何改變了你的一段重要關係？你在關係中的改變，對對方有什麼具體的影響？你希望繼續如何成長？</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 主要問題 */}
+      <section className="text-center bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 p-8 rounded-xl">
+        <Sun className="w-10 h-10 text-emerald-600 mx-auto mb-3" />
+        <h2 className="text-xl font-bold text-emerald-800 mb-3">本課主要問題</h2>
+        <p className="text-2xl font-bold text-emerald-700 leading-relaxed">
+          「在何處神呼召你去實現<br />你身為神兒女的潛力，<br />並且讓你的生命結出豐盛的善果？」
+        </p>
+      </section>
+
+      {/* 課程內容 */}
+      <section className="border-l-4 border-cyan-400 bg-cyan-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Lightbulb className="w-6 h-6 text-cyan-600" />
+          <h2 className="text-xl font-bold text-cyan-700">課程內容</h2>
+        </div>
+        <div className="space-y-5 text-gray-700">
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">一、詩篇4篇——大衛在洞穴中的故事</h3>
+            <p className="mb-2">詩篇4篇（與詩篇3篇一起）被認為是大衛在兒子押沙龍叛變、被迫逃離耶路撒冷時所寫的。這是他生命中最大的炎熱之一——不是外敵的攻擊，而是親生兒子的背叛。然而，在這個極度炎熱中，大衛展現了三個重要的回應：</p>
+            <div className="space-y-3">
+              <div className="bg-white p-4 rounded border border-cyan-200">
+                <p className="font-bold text-cyan-700 mb-1">第一個回應：向神呼求，而非向人尋求解決</p>
+                <div className="italic text-sm mb-2">
+                  <p>「我的神，我的義啊，我呼籲的時候，求你應允我！我在急難中，你曾使我寬廣；現在求你憐恤我，聽我的禱告。」（詩篇4章1節）</p>
                 </div>
-                <div className="bg-emerald-50 rounded p-3 text-sm text-gray-700 italic">
-                  「我必醫治他們背道的病，甘心愛他們，因為我的怒氣向他們轉消了。」（何西阿書14:4）
+                <p className="text-sm text-gray-700">大衛第一個轉向是向神，不是向人（政治盟友、軍事力量）。在你的炎熱中，你的第一個轉向是哪裡？</p>
+              </div>
+              <div className="bg-white p-4 rounded border border-cyan-200">
+                <p className="font-bold text-cyan-700 mb-1">第二個回應：在憤怒中仍然安靜省察</p>
+                <div className="italic text-sm mb-2">
+                  <p>「你們動怒卻不要犯罪；在床上的時候，要心裡思想，並要肅靜。」（詩篇4章4節）</p>
                 </div>
+                <p className="text-sm text-gray-700">大衛承認憤怒的存在（押沙龍的背叛值得憤怒），但他選擇「肅靜」——讓憤怒在神面前沉澱，而不是立即用憤怒的行動回應。這是「荊棘」和「果實」之間的那個關鍵選擇。</p>
+              </div>
+              <div className="bg-white p-4 rounded border border-cyan-200">
+                <p className="font-bold text-cyan-700 mb-1">第三個回應：在最黑暗的夜晚擁有平安</p>
+                <div className="italic text-sm mb-2">
+                  <p>「我必安然躺下睡覺，因為獨有你耶和華使我安然居住。」（詩篇4章8節）</p>
+                </div>
+                <p className="text-sm text-gray-700">在兒子叛變、自己逃難的夜晚，大衛說「我必安然躺下睡覺」——這是什麼樣的平安？是建立在環境安全上的嗎？不，是建立在「獨有你耶和華」上的。這就是果實在最黑暗炎熱中的最終表現。</p>
               </div>
             </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">🤝 與群體分享成長故事</h4>
-              <p className="text-gray-700 text-sm mb-2">在小組或與一位信任的弟兄/姊妹分享：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>在這十二課中，神如何使用某一個炎熱，讓你看見自己的荊棘藪？</li>
-                <li>你有沒有一個「令你耳目一新」的成長時刻——一個你驚訝地發現自己不一樣了的時刻？</li>
-                <li>未來你最想繼續操練HEAT模式的哪個部分？</li>
-              </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">二、以賽亞書58章——真正的禁食和善果</h3>
+            <div className="bg-white p-4 rounded border border-cyan-200 italic text-sm mb-2">
+              <p>「我所揀選的禁食不是這樣嗎？是要解開兇惡的繩，使被欺壓的得自由，折斷一切的軛嗎？不是要把你的餅分給飢餓的人，將飄流的窮人接到你家中；見赤身的，給他衣服，不離棄自己的骨肉嗎？這樣，你的光就必發現如早晨，你所得的醫治必速速來到。」（以賽亞書58章6-8節）</p>
             </div>
-            <div>
-              <h4 className="font-semibold text-green-700 mb-2">✍️ 給未來的自己的信</h4>
-              <p className="text-gray-700 text-sm mb-2">寫一封短信給一年後的自己，包含：</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 text-sm">
-                <li>你希望一年後在哪個領域，你的生命更像好果樹？</li>
-                <li>你打算做什麼讓這個改變發生（記得：靠神的恩典，不是靠意志力）？</li>
-                <li>一句你想一年後仍然相信的關於神的真理</li>
-              </ul>
+            <p className="mb-2">以賽亞書58章批評了一種「宗教型」的敬虔——人們行禁食、宗教行為，但心中充滿自私和對人的不公正。神說：真正的敬虔（真正的果實）表現在：</p>
+            <ul className="list-disc list-inside space-y-1 ml-2">
+              <li><strong>解放被壓迫的：</strong>真正的信仰推動我們關心社會上的弱勢群體</li>
+              <li><strong>分享我們的資源：</strong>把餅分給飢餓的人——不只是屬靈的給予，也是物質的給予</li>
+              <li><strong>接待無家可歸的：</strong>以具體的行動服事身邊的需要</li>
+              <li><strong>不離棄自己的骨肉：</strong>在最親密的關係中（家人），活出敬虔的果實</li>
+            </ul>
+            <p className="mt-2">保羅·區普提醒我們：以十字架為中心的生活，最終一定會表現在對社會和對他人的關愛上。改變不是私人的屬靈成就，而是使我們成為神在世界中恩典的管道。</p>
+          </div>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">三、以賽亞書55章1-2節——神白白的邀請</h3>
+            <div className="bg-white p-4 rounded border border-cyan-200 italic text-sm mb-2">
+              <p>「你們一切乾渴的都當就近水來；沒有銀錢的也可以來，你們都來，買了吃！不用銀錢，不用價值，也來買酒和奶。你們為何花錢買那不足為食物的，用勞碌得來的買那不使人飽足的呢？你們要留心聽我的話，就能吃那美物，得享肥甘，心中喜樂。」（以賽亞書55章1-2節）</p>
             </div>
-            <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-              <h4 className="font-semibold text-green-700 mb-2">🙏 課程結束禱告</h4>
-              <p className="text-gray-600 text-sm italic">
-                「父神啊，感謝祢透過這十二課，讓我看見自己的心——那些荊棘藪的部分，也讓我看見祢的心——那無盡的恩典和甘願愛我們的神。我承認我無法靠自己改變，但我相信祢是那位說『我必醫治他們背道的病，甘心愛他們』的神。求祢繼續在我裡面動工，在每一個炎熱中提醒我轉向十字架，讓我一步步成為那棵靠近祢活水、結果豐盛的好樹。感謝祢，這是祢的工作，不是我的。奉主耶穌基督的名，阿們。」
-              </p>
+            <p className="mb-2">這段話是整個課程最美的總結：神的邀請是白白的、開放的、不需要資格的。所有「乾渴的」都可以來——無論你的炎熱有多大，無論你的荊棘有多深，無論你的罪有多重。</p>
+            <p>「你們為何花錢買那不足為食物的？」——這是一個尖銳的問題：我們花費多少時間和精力，試圖從這個世界（偶像）得到滿足，結果卻仍然空虛？神的邀請是：放下你的偶像，來到我這裡，「就能吃那美物，得享肥甘，心中喜樂。」這就是果實的最終源頭——神自己。</p>
+          </div>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">四、何西阿書14章5-7節——復興後的善果圖景</h3>
+            <div className="bg-white p-4 rounded border border-cyan-200 italic text-sm mb-2">
+              <p>「我必向以色列如甘露；他必如百合花開放，如利巴嫩的樹木扎根。他的枝條必延伸，他的榮華如橄欖樹；他的香氣如利巴嫩的香柏木。住在他蔭下的必歸回，發旺如五穀，開花如葡萄樹；他的香氣如利巴嫩的酒。」（何西阿書14章5-7節）</p>
+            </div>
+            <p className="mb-2">這段話是何西阿書的結尾，在以色列人悔改歸回神之後（第4節），神所應許的復興圖景。注意幾個生動的圖像：</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              {[
+                { image: '百合花開放', meaning: '美麗、純潔的生命見證，在炎熱的曠野中開花' },
+                { image: '橄欖樹的榮華', meaning: '豐盛的生命力，果實纍纍，供應他人的需要' },
+                { image: '利巴嫩的香氣', meaning: '屬靈生命的芬芳，影響周圍的人，吸引他們歸向神' },
+              ].map((item, i) => (
+                <div key={i} className="bg-white p-3 rounded border border-emerald-200 text-center">
+                  <p className="font-bold text-emerald-700 mb-1">「{item.image}」</p>
+                  <p className="text-sm text-gray-700">{item.meaning}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-3">這幅圖景是神給我們的盼望：當我們從炎熱→荊棘→十字架→果實這條道路走過，我們的生命不只是「自己不再那麼痛苦」，而是成為「香氣」，使「住在他蔭下的必歸回」——我們的生命改變成為別人蒙恩的管道。</p>
+          </div>
+          <div>
+            <h3 className="font-bold text-cyan-700 mb-2">五、課程的永恆委託——繼續走這條路</h3>
+            <p className="mb-2">腓立比書1章6節是整個課程最有力的保證：「我深信那在你們心裡動了善工的，必成全這工，直到耶穌基督的日子。」</p>
+            <div className="bg-white p-4 rounded border border-cyan-200 space-y-2">
+              <p><strong>「那在你們心裡動了善工的」：</strong>神已經開始了在你生命中的工作。這個課程不是起點，而是你學習辨識神一直在做的工作的一個幫助。</p>
+              <p><strong>「必成全這工」：</strong>神不是用一半力量在做這件事——他的應許是「必成全」。無論你目前的成長有多緩慢，無論你的荊棘有多頑強，神的工作不會中途放棄。</p>
+              <p><strong>「直到耶穌基督的日子」：</strong>成全的時間表是永恆的——在今生，我們持續成長；在基督再來的日子，這個工作將完全成就。我們朝著這個終點前行，不是靠自己的力量，而是靠那「在我們裡面動了善工的」神。</p>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      </section>
+
+      {/* 作業：課程結束的反思 */}
+      <section className="border-l-4 border-green-400 bg-green-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Heart className="w-6 h-6 text-green-600" />
+          <h2 className="text-xl font-bold text-green-700">課程結束：反思與展望</h2>
+        </div>
+        <div className="space-y-4">
+          <div className="bg-white p-4 rounded border border-green-200">
+            <h3 className="font-bold text-green-700 mb-2">完整的課程反思</h3>
+            <p className="text-gray-700 mb-2">回顧這整個課程（12課），誠實地回答：</p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700">
+              <li>在這個課程中，你對自己有什麼最重要的發現（關於你的炎熱、荊棘、偶像、身分）？</li>
+              <li>你的哪一個想法或對神的理解被最深刻地改變了？</li>
+              <li>你在哪段具體的關係或情境中，看到了真實的改變跡象？</li>
+              <li>你最感謝神在這個課程中做的哪一件事？</li>
+            </ul>
+          </div>
+          <div className="bg-white p-4 rounded border border-green-200">
+            <h3 className="font-bold text-green-700 mb-2">研讀詩篇4篇與以賽亞書55章</h3>
+            <p className="text-gray-700 mb-2">這週慢讀這兩段經文，並回答：</p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700">
+              <li>詩篇4章8節「安然躺下睡覺」的平安，在你生命中哪些時刻最難得到？什麼幫助你在那些時刻回到神？</li>
+              <li>以賽亞書55章1-2節問：「你們為何花錢買那不足為食物的？」你今天仍在哪些方面試圖從「不足為食物的」那裡得到滿足？</li>
+              <li>神的邀請是白白的——你在接受這個邀請時，有什麼是讓你難以「白白」接受的（如感覺自己不夠資格）？</li>
+            </ul>
+          </div>
+          <div className="bg-white p-4 rounded border border-green-200">
+            <h3 className="font-bold text-green-700 mb-2">制訂「繼續成長的計畫」</h3>
+            <p className="text-gray-700 mb-2">課程結束不是改變旅程的終點。制訂你繼續成長的具體計畫：</p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-gray-700">
+              <li>你要繼續使用「自我成長方案」嗎？多久一次？針對哪個炎熱？</li>
+              <li>你需要持續在哪個屬靈紀律上（如禱告、讀經、群體）投資，以便繼續結果實？</li>
+              <li>你要找誰繼續同行，彼此問責和鼓勵（即使課程結束了）？</li>
+              <li>你要如何把從這課程學到的，傳遞給你身邊的人？（如分享書、帶領小組、在關係中活出）</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* 重點總結 */}
+      <section className="bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-200 p-6 rounded-xl">
+        <div className="flex items-center gap-3 mb-4">
+          <Star className="w-6 h-6 text-yellow-500 fill-yellow-500" />
+          <h2 className="text-xl font-bold text-sky-800">重點總結（整個課程）</h2>
+        </div>
+        <div className="space-y-3">
+          {[
+            '詩篇4篇的大衛在極度炎熱中展現了果實的真實面貌：向神呼求、在憤怒中肅靜、在最黑暗的夜晚擁有建立在神身上的平安',
+            '以賽亞書58章告訴我們：真正的果實不只是個人的靈命成長，而是在社會和關係中，把神的恩典帶給飢餓的、窮困的、和被壓迫的人',
+            '以賽亞書55章是神白白的邀請——無論我們的炎熱有多大、荊棘有多深，神的邀請永遠是開放的，不需要我們的資格，只需要我們的就近',
+            '何西阿書的復興圖景（百合花、橄欖樹、香氣）是我們的盼望：當我們走過炎熱→荊棘→十字架，我們的生命成為別人蒙恩的管道',
+            '腓立比書1章6節是整個課程的保證：「那在你們心裡動了善工的，必成全這工」——改變的主角是神，我們的責任是配合和信靠',
+            '改變是終生的旅程——課程結束只是旅程中的一站；繼續活出炎熱→荊棘→十字架→果實的大圖畫，是每一個基督徒永恆的委託',
+          ].map((point, i) => (
+            <div key={i} className="flex items-start gap-3">
+              <span className="bg-sky-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">{i + 1}</span>
+              <p className="text-gray-700">{point}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 延伸CPR */}
+      <section className="border-l-4 border-indigo-400 bg-indigo-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <MessageCircle className="w-6 h-6 text-indigo-600" />
+          <h2 className="text-xl font-bold text-indigo-700">課程結束的祝福與默想</h2>
+        </div>
+        <div className="space-y-3 text-gray-700">
+          <div className="bg-white p-4 rounded border border-indigo-200">
+            <p className="font-bold text-indigo-700 mb-2">「耶和華如甘露」</p>
+            <p>何西阿書14章5節說：「我必向以色列如甘露。」甘露是安靜的、是豐盛的、是每天早晨更新的。神對你的恩典也是這樣的——不是轟轟烈烈的一次性改變，而是每天安靜地滋潤你，使你慢慢地、真實地生長。不要因為成長的緩慢而沮喪——神的甘露每天都在工作。</p>
+          </div>
+          <div className="bg-white p-4 rounded border border-indigo-200">
+            <p className="font-bold text-indigo-700 mb-2">寫給未來的自己</p>
+            <p>在課程結束時，寫一封信給「六個月後的自己」：描述你目前的炎熱、你正在成長的地方、和你的期望與委託。六個月後，再打開這封信，看看神的甘露如何在這段時間繼續工作。</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 生活實踐 */}
+      <section className="border-l-4 border-lime-400 bg-lime-50 p-6 rounded">
+        <div className="flex items-center gap-3 mb-4">
+          <Users className="w-6 h-6 text-lime-600" />
+          <h2 className="text-xl font-bold text-lime-700">生活實踐方針（持續的委託）</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            { label: 'a. 繼續使用自我成長方案', desc: '每月（或每當面對重大炎熱時）完整填寫一份自我成長方案，讓這個工具成為你持續成長的夥伴' },
+            { label: 'b. 建立持續的問責關係', desc: '邀請一位課程夥伴繼續每月見面，分享各自的炎熱、荊棘、和果實，彼此代禱、鼓勵和問責' },
+            { label: 'c. 閱讀《人如何改變》原著', desc: '用這個課程的架構重新閱讀保羅·區普的原著，讓更深的神學理解滋養你的持續成長' },
+            { label: 'd. 把善果傳遞給別人', desc: '找機會把這個課程介紹給身邊的人——一個掙扎中的朋友、一個新的小組——讓你的成長成為別人成長的起點' },
+            { label: 'e. 每年回顧詩篇4篇', desc: '每年（如每年的生日或年底），用詩篇4篇做反思禱告：我今年的炎熱是什麼？我是否安然躺下？' },
+            { label: 'f. 永遠記住腓立比書1章6節', desc: '把「那在你們心裡動了善工的，必成全這工」貼在你每天能看到的地方，讓這個應許支撐你每天的成長旅程' },
+          ].map((item, i) => (
+            <div key={i} className="bg-white p-4 rounded border border-lime-200">
+              <p className="font-bold text-lime-700 mb-1">{item.label}</p>
+              <p className="text-gray-700 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-6 bg-emerald-100 p-5 rounded-xl border border-emerald-300 text-center">
+          <p className="text-emerald-800 font-bold text-lg mb-2">課程結束的禱告</p>
+          <p className="text-gray-700 italic text-sm">「主啊，感謝祢帶領我走過這個課程。感謝祢揭示我心中的炎熱、荊棘、和偶像，也感謝祢讓我再次看見十字架的美麗。求祢繼續在我的生命中動善工，直到耶穌基督的日子。讓我的生命如甘露中的百合花，成為祢恩典的香氣。奉耶穌的名求，阿們。」</p>
+        </div>
+      </section>
     </div>
   );
 }
