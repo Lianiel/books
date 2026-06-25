@@ -374,6 +374,9 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter4', title: '第4章 生命的真光', path: '/book29/chapter4' },
     { id: 'chapter5', title: '第5章 天空上的水', path: '/book29/chapter5' },
     { id: 'chapter6', title: '第6章 陸地與植物', path: '/book29/chapter6' },
+    { id: 'chapter7', title: '第7章 日月與眾星', path: '/book29/chapter7' },
+    { id: 'chapter8', title: '第8章 安息的生命', path: '/book29/chapter8' },
+    { id: 'chapter9', title: '第9章 豐盛的生命', path: '/book29/chapter9' },
   ],
 };
 
@@ -407,7 +410,7 @@ const STATIC_BOOKS = [
   { book_id: 'book26', title: '言語的力量與神的奇妙', author: '約翰・派博 & 賈斯汀・泰勒 編輯', description: '六位當代神學家探討基督徒言語生活——言語與人心、舌頭的管治、雄辯與十字架、尖銳的言語、故事的力量、歌唱的奧祕，從不同角度呈現以神的榮耀為準則的言語神學。', chapters_count: 8 },
   { book_id: 'book27', title: '人如何改變', author: '提姆連恩 & 保羅區普（CCEF）', description: '以HEAT模式（炎熱→荊棘藪→十字架→果實）探討基督徒改變的神學——從耶利米書17章出發，揭示心的偶像如何在試煉中顯露，及十字架恩典如何帶來真實而持久的生命更新。', chapters_count: 13 },
   { book_id: 'book28', title: '人如何改變（教師本）', author: '提姆連恩 & 保羅區普（CCEF）', description: '《人如何改變》課程的教師本（Facilitator Guide）——為帶領者設計的實用指南。包含帶領流程、時間分配、關鍵教學點、討論引導技巧，及應對常見挑戰的策略，幫助帶領者有效引導學員經歷真實的屬靈改變。', chapters_count: 13 },
-  { book_id: 'book29', title: '指向終末的創世記', author: '', description: '以終末論視角詮釋創世記——從「起初」到「終末」，探索創造、墮落、洪水與族長歷史中隱藏的末世啟示。每章連結基督的工作、律法與福音、科學與信仰，以及華人文化背景，帶領讀者看見創世記如何從第一頁就指向萬物更新的終末榮耀。', chapters_count: 7 },
+  { book_id: 'book29', title: '指向終末的創世記', author: '', description: '以終末論視角詮釋創世記——從「起初」到「終末」，探索創造、墮落、洪水與族長歷史中隱藏的末世啟示。每章連結基督的工作、律法與福音、科學與信仰，以及華人文化背景，帶領讀者看見創世記如何從第一頁就指向萬物更新的終末榮耀。', chapters_count: 10 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -743,6 +746,9 @@ const Book29Ch3 = lazy(() => import('./components/book29/Book29Ch3'));
 const Book29Ch4 = lazy(() => import('./components/book29/Book29Ch4'));
 const Book29Ch5 = lazy(() => import('./components/book29/Book29Ch5'));
 const Book29Ch6 = lazy(() => import('./components/book29/Book29Ch6'));
+const Book29Ch7 = lazy(() => import('./components/book29/Book29Ch7'));
+const Book29Ch8 = lazy(() => import('./components/book29/Book29Ch8'));
+const Book29Ch9 = lazy(() => import('./components/book29/Book29Ch9'));
 
 const Book28Home = lazy(() => import('./components/book28/Book28Home'));
 const Book28Ch1 = lazy(() => import('./components/book28/Book28Ch01'));
@@ -1174,6 +1180,9 @@ const App: React.FC = () => {
         <Route path="/book29/chapter4" element={<BookLayout bookId="book29" chapter="chapter4" chapters={getChaptersForBook('book29')}><Book29Ch4 /></BookLayout>} />
         <Route path="/book29/chapter5" element={<BookLayout bookId="book29" chapter="chapter5" chapters={getChaptersForBook('book29')}><Book29Ch5 /></BookLayout>} />
         <Route path="/book29/chapter6" element={<BookLayout bookId="book29" chapter="chapter6" chapters={getChaptersForBook('book29')}><Book29Ch6 /></BookLayout>} />
+        <Route path="/book29/chapter7" element={<BookLayout bookId="book29" chapter="chapter7" chapters={getChaptersForBook('book29')}><Book29Ch7 /></BookLayout>} />
+        <Route path="/book29/chapter8" element={<BookLayout bookId="book29" chapter="chapter8" chapters={getChaptersForBook('book29')}><Book29Ch8 /></BookLayout>} />
+        <Route path="/book29/chapter9" element={<BookLayout bookId="book29" chapter="chapter9" chapters={getChaptersForBook('book29')}><Book29Ch9 /></BookLayout>} />
         <Route path="/book/29" element={<BookLayout bookId="book29" chapter="home" chapters={getChaptersForBook('book29')}><Book29Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
