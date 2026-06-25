@@ -52,6 +52,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book26: '言語的力量與神的奇妙',
   book27: '人如何改變',
   book28: '人如何改變（教師本）',
+  book29: '指向終末的創世記',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -365,6 +366,15 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter11', title: '第11課 內心真實的改變（果實篇上）', path: '/book28/chapter11' },
     { id: 'chapter12', title: '第12課 令人耳目一新的善果（果實篇下）', path: '/book28/chapter12' },
   ],
+  book29: [
+    { id: 'home', title: '緒論：指向終末的創世記', path: '/book29/home' },
+    { id: 'chapter1', title: '第1章 起初與終末', path: '/book29/chapter1' },
+    { id: 'chapter2', title: '第2章 神創造天地', path: '/book29/chapter2' },
+    { id: 'chapter3', title: '第3章 聖靈的工作', path: '/book29/chapter3' },
+    { id: 'chapter4', title: '第4章 生命的真光', path: '/book29/chapter4' },
+    { id: 'chapter5', title: '第5章 天空上的水', path: '/book29/chapter5' },
+    { id: 'chapter6', title: '第6章 陸地與植物', path: '/book29/chapter6' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -397,6 +407,7 @@ const STATIC_BOOKS = [
   { book_id: 'book26', title: '言語的力量與神的奇妙', author: '約翰・派博 & 賈斯汀・泰勒 編輯', description: '六位當代神學家探討基督徒言語生活——言語與人心、舌頭的管治、雄辯與十字架、尖銳的言語、故事的力量、歌唱的奧祕，從不同角度呈現以神的榮耀為準則的言語神學。', chapters_count: 8 },
   { book_id: 'book27', title: '人如何改變', author: '提姆連恩 & 保羅區普（CCEF）', description: '以HEAT模式（炎熱→荊棘藪→十字架→果實）探討基督徒改變的神學——從耶利米書17章出發，揭示心的偶像如何在試煉中顯露，及十字架恩典如何帶來真實而持久的生命更新。', chapters_count: 13 },
   { book_id: 'book28', title: '人如何改變（教師本）', author: '提姆連恩 & 保羅區普（CCEF）', description: '《人如何改變》課程的教師本（Facilitator Guide）——為帶領者設計的實用指南。包含帶領流程、時間分配、關鍵教學點、討論引導技巧，及應對常見挑戰的策略，幫助帶領者有效引導學員經歷真實的屬靈改變。', chapters_count: 13 },
+  { book_id: 'book29', title: '指向終末的創世記', author: '', description: '以終末論視角詮釋創世記——從「起初」到「終末」，探索創造、墮落、洪水與族長歷史中隱藏的末世啟示。每章連結基督的工作、律法與福音、科學與信仰，以及華人文化背景，帶領讀者看見創世記如何從第一頁就指向萬物更新的終末榮耀。', chapters_count: 7 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -427,6 +438,8 @@ const colorMap: Record<number, string> = {
   25: 'from-blue-500 to-purple-600',
   26: 'from-rose-600 to-red-700',
   27: 'from-emerald-500 to-green-600',
+  28: 'from-emerald-600 to-teal-700',
+  29: 'from-indigo-700 to-blue-900',
 };
 
 // ========== Book 1 章節（懶加載） ==========
@@ -723,6 +736,14 @@ const Book27Ch11 = lazy(() => import('./components/book27/Book27Ch11'));
 const Book27Ch12 = lazy(() => import('./components/book27/Book27Ch12'));
 
 // ========== Book 28 章節（懶加載） ==========
+const Book29Home = lazy(() => import('./components/book29/Book29Home'));
+const Book29Ch1 = lazy(() => import('./components/book29/Book29Ch1'));
+const Book29Ch2 = lazy(() => import('./components/book29/Book29Ch2'));
+const Book29Ch3 = lazy(() => import('./components/book29/Book29Ch3'));
+const Book29Ch4 = lazy(() => import('./components/book29/Book29Ch4'));
+const Book29Ch5 = lazy(() => import('./components/book29/Book29Ch5'));
+const Book29Ch6 = lazy(() => import('./components/book29/Book29Ch6'));
+
 const Book28Home = lazy(() => import('./components/book28/Book28Home'));
 const Book28Ch1 = lazy(() => import('./components/book28/Book28Ch01'));
 const Book28Ch2 = lazy(() => import('./components/book28/Book28Ch02'));
@@ -1144,6 +1165,16 @@ const App: React.FC = () => {
         <Route path="/book28/chapter11" element={<BookLayout bookId="book28" chapter="chapter11" chapters={getChaptersForBook('book28')}><Book28Ch11 /></BookLayout>} />
         <Route path="/book28/chapter12" element={<BookLayout bookId="book28" chapter="chapter12" chapters={getChaptersForBook('book28')}><Book28Ch12 /></BookLayout>} />
         <Route path="/book/28" element={<BookLayout bookId="book28" chapter="home" chapters={getChaptersForBook('book28')}><Book28Home /></BookLayout>} />
+
+        {/* ========== Book 29 - 指向終末的創世記 ========== */}
+        <Route path="/book29/home" element={<BookLayout bookId="book29" chapter="home" chapters={getChaptersForBook('book29')}><Book29Home /></BookLayout>} />
+        <Route path="/book29/chapter1" element={<BookLayout bookId="book29" chapter="chapter1" chapters={getChaptersForBook('book29')}><Book29Ch1 /></BookLayout>} />
+        <Route path="/book29/chapter2" element={<BookLayout bookId="book29" chapter="chapter2" chapters={getChaptersForBook('book29')}><Book29Ch2 /></BookLayout>} />
+        <Route path="/book29/chapter3" element={<BookLayout bookId="book29" chapter="chapter3" chapters={getChaptersForBook('book29')}><Book29Ch3 /></BookLayout>} />
+        <Route path="/book29/chapter4" element={<BookLayout bookId="book29" chapter="chapter4" chapters={getChaptersForBook('book29')}><Book29Ch4 /></BookLayout>} />
+        <Route path="/book29/chapter5" element={<BookLayout bookId="book29" chapter="chapter5" chapters={getChaptersForBook('book29')}><Book29Ch5 /></BookLayout>} />
+        <Route path="/book29/chapter6" element={<BookLayout bookId="book29" chapter="chapter6" chapters={getChaptersForBook('book29')}><Book29Ch6 /></BookLayout>} />
+        <Route path="/book/29" element={<BookLayout bookId="book29" chapter="home" chapters={getChaptersForBook('book29')}><Book29Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
         <Route path="/" element={
