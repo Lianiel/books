@@ -53,6 +53,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book27: '人如何改變',
   book28: '人如何改變（教師本）',
   book29: '指向終末的創世記',
+  book30: '科學創造論',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -378,6 +379,17 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter8', title: '第8章 安息的生命', path: '/book29/chapter8' },
     { id: 'chapter9', title: '第9章 豐盛的生命', path: '/book29/chapter9' },
   ],
+  book30: [
+    { id: 'home', title: '書本簡介', path: '/book30/home' },
+    { id: 'chapter1', title: '第1章 進化呢？還是創造？', path: '/book30/chapter1' },
+    { id: 'chapter2', title: '第2章 混亂呢？還是秩序？', path: '/book30/chapter2' },
+    { id: 'chapter3', title: '第3章 上坡呢？還是下坡？', path: '/book30/chapter3' },
+    { id: 'chapter4', title: '第4章 偶然呢？還是計劃？', path: '/book30/chapter4' },
+    { id: 'chapter5', title: '第5章 古今一致說呢？還是大天災說？', path: '/book30/chapter5' },
+    { id: 'chapter6', title: '第6章 年老呢？還是年輕？', path: '/book30/chapter6' },
+    { id: 'chapter7', title: '第7章 猿呢？還是人？', path: '/book30/chapter7' },
+    { id: 'chapter8', title: '第8章 聖經的創造史', path: '/book30/chapter8' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -411,6 +423,7 @@ const STATIC_BOOKS = [
   { book_id: 'book27', title: '人如何改變', author: '提姆連恩 & 保羅區普（CCEF）', description: '以HEAT模式（炎熱→荊棘藪→十字架→果實）探討基督徒改變的神學——從耶利米書17章出發，揭示心的偶像如何在試煉中顯露，及十字架恩典如何帶來真實而持久的生命更新。', chapters_count: 13 },
   { book_id: 'book28', title: '人如何改變（教師本）', author: '提姆連恩 & 保羅區普（CCEF）', description: '《人如何改變》課程的教師本（Facilitator Guide）——為帶領者設計的實用指南。包含帶領流程、時間分配、關鍵教學點、討論引導技巧，及應對常見挑戰的策略，幫助帶領者有效引導學員經歷真實的屬靈改變。', chapters_count: 13 },
   { book_id: 'book29', title: '指向終末的創世記', author: '', description: '以終末論視角詮釋創世記——從「起初」到「終末」，探索創造、墮落、洪水與族長歷史中隱藏的末世啟示。每章連結基督的工作、律法與福音、科學與信仰，以及華人文化背景，帶領讀者看見創世記如何從第一頁就指向萬物更新的終末榮耀。', chapters_count: 10 },
+  { book_id: 'book30', title: '科學創造論', author: '亨利·莫瑞士博士（Henry M. Morris, Ph.D.）主編　韓偉等譯', description: '創造研究社（ICR）科學家及顧問聯合執筆——以純科學角度比較「進化模式」與「創造模式」，從熱力學、古生物學、地質學、遺傳學、人類學各領域呈現創造模式的科學依據，完全不引用聖經，是教師與知識份子建立科學世界觀的重要參考。', chapters_count: 9 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -443,6 +456,7 @@ const colorMap: Record<number, string> = {
   27: 'from-emerald-500 to-green-600',
   28: 'from-emerald-600 to-teal-700',
   29: 'from-indigo-700 to-blue-900',
+  30: 'from-blue-600 to-indigo-600',
 };
 
 // ========== Book 1 章節（懶加載） ==========
@@ -749,6 +763,10 @@ const Book29Ch6 = lazy(() => import('./components/book29/Book29Ch6'));
 const Book29Ch7 = lazy(() => import('./components/book29/Book29Ch7'));
 const Book29Ch8 = lazy(() => import('./components/book29/Book29Ch8'));
 const Book29Ch9 = lazy(() => import('./components/book29/Book29Ch9'));
+
+// ========== Book 30 章節（懶加載） ==========
+const Book30Home = lazy(() => import('./components/book30/Book30Home'));
+const Book30Ch1 = lazy(() => import('./components/book30/Book30Ch1'));
 
 const Book28Home = lazy(() => import('./components/book28/Book28Home'));
 const Book28Ch1 = lazy(() => import('./components/book28/Book28Ch01'));
@@ -1184,6 +1202,11 @@ const App: React.FC = () => {
         <Route path="/book29/chapter8" element={<BookLayout bookId="book29" chapter="chapter8" chapters={getChaptersForBook('book29')}><Book29Ch8 /></BookLayout>} />
         <Route path="/book29/chapter9" element={<BookLayout bookId="book29" chapter="chapter9" chapters={getChaptersForBook('book29')}><Book29Ch9 /></BookLayout>} />
         <Route path="/book/29" element={<BookLayout bookId="book29" chapter="home" chapters={getChaptersForBook('book29')}><Book29Home /></BookLayout>} />
+
+        {/* ========== Book 30 - 科學創造論 ========== */}
+        <Route path="/book30/home" element={<BookLayout bookId="book30" chapter="home" chapters={getChaptersForBook('book30')}><Book30Home /></BookLayout>} />
+        <Route path="/book30/chapter1" element={<BookLayout bookId="book30" chapter="chapter1" chapters={getChaptersForBook('book30')}><Book30Ch1 /></BookLayout>} />
+        <Route path="/book/30" element={<BookLayout bookId="book30" chapter="home" chapters={getChaptersForBook('book30')}><Book30Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
         <Route path="/" element={
