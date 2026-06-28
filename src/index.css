@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* ========== Reader Typography Scaling ==========
+   標題隨讀者字體選擇器自動縮放（em 相對 <main> 繼承字級）
+   要回復：刪除此區塊即可
+   ================================================ */
+main h2 { font-size: calc(1em + 12px) !important; }
+main h3 { font-size: calc(1em + 8px) !important; }
+main h4 { font-size: calc(1em + 4px) !important; }
+main p  { font-size: 1em !important; }
+
 @layer utilities {
   .custom-scroll::-webkit-scrollbar {
     width: 6px;

@@ -273,7 +273,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             <div className="flex-1 min-w-0">
               <button
                 onClick={() => setShowChapterMenu(!showChapterMenu)}
-                className="w-full flex items-center justify-between gap-1 sm:gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all font-bold text-xs sm:text-sm"
+                className="w-full flex items-center justify-between gap-1 sm:gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all font-bold text-sm sm:text-base"
                 title="點擊選擇章節"
               >
                 <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
@@ -282,7 +282,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
                   <span className="opacity-60 mx-1">·</span>
                   {currentChapter?.title || chapter}
                 </span>
-                <span className="text-xs opacity-90 flex-shrink-0">{currentIndex + 1}/{chapters.length}</span>
+                <span className="text-sm opacity-90 flex-shrink-0">{currentIndex + 1}/{chapters.length}</span>
                 <List className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
               </button>
 
