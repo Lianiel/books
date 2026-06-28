@@ -767,6 +767,7 @@ const Book29Ch9 = lazy(() => import('./components/book29/Book29Ch9'));
 // ========== Book 30 章節（懶加載） ==========
 const Book30Home = lazy(() => import('./components/book30/Book30Home'));
 const Book30Ch1 = lazy(() => import('./components/book30/Book30Ch1'));
+const Book30Ch2 = lazy(() => import('./components/book30/Book30Ch2'));
 
 const Book28Home = lazy(() => import('./components/book28/Book28Home'));
 const Book28Ch1 = lazy(() => import('./components/book28/Book28Ch01'));
@@ -1206,6 +1207,7 @@ const App: React.FC = () => {
         {/* ========== Book 30 - 科學創造論 ========== */}
         <Route path="/book30/home" element={<BookLayout bookId="book30" chapter="home" chapters={getChaptersForBook('book30')}><Book30Home /></BookLayout>} />
         <Route path="/book30/chapter1" element={<BookLayout bookId="book30" chapter="chapter1" chapters={getChaptersForBook('book30')}><Book30Ch1 /></BookLayout>} />
+        <Route path="/book30/chapter2" element={<BookLayout bookId="book30" chapter="chapter2" chapters={getChaptersForBook('book30')}><Book30Ch2 /></BookLayout>} />
         <Route path="/book/30" element={<BookLayout bookId="book30" chapter="home" chapters={getChaptersForBook('book30')}><Book30Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
