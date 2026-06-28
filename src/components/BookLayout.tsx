@@ -170,6 +170,13 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     }
   };
 
+  // 預載語音列表
+  useEffect(() => {
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.getVoices();
+    window.speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
+  }, []);
+
   // TTS 控制
   const handleSpeak = () => {
     if (isPaused) {
@@ -184,33 +191,39 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       return;
     }
 
+    if (!('speechSynthesis' in window)) return;
     const mainContent = document.querySelector('main');
     if (!mainContent) return;
+    const textContent = (mainContent as HTMLElement).innerText.trim();
+    if (!textContent) return;
 
-    const textContent = mainContent.innerText;
-    const utterance = new SpeechSynthesisUtterance(textContent);
-    utterance.lang = 'zh-TW';
-    utterance.rate = speechRate;
-    
-    utterance.onstart = () => {
-      setIsSpeaking(true);
-      setIsPaused(false);
-    };
-    
-    utterance.onend = () => {
-      setIsSpeaking(false);
-      setIsPaused(false);
-      utteranceRef.current = null;
-    };
-    
-    utterance.onerror = () => {
-      setIsSpeaking(false);
-      setIsPaused(false);
-      utteranceRef.current = null;
-    };
+    window.speechSynthesis.cancel();
+    setIsSpeaking(true);
+    setIsPaused(false);
 
-    utteranceRef.current = utterance;
-    window.speechSynthesis.speak(utterance);
+    setTimeout(() => {
+      const utterance = new SpeechSynthesisUtterance(textContent);
+      utterance.lang = 'zh-TW';
+      utterance.rate = speechRate;
+
+      const voices = window.speechSynthesis.getVoices();
+      const zhVoices = voices.filter(v => v.lang === 'zh-TW' || v.lang.startsWith('zh'));
+      if (zhVoices.length > 0) utterance.voice = zhVoices[0];
+
+      utterance.onend = () => {
+        setIsSpeaking(false);
+        setIsPaused(false);
+        utteranceRef.current = null;
+      };
+      utterance.onerror = () => {
+        setIsSpeaking(false);
+        setIsPaused(false);
+        utteranceRef.current = null;
+      };
+
+      utteranceRef.current = utterance;
+      window.speechSynthesis.speak(utterance);
+    }, 150);
   };
 
   const handleStopSpeak = () => {
@@ -363,7 +376,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
         </button>
         
         {/* 單列工具列 */}
-        <div className="flex items-center justify-between px-2 sm:px-4 py-2 max-w-7xl mx-auto">
+        <div className="flex items-center justify-between px-2 sm:px-4 py-3 sm:py-2 max-w-7xl mx-auto">
           
           {/* 左側:關閉 + Word */}
           <div className="flex items-center gap-1">
