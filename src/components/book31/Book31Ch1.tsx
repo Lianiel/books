@@ -73,15 +73,28 @@ export default function Book31Ch1() {
               <p className="text-gray-700 leading-relaxed mb-3">
                 不但如此，一些基因物質也不是像進化論所想像的「生命形態愈複雜，基因就愈多」。其實，有些無脊椎生物（Invertebrates）的染色體比人類還多，此外，蟾蜍（Toad）的基因物質就比人類多得多，你想進化論還是對的嗎？
               </p>
+              <div className="flex flex-col items-center my-4">
+                <img src="/images/book31/ch1-fig6-peppered-moth.jpg" alt="胡椒蛾有淺色的和黑色的" className="max-w-full h-auto rounded-lg shadow-md" />
+                <p className="text-sm text-gray-500 mt-2 italic">圖 6 — 胡椒蛾有淺色的和黑色的，進化論以為這是「物競天擇」就錯了。</p>
+              </div>
               <p className="text-gray-700 leading-relaxed mb-3">
                 「物競天擇」究竟錯在什麼地方？在許多年以前，英國有一種胡椒蛾（Peppered Moth），這蛾黑色的數量遠超過淺色的蛾。直到 1950 年代，英國發生一次大霧造成嚴重災害，英國人為了改善環境，就開始清掃煙囪、整理樹幹，使得環境的顏色變淺了許多。這樣，黑色的蛾就無法像淺色的偽裝在環境裏，大量的黑蛾就被鳥吃去。於是黑蛾減少，淺色蛾的數量大增，進化論以為這是「物競天擇」就錯了。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
                 原來，蛾體內本來就有黑色、白色及灰色的基因（遺傳因子）。不錯，環境使得黑蛾減少，但這並不是進化或基因改變。倘若這種使黑蛾減少的環境因素不除去，黑蛾固然會瀕臨絕種，這只證明所謂「物競天擇」只會使得擁有某種基因的物種死亡，卻絕對不會因此基因改變，發展出更複雜的生命形態出來。所以，以為物種是可以藉「物競天擇」達到進化的目的，這種想法是根本錯誤的。
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-3">
                 就基因而言，一百年前的胡椒蛾和今天的蛾還是一樣，未曾改變。1966 年 12 月科學雜誌 Science 報導，考古發現一個被認為有所謂「五千萬年」歷史的蝙蝠化石，生物學家說牠與今天的蝙蝠根本一樣。原來，神在創造各種生物時，不但「各從其類」，而且將多樣的特性放在基因中，使其多方適應環境的變化，這就是何以同類的物種（Species）卻有多樣的形態。譬如狗有牧羊犬、狐狸狗、臘腸狗與大丹狗等等，人也分黃種人、白種人與黑種人等等。所以，根據基因證明，物種的特徵加強，只是基因某部分特性增強的結果，絕非進化變種使然。
               </p>
+              <div className="flex flex-col items-center my-4 gap-4">
+                <div className="flex flex-col items-center">
+                  <img src="/images/book31/ch1-fig7-butterflies.jpg" alt="各種形態的蝴蝶" className="max-w-full h-auto rounded-lg shadow-md" />
+                </div>
+                <div className="flex flex-col items-center">
+                  <img src="/images/book31/ch1-fig8-shells.jpg" alt="各種形態的貝殼" className="max-w-full h-auto rounded-lg shadow-md" />
+                </div>
+                <p className="text-sm text-gray-500 italic text-center">圖 7 及 8 — 神在創造各種生物時，不但「各從其類」，而且將多樣的特性放在基因中，使其多方適應環境的變化，這就是何以同類的物種卻有多樣的形態。譬如上方的蝴蝶和貝殼都有各種的形態，絕非進化使然。</p>
+              </div>
             </div>
 
             <div>
@@ -123,6 +136,10 @@ export default function Book31Ch1() {
               <p className="text-gray-700 leading-relaxed mb-3">
                 其實，氨基酸很容易就被自然界毀滅，它被紫外線或電擊毀滅的概率，就遠超過它形成的概率，所以無法多量生產。此外，氨基酸若要形成蛋白質，必須要能排列成一定組織的次序才行，假使一個只有 50 個氨基酸的蛋白質，若要自然地排列成有系統的組織，它形成蛋白質的概率是 1 比 1 後面加 65 個零。1 後面加 4 個零是一萬，1 後面加 8 個零是一億，你可以算算它的概率是幾億萬兆分之一。請不要忘記，一般的蛋白質大都需要更多倍的氨基酸呢。
               </p>
+              <div className="flex flex-col items-center my-4">
+                <img src="/images/book31/ch1-fig9-dna.jpg" alt="DNA分子放大的圖形" className="max-w-full h-auto rounded-lg shadow-md" />
+                <p className="text-sm text-gray-500 mt-2 italic">圖 9 — 這僅僅是 DNA 分子放大的圖形，圖中各種顏色的球體分別代表磷、碳、氫、氧、氮等各種原子，如此組成一種複雜的螺旋形結構。</p>
+              </div>
               <p className="text-gray-700 leading-relaxed">
                 好吧，你若不服氣，我們就來研究一下最簡單的細胞吧。最簡單的細胞，也是由數千個各樣的蛋白質，和數百萬的各種 DNA 和 RNA、複雜分子等，組成一種複雜的結構系統。若是藉著概率自然組成，每秒重新組合，就早已超過進化論所謂的 150 億宇宙年齡。再者，細胞中間，蛋白酵素（Protein Enzymes）需要 DNA 和 RNA 才能產生，但是，若要產生 DNA 和 RNA 又要靠蛋白酵素，彼此相生，不能單獨作業，這樣進化論就無法解釋這種現象了。是先有雞呢？還是先有蛋呢？是先有 DNA 呢？還是先有蛋白酵素呢？如此，進化論的弱點，在現今科學驗證下，就愈顯得暴露無遺了。
               </p>
@@ -159,18 +176,34 @@ export default function Book31Ch1() {
 
             <div>
               <h3 className="font-bold text-teal-700 text-lg mb-3">七、現今實例證明進化論是錯的</h3>
+              <div className="flex flex-col items-center my-4">
+                <img src="/images/book31/ch1-fig10-wollemi.jpg" alt="古杉樹葉子和侏羅紀化石" className="max-w-full h-auto rounded-lg shadow-md" />
+                <p className="text-sm text-gray-500 mt-2 italic">圖 10 — 1994 年在澳洲發現的古杉樹葉子（右邊）和石版上侏羅紀杉樹葉子的化石（左邊）完全相同，這種古杉樹至今仍在生長著。</p>
+              </div>
               <p className="text-gray-700 leading-relaxed mb-3">
                 1994 年 8 月，植物學家在澳洲雪梨市郊渥勒米公園（Wollemi National Park）內發現 39 棵曾是「侏羅紀恐龍時代」的杉樹。這渥勒米公園原是在雪梨市西方大約 200 公里的藍山山脈雨林中，所發現的 39 棵古杉樹，其中最大的一棵高達 40 公尺，直徑 3 公尺，樹齡至少有 150 多年，被發現的時候整棵樹覆蓋著綠油油的葉子。澳洲皇家植物園園長說：「這就好像發現一隻活生生的小恐龍一樣。」而這種古杉樹據說早在「一億五千萬年前就已經絕跡了」。1994 年 12 月澳洲科學家再次宣布這種侏羅紀時期的杉樹，已成功的被他們培育出幼苗，目前正在計劃大量繁殖成為盆景。
               </p>
+              <div className="flex flex-col items-center my-4">
+                <img src="/images/book31/ch1-fig11-coelacanth.jpg" alt="腔棘魚" className="max-w-full h-auto rounded-lg shadow-md" />
+                <p className="text-sm text-gray-500 mt-2 italic">圖 11 — 這隻在非洲東岸印度洋深海中捕獲到的魚，竟和進化論所謂「三億五千萬年前在淺水」中生存的腔棘魚化石構造相同。</p>
+              </div>
               <p className="text-gray-700 leading-relaxed mb-3">
                 另外還有一種名叫腔棘魚（Coelacanth）的著名化石。根據進化論學者聲稱，這種曾在「三億五千萬年前」一度生活在「淺水」環境裏的魚類，因為其滑鰭突顯，就臆測牠是魚類演化至兩棲類的最好證據。進化論學者原估計這種中生代魚類早就在「七千萬年前」絕跡了。但是 1938 年，腔棘魚卻在非洲馬達加斯加（Madagascar）附近的印度洋深海中被人捕獲，證明現今該魚類仍生存在海裏。被捕獲的魚骨骼構造和「遠古腔棘魚化石」相同。既然牠是活在深海中，而不是在「淺水」裏，進化論稱牠為「兩棲類祖先」的說法就錯了。腔棘魚化石曾被用來當作「指標化石」（Index Fossil），過去以這種「指標化石」所訂的化石年代大都因此發生問題。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
                 至於恐龍這種進化論認為早在「億萬年前」絕跡的生物，真的「在人類出現以前」已被大自然淘汰了嗎？事實上證明並不如此，因為有關恐龍與人類並存的記錄在歷史上就有很多。見證恐龍出沒的故事曾在希臘、巴比倫、歐洲的史料中都有記載，其中包括著名的英國聖喬治（Saint George）屠龍的故事，及巴比倫的英雄基格瑪斯（Gilgamesh）屠殺一隻巨大的「吃樹及蘆葦」恐龍的故事。主後第二世紀的羅馬賽克上也有兩隻長頸恐龍在水邊的圖案。也就是說，在十九世紀進化論發展之前，史料記載有關恐龍的故事並沒有把牠當作十分奇特的生物看待。
               </p>
+              <div className="flex flex-col items-center my-4">
+                <img src="/images/book31/ch1-fig12-roman-mosaic.jpg" alt="羅馬賽克上的長頸恐龍" className="max-w-full h-auto rounded-lg shadow-md" />
+                <p className="text-sm text-gray-500 mt-2 italic">圖 12 — 主後第二世紀的羅馬賽克上也有兩隻長頸恐龍在水邊的圖案，羅馬人若不知道這種生物，怎麼會放在這裏呢？（原圖尾部已損壞）</p>
+              </div>
               <p className="text-gray-700 leading-relaxed mb-3">
                 恐龍不僅曾出現在人類過去的歷史故事裏，就是現今也有許多目擊者的見證。就像近代在非洲剛果（Congo）的叢林裏，當地原住民曾目睹一種像雷龍（Brontosaurus）的恐龍出沒其中。甚至 1959 年有一群非洲原住民殺死了一隻類似小恐龍的生物。再有就是北蘇格蘭尼斯湖（Loch Ness）著名的「海怪」了，根據三千多次目擊者的描述，這種生物大約身長 20 呎，有一個像蛇的頸項，並且有一個巨大的身體及四隻鰭，生物學家推測這可能是一種蛇頸龍類（Plesiosaur）的恐龍。
               </p>
+              <div className="flex flex-col items-center my-4">
+                <img src="/images/book31/ch1-fig13-plesiosaur.jpg" alt="蛇頸龍遺體" className="max-w-full h-auto rounded-lg shadow-md" />
+                <p className="text-sm text-gray-500 mt-2 italic">圖 13 — 這隻可能是蛇頸龍的遺體曾經在這種姿勢下被人攝影留作記錄，我只繪出牠形體的樣式，無須把牠腐化的情形也畫出來。</p>
+              </div>
               <p className="text-gray-700 leading-relaxed">
                 1977 年，日本漁船 Zuiyo Maru 號在紐西蘭（New Zealand）附近的海裏，用漁網拉上了一隻身長 30 呎、體重達 4,000 磅的生物遺體。這隻生物的頭是長在 5 呎長的頸項上，牠有巨大的身軀，兩側有四隻長達 3 呎的鰭。由於該遺體已經開始腐化，水手們只好用攝影及文字記錄詳情。根據其所記載的資料，有些學者認為這是一種屬於蛇頸龍類（Plesiosaur）的恐龍。在歷史文獻中，還有就是「次經」（Apocrypha）裏面一卷名叫「比勒與大龍」（Bel and Dragon）的書，書中說到波斯王古列和巴比倫人拜一隻巨大的活恐龍，並且叫人拜牠。先知但以理用智慧將瀝青、脂油和頭髮煮成餅送給恐龍吃，那隻大龍吃後肚子發脹就死了。大多數學者認為前述這卷書至少是在距離今天兩千一百年以前所寫的，如果恐龍在該書作者的時代早已絕跡，他不會無知到叙述這種故事讓人一看即知該書是後人偽造的。
               </p>
@@ -210,9 +243,13 @@ export default function Book31Ch1() {
               <p className="text-gray-700 leading-relaxed mb-3">
                 我曾用知識，在世界上到處尋找祂，又在其他理論中探索祂，卻都見不著祂的面。終於祂帶領我，親自告訴我，祂才是全宇宙的創造者，祂就是耶和華上帝，唯一宇宙的真神。我才像約伯一樣慚愧的說：「我從前風聞有你，現在親眼看見你。因此我厭惡自己，在塵土和爐灰中懊悔。」我親自經歷了祂，才知道祂是多麼奇妙，世間竟無任何可比。
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-3">
                 是的，神的旨意太奧妙，祂的創造也太神奇，我回想才明瞭：「神的事情，人所能知道的，原顯明在人心裏，因為神已經給他們顯明。自從造天地以來，神的永能和神性是明明可知的，雖是眼不能見，但藉著所造之物，就可以曉得，叫人無可推諉」（羅馬書一章 19 至 20 節）。可不是嗎？即使人不能目睹神的大能和公義的神性，但是藉著祂所創造的天地和支配宇宙的自然定律，沒有人可以託辭說他不知道神的存在。朋友，你可曾認識那創造你的造物主——慈愛的天父、主耶穌基督和聖靈保惠師嗎？
               </p>
+              <div className="flex flex-col items-center my-4">
+                <img src="/images/book31/ch1-fig14-landscape.jpg" alt="大自然山景" className="max-w-full h-auto rounded-lg shadow-md" />
+                <p className="text-sm text-gray-500 mt-2 italic">圖 14 — 即使人不能目睹神的大能和公義的神性，但是藉著祂所創造的天地和支配宇宙的自然定律，沒有人可以託辭說他不知道神的存在。</p>
+              </div>
             </div>
 
           </div>
