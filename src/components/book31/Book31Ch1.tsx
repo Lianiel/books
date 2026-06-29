@@ -34,30 +34,46 @@ export default function Book31Ch1() {
             <div>
               <h3 className="font-bold text-teal-700 text-lg mb-3">一、化石證明生命不是來自進化</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                達爾文的進化論主張，生命是由低等生物逐步演化至高等生物的，若此理論正確，化石中必然找得到生物演化過渡時期的記錄。但事實是怎樣的呢？進化論學者花了兩百年時間，在世界各地尋找過渡時期化石，至今仍找不到。化石的紀錄顯示，各物種都是突然出現於地球上，而非逐漸演化而來。各物種之間並沒有任何過渡的化石記錄。更令人注意的是，地球上先出現的化石，不少竟然比後來的化石更為複雜，這種現象根本無法用進化論來解釋。
+                真理總是真理，進化論並不是真理，因為它不但缺乏真憑實據，也無法用科學實驗來彌補其理論上的漏洞。實際上，就連達爾文（Darwin）自己也在 1861 年承認無法證明物種可以從一種進化成另一種，所以進化論應該只是一個假設而已。然而，這個未經證實的理論，卻為人奉為圭臬，把它當作真理教導別人，實在令人遺憾。
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
-                進化論為了自圓其說，搬出各種所謂「猿人」化石來支撐理論，但這些「證據」卻一一被揭穿是偽造或誤判：
+                進化論認為一切生物皆由「簡單細胞」逐漸自然演化、突變而成為複雜的生命形態。如果這個理論是對的，我們就應該能發現一些化石，證明生物由一種進化成另一種的「突變時期」確實曾經存在過。然而他們大失所望：因為考古所發現的化石，都證明起初「複雜的生命形態」是突然在寒武紀（Cambrian）中出現。其中三葉蟲（Trilobites）、長貝刺（Brachiopods）、水母以及後來的珊瑚，這些已經具有複雜生命形態的生物，都是突然出現在化石裏面。也就是說，在比寒武紀更早的前寒武紀（Pre-Cambrian）中，沒有發現任何更早期的生物化石。既然沒有任何跡象顯示前述這些物種是由「更簡單的生物」進化而來，這反而證明生命是來自神的創造。
               </p>
-              <ul className="list-none space-y-3 ml-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-teal-600 font-bold flex-shrink-0 mt-0.5">▸</span>
-                  <p className="text-gray-700"><strong>內布拉斯加人（Nebraska Man）</strong>：1922 年，進化論學者根據一顆牙齒，聲稱發現了一位距今約一百萬年的猿人，並廣泛宣傳。後來發現，這顆牙齒根本是一隻豬的牙齒，這個鬧劇說明了進化論學者急於尋找「證據」的心態。</p>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-teal-600 font-bold flex-shrink-0 mt-0.5">▸</span>
-                  <p className="text-gray-700"><strong>爪哇人（Java Man）</strong>：1891 年尤金·杜布斯（Eugene Dubois）在爪哇島發現一個頭骨頂部和一根大腿骨，宣稱是「猿人」化石。後來發現這兩件骨骼分別屬於不同個體，頭骨屬猿類，大腿骨屬人類。杜布斯本人晚年也承認了這個錯誤。</p>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-teal-600 font-bold flex-shrink-0 mt-0.5">▸</span>
-                  <p className="text-gray-700"><strong>北京人（Peking Man）</strong>：所有北京人骨骼化石在二次大戰期間神秘失蹤。僅存的照片顯示，頭骨底部全被打碎——這是人類用來吸取腦漿的典型做法。換言之，北京人可能只是被人類當食物的猿類，而非人類的祖先。</p>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-teal-600 font-bold flex-shrink-0 mt-0.5">▸</span>
-                  <p className="text-gray-700"><strong>辟爾當人（Piltdown Man）</strong>：曾被鑑定為五十萬年前的猿人，直至 1953 年才被揭發是根本偽造的——原來有人將某些現代猿猴的頭骨及牙齒加工上色，這是件愚弄世人的惡作劇。</p>
-                </li>
-              </ul>
-              <p className="text-gray-700 leading-relaxed mt-3">
+              <p className="text-gray-700 leading-relaxed mb-3">
+                今天沒有任何化石能證明生命不是來自神的創造，但是卻有足夠的證據顯示生命不是來自大自然演進。只在進化論所謂「幾億年前」的地層中，就發現許多化石證明他們的「地層年代劃分法」是錯誤的。原來在所謂的寒武紀地層中，居然也發現了人類的鞋印，在鞋印中，還有一個被鞋踩碎的三葉蟲化石；但是根據進化論原理，人是比三葉蟲晚「六億年」才出現的。像這樣自相矛盾的事，也在美國德州帕魯克西河床（Paluxy River Basin in Glen Rose）裏發現，考古學家看到在白堊紀（Cretaceous）的恐龍大腳印旁邊，居然有許多和現代人同形的赤腳印夾雜其中，類似這樣的例子也曾在俄國發現。這證明在進化論所謂的「一億年前」白堊紀裏，人已經和恐龍同時存在了，朋友，你想進化論會對嗎？
+              </p>
+              <div className="flex flex-col items-center my-4">
+                <img src="/images/book31/ch1-fig2-trilobites.jpg" alt="三葉蟲化石和鸚鵡螺化石" className="max-w-full h-auto rounded-lg shadow-md" />
+                <p className="text-sm text-gray-500 mt-2 italic">圖 2 — 左邊和中間的是三葉蟲（Trilobites）化石，右邊的是鸚鵡螺（Ammonite）化石，牠們並不是所謂「幾億年前」的古生物。</p>
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                不僅如此，化石證明高等生物形態，諸如魚類、兩棲類、鳥類、爬蟲類、哺乳類都是突然出現的，中間沒有突變時期存在。現在舉幾個例子證明：始祖鳥（Archaeopteryx），一度被誤會以為是介於鳥類與爬蟲類的突變種，近代古生物學者也發現那理論是錯誤的：此鳥有翅膀及羽毛，溫血又會飛，牠的骨架及翅膀上的小爪，也在少數的鳥類中發現，證實牠根本是個實在的鳥類。
+              </p>
+              <div className="flex flex-col items-center my-4">
+                <img src="/images/book31/ch1-fig3-archaeopteryx-fossil.jpg" alt="始祖鳥化石" className="max-w-full h-auto rounded-lg shadow-md mb-3" />
+                <img src="/images/book31/ch1-fig4-archaeopteryx-drawing.jpg" alt="始祖鳥復原圖" className="max-w-full h-auto rounded-lg shadow-md" />
+                <p className="text-sm text-gray-500 mt-2 italic">圖 3 及 4 — 上圖為十九世紀在德國南部出土的始祖鳥化石。下圖為根據前述之化石畫出想像中始祖鳥的樣子，始祖鳥根本是個實在的鳥類。</p>
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                一度被人誤會的馬進化史，也被化石證明是錯的。首先，Eohippus、Orohippus、Pliohippus 和 Equus Scotti 並不是按照所謂「進化先後次序」被人發現的。此外，牠們的肋骨數目也很懸殊，Eohippus 有 18 對，Orohippus 有 15 對，Pliohippus 有 19 對，Equus Scotti 也有 18 對。這種情況，明眼人一見即知彼此無關，怎麼是馬的進化史呢？後來，有的學者證明 Eohippus 也不與馬同類，竟與岩貍（Hyrax）是親戚。
+              </p>
+              <div className="flex flex-col items-center my-4">
+                <img src="/images/book31/ch1-fig5-horse-evolution.jpg" alt="馬進化史示意圖" className="max-w-full h-auto rounded-lg shadow-md" />
+                <p className="text-sm text-gray-500 mt-2 italic">圖 5 — 你想馬進化的時候，肋骨數目會變成這樣嗎？（Eohippus 18 對→Orohippus 15 對→Pliohippus 19 對→Equus Scotti 18 對）</p>
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                你要說，那麼那些猿人的化石呢？難道也有問題嗎？不錯，現今科學揭穿了人類進化史的真面目。爪哇猿人（Java Man）最初的證據是一條腿骨、牙齒及一片頭蓋骨，但是這些化石是發現在距離 45～50 呎的範圍以內，其發現者杜博斯（Dubois）一直隱瞞了三十多年祕密，最後才透露在那範圍之內，也發現了真正人類的頭骨；所以在爪哇猿人的地層中，人類早已出現了！那腿骨可能是人類的，至於另外兩件，杜博斯臨終前承認那是長臂猿猴的，根本不是什麼類人猿的。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                同樣，1924 年被達特（Dart）發現的南非猿人（Australopithecines），近年也被立奇（Richard Leakey）宣布更正那所謂的南非猿人——長手短腿、以膝代步——根本是個非洲猿猴。同時，他在比南非猿人更古老的地層中，居然發現人類的骨骼，如此說來，南非猿人之前，人類早就存在，顯然南非猿人不是介於人與猿猴的生物了。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                至於 1920 年發現的北京人頭蓋骨及下顎骨等，已於第二次世界大戰遺失，無法用現代科學重新驗證；但根據現存資料，考古學家相信不是那所謂類人猿的化石。人類的腦容量是從 1,000cc 到 2,000cc 不等，猿類只有 600cc 左右，克羅馬尼人（Gro-Magnon Man）的腦容量居然比一般現代人還大，各種證據顯明他就是一個現代人。至於尼安德塔人（Neanderthal Man）的骨骼與現代人類同，腦容量也比現代一般人大，進化論推測他是十萬至二萬五千年的進化人，但是人類學家承認，他根本是個現代人。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                其他諸如尼布拉斯加人（Nebraska Man），發現沒有多久就被證明是隻豬。還有 1912 年發現的皮爾丹人（Piltdown Man），曾為人鑑定為五十萬年前的猿人，直至 1953 年才被揭發是根本偽造的——原來有人將某些現代猿猴的頭骨及牙齒加工上色，這是件愚弄世人的惡作劇。
+              </p>
+              <p className="text-gray-700 leading-relaxed">
                 所以化石證明物種是突然出現的，並且物種彼此之間沒有任何突變時期；這豈不是神當初創造萬物使所有物種「各從其類」（創世記一章 25 節）的明證嗎？
               </p>
             </div>
