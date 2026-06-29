@@ -43,7 +43,7 @@ export default function Book31Ch1() {
                 今天沒有任何化石能證明生命不是來自神的創造，但是卻有足夠的證據顯示生命不是來自大自然演進。只在進化論所謂「幾億年前」的地層中，就發現許多化石證明他們的「地層年代劃分法」是錯誤的。原來在所謂的寒武紀地層中，居然也發現了人類的鞋印，在鞋印中，還有一個被鞋踩碎的三葉蟲化石；但是根據進化論原理，人是比三葉蟲晚「六億年」才出現的。像這樣自相矛盾的事，也在美國德州帕魯克西河床（Paluxy River Basin in Glen Rose）裏發現，考古學家看到在白堊紀（Cretaceous）的恐龍大腳印旁邊，居然有許多和現代人同形的赤腳印夾雜其中，類似這樣的例子也曾在俄國發現。這證明在進化論所謂的「一億年前」白堊紀裏，人已經和恐龍同時存在了，朋友，你想進化論會對嗎？
               </p>
               <div className="flex flex-col items-center my-4">
-                <img src="/images/book31/ch1-fig2-trilobites.jpg" alt="三葉蟲化石和鸚鵡螺化石" className="max-w-full h-auto rounded-lg shadow-md" />
+                <img src="/images/book31/ch1-fig2-trilobites.jpg" alt="三葉蟲化石和鸚鵡螺化石" className="max-w-full h-auto rounded-lg shadow-md" loading="lazy" />
                 <p className="text-sm text-gray-500 mt-2 italic">圖 2 — 左邊和中間的是三葉蟲（Trilobites）化石，右邊的是鸚鵡螺（Ammonite）化石，牠們並不是所謂「幾億年前」的古生物。</p>
               </div>
               <p className="text-gray-700 leading-relaxed mb-3">
@@ -51,14 +51,14 @@ export default function Book31Ch1() {
               </p>
               <div className="flex flex-col items-center my-4">
                 <img src="/images/book31/ch1-fig3-archaeopteryx-fossil.jpg" alt="始祖鳥化石" className="max-w-full h-auto rounded-lg shadow-md mb-3" />
-                <img src="/images/book31/ch1-fig4-archaeopteryx-drawing.jpg" alt="始祖鳥復原圖" className="max-w-full h-auto rounded-lg shadow-md" />
+                <img src="/images/book31/ch1-fig4-archaeopteryx-drawing.jpg" alt="始祖鳥復原圖" className="max-w-full h-auto rounded-lg shadow-md" loading="lazy" />
                 <p className="text-sm text-gray-500 mt-2 italic">圖 3 及 4 — 上圖為十九世紀在德國南部出土的始祖鳥化石。下圖為根據前述之化石畫出想像中始祖鳥的樣子，始祖鳥根本是個實在的鳥類。</p>
               </div>
               <p className="text-gray-700 leading-relaxed mb-3">
                 一度被人誤會的馬進化史，也被化石證明是錯的。首先，Eohippus、Orohippus、Pliohippus 和 Equus Scotti 並不是按照所謂「進化先後次序」被人發現的。此外，牠們的肋骨數目也很懸殊，Eohippus 有 18 對，Orohippus 有 15 對，Pliohippus 有 19 對，Equus Scotti 也有 18 對。這種情況，明眼人一見即知彼此無關，怎麼是馬的進化史呢？後來，有的學者證明 Eohippus 也不與馬同類，竟與岩貍（Hyrax）是親戚。
               </p>
               <div className="flex flex-col items-center my-4">
-                <img src="/images/book31/ch1-fig5-horse-evolution.jpg" alt="馬進化史示意圖" className="max-w-full h-auto rounded-lg shadow-md" />
+                <img src="/images/book31/ch1-fig5-horse-evolution.jpg" alt="馬進化史示意圖" className="max-w-full h-auto rounded-lg shadow-md" loading="lazy" />
                 <p className="text-sm text-gray-500 mt-2 italic">圖 5 — 你想馬進化的時候，肋骨數目會變成這樣嗎？（Eohippus 18 對→Orohippus 15 對→Pliohippus 19 對→Equus Scotti 18 對）</p>
               </div>
               <p className="text-gray-700 leading-relaxed mb-3">
@@ -90,7 +90,7 @@ export default function Book31Ch1() {
                 不但如此，一些基因物質也不是像進化論所想像的「生命形態愈複雜，基因就愈多」。其實，有些無脊椎生物（Invertebrates）的染色體比人類還多，此外，蟾蜍（Toad）的基因物質就比人類多得多，你想進化論還是對的嗎？
               </p>
               <div className="flex flex-col items-center my-4">
-                <img src="/images/book31/ch1-fig6-peppered-moth.jpg" alt="胡椒蛾有淺色的和黑色的" className="max-w-full h-auto rounded-lg shadow-md" />
+                <img src="/images/book31/ch1-fig6-peppered-moth.jpg" alt="胡椒蛾有淺色的和黑色的" className="max-w-full h-auto rounded-lg shadow-md" loading="lazy" />
                 <p className="text-sm text-gray-500 mt-2 italic">圖 6 — 胡椒蛾有淺色的和黑色的，進化論以為這是「物競天擇」就錯了。</p>
               </div>
               <p className="text-gray-700 leading-relaxed mb-3">
@@ -104,10 +104,10 @@ export default function Book31Ch1() {
               </p>
               <div className="flex flex-col items-center my-4 gap-4">
                 <div className="flex flex-col items-center">
-                  <img src="/images/book31/ch1-fig7-butterflies.jpg" alt="各種形態的蝴蝶" className="max-w-full h-auto rounded-lg shadow-md" />
+                  <img src="/images/book31/ch1-fig7-butterflies.jpg" alt="各種形態的蝴蝶" className="max-w-full h-auto rounded-lg shadow-md" loading="lazy" />
                 </div>
                 <div className="flex flex-col items-center">
-                  <img src="/images/book31/ch1-fig8-shells.jpg" alt="各種形態的貝殼" className="max-w-full h-auto rounded-lg shadow-md" />
+                  <img src="/images/book31/ch1-fig8-shells.jpg" alt="各種形態的貝殼" className="max-w-full h-auto rounded-lg shadow-md" loading="lazy" />
                 </div>
                 <p className="text-sm text-gray-500 italic text-center">圖 7 及 8 — 神在創造各種生物時，不但「各從其類」，而且將多樣的特性放在基因中，使其多方適應環境的變化，這就是何以同類的物種卻有多樣的形態。譬如上方的蝴蝶和貝殼都有各種的形態，絕非進化使然。</p>
               </div>
@@ -153,7 +153,7 @@ export default function Book31Ch1() {
                 其實，氨基酸很容易就被自然界毀滅，它被紫外線或電擊毀滅的概率，就遠超過它形成的概率，所以無法多量生產。此外，氨基酸若要形成蛋白質，必須要能排列成一定組織的次序才行，假使一個只有 50 個氨基酸的蛋白質，若要自然地排列成有系統的組織，它形成蛋白質的概率是 1 比 1 後面加 65 個零。1 後面加 4 個零是一萬，1 後面加 8 個零是一億，你可以算算它的概率是幾億萬兆分之一。請不要忘記，一般的蛋白質大都需要更多倍的氨基酸呢。
               </p>
               <div className="flex flex-col items-center my-4">
-                <img src="/images/book31/ch1-fig9-dna.jpg" alt="DNA分子放大的圖形" className="max-w-full h-auto rounded-lg shadow-md" />
+                <img src="/images/book31/ch1-fig9-dna.jpg" alt="DNA分子放大的圖形" className="max-w-full h-auto rounded-lg shadow-md" loading="lazy" />
                 <p className="text-sm text-gray-500 mt-2 italic">圖 9 — 這僅僅是 DNA 分子放大的圖形，圖中各種顏色的球體分別代表磷、碳、氫、氧、氮等各種原子，如此組成一種複雜的螺旋形結構。</p>
               </div>
               <p className="text-gray-700 leading-relaxed">
@@ -193,14 +193,14 @@ export default function Book31Ch1() {
             <div>
               <h3 className="font-bold text-teal-700 text-lg mb-3">七、現今實例證明進化論是錯的</h3>
               <div className="flex flex-col items-center my-4">
-                <img src="/images/book31/ch1-fig10-wollemi.jpg" alt="古杉樹葉子和侏羅紀化石" className="max-w-full h-auto rounded-lg shadow-md" />
+                <img src="/images/book31/ch1-fig10-wollemi.jpg" alt="古杉樹葉子和侏羅紀化石" className="max-w-full h-auto rounded-lg shadow-md" loading="lazy" />
                 <p className="text-sm text-gray-500 mt-2 italic">圖 10 — 1994 年在澳洲發現的古杉樹葉子（右邊）和石版上侏羅紀杉樹葉子的化石（左邊）完全相同，這種古杉樹至今仍在生長著。</p>
               </div>
               <p className="text-gray-700 leading-relaxed mb-3">
                 1994 年 8 月，植物學家在澳洲雪梨市郊渥勒米公園（Wollemi National Park）內發現 39 棵曾是「侏羅紀恐龍時代」的杉樹。這渥勒米公園原是在雪梨市西方大約 200 公里的藍山山脈雨林中，所發現的 39 棵古杉樹，其中最大的一棵高達 40 公尺，直徑 3 公尺，樹齡至少有 150 多年，被發現的時候整棵樹覆蓋著綠油油的葉子。澳洲皇家植物園園長說：「這就好像發現一隻活生生的小恐龍一樣。」而這種古杉樹據說早在「一億五千萬年前就已經絕跡了」。1994 年 12 月澳洲科學家再次宣布這種侏羅紀時期的杉樹，已成功的被他們培育出幼苗，目前正在計劃大量繁殖成為盆景。
               </p>
               <div className="flex flex-col items-center my-4">
-                <img src="/images/book31/ch1-fig11-coelacanth.jpg" alt="腔棘魚" className="max-w-full h-auto rounded-lg shadow-md" />
+                <img src="/images/book31/ch1-fig11-coelacanth.jpg" alt="腔棘魚" className="max-w-full h-auto rounded-lg shadow-md" loading="lazy" />
                 <p className="text-sm text-gray-500 mt-2 italic">圖 11 — 這隻在非洲東岸印度洋深海中捕獲到的魚，竟和進化論所謂「三億五千萬年前在淺水」中生存的腔棘魚化石構造相同。</p>
               </div>
               <p className="text-gray-700 leading-relaxed mb-3">
@@ -210,14 +210,14 @@ export default function Book31Ch1() {
                 至於恐龍這種進化論認為早在「億萬年前」絕跡的生物，真的「在人類出現以前」已被大自然淘汰了嗎？事實上證明並不如此，因為有關恐龍與人類並存的記錄在歷史上就有很多。見證恐龍出沒的故事曾在希臘、巴比倫、歐洲的史料中都有記載，其中包括著名的英國聖喬治（Saint George）屠龍的故事，及巴比倫的英雄基格瑪斯（Gilgamesh）屠殺一隻巨大的「吃樹及蘆葦」恐龍的故事。主後第二世紀的羅馬賽克上也有兩隻長頸恐龍在水邊的圖案。也就是說，在十九世紀進化論發展之前，史料記載有關恐龍的故事並沒有把牠當作十分奇特的生物看待。
               </p>
               <div className="flex flex-col items-center my-4">
-                <img src="/images/book31/ch1-fig12-roman-mosaic.jpg" alt="羅馬賽克上的長頸恐龍" className="max-w-full h-auto rounded-lg shadow-md" />
+                <img src="/images/book31/ch1-fig12-roman-mosaic.jpg" alt="羅馬賽克上的長頸恐龍" className="max-w-full h-auto rounded-lg shadow-md" loading="lazy" />
                 <p className="text-sm text-gray-500 mt-2 italic">圖 12 — 主後第二世紀的羅馬賽克上也有兩隻長頸恐龍在水邊的圖案，羅馬人若不知道這種生物，怎麼會放在這裏呢？（原圖尾部已損壞）</p>
               </div>
               <p className="text-gray-700 leading-relaxed mb-3">
                 恐龍不僅曾出現在人類過去的歷史故事裏，就是現今也有許多目擊者的見證。就像近代在非洲剛果（Congo）的叢林裏，當地原住民曾目睹一種像雷龍（Brontosaurus）的恐龍出沒其中。甚至 1959 年有一群非洲原住民殺死了一隻類似小恐龍的生物。再有就是北蘇格蘭尼斯湖（Loch Ness）著名的「海怪」了，根據三千多次目擊者的描述，這種生物大約身長 20 呎，有一個像蛇的頸項，並且有一個巨大的身體及四隻鰭，生物學家推測這可能是一種蛇頸龍類（Plesiosaur）的恐龍。
               </p>
               <div className="flex flex-col items-center my-4">
-                <img src="/images/book31/ch1-fig13-plesiosaur.jpg" alt="蛇頸龍遺體" className="max-w-full h-auto rounded-lg shadow-md" />
+                <img src="/images/book31/ch1-fig13-plesiosaur.jpg" alt="蛇頸龍遺體" className="max-w-full h-auto rounded-lg shadow-md" loading="lazy" />
                 <p className="text-sm text-gray-500 mt-2 italic">圖 13 — 這隻可能是蛇頸龍的遺體曾經在這種姿勢下被人攝影留作記錄，我只繪出牠形體的樣式，無須把牠腐化的情形也畫出來。</p>
               </div>
               <p className="text-gray-700 leading-relaxed">
@@ -263,7 +263,7 @@ export default function Book31Ch1() {
                 是的，神的旨意太奧妙，祂的創造也太神奇，我回想才明瞭：「神的事情，人所能知道的，原顯明在人心裏，因為神已經給他們顯明。自從造天地以來，神的永能和神性是明明可知的，雖是眼不能見，但藉著所造之物，就可以曉得，叫人無可推諉」（羅馬書一章 19 至 20 節）。可不是嗎？即使人不能目睹神的大能和公義的神性，但是藉著祂所創造的天地和支配宇宙的自然定律，沒有人可以託辭說他不知道神的存在。朋友，你可曾認識那創造你的造物主——慈愛的天父、主耶穌基督和聖靈保惠師嗎？
               </p>
               <div className="flex flex-col items-center my-4">
-                <img src="/images/book31/ch1-fig14-landscape.jpg" alt="大自然山景" className="max-w-full h-auto rounded-lg shadow-md" />
+                <img src="/images/book31/ch1-fig14-landscape.jpg" alt="大自然山景" className="max-w-full h-auto rounded-lg shadow-md" loading="lazy" />
                 <p className="text-sm text-gray-500 mt-2 italic">圖 14 — 即使人不能目睹神的大能和公義的神性，但是藉著祂所創造的天地和支配宇宙的自然定律，沒有人可以託辭說他不知道神的存在。</p>
               </div>
             </div>
