@@ -172,6 +172,10 @@ export default function Book31Ch10() {
                 主後1096年開始的幾次十字軍東征，也造成全歐洲雅弗族男子的大遷徙，雖然十字軍東征最後在十三世紀結束，但是由於參與的人各有志心、又有不良份子趁機取利，最後聖城耶路撒冷仍然落入阿拉伯人手中，一直到1918年才被雅弗族英國人佔領，最後歸回閃族希伯來人保管。經由十三世紀馬可波羅 Marco Polo 引進中華民族的指南針，雅弗族才開始大規模的朝向大西洋海運發展。十七世紀到十九世紀，許多雅弗族後裔從歐洲移民至南非、澳洲、紐蘭及其他許多地區。
               </p>
               <div className="flex flex-col items-center my-4">
+                <img src="/images/book31/ch10-fig102-migration-2.jpg" alt="圖102 三大種族後裔遷徙全地方向圖（西半球）" className="max-w-full h-auto rounded-lg shadow-md" loading="lazy" />
+                <p className="text-sm text-gray-500 mt-2 italic">圖102 — 大洪水審判以後，三大種族後裔向全地遷徙（西半球視角）。</p>
+              </div>
+              <div className="flex flex-col items-center my-4">
                 <img src="/images/book31/ch10-fig102-migration.jpg" alt="圖102 三大種族後裔遷徙全地方向圖" className="max-w-full h-auto rounded-lg shadow-md" loading="lazy" />
                 <p className="text-sm text-gray-500 mt-2 italic">圖102 — 大洪水審判以後，紅色箭頭為閃族後裔遷徙全地的方向，紫色為含族後裔遷徙全地的方向，藍色箭頭為雅弗族後裔遷徙全地的方向。</p>
               </div>
