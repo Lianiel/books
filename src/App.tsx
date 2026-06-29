@@ -54,6 +54,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book28: '人如何改變（教師本）',
   book29: '指向終末的創世記',
   book30: '科學創造論',
+  book31: '創世以來的奧秘',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -390,6 +391,21 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter7', title: '第7章 猿呢？還是人？', path: '/book30/chapter7' },
     { id: 'chapter8', title: '第8章 聖經的創造史', path: '/book30/chapter8' },
   ],
+  book31: [
+    { id: 'home', title: '書本簡介', path: '/book31/home' },
+    { id: 'chapter1', title: '第1章 進化論是對是錯', path: '/book31/chapter1' },
+    { id: 'chapter2', title: '第2章 地球到底有幾歲', path: '/book31/chapter2' },
+    { id: 'chapter3', title: '第3章 宇宙論問題所在', path: '/book31/chapter3' },
+    { id: 'chapter4', title: '第4章 起初 神創造天地', path: '/book31/chapter4' },
+    { id: 'chapter5', title: '第5章 伊甸失落在哪裏', path: '/book31/chapter5' },
+    { id: 'chapter6', title: '第6章 大洪水審判真相', path: '/book31/chapter6' },
+    { id: 'chapter7', title: '第7章 探尋挪亞的方舟', path: '/book31/chapter7' },
+    { id: 'chapter8', title: '第8章 地球大環境改變', path: '/book31/chapter8' },
+    { id: 'chapter9', title: '第9章 人類制度的建立', path: '/book31/chapter9' },
+    { id: 'chapter10', title: '第10章 各民族遷徙全地', path: '/book31/chapter10' },
+    { id: 'chapter11', title: '第11章 神的救贖計劃', path: '/book31/chapter11' },
+    { id: 'chapter12', title: '第12章 主耶穌再回來', path: '/book31/chapter12' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -424,6 +440,7 @@ const STATIC_BOOKS = [
   { book_id: 'book28', title: '人如何改變（教師本）', author: '提姆連恩 & 保羅區普（CCEF）', description: '《人如何改變》課程的教師本（Facilitator Guide）——為帶領者設計的實用指南。包含帶領流程、時間分配、關鍵教學點、討論引導技巧，及應對常見挑戰的策略，幫助帶領者有效引導學員經歷真實的屬靈改變。', chapters_count: 13 },
   { book_id: 'book29', title: '指向終末的創世記', author: '', description: '以終末論視角詮釋創世記——從「起初」到「終末」，探索創造、墮落、洪水與族長歷史中隱藏的末世啟示。每章連結基督的工作、律法與福音、科學與信仰，以及華人文化背景，帶領讀者看見創世記如何從第一頁就指向萬物更新的終末榮耀。', chapters_count: 10 },
   { book_id: 'book30', title: '科學創造論', author: '亨利·莫瑞士博士（Henry M. Morris, Ph.D.）主編　韓偉等譯', description: '創造研究社（ICR）科學家及顧問聯合執筆——以純科學角度比較「進化模式」與「創造模式」，從熱力學、古生物學、地質學、遺傳學、人類學各領域呈現創造模式的科學依據，完全不引用聖經，是教師與知識份子建立科學世界觀的重要參考。', chapters_count: 9 },
+  { book_id: 'book31', title: '創世以來的奧秘', author: '孫大程　著', description: '從科學、天文、地理、歷史、神學多角度探討創世以來的十二大奧秘——進化論、地球年齡、宇宙論、神的創造、伊甸失落、大洪水、挪亞方舟、地球環境、人類制度、民族遷徙、神的救贖、主耶穌再來。以嚴謹的科學證據與聖經真理，為21世紀現代人解開宇宙與人生最根本的疑問。', chapters_count: 13 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -774,6 +791,7 @@ const Book30Ch5 = lazy(() => import('./components/book30/Book30Ch5'));
 const Book30Ch6 = lazy(() => import('./components/book30/Book30Ch6'));
 const Book30Ch7 = lazy(() => import('./components/book30/Book30Ch7'));
 const Book30Ch8 = lazy(() => import('./components/book30/Book30Ch8'));
+const Book31Home = lazy(() => import('./components/book31/Book31Home'));
 
 const Book28Home = lazy(() => import('./components/book28/Book28Home'));
 const Book28Ch1 = lazy(() => import('./components/book28/Book28Ch01'));
@@ -1221,6 +1239,7 @@ const App: React.FC = () => {
         <Route path="/book30/chapter7" element={<BookLayout bookId="book30" chapter="chapter7" chapters={getChaptersForBook('book30')}><Book30Ch7 /></BookLayout>} />
         <Route path="/book30/chapter8" element={<BookLayout bookId="book30" chapter="chapter8" chapters={getChaptersForBook('book30')}><Book30Ch8 /></BookLayout>} />
         <Route path="/book/30" element={<BookLayout bookId="book30" chapter="home" chapters={getChaptersForBook('book30')}><Book30Home /></BookLayout>} />
+        <Route path="/book31/home" element={<BookLayout bookId="book31" chapter="home" chapters={getChaptersForBook('book31')}><Book31Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
         <Route path="/" element={
