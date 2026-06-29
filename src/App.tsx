@@ -801,6 +801,7 @@ const Book31Ch6 = lazy(() => import('./components/book31/Book31Ch6'));
 const Book31Ch7 = lazy(() => import('./components/book31/Book31Ch7'));
 const Book31Ch8 = lazy(() => import('./components/book31/Book31Ch8'));
 const Book31Ch9 = lazy(() => import('./components/book31/Book31Ch9'));
+const Book31Ch10 = lazy(() => import('./components/book31/Book31Ch10'));
 
 const Book28Home = lazy(() => import('./components/book28/Book28Home'));
 const Book28Ch1 = lazy(() => import('./components/book28/Book28Ch01'));
@@ -1258,6 +1259,7 @@ const App: React.FC = () => {
         <Route path="/book31/chapter7" element={<BookLayout bookId="book31" chapter="chapter7" chapters={getChaptersForBook('book31')}><Book31Ch7 /></BookLayout>} />
         <Route path="/book31/chapter8" element={<BookLayout bookId="book31" chapter="chapter8" chapters={getChaptersForBook('book31')}><Book31Ch8 /></BookLayout>} />
         <Route path="/book31/chapter9" element={<BookLayout bookId="book31" chapter="chapter9" chapters={getChaptersForBook('book31')}><Book31Ch9 /></BookLayout>} />
+        <Route path="/book31/chapter10" element={<BookLayout bookId="book31" chapter="chapter10" chapters={getChaptersForBook('book31')}><Book31Ch10 /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
         <Route path="/" element={
