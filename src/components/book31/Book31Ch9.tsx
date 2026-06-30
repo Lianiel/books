@@ -73,14 +73,14 @@ export default function Book31Ch9() {
               <p className="text-gray-700 leading-relaxed mb-3">
                 在聖靈感動下，我特別注意到創世記九章5節中，　神一連三次重複希伯來原文 אֶדְרֹשׁ 這個是法律用詞，這是「我將追討」的意思。也就是說，　神站在審判者的立場，下達這道重要的命令。中文和合本聖經在許多地方翻譯都很好，但可能為了方便遷就，在這裏是這樣翻譯的：「流你們血害你們命的，無論是獸、是人，我必討他的罪，就是向各人的弟兄也是如此」（創世記九章5節）。如果按照希伯來原文翻譯：
               </p>
-              <div className="bg-gray-900 rounded-lg p-4 mb-3 text-center" dir="rtl">
-                <p className="text-white font-mono text-lg leading-loose tracking-wide">
+              <div className="bg-gradient-to-r from-teal-600 to-cyan-700 rounded-lg p-5 mb-3 text-center shadow-md" dir="rtl">
+                <p className="text-white font-mono leading-loose tracking-wide" style={{ fontSize: '26px' }}>
                   וְאַךְ אֶת-דִּמְכֶם לְנַפְשֹׁתֵיכֶם אֶדְרֹשׁ מִיַּד
                 </p>
-                <p className="text-white font-mono text-lg leading-loose tracking-wide">
+                <p className="text-white font-mono leading-loose tracking-wide" style={{ fontSize: '26px' }}>
                   כָּל-חַיָּה אֶדְרְשֶׁנּוּ וּמִיַּד הָאָדָם מִיַּד
                 </p>
-                <p className="text-white font-mono text-lg leading-loose tracking-wide">
+                <p className="text-white font-mono leading-loose tracking-wide" style={{ fontSize: '26px' }}>
                   אָחִיו אֶדְרֹשׁ אֶת-נֶפֶשׁ הָאָדָם׃
                 </p>
               </div>
