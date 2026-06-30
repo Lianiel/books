@@ -73,11 +73,22 @@ export default function Book31Ch9() {
               <p className="text-gray-700 leading-relaxed mb-3">
                 在聖靈感動下，我特別注意到創世記九章5節中，　神一連三次重複希伯來原文 אֶדְרֹשׁ 這個是法律用詞，這是「我將追討」的意思。也就是說，　神站在審判者的立場，下達這道重要的命令。中文和合本聖經在許多地方翻譯都很好，但可能為了方便遷就，在這裏是這樣翻譯的：「流你們血害你們命的，無論是獸、是人，我必討他的罪，就是向各人的弟兄也是如此」（創世記九章5節）。如果按照希伯來原文翻譯：
               </p>
+              <div className="bg-gray-900 rounded-lg p-4 mb-3 text-center" dir="rtl">
+                <p className="text-white font-mono text-lg leading-loose tracking-wide">
+                  וְאַךְ אֶת-דִּמְכֶם לְנַפְשֹׁתֵיכֶם אֶדְרֹשׁ מִיַּד
+                </p>
+                <p className="text-white font-mono text-lg leading-loose tracking-wide">
+                  כָּל-חַיָּה אֶדְרְשֶׁנּוּ וּמִיַּד הָאָדָם מִיַּד
+                </p>
+                <p className="text-white font-mono text-lg leading-loose tracking-wide">
+                  אָחִיו אֶדְרֹשׁ אֶת-נֶפֶשׁ הָאָדָם׃
+                </p>
+              </div>
               <div className="bg-teal-50 border-l-4 border-teal-400 p-4 rounded-r-lg mb-3">
                 <p className="text-gray-700 leading-relaxed font-medium">
-                  「流你們血害你們命的，無論是獸、是人，我必追討他的罪；害人命的人，從他手中我將追討他的命。」
+                  「流你們血害你們命的，我必將追討他的罪；害人命的任何一隻獸，我將追討牠的罪，害人命的人也是如此。害弟兄命的人，從他手中我將追討他的罪。」
                 </p>
-                <p className="text-sm text-teal-700 mt-2">　神在此強調三次「我將追討」。他的這個命令，這和大洪水審判以前的立法制度有很大的不同。</p>
+                <p className="text-sm text-teal-700 mt-2">　神在此強調三次「我將追討」他的罪，這和大洪水審判以前的立法制度有很大的不同。</p>
               </div>
               <p className="text-gray-700 leading-relaxed">
                 　神因此將執行死刑的命令交付人類，　神吩咐說：「凡流人血的，他的血也必被人所流。因為　神造人，是照自己的形像造的。」（創世記九章6節）。在這裏，「流人血」的「流」這個動詞，希伯來文原文的文法結構是「分詞」，意思有「成習慣或重複流人血」的含意。為了這個詞字的解釋，經常有學者對死刑持不同的看法。
