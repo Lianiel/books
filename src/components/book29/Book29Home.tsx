@@ -73,26 +73,43 @@ export default function Book29Home() {
         </button>
         {expanded['structure'] && (
           <div className="p-5 bg-white space-y-4">
-            <p className="text-gray-700 leading-relaxed">創世記的結構有兩種主要分析法：</p>
+            <p className="text-gray-700 leading-relaxed">創世記的結構有兩種比較重要的分析法：</p>
             <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-100">
-              <h4 className="font-semibold text-indigo-800 mb-2">一、多利達特公式（תּוֹלְדוֹת，eleh toledot）</h4>
+              <h4 className="font-semibold text-indigo-800 mb-2">一、多利達特公式（תּוֹלְדוֹת eleh toledot）</h4>
               <p className="text-gray-700 leading-relaxed text-sm">
-                希伯來片語「後代」(eleh toledot, 這是……的後代) 出現十次，構成全書的骨架：
-                二4（天地的後代）、五1（亞當的後代）、六9（挪亞的後代）、十1（挪亞兒子的後代）、
-                十一27（他拉的後代）、廿五12（以實瑪利的後代）、廿五19（以撒的後代）、
-                卅六1（以掃的後代）、卅六9（以掃山地始祖的後代）、卅七2（雅各的後代）。
+                這個片語有來歷、後代、兒子、記略等各種翻譯。這片語通常接著一個人名，只有第一處例外，不是人名，而是「天地」，出現於五1、六9、十1、十一10、十一27、廿五12、廿五19、卅六1、卅六9、卅七2。從第二處開始，記載：1. 亞當的後代、2. 挪亞的後代、3. 閃含雅弗的後代、4. 閃的後代、5. 他拉的後代、6. 以實瑪利的後代、7. 以撒的後代、8. 以掃的後代、9. 雅各的後代。
               </p>
             </div>
             <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
-              <h4 className="font-semibold text-blue-800 mb-2">二、按內容與文學形式分法</h4>
-              <div className="space-y-2 text-sm text-gray-700">
-                <div className="flex gap-2">
-                  <span className="font-semibold text-blue-700 flex-shrink-0">太古時期（一至十一章）：</span>
-                  <span>人類的歷史，包含<strong>創造、墮落、洪水、巴別</strong>四個重要事件</span>
+              <h4 className="font-semibold text-blue-800 mb-2">二、按內容與文學形式的分法</h4>
+              <p className="text-gray-700 leading-relaxed text-sm mb-3">
+                可分為兩大部分：創世記一至十一章，和十二至五十章。前者為人類的歷史／太古時期，包含創造、墮落、洪水、巴別等四個重要事件；後者為族長的歷史／先祖時期，包含亞伯拉罕、以撒、雅各、約瑟等四個重要人物。相關章次對應如下：
+              </p>
+              <div className="border border-blue-200 rounded-lg overflow-hidden text-sm">
+                <div className="text-center font-semibold bg-blue-100 text-blue-900 py-2">表一：創世記的結構與大綱</div>
+                <div className="grid grid-cols-2 text-center font-semibold text-blue-800 bg-blue-50 border-t border-blue-200">
+                  <div className="py-2 border-r border-blue-200">人類的歷史<br />四個重要事件</div>
+                  <div className="py-2">族長的歷史<br />四個重要人物</div>
                 </div>
-                <div className="flex gap-2">
-                  <span className="font-semibold text-blue-700 flex-shrink-0">族長時期（十二至五十章）：</span>
-                  <span>族長的歷史，包含<strong>亞伯拉罕、以撒、雅各、約瑟</strong>四個重要人物</span>
+                <div className="grid grid-cols-8 text-center text-gray-700 border-t border-blue-200">
+                  <div className="py-2 border-r border-blue-100 font-semibold">創造</div>
+                  <div className="py-2 border-r border-blue-200 font-semibold">墮落</div>
+                  <div className="py-2 border-r border-blue-100 font-semibold">洪水</div>
+                  <div className="py-2 border-r border-blue-200 font-semibold">巴別</div>
+                  <div className="py-2 border-r border-blue-100 font-semibold">亞伯拉罕</div>
+                  <div className="py-2 border-r border-blue-200 font-semibold">以撒</div>
+                  <div className="py-2 border-r border-blue-100 font-semibold">雅各</div>
+                  <div className="py-2 font-semibold">約瑟</div>
+                </div>
+                <div className="grid grid-cols-8 text-center text-gray-600 border-t border-blue-200 bg-white">
+                  <div className="py-2 border-r border-blue-100">1~2章</div>
+                  <div className="py-2 border-r border-blue-200">3~6章</div>
+                  <div className="py-2 border-r border-blue-100">7~9章</div>
+                  <div className="py-2 border-r border-blue-200">10-11章</div>
+                  <div className="py-2 border-r border-blue-100">12~23章</div>
+                  <div className="py-2 border-r border-blue-200">24~26章</div>
+                  <div className="py-2 border-r border-blue-100">27~36章</div>
+                  <div className="py-2">37~50章</div>
                 </div>
               </div>
             </div>
@@ -111,14 +128,16 @@ export default function Book29Home() {
         </button>
         {expanded['parts'] && (
           <div className="p-5 bg-white space-y-3">
-            <p className="text-gray-700 leading-relaxed">本書書名是《指向終末的創世記》，其內容包含五大部：</p>
+            <p className="text-gray-700 leading-relaxed">
+              本書書名是《指向終末的創世記》，其內容包含五大部，也是創世記的五個段落，這五部可簡稱為創造、伊甸、方舟、選召、掌權，分別講到神、羔羊、拯救、稱義、得勝。兩兩相對應如下：<strong>創造──神、伊甸──羔羊、方舟──拯救、選召──稱義、掌權──得勝</strong>。每部各有十二章。既然是指向終末，因此各部都包含有關基督的預言與預表，關聯到基督的降生、成長、傳道、救贖、復活、升天、再來、禧年國度、新天新地等。
+            </p>
             <div className="space-y-2">
               {[
-                { num: '第一部', title: '從創造到安息', desc: '主要講神的創造，包括起初與終末、神創造天地、聖靈的工作、生命真光、天空上的水、陸地與植物、日月與眾星、安息的生命、豐盛的生命、我們的形像、掌權的生命、神與人安息等十二章。' },
-                { num: '第二部', title: '從生命樹到分別善惡樹', desc: '探討兩棵樹的深刻神學意涵，揭示律法與福音的道路，以及人在神面前的抉擇。' },
-                { num: '第三部', title: '從亞當到挪亞', desc: '追蹤人類的墮落、繁衍與腐敗，至洪水審判的救恩，看見神在審判中的憐憫。' },
-                { num: '第四部', title: '從挪亞到亞伯拉罕', desc: '探討洪水之後的重新開始，巴別塔事件，以及神呼召亞伯拉罕開啟救恩歷史新頁。' },
-                { num: '第五部', title: '從亞伯拉罕到約瑟', desc: '追蹤族長時代的信心旅程，看神如何在平凡人的生命中成就非凡的救贖計劃。' },
+                { num: '第一部', title: '從創造到安息', desc: '經文範圍在創世記一章至二章3節，主要講神的創造與安息，包含起初與終末、神創造天地、聖靈的工作，生命的真光、天空上的水、陸地與植物、日月與眾星、安息的生命、豐盛的生命、我們的形像、掌權的生命、神與人安息等十二章。' },
+                { num: '第二部', title: '從伊甸到救贖', desc: '經文範圍在創世記二章4節至三章，主要講伊甸園裡發生的事，包含神精心造人、伊甸園與河、設立生命樹、分別善惡樹、單身的亞當、神設立婚姻、蛇魔鬼撒但、撒但的謊言、人犯罪墮落、神審判撒但、長遠的爭戰、咒詛與救贖等十二章。' },
+                { num: '第三部', title: '從羔羊到方舟', desc: '經文範圍在創世記四章至七章，主要講離開伊甸園到大洪水來臨的故事，包含該隱與亞伯、失去根的人、該隱的後裔、塞特的後裔、以諾的一生、神的兒子們、人與神的心、完全人挪亞、傳道者挪亞、挪亞造方舟、你和你全家、洪水與方舟等十二章。' },
+                { num: '第四部', title: '從紀念到選召', desc: '經文範圍在創世記八章至廿三章，主要講離開方舟到信心之父亞伯拉罕的故事，包含紀念與獻祭、賜福與立約、咒詛與祝福、三個大族群、巴別亂口音、生養與離開、呼召與拯救、寄居與不爭、爭戰與奉獻、肉體的拆毀、屬靈的新造、獻上獨生子等十二章。' },
+                { num: '第五部', title: '從安息到掌權', desc: '經文範圍在創世記廿四章至五十章，主要講以撒、雅各至猶大、約瑟的事情，包含以撒的一生、神堅定立約、抓取到分享、生命的豐盛、為父的雅各、雅各與約瑟、神寬廣的愛、約瑟的一生、猶大的故事、約瑟的人格、豐年與荒年、基督的預表等十二章。' },
               ].map((part, i) => (
                 <div key={i} className="bg-indigo-50 rounded-lg p-3 border border-indigo-100">
                   <span className="font-semibold text-indigo-800">{part.num}「{part.title}」</span>
@@ -142,11 +161,12 @@ export default function Book29Home() {
         {expanded['features'] && (
           <div className="p-5 bg-white space-y-3">
             {[
-              { num: '一', title: '與基督及終末相關', desc: '各部都包含有關基督的預言與形表，關聯基督的誕生、成長、傳道、救贖、復活、升天、頒賜年國、新天新地等。創世記中的每一個重要主題最終都指向基督的位格與工作。' },
-              { num: '二', title: '與律法及福音相關', desc: '分別善惡樹與生命樹立在創世記二章，這兩棵樹分別標示律法與福音的道路。人走在律法路上是帶著罪的果子；雖然生命要到新天新地時才能完全出現，但羔羊的救恩早已臨到，使亞伯拉罕走在福音生命的道路，而非律法與死亡的道路。' },
-              { num: '三', title: '與科學的關聯', desc: '福音派學者多數對進化論採較開放的態度。本書作者是物理學家，比較了真實科學與無神論科學的根本分野，從科學角度探討神的創造行動。' },
-              { num: '四', title: '與靈命及教牧相關', desc: '第二、三章生命樹與分別善惡樹的意義，第六章「神的兒子」是誰，不同的解釋帶出截然不同的應用。每章提供全面的了解，各章多次從不同層面分析牧養的應用。' },
-              { num: '五', title: '與華人的信仰相關', desc: '創世記一至九章所描述的上古歷史，其主要繼承者乃是亞洲人。本書特別關注創世記神學與華人文化信仰傳統之間的聯繫與對話。' },
+              { num: '一', title: '與基督及終末相關', desc: '本書各章內容幾乎都包含基督的預表及福音的內容，關聯到基督的降生、成長、傳道、救贖、復活、升天、再來等。基督的降生已經開啟了終末，使整個世界進入末世，因為基督的受死與復活帶來拯救，這拯救關乎以色列，也關乎萬國萬民。福音傳遍全地後，基督還要再來，在全地掌權，實現創世記一28神給人的使命。創世記內容所預表的包括基督第一次來與第二次來。' },
+              { num: '二', title: '與律法及福音相關', desc: '分別善惡樹與生命樹在創世記二章出現，本書指出，這兩棵樹分別標示了律法與福音的道路。人吃分別善惡樹的果子，就走在律法的道路上；人吃生命樹的果子，就走在福音的道路上。雖然生命樹要到新天新地時才會再出現，但羔羊的救恩早已及時臨到，使亞伯、以諾、挪亞、亞伯拉罕都能走在福音與生命的道路，而非律法與死亡的道路。這是兩條有關生死禍福的道路，從創世記連貫到啟示錄。' },
+              { num: '三', title: '與科學的辯證相關', desc: '福音派學者，多數對進化論採取接納的態度，認為既然是科學界的共識，就不要製造對立。筆者本科所學是物理學，比較了解真科學與假科學的分野，也了解已驗證的事實與尚未取得驗證的假說之間的分野。因此本書有部分篇幅，會指出進化論的問題，也稍微探討地球年齡及宇宙年齡的問題；並以聖經為本，提供創造論詮釋的合理視角。這方面對我們解讀創世記也是很重要的。' },
+              { num: '四', title: '與靈命及教牧相關', desc: '本書沒有很深的學術討論，比較著重在以經解經及靈命、教牧的應用。舉例來說，第二、三章生命樹與分別善惡樹的意義，固然跟自由意志有關，更重要是跟靈命及教牧相關，本書有深入的分享。第六章神的兒子是誰，不同的解釋帶出不同的應用，本書提供有別於一般福音派的見解，可有更切合實際的應用。第九章挪亞咒詛的小兒子是誰，本書有深入的分析，提供更切合靈命與教牧的應用。本書也多次從不同經文帶出這世代肉身生養、屬靈生養、牧養宣教的呼召與實踐。' },
+              { num: '五', title: '與華人的信仰相關', desc: '創世記一至九章內容的主要見證人及上古歷史的主要傳承者，乃是挪亞。全世界的人都是挪亞的後裔，挪亞兒子閃的後代主要是亞洲人，佔世界人口二分之一，而華人佔全世界人口近四分之一，因此閃的後代幾乎一半是華人。可推知，華人最早的祖先與挪亞、閃在世的時間有重疊。中國字所留存的見證及華人古代信仰的內涵必皆來自挪亞與閃。因此本書內容除了以解釋聖經為主之外，有些篇章也會引用華人古代文化中的信仰素材。' },
+              { num: '六', title: '人稱代名詞的使用', desc: '本書提到神／上帝、基督，需要使用代名詞時，基本上是用「祂」，而不是「他」，這種用法與和合本聖經一致。講神／上帝固然可以用「祂」，講基督卻不能只用「他」，因為用「他」就否定了基督的神性，用「她」就否定了基督的人性，因此一律用「祂」，這個「祂」可包含神性與人性，這是和合本與本書使用「祂」的共同原因。此外，和合本聖經有「神」版與「上帝」版兩種，本書多數用「神」，但為了詞句的感覺或字數的配合，有時也用「上帝」。' },
             ].map((f, i) => (
               <div key={i} className="border-l-4 border-indigo-400 pl-4 py-1">
                 <span className="font-semibold text-indigo-800">{f.num}、{f.title}</span>
