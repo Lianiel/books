@@ -94,7 +94,7 @@ export default function Book29Ch5() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">歸納起來，天上的水（氣）層共有五個功能：</p>
               <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-200 mb-3">
-                <ol className="space-y-1.5 text-sm text-gray-700 list-decimal list-inside">
+                <ol className="space-y-1.5 leading-relaxed text-gray-700 list-decimal list-inside">
                   <li>供應可飲用的淡水。</li>
                   <li>抵擋宇宙射線，保護地上生物。</li>
                   <li>使太陽光的熱量平均分散全地。</li>
