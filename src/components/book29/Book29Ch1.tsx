@@ -71,7 +71,7 @@ export default function Book29Ch1() {
 
               <div className="flex flex-col items-center my-4">
                 <img
-                  src="/images/book29/ch1-six-days-creation.png"
+                  src="/images/book29/ch1-six-days-creation.jpg"
                   alt="圖一：六日創造，六格插畫呈現神六日創造的內容"
                   className="max-w-full h-auto rounded-lg shadow-md border border-gray-200"
                 />
@@ -101,7 +101,7 @@ export default function Book29Ch1() {
 
               <div className="flex flex-col items-center my-4">
                 <img
-                  src="/images/book29/ch1-beginning-to-end.png"
+                  src="/images/book29/ch1-beginning-to-end.jpg"
                   alt="圖二：起初到終末，示意圖呈現從伊甸園到新天新地的歷史軌跡"
                   className="max-w-full h-auto rounded-lg shadow-md border border-gray-200"
                 />
