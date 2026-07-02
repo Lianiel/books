@@ -82,7 +82,7 @@ export default function Book29Ch3() {
 
               <div className="flex flex-col items-center my-4">
                 <img
-                  src="/images/book29/ch3-spirit-hovering.png"
+                  src="/images/book29/ch3-spirit-hovering.jpg"
                   alt="圖三：神的靈運行，插畫呈現聖靈孵育護翼的意象"
                   className="max-w-full h-auto rounded-lg shadow-md border border-gray-200"
                 />
