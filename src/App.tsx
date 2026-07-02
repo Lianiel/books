@@ -489,6 +489,24 @@ const colorMap: Record<number, string> = {
   30: 'from-blue-600 to-indigo-600',
 };
 
+// ========== 首頁分類 ==========
+interface BookCategory {
+  name: string;
+  icon: string;
+  color: string;
+  bg: string;
+  bookNumbers: number[];
+}
+
+const BOOK_CATEGORIES: BookCategory[] = [
+  { name: '禱告靈修', icon: '🙏', color: '#7c3aed', bg: '#f5f3ff', bookNumbers: [9, 10, 14, 16] },
+  { name: '聖經研讀', icon: '📖', color: '#b45309', bg: '#fffbeb', bookNumbers: [6, 12, 23, 29, 30, 31] },
+  { name: '門訓成長', icon: '🌱', color: '#059669', bg: '#f0fdf4', bookNumbers: [5, 7, 19, 21, 22, 26] },
+  { name: '情緒輔導', icon: '💙', color: '#0d9488', bg: '#f0fdfa', bookNumbers: [1, 2, 8, 20, 27, 28] },
+  { name: '信仰神學', icon: '✝️', color: '#4338ca', bg: '#eef2ff', bookNumbers: [11, 13, 15, 18] },
+  { name: '宣教教會', icon: '🌍', color: '#dc2626', bg: '#fff1f2', bookNumbers: [3, 4, 17, 24, 25] },
+];
+
 // ========== Book 1 章節（懶加載） ==========
 const Book1Home = lazy(() => import('./components/book1/SectionHome'));
 const Book1Definition = lazy(() => import('./components/book1/SectionDefinition'));
@@ -842,14 +860,20 @@ const Book28Ch12 = lazy(() => import('./components/book28/Book28Ch12'));
 const BookCard: React.FC<BookCardProps> = ({
   number,
   title,
+  author,
+  description,
   to,
   color = "from-blue-500 to-purple-600"
 }) => {
+  const tooltip = [author, description].filter(Boolean).join(' — ');
   return (
-    <Link to={to} className="block">
+    <Link to={to} className="block" title={tooltip || undefined}>
       <div className={`bg-gradient-to-r ${color} rounded-lg px-3 py-2 text-white shadow hover:shadow-md transform hover:scale-105 transition-all duration-200 flex items-center gap-2`}>
         <span className="bg-white/30 rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold flex-shrink-0">{number}</span>
-        <span className="text-xl font-medium leading-tight">{title}</span>
+        <div className="min-w-0">
+          <span className="text-xl font-medium leading-tight block truncate">{title}</span>
+          {author && <span className="text-xs text-white/80 leading-tight block truncate">{author}</span>}
+        </div>
       </div>
     </Link>
   );
@@ -860,6 +884,10 @@ const App: React.FC = () => {
   const [bookChapters, setBookChapters] = useState<Record<string, Chapter[]>>({});
   const [loading, setLoading] = useState(true);
   const [supabaseOk, setSupabaseOk] = useState(false);
+  const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>(
+    Object.fromEntries(BOOK_CATEGORIES.map(c => [c.name, true]))
+  );
+  const toggleCategory = (name: string) => setExpandedCategories(prev => ({ ...prev, [name]: !prev[name] }));
 
   useEffect(() => {
     const loadData = async () => {
@@ -1324,28 +1352,68 @@ const App: React.FC = () => {
 
             {!loading && (
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-                  {displayBooks.map((book) => {
-                    const bookNumber = parseInt(book.book_id.replace('book', ''));
-                    const firstChapter = bookChapters[book.book_id]?.[0];
-                    const staticFirst = BOOK_CHAPTERS[book.book_id]?.[0];
-                    const bookUrl = firstChapter
-                      ? `/${book.book_id}/${firstChapter.chapter_id}`
-                      : (staticFirst?.path || `/${book.book_id}`);
+                {(() => {
+                  const bookByNumber: Record<number, BookType> = {};
+                  displayBooks.forEach(book => {
+                    bookByNumber[parseInt(book.book_id.replace('book', ''))] = book;
+                  });
+                  const categorizedNumbers = new Set(BOOK_CATEGORIES.flatMap(c => c.bookNumbers));
+                  const uncategorized = displayBooks
+                    .map(book => parseInt(book.book_id.replace('book', '')))
+                    .filter(n => !categorizedNumbers.has(n));
+                  const categories = uncategorized.length > 0
+                    ? [...BOOK_CATEGORIES, { name: '其他', icon: '📚', color: '#6b7280', bg: '#f9fafb', bookNumbers: uncategorized }]
+                    : BOOK_CATEGORIES;
+
+                  return categories.map((cat) => {
+                    const catBooks = cat.bookNumbers.map(n => bookByNumber[n]).filter(Boolean);
+                    if (catBooks.length === 0) return null;
+                    const isExpanded = expandedCategories[cat.name] !== false;
                     return (
-                      <BookCard
-                        key={book.book_id}
-                        number={bookNumber}
-                        title={book.title}
-                        author={book.author}
-                        description={book.description}
-                        chapters={book.chapters_count}
-                        to={bookUrl}
-                        color={colorMap[bookNumber] || 'from-blue-500 to-purple-600'}
-                      />
+                      <div key={cat.name} className="mb-4">
+                        <button
+                          onClick={() => toggleCategory(cat.name)}
+                          className="w-full flex items-center gap-2 mb-3 px-4 py-2.5 rounded-r-lg transition-colors"
+                          style={{ background: cat.bg, borderLeft: `4px solid ${cat.color}` }}
+                        >
+                          <span className="text-xl">{cat.icon}</span>
+                          <span className="font-bold text-lg" style={{ color: cat.color }}>{cat.name}</span>
+                          <span className="text-sm text-gray-400">{catBooks.length} 本</span>
+                          <span
+                            className="ml-auto text-sm transition-transform"
+                            style={{ color: cat.color, transform: isExpanded ? 'rotate(0deg)' : 'rotate(-90deg)' }}
+                          >
+                            ▾
+                          </span>
+                        </button>
+                        {isExpanded && (
+                          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-2">
+                            {catBooks.map((book) => {
+                              const bookNumber = parseInt(book.book_id.replace('book', ''));
+                              const firstChapter = bookChapters[book.book_id]?.[0];
+                              const staticFirst = BOOK_CHAPTERS[book.book_id]?.[0];
+                              const bookUrl = firstChapter
+                                ? `/${book.book_id}/${firstChapter.chapter_id}`
+                                : (staticFirst?.path || `/${book.book_id}`);
+                              return (
+                                <BookCard
+                                  key={book.book_id}
+                                  number={bookNumber}
+                                  title={book.title}
+                                  author={book.author}
+                                  description={book.description}
+                                  chapters={book.chapters_count}
+                                  to={bookUrl}
+                                  color={colorMap[bookNumber] || 'from-blue-500 to-purple-600'}
+                                />
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
                     );
-                  })}
-                </div>
+                  });
+                })()}
               </div>
             )}
 
