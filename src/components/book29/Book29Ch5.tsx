@@ -76,7 +76,7 @@ export default function Book29Ch5() {
 
               <div className="flex flex-col items-center my-4">
                 <img
-                  src="/images/book29/ch5-water-above.png"
+                  src="/images/book29/ch5-water-above.jpg"
                   alt="圖四：天上的水，示意圖呈現地球、海洋、空氣、水氣層的分層結構"
                   className="max-w-full h-auto rounded-lg shadow-md border border-gray-200"
                 />
