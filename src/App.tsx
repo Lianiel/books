@@ -379,6 +379,12 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter8', title: '第8章 安息的生命', path: '/book29/chapter8' },
     { id: 'chapter9', title: '第9章 豐盛的生命', path: '/book29/chapter9' },
     { id: 'chapter10', title: '第10章 我們的形像', path: '/book29/chapter10' },
+    { id: 'chapter11', title: '第11章 掌權的生命', path: '/book29/chapter11' },
+    { id: 'chapter12', title: '第12章 神與人安息', path: '/book29/chapter12' },
+    { id: 'chapter13', title: '第13章 神精心造人', path: '/book29/chapter13' },
+    { id: 'chapter14', title: '第14章 伊甸園與河', path: '/book29/chapter14' },
+    { id: 'chapter15', title: '第15章 設立生命樹', path: '/book29/chapter15' },
+    { id: 'chapter16', title: '第16章 分別善惡樹', path: '/book29/chapter16' },
   ],
   book30: [
     { id: 'home', title: '書本簡介', path: '/book30/home' },
@@ -423,7 +429,7 @@ const STATIC_BOOKS = [
   { book_id: 'book26', title: '言語的力量與神的奇妙', author: '約翰・派博 & 賈斯汀・泰勒 編輯', description: '六位當代神學家探討基督徒言語生活——言語與人心、舌頭的管治、雄辯與十字架、尖銳的言語、故事的力量、歌唱的奧祕，從不同角度呈現以神的榮耀為準則的言語神學。', chapters_count: 8 },
   { book_id: 'book27', title: '人如何改變', author: '提姆連恩 & 保羅區普（CCEF）', description: '以HEAT模式（炎熱→荊棘藪→十字架→果實）探討基督徒改變的神學——從耶利米書17章出發，揭示心的偶像如何在試煉中顯露，及十字架恩典如何帶來真實而持久的生命更新。', chapters_count: 13 },
   { book_id: 'book28', title: '人如何改變（教師本）', author: '提姆連恩 & 保羅區普（CCEF）', description: '《人如何改變》課程的教師本（Facilitator Guide）——為帶領者設計的實用指南。包含帶領流程、時間分配、關鍵教學點、討論引導技巧，及應對常見挑戰的策略，幫助帶領者有效引導學員經歷真實的屬靈改變。', chapters_count: 13 },
-  { book_id: 'book29', title: '指向終末的創世記', author: '', description: '以終末論視角詮釋創世記——從「起初」到「終末」，探索創造、墮落、洪水與族長歷史中隱藏的末世啟示。每章連結基督的工作、律法與福音、科學與信仰，以及華人文化背景，帶領讀者看見創世記如何從第一頁就指向萬物更新的終末榮耀。', chapters_count: 10 },
+  { book_id: 'book29', title: '指向終末的創世記', author: '', description: '以終末論視角詮釋創世記——從「起初」到「終末」，探索創造、墮落、洪水與族長歷史中隱藏的末世啟示。每章連結基督的工作、律法與福音、科學與信仰，以及華人文化背景，帶領讀者看見創世記如何從第一頁就指向萬物更新的終末榮耀。', chapters_count: 16 },
   { book_id: 'book30', title: '科學創造論', author: '亨利·莫瑞士博士（Henry M. Morris, Ph.D.）主編　韓偉等譯', description: '創造研究社（ICR）科學家及顧問聯合執筆——以純科學角度比較「進化模式」與「創造模式」，從熱力學、古生物學、地質學、遺傳學、人類學各領域呈現創造模式的科學依據，完全不引用聖經，是教師與知識份子建立科學世界觀的重要參考。', chapters_count: 9 },
 ];
 
@@ -765,6 +771,12 @@ const Book29Ch7 = lazy(() => import('./components/book29/Book29Ch7'));
 const Book29Ch8 = lazy(() => import('./components/book29/Book29Ch8'));
 const Book29Ch9 = lazy(() => import('./components/book29/Book29Ch9'));
 const Book29Ch10 = lazy(() => import('./components/book29/Book29Ch10'));
+const Book29Ch11 = lazy(() => import('./components/book29/Book29Ch11'));
+const Book29Ch12 = lazy(() => import('./components/book29/Book29Ch12'));
+const Book29Ch13 = lazy(() => import('./components/book29/Book29Ch13'));
+const Book29Ch14 = lazy(() => import('./components/book29/Book29Ch14'));
+const Book29Ch15 = lazy(() => import('./components/book29/Book29Ch15'));
+const Book29Ch16 = lazy(() => import('./components/book29/Book29Ch16'));
 
 // ========== Book 30 章節（懶加載） ==========
 const Book30Home = lazy(() => import('./components/book30/Book30Home'));
@@ -1204,6 +1216,12 @@ const App: React.FC = () => {
         <Route path="/book29/chapter8" element={<BookLayout bookId="book29" chapter="chapter8" chapters={getChaptersForBook('book29')}><Book29Ch8 /></BookLayout>} />
         <Route path="/book29/chapter9" element={<BookLayout bookId="book29" chapter="chapter9" chapters={getChaptersForBook('book29')}><Book29Ch9 /></BookLayout>} />
         <Route path="/book29/chapter10" element={<BookLayout bookId="book29" chapter="chapter10" chapters={getChaptersForBook('book29')}><Book29Ch10 /></BookLayout>} />
+        <Route path="/book29/chapter11" element={<BookLayout bookId="book29" chapter="chapter11" chapters={getChaptersForBook('book29')}><Book29Ch11 /></BookLayout>} />
+        <Route path="/book29/chapter12" element={<BookLayout bookId="book29" chapter="chapter12" chapters={getChaptersForBook('book29')}><Book29Ch12 /></BookLayout>} />
+        <Route path="/book29/chapter13" element={<BookLayout bookId="book29" chapter="chapter13" chapters={getChaptersForBook('book29')}><Book29Ch13 /></BookLayout>} />
+        <Route path="/book29/chapter14" element={<BookLayout bookId="book29" chapter="chapter14" chapters={getChaptersForBook('book29')}><Book29Ch14 /></BookLayout>} />
+        <Route path="/book29/chapter15" element={<BookLayout bookId="book29" chapter="chapter15" chapters={getChaptersForBook('book29')}><Book29Ch15 /></BookLayout>} />
+        <Route path="/book29/chapter16" element={<BookLayout bookId="book29" chapter="chapter16" chapters={getChaptersForBook('book29')}><Book29Ch16 /></BookLayout>} />
         <Route path="/book/29" element={<BookLayout bookId="book29" chapter="home" chapters={getChaptersForBook('book29')}><Book29Home /></BookLayout>} />
 
         {/* ========== Book 30 - 科學創造論 ========== */}
