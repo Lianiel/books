@@ -867,17 +867,28 @@ const App: React.FC = () => {
         const booksData = await fetchBooks();
         if (booksData.length > 0) {
           setBooks(booksData);
-          const chaptersMap: Record<string, Chapter[]> = {};
-          for (const book of booksData) {
-            const chapters = await fetchChapters(book.book_id);
-            chaptersMap[book.book_id] = chapters;
-          }
-          setBookChapters(chaptersMap);
           setSupabaseOk(true);
+          setLoading(false);
+          // 章節資料不影響首頁磚牆顯示（磚牆只需 chapters_count），
+          // 改為平行背景載入，避免逐本依序等待拖慢首頁
+          Promise.all(
+            booksData.map(book =>
+              fetchChapters(book.book_id).then(chapters => [book.book_id, chapters] as const)
+            )
+          ).then(entries => {
+            const chaptersMap: Record<string, Chapter[]> = {};
+            for (const [bookId, chapters] of entries) {
+              chaptersMap[bookId] = chapters;
+            }
+            setBookChapters(chaptersMap);
+          }).catch(() => {
+            // 章節背景載入失敗時，各書會自動使用靜態備援章節資料
+          });
+        } else {
+          setLoading(false);
         }
       } catch {
         // Supabase 連不上，使用靜態備援資料
-      } finally {
         setLoading(false);
       }
     };
