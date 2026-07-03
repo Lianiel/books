@@ -392,6 +392,8 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter20', title: '第20章 撒旦的謊言', path: '/book29/chapter20' },
     { id: 'chapter21', title: '第21章 人犯罪墮落', path: '/book29/chapter21' },
     { id: 'chapter22', title: '第22章 神審判撒旦', path: '/book29/chapter22' },
+    { id: 'chapter23', title: '第23章 長遠的爭戰', path: '/book29/chapter23' },
+    { id: 'chapter24', title: '第24章 咒詛與救贖', path: '/book29/chapter24' },
   ],
   book30: [
     { id: 'home', title: '書本簡介', path: '/book30/home' },
@@ -451,7 +453,7 @@ const STATIC_BOOKS = [
   { book_id: 'book26', title: '言語的力量與神的奇妙', author: '約翰・派博 & 賈斯汀・泰勒 編輯', description: '六位當代神學家探討基督徒言語生活——言語與人心、舌頭的管治、雄辯與十字架、尖銳的言語、故事的力量、歌唱的奧祕，從不同角度呈現以神的榮耀為準則的言語神學。', chapters_count: 8 },
   { book_id: 'book27', title: '人如何改變', author: '提姆連恩 & 保羅區普（CCEF）', description: '以HEAT模式（炎熱→荊棘藪→十字架→果實）探討基督徒改變的神學——從耶利米書17章出發，揭示心的偶像如何在試煉中顯露，及十字架恩典如何帶來真實而持久的生命更新。', chapters_count: 13 },
   { book_id: 'book28', title: '人如何改變（教師本）', author: '提姆連恩 & 保羅區普（CCEF）', description: '《人如何改變》課程的教師本（Facilitator Guide）——為帶領者設計的實用指南。包含帶領流程、時間分配、關鍵教學點、討論引導技巧，及應對常見挑戰的策略，幫助帶領者有效引導學員經歷真實的屬靈改變。', chapters_count: 13 },
-  { book_id: 'book29', title: '指向終末的創世記', author: '', description: '以終末論視角詮釋創世記——從「起初」到「終末」，探索創造、墮落、洪水與族長歷史中隱藏的末世啟示。每章連結基督的工作、律法與福音、科學與信仰，以及華人文化背景，帶領讀者看見創世記如何從第一頁就指向萬物更新的終末榮耀。', chapters_count: 22 },
+  { book_id: 'book29', title: '指向終末的創世記', author: '', description: '以終末論視角詮釋創世記——從「起初」到「終末」，探索創造、墮落、洪水與族長歷史中隱藏的末世啟示。每章連結基督的工作、律法與福音、科學與信仰，以及華人文化背景，帶領讀者看見創世記如何從第一頁就指向萬物更新的終末榮耀。', chapters_count: 24 },
   { book_id: 'book30', title: '科學創造論', author: '亨利·莫瑞士博士（Henry M. Morris, Ph.D.）主編　韓偉等譯', description: '創造研究社（ICR）科學家及顧問聯合執筆——以純科學角度比較「進化模式」與「創造模式」，從熱力學、古生物學、地質學、遺傳學、人類學各領域呈現創造模式的科學依據，完全不引用聖經，是教師與知識份子建立科學世界觀的重要參考。', chapters_count: 9 },
   { book_id: 'book31', title: '創世以來的奧秘', author: '孫大程　著', description: '自從有天地以來，到底曾發生了什麼重要的事情？本書有系統地探討進化論、地球年齡、宇宙論、創造、伊甸園、大洪水審判、挪亞方舟、地球環境變遷、人類制度、民族遷徙、神的救贖計劃及主再來等奧秘，含105幅精彩珍貴的圖片及照片，並有各式圖表幫助讀者瞭解宇宙的奧秘及人生命的意義。', chapters_count: 12 },
 ];
@@ -824,6 +826,8 @@ const Book29Ch19 = lazy(() => import('./components/book29/Book29Ch19'));
 const Book29Ch20 = lazy(() => import('./components/book29/Book29Ch20'));
 const Book29Ch21 = lazy(() => import('./components/book29/Book29Ch21'));
 const Book29Ch22 = lazy(() => import('./components/book29/Book29Ch22'));
+const Book29Ch23 = lazy(() => import('./components/book29/Book29Ch23'));
+const Book29Ch24 = lazy(() => import('./components/book29/Book29Ch24'));
 
 // ========== Book 30 章節（懶加載） ==========
 const Book30Home = lazy(() => import('./components/book30/Book30Home'));
@@ -1309,6 +1313,8 @@ const App: React.FC = () => {
         <Route path="/book29/chapter20" element={<BookLayout bookId="book29" chapter="chapter20" chapters={getChaptersForBook('book29')}><Book29Ch20 /></BookLayout>} />
         <Route path="/book29/chapter21" element={<BookLayout bookId="book29" chapter="chapter21" chapters={getChaptersForBook('book29')}><Book29Ch21 /></BookLayout>} />
         <Route path="/book29/chapter22" element={<BookLayout bookId="book29" chapter="chapter22" chapters={getChaptersForBook('book29')}><Book29Ch22 /></BookLayout>} />
+        <Route path="/book29/chapter23" element={<BookLayout bookId="book29" chapter="chapter23" chapters={getChaptersForBook('book29')}><Book29Ch23 /></BookLayout>} />
+        <Route path="/book29/chapter24" element={<BookLayout bookId="book29" chapter="chapter24" chapters={getChaptersForBook('book29')}><Book29Ch24 /></BookLayout>} />
         <Route path="/book/29" element={<BookLayout bookId="book29" chapter="home" chapters={getChaptersForBook('book29')}><Book29Home /></BookLayout>} />
 
         {/* ========== Book 30 - 科學創造論 ========== */}
