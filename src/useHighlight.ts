@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 
 export type HighlightStyle = 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple';
 
@@ -188,6 +188,8 @@ export function getOffsetInContainer(container: HTMLElement, range: Range): numb
 
 export function useHighlight(bookId: string, chapter: string) {
   const [highlights, setHighlights] = useState<HighlightRecord[]>([]);
+  const highlightsRef = useRef<HighlightRecord[]>([]);
+  highlightsRef.current = highlights;
   const supported = isHighlightApiSupported();
 
   useEffect(() => {
@@ -234,16 +236,18 @@ export function useHighlight(bookId: string, chapter: string) {
 
   const addHighlight = useCallback((text: string, style: HighlightStyle, startOffset: number, bold?: boolean) => {
     if (!text.trim()) return '';
-    const id = generateId();
-    const record: HighlightRecord = {
-      id, book_id: bookId, chapter, text_content: text, start_offset: startOffset, style, bold
-    };
-    setHighlights(prev => {
-      const updated = [...prev, record];
-      saveHighlights(bookId, chapter, updated);
-      return updated;
-    });
-    return id;
+    const prev = highlightsRef.current;
+    // 同一段文字（相同起點與內容）已經畫過重點時，直接更新顏色/粗體，避免產生重疊的重複記錄
+    const existing = prev.find(h => h.start_offset === startOffset && h.text_content === text);
+    const resultId = existing ? existing.id : generateId();
+    const updated = existing
+      ? prev.map(h => h.id === existing.id ? { ...h, style, bold } : h)
+      : [...prev, { id: resultId, book_id: bookId, chapter, text_content: text, start_offset: startOffset, style, bold }];
+
+    highlightsRef.current = updated;
+    saveHighlights(bookId, chapter, updated);
+    setHighlights(updated);
+    return resultId;
   }, [bookId, chapter]);
 
   const removeHighlight = useCallback((id: string) => {
