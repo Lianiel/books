@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 // 從 App.tsx 導入章節類型和書名映射
 import type { ChapterInfo } from '../App';
 import { BOOK_TITLES } from '../App';
+import { useHighlight, getOffsetInContainer, HIGHLIGHT_COLORS, type HighlightStyle } from '../useHighlight';
 
 interface BookLayoutProps {
   bookId: string;
@@ -55,7 +56,12 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   
   // 字體選擇器
   const [showFontSelector, setShowFontSelector] = useState(false);
-  
+
+  // 畫重點
+  const mainRef = useRef<HTMLElement>(null);
+  const { supported: highlightSupported, applyHighlights, addHighlight, removeHighlight, findHighlightAtPoint } = useHighlight(bookId, chapter);
+  const [selectionToolbar, setSelectionToolbar] = useState<{ x: number; y: number; text: string; range: Range } | null>(null);
+
   // 獲取章節資訊
   const currentIndex = chapters.findIndex(ch => ch.id === chapter);
   const currentChapter = chapters[currentIndex];
@@ -150,6 +156,64 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     const timer = setTimeout(expandAll, 500);
     return () => clearTimeout(timer);
   }, [location.pathname]);
+
+  // 畫重點：資料變動時重新套用
+  useEffect(() => {
+    applyHighlights(mainRef.current);
+  }, [applyHighlights]);
+
+  // 畫重點：內容區塊展開/收合等 DOM 變動後，重新套用（CSS Custom Highlight 不會修改 DOM，
+  // 但區塊展開收合會整段重新掛載，導致原本的 Range 失效，需要重新掃描一次）
+  useEffect(() => {
+    const main = mainRef.current;
+    if (!main || !highlightSupported) return;
+    const observer = new MutationObserver(() => {
+      window.clearTimeout((observer as any)._t);
+      (observer as any)._t = window.setTimeout(() => applyHighlights(main), 150);
+    });
+    observer.observe(main, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, [applyHighlights, highlightSupported, location.pathname]);
+
+  // 畫重點：選取文字後顯示顏色選單
+  const handleSelectionChange = () => {
+    const main = mainRef.current;
+    if (!main) return;
+    const selection = window.getSelection();
+    if (!selection || selection.isCollapsed || selection.rangeCount === 0) {
+      setSelectionToolbar(null);
+      return;
+    }
+    const range = selection.getRangeAt(0);
+    if (!main.contains(range.commonAncestorContainer)) {
+      setSelectionToolbar(null);
+      return;
+    }
+    const text = range.toString().trim();
+    if (!text) {
+      setSelectionToolbar(null);
+      return;
+    }
+    const rect = range.getBoundingClientRect();
+    setSelectionToolbar({ x: rect.left + rect.width / 2, y: rect.top, text, range: range.cloneRange() });
+  };
+
+  const handlePickHighlightColor = (style: HighlightStyle) => {
+    if (!selectionToolbar || !mainRef.current) return;
+    const offset = getOffsetInContainer(mainRef.current, selectionToolbar.range);
+    addHighlight(selectionToolbar.text, style, offset);
+    window.getSelection()?.removeAllRanges();
+    setSelectionToolbar(null);
+  };
+
+  // 畫重點：點擊已畫記的文字可移除（沒有選取文字時才觸發，避免跟選字互相干擾）
+  const handleMainClick = (e: React.MouseEvent) => {
+    if (!highlightSupported) return;
+    const selection = window.getSelection();
+    if (selection && !selection.isCollapsed) return;
+    const hit = findHighlightAtPoint(e.clientX, e.clientY, mainRef.current);
+    if (hit) removeHighlight(hit.id);
+  };
 
   // 關閉按鈕
   const handleClose = () => {
@@ -360,9 +424,41 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       </div>
 
       {/* ========== 主要內容區 ========== */}
-      <main className="px-4 py-8" style={{ fontSize: fontSizePx[fontSize] }}>
+      <main
+        ref={mainRef}
+        className="px-4 py-8"
+        style={{ fontSize: fontSizePx[fontSize] }}
+        onMouseUp={handleSelectionChange}
+        onTouchEnd={handleSelectionChange}
+        onClick={handleMainClick}
+      >
         {children}
       </main>
+
+      {/* 畫重點：選取文字後的顏色選單 */}
+      {selectionToolbar && (
+        <div
+          className="fixed z-50 flex items-center gap-1 bg-white rounded-full shadow-lg border border-gray-200 px-2 py-1.5"
+          style={{ left: selectionToolbar.x, top: selectionToolbar.y - 48, transform: 'translateX(-50%)' }}
+        >
+          {HIGHLIGHT_COLORS.map(({ style, hex }) => (
+            <button
+              key={style}
+              onClick={() => handlePickHighlightColor(style)}
+              className="w-6 h-6 rounded-full border border-gray-300 hover:scale-110 transition-transform"
+              style={{ backgroundColor: hex }}
+              aria-label={`畫${style}色重點`}
+            />
+          ))}
+          <button
+            onClick={() => { window.getSelection()?.removeAllRanges(); setSelectionToolbar(null); }}
+            className="ml-1 w-6 h-6 flex items-center justify-center text-gray-400 hover:text-gray-600"
+            aria-label="取消"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
 
       {/* ========== 底部工具列 ========== */}
       <div className={`fixed bottom-0 left-0 right-0 bg-gradient-to-r from-slate-800 to-slate-900 border-t border-slate-700 shadow-2xl z-40 transition-transform duration-300 ${showToolbar ? 'translate-y-0' : 'translate-y-full'}`}>

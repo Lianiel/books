@@ -2,263 +2,212 @@ import { useState, useEffect, useCallback } from 'react';
 
 export type HighlightStyle = 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple';
 
-export interface Highlight {
+export interface HighlightRecord {
   id: string;
   book_id: string;
   chapter: string;
   text_content: string;
+  start_offset: number;
   style: HighlightStyle;
 }
 
-function loadHighlights(bookId: string, chapter: string): Highlight[] {
+const COLOR_MAP: Record<HighlightStyle, { color: string; bg: string }> = {
+  red: { color: '#dc2626', bg: 'rgba(220,38,38,0.20)' },
+  orange: { color: '#ea580c', bg: 'rgba(234,88,12,0.20)' },
+  yellow: { color: '#a16207', bg: 'rgba(234,179,8,0.30)' },
+  green: { color: '#16a34a', bg: 'rgba(22,163,74,0.20)' },
+  blue: { color: '#2563eb', bg: 'rgba(37,99,235,0.20)' },
+  indigo: { color: '#4f46e5', bg: 'rgba(79,70,229,0.20)' },
+  purple: { color: '#9333ea', bg: 'rgba(147,51,234,0.20)' },
+};
+
+export const HIGHLIGHT_COLORS: { style: HighlightStyle; hex: string }[] =
+  (Object.keys(COLOR_MAP) as HighlightStyle[]).map(style => ({ style, hex: COLOR_MAP[style].color }));
+
+const STYLE_EL_ID = 'highlight-api-styles';
+
+function ensureHighlightStylesInjected() {
+  if (document.getElementById(STYLE_EL_ID)) return;
+  const styleEl = document.createElement('style');
+  styleEl.id = STYLE_EL_ID;
+  styleEl.textContent = (Object.keys(COLOR_MAP) as HighlightStyle[])
+    .map(style => `::highlight(hl-${style}) { color: ${COLOR_MAP[style].color}; background-color: ${COLOR_MAP[style].bg}; }`)
+    .join('\n');
+  document.head.appendChild(styleEl);
+}
+
+// CSS Custom Highlight API 支援偵測（不支援時功能靜默降級，資料仍會保存）
+export function isHighlightApiSupported(): boolean {
+  return typeof window !== 'undefined' && 'Highlight' in window && !!(CSS as any).highlights;
+}
+
+function storageKey(bookId: string, chapter: string) {
+  return `highlights_${bookId}_${chapter}`;
+}
+
+function loadHighlights(bookId: string, chapter: string): HighlightRecord[] {
   try {
-    const key = `highlights_${bookId}_${chapter}`;
-    const data = localStorage.getItem(key);
+    const data = localStorage.getItem(storageKey(bookId, chapter));
     return data ? JSON.parse(data) : [];
   } catch (e) {
-    console.error('載入高亮資料失敗:', e);
+    console.error('載入畫重點資料失敗:', e);
     return [];
   }
 }
 
-function saveHighlights(bookId: string, chapter: string, highlights: Highlight[]) {
+function saveHighlights(bookId: string, chapter: string, list: HighlightRecord[]) {
   try {
-    const key = `highlights_${bookId}_${chapter}`;
-    localStorage.setItem(key, JSON.stringify(highlights));
+    localStorage.setItem(storageKey(bookId, chapter), JSON.stringify(list));
   } catch (e) {
-    console.error('儲存高亮資料失敗:', e);
+    console.error('儲存畫重點資料失敗:', e);
   }
 }
 
 function generateId(): string {
-  return `hl_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  return `hl_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`;
 }
 
-export function useHighlight(bookId: string, chapter: string) {
-  const [highlights, setHighlights] = useState<Highlight[]>([]);
-  const [isLoggedIn] = useState(true);
-
-  useEffect(() => {
-    const loaded = loadHighlights(bookId, chapter);
-    console.log('📚 載入本地高亮資料:', loaded.length, '筆');
-    setHighlights(loaded);
-  }, [bookId, chapter]);
-
-  const applyHighlights = useCallback(() => {
-    console.log('🎨 開始套用高亮，共', highlights.length, '筆');
-    clearHighlightSpans();
-    highlights.forEach(h => {
-      try { 
-        applyHighlightToDOM(h); 
-      } catch (e) {
-        console.error('套用高亮失敗:', e);
-      }
-    });
-  }, [highlights]);
-
-  const addHighlight = useCallback((text: string, style: HighlightStyle) => {
-    if (!text.trim()) {
-      console.warn('文字內容為空，無法新增高亮');
-      return;
-    }
-
-    console.log('➕ 新增高亮:', text.length, '字，顏色:', style);
-
-    const newHighlight: Highlight = {
-      id: generateId(),
-      book_id: bookId,
-      chapter,
-      text_content: text,
-      style
-    };
-
-    const updated = [...highlights, newHighlight];
-    setHighlights(updated);
-    saveHighlights(bookId, chapter, updated);
-
-    console.log('✓ 已儲存到 localStorage');
-    
-    // 立即套用到 DOM
-    try {
-      applyHighlightToDOM(newHighlight);
-      console.log('✓ 套用成功');
-    } catch (e) {
-      console.error('✗ 套用失敗:', e);
-    }
-  }, [highlights, bookId, chapter]);
-
-  const removeHighlight = useCallback((id: string) => {
-    const updated = highlights.filter(h => h.id !== id);
-    setHighlights(updated);
-    saveHighlights(bookId, chapter, updated);
-
-    // 移除所有相同 ID 的 span（可能有多個）
-    document.querySelectorAll(`span[data-highlight-id="${id}"]`).forEach(span => {
-      if (span.parentNode) {
-        span.parentNode.replaceChild(document.createTextNode(span.textContent || ''), span);
-      }
-    });
-    
-    // 合併相鄰的文字節點
-    const main = document.querySelector('main');
-    if (main) main.normalize();
-  }, [highlights, bookId, chapter]);
-
-  const isHighlighted = useCallback((text: string) =>
-    highlights.some(h => h.text_content === text), [highlights]);
-
-  const getHighlightByText = useCallback((text: string) =>
-    highlights.find(h => h.text_content === text), [highlights]);
-
-  return { 
-    highlights, 
-    isLoggedIn, 
-    applyHighlights, 
-    addHighlight, 
-    removeHighlight, 
-    isHighlighted, 
-    getHighlightByText 
-  };
-}
-
-function clearHighlightSpans() {
-  document.querySelectorAll('span[data-highlight-id]').forEach(el => {
-    const parent = el.parentNode;
-    if (parent) {
-      parent.replaceChild(document.createTextNode(el.textContent || ''), el);
-    }
-  });
-  const main = document.querySelector('main');
-  if (main) main.normalize();
-}
-
-// 新的高亮策略：使用 CSS.highlights API（現代瀏覽器）+ fallback
-function applyHighlightToDOM(h: Highlight) {
-  console.log('  🔧 applyHighlightToDOM 開始，長度:', h.text_content.length, '字');
-  
-  const main = document.querySelector('main');
-  if (!main) {
-    console.error('    ✗ 找不到主容器');
-    return;
-  }
-  
-  // 收集主容器內的所有文字內容
-  const fullText = main.textContent || '';
-  const targetText = h.text_content;
-  
-  // 找到文字在完整內容中的位置
-  const startIndex = fullText.indexOf(targetText);
-  if (startIndex === -1) {
-    console.error('    ✗ 在頁面中找不到這段文字');
-    return;
-  }
-  
-  console.log('    ✓ 找到文字，起始位置:', startIndex);
-  
-  // 使用 TreeWalker 找到所有文字節點，並計算每個節點的偏移量
-  const textNodes: { node: Text; offset: number }[] = [];
-  let currentOffset = 0;
-  
-  const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT, {
+// 收集容器內所有文字節點，及其在 container.textContent 中的起訖偏移量
+function collectTextNodes(container: HTMLElement): { node: Text; start: number; end: number }[] {
+  const result: { node: Text; start: number; end: number }[] = [];
+  let offset = 0;
+  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, {
     acceptNode: (node) => {
-      if ((node as Text).parentElement?.closest('span[data-highlight-id]')) {
-        return NodeFilter.FILTER_REJECT;
-      }
-      if (['SCRIPT', 'STYLE'].includes((node as Text).parentElement?.tagName || '')) {
-        return NodeFilter.FILTER_REJECT;
-      }
+      const parentTag = (node as Text).parentElement?.tagName;
+      if (parentTag === 'SCRIPT' || parentTag === 'STYLE') return NodeFilter.FILTER_REJECT;
       return NodeFilter.FILTER_ACCEPT;
     }
   });
-  
-  let node;
-  while (node = walker.nextNode()) {
+  let node: Node | null;
+  while ((node = walker.nextNode())) {
     const textNode = node as Text;
-    const text = textNode.textContent || '';
-    textNodes.push({ node: textNode, offset: currentOffset });
-    currentOffset += text.length;
+    const len = textNode.textContent?.length || 0;
+    result.push({ node: textNode, start: offset, end: offset + len });
+    offset += len;
   }
-  
-  console.log('    → 找到', textNodes.length, '個文字節點，總長度:', currentOffset);
-  
-  // 找出需要高亮的節點範圍
-  const endIndex = startIndex + targetText.length;
-  const affectedNodes: { node: Text; startPos: number; endPos: number }[] = [];
-  
-  for (let i = 0; i < textNodes.length; i++) {
-    const { node: textNode, offset } = textNodes[i];
-    const nodeText = textNode.textContent || '';
-    const nodeEnd = offset + nodeText.length;
-    
-    // 檢查這個節點是否與高亮範圍有交集
-    if (nodeEnd > startIndex && offset < endIndex) {
-      const startPos = Math.max(0, startIndex - offset);
-      const endPos = Math.min(nodeText.length, endIndex - offset);
-      affectedNodes.push({ node: textNode, startPos, endPos });
-    }
-  }
-  
-  console.log('    → 需要高亮', affectedNodes.length, '個節點');
-  
-  // 對每個受影響的節點進行高亮處理
-  affectedNodes.forEach(({ node: textNode, startPos, endPos }) => {
-    try {
-      const text = textNode.textContent || '';
-      const before = text.substring(0, startPos);
-      const highlight = text.substring(startPos, endPos);
-      const after = text.substring(endPos);
-      
-      // 創建高亮 span
-      const span = document.createElement('span');
-      span.setAttribute('data-highlight-id', h.id);
-      span.style.cursor = 'pointer';
-      span.title = '點擊移除';
-      span.textContent = highlight;
-      applyStyleToSpan(span, h.style);
-      
-      span.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const event = new CustomEvent('removeHighlight', { detail: h.id });
-        document.dispatchEvent(event);
-      });
-      
-      // 替換文字節點
-      const parent = textNode.parentNode;
-      if (!parent) return;
-      
-      const fragment = document.createDocumentFragment();
-      if (before) fragment.appendChild(document.createTextNode(before));
-      fragment.appendChild(span);
-      if (after) fragment.appendChild(document.createTextNode(after));
-      
-      parent.replaceChild(fragment, textNode);
-      
-    } catch (e) {
-      console.error('    ✗ 處理節點失敗:', e);
-    }
-  });
-  
-  console.log('    ✓✓✓ 高亮完成');
+  return result;
 }
 
-export function applyStyleToSpan(span: HTMLElement, style: HighlightStyle) {
-  span.style.setProperty('font-weight', '600', 'important');
-  
-  let color: string;
-  switch (style) {
-    case 'red':    color = '#dc2626'; break;
-    case 'orange': color = '#ea580c'; break;
-    case 'yellow': color = '#ca8a04'; break;
-    case 'green':  color = '#16a34a'; break;
-    case 'blue':   color = '#2563eb'; break;
-    case 'indigo': color = '#4f46e5'; break;
-    case 'purple': color = '#9333ea'; break;
-    default:       color = '#dc2626'; break;
+// 依照純文字的起訖位置，建立跨越多個文字節點的 Range（不修改 DOM）
+function buildRange(container: HTMLElement, start: number, end: number): Range | null {
+  const nodes = collectTextNodes(container);
+  let startNode: Text | null = null, startOffset = 0;
+  let endNode: Text | null = null, endOffset = 0;
+
+  for (const { node, start: nStart, end: nEnd } of nodes) {
+    if (!startNode && nEnd > start) {
+      startNode = node;
+      startOffset = start - nStart;
+    }
+    if (nEnd >= end) {
+      endNode = node;
+      endOffset = end - nStart;
+      break;
+    }
   }
-  
-  span.style.setProperty('color', color, 'important');
-  const bgColor = color + '20';
-  span.style.setProperty('background-color', bgColor, 'important');
-  span.style.setProperty('border-radius', '2px', 'important');
-  span.style.setProperty('padding', '1px 2px', 'important');
+  if (!startNode || !endNode) return null;
+
+  try {
+    const range = document.createRange();
+    range.setStart(startNode, Math.max(0, startOffset));
+    range.setEnd(endNode, Math.max(0, endOffset));
+    return range;
+  } catch {
+    return null;
+  }
+}
+
+// 找出畫重點文字在容器中的位置：優先使用記錄的 start_offset，若內容對不上才重新掃描比對
+function locateHighlight(container: HTMLElement, h: HighlightRecord): Range | null {
+  const fullText = container.textContent || '';
+  const { text_content, start_offset } = h;
+
+  if (fullText.slice(start_offset, start_offset + text_content.length) === text_content) {
+    return buildRange(container, start_offset, start_offset + text_content.length);
+  }
+  const idx = fullText.indexOf(text_content);
+  if (idx === -1) return null;
+  return buildRange(container, idx, idx + text_content.length);
+}
+
+// 計算某個 Range 的起點，相對於容器起始位置的字元偏移量
+export function getOffsetInContainer(container: HTMLElement, range: Range): number {
+  const preRange = document.createRange();
+  preRange.selectNodeContents(container);
+  preRange.setEnd(range.startContainer, range.startOffset);
+  return preRange.toString().length;
+}
+
+export function useHighlight(bookId: string, chapter: string) {
+  const [highlights, setHighlights] = useState<HighlightRecord[]>([]);
+  const supported = isHighlightApiSupported();
+
+  useEffect(() => {
+    setHighlights(loadHighlights(bookId, chapter));
+  }, [bookId, chapter]);
+
+  // 重新套用所有畫重點（不修改 DOM，只註冊 Range 給 CSS Custom Highlight API）
+  const applyHighlights = useCallback((container?: HTMLElement | null) => {
+    if (!supported) return;
+    ensureHighlightStylesInjected();
+    const main = (container || document.querySelector('main')) as HTMLElement | null;
+    if (!main) return;
+
+    const byStyle: Record<HighlightStyle, Range[]> = {
+      red: [], orange: [], yellow: [], green: [], blue: [], indigo: [], purple: []
+    };
+
+    highlights.forEach(h => {
+      const range = locateHighlight(main, h);
+      if (range) byStyle[h.style].push(range);
+    });
+
+    (Object.keys(byStyle) as HighlightStyle[]).forEach(style => {
+      const name = `hl-${style}`;
+      const ranges = byStyle[style];
+      if (ranges.length === 0) {
+        (CSS as any).highlights?.delete(name);
+      } else {
+        (CSS as any).highlights?.set(name, new (window as any).Highlight(...ranges));
+      }
+    });
+  }, [highlights, supported]);
+
+  const addHighlight = useCallback((text: string, style: HighlightStyle, startOffset: number) => {
+    if (!text.trim()) return;
+    const record: HighlightRecord = {
+      id: generateId(), book_id: bookId, chapter, text_content: text, start_offset: startOffset, style
+    };
+    setHighlights(prev => {
+      const updated = [...prev, record];
+      saveHighlights(bookId, chapter, updated);
+      return updated;
+    });
+  }, [bookId, chapter]);
+
+  const removeHighlight = useCallback((id: string) => {
+    setHighlights(prev => {
+      const updated = prev.filter(h => h.id !== id);
+      saveHighlights(bookId, chapter, updated);
+      return updated;
+    });
+  }, [bookId, chapter]);
+
+  // 依點擊座標找出被點到的畫重點（用來實作「點擊移除」）
+  const findHighlightAtPoint = useCallback((x: number, y: number, container?: HTMLElement | null): HighlightRecord | null => {
+    const main = (container || document.querySelector('main')) as HTMLElement | null;
+    if (!main) return null;
+    for (const h of highlights) {
+      const range = locateHighlight(main, h);
+      if (!range) continue;
+      const rects = range.getClientRects();
+      for (let i = 0; i < rects.length; i++) {
+        const r = rects[i];
+        if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return h;
+      }
+    }
+    return null;
+  }, [highlights]);
+
+  return { highlights, supported, applyHighlights, addHighlight, removeHighlight, findHighlightAtPoint };
 }
