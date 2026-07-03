@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
 import { X, Volume2, VolumeX, Download, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { asBlob } from 'html-docx-js-typescript';
-
 // 從 App.tsx 導入章節類型和書名映射
 import type { ChapterInfo } from '../App';
 import { BOOK_TITLES } from '../App';
@@ -110,6 +108,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
         </html>
       `;
       
+      const { asBlob } = await import('html-docx-js-typescript');
       const blob = await asBlob(htmlContent);
       
       const url = URL.createObjectURL(blob);
