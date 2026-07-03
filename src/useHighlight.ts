@@ -9,6 +9,7 @@ export interface HighlightRecord {
   text_content: string;
   start_offset: number;
   style: HighlightStyle;
+  bold?: boolean;
 }
 
 const COLOR_MAP: Record<HighlightStyle, { color: string; bg: string }> = {
@@ -30,9 +31,11 @@ function ensureHighlightStylesInjected() {
   if (document.getElementById(STYLE_EL_ID)) return;
   const styleEl = document.createElement('style');
   styleEl.id = STYLE_EL_ID;
+  // ::highlight() 只支援有限的屬性（不含 font-weight），粗體改用 text-shadow 疊字模擬
   styleEl.textContent = (Object.keys(COLOR_MAP) as HighlightStyle[])
     .map(style => `::highlight(hl-${style}) { color: ${COLOR_MAP[style].color}; background-color: ${COLOR_MAP[style].bg}; }`)
-    .join('\n');
+    .join('\n')
+    + `\n::highlight(hl-bold) { text-shadow: -0.4px 0 currentColor, 0.4px 0 currentColor; }`;
   document.head.appendChild(styleEl);
 }
 
@@ -41,8 +44,10 @@ export function isHighlightApiSupported(): boolean {
   return typeof window !== 'undefined' && 'Highlight' in window && !!(CSS as any).highlights;
 }
 
+const STORAGE_PREFIX = 'highlights_';
+
 function storageKey(bookId: string, chapter: string) {
-  return `highlights_${bookId}_${chapter}`;
+  return `${STORAGE_PREFIX}${bookId}_${chapter}`;
 }
 
 function loadHighlights(bookId: string, chapter: string): HighlightRecord[] {
@@ -65,6 +70,24 @@ function saveHighlights(bookId: string, chapter: string, list: HighlightRecord[]
 
 function generateId(): string {
   return `hl_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`;
+}
+
+// 讀取某本書所有章節的畫重點（跨章節總覽用），依 chapter 分組
+export function loadAllHighlightsForBook(bookId: string): Record<string, HighlightRecord[]> {
+  const result: Record<string, HighlightRecord[]> = {};
+  const prefix = `${STORAGE_PREFIX}${bookId}_`;
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (!key || !key.startsWith(prefix)) continue;
+    const chapter = key.slice(prefix.length);
+    try {
+      const list = JSON.parse(localStorage.getItem(key) || '[]') as HighlightRecord[];
+      if (list.length > 0) result[chapter] = list;
+    } catch {
+      // 忽略壞掉的資料
+    }
+  }
+  return result;
 }
 
 // 收集容器內所有文字節點，及其在 container.textContent 中的起訖偏移量
@@ -130,6 +153,16 @@ function locateHighlight(container: HTMLElement, h: HighlightRecord): Range | nu
   return buildRange(container, idx, idx + text_content.length);
 }
 
+// 捲動到某筆畫重點的位置（列表點擊跳轉用）
+export function scrollToHighlight(container: HTMLElement, h: HighlightRecord): boolean {
+  const range = locateHighlight(container, h);
+  if (!range) return false;
+  const rect = range.getBoundingClientRect();
+  const target = rect.top + window.scrollY - window.innerHeight / 3;
+  window.scrollTo({ top: target, behavior: 'smooth' });
+  return true;
+}
+
 // 計算某個 Range 的起點，相對於容器起始位置的字元偏移量
 export function getOffsetInContainer(container: HTMLElement, range: Range): number {
   const preRange = document.createRange();
@@ -156,10 +189,13 @@ export function useHighlight(bookId: string, chapter: string) {
     const byStyle: Record<HighlightStyle, Range[]> = {
       red: [], orange: [], yellow: [], green: [], blue: [], indigo: [], purple: []
     };
+    const boldRanges: Range[] = [];
 
     highlights.forEach(h => {
       const range = locateHighlight(main, h);
-      if (range) byStyle[h.style].push(range);
+      if (!range) return;
+      byStyle[h.style].push(range);
+      if (h.bold) boldRanges.push(range.cloneRange());
     });
 
     (Object.keys(byStyle) as HighlightStyle[]).forEach(style => {
@@ -171,18 +207,28 @@ export function useHighlight(bookId: string, chapter: string) {
         (CSS as any).highlights?.set(name, new (window as any).Highlight(...ranges));
       }
     });
+
+    if (boldRanges.length === 0) {
+      (CSS as any).highlights?.delete('hl-bold');
+    } else {
+      const boldHighlight = new (window as any).Highlight(...boldRanges);
+      boldHighlight.priority = 1; // 確保粗體的 text-shadow 疊加在顏色之上
+      (CSS as any).highlights?.set('hl-bold', boldHighlight);
+    }
   }, [highlights, supported]);
 
-  const addHighlight = useCallback((text: string, style: HighlightStyle, startOffset: number) => {
-    if (!text.trim()) return;
+  const addHighlight = useCallback((text: string, style: HighlightStyle, startOffset: number, bold?: boolean) => {
+    if (!text.trim()) return '';
+    const id = generateId();
     const record: HighlightRecord = {
-      id: generateId(), book_id: bookId, chapter, text_content: text, start_offset: startOffset, style
+      id, book_id: bookId, chapter, text_content: text, start_offset: startOffset, style, bold
     };
     setHighlights(prev => {
       const updated = [...prev, record];
       saveHighlights(bookId, chapter, updated);
       return updated;
     });
+    return id;
   }, [bookId, chapter]);
 
   const removeHighlight = useCallback((id: string) => {

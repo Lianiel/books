@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Book } from 'lucide-react';
 import { useState, useEffect, lazy, Suspense } from 'react';
 import BookLayout from './components/BookLayout';
+import BookHighlightsOverview from './components/BookHighlightsOverview';
 import { fetchBooks, fetchChapters, type Book as BookType, type Chapter } from './api/books_supabase';
 
 // ========== TypeScript 型別定義 ==========
@@ -956,6 +957,7 @@ const App: React.FC = () => {
         </div>
       }>
       <Routes>
+        <Route path="/:bookId/highlights" element={<BookHighlightsOverview />} />
         {/* ========== Book 1 - 立界線得自由 ========== */}
         <Route path="/book1/home" element={<BookLayout bookId="book1" chapter="home" chapters={getChaptersForBook('book1')}><Book1Home /></BookLayout>} />
         <Route path="/book1/definition" element={<BookLayout bookId="book1" chapter="definition" chapters={getChaptersForBook('book1')}><Book1Definition /></BookLayout>} />

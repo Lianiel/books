@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 // 從 App.tsx 導入章節類型和書名映射
 import type { ChapterInfo } from '../App';
 import { BOOK_TITLES } from '../App';
-import { useHighlight, getOffsetInContainer, HIGHLIGHT_COLORS, type HighlightStyle } from '../useHighlight';
+import { useHighlight, getOffsetInContainer, scrollToHighlight, HIGHLIGHT_COLORS, type HighlightStyle } from '../useHighlight';
 
 interface BookLayoutProps {
   bookId: string;
@@ -30,6 +30,14 @@ const fontSizeLabels: Record<FontSize, string> = {
   'xl': '36',
   '2xl': '40'
 };
+
+type FontFamilyKey = 'default' | 'serif' | 'kai';
+
+const fontFamilyOptions: { key: FontFamilyKey; label: string; value: string }[] = [
+  { key: 'default', label: '預設', value: '' },
+  { key: 'serif', label: '明體', value: "'Noto Serif TC', 'PMingLiU', serif" },
+  { key: 'kai', label: '楷體', value: "'Kaiti TC', 'DFKai-SB', 'BiauKai', cursive" },
+];
 
 
 const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, children }) => {
@@ -57,10 +65,18 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   // 字體選擇器
   const [showFontSelector, setShowFontSelector] = useState(false);
 
+  // 字型選擇器
+  const [fontFamily, setFontFamily] = useState<FontFamilyKey>('default');
+  const [showFontFamilySelector, setShowFontFamilySelector] = useState(false);
+
   // 畫重點
   const mainRef = useRef<HTMLElement>(null);
-  const { supported: highlightSupported, applyHighlights, addHighlight, removeHighlight, findHighlightAtPoint } = useHighlight(bookId, chapter);
+  const { highlights, supported: highlightSupported, applyHighlights, addHighlight, removeHighlight, findHighlightAtPoint } = useHighlight(bookId, chapter);
   const [selectionToolbar, setSelectionToolbar] = useState<{ x: number; y: number; text: string; range: Range } | null>(null);
+  const [boldPending, setBoldPending] = useState(false);
+  const [lastAdded, setLastAdded] = useState<{ id: string; x: number; y: number } | null>(null);
+  const undoTimerRef = useRef<number | null>(null);
+  const [showHighlightPanel, setShowHighlightPanel] = useState(false);
 
   // 獲取章節資訊
   const currentIndex = chapters.findIndex(ch => ch.id === chapter);
@@ -201,9 +217,23 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   const handlePickHighlightColor = (style: HighlightStyle) => {
     if (!selectionToolbar || !mainRef.current) return;
     const offset = getOffsetInContainer(mainRef.current, selectionToolbar.range);
-    addHighlight(selectionToolbar.text, style, offset);
+    const id = addHighlight(selectionToolbar.text, style, offset, boldPending);
+    const { x, y } = selectionToolbar;
     window.getSelection()?.removeAllRanges();
     setSelectionToolbar(null);
+
+    if (id) {
+      if (undoTimerRef.current) window.clearTimeout(undoTimerRef.current);
+      setLastAdded({ id, x, y });
+      undoTimerRef.current = window.setTimeout(() => setLastAdded(null), 4000);
+    }
+  };
+
+  const handleUndoLastHighlight = () => {
+    if (!lastAdded) return;
+    if (undoTimerRef.current) window.clearTimeout(undoTimerRef.current);
+    removeHighlight(lastAdded.id);
+    setLastAdded(null);
   };
 
   // 畫重點：點擊已畫記的文字可移除（沒有選取文字時才觸發，避免跟選字互相干擾）
@@ -214,6 +244,19 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     const hit = findHighlightAtPoint(e.clientX, e.clientY, mainRef.current);
     if (hit) removeHighlight(hit.id);
   };
+
+  // 畫重點：從全書重點總覽頁點擊項目跳轉過來後，捲動到該筆重點並短暫閃爍提示
+  useEffect(() => {
+    const pendingId = sessionStorage.getItem('scrollToHighlightId');
+    if (!pendingId || !mainRef.current) return;
+    const target = highlights.find(h => h.id === pendingId);
+    if (!target) return;
+    sessionStorage.removeItem('scrollToHighlightId');
+    const timer = setTimeout(() => {
+      if (mainRef.current) scrollToHighlight(mainRef.current, target);
+    }, 600);
+    return () => clearTimeout(timer);
+  }, [highlights]);
 
   // 關閉按鈕
   const handleClose = () => {
@@ -427,7 +470,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       <main
         ref={mainRef}
         className="px-4 py-8"
-        style={{ fontSize: fontSizePx[fontSize] }}
+        style={{ fontSize: fontSizePx[fontSize], fontFamily: fontFamilyOptions.find(f => f.key === fontFamily)?.value || undefined }}
         onMouseUp={handleSelectionChange}
         onTouchEnd={handleSelectionChange}
         onClick={handleMainClick}
@@ -441,6 +484,16 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
           className="fixed z-50 flex items-center gap-1 bg-white rounded-full shadow-lg border border-gray-200 px-2 py-1.5"
           style={{ left: selectionToolbar.x, top: selectionToolbar.y - 48, transform: 'translateX(-50%)' }}
         >
+          <button
+            onClick={() => setBoldPending(!boldPending)}
+            className={`w-6 h-6 rounded-full border flex items-center justify-center font-black text-xs transition-colors ${
+              boldPending ? 'bg-slate-800 text-white border-slate-800' : 'bg-white text-gray-500 border-gray-300 hover:bg-gray-100'
+            }`}
+            title="粗體"
+            aria-label="切換粗體"
+          >
+            B
+          </button>
           {HIGHLIGHT_COLORS.map(({ style, hex }) => (
             <button
               key={style}
@@ -456,6 +509,19 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             aria-label="取消"
           >
             <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
+
+      {/* 畫重點：剛畫記完成後的復原提示 */}
+      {lastAdded && (
+        <div
+          className="fixed z-50 flex items-center gap-2 bg-slate-800 text-white rounded-full shadow-lg px-3 py-1.5 text-sm"
+          style={{ left: lastAdded.x, top: lastAdded.y - 48, transform: 'translateX(-50%)' }}
+        >
+          <span>已畫重點</span>
+          <button onClick={handleUndoLastHighlight} className="font-semibold text-blue-300 hover:text-blue-200">
+            復原
           </button>
         </div>
       )}
@@ -539,8 +605,32 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             </button>
           </div>
 
-          {/* 右側:字體大小 */}
+          {/* 右側:字體大小 + 字型 + 重點列表 */}
           <div className="flex items-center gap-1">
+            <button
+              onClick={() => setShowHighlightPanel(!showHighlightPanel)}
+              className={`px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm ${
+                showHighlightPanel
+                  ? 'bg-slate-600 text-white'
+                  : 'bg-slate-700 text-white hover:bg-slate-600'
+              }`}
+              title="本章重點列表"
+            >
+              🖍{highlights.length > 0 ? highlights.length : ''}
+            </button>
+
+            <button
+              onClick={() => setShowFontFamilySelector(!showFontFamilySelector)}
+              className={`px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm ${
+                showFontFamilySelector
+                  ? 'bg-slate-600 text-white'
+                  : 'bg-slate-700 text-white hover:bg-slate-600'
+              }`}
+              title="字型切換"
+            >
+              <span className="font-bold">字型</span>
+            </button>
+
             <button
               onClick={() => setShowFontSelector(!showFontSelector)}
               className={`px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm ${
@@ -554,6 +644,73 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             </button>
           </div>
         </div>
+
+        {showHighlightPanel && (
+          <div className="bg-slate-700 border-t border-slate-600 px-2 sm:px-4 py-2 max-h-56 overflow-y-auto">
+            <div className="max-w-7xl mx-auto">
+              {highlights.length === 0 ? (
+                <p className="text-slate-300 text-xs">本章尚無畫重點</p>
+              ) : (
+                <ul className="space-y-1">
+                  {highlights.map(h => (
+                    <li key={h.id} className="flex items-center gap-2">
+                      <button
+                        onClick={() => {
+                          if (mainRef.current) scrollToHighlight(mainRef.current, h);
+                          setShowHighlightPanel(false);
+                        }}
+                        className="flex-1 flex items-center gap-2 text-left text-white text-xs sm:text-sm hover:bg-slate-600 rounded px-2 py-1 transition-colors"
+                      >
+                        <span
+                          className="w-3 h-3 rounded-full flex-shrink-0"
+                          style={{ backgroundColor: HIGHLIGHT_COLORS.find(c => c.style === h.style)?.hex }}
+                        />
+                        <span className={`truncate ${h.bold ? 'font-bold' : ''}`}>{h.text_content}</span>
+                      </button>
+                      <button
+                        onClick={() => removeHighlight(h.id)}
+                        className="text-slate-400 hover:text-red-400 flex-shrink-0"
+                        aria-label="刪除此重點"
+                      >
+                        <X className="w-3.5 h-3.5" />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <button
+                onClick={() => { setShowHighlightPanel(false); navigate(`/${bookId}/highlights`); }}
+                className="mt-2 text-blue-300 hover:text-blue-200 text-xs font-semibold"
+              >
+                查看全書重點總覽 →
+              </button>
+            </div>
+          </div>
+        )}
+
+        {showFontFamilySelector && (
+          <div className="bg-slate-700 border-t border-slate-600 px-2 sm:px-4 py-1.5">
+            <div className="flex items-center gap-1.5 max-w-7xl mx-auto">
+              <span className="text-white text-xs font-semibold mr-1">字型:</span>
+              {fontFamilyOptions.map(opt => (
+                <button
+                  key={opt.key}
+                  onClick={() => {
+                    setFontFamily(opt.key);
+                    setShowFontFamilySelector(false);
+                  }}
+                  className={`px-3 py-1 text-sm rounded transition-all font-semibold ${
+                    fontFamily === opt.key
+                      ? 'bg-slate-600 text-white ring-2 ring-slate-400'
+                      : 'bg-slate-600 text-white hover:bg-slate-500'
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {showSpeedSelector && (
           <div className="bg-slate-700 border-t border-slate-600 px-2 sm:px-4 py-1.5">
