@@ -3,6 +3,7 @@ import { Book } from 'lucide-react';
 import { useState, useEffect, lazy, Suspense } from 'react';
 import BookLayout from './components/BookLayout';
 import BookHighlightsOverview from './components/BookHighlightsOverview';
+import ErrorBoundary from './components/ErrorBoundary';
 import { fetchBooks, fetchChapters, type Book as BookType, type Chapter } from './api/books_supabase';
 
 // ========== TypeScript 型別定義 ==========
@@ -947,6 +948,7 @@ const App: React.FC = () => {
     : STATIC_BOOKS;
 
   return (
+    <ErrorBoundary>
     <Router>
       <Suspense fallback={
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
@@ -1433,6 +1435,7 @@ const App: React.FC = () => {
       </Routes>
       </Suspense>
     </Router>
+    </ErrorBoundary>
   );
 };
 

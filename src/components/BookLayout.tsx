@@ -210,22 +210,31 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       setSelectionToolbar(null);
       return;
     }
-    const rect = range.getBoundingClientRect();
-    setSelectionToolbar({ x: rect.left + rect.width / 2, y: rect.top, text, range: range.cloneRange() });
+    try {
+      const rect = range.getBoundingClientRect();
+      setSelectionToolbar({ x: rect.left + rect.width / 2, y: rect.top, text, range: range.cloneRange() });
+    } catch {
+      setSelectionToolbar(null);
+    }
   };
 
   const handlePickHighlightColor = (style: HighlightStyle) => {
     if (!selectionToolbar || !mainRef.current) return;
-    const offset = getOffsetInContainer(mainRef.current, selectionToolbar.range);
-    const id = addHighlight(selectionToolbar.text, style, offset, boldPending);
-    const { x, y } = selectionToolbar;
-    window.getSelection()?.removeAllRanges();
-    setSelectionToolbar(null);
+    try {
+      const offset = getOffsetInContainer(mainRef.current, selectionToolbar.range);
+      const id = addHighlight(selectionToolbar.text, style, offset, boldPending);
+      const { x, y } = selectionToolbar;
+      window.getSelection()?.removeAllRanges();
+      setSelectionToolbar(null);
 
-    if (id) {
-      if (undoTimerRef.current) window.clearTimeout(undoTimerRef.current);
-      setLastAdded({ id, x, y });
-      undoTimerRef.current = window.setTimeout(() => setLastAdded(null), 4000);
+      if (id) {
+        if (undoTimerRef.current) window.clearTimeout(undoTimerRef.current);
+        setLastAdded({ id, x, y });
+        undoTimerRef.current = window.setTimeout(() => setLastAdded(null), 4000);
+      }
+    } catch (e) {
+      console.error('畫重點失敗:', e);
+      setSelectionToolbar(null);
     }
   };
 

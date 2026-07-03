@@ -209,17 +209,25 @@ export function useHighlight(bookId: string, chapter: string) {
     });
 
     highlights.forEach(h => {
-      const range = locateHighlight(main, h);
-      if (!range) return;
-      byName[highlightName(h.style, h.bold)].push(range);
+      try {
+        const range = locateHighlight(main, h);
+        if (!range) return;
+        byName[highlightName(h.style, h.bold)].push(range);
+      } catch {
+        // 該筆重點所在的 DOM 節點可能因為畫面重新渲染而暫時不穩定，略過即可，下次重新套用會再試
+      }
     });
 
     Object.keys(byName).forEach(name => {
-      const ranges = byName[name];
-      if (ranges.length === 0) {
-        (CSS as any).highlights?.delete(name);
-      } else {
-        (CSS as any).highlights?.set(name, new (window as any).Highlight(...ranges));
+      try {
+        const ranges = byName[name];
+        if (ranges.length === 0) {
+          (CSS as any).highlights?.delete(name);
+        } else {
+          (CSS as any).highlights?.set(name, new (window as any).Highlight(...ranges));
+        }
+      } catch {
+        // 忽略單一顏色群組的暫時性失敗
       }
     });
   }, [highlights, supported]);
@@ -251,12 +259,16 @@ export function useHighlight(bookId: string, chapter: string) {
     const main = (container || document.querySelector('main')) as HTMLElement | null;
     if (!main) return null;
     for (const h of highlights) {
-      const range = locateHighlight(main, h);
-      if (!range) continue;
-      const rects = range.getClientRects();
-      for (let i = 0; i < rects.length; i++) {
-        const r = rects[i];
-        if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return h;
+      try {
+        const range = locateHighlight(main, h);
+        if (!range) continue;
+        const rects = range.getClientRects();
+        for (let i = 0; i < rects.length; i++) {
+          const r = rects[i];
+          if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return h;
+        }
+      } catch {
+        // 忽略暫時性的節點失效
       }
     }
     return null;
