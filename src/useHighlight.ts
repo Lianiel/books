@@ -27,15 +27,30 @@ export const HIGHLIGHT_COLORS: { style: HighlightStyle; hex: string }[] =
 
 const STYLE_EL_ID = 'highlight-api-styles';
 
+// 粗體用 text-shadow 疊字模擬（::highlight() 不支援 font-weight）。
+// 顏色+粗體各自獨立定義成一個 highlight 名稱（而非疊加兩個 highlight），
+// 避免 currentColor 在 highlight 偽元素內解析不穩定、以及多個 highlight 疊加時瀏覽器優先權判斷不一致的問題。
+function highlightName(style: HighlightStyle, bold?: boolean) {
+  return bold ? `hl-${style}-bold` : `hl-${style}`;
+}
+
+function boldTextShadow(hex: string) {
+  return `-0.5px 0 ${hex}, 0.5px 0 ${hex}, 0 -0.5px ${hex}, 0 0.5px ${hex}`;
+}
+
 function ensureHighlightStylesInjected() {
   if (document.getElementById(STYLE_EL_ID)) return;
   const styleEl = document.createElement('style');
   styleEl.id = STYLE_EL_ID;
-  // ::highlight() 只支援有限的屬性（不含 font-weight），粗體改用 text-shadow 疊字模擬
   styleEl.textContent = (Object.keys(COLOR_MAP) as HighlightStyle[])
-    .map(style => `::highlight(hl-${style}) { color: ${COLOR_MAP[style].color}; background-color: ${COLOR_MAP[style].bg}; }`)
-    .join('\n')
-    + `\n::highlight(hl-bold) { text-shadow: -0.4px 0 currentColor, 0.4px 0 currentColor; }`;
+    .flatMap(style => {
+      const { color, bg } = COLOR_MAP[style];
+      return [
+        `::highlight(hl-${style}) { color: ${color}; background-color: ${bg}; }`,
+        `::highlight(hl-${style}-bold) { color: ${color}; background-color: ${bg}; text-shadow: ${boldTextShadow(color)}; }`
+      ];
+    })
+    .join('\n');
   document.head.appendChild(styleEl);
 }
 
@@ -186,35 +201,27 @@ export function useHighlight(bookId: string, chapter: string) {
     const main = (container || document.querySelector('main')) as HTMLElement | null;
     if (!main) return;
 
-    const byStyle: Record<HighlightStyle, Range[]> = {
-      red: [], orange: [], yellow: [], green: [], blue: [], indigo: [], purple: []
-    };
-    const boldRanges: Range[] = [];
+    const styles = Object.keys(COLOR_MAP) as HighlightStyle[];
+    const byName: Record<string, Range[]> = {};
+    styles.forEach(style => {
+      byName[highlightName(style, false)] = [];
+      byName[highlightName(style, true)] = [];
+    });
 
     highlights.forEach(h => {
       const range = locateHighlight(main, h);
       if (!range) return;
-      byStyle[h.style].push(range);
-      if (h.bold) boldRanges.push(range.cloneRange());
+      byName[highlightName(h.style, h.bold)].push(range);
     });
 
-    (Object.keys(byStyle) as HighlightStyle[]).forEach(style => {
-      const name = `hl-${style}`;
-      const ranges = byStyle[style];
+    Object.keys(byName).forEach(name => {
+      const ranges = byName[name];
       if (ranges.length === 0) {
         (CSS as any).highlights?.delete(name);
       } else {
         (CSS as any).highlights?.set(name, new (window as any).Highlight(...ranges));
       }
     });
-
-    if (boldRanges.length === 0) {
-      (CSS as any).highlights?.delete('hl-bold');
-    } else {
-      const boldHighlight = new (window as any).Highlight(...boldRanges);
-      boldHighlight.priority = 1; // 確保粗體的 text-shadow 疊加在顏色之上
-      (CSS as any).highlights?.set('hl-bold', boldHighlight);
-    }
   }, [highlights, supported]);
 
   const addHighlight = useCallback((text: string, style: HighlightStyle, startOffset: number, bold?: boolean) => {
