@@ -162,7 +162,47 @@ export default function Book29Ch20() {
             ].map((q, i) => (
               <div key={i} className="flex gap-3">
                 <span className="text-amber-600 font-bold flex-shrink-0 text-lg">{i + 1}.</span>
-                <p className="text-gray-700 leading-relaxed">{q}</p>
+                <div>
+                  <p className="text-gray-700 leading-relaxed">{q}</p>
+                  {i === 0 && (
+                    <p
+                      className="text-gray-600 leading-relaxed mt-2"
+                      style={{ fontSize: 'calc(1em - 6px)', whiteSpace: 'pre-line' }}
+                    >
+                      {`以偏概全就是把一件事、一次經驗、某個人的反應，放大成「全部都是這樣」。
+
+例如：
+
+一次禱告沒蒙應允
+→「神根本不聽我的禱告。」
+某位弟兄姊妹傷害我
+→「教會的人都很假。」
+牧者一句話讓我受傷
+→「所有牧者都只會控制人。」
+我又跌倒犯罪一次
+→「我永遠不可能改變，神一定也厭煩我了。」
+服事沒有被肯定
+→「我做什麼都沒有價值，沒有人在乎。」
+讀經時沒有感動
+→「我跟神的關係一定很差。」
+家庭祭壇一次失敗
+→「我們家根本不可能建立屬靈生活。」
+看到世界很多黑暗
+→「神根本沒有掌權。」
+
+這些話的可怕之處在於：它們不一定完全沒有事實，卻把一部分事實放大成全部真相。
+
+比較合乎真理的分辨是：
+
+我這次禱告還沒看見結果，不代表神不聽。
+我被某個人傷害，不代表所有人都一樣。
+我今天軟弱，不代表神放棄我。
+我一次失敗，不代表永遠失敗。
+
+撒但常常不是直接給我們一個明顯的假話，而是拿一點點真實的痛苦，加上一個錯誤的總結，讓我們遠離神。`}
+                    </p>
+                  )}
+                </div>
               </div>
             ))}
           </div>
