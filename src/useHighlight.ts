@@ -37,7 +37,11 @@ function highlightName(style: HighlightStyle, bold?: boolean) {
 }
 
 function boldTextShadow(hex: string) {
-  return `-0.5px 0 ${hex}, 0.5px 0 ${hex}, 0 -0.5px ${hex}, 0 0.5px ${hex}`;
+  // 8 個方向疊加描邊，模擬粗體效果（0.5px 只有 4 方向時視覺上太不明顯）
+  return [
+    '-0.8px 0', '0.8px 0', '0 -0.8px', '0 0.8px',
+    '-0.6px -0.6px', '0.6px -0.6px', '-0.6px 0.6px', '0.6px 0.6px',
+  ].map(offset => `${offset} ${hex}`).join(', ');
 }
 
 function ensureHighlightStylesInjected() {
