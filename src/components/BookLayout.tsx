@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { X, Volume2, VolumeX, Download, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List } from 'lucide-react';
+import { X, Volume2, VolumeX, Download, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List, User } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 // 從 App.tsx 導入章節類型和書名映射
 import type { ChapterInfo } from '../App';
 import { BOOK_TITLES } from '../App';
 import { useHighlight, getOffsetInContainer, scrollToHighlight, HIGHLIGHT_COLORS, type HighlightStyle } from '../useHighlight';
+import { getReaderPhone, loginReader, logoutReader } from '../lib/readerAuth';
 
 interface BookLayoutProps {
   bookId: string;
@@ -77,6 +78,32 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   const [lastAdded, setLastAdded] = useState<{ id: string; x: number; y: number } | null>(null);
   const undoTimerRef = useRef<number | null>(null);
   const [showHighlightPanel, setShowHighlightPanel] = useState(false);
+
+  // 讀者登入（跨裝置同步畫重點用）
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [readerPhone, setReaderPhoneState] = useState<string | null>(() => getReaderPhone());
+  const [loginPhoneInput, setLoginPhoneInput] = useState('');
+  const [loginPwdInput, setLoginPwdInput] = useState('');
+  const [loginError, setLoginError] = useState('');
+
+  const handleLogin = () => {
+    if (loginReader(loginPhoneInput, loginPwdInput)) {
+      setReaderPhoneState(loginPhoneInput.trim());
+      setShowLoginModal(false);
+      setLoginPhoneInput('');
+      setLoginPwdInput('');
+      setLoginError('');
+      window.location.reload();
+    } else {
+      setLoginError('手機號碼或密碼錯誤');
+    }
+  };
+
+  const handleLogout = () => {
+    logoutReader();
+    setReaderPhoneState(null);
+    window.location.reload();
+  };
 
   // 獲取章節資訊
   const currentIndex = chapters.findIndex(ch => ch.id === chapter);
@@ -622,6 +649,15 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
           {/* 右側:字體大小 + 字型 + 重點列表 */}
           <div className="flex items-center gap-1">
             <button
+              onClick={() => readerPhone ? handleLogout() : setShowLoginModal(true)}
+              className="px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm bg-slate-700 text-white hover:bg-slate-600 flex items-center gap-1"
+              title={readerPhone ? `已登入：${readerPhone}（點擊登出）` : '登入以跨裝置同步畫重點'}
+            >
+              <User className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">{readerPhone ? readerPhone : '登入'}</span>
+            </button>
+
+            <button
               onClick={() => setShowHighlightPanel(!showHighlightPanel)}
               className={`px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm ${
                 showHighlightPanel
@@ -776,6 +812,46 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       </div>
 
       <div className="h-40 sm:h-32"></div>
+
+      {/* 讀者登入：手機號碼+固定密碼，用來跨裝置同步畫重點 */}
+      {showLoginModal && (
+        <div className="fixed inset-0 z-[60] bg-black/50 flex items-center justify-center px-4">
+          <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm">
+            <h3 className="text-lg font-bold text-slate-800 mb-1">登入電子書房</h3>
+            <p className="text-xs text-slate-500 mb-4">登入後可跨裝置同步畫重點</p>
+            <input
+              type="text"
+              placeholder="手機號碼"
+              value={loginPhoneInput}
+              onChange={e => setLoginPhoneInput(e.target.value)}
+              className="w-full border border-slate-300 rounded-lg px-3 py-2 mb-2 text-sm"
+            />
+            <input
+              type="password"
+              placeholder="密碼"
+              value={loginPwdInput}
+              onChange={e => setLoginPwdInput(e.target.value)}
+              onKeyDown={e => { if (e.key === 'Enter') handleLogin(); }}
+              className="w-full border border-slate-300 rounded-lg px-3 py-2 mb-2 text-sm"
+            />
+            {loginError && <p className="text-xs text-red-600 mb-2">{loginError}</p>}
+            <div className="flex gap-2 mt-2">
+              <button
+                onClick={handleLogin}
+                className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg py-2 text-sm font-semibold"
+              >
+                登入
+              </button>
+              <button
+                onClick={() => { setShowLoginModal(false); setLoginError(''); }}
+                className="flex-1 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-lg py-2 text-sm font-semibold"
+              >
+                取消
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

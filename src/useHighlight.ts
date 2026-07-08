@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { supabase } from './lib/supabase';
+import { getReaderPhone } from './lib/readerAuth';
 
 export type HighlightStyle = 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple';
 
@@ -85,6 +87,40 @@ function saveHighlights(bookId: string, chapter: string, list: HighlightRecord[]
 
 function generateId(): string {
   return `hl_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`;
+}
+
+// 雲端同步：以手機號碼（reader_phone）為身分依據，讓同一人跨裝置看到同一份畫重點
+async function fetchCloudHighlights(userKey: string, bookId: string, chapter: string): Promise<HighlightRecord[] | null> {
+  const { data, error } = await supabase
+    .from('highlights')
+    .select('id, book_id, chapter, text_content, start_offset, style, bold')
+    .eq('user_key', userKey)
+    .eq('book_id', bookId)
+    .eq('chapter', chapter);
+  if (error) {
+    console.error('讀取雲端畫重點失敗:', error);
+    return null;
+  }
+  return data as HighlightRecord[];
+}
+
+async function upsertCloudHighlight(userKey: string, h: HighlightRecord) {
+  const { error } = await supabase.from('highlights').upsert({
+    id: h.id,
+    user_key: userKey,
+    book_id: h.book_id,
+    chapter: h.chapter,
+    text_content: h.text_content,
+    start_offset: h.start_offset,
+    style: h.style,
+    bold: h.bold || false,
+  });
+  if (error) console.error('同步畫重點到雲端失敗:', error);
+}
+
+async function deleteCloudHighlight(userKey: string, id: string) {
+  const { error } = await supabase.from('highlights').delete().eq('id', id).eq('user_key', userKey);
+  if (error) console.error('從雲端刪除畫重點失敗:', error);
 }
 
 // 讀取某本書所有章節的畫重點（跨章節總覽用），依 chapter 分組
@@ -193,7 +229,19 @@ export function useHighlight(bookId: string, chapter: string) {
   const supported = isHighlightApiSupported();
 
   useEffect(() => {
-    setHighlights(loadHighlights(bookId, chapter));
+    const local = loadHighlights(bookId, chapter);
+    setHighlights(local);
+
+    const userKey = getReaderPhone();
+    if (!userKey) return;
+    let cancelled = false;
+    fetchCloudHighlights(userKey, bookId, chapter).then(cloud => {
+      if (cancelled || !cloud) return;
+      // 已登入時雲端為準（同步跨裝置），並回寫本機快取
+      saveHighlights(bookId, chapter, cloud);
+      setHighlights(cloud);
+    });
+    return () => { cancelled = true; };
   }, [bookId, chapter]);
 
   // 重新套用所有畫重點（不修改 DOM，只註冊 Range 給 CSS Custom Highlight API）
@@ -240,13 +288,17 @@ export function useHighlight(bookId: string, chapter: string) {
     // 同一段文字（相同起點與內容）已經畫過重點時，直接更新顏色/粗體，避免產生重疊的重複記錄
     const existing = prev.find(h => h.start_offset === startOffset && h.text_content === text);
     const resultId = existing ? existing.id : generateId();
+    const record: HighlightRecord = { id: resultId, book_id: bookId, chapter, text_content: text, start_offset: startOffset, style, bold };
     const updated = existing
-      ? prev.map(h => h.id === existing.id ? { ...h, style, bold } : h)
-      : [...prev, { id: resultId, book_id: bookId, chapter, text_content: text, start_offset: startOffset, style, bold }];
+      ? prev.map(h => h.id === existing.id ? record : h)
+      : [...prev, record];
 
     highlightsRef.current = updated;
     saveHighlights(bookId, chapter, updated);
     setHighlights(updated);
+
+    const userKey = getReaderPhone();
+    if (userKey) upsertCloudHighlight(userKey, record);
     return resultId;
   }, [bookId, chapter]);
 
@@ -256,6 +308,8 @@ export function useHighlight(bookId: string, chapter: string) {
       saveHighlights(bookId, chapter, updated);
       return updated;
     });
+    const userKey = getReaderPhone();
+    if (userKey) deleteCloudHighlight(userKey, id);
   }, [bookId, chapter]);
 
   // 依點擊座標找出被點到的畫重點（用來實作「點擊移除」）
