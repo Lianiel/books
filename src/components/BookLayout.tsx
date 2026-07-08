@@ -479,10 +479,15 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       <main
         ref={mainRef}
         className="px-4 py-8"
-        style={{ fontSize: fontSizePx[fontSize], fontFamily: fontFamilyOptions.find(f => f.key === fontFamily)?.value || undefined }}
+        style={{
+          fontSize: fontSizePx[fontSize],
+          fontFamily: fontFamilyOptions.find(f => f.key === fontFamily)?.value || undefined,
+          WebkitTouchCallout: 'none',
+        }}
         onMouseUp={handleSelectionChange}
         onTouchEnd={handleSelectionChange}
         onClick={handleMainClick}
+        onContextMenu={(e) => e.preventDefault()}
       >
         {children}
       </main>
