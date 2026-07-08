@@ -285,13 +285,6 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     }
   };
 
-  // 預載語音列表
-  useEffect(() => {
-    if (!('speechSynthesis' in window)) return;
-    window.speechSynthesis.getVoices();
-    window.speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
-  }, []);
-
   // TTS 控制
   const handleSpeak = () => {
     if (isPaused) {
@@ -306,39 +299,33 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       return;
     }
 
-    if (!('speechSynthesis' in window)) return;
     const mainContent = document.querySelector('main');
     if (!mainContent) return;
-    const textContent = (mainContent as HTMLElement).innerText.trim();
-    if (!textContent) return;
 
-    window.speechSynthesis.cancel();
-    setIsSpeaking(true);
-    setIsPaused(false);
+    const textContent = mainContent.innerText;
+    const utterance = new SpeechSynthesisUtterance(textContent);
+    utterance.lang = 'zh-TW';
+    utterance.rate = speechRate;
+    
+    utterance.onstart = () => {
+      setIsSpeaking(true);
+      setIsPaused(false);
+    };
+    
+    utterance.onend = () => {
+      setIsSpeaking(false);
+      setIsPaused(false);
+      utteranceRef.current = null;
+    };
+    
+    utterance.onerror = () => {
+      setIsSpeaking(false);
+      setIsPaused(false);
+      utteranceRef.current = null;
+    };
 
-    setTimeout(() => {
-      const utterance = new SpeechSynthesisUtterance(textContent);
-      utterance.lang = 'zh-TW';
-      utterance.rate = speechRate;
-
-      const voices = window.speechSynthesis.getVoices();
-      const zhVoices = voices.filter(v => v.lang === 'zh-TW' || v.lang.startsWith('zh'));
-      if (zhVoices.length > 0) utterance.voice = zhVoices[0];
-
-      utterance.onend = () => {
-        setIsSpeaking(false);
-        setIsPaused(false);
-        utteranceRef.current = null;
-      };
-      utterance.onerror = () => {
-        setIsSpeaking(false);
-        setIsPaused(false);
-        utteranceRef.current = null;
-      };
-
-      utteranceRef.current = utterance;
-      window.speechSynthesis.speak(utterance);
-    }, 150);
+    utteranceRef.current = utterance;
+    window.speechSynthesis.speak(utterance);
   };
 
   const handleStopSpeak = () => {
@@ -388,7 +375,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             <div className="flex-1 min-w-0">
               <button
                 onClick={() => setShowChapterMenu(!showChapterMenu)}
-                className="w-full flex items-center justify-between gap-1 sm:gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all font-bold text-sm sm:text-base"
+                className="w-full flex items-center justify-between gap-1 sm:gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all font-bold text-xs sm:text-sm"
                 title="點擊選擇章節"
               >
                 <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
@@ -397,7 +384,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
                   <span className="opacity-60 mx-1">·</span>
                   {currentChapter?.title || chapter}
                 </span>
-                <span className="text-sm opacity-90 flex-shrink-0">{currentIndex + 1}/{chapters.length}</span>
+                <span className="text-xs opacity-90 flex-shrink-0">{currentIndex + 1}/{chapters.length}</span>
                 <List className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
               </button>
 
@@ -479,10 +466,15 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       <main
         ref={mainRef}
         className="px-4 py-8"
-        style={{ fontSize: fontSizePx[fontSize], fontFamily: fontFamilyOptions.find(f => f.key === fontFamily)?.value || undefined }}
+        style={{
+          fontSize: fontSizePx[fontSize],
+          fontFamily: fontFamilyOptions.find(f => f.key === fontFamily)?.value || undefined,
+          WebkitTouchCallout: 'none',
+        }}
         onMouseUp={handleSelectionChange}
         onTouchEnd={handleSelectionChange}
         onClick={handleMainClick}
+        onContextMenu={(e) => e.preventDefault()}
       >
         {children}
       </main>
@@ -546,7 +538,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
         </button>
         
         {/* 單列工具列 */}
-        <div className="flex items-center justify-between px-2 sm:px-4 py-3 sm:py-2 max-w-7xl mx-auto">
+        <div className="flex items-center justify-between px-2 sm:px-4 py-2 max-w-7xl mx-auto">
           
           {/* 左側:關閉 + Word */}
           <div className="flex items-center gap-1">
