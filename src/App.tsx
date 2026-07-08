@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Book } from 'lucide-react';
+import { Book, User } from 'lucide-react';
 import { useState, useEffect, lazy, Suspense } from 'react';
 import BookLayout from './components/BookLayout';
 import BookHighlightsOverview from './components/BookHighlightsOverview';
 import ErrorBoundary from './components/ErrorBoundary';
 import { fetchBooks, fetchChapters, type Book as BookType, type Chapter } from './api/books_supabase';
+import { getReaderPhone, loginReader, logoutReader } from './lib/readerAuth';
 
 // ========== TypeScript 型別定義 ==========
 
@@ -895,6 +896,30 @@ const App: React.FC = () => {
   );
   const toggleCategory = (name: string) => setExpandedCategories(prev => ({ ...prev, [name]: !prev[name] }));
 
+  // 讀者登入（跨裝置同步畫重點用）
+  const [readerPhone, setReaderPhoneState] = useState<string | null>(() => getReaderPhone());
+  const [showLoginModal, setShowLoginModal] = useState(() => !getReaderPhone());
+  const [loginPhoneInput, setLoginPhoneInput] = useState('');
+  const [loginPwdInput, setLoginPwdInput] = useState('');
+  const [loginError, setLoginError] = useState('');
+
+  const handleLogin = () => {
+    if (loginReader(loginPhoneInput, loginPwdInput)) {
+      setReaderPhoneState(loginPhoneInput.trim());
+      setShowLoginModal(false);
+      setLoginPhoneInput('');
+      setLoginPwdInput('');
+      setLoginError('');
+    } else {
+      setLoginError('手機號碼或密碼錯誤');
+    }
+  };
+
+  const handleLogout = () => {
+    logoutReader();
+    setReaderPhoneState(null);
+  };
+
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -1350,9 +1375,58 @@ const App: React.FC = () => {
                 <div className="flex items-center gap-3">
                   <Book className="w-8 h-8 text-blue-600" />
                   <h1 className="text-2xl font-bold text-gray-900">電子書房</h1>
+                  <button
+                    onClick={() => readerPhone ? handleLogout() : setShowLoginModal(true)}
+                    className={`ml-auto px-3 py-1.5 rounded-lg font-semibold text-sm flex items-center gap-1.5 transition-colors ${
+                      readerPhone ? 'bg-emerald-600 text-white hover:bg-emerald-700' : 'bg-indigo-600 text-white hover:bg-indigo-700'
+                    }`}
+                    title={readerPhone ? `已登入：${readerPhone}（點擊登出）` : '登入以跨裝置同步畫重點'}
+                  >
+                    <User className="w-4 h-4" />
+                    <span>{readerPhone ? readerPhone : '登入'}</span>
+                  </button>
                 </div>
               </div>
             </div>
+
+            {showLoginModal && (
+              <div className="fixed inset-0 z-[60] bg-black/50 flex items-center justify-center px-4">
+                <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm">
+                  <h3 className="text-lg font-bold text-slate-800 mb-1">登入電子書房</h3>
+                  <p className="text-xs text-slate-500 mb-4">登入後可跨裝置同步畫重點</p>
+                  <input
+                    type="text"
+                    placeholder="手機號碼"
+                    value={loginPhoneInput}
+                    onChange={e => setLoginPhoneInput(e.target.value)}
+                    className="w-full border border-slate-300 rounded-lg px-3 py-2 mb-2 text-sm"
+                  />
+                  <input
+                    type="password"
+                    placeholder="密碼"
+                    value={loginPwdInput}
+                    onChange={e => setLoginPwdInput(e.target.value)}
+                    onKeyDown={e => { if (e.key === 'Enter') handleLogin(); }}
+                    className="w-full border border-slate-300 rounded-lg px-3 py-2 mb-2 text-sm"
+                  />
+                  {loginError && <p className="text-xs text-red-600 mb-2">{loginError}</p>}
+                  <div className="flex gap-2 mt-2">
+                    <button
+                      onClick={handleLogin}
+                      className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg py-2 text-sm font-semibold"
+                    >
+                      登入
+                    </button>
+                    <button
+                      onClick={() => { setShowLoginModal(false); setLoginError(''); }}
+                      className="flex-1 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-lg py-2 text-sm font-semibold"
+                    >
+                      略過
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {loading && (
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
