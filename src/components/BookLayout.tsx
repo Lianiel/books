@@ -650,11 +650,13 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
           <div className="flex items-center gap-1">
             <button
               onClick={() => readerPhone ? handleLogout() : setShowLoginModal(true)}
-              className="px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm bg-slate-700 text-white hover:bg-slate-600 flex items-center gap-1"
+              className={`px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm flex items-center gap-1 ${
+                readerPhone ? 'bg-emerald-600 text-white hover:bg-emerald-700' : 'bg-indigo-600 text-white hover:bg-indigo-700'
+              }`}
               title={readerPhone ? `已登入：${readerPhone}（點擊登出）` : '登入以跨裝置同步畫重點'}
             >
               <User className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">{readerPhone ? readerPhone : '登入'}</span>
+              <span>{readerPhone ? readerPhone : '登入'}</span>
             </button>
 
             <button
