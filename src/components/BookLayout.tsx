@@ -357,7 +357,8 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
         setIsPaused(false);
         utteranceRef.current = null;
       };
-      utterance.onerror = () => {
+      utterance.onerror = (e) => {
+        alert('朗讀除錯：發生錯誤\n錯誤代碼：' + e.error + '\n文字長度：' + textContent.length + '\n可用中文語音數：' + zhVoices.length);
         setIsSpeaking(false);
         setIsPaused(false);
         utteranceRef.current = null;
