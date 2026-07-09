@@ -41,6 +41,80 @@ const fontFamilyOptions: { key: FontFamilyKey; label: string; value: string }[] 
 ];
 
 
+// 聖經書卷簡稱／全名對照表，由長至短排列，避免短簡稱搶先匹配（如「約一」須排在「約」之前）
+const BIBLE_BOOK_NAMES: [string, string][] = [
+  ['撒母耳記上', '撒母耳記上'], ['撒母耳記下', '撒母耳記下'],
+  ['列王紀上', '列王紀上'], ['列王紀下', '列王紀下'],
+  ['歷代志上', '歷代志上'], ['歷代志下', '歷代志下'],
+  ['哥林多前書', '哥林多前書'], ['哥林多後書', '哥林多後書'],
+  ['帖撒羅尼迦前書', '帖撒羅尼迦前書'], ['帖撒羅尼迦後書', '帖撒羅尼迦後書'],
+  ['提摩太前書', '提摩太前書'], ['提摩太後書', '提摩太後書'],
+  ['以斯拉記', '以斯拉記'], ['尼希米記', '尼希米記'], ['以斯帖記', '以斯帖記'],
+  ['約伯記', '約伯記'], ['傳道書', '傳道書'], ['以賽亞書', '以賽亞書'],
+  ['耶利米書', '耶利米書'], ['耶利米哀歌', '耶利米哀歌'], ['以西結書', '以西結書'],
+  ['但以理書', '但以理書'], ['何西阿書', '何西阿書'], ['約珥書', '約珥書'],
+  ['阿摩司書', '阿摩司書'], ['俄巴底亞書', '俄巴底亞書'], ['約拿書', '約拿書'],
+  ['彌迦書', '彌迦書'], ['那鴻書', '那鴻書'], ['哈巴谷書', '哈巴谷書'],
+  ['西番雅書', '西番雅書'], ['哈該書', '哈該書'], ['撒迦利亞書', '撒迦利亞書'],
+  ['瑪拉基書', '瑪拉基書'], ['馬太福音', '馬太福音'], ['馬可福音', '馬可福音'],
+  ['路加福音', '路加福音'], ['約翰福音', '約翰福音'], ['使徒行傳', '使徒行傳'],
+  ['羅馬書', '羅馬書'], ['加拉太書', '加拉太書'], ['以弗所書', '以弗所書'],
+  ['腓立比書', '腓立比書'], ['歌羅西書', '歌羅西書'], ['提多書', '提多書'],
+  ['腓利門書', '腓利門書'], ['希伯來書', '希伯來書'], ['雅各書', '雅各書'],
+  ['彼得前書', '彼得前書'], ['彼得後書', '彼得後書'], ['約翰壹書', '約翰壹書'],
+  ['約翰貳書', '約翰貳書'], ['約翰參書', '約翰參書'], ['猶大書', '猶大書'],
+  ['啟示錄', '啟示錄'], ['創世記', '創世記'], ['出埃及記', '出埃及記'],
+  ['利未記', '利未記'], ['民數記', '民數記'], ['申命記', '申命記'],
+  ['約書亞記', '約書亞記'], ['士師記', '士師記'], ['路得記', '路得記'],
+  ['詩篇', '詩篇'], ['箴言', '箴言'], ['雅歌', '雅歌'],
+  // 常見簡稱（多字先於單字）
+  ['撒上', '撒母耳記上'], ['撒下', '撒母耳記下'], ['王上', '列王紀上'], ['王下', '列王紀下'],
+  ['代上', '歷代志上'], ['代下', '歷代志下'], ['林前', '哥林多前書'], ['林後', '哥林多後書'],
+  ['帖前', '帖撒羅尼迦前書'], ['帖後', '帖撒羅尼迦後書'], ['提前', '提摩太前書'], ['提後', '提摩太後書'],
+  ['約一', '約翰壹書'], ['約二', '約翰貳書'], ['約三', '約翰參書'], ['彼前', '彼得前書'], ['彼後', '彼得後書'],
+  ['創', '創世記'], ['出', '出埃及記'], ['利', '利未記'], ['民', '民數記'], ['申', '申命記'],
+  ['書', '約書亞記'], ['士', '士師記'], ['得', '路得記'], ['拉', '以斯拉記'], ['尼', '尼希米記'],
+  ['斯', '以斯帖記'], ['伯', '約伯記'], ['詩', '詩篇'], ['箴', '箴言'], ['傳', '傳道書'],
+  ['賽', '以賽亞書'], ['耶', '耶利米書'], ['哀', '耶利米哀歌'], ['結', '以西結書'], ['但', '但以理書'],
+  ['何', '何西阿書'], ['珥', '約珥書'], ['摩', '阿摩司書'], ['俄', '俄巴底亞書'], ['拿', '約拿書'],
+  ['彌', '彌迦書'], ['鴻', '那鴻書'], ['哈', '哈巴谷書'], ['番', '西番雅書'], ['該', '哈該書'],
+  ['亞', '撒迦利亞書'], ['瑪', '瑪拉基書'], ['太', '馬太福音'], ['可', '馬可福音'], ['路', '路加福音'],
+  ['約', '約翰福音'], ['徒', '使徒行傳'], ['羅', '羅馬書'], ['加', '加拉太書'], ['弗', '以弗所書'],
+  ['腓', '腓立比書'], ['西', '歌羅西書'], ['多', '提多書'], ['門', '腓利門書'], ['來', '希伯來書'],
+  ['雅', '雅各書'], ['猶', '猶大書'], ['啟', '啟示錄'],
+];
+
+const numToChinese = (n: number): string => {
+  const digits = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+  if (n < 10) return digits[n];
+  if (n < 20) return n === 10 ? '十' : '十' + digits[n % 10];
+  if (n < 100) {
+    const tens = Math.floor(n / 10);
+    const ones = n % 10;
+    return digits[tens] + '十' + (ones ? digits[ones] : '');
+  }
+  const hundreds = Math.floor(n / 100);
+  const rest = n % 100;
+  if (rest === 0) return digits[hundreds] + '百';
+  return digits[hundreds] + '百' + (rest < 10 ? '零' : '') + numToChinese(rest);
+};
+
+// 把「賽六十五17」「來一10~12」這類經文引用展開成「以賽亞書六十五章十七節」「希伯來書一章十節到十二節」，方便語音朗讀
+const expandScriptureRefs = (text: string): string => {
+  const bookAlt = BIBLE_BOOK_NAMES.map(([abbrev]) => abbrev).join('|');
+  const refRegex = new RegExp(`(${bookAlt})([零一二三四五六七八九十百千廿卅]+)(\\d{1,3})(?:[-~–—](\\d{1,3}))?`, 'g');
+  const bookMap = new Map(BIBLE_BOOK_NAMES);
+  return text.replace(refRegex, (match, abbrev, chapterCn, verseStart, verseEnd) => {
+    const fullName = bookMap.get(abbrev) || abbrev;
+    const verseStartCn = numToChinese(parseInt(verseStart, 10));
+    if (verseEnd) {
+      const verseEndCn = numToChinese(parseInt(verseEnd, 10));
+      return `${fullName}${chapterCn}章${verseStartCn}節到${verseEndCn}節`;
+    }
+    return `${fullName}${chapterCn}章${verseStartCn}節`;
+  });
+};
+
 const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, children }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -396,8 +470,9 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     if (!('speechSynthesis' in window)) return;
     const mainContent = document.querySelector('main');
     if (!mainContent) return;
-    const textContent = (mainContent as HTMLElement).innerText.trim();
-    if (!textContent) return;
+    const rawTextContent = (mainContent as HTMLElement).innerText.trim();
+    if (!rawTextContent) return;
+    const textContent = expandScriptureRefs(rawTextContent);
 
     speechStopRef.current = false;
     window.speechSynthesis.cancel();
