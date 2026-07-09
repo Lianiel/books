@@ -241,7 +241,7 @@ export default function Book31Ch7() {
                 根據聖經創世記第七章至第八章的記載，挪亞方舟在大洪水中的經歷是這樣的：
               </p>
               <div className="overflow-x-auto mb-3">
-                <table className="w-full text-sm border-collapse">
+                <table className="w-full border-collapse" style={{ fontSize: 'calc(1em - 8px)' }}>
                   <thead>
                     <tr className="bg-teal-50">
                       <th className="border border-teal-200 px-3 py-2 text-left font-semibold text-teal-700">時間</th>

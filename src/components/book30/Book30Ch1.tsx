@@ -165,7 +165,7 @@ export default function Book30Ch1() {
 
               <p className="text-gray-700 leading-relaxed mb-3">兩個模式可以簡單地加以比較如下表：</p>
               <div className="overflow-x-auto mb-5 rounded-lg shadow-sm">
-                <table className="w-full border-collapse text-sm">
+                <table className="w-full border-collapse" style={{ fontSize: 'calc(1em - 8px)' }}>
                   <thead>
                     <tr className="bg-indigo-700 text-white">
                       <th className="border border-indigo-600 px-4 py-2 text-center w-1/2">進化模式</th>
@@ -189,7 +189,7 @@ export default function Book30Ch1() {
 
               <p className="text-gray-700 leading-relaxed mb-3">前面提到，這兩個模式可以用來「預測」資料，看看何者能預測得更直截了當。要如此行，應該先想像進化論者及創造論者在事前都不知道能發現什麼資料，他們雖不知道會找到什麼，但卻各按自己的模式大膽地預測。下表列出了對一些重要事項的兩種不同的預測：</p>
               <div className="overflow-x-auto mb-4 rounded-lg shadow-sm">
-                <table className="w-full border-collapse text-sm">
+                <table className="w-full border-collapse" style={{ fontSize: 'calc(1em - 8px)' }}>
                   <thead>
                     <tr className="bg-indigo-700 text-white">
                       <th className="border border-indigo-600 px-3 py-2 text-left w-1/3">事　項</th>

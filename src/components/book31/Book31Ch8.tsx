@@ -71,7 +71,7 @@ export default function Book31Ch8() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-2">水氣層消失的後果，我們從下列圖表可以比較出大洪水審判前後氣候的不同：</p>
               <div className="overflow-x-auto mb-3">
-                <table className="w-full text-sm border-collapse">
+                <table className="w-full border-collapse" style={{ fontSize: 'calc(1em - 8px)' }}>
                   <thead>
                     <tr>
                       <th className="border border-teal-200 px-3 py-2 bg-teal-50 text-teal-700 font-semibold">大洪水審判以前</th>

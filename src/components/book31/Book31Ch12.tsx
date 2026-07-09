@@ -43,7 +43,7 @@ export default function Book31Ch12() {
                 我們若比較創世記前三章和啟示錄後三章在下列圖表中作一個概略的比較：
               </p>
               <div className="overflow-x-auto mb-4">
-                <table className="w-full border-collapse text-sm">
+                <table className="w-full border-collapse" style={{ fontSize: 'calc(1em - 8px)' }}>
                   <thead>
                     <tr className="bg-teal-50">
                       <th className="border border-teal-200 px-3 py-2 text-teal-700 font-semibold text-left">創世記前三章</th>
