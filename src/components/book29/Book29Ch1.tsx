@@ -41,14 +41,14 @@ export default function Book29Ch1() {
                 神的創造有清楚的次序，第一日與第四日相對應，分別是創造時間與豐富時間；第二日與第五日相對應，分別是創造上下空間與豐富上下空間，第三日與第六日相對應，分別是創造四方空間與豐富四方空間，可詳見「表二：神創造工作的次序與內涵」。這八個階段與創世記的八大人物有對應，因此產生了對八大人物的預表，而與整卷創世記有對應，本部接續的內容將詳細分享。
               </p>
 
-              <div className="border border-indigo-200 rounded-lg overflow-hidden text-sm my-4">
+              <div className="border border-indigo-200 rounded-lg overflow-hidden my-4" style={{ fontSize: 'calc(1em - 8px)' }}>
                 <div className="text-center font-semibold bg-indigo-100 text-indigo-900 py-2">表二：神創造工作的次序與內涵</div>
                 <div className="text-center text-gray-700 border-t border-indigo-200 py-2 bg-white">起初：神創造天地，地是空虛混沌，淵面黑暗</div>
                 <div className="grid grid-cols-2 text-center font-semibold text-indigo-800 bg-indigo-50 border-t border-indigo-200">
                   <div className="py-2 border-r border-indigo-200">頭三天：創造居住的層面<br />開展背景，預備供應者</div>
                   <div className="py-2">後三天：創造居住者<br />充實舞台，創造管理者</div>
                 </div>
-                <div className="grid grid-cols-4 text-center text-xs font-semibold text-gray-600 border-t border-indigo-200 bg-indigo-50/60">
+                <div className="grid grid-cols-4 text-center font-semibold text-gray-600 border-t border-indigo-200 bg-indigo-50/60">
                   <div className="py-1.5 border-r border-indigo-200">日期</div>
                   <div className="py-1.5 border-r border-indigo-200">神的工作</div>
                   <div className="py-1.5 border-r border-indigo-200">日期</div>
@@ -61,9 +61,9 @@ export default function Book29Ch1() {
                 ].map((row, i) => (
                   <div key={i} className="grid grid-cols-4 text-center text-gray-700 border-t border-indigo-200 bg-white">
                     <div className="py-2 border-r border-indigo-100 font-semibold">{row[0]}</div>
-                    <div className="py-2 border-r border-indigo-200 whitespace-pre-line text-xs">{row[1]}</div>
+                    <div className="py-2 border-r border-indigo-200 whitespace-pre-line">{row[1]}</div>
                     <div className="py-2 border-r border-indigo-100 font-semibold">{row[2]}</div>
-                    <div className="py-2 whitespace-pre-line text-xs">{row[3]}</div>
+                    <div className="py-2 whitespace-pre-line">{row[3]}</div>
                   </div>
                 ))}
                 <div className="text-center text-gray-700 border-t border-indigo-200 py-2 bg-indigo-50">第七日：安息</div>

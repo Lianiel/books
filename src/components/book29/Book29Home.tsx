@@ -85,7 +85,7 @@ export default function Book29Home() {
               <p className="text-gray-700 leading-relaxed text-sm mb-3">
                 可分為兩大部分：創世記一至十一章，和十二至五十章。前者為人類的歷史／太古時期，包含創造、墮落、洪水、巴別等四個重要事件；後者為族長的歷史／先祖時期，包含亞伯拉罕、以撒、雅各、約瑟等四個重要人物。相關章次對應如下：
               </p>
-              <div className="border border-blue-200 rounded-lg overflow-hidden text-sm">
+              <div className="border border-blue-200 rounded-lg overflow-hidden" style={{ fontSize: 'calc(1em - 8px)' }}>
                 <div className="text-center font-semibold bg-blue-100 text-blue-900 py-2">表一：創世記的結構與大綱</div>
                 <div className="grid grid-cols-2 text-center font-semibold text-blue-800 bg-blue-50 border-t border-blue-200">
                   <div className="py-2 border-r border-blue-200">人類的歷史<br />四個重要事件</div>
