@@ -75,7 +75,7 @@ export default function Chapter1() {
 
           <h5 className="font-semibold text-slate-700 mt-4">三組重要對比表（p.30）</h5>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
+            <table className="w-full border-collapse" style={{ fontSize: 'calc(1em - 8px)' }}>
               <thead><tr className="bg-amber-100"><th className="p-2 text-left border border-amber-200">類別</th><th className="p-2 text-left border border-amber-200">正面</th><th className="p-2 text-left border border-amber-200">反面</th></tr></thead>
               <tbody>
                 <tr><td className="p-2 border border-slate-200 font-semibold">(1) 神兩次顯現</td><td className="p-2 border border-slate-200">求智慧的所羅門蒙神賜智慧（王上 3:4-15）</td><td className="p-2 border border-slate-200">建聖殿的所羅門得神顯現與警告（王上 9:1-9）</td></tr>
@@ -104,7 +104,7 @@ export default function Chapter1() {
         <div className="bg-white rounded-xl p-5 border border-slate-200 space-y-4">
           <h4 className="font-bold text-amber-700">北國與南國數據對比（p.24-26）</h4>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
+            <table className="w-full border-collapse" style={{ fontSize: 'calc(1em - 8px)' }}>
               <thead><tr className="bg-amber-100"><th className="p-2 border border-amber-200"></th><th className="p-2 border border-amber-200 text-center">北國以色列</th><th className="p-2 border border-amber-200 text-center">南國猶大</th></tr></thead>
               <tbody>
                 <tr><td className="p-2 border border-slate-200 font-semibold">支派數</td><td className="p-2 border border-slate-200 text-center">十個</td><td className="p-2 border border-slate-200 text-center">兩個（猶大、便雅憫）</td></tr>

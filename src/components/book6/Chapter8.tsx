@@ -52,7 +52,7 @@ export default function Chapter8() {
       <div className="bg-emerald-50 rounded-xl p-5 space-y-4">
         <h3 className="text-lg font-bold text-emerald-700">📋 全書 QUICK TIPS 總整理</h3>
         <div className="overflow-x-auto">
-          <table className="w-full text-sm border-collapse">
+          <table className="w-full border-collapse" style={{ fontSize: 'calc(1em - 8px)' }}>
             <thead><tr className="bg-emerald-100"><th className="p-2 text-left border border-emerald-200">頁碼</th><th className="p-2 text-left border border-emerald-200">QUICK TIP</th></tr></thead>
             <tbody>
               <tr><td className="p-2 border border-slate-200 font-semibold whitespace-nowrap">p.17</td><td className="p-2 border border-slate-200">人飢餓非因無餅，乾渴非因無水，乃因不聽耶和華的話。</td></tr>
