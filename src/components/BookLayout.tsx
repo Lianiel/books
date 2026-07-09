@@ -59,6 +59,9 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   const [isPaused, setIsPaused] = useState(false);
   const [speechRate, setSpeechRate] = useState(0.5);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+  const speechQueueRef = useRef<string[]>([]);
+  const speechIndexRef = useRef(0);
+  const speechStopRef = useRef(false);
   
   // 語速選擇器
   const [showSpeedSelector, setShowSpeedSelector] = useState(false);
@@ -297,6 +300,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   // 關閉按鈕
   const handleClose = () => {
     if (isSpeaking) {
+      speechStopRef.current = true;
       window.speechSynthesis.cancel();
       setIsSpeaking(false);
       setIsPaused(false);
@@ -319,6 +323,62 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     window.speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
   }, []);
 
+  // 把長文字依句尾標點切成安全長度的段落，避免 Android 語音引擎對單段文字的長度限制（超過約4000字會回報 synthesis-failed）
+  const splitTextForSpeech = (text: string, maxLen = 300): string[] => {
+    const parts = text.split(/([。！？\n]+)/);
+    const sentences: string[] = [];
+    for (let i = 0; i < parts.length; i += 2) {
+      const sentence = parts[i] + (parts[i + 1] || '');
+      if (sentence.trim()) sentences.push(sentence);
+    }
+    const chunks: string[] = [];
+    let current = '';
+    for (const s of sentences) {
+      if (current && (current + s).length > maxLen) {
+        chunks.push(current);
+        current = s;
+      } else {
+        current += s;
+      }
+    }
+    if (current.trim()) chunks.push(current);
+    return chunks;
+  };
+
+  const speakNextChunk = () => {
+    const queue = speechQueueRef.current;
+    const idx = speechIndexRef.current;
+    if (idx >= queue.length) {
+      setIsSpeaking(false);
+      setIsPaused(false);
+      utteranceRef.current = null;
+      return;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(queue[idx]);
+    utterance.lang = 'zh-TW';
+    utterance.rate = speechRate;
+
+    const voices = window.speechSynthesis.getVoices();
+    const zhVoices = voices.filter(v => v.lang === 'zh-TW' || v.lang.startsWith('zh'));
+    if (zhVoices.length > 0) utterance.voice = zhVoices[0];
+
+    utterance.onend = () => {
+      if (speechStopRef.current) return;
+      speechIndexRef.current += 1;
+      speakNextChunk();
+    };
+    utterance.onerror = () => {
+      if (speechStopRef.current) return;
+      setIsSpeaking(false);
+      setIsPaused(false);
+      utteranceRef.current = null;
+    };
+
+    utteranceRef.current = utterance;
+    window.speechSynthesis.speak(utterance);
+  };
+
   // TTS 控制
   const handleSpeak = () => {
     if (isPaused) {
@@ -339,37 +399,21 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     const textContent = (mainContent as HTMLElement).innerText.trim();
     if (!textContent) return;
 
+    speechStopRef.current = false;
     window.speechSynthesis.cancel();
     setIsSpeaking(true);
     setIsPaused(false);
 
+    speechQueueRef.current = splitTextForSpeech(textContent);
+    speechIndexRef.current = 0;
+
     setTimeout(() => {
-      const utterance = new SpeechSynthesisUtterance(textContent);
-      utterance.lang = 'zh-TW';
-      utterance.rate = speechRate;
-
-      const voices = window.speechSynthesis.getVoices();
-      const zhVoices = voices.filter(v => v.lang === 'zh-TW' || v.lang.startsWith('zh'));
-      if (zhVoices.length > 0) utterance.voice = zhVoices[0];
-
-      utterance.onend = () => {
-        setIsSpeaking(false);
-        setIsPaused(false);
-        utteranceRef.current = null;
-      };
-      utterance.onerror = (e) => {
-        alert('朗讀除錯：發生錯誤\n錯誤代碼：' + e.error + '\n文字長度：' + textContent.length + '\n可用中文語音數：' + zhVoices.length);
-        setIsSpeaking(false);
-        setIsPaused(false);
-        utteranceRef.current = null;
-      };
-
-      utteranceRef.current = utterance;
-      window.speechSynthesis.speak(utterance);
+      speakNextChunk();
     }, 150);
   };
 
   const handleStopSpeak = () => {
+    speechStopRef.current = true;
     window.speechSynthesis.cancel();
     setIsSpeaking(false);
     setIsPaused(false);
@@ -379,11 +423,12 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   // 章節切換
   const handleChapterChange = (chapterPath: string) => {
     if (isSpeaking) {
+      speechStopRef.current = true;
       window.speechSynthesis.cancel();
       setIsSpeaking(false);
       setIsPaused(false);
     }
-    
+
     setShowChapterMenu(false);
     navigate(chapterPath);
     window.scrollTo({ top: 0, behavior: 'smooth' });
