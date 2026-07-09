@@ -75,7 +75,7 @@ export default function Book29Home() {
           <div className="p-5 bg-white space-y-4">
             <p className="text-gray-700 leading-relaxed">創世記的結構有兩種比較重要的分析法：</p>
             <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-100">
-              <h4 className="font-semibold text-indigo-800 mb-2">一、多利達公式（תּוֹלְדוֹת eleh toledot）</h4>
+              <h4 className="font-semibold text-indigo-800 mb-2">一、多利達特公式（תּוֹלְדוֹת eleh toledot）</h4>
               <p className="text-gray-700 leading-relaxed text-sm">
                 這個片語有來歷、後代、兒子、記略等各種翻譯。這片語通常接著一個人名，只有第一處例外，不是人名，而是「天地」，出現於五1、六9、十1、十一10、十一27、廿五12、廿五19、卅六1、卅六9、卅七2。從第二處開始，記載：1. 亞當的後代、2. 挪亞的後代、3. 閃含雅弗的後代、4. 閃的後代、5. 他拉的後代、6. 以實瑪利的後代、7. 以撒的後代、8. 以掃的後代、9. 雅各的後代。
               </p>
