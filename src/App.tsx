@@ -409,6 +409,14 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter34', title: '第34章 挪亞造方舟', path: '/book29/chapter34' },
     { id: 'chapter35', title: '第35章 你和你全家', path: '/book29/chapter35' },
     { id: 'chapter36', title: '第36章 洪水與方舟', path: '/book29/chapter36' },
+    { id: 'chapter37', title: '第37章 紀念與獻祭', path: '/book29/chapter37' },
+    { id: 'chapter38', title: '第38章 賜福與立約', path: '/book29/chapter38' },
+    { id: 'chapter39', title: '第39章 咒詛與祝福', path: '/book29/chapter39' },
+    { id: 'chapter40', title: '第40章 三個大族群', path: '/book29/chapter40' },
+    { id: 'chapter41', title: '第41章 巴別亂口音', path: '/book29/chapter41' },
+    { id: 'chapter42', title: '第42章 生養與離開', path: '/book29/chapter42' },
+    { id: 'chapter43', title: '第43章 呼召與拯救', path: '/book29/chapter43' },
+    { id: 'chapter44', title: '第44章 寄居與不爭', path: '/book29/chapter44' },
   ],
   book30: [
     { id: 'home', title: '書本簡介', path: '/book30/home' },
@@ -855,6 +863,14 @@ const Book29Ch33 = lazy(() => import('./components/book29/Book29Ch33'));
 const Book29Ch34 = lazy(() => import('./components/book29/Book29Ch34'));
 const Book29Ch35 = lazy(() => import('./components/book29/Book29Ch35'));
 const Book29Ch36 = lazy(() => import('./components/book29/Book29Ch36'));
+const Book29Ch37 = lazy(() => import('./components/book29/Book29Ch37'));
+const Book29Ch38 = lazy(() => import('./components/book29/Book29Ch38'));
+const Book29Ch39 = lazy(() => import('./components/book29/Book29Ch39'));
+const Book29Ch40 = lazy(() => import('./components/book29/Book29Ch40'));
+const Book29Ch41 = lazy(() => import('./components/book29/Book29Ch41'));
+const Book29Ch42 = lazy(() => import('./components/book29/Book29Ch42'));
+const Book29Ch43 = lazy(() => import('./components/book29/Book29Ch43'));
+const Book29Ch44 = lazy(() => import('./components/book29/Book29Ch44'));
 
 // ========== Book 30 章節（懶加載） ==========
 const Book30Home = lazy(() => import('./components/book30/Book30Home'));
@@ -1380,6 +1396,14 @@ const App: React.FC = () => {
         <Route path="/book29/chapter34" element={<BookLayout bookId="book29" chapter="chapter34" chapters={getChaptersForBook('book29')}><Book29Ch34 /></BookLayout>} />
         <Route path="/book29/chapter35" element={<BookLayout bookId="book29" chapter="chapter35" chapters={getChaptersForBook('book29')}><Book29Ch35 /></BookLayout>} />
         <Route path="/book29/chapter36" element={<BookLayout bookId="book29" chapter="chapter36" chapters={getChaptersForBook('book29')}><Book29Ch36 /></BookLayout>} />
+        <Route path="/book29/chapter37" element={<BookLayout bookId="book29" chapter="chapter37" chapters={getChaptersForBook('book29')}><Book29Ch37 /></BookLayout>} />
+        <Route path="/book29/chapter38" element={<BookLayout bookId="book29" chapter="chapter38" chapters={getChaptersForBook('book29')}><Book29Ch38 /></BookLayout>} />
+        <Route path="/book29/chapter39" element={<BookLayout bookId="book29" chapter="chapter39" chapters={getChaptersForBook('book29')}><Book29Ch39 /></BookLayout>} />
+        <Route path="/book29/chapter40" element={<BookLayout bookId="book29" chapter="chapter40" chapters={getChaptersForBook('book29')}><Book29Ch40 /></BookLayout>} />
+        <Route path="/book29/chapter41" element={<BookLayout bookId="book29" chapter="chapter41" chapters={getChaptersForBook('book29')}><Book29Ch41 /></BookLayout>} />
+        <Route path="/book29/chapter42" element={<BookLayout bookId="book29" chapter="chapter42" chapters={getChaptersForBook('book29')}><Book29Ch42 /></BookLayout>} />
+        <Route path="/book29/chapter43" element={<BookLayout bookId="book29" chapter="chapter43" chapters={getChaptersForBook('book29')}><Book29Ch43 /></BookLayout>} />
+        <Route path="/book29/chapter44" element={<BookLayout bookId="book29" chapter="chapter44" chapters={getChaptersForBook('book29')}><Book29Ch44 /></BookLayout>} />
         <Route path="/book/29" element={<BookLayout bookId="book29" chapter="home" chapters={getChaptersForBook('book29')}><Book29Home /></BookLayout>} />
 
         {/* ========== Book 30 - 科學創造論 ========== */}
