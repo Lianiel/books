@@ -86,6 +86,16 @@ export default function Book29Ch41() {
                 <p className="text-gray-700 leading-relaxed mt-2 mb-2">
                   <strong>1. 材料</strong>　所用的材料是人自己作磚，把磚燒透，拿磚當石頭，拿石漆當灰泥。以色列地區大多以石頭為建材，因為石頭很多；但示拿平原是沖積平原，缺少石頭，因此用泥土製磚，藉日照或火烤使之堅硬。石漆也稱岩漆，是生成於岩石表面的礦物性黏稠液體，通常是水中的礦物質在水份蒸發後，與微生物混合所形成，其外觀與瀝青類似，可作磚石的黏著劑，且是許多古代沙漠壁畫顏料的基本成分。所說的一座城和一座塔，這塔應是城裡的一部分。後來的巴比倫城也在此建立。
                 </p>
+
+                <div className="flex flex-col items-center my-4">
+                  <img
+                    src="/images/book29/ch41-tower-of-babel.png"
+                    alt="圖十四：建造巴別塔，示拿平原上眾人合力建造高塔的景象"
+                    className="max-w-full h-auto rounded-lg shadow-md border border-gray-200"
+                  />
+                  <p className="text-sm text-gray-500 mt-2 italic">圖十四：建造巴別塔</p>
+                </div>
+
                 <p className="text-gray-700 leading-relaxed mb-2">
                   從屬靈意義上為巴別城（巴比倫城）和耶路撒冷城做個比較：巴別（巴比倫）城，建材是磚，是人造的材料，是人所建造的一個屬地的城市，至終的結果是遭到毀滅。耶路撒冷城，建材是石頭，為天然材料，是神所建造的一個屬天的城市，至終要永存。耶路撒冷從古至今規定，無論城牆或房屋均要以石頭來建造，目前在當地找不到用磚塊所建造的房子。
                 </p>
