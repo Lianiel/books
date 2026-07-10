@@ -38,12 +38,12 @@ export default function Book29Ch37() {
               <p className="text-gray-700 leading-relaxed mb-3">
                 創世記八1：「神紀念挪亞和挪亞方舟裡的一切走獸牲畜。神叫風吹地，水勢漸落。」這句話好像是一個分水嶺，比較這節經文前一章與後一章的內容，可看到完整的對應。
               </p>
-              <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-200 mb-3 space-y-2">
-                <p className="text-gray-700 text-sm leading-relaxed">七章：挪亞全家進方舟，洪水漸漲（創七1，17）。<br />八章：洪水漸退，挪亞全家出方舟（創八1，18）。</p>
-                <p className="text-gray-700 text-sm leading-relaxed">七章：「大淵的泉源都裂開了，天上的窗戶也敞開了」（創七11）<br />八章：「淵源和天上的窗戶都閉塞了」（創八2）。</p>
-                <p className="text-gray-700 text-sm leading-relaxed">七章：「方舟從地上漂起，……方舟在水面上漂來漂去」（創七17-18）。<br />八章：「方舟停在亞拉臘山上。」（創八4）</p>
-                <p className="text-gray-700 text-sm leading-relaxed">七章：「……我要……把我所造的各種活物都從地上除滅。」（創七4）<br />八章：「……凡有血肉的活物，就是飛鳥、牲畜，和一切爬在地上的昆蟲，都要帶出來，叫牠在地上多多滋生，大大興旺。」（創八17）</p>
-                <p className="text-gray-700 text-sm leading-relaxed">七章：「凡潔淨的畜類，你要帶七公七母；……空中的飛鳥也要帶七公七母……」（創七2-3）。<br />八章：「挪亞為耶和華築了一座壇，拿各類潔淨的牲畜、飛鳥獻在壇上為燔祭。」（創八20）</p>
+              <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-200 mb-3 space-y-2" style={{ fontSize: 'calc(1em - 4px)' }}>
+                <p className="text-gray-700 leading-relaxed">七章：挪亞全家進方舟，洪水漸漲（創七1，17）。<br />八章：洪水漸退，挪亞全家出方舟（創八1，18）。</p>
+                <p className="text-gray-700 leading-relaxed">七章：「大淵的泉源都裂開了，天上的窗戶也敞開了」（創七11）<br />八章：「淵源和天上的窗戶都閉塞了」（創八2）。</p>
+                <p className="text-gray-700 leading-relaxed">七章：「方舟從地上漂起，……方舟在水面上漂來漂去」（創七17-18）。<br />八章：「方舟停在亞拉臘山上。」（創八4）</p>
+                <p className="text-gray-700 leading-relaxed">七章：「……我要……把我所造的各種活物都從地上除滅。」（創七4）<br />八章：「……凡有血肉的活物，就是飛鳥、牲畜，和一切爬在地上的昆蟲，都要帶出來，叫牠在地上多多滋生，大大興旺。」（創八17）</p>
+                <p className="text-gray-700 leading-relaxed">七章：「凡潔淨的畜類，你要帶七公七母；……空中的飛鳥也要帶七公七母……」（創七2-3）。<br />八章：「挪亞為耶和華築了一座壇，拿各類潔淨的牲畜、飛鳥獻在壇上為燔祭。」（創八20）</p>
               </div>
               <p className="text-gray-700 leading-relaxed mb-3">
                 從這些對應可以看到，神有完整的計劃。神降下大水，也挪走大水；神結束一個世代，也開始一個新世代；神審判也施恩，神拆毀也建造；神除滅活物，也使活物滋生興旺；神多帶潔淨的牲畜、飛鳥進方舟，為要使牠們被獻為燔祭。創世記八1：「……神叫風吹地，水勢漸落。」在原文，風與是休息、安定、安息的意思。這是在洪水開始的五個月後，方舟漂流已經一百五十天，這時神讓它停下來，等候水消退，就可以預備出方舟了。方舟裡像墳墓，因為不見天日，活動受限制。方舟也像天堂，因為沒有忌妒紛爭、沒有虐待動物的事，大家都和諧相處，有很好的安息。但這不是最終、最好的結局，這只是一個過程。如同信主得救的人，並非一直在天堂，時候到了，要離開天堂，復活得新身體，進到禧年國度、新天新地，那才是最好的終局。
@@ -61,7 +61,7 @@ export default function Book29Ch37() {
               <div className="mt-4">
                 <span className="font-semibold text-indigo-700">一、方舟裡的日子</span>
                 <p className="text-gray-700 leading-relaxed mt-2 mb-2">整理一下方舟裡的日子：</p>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm ml-2">
+                <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2" style={{ fontSize: 'calc(1em - 4px)' }}>
                   <li>二月十七日挪亞全家進方舟，大淵的泉源裂開，天上的窗戶也敞開（創七11），然後四十晝夜降大雨在地上，淹沒了天下的高山，除滅地上所有活物。</li>
                   <li>三月廿七日，大雨停止，水開始漸退（創七12~23）。地上的水勢浩大共一百五十天（創七24；八3）。</li>
                   <li>七月十七日方舟停在亞拉臘山上，水又漸消。</li>
@@ -105,18 +105,18 @@ export default function Book29Ch37() {
               <p className="text-gray-700 leading-relaxed mb-3">
                 每年冬至皇帝率百官在天壇獻祭。其樂曲之詞載於《大明會典》。祭天大典所用禱詞內容古今相傳，大約一致。這些禱詞被傳承下來，表明了中國人自古以來對上帝的敬畏、尊崇、認罪，也見證了上帝的偉大、慈愛、赦罪恩典。歷代君王一直持守這重要的祭禮，直到清朝1911年被推翻，郊祀——祭天大典才停止。但天壇仍在北京見證著中國的郊祀。其獻祭過程之禱詞舉例並語譯如下：
               </p>
-              <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-200 mb-3 space-y-3">
+              <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-200 mb-3 space-y-3" style={{ fontSize: 'calc(1em - 4px)' }}>
                 <div>
                   <span className="font-semibold text-indigo-800">一、「迎帝神」之詞其中一式</span>
-                  <p className="text-gray-700 text-sm mt-1 leading-relaxed">「於昔洪荒之初兮，混濛，五行未運兮，兩曜未明，其中挺立兮，有無容聲，神皇出御兮，始判濁清，立天立地人兮，群物生生。」語譯：「在天地初創的時候，到處都是混沌不明，沒有自然界金木水火土等星的運作，也沒有太陽、月亮的出現，這時候整個世界靜得連一點聲音也沒有，更看不到任何有形的物質。然而一旦神皇（上帝）出來統管，就有了黑暗與光明的分別，祂創造了天地萬物和人類，使萬物世世代代不斷地延續下去。」</p>
+                  <p className="text-gray-700 mt-1 leading-relaxed">「於昔洪荒之初兮，混濛，五行未運兮，兩曜未明，其中挺立兮，有無容聲，神皇出御兮，始判濁清，立天立地人兮，群物生生。」語譯：「在天地初創的時候，到處都是混沌不明，沒有自然界金木水火土等星的運作，也沒有太陽、月亮的出現，這時候整個世界靜得連一點聲音也沒有，更看不到任何有形的物質。然而一旦神皇（上帝）出來統管，就有了黑暗與光明的分別，祂創造了天地萬物和人類，使萬物世世代代不斷地延續下去。」</p>
                 </div>
                 <div>
                   <span className="font-semibold text-indigo-800">二、獻祭過程吟唱之詞</span>
-                  <p className="text-gray-700 text-sm mt-1 leading-relaxed">「群生總總分，悉蒙始恩，人物盡分，於帝仁，群生荷德悉，誰識所從來，於惟皇兮，億兆物之祖真。……」語譯：「萬物的開始，都是因為您施恩的緣故；整個天地人類，都蒙受上帝您的大愛；萬物都虧欠了您的美德，誰知道這些祝福是從那裏來的呢？哦上帝，惟有您才是天地萬物真正的始祖啊！……」</p>
+                  <p className="text-gray-700 mt-1 leading-relaxed">「群生總總分，悉蒙始恩，人物盡分，於帝仁，群生荷德悉，誰識所從來，於惟皇兮，億兆物之祖真。……」語譯：「萬物的開始，都是因為您施恩的緣故；整個天地人類，都蒙受上帝您的大愛；萬物都虧欠了您的美德，誰知道這些祝福是從那裏來的呢？哦上帝，惟有您才是天地萬物真正的始祖啊！……」</p>
                 </div>
                 <div>
                   <span className="font-semibold text-indigo-800">三、「送帝神」樂曲之詞</span>
-                  <p className="text-gray-700 text-sm mt-1 leading-relaxed">「……寶稱泰號兮，昌有窮量，永固高厚兮，宰御久常，微臣頓首兮，攸沐恩光。」語譯：「……我們都大聲地歡呼您的名字，您的名字是歡呼不盡的。上帝，您永遠堅立著天地，您所統管的地域，會世世代代永存著。我是您微不足道的僕人，我要向您下拜，來蒙受您的大恩及光照。」</p>
+                  <p className="text-gray-700 mt-1 leading-relaxed">「……寶稱泰號兮，昌有窮量，永固高厚兮，宰御久常，微臣頓首兮，攸沐恩光。」語譯：「……我們都大聲地歡呼您的名字，您的名字是歡呼不盡的。上帝，您永遠堅立著天地，您所統管的地域，會世世代代永存著。我是您微不足道的僕人，我要向您下拜，來蒙受您的大恩及光照。」</p>
                 </div>
               </div>
               <p className="text-gray-700 leading-relaxed mb-3">

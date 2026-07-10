@@ -47,7 +47,7 @@ export default function Book29Ch38() {
                 <p className="text-gray-700 leading-relaxed mt-2 mb-2">
                   關於生養眾多，亞當是從一對夫妻開始的，挪亞若不再生育，那這次就是從三對夫妻開始。理論上會快三倍達到遍滿地面的目標，結果反而慢三倍，因為有以下三個負面因素，使遍滿地面這件事更加困難：
                 </p>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm ml-2 mb-3">
+                <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 mb-3" style={{ fontSize: 'calc(1em - 4px)' }}>
                   <li>水氣層的保護失去了，高壓氧的環境也沒有了，熱帶極熱寒帶極冷，人的身體健康變差，疾病增加，人壽命減短。</li>
                   <li>地理環境變得複雜、險峻，常有水災、旱災、地震、瘟疫等，會致人於死。人也會水土不服，使遷徙與調適更加困難。</li>
                   <li>人被變亂口音，使人與人、族與群、國與國之間產生更多差異、競爭、衝突，增加謀殺、爭鬥，及戰爭殺人的情況。過去的四千多年，全世界人口有時不增反減，因為會遭逢天災或發生瘟疫、戰爭等。</li>

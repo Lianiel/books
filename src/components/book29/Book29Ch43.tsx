@@ -63,7 +63,7 @@ export default function Book29Ch43() {
                 <p className="text-gray-700 leading-relaxed mt-2 mb-2">
                   神呼召亞伯蘭的時候，同時給他多重的應許，一共有七項：「1.我必叫你成為大國。2.我必賜福給你。3.叫你的名為大。4.你也要叫別人得福。5.為你祝福的，我必賜福與他；6.那咒詛你的，我必咒詛他。7.地上的萬族都要因你得福。」可歸納為三類：
                 </p>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm ml-2 mb-2">
+                <ul className="list-disc list-inside space-y-1 text-gray-700 ml-2 mb-2" style={{ fontSize: 'calc(1em - 4px)' }}>
                   <li><strong>本人得福</strong>——創世記十二2-3：「2……我必賜福給你，叫你的名為大；……3為你祝福的，我必賜福與他；那咒詛你的，我必咒詛他。……」</li>
                   <li><strong>後裔得福</strong>——創世記十二2，7：「2我必叫你成為大國。……7耶和華向亞伯蘭顯現，說：我要把這地賜給你的後裔。」</li>
                   <li><strong>萬族得福</strong>——創世記十二2-3：「2……你也要叫別人得福。……地上的萬族都要因你得福。」</li>
