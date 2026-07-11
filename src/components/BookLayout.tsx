@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import type { ChapterInfo } from '../App';
 import { BOOK_TITLES } from '../App';
 import { useHighlight, getOffsetInContainer, scrollToHighlight, HIGHLIGHT_COLORS, type HighlightStyle } from '../useHighlight';
-import { getReaderPhone, loginReader, logoutReader } from '../lib/readerAuth';
+import { getReaderPhone, loginReader, logoutReader, getReaderDisplayName } from '../lib/readerAuth';
 
 interface BookLayoutProps {
   bookId: string;
@@ -774,10 +774,10 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
               className={`px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm flex items-center gap-1 ${
                 readerPhone ? 'bg-emerald-600 text-white hover:bg-emerald-700' : 'bg-indigo-600 text-white hover:bg-indigo-700'
               }`}
-              title={readerPhone ? `已登入：${readerPhone}（點擊登出）` : '登入以跨裝置同步畫重點'}
+              title={readerPhone ? `已登入：${getReaderDisplayName(readerPhone)}（點擊登出）` : '登入以跨裝置同步畫重點'}
             >
               <User className="w-3.5 h-3.5" />
-              <span>{readerPhone ? readerPhone : '登入'}</span>
+              <span>{readerPhone ? getReaderDisplayName(readerPhone) : '登入'}</span>
             </button>
 
             <button
