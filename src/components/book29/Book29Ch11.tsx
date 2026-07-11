@@ -14,6 +14,7 @@ export default function Book29Ch11() {
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-indigo-700 to-blue-900 bg-clip-text text-transparent">第十一章</h1>
         <h2 className="text-xl font-semibold text-gray-700">掌權的生命</h2>
+        <p className="text-gray-500 mt-1">神就賜福給他們，又對他們說：要生養眾多，遍滿地面，治理這地。　創世記一28</p>
       </div>
 
       {/* 正文 */}

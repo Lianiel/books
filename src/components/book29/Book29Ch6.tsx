@@ -14,6 +14,7 @@ export default function Book29Ch6() {
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-indigo-700 to-blue-900 bg-clip-text text-transparent">第六章</h1>
         <h2 className="text-xl font-semibold text-gray-700">陸地與植物</h2>
+        <p className="text-gray-500 mt-1">神說：天下的水要聚在一處，使旱地露出來。事就這樣成了。　創世記一9</p>
       </div>
 
       {/* 正文 */}
