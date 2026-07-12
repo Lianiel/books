@@ -430,6 +430,18 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter55', title: '第55章 神寬廣的愛', path: '/book29/chapter55' },
     { id: 'chapter56', title: '第56章 約瑟的一生', path: '/book29/chapter56' },
     { id: 'chapter57', title: '第57章 猶大的故事', path: '/book29/chapter57' },
+    { id: 'chapter58', title: '第58章 約瑟的人格', path: '/book29/chapter58' },
+    { id: 'chapter59', title: '第59章 豐年與荒年', path: '/book29/chapter59' },
+    { id: 'chapter60', title: '第60章 基督的預表', path: '/book29/chapter60' },
+    { id: 'conclusion', title: '結論', path: '/book29/conclusion' },
+    { id: 'appendix1', title: '附錄一 時期論', path: '/book29/appendix1' },
+    { id: 'appendix2', title: '附錄二 重造論／時溝論', path: '/book29/appendix2' },
+    { id: 'appendix3', title: '附錄三 畫景論', path: '/book29/appendix3' },
+    { id: 'appendix4', title: '附錄四 聖經六日論', path: '/book29/appendix4' },
+    { id: 'appendix5', title: '附錄五 科學創造論', path: '/book29/appendix5' },
+    { id: 'appendix6', title: '附錄六 創造論與進化論', path: '/book29/appendix6' },
+    { id: 'appendix7', title: '附錄七 解開恐龍滅絕之謎', path: '/book29/appendix7' },
+    { id: 'bibliography', title: '參考書目', path: '/book29/bibliography' },
   ],
   book30: [
     { id: 'home', title: '書本簡介', path: '/book30/home' },
@@ -897,6 +909,18 @@ const Book29Ch54 = lazy(() => import('./components/book29/Book29Ch54'));
 const Book29Ch55 = lazy(() => import('./components/book29/Book29Ch55'));
 const Book29Ch56 = lazy(() => import('./components/book29/Book29Ch56'));
 const Book29Ch57 = lazy(() => import('./components/book29/Book29Ch57'));
+const Book29Ch58 = lazy(() => import('./components/book29/Book29Ch58'));
+const Book29Ch59 = lazy(() => import('./components/book29/Book29Ch59'));
+const Book29Ch60 = lazy(() => import('./components/book29/Book29Ch60'));
+const Book29Conclusion = lazy(() => import('./components/book29/Book29Conclusion'));
+const Book29Appendix1 = lazy(() => import('./components/book29/Book29Appendix1'));
+const Book29Appendix2 = lazy(() => import('./components/book29/Book29Appendix2'));
+const Book29Appendix3 = lazy(() => import('./components/book29/Book29Appendix3'));
+const Book29Appendix4 = lazy(() => import('./components/book29/Book29Appendix4'));
+const Book29Appendix5 = lazy(() => import('./components/book29/Book29Appendix5'));
+const Book29Appendix6 = lazy(() => import('./components/book29/Book29Appendix6'));
+const Book29Appendix7 = lazy(() => import('./components/book29/Book29Appendix7'));
+const Book29Bibliography = lazy(() => import('./components/book29/Book29Bibliography'));
 
 // ========== Book 30 章節（懶加載） ==========
 const Book30Home = lazy(() => import('./components/book30/Book30Home'));
@@ -1443,6 +1467,18 @@ const App: React.FC = () => {
         <Route path="/book29/chapter55" element={<BookLayout bookId="book29" chapter="chapter55" chapters={getChaptersForBook('book29')}><Book29Ch55 /></BookLayout>} />
         <Route path="/book29/chapter56" element={<BookLayout bookId="book29" chapter="chapter56" chapters={getChaptersForBook('book29')}><Book29Ch56 /></BookLayout>} />
         <Route path="/book29/chapter57" element={<BookLayout bookId="book29" chapter="chapter57" chapters={getChaptersForBook('book29')}><Book29Ch57 /></BookLayout>} />
+        <Route path="/book29/chapter58" element={<BookLayout bookId="book29" chapter="chapter58" chapters={getChaptersForBook('book29')}><Book29Ch58 /></BookLayout>} />
+        <Route path="/book29/chapter59" element={<BookLayout bookId="book29" chapter="chapter59" chapters={getChaptersForBook('book29')}><Book29Ch59 /></BookLayout>} />
+        <Route path="/book29/chapter60" element={<BookLayout bookId="book29" chapter="chapter60" chapters={getChaptersForBook('book29')}><Book29Ch60 /></BookLayout>} />
+        <Route path="/book29/conclusion" element={<BookLayout bookId="book29" chapter="conclusion" chapters={getChaptersForBook('book29')}><Book29Conclusion /></BookLayout>} />
+        <Route path="/book29/appendix1" element={<BookLayout bookId="book29" chapter="appendix1" chapters={getChaptersForBook('book29')}><Book29Appendix1 /></BookLayout>} />
+        <Route path="/book29/appendix2" element={<BookLayout bookId="book29" chapter="appendix2" chapters={getChaptersForBook('book29')}><Book29Appendix2 /></BookLayout>} />
+        <Route path="/book29/appendix3" element={<BookLayout bookId="book29" chapter="appendix3" chapters={getChaptersForBook('book29')}><Book29Appendix3 /></BookLayout>} />
+        <Route path="/book29/appendix4" element={<BookLayout bookId="book29" chapter="appendix4" chapters={getChaptersForBook('book29')}><Book29Appendix4 /></BookLayout>} />
+        <Route path="/book29/appendix5" element={<BookLayout bookId="book29" chapter="appendix5" chapters={getChaptersForBook('book29')}><Book29Appendix5 /></BookLayout>} />
+        <Route path="/book29/appendix6" element={<BookLayout bookId="book29" chapter="appendix6" chapters={getChaptersForBook('book29')}><Book29Appendix6 /></BookLayout>} />
+        <Route path="/book29/appendix7" element={<BookLayout bookId="book29" chapter="appendix7" chapters={getChaptersForBook('book29')}><Book29Appendix7 /></BookLayout>} />
+        <Route path="/book29/bibliography" element={<BookLayout bookId="book29" chapter="bibliography" chapters={getChaptersForBook('book29')}><Book29Bibliography /></BookLayout>} />
         <Route path="/book/29" element={<BookLayout bookId="book29" chapter="home" chapters={getChaptersForBook('book29')}><Book29Home /></BookLayout>} />
 
         {/* ========== Book 30 - 科學創造論 ========== */}
