@@ -77,7 +77,7 @@ export default function Book29Home() {
             <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-100">
               <h4 className="font-semibold text-indigo-800 mb-2">一、多利達特公式（希伯來片語 אֵלֶּה תוֹלְדוֹת，elleh toledot）</h4>
               <p className="text-gray-700 leading-relaxed text-sm">
-                這個片語有來歷、後代、兒子、記略等各種翻譯。這片語通常接著一個人名，只有第一處例外，不是人名，而是「天地」，出現於五1、六9、十1、十一10、十一27、廿五12、廿五19、卅六1、卅六9、卅七2。從第二處開始，記載：1. 亞當的後代、2. 挪亞的後代、3. 閃含雅弗的後代、4. 閃的後代、5. 他拉的後代、6. 以實瑪利的後代、7. 以撒的後代、8. 以掃的後代、9. 雅各的後代。
+                出現11次（二4、五1、六9、十1、十一10、十一27、廿五12、廿五19、卅六1、卅六9、卅七2）。這個片語有來歷、後代、兒子、記略等各種翻譯。這片語通常接著一個人名，只有第一處例外，不是人名，而是「天地」。從第二處開始，記載：1. 亞當的後代、2. 挪亞的後代、3. 閃含雅弗的後代、4. 閃的後代、5. 他拉的後代、6. 以實瑪利的後代、7. 以撒的後代、8. 以掃的後代、9. 雅各的後代。<span style={{ fontSize: 'calc(1em - 6px)', color: '#9ca3af' }}>（朗文、狄拉德，《21世紀舊約導論》，頁47-48）</span>
               </p>
             </div>
             <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
