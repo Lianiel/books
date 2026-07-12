@@ -48,7 +48,7 @@ export default function Book29Ch30() {
             <div>
               <h3 className="font-bold text-indigo-800 text-lg mb-3">壹、三種用法</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
-                創世記六1-2：「1當人在世上多起來又生女兒的時候，2神的兒子們看見人的女子美貌，就隨意挑選，娶來為妻。」若神的兒子是單數，就有可能指神的獨生子耶穌基督。但經文是複數，所以一定不是指聖子基督，這樣在整本聖經中有以下三種用法：（艾倫．羅斯，《創造與祝福──創世記註釋與信息》，頁221）
+                創世記六1-2：「1當人在世上多起來又生女兒的時候，2神的兒子們看見人的女子美貌，就隨意挑選，娶來為妻。」若神的兒子是單數，就有可能指神的獨生子耶穌基督。但經文是複數，所以一定不是指聖子基督，這樣在整本聖經中有以下三種用法：<span style={{ fontSize: 'calc(1em - 6px)', color: '#9ca3af' }}>（艾倫．羅斯，《創造與祝福──創世記註釋與信息》，頁221）</span>
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
                 <span className="font-semibold text-indigo-700">一、天使</span>
@@ -88,7 +88,7 @@ export default function Book29Ch30() {
                 按上下文來看，這三種用法相對應三種解釋如下：
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
-                <span className="font-semibold text-indigo-700">一、墮落的天使附身於人，人與邪靈相交帶來大審判</span>（亞金森贊成神的兒子是指天使，也可指掌權者。亞金森，《創世記1-11章》，頁161-162）
+                <span className="font-semibold text-indigo-700">一、墮落的天使附身於人，人與邪靈相交帶來大審判</span><span style={{ fontSize: 'calc(1em - 6px)', color: '#9ca3af' }}>（亞金森贊成神的兒子是指天使，也可指掌權者。亞金森，《創世記1-11章》，頁161-162）</span>
               </p>
               <p className="text-gray-700 leading-relaxed mb-3">
                 若是指天使，最大的問題在於天使沒有物質的身體，只有靈體，如何跟有身體的人結婚呢？只有一種方法，乃是藉著附身在人身上，才能做這事。若這樣解釋，有一個伏筆是在創世記三14，那裡說到蛇要終身吃土，也就是墮落的天使、魔鬼、邪靈，將要以地上的物質為食物，不再能以神的榮光、神的話為食物。以至於邪靈就會來附身在人或動物身上，通過人或動物來進行享樂，這享樂可包括飲食與性關係。
