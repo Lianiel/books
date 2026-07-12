@@ -58,6 +58,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book29: '指向終末的創世記',
   book30: '科學創造論',
   book31: '創世以來的奧秘',
+  book32: '華人回家',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -469,6 +470,12 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter11', title: '第11章 神的救贖計劃', path: '/book31/chapter11' },
     { id: 'chapter12', title: '第12章 主耶穌再回來', path: '/book31/chapter12' },
   ],
+  book32: [
+    { id: 'home', title: '書本簡介', path: '/book32/home' },
+    { id: 'preface', title: '自序', path: '/book32/preface' },
+    { id: 'introduction', title: '緒論', path: '/book32/introduction' },
+    { id: 'chapter1', title: '第1章 神與創造', path: '/book32/chapter1' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -504,6 +511,7 @@ const STATIC_BOOKS = [
   { book_id: 'book29', title: '指向終末的創世記', author: '', description: '以終末論視角詮釋創世記——從「起初」到「終末」，探索創造、墮落、洪水與族長歷史中隱藏的末世啟示。每章連結基督的工作、律法與福音、科學與信仰，以及華人文化背景，帶領讀者看見創世記如何從第一頁就指向萬物更新的終末榮耀。', chapters_count: 24 },
   { book_id: 'book30', title: '科學創造論', author: '亨利·莫瑞士博士（Henry M. Morris, Ph.D.）主編　韓偉等譯', description: '創造研究社（ICR）科學家及顧問聯合執筆——以純科學角度比較「進化模式」與「創造模式」，從熱力學、古生物學、地質學、遺傳學、人類學各領域呈現創造模式的科學依據，完全不引用聖經，是教師與知識份子建立科學世界觀的重要參考。', chapters_count: 9 },
   { book_id: 'book31', title: '創世以來的奧秘', author: '孫大程　著', description: '自從有天地以來，到底曾發生了什麼重要的事情？本書有系統地探討進化論、地球年齡、宇宙論、創造、伊甸園、大洪水審判、挪亞方舟、地球環境變遷、人類制度、民族遷徙、神的救贖計劃及主再來等奧秘，含105幅精彩珍貴的圖片及照片，並有各式圖表幫助讀者瞭解宇宙的奧秘及人生命的意義。', chapters_count: 12 },
+  { book_id: 'book32', title: '華人回家', author: '莊東傑　著', description: '創世記與華人先祖——以聖經創世記一至十一章為經，中國古籍為緯，探討神與創造、人的特性、墮落與拯救、罪惡的蔓延、洪水與方舟、閃的後代六大主題，幫助華人看見信靠真神不是背祖，而是回歸祖先的信仰。', chapters_count: 4 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -537,6 +545,7 @@ const colorMap: Record<number, string> = {
   28: 'from-emerald-600 to-teal-700',
   29: 'from-indigo-700 to-blue-900',
   30: 'from-blue-600 to-indigo-600',
+  32: 'from-red-700 to-amber-700',
 };
 
 // ========== 首頁分類 ==========
@@ -550,7 +559,7 @@ interface BookCategory {
 
 const BOOK_CATEGORIES: BookCategory[] = [
   { name: '禱告靈修', icon: '🙏', color: '#7c3aed', bg: '#f5f3ff', bookNumbers: [9, 10, 14, 16] },
-  { name: '聖經研讀', icon: '📖', color: '#b45309', bg: '#fffbeb', bookNumbers: [6, 12, 23, 29, 30, 31] },
+  { name: '聖經研讀', icon: '📖', color: '#b45309', bg: '#fffbeb', bookNumbers: [6, 12, 23, 29, 30, 31, 32] },
   { name: '門訓成長', icon: '🌱', color: '#059669', bg: '#f0fdf4', bookNumbers: [5, 7, 19, 21, 22, 26] },
   { name: '情緒輔導', icon: '💙', color: '#0d9488', bg: '#f0fdfa', bookNumbers: [1, 2, 8, 20, 27, 28] },
   { name: '信仰神學', icon: '✝️', color: '#4338ca', bg: '#eef2ff', bookNumbers: [11, 13, 15, 18] },
@@ -938,6 +947,10 @@ const Book31Ch9 = lazy(() => import('./components/book31/Book31Ch9'));
 const Book31Ch10 = lazy(() => import('./components/book31/Book31Ch10'));
 const Book31Ch11 = lazy(() => import('./components/book31/Book31Ch11'));
 const Book31Ch12 = lazy(() => import('./components/book31/Book31Ch12'));
+const Book32Home = lazy(() => import('./components/book32/Book32Home'));
+const Book32Preface = lazy(() => import('./components/book32/Book32Preface'));
+const Book32Introduction = lazy(() => import('./components/book32/Book32Introduction'));
+const Book32Ch1 = lazy(() => import('./components/book32/Book32Ch1'));
 
 const Book28Home = lazy(() => import('./components/book28/Book28Home'));
 const Book28Ch1 = lazy(() => import('./components/book28/Book28Ch01'));
@@ -1501,6 +1514,11 @@ const App: React.FC = () => {
         <Route path="/book31/chapter11" element={<BookLayout bookId="book31" chapter="chapter11" chapters={getChaptersForBook('book31')}><Book31Ch11 /></BookLayout>} />
         <Route path="/book31/chapter12" element={<BookLayout bookId="book31" chapter="chapter12" chapters={getChaptersForBook('book31')}><Book31Ch12 /></BookLayout>} />
         <Route path="/book/31" element={<BookLayout bookId="book31" chapter="home" chapters={getChaptersForBook('book31')}><Book31Home /></BookLayout>} />
+        <Route path="/book32/home" element={<BookLayout bookId="book32" chapter="home" chapters={getChaptersForBook('book32')}><Book32Home /></BookLayout>} />
+        <Route path="/book32/preface" element={<BookLayout bookId="book32" chapter="preface" chapters={getChaptersForBook('book32')}><Book32Preface /></BookLayout>} />
+        <Route path="/book32/introduction" element={<BookLayout bookId="book32" chapter="introduction" chapters={getChaptersForBook('book32')}><Book32Introduction /></BookLayout>} />
+        <Route path="/book32/chapter1" element={<BookLayout bookId="book32" chapter="chapter1" chapters={getChaptersForBook('book32')}><Book32Ch1 /></BookLayout>} />
+        <Route path="/book/32" element={<BookLayout bookId="book32" chapter="home" chapters={getChaptersForBook('book32')}><Book32Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
         <Route path="/" element={
