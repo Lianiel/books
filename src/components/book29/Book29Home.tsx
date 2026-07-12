@@ -53,7 +53,7 @@ export default function Book29Home() {
         {expanded['author'] && (
           <div className="p-5 bg-white space-y-3">
             <p className="text-gray-700 leading-relaxed">
-              創世記是五經的第一本。「五經」猶太人稱為 TORAH，有律法、法度、條例、訓誨的意思。從創世記廿六章5節：「因為亞伯拉罕聽從我的話，守我的吩咐和我的誡命、律例、法度（מִשְׁמֶרֶת）。」這個字在舊約聖經出現219次，大多翻譯為律法。
+              創世記是五經的第一本，「五經」猶太人稱之為「TORAH」，有律法、法度、條例、訓誨的意思，從創世記廿六 5 中「法度」一詞而來。創世記廿六 5：「都因亞伯拉罕聽從我的話，遵守我的吩咐和我的命令、律例、法度（תּוֹרָה，towrah）。」這字在舊約聖經出現219次，大多翻譯為律法，但在以賽亞書則較多翻譯為訓誨。
             </p>
             <p className="text-gray-700 leading-relaxed">
               五經以摩西為主要作者，有多處聖經引用為證，如約書亞記八章31節：「正如耶和華的僕人摩西所吩咐以色列人的，照著摩西律法書上所寫的」；列王記上二章3節：「要謹守耶和華你神所吩咐的，照著摩西律法上所寫的行走」；以及新約主耶穌在馬可福音十二章26節所引用：「摩西所著的書上」。這些引文均指向摩西為五經作者的傳統。
@@ -75,7 +75,7 @@ export default function Book29Home() {
           <div className="p-5 bg-white space-y-4">
             <p className="text-gray-700 leading-relaxed">創世記的結構有兩種比較重要的分析法：</p>
             <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-100">
-              <h4 className="font-semibold text-indigo-800 mb-2">一、多利達特公式（תּוֹלְדוֹת eleh toledot）</h4>
+              <h4 className="font-semibold text-indigo-800 mb-2">一、多利達特公式（希伯來片語 אֵלֶּה תוֹלְדוֹת，elleh toledot）</h4>
               <p className="text-gray-700 leading-relaxed text-sm">
                 這個片語有來歷、後代、兒子、記略等各種翻譯。這片語通常接著一個人名，只有第一處例外，不是人名，而是「天地」，出現於五1、六9、十1、十一10、十一27、廿五12、廿五19、卅六1、卅六9、卅七2。從第二處開始，記載：1. 亞當的後代、2. 挪亞的後代、3. 閃含雅弗的後代、4. 閃的後代、5. 他拉的後代、6. 以實瑪利的後代、7. 以撒的後代、8. 以掃的後代、9. 雅各的後代。
               </p>
