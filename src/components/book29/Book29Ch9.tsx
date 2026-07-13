@@ -14,7 +14,7 @@ export default function Book29Ch9() {
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-indigo-700 to-blue-900 bg-clip-text text-transparent">第九章</h1>
         <h2 className="text-xl font-semibold text-gray-700">豐盛的生命</h2>
-        <p className="text-gray-500 mt-1">神說：「地要生出活物來，各從其類；牲畜、昆蟲、野獸，各從其類。」事就這樣成了。於是神造出野獸，各從其類；牲畜，各從其類；地上一切昆蟲，各從其類。神看著是好的　創世記一24-25</p>
+        <p className="text-gray-500 mt-1"><sup>24</sup>神說：「地要生出活物來，各從其類；牲畜、昆蟲、野獸，各從其類。」事就這樣成了。<sup>25</sup>於是神造出野獸，各從其類；牲畜，各從其類；地上一切昆蟲，各從其類。神看著是好的　創世記一24-25</p>
       </div>
 
       {/* 正文 */}
