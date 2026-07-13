@@ -29,6 +29,10 @@ export default function Book29Ch6() {
         {expanded['content'] && (
           <div className="p-5 bg-white space-y-6">
 
+            <p className="text-gray-700 leading-relaxed">
+              創造的第二日，沒有講「神看著是好的」，是唯一沒有講的一日，聖經學者沒什麼定論。筆者推想，或許是因為蘊含了將來審判全地的天上水（創七11-12），而那個審判是非常慘烈的，使得神沒有講「好」。反倒第三日講了兩次「神看著是好的」，分別針對「陸地」和「植物」。因此本章從「陸地」與「植物」兩方面來分享。順便一提，因為第三日有兩次說到「神看著是好的」，所以猶太人稱這日為雙好日，喜歡用第三日來結婚，正如約翰福音所記載的耶穌參加的迦拿婚宴乃是在第三日（約二1）。那不是前文所說次日的隔天，因為第一章其實有連續三個次日，所以早已不是第三日了。第二章的第三日就是指一週七日裡的第三日，是雙好日。
+            </p>
+
             <div>
               <h3 className="font-bold text-indigo-800 text-lg mb-3">壹、陸地</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
