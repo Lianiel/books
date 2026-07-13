@@ -475,6 +475,8 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'preface', title: '自序', path: '/book32/preface' },
     { id: 'introduction', title: '緒論', path: '/book32/introduction' },
     { id: 'chapter1', title: '第1章 神與創造', path: '/book32/chapter1' },
+    { id: 'chapter2', title: '第2章 人的特性', path: '/book32/chapter2' },
+    { id: 'chapter3', title: '第3章 墮落與拯救', path: '/book32/chapter3' },
   ],
 };
 
@@ -511,7 +513,7 @@ const STATIC_BOOKS = [
   { book_id: 'book29', title: '指向終末的創世記', author: '', description: '以終末論視角詮釋創世記——從「起初」到「終末」，探索創造、墮落、洪水與族長歷史中隱藏的末世啟示。每章連結基督的工作、律法與福音、科學與信仰，以及華人文化背景，帶領讀者看見創世記如何從第一頁就指向萬物更新的終末榮耀。', chapters_count: 24 },
   { book_id: 'book30', title: '科學創造論', author: '亨利·莫瑞士博士（Henry M. Morris, Ph.D.）主編　韓偉等譯', description: '創造研究社（ICR）科學家及顧問聯合執筆——以純科學角度比較「進化模式」與「創造模式」，從熱力學、古生物學、地質學、遺傳學、人類學各領域呈現創造模式的科學依據，完全不引用聖經，是教師與知識份子建立科學世界觀的重要參考。', chapters_count: 9 },
   { book_id: 'book31', title: '創世以來的奧秘', author: '孫大程　著', description: '自從有天地以來，到底曾發生了什麼重要的事情？本書有系統地探討進化論、地球年齡、宇宙論、創造、伊甸園、大洪水審判、挪亞方舟、地球環境變遷、人類制度、民族遷徙、神的救贖計劃及主再來等奧秘，含105幅精彩珍貴的圖片及照片，並有各式圖表幫助讀者瞭解宇宙的奧秘及人生命的意義。', chapters_count: 12 },
-  { book_id: 'book32', title: '華人回家', author: '莊東傑　著', description: '創世記與華人先祖——以聖經創世記一至十一章為經，中國古籍為緯，探討神與創造、人的特性、墮落與拯救、罪惡的蔓延、洪水與方舟、閃的後代六大主題，幫助華人看見信靠真神不是背祖，而是回歸祖先的信仰。', chapters_count: 4 },
+  { book_id: 'book32', title: '華人回家', author: '莊東傑　著', description: '創世記與華人先祖——以聖經創世記一至十一章為經，中國古籍為緯，探討神與創造、人的特性、墮落與拯救、罪惡的蔓延、洪水與方舟、閃的後代六大主題，幫助華人看見信靠真神不是背祖，而是回歸祖先的信仰。', chapters_count: 6 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -951,6 +953,8 @@ const Book32Home = lazy(() => import('./components/book32/Book32Home'));
 const Book32Preface = lazy(() => import('./components/book32/Book32Preface'));
 const Book32Introduction = lazy(() => import('./components/book32/Book32Introduction'));
 const Book32Ch1 = lazy(() => import('./components/book32/Book32Ch1'));
+const Book32Ch2 = lazy(() => import('./components/book32/Book32Ch2'));
+const Book32Ch3 = lazy(() => import('./components/book32/Book32Ch3'));
 
 const Book28Home = lazy(() => import('./components/book28/Book28Home'));
 const Book28Ch1 = lazy(() => import('./components/book28/Book28Ch01'));
@@ -1518,6 +1522,8 @@ const App: React.FC = () => {
         <Route path="/book32/preface" element={<BookLayout bookId="book32" chapter="preface" chapters={getChaptersForBook('book32')}><Book32Preface /></BookLayout>} />
         <Route path="/book32/introduction" element={<BookLayout bookId="book32" chapter="introduction" chapters={getChaptersForBook('book32')}><Book32Introduction /></BookLayout>} />
         <Route path="/book32/chapter1" element={<BookLayout bookId="book32" chapter="chapter1" chapters={getChaptersForBook('book32')}><Book32Ch1 /></BookLayout>} />
+        <Route path="/book32/chapter2" element={<BookLayout bookId="book32" chapter="chapter2" chapters={getChaptersForBook('book32')}><Book32Ch2 /></BookLayout>} />
+        <Route path="/book32/chapter3" element={<BookLayout bookId="book32" chapter="chapter3" chapters={getChaptersForBook('book32')}><Book32Ch3 /></BookLayout>} />
         <Route path="/book/32" element={<BookLayout bookId="book32" chapter="home" chapters={getChaptersForBook('book32')}><Book32Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
