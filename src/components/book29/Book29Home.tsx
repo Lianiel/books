@@ -83,7 +83,7 @@ export default function Book29Home() {
             <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
               <h4 className="font-semibold text-blue-800 mb-2">二、按內容與文學形式的分法</h4>
               <p className="text-gray-700 leading-relaxed text-sm mb-3">
-                可分為兩大部分：創世記一至十一章，和十二至五十章。前者為人類的歷史／太古時期，包含創造、墮落、洪水、巴別等四個重要事件；後者為族長的歷史／先祖時期，包含亞伯拉罕、以撒、雅各、約瑟等四個重要人物。相關章次對應如下：
+                創世記結構的第二種分析法，以內容與文學形式作為考慮。可分為兩大部分：創世記一至十一章，和十二至五十章。前者為人類的歷史／太古時期，包含創造、墮落、洪水、巴別等四個重要事件；後者為族長的歷史／先祖時期，包含亞伯拉罕、以撒、雅各、約瑟等四個重要人物。<span style={{ fontSize: 'calc(1em - 6px)', color: '#9ca3af' }}>（馬有藻，《舊約概論》，頁34-35）</span>相關章次對應如下：
               </p>
               <div className="border border-blue-200 rounded-lg overflow-hidden" style={{ fontSize: 'calc(1em - 8px)' }}>
                 <div className="text-center font-semibold bg-blue-100 text-blue-900 py-2">表一：創世記的結構與大綱</div>
