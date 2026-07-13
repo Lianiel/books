@@ -14,7 +14,7 @@ export default function Book29Ch3() {
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-indigo-700 to-blue-900 bg-clip-text text-transparent">第三章</h1>
         <h2 className="text-xl font-semibold text-gray-700">聖靈的工作</h2>
-        <p className="text-gray-500 mt-1">地是空虛混沌，淵面黑暗，神的靈運行在水面上　創世記一2</p>
+        <p className="text-gray-500 mt-1"><sup>2</sup>地是空虛混沌，淵面黑暗，神的靈運行在水面上　創世記一2</p>
       </div>
 
       {/* 正文 */}

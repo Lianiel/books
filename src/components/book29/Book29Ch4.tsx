@@ -14,7 +14,7 @@ export default function Book29Ch4() {
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-indigo-700 to-blue-900 bg-clip-text text-transparent">第四章</h1>
         <h2 className="text-xl font-semibold text-gray-700">生命的真光</h2>
-        <p className="text-gray-500 mt-1">神說：要有光，就有了光。神看光是好的，就把光暗分開了。神稱光為晝，稱暗為夜。有晚上，有早晨，這是頭一日　創世記一3-5</p>
+        <p className="text-gray-500 mt-1"><sup>3</sup>神說：要有光，就有了光。<sup>4</sup>神看光是好的，就把光暗分開了。<sup>5</sup>神稱光為晝，稱暗為夜。有晚上，有早晨，這是頭一日　創世記一3-5</p>
       </div>
 
       {/* 正文 */}

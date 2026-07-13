@@ -14,7 +14,7 @@ export default function Book29Ch5() {
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-indigo-700 to-blue-900 bg-clip-text text-transparent">第五章</h1>
         <h2 className="text-xl font-semibold text-gray-700">天空上的水</h2>
-        <p className="text-gray-500 mt-1">神說：諸水之間要有空氣，將水分為上下。神就造出空氣，將空氣以下的水、空氣以上的水分開了。事就這樣成了。神稱空氣為天。有晚上，有早晨，是第二日　創世記一6-8</p>
+        <p className="text-gray-500 mt-1"><sup>6</sup>神說：諸水之間要有空氣，將水分為上下。<sup>7</sup>神就造出空氣，將空氣以下的水、空氣以上的水分開了。事就這樣成了。<sup>8</sup>神稱空氣為天。有晚上，有早晨，是第二日　創世記一6-8</p>
       </div>
 
       {/* 正文 */}
