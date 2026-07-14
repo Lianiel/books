@@ -128,13 +128,13 @@ export default function Book30Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { ch: '第一章', title: '進化呢？還是創造？', desc: '研究起源的重要性、兩個模式的基本定義與比較、創造模式的四大益處', ready: true },
-                { ch: '第二章', title: '混亂呢？還是秩序？', desc: '物質、能與自然律之來源；宇宙與太陽系的起源；創造的目的', ready: false },
-                { ch: '第三章', title: '上坡呢？還是下坡？', desc: '熱力學諸定律；生命的起源；變異與天擇；遺傳學上的突變', ready: false },
-                { ch: '第四章', title: '偶然呢？還是計劃？', desc: '生物的複雜性；相似與相異；退化器官與胚胎重演；化石記載中系統性的缺環', ready: false },
-                { ch: '第五章', title: '古今一致說呢？還是大天災說？', desc: '化石的證據；地質沉積的快速形成；化石的同時代性；大天災後的餘災', ready: false },
-                { ch: '第六章', title: '年老呢？還是年輕？', desc: '如何鑑定岩石年齡；放射性測年代法；地球年齡年輕的證據；人的年代', ready: false },
-                { ch: '第七章', title: '猿呢？還是人？', desc: '人的起源；語言與人種；古代的文化；宗教的起源', ready: false },
-                { ch: '第八章', title: '聖經的創造史', desc: '創世記的歷史性；創世記分期；墮落、洪水；聖經模式綜結；各種詮釋觀點', ready: false },
+                { ch: '第二章', title: '混亂呢？還是秩序？', desc: '物質、能與自然律之來源；宇宙與太陽系的起源；創造的目的', ready: true },
+                { ch: '第三章', title: '上坡呢？還是下坡？', desc: '熱力學諸定律；生命的起源；變異與天擇；遺傳學上的突變', ready: true },
+                { ch: '第四章', title: '偶然呢？還是計劃？', desc: '生物的複雜性；相似與相異；退化器官與胚胎重演；化石記載中系統性的缺環', ready: true },
+                { ch: '第五章', title: '古今一致說呢？還是大天災說？', desc: '化石的證據；地質沉積的快速形成；化石的同時代性；大天災後的餘災', ready: true },
+                { ch: '第六章', title: '年老呢？還是年輕？', desc: '如何鑑定岩石年齡；放射性測年代法；地球年齡年輕的證據；人的年代', ready: true },
+                { ch: '第七章', title: '猿呢？還是人？', desc: '人的起源；語言與人種；古代的文化；宗教的起源', ready: true },
+                { ch: '第八章', title: '聖經的創造史', desc: '創世記的歷史性；創世記分期；墮落、洪水；聖經模式綜結；各種詮釋觀點', ready: true },
               ].map((c, i) => (
                 <div key={i} className={`rounded-lg p-3 border ${c.ready ? 'bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200' : 'bg-gray-50 border-gray-200'}`}>
                   <div className="flex items-center gap-2 mb-1">
@@ -146,7 +146,6 @@ export default function Book30Home() {
                 </div>
               ))}
             </div>
-            <p className="text-gray-400 text-xs mt-4 text-center">（第二至八章內容將於後續陸續新增）</p>
           </div>
         )}
       </div>

@@ -936,6 +936,13 @@ const Book29Bibliography = lazy(() => import('./components/book29/Book29Bibliogr
 // ========== Book 30 章節（懶加載） ==========
 const Book30Home = lazy(() => import('./components/book30/Book30Home'));
 const Book30Ch1 = lazy(() => import('./components/book30/Book30Ch1'));
+const Book30Ch2 = lazy(() => import('./components/book30/Book30Ch2'));
+const Book30Ch3 = lazy(() => import('./components/book30/Book30Ch3'));
+const Book30Ch4 = lazy(() => import('./components/book30/Book30Ch4'));
+const Book30Ch5 = lazy(() => import('./components/book30/Book30Ch5'));
+const Book30Ch6 = lazy(() => import('./components/book30/Book30Ch6'));
+const Book30Ch7 = lazy(() => import('./components/book30/Book30Ch7'));
+const Book30Ch8 = lazy(() => import('./components/book30/Book30Ch8'));
 const Book31Home = lazy(() => import('./components/book31/Book31Home'));
 const Book31Ch1 = lazy(() => import('./components/book31/Book31Ch1'));
 const Book31Ch2 = lazy(() => import('./components/book31/Book31Ch2'));
@@ -1501,6 +1508,13 @@ const App: React.FC = () => {
         {/* ========== Book 30 - 科學創造論 ========== */}
         <Route path="/book30/home" element={<BookLayout bookId="book30" chapter="home" chapters={getChaptersForBook('book30')}><Book30Home /></BookLayout>} />
         <Route path="/book30/chapter1" element={<BookLayout bookId="book30" chapter="chapter1" chapters={getChaptersForBook('book30')}><Book30Ch1 /></BookLayout>} />
+        <Route path="/book30/chapter2" element={<BookLayout bookId="book30" chapter="chapter2" chapters={getChaptersForBook('book30')}><Book30Ch2 /></BookLayout>} />
+        <Route path="/book30/chapter3" element={<BookLayout bookId="book30" chapter="chapter3" chapters={getChaptersForBook('book30')}><Book30Ch3 /></BookLayout>} />
+        <Route path="/book30/chapter4" element={<BookLayout bookId="book30" chapter="chapter4" chapters={getChaptersForBook('book30')}><Book30Ch4 /></BookLayout>} />
+        <Route path="/book30/chapter5" element={<BookLayout bookId="book30" chapter="chapter5" chapters={getChaptersForBook('book30')}><Book30Ch5 /></BookLayout>} />
+        <Route path="/book30/chapter6" element={<BookLayout bookId="book30" chapter="chapter6" chapters={getChaptersForBook('book30')}><Book30Ch6 /></BookLayout>} />
+        <Route path="/book30/chapter7" element={<BookLayout bookId="book30" chapter="chapter7" chapters={getChaptersForBook('book30')}><Book30Ch7 /></BookLayout>} />
+        <Route path="/book30/chapter8" element={<BookLayout bookId="book30" chapter="chapter8" chapters={getChaptersForBook('book30')}><Book30Ch8 /></BookLayout>} />
         <Route path="/book/30" element={<BookLayout bookId="book30" chapter="home" chapters={getChaptersForBook('book30')}><Book30Home /></BookLayout>} />
 
         {/* ========== Book 31 - 創世以來的奧秘 ========== */}
