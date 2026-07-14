@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { ChevronLeft, X } from 'lucide-react';
+import { ChevronLeft, X, StickyNote } from 'lucide-react';
 import { loadAllHighlightsForBook, HIGHLIGHT_COLORS, type HighlightRecord } from '../useHighlight';
 import { BOOK_TITLES, BOOK_CHAPTERS } from '../App';
 import { useState } from 'react';
@@ -62,24 +62,30 @@ export default function BookHighlightsOverview() {
                 </div>
                 <ul className="divide-y divide-gray-100">
                   {grouped[chId].map(h => (
-                    <li key={h.id} className="flex items-center gap-2 px-4 py-2.5">
-                      <button
-                        onClick={() => goToHighlight(h)}
-                        className="flex-1 flex items-center gap-2 text-left hover:bg-gray-50 rounded px-1 py-1 transition-colors"
-                      >
-                        <span
-                          className="w-3 h-3 rounded-full flex-shrink-0"
-                          style={{ backgroundColor: HIGHLIGHT_COLORS.find(c => c.style === h.style)?.hex }}
-                        />
-                        <span className={`text-gray-800 text-sm ${h.bold ? 'font-bold' : ''}`}>{h.text_content}</span>
-                      </button>
-                      <button
-                        onClick={() => deleteHighlight(h)}
-                        className="text-gray-300 hover:text-red-500 flex-shrink-0"
-                        aria-label="刪除此重點"
-                      >
-                        <X className="w-4 h-4" />
-                      </button>
+                    <li key={h.id} className="px-4 py-2.5">
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => goToHighlight(h)}
+                          className="flex-1 flex items-center gap-2 text-left hover:bg-gray-50 rounded px-1 py-1 transition-colors"
+                        >
+                          <span
+                            className="w-3 h-3 rounded-full flex-shrink-0"
+                            style={{ backgroundColor: HIGHLIGHT_COLORS.find(c => c.style === h.style)?.hex }}
+                          />
+                          <span className={`text-gray-800 text-sm ${h.bold ? 'font-bold' : ''}`}>{h.text_content}</span>
+                        </button>
+                        {h.note && <StickyNote className="w-3.5 h-3.5 text-amber-500 flex-shrink-0" />}
+                        <button
+                          onClick={() => deleteHighlight(h)}
+                          className="text-gray-300 hover:text-red-500 flex-shrink-0"
+                          aria-label="刪除此重點"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                      {h.note && (
+                        <p className="mt-1 ml-6 text-xs text-amber-800 bg-amber-50 rounded px-2 py-1 whitespace-pre-wrap">{h.note}</p>
+                      )}
                     </li>
                   ))}
                 </ul>

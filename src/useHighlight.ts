@@ -12,6 +12,7 @@ export interface HighlightRecord {
   start_offset: number;
   style: HighlightStyle;
   bold?: boolean;
+  note?: string;
 }
 
 const COLOR_MAP: Record<HighlightStyle, { color: string; bg: string }> = {
@@ -97,7 +98,7 @@ function generateId(): string {
 async function fetchCloudHighlights(userKey: string, bookId: string, chapter: string): Promise<HighlightRecord[] | null> {
   const { data, error } = await supabase
     .from('highlights')
-    .select('id, book_id, chapter, text_content, start_offset, style, bold')
+    .select('id, book_id, chapter, text_content, start_offset, style, bold, note')
     .eq('user_key', userKey)
     .eq('book_id', bookId)
     .eq('chapter', chapter);
@@ -118,6 +119,7 @@ async function upsertCloudHighlight(userKey: string, h: HighlightRecord) {
     start_offset: h.start_offset,
     style: h.style,
     bold: h.bold || false,
+    note: h.note || null,
   });
   if (error) console.error('同步畫重點到雲端失敗:', error);
 }
@@ -306,6 +308,22 @@ export function useHighlight(bookId: string, chapter: string) {
     return resultId;
   }, [bookId, chapter]);
 
+  // 更新既有畫重點的筆記內容（不影響顏色、位置等其他欄位）
+  const updateNote = useCallback((id: string, note: string) => {
+    const prev = highlightsRef.current;
+    const target = prev.find(h => h.id === id);
+    if (!target) return;
+    const record: HighlightRecord = { ...target, note: note.trim() || undefined };
+    const updated = prev.map(h => h.id === id ? record : h);
+
+    highlightsRef.current = updated;
+    saveHighlights(bookId, chapter, updated);
+    setHighlights(updated);
+
+    const userKey = getReaderPhone();
+    if (userKey) upsertCloudHighlight(userKey, record);
+  }, [bookId, chapter]);
+
   const removeHighlight = useCallback((id: string) => {
     setHighlights(prev => {
       const updated = prev.filter(h => h.id !== id);
@@ -336,5 +354,5 @@ export function useHighlight(bookId: string, chapter: string) {
     return null;
   }, [highlights]);
 
-  return { highlights, supported, applyHighlights, addHighlight, removeHighlight, findHighlightAtPoint };
+  return { highlights, supported, applyHighlights, addHighlight, updateNote, removeHighlight, findHighlightAtPoint };
 }

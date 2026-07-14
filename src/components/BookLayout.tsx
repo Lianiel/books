@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { X, Volume2, VolumeX, Download, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List, User } from 'lucide-react';
+import { X, Volume2, VolumeX, Download, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, List, User, StickyNote, Trash2 } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 // 從 App.tsx 導入章節類型和書名映射
 import type { ChapterInfo } from '../App';
@@ -149,12 +149,16 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
 
   // 畫重點
   const mainRef = useRef<HTMLElement>(null);
-  const { highlights, supported: highlightSupported, applyHighlights, addHighlight, removeHighlight, findHighlightAtPoint } = useHighlight(bookId, chapter);
+  const { highlights, supported: highlightSupported, applyHighlights, addHighlight, updateNote, removeHighlight, findHighlightAtPoint } = useHighlight(bookId, chapter);
   const [selectionToolbar, setSelectionToolbar] = useState<{ x: number; y: number; text: string; range: Range } | null>(null);
   const [boldPending, setBoldPending] = useState(false);
   const [lastAdded, setLastAdded] = useState<{ id: string; x: number; y: number } | null>(null);
   const undoTimerRef = useRef<number | null>(null);
   const [showHighlightPanel, setShowHighlightPanel] = useState(false);
+  // 已畫記文字被點擊時的動作選單（筆記／刪除），取代原本點擊即刪除的行為
+  const [highlightActionPopup, setHighlightActionPopup] = useState<{ id: string; x: number; y: number } | null>(null);
+  // 筆記編輯框
+  const [noteEditor, setNoteEditor] = useState<{ id: string; value: string } | null>(null);
 
   // 讀者登入（跨裝置同步畫重點用）
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -349,13 +353,26 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     setLastAdded(null);
   };
 
-  // 畫重點：點擊已畫記的文字可移除（沒有選取文字時才觸發，避免跟選字互相干擾）
+  // 畫重點：點擊已畫記的文字，顯示「筆記／刪除」動作選單（沒有選取文字時才觸發，避免跟選字互相干擾）
   const handleMainClick = (e: React.MouseEvent) => {
     if (!highlightSupported) return;
     const selection = window.getSelection();
     if (selection && !selection.isCollapsed) return;
     const hit = findHighlightAtPoint(e.clientX, e.clientY, mainRef.current);
-    if (hit) removeHighlight(hit.id);
+    if (hit) setHighlightActionPopup({ id: hit.id, x: e.clientX, y: e.clientY });
+  };
+
+  const openNoteEditor = (id: string) => {
+    const target = highlights.find(h => h.id === id);
+    setNoteEditor({ id, value: target?.note || '' });
+    setHighlightActionPopup(null);
+    setShowHighlightPanel(false);
+  };
+
+  const saveNote = () => {
+    if (!noteEditor) return;
+    updateNote(noteEditor.id, noteEditor.value);
+    setNoteEditor(null);
   };
 
   // 畫重點：從全書重點總覽頁點擊項目跳轉過來後，捲動到該筆重點並短暫閃爍提示
@@ -675,16 +692,73 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
         </div>
       )}
 
-      {/* 畫重點：剛畫記完成後的復原提示 */}
+      {/* 畫重點：剛畫記完成後的復原提示 + 加筆記 */}
       {lastAdded && (
         <div
           className="fixed z-50 flex items-center gap-2 bg-slate-800 text-white rounded-full shadow-lg px-3 py-1.5 text-sm"
           style={{ left: lastAdded.x, top: lastAdded.y - 48, transform: 'translateX(-50%)' }}
         >
           <span>已畫重點</span>
+          <button
+            onClick={() => { openNoteEditor(lastAdded.id); setLastAdded(null); }}
+            className="font-semibold text-amber-300 hover:text-amber-200 flex items-center gap-1"
+          >
+            <StickyNote className="w-3.5 h-3.5" />筆記
+          </button>
           <button onClick={handleUndoLastHighlight} className="font-semibold text-blue-300 hover:text-blue-200">
             復原
           </button>
+        </div>
+      )}
+
+      {/* 畫重點：點擊已畫記文字後的動作選單 */}
+      {highlightActionPopup && (
+        <>
+          <div className="fixed inset-0 z-40" onClick={() => setHighlightActionPopup(null)} />
+          <div
+            className="fixed z-50 flex items-center gap-1 bg-white rounded-full shadow-lg border border-gray-200 px-2 py-1.5"
+            style={{ left: highlightActionPopup.x, top: highlightActionPopup.y - 48, transform: 'translateX(-50%)' }}
+          >
+            <button
+              onClick={() => openNoteEditor(highlightActionPopup.id)}
+              className="flex items-center gap-1 px-2 py-1 rounded-full text-amber-700 hover:bg-amber-50 text-xs font-semibold"
+            >
+              <StickyNote className="w-3.5 h-3.5" />
+              {highlights.find(h => h.id === highlightActionPopup.id)?.note ? '查看筆記' : '加筆記'}
+            </button>
+            <button
+              onClick={() => { removeHighlight(highlightActionPopup.id); setHighlightActionPopup(null); }}
+              className="flex items-center gap-1 px-2 py-1 rounded-full text-red-600 hover:bg-red-50 text-xs font-semibold"
+            >
+              <Trash2 className="w-3.5 h-3.5" />刪除
+            </button>
+          </div>
+        </>
+      )}
+
+      {/* 畫重點：筆記編輯視窗 */}
+      {noteEditor && (
+        <div className="fixed inset-0 z-[60] bg-black/50 flex items-center justify-center px-4">
+          <div className="bg-white rounded-xl shadow-2xl p-5 w-full max-w-sm">
+            <h3 className="text-base font-bold text-slate-800 mb-3 flex items-center gap-1.5">
+              <StickyNote className="w-4 h-4 text-amber-600" />筆記
+            </h3>
+            <textarea
+              autoFocus
+              value={noteEditor.value}
+              onChange={e => setNoteEditor({ ...noteEditor, value: e.target.value })}
+              placeholder="寫下你的想法或註解..."
+              className="w-full border border-slate-300 rounded-lg px-3 py-2 mb-3 text-sm min-h-[100px] resize-y"
+            />
+            <div className="flex gap-2">
+              <button onClick={saveNote} className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg py-2 text-sm font-semibold">
+                儲存
+              </button>
+              <button onClick={() => setNoteEditor(null)} className="flex-1 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-lg py-2 text-sm font-semibold">
+                取消
+              </button>
+            </div>
+          </div>
         </div>
       )}
 
@@ -839,6 +913,13 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
                           style={{ backgroundColor: HIGHLIGHT_COLORS.find(c => c.style === h.style)?.hex }}
                         />
                         <span className={`truncate ${h.bold ? 'font-bold' : ''}`}>{h.text_content}</span>
+                      </button>
+                      <button
+                        onClick={() => openNoteEditor(h.id)}
+                        className={`flex-shrink-0 ${h.note ? 'text-amber-400 hover:text-amber-300' : 'text-slate-400 hover:text-amber-300'}`}
+                        aria-label={h.note ? '查看筆記' : '加筆記'}
+                      >
+                        <StickyNote className="w-3.5 h-3.5" />
                       </button>
                       <button
                         onClick={() => removeHighlight(h.id)}
