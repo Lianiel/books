@@ -60,6 +60,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book30: '科學創造論',
   book31: '創世以來的奧秘',
   book32: '華人回家',
+  book33: '跨越鴻溝',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -484,6 +485,10 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'conclusion', title: '結論', path: '/book32/conclusion' },
     { id: 'references', title: '參考書目', path: '/book32/references' },
   ],
+  book33: [
+    { id: 'home', title: '書本簡介', path: '/book33/home' },
+    { id: 'forewords', title: '推薦序、自序', path: '/book33/forewords' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -520,6 +525,7 @@ const STATIC_BOOKS = [
   { book_id: 'book30', title: '科學創造論', author: '亨利·莫瑞士博士（Henry M. Morris, Ph.D.）主編　韓偉等譯', description: '創造研究社（ICR）科學家及顧問聯合執筆——以純科學角度比較「進化模式」與「創造模式」，從熱力學、古生物學、地質學、遺傳學、人類學各領域呈現創造模式的科學依據，完全不引用聖經，是教師與知識份子建立科學世界觀的重要參考。', chapters_count: 9 },
   { book_id: 'book31', title: '創世以來的奧秘', author: '孫大程　著', description: '自從有天地以來，到底曾發生了什麼重要的事情？本書有系統地探討進化論、地球年齡、宇宙論、創造、伊甸園、大洪水審判、挪亞方舟、地球環境變遷、人類制度、民族遷徙、神的救贖計劃及主再來等奧秘，含105幅精彩珍貴的圖片及照片，並有各式圖表幫助讀者瞭解宇宙的奧秘及人生命的意義。', chapters_count: 12 },
   { book_id: 'book32', title: '華人回家', author: '莊東傑　著', description: '創世記與華人先祖——以聖經創世記一至十一章為經，中國古籍為緯，探討神與創造、人的特性、墮落與拯救、罪惡的蔓延、洪水與方舟、閃的後代六大主題，幫助華人看見信靠真神不是背祖，而是回歸祖先的信仰。', chapters_count: 6 },
+  { book_id: 'book33', title: '跨越鴻溝', author: '莊東傑　著', description: '在華人文化處境中詮釋罪——以華人古籍為經，聖經為緯，藉由華人的文化處境，將聖經中「罪」的觀念向華人表達出來，並指出一條華人文化更新之路。與《華人回家》互為姊妹作，可單獨閱讀。', chapters_count: 6 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -963,6 +969,8 @@ const Book31Ch10 = lazyWithRetry(() => import('./components/book31/Book31Ch10'))
 const Book31Ch11 = lazyWithRetry(() => import('./components/book31/Book31Ch11'));
 const Book31Ch12 = lazyWithRetry(() => import('./components/book31/Book31Ch12'));
 const Book32Home = lazyWithRetry(() => import('./components/book32/Book32Home'));
+const Book33Home = lazyWithRetry(() => import('./components/book33/Book33Home'));
+const Book33Forewords = lazyWithRetry(() => import('./components/book33/Book33Forewords'));
 const Book32Preface = lazyWithRetry(() => import('./components/book32/Book32Preface'));
 const Book32Introduction = lazyWithRetry(() => import('./components/book32/Book32Introduction'));
 const Book32Ch1 = lazyWithRetry(() => import('./components/book32/Book32Ch1'));
@@ -1555,6 +1563,9 @@ const App: React.FC = () => {
         <Route path="/book32/conclusion" element={<BookLayout bookId="book32" chapter="conclusion" chapters={getChaptersForBook('book32')}><Book32Conclusion /></BookLayout>} />
         <Route path="/book32/references" element={<BookLayout bookId="book32" chapter="references" chapters={getChaptersForBook('book32')}><Book32References /></BookLayout>} />
         <Route path="/book/32" element={<BookLayout bookId="book32" chapter="home" chapters={getChaptersForBook('book32')}><Book32Home /></BookLayout>} />
+        <Route path="/book33/home" element={<BookLayout bookId="book33" chapter="home" chapters={getChaptersForBook('book33')}><Book33Home /></BookLayout>} />
+        <Route path="/book33/forewords" element={<BookLayout bookId="book33" chapter="forewords" chapters={getChaptersForBook('book33')}><Book33Forewords /></BookLayout>} />
+        <Route path="/book/33" element={<BookLayout bookId="book33" chapter="home" chapters={getChaptersForBook('book33')}><Book33Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
         <Route path="/" element={
