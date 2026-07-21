@@ -104,6 +104,46 @@ export default function Book29Home() {
         )}
       </div>
 
+      {/* 底本學說與五經作者問題 */}
+      <div className="mb-6" style={{ fontSize: '20px' }}>
+        <p className="text-gray-800 font-semibold leading-relaxed mb-3">【底本學說與五經作者問題】</p>
+        <p className="text-gray-700 leading-relaxed mb-3">
+          傳統猶太教與基督教多認為，摩西是五經主要的作者，因此五經也常被稱為「摩西五經」。聖經中多次提到「摩西的律法」，耶穌和新約作者也把律法與摩西連結在一起。
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-3">
+          不過，五經中有些內容引起學者進一步討論。例如《申命記》最後記載摩西死亡，顯然不太可能由摩西本人寫下；《創世記》所記載的事件也都發生在摩西出生以前。因此，有些學者認為，摩西可能使用了更早流傳下來的族譜、口述傳統或文字資料，五經在摩西以後也可能經過後人的整理、補充與編輯。
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-3">
+          十八世紀以後，部分西方學者進一步提出「底本學說」。「底本」是指現今五經背後可能存在的不同文獻來源。這些學者注意到，五經中有時使用不同的神名，也有一些內容看似重複，或在用詞、文體和神學重點上有所差異，因此推測五經不是由一位作者在同一時期全部完成，而是由不同時代的文獻材料，經過後來編輯者整理而成。
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-1">傳統底本學說通常把這些來源分為四類，合稱JEDP：</p>
+        <p className="text-gray-700 leading-relaxed mb-3">
+          J：耶和華底本，常使用「耶和華」稱呼神，敘事較生動。<br />
+          E：神典底本，常使用「神」稱呼神，較重視夢、天使與先知。<br />
+          D：申命記底本，強調聖約、順服、祝福與咒詛。<br />
+          P：祭司底本，重視祭司、獻祭、潔淨條例、族譜與敬拜制度。
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-1">關於五經作者，目前大致可見幾種主要看法：</p>
+        <p className="text-gray-700 leading-relaxed mb-3">
+          第一，傳統看法認為摩西是五經的主要作者，只有少部分內容，例如摩西之死，由後人補寫。
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-3">
+          第二，較溫和的看法認為，摩西是五經最重要的核心作者與權威來源，但他可能使用早期資料，五經也可能經過後來受默示者的整理與補充。
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-3">
+          第三，底本學說則認為，五經是由不同時代、不同作者或群體所留下的文獻，經過長期編輯後形成。
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-3">
+          第四，現代另有一些學者不再完全接受傳統JEDP的劃分，而認為五經可能是以一份主要文獻為基礎，再經過多次補充、修訂與編輯。
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-3">
+          需要注意的是，J、E、D、P並不是已經出土的四份古代手稿，而是學者根據經文特色所作的推測。學者對各底本的年代、範圍、作者與形成方式，也一直沒有完全一致的結論。
+        </p>
+        <p className="text-gray-700 leading-relaxed">
+          因此，較穩妥的說法是：摩西與五經有密切而重要的關係，並且很可能是五經核心內容的主要權威來源；但五經是否全部由摩西親筆寫成，以及後來經過多少整理與補充，至今仍是學者持續討論的問題。
+        </p>
+      </div>
+
       {/* 參、創世記的結構與大綱 */}
       <div className="mb-6 border border-indigo-100 rounded-lg overflow-hidden shadow-sm">
         <button onClick={() => toggleSection('structure')} className="w-full px-5 py-3 bg-gradient-to-r from-indigo-50 to-blue-50 hover:from-indigo-100 hover:to-blue-100 flex items-center justify-between transition-all">
