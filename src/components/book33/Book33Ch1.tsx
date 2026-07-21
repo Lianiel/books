@@ -375,6 +375,235 @@ export default function Book33Ch1() {
               </div>
             </div>
 
+            <div>
+              <h3 className="font-bold text-amber-800 text-lg mb-3">第二節　聖經中的「罪」</h3>
+
+              <PageTag page={61} />
+              <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                聖經記載神如何愛人，及人如何犯罪的種種故事。整本聖經66卷，幾乎每一卷都指出人的各種罪。本節無法詳引所有罪的故事與言論，只能引用最根本、最具有代表性的罪來探討。
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                罪是人離棄神、反對神的行動或狀態。罪與神有必然的關係，如果沒有神，也就沒有罪。<sup>78</sup><span style={cite}>（Edited by Carl Braaten &amp; Robert Jenson, Christian Dogmatics Vol.1, 367）</span>聖經記載的各種罪當中，最基本、最
+              </p>
+
+              <PageTag page={62} />
+              <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                共通的乃是「離棄神」的罪，除此以外，最多被責備的是「拜偶像」的罪。二者是一體的兩面，因為「離棄神」造成心靈的空虛，且失去可祈求、倚靠的對象，乃用「拜偶像」來代替。<sup>79</sup><span style={cite}>（Edited by Carl Braaten &amp; Robert Jenson, Christian Dogmatics Vol.1, 368）</span>偶像本身是虛無的，但其背後隱藏著神的頭號對敵魔鬼撒但。因此，「拜偶像」乃是「屬靈的淫亂」，是將自己出賣給「別神」的行為。而以追求名聲物慾取代上帝的地位，則是無形的拜偶像。<sup>80</sup><span style={cite}>（李錦綸，《塑成肉身救贖源──獻給中國的教會神學》，頁52-53）</span>
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                人先有屬靈的淫亂，而後有肉體的淫亂，這是聖經中記載篇幅僅次於「離棄神、拜偶像」的罪。屬靈的淫亂帶來肉體的淫亂，而後又從這「淫亂」產生所有其他的罪。這事實正如中國俗話所說的：「萬惡淫為首。」
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                罪是反對神及神的意志，罪不是來自神。人乃是運用他的自由意志選擇離棄神、聽信魔鬼撒但。<sup>81</sup><span style={cite}>（Edited by Carl Braaten &amp; Robert Jenson, Christian Dogmatics Vol.1, 369, 385）</span>這同時，有「貪婪、自私、驕傲」的罪在他心裡面產生。「貪婪、自私、驕傲」在華人看，僅是道德上的缺點或個性上的弱點，而不是罪，然而，事實上這些都是伴隨著「離棄神」的罪而存在的。<sup>82</sup><span style={cite}>（范學德，〈驕傲，一個基督教的詮釋〉，《恩福》第四卷第三期總12，頁11）</span>「離棄神」怎樣成為其他罪的根源，「貪婪、自私、驕傲」也怎樣成為其他罪的先鋒。
+              </p>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 mt-3 block">壹、舊約</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、始祖犯罪</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  伊甸園的故事是人類始祖亞當、夏娃犯罪的故事，也是人類第一次犯罪的故事。伊甸園中始祖偷吃禁果的故事，把人類背叛神的
+                </p>
+
+                <PageTag page={63} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  經過描寫得淋漓盡致，但沒有使用希伯來文<span style={heb}>חָטָא</span>或其他有關「罪」的字詞。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  學者對這故事的性質有不同的見解。有人認為這是千真萬確的歷史事實；有人相信它曾在歷史上發生過，但只是象徵式的敘述；又有人認為它是虛構的，或僅是寓意性的故事，用來解釋人類心裡罪惡存在的問題。<sup>83</sup><span style={cite}>（Ross, Creation and Blessing, pp.50~54；布魯斯‧米爾恩，《認識基督教教義》，頁155-157）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  在神學上，對罪的來源，概念之一是認為人乃從獸進化而來，人擁有獸性附帶而來的衝動，此衝動即罪的來源。因為人仍在繼續進化，這些衝動會漸漸減退，人的罪性也會減輕。這種罪觀在十九世紀末和二十世紀初特別流行，其原因除了聖經批判研究興起，造成對聖經權威的質疑外，最主要就是生物學進化論大行其道。自1859年達爾文的《物種起源》（Origin of Species）一書出版後，相信此說的人遍及生物學以外的其他領域，例如：宗教發展的研究，認為世上各種宗教乃是長期發展的產物，希伯來宗教亦是進化而來的，創世記所記人類的受造與墮落乃是虛構的。<sup>84</sup><span style={cite}>（艾利克森，《基督教神學》卷二，郭俊豪等譯，頁179-180）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  本書第二章第一節將會進一步說明，進化論只是一種「理論」，聖經的啟示與解釋不必迎合進化論。事實上，隨著文明的發達，人的罪性不僅沒有減輕，反而更加明顯。並且，新約福音書及書信的作者都肯定亞當、夏娃的事曾在歷史上發生過，因此耶穌基督和他的工作就是要解決始祖犯罪墮落所帶來的後果。保羅在羅馬書五章12節亦強調，罪（<span className="italic">ἁμαρτία</span>）與死亡是從始祖亞當、夏娃進入了世界。<sup>85</sup><span style={cite}>（富偉勳，《認識聖經神學》，頁122）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-3">
+                  蛇（也就是魔鬼撒但，見啟示錄十二9）向女人提出第一個問
+                </p>
+
+                <PageTag page={64} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  題：「神豈是真說，不許你們吃園中所有樹上的果子嗎？」（創三1）撒但試圖混淆神的話，使人懷疑神的慈愛。牠接著說：「你們不一定死」（創三4），直接向神的權威挑戰，誣指神故意說謊。又說：「因為神知道，你吃的日子眼睛就明亮了，你們便如神能知道善惡。」（創三5）在此，蛇誣指神的動機是自私的，神並不是慈愛和值得信賴的。試探就是：撒但向人暗示，人不能信靠神的話語為人類絕對的權威，和真理的源頭。<sup>86</sup><span style={cite}>（Ross, Creation and Blessing, 135）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  亞當和夏娃按著神的形像被造，是美好但不老練。撒但引誘夏娃和亞當，使他們首先懷疑神，繼而背叛神。撒但引導夏娃去想：分別善惡樹的果子多麼好，既可做食物，又能使人有智慧。犯罪的傾向開始時，是源自某種具吸引力和美好的東西，或者某個合理而目標正確的行動。<sup>87</sup><span style={cite}>（John Calvin, Genesis, 150-151）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  最後，亞當、夏娃在神和蛇的相反意見中擔當仲裁者，把自己提升至比神更高的位置上，背叛了神。最原始的罪，為人啟示了後來各種罪的本質。罪包含人類拒絕接受神所賜予的本位──即位於創造主和較低的受造物之間。亞當和夏娃因著這個歷史行動成了罪人，導致與神、與人、與自己、並與天地萬物疏離。<sup>88</sup><span style={cite}>（《證主聖經神學辭典〔下〕》，頁902）</span>始祖的墮落乃是因為他們想要像神，不滿足於人的本質，想要擁有神的特性；他們渴望追求一個不屬於自己的寶座，反而喪失了已經擁有的特權。<sup>89</sup><span style={cite}>（富偉勳，《認識聖經神學》，頁124）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  整件事，撒但是試探者，但亞當、夏娃要為自己的決定承擔責任。在新約聖經看到，撒但不僅是誘惑者（帖前三5），牠也是
+                </p>
+
+                <PageTag page={65} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  欺哄者（徒五3）、阻擋者（帖前二28）、吞吃者（彼前五8）、掌死權者（來二14），牠擁有萬國榮華（路四5~6），並能裝作光明的天使（林後十一14）。若講「惡」進入美好世界的原因，則撒但與亞當、夏娃乃是共犯。神所造的原來都好，但他們使自己成為邪惡。<sup>90</sup><span style={cite}>（Carl Braaten &amp; Robert Jenson, Christian Dogmatics Vol.1, 372）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  神宣告，蛇與女人的後裔彼此為仇（創三15），預示基督與撒但爭鬥。新約聖經形容神將撒但踐踏在基督腳下〈羅十六20〉，為這段經文作了最簡短的支持。<sup>91</sup><span style={cite}>（富偉勳，《認識聖經神學》，頁125-126）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  神施在夏娃身上的審判引進了痛苦（創三16），而痛苦正是墮落世界的普遍現象。人的生命不但充滿痛苦，甚至連人類最親密的夫妻關係也受到損害。情慾和爭權奪利成為人類墮落後的本性。神對男人的審判範圍最為廣泛（創三17~24），臨到地的咒詛其實是臨到亞當的身上。以前可以隨意取各種果子吃，現在要汗流滿面才得糊口。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  人喪失了在樂園中居住的權利。真正的生存是，活在與神相交的關係中。當這關係因人的背逆而被斷絕時，死亡的懲罰已被執行了。亞當、夏娃的靈性已經死亡。死亡不是消滅，而是隔絕。由於罪，他們與神隔絕了。<sup>92</sup><span style={cite}>（Abraham Kuyper, The Work of the Holy Spirit, Translated by Henri De Vries, 280）</span>並且，亞當的後裔都不能避免肉身最後的死亡，也就是靈魂離開肉體。<sup>93</sup><span style={cite}>（富偉勳，《認識聖經神學》，頁127）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  潘霍華（Bonhoeffer）在《試探》（Temptation）這本書中指出，從伊甸園所發生的可學到三件事：（1）試探者出現在無罪之處。試探者的確只出現在無罪之處，因為如果那裡本來就有罪存
+                </p>
+
+                <PageTag page={66} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  在，試探者早就已經得著牠的掌控權。（2）試探者的聲音來自樂園中的蛇──你想像不到之處，試探者的聲音不會只來自地獄。（3）試探者會不斷扭曲神的話，使人面臨死亡深淵。在試探中，人唯一的倚靠是神的話。但亞當失敗了，他沒有在關鍵時刻堅信神的話，全人類也因此一起沉淪。<sup>94</sup><span style={cite}>（Bonhoeffer, Temptation, 15-16）</span>
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">二、兩顆樹的意義</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  起初，上帝按著祂自己的形像造人，這形像包括人有別於其他生物的各種能力、特性，但在上帝的裡面有二種特殊的能力、特性，沒有在造人的時候完全給人，而是將之分別放在分別善惡樹與生命樹的果子裡，為的是發展神與人之間愛的關係。<sup>95</sup><span style={cite}>（潘能伯格認為，在人的原點，人被交託的天命—上帝形像，是一種有待發展的使命。參見潘能伯格，〈人的天命〉，《道風基督教文化評論》廿一期，頁83-89）</span>分別善惡果標示了「神是造物主宰」與「人是受託管家」二者之間的基本差異<sup>96</sup><span style={cite}>（潘能伯格，〈人的天命〉，《道風基督教文化評論》廿一期，頁91）</span>，生命果表明了「神賜恩典生命」與「人領受恩典生命」的永恆關係。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  吃分別善惡果會死的原因，主要是關乎神的主權。<sup>97</sup><span style={cite}>（彭巴頓，《舊約神學》，頁283）</span>擅自吃上帝禁止的果子，代表了對上帝權柄的挑戰，是僭越的行動，形同宣告上帝的權柄無效，自己想要成為上帝。<sup>98</sup><span style={cite}>（李錦綸，《塑成肉身救贖源──獻給中國的教會神學》，頁57）</span>聖經中有些實例有助於了解此事。例如，在波提法家作家宰的約瑟，如果侵犯他主人的妻子，雖然那女人本身並沒有毒，但結果即令不被判死刑或下獄，至少也會被趕出門（創世記卅九1-9）。因為波提乏惟獨留下妻子未交給約瑟，表明約瑟只是管家不是主人。又例如當納的十分之一，
+                </p>
+
+                <PageTag page={67} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  神稱之為「神之物」，也代表神的主權，人因為不尊重神的主權，必不蒙賜福，反遭咒詛。<sup>99</sup><span style={cite}>（瑪拉基書三章8-9節說：「人豈可奪神之物呢？你們竟奪取我的供物……就是你們通國的人都奪取我的供物，咒詛就臨到你們。」和合本聖經中，「的供物」三個字旁邊有小點，表示這三個字原來沒有。神的意思是，人若不將當獻的財物獻上，不僅是奪取了神之物，並且是侵吞了神自己）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「分別善惡」的對立面不是「不知善惡」，乃是「生命」。生命樹所提供的是依靠上帝而得豐富供應，在生命相交中沒有任何阻隔。<sup>100</sup><span style={cite}>（李錦綸，《塑成肉身救贖源──獻給中國的教會神學》，頁57）</span>生命樹所包含的「生命」也有「永生」的特性。創世記三章22節記載：「恐怕他伸手又摘生命樹的果子吃，就永遠活著。」這經文顯示，生命樹所包含的「生命」是使人永遠活著的能力與特性。<sup>101</sup><span style={cite}>（彭巴頓，《舊約神學》，頁283。艾利克森，《基督教神學》卷二，頁222）</span>在伊甸園裡，人吃生命樹的果子才能永遠活著，換句話說，「永生」並不是神造人的時候就賦予人的，而是擺在人的面前，經由人選擇才能得著。<sup>102</sup><span style={cite}>（林道亮，《靈命知多少》，頁8）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  創世記三章22-24節記載，人犯罪之後，上帝將他們趕出伊甸園，不讓他們吃生命樹。有人問：「神為何那麼嚴厲？讓人吃生命樹而能永遠活著，有何不好呢？」我們可反問一個問題：「有誰希望以現有的方式在這世上再多活幾百年？」相信沒有人如此希望！上帝不讓人吃生命果，實在是出於祂的憐憫。因為一個活在罪惡權勢之下的人，活得愈久愈痛苦。除非能解決罪的問題，否則人永遠活著並沒有益處。上帝封閉生命樹的同時，為人開啟了另一條生命之路，就是「羔羊」。羔羊與生命樹同樣能給人生命，差別在於生命樹不能解決罪的問題，但羔羊可以；生命樹是不流血的，但羔羊要流血。人能藉著羔羊的血，塗抹所犯的罪，重新恢復與神的關係，並領受上帝的生命。照上帝的啟示，「若不流血，罪就不得赦免。」（來九22）所以，上帝在舊約時代教導人殺羊羔獻祭以贖罪，並預言神的羔羊救主基督的降臨。時候到了，羔羊基督來到世上，為世人的罪被釘十架，流血捨命，第三天從死裡復活，成就了完全的救恩，並開啟了新約的時代。叫人不必經過獻祭，可以直接到祂的面前來。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-3 mb-1 font-semibold">三、罪的發展</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  從該隱的罪中看到，罪的毒害難以駕馭。創四7第一次出現「罪」（<span style={heb}>חַטָּאת</span>）這個字：「你若行得不好，『罪』（<span style={heb}>חַטָּאת</span>）就伏在門前。」對亞當和夏娃來說，罪是外來的；對該隱來說，它好像從心裡生發出來，他必須控制這力量，否則就會被它吞噬。<sup>103</sup><span style={cite}>（Abraham Kuyper, The Work of the Holy Spirit, 263-265）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  該隱犯罪後，不但沒有表示罪疚或痛悔，他更拒絕承認責任，拒絕悔改，並投訴神刑罰過重（創四5-14）。「刑罰」原文<span style={heb}>עָוֹן</span>（awon），這字專門用來描述人對上主所犯的罪過，有時也用來描述對「罪行」的「懲罰」。該隱的犯罪和執迷，預示了聖經其後所記載人類的犯罪歷史。<sup>104</sup><span style={cite}>（Robert S. Candlish, Studies in Genesis, 97-104）</span>有一件事成為世人生命中的事實：「罪由我而出，罪也成為我的對敵。」<sup>105</sup><span style={cite}>（Carl Braaten &amp; Robert Jenson Ed., Christian Dogmatics Vol.1, 367）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  創世記四至十一章勾劃了罪的發展，人的罪變得傲慢的故意。拉麥對他兩個妻子說：「壯年人傷我，我把他殺了；少年人損我，我把他害了。若殺該隱，遠報七倍；殺拉麥，必遠報七十七倍。」（創四23-24）最後，罪擴散至整個世界，甚至人心每個意念無時無刻不是罪惡。如創六5所記：「耶和華見人在地上『罪惡』
+                </p>
+
+                <PageTag page={68} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  （<span style={heb}>רַע</span>）很大，終日所思想的盡都是『惡』（<span style={heb}>רַע</span>）。」結果耶和華用洪水潔淨了這個罪惡的世界。洪水之後，表面上是重新開始，人的內心卻仍在罪惡之中，正如創八21所說：「人從小時心裡懷著『惡』（<span style={heb}>רַע</span>）念。」創世記十二至五十章說明罪甚至折磨神的子民，因為立約家族的成員也彼此操縱、出賣、撒謊和欺騙。從罪惡（evil）的實在性（reality）、連續性（continuity）、負面性（negativity），能清楚看到人墮落的事實。<sup>106</sup><span style={cite}>（Carl Braaten &amp; Robert Jenson Ed., Christian Dogmatics Vol.1, 386）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  出埃及記說明罪是違背耶和華的律法，律法列明什麼是罪，把罪顯明出來。雖然摩西律法強調外在的罪，但某些律法，如以色列人要愛神，不可拜偶像，也顯出罪的內在性。<span style={heb}>עָוֹן</span>（awon）專門用來描述人對上主所犯的罪，在十誡中，上帝強調：「恨我的，我必追討他的『罪』（<span style={heb}>עָוֹן</span>，iniquity），自父及子直到三、四代。」（出二十5）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  列王時代拜偶像特別嚴重：「耶羅波安使以色列人陷在罪裡的那『罪』（<span style={heb}>חַטָּאת</span>），就是拜伯特利和但的金牛犢。」（王下十29）先知提出悔改的呼籲：「你們的『罪』（<span style={heb}>חַטָּא</span>）雖像硃紅，必變成雪白；雖紅如丹顏，必白如羊毛。」（賽一18）「你們委擔當拜偶像的『罪』（<span style={heb}>חַטָּא</span>）。」（結廿三49）也預告救贖的恩典：「他也被列在罪犯之中，他卻擔當多人的『罪』（<span style={heb}>חַטָּא</span>）。」（賽五三12）
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  從士師記到列王紀，以色列人離棄那帶領他們離開埃及、並與他們立約的耶和華。他們跟從和敬拜周圍列國諸神（士二10-13）。有些同時事奉神和諸巴力，這些王可能稱之為外交策略；眾先知卻稱之為淫亂不貞。以色列的歷史說明了執迷不悔怎樣令人更深地犯罪。神降災──饑荒、旱災、疫病、戰爭、其他咒詛，催促
+                </p>
+
+                <PageTag page={69} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  以色列悔改，但她並沒有回轉。<sup>107</sup><span style={cite}>（《證主聖經神學辭典〔下〕》，頁903-904）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  先知書中充滿了神對祂所創造之人的感情。自從創造人類以來，神就像一位父親，天天擔心那在外流浪的孩子。舊約中的每一重要事件，都描述神能感受到祂子民的痛苦。所以先知以賽亞說：「他們在一切苦難中，祂也同受苦難。」（賽六三9）耶利米書、何西阿書、以賽亞書中，都充滿了這位傷心之神的呼聲：「耶和華說，以法蓮是我的愛子嗎？是可喜悅的孩子嗎？我每逢責備他，仍深顧念他，所以我的心腸戀慕他，我必要憐憫他。」（耶卅一20）「我許久閉口不言，靜默不語，現在我要喊叫像產難的婦人，我要急氣而喘哮。」（賽四二14）最後，神與祂的子民一同流亡、一同被擄、一同進火坑，甚至一同進墳墓。<sup>108</sup><span style={cite}>（保羅‧班德&amp;楊腓力，《神的形像》，頁266-267）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  以賽亞書五十三章形容神僕之死，真是捕捉到神痛之情。「他受鞭打，從活人之地被剪除，是因我百姓的『罪過』（<span style={heb}>פֶּשַׁע</span>/pesha）。」（賽五三8）<span style={heb}>פֶּשַׁע</span>在此指百姓對上帝的背叛，但上帝以捨命贖罪來對待百姓的背叛。以賽亞表明將會有一人出現，他的性命是別人的贖罪祭：「耶和華以他為『贖罪祭』（<span style={heb}>אָשָׁם</span>）。」（賽五三10）這些經文都是對基督的預言。因為道成了肉身，以致有進一步的痛。<sup>109</sup><span style={cite}>（保羅‧班德&amp;楊腓力，《神的形像》，頁270-271）</span>
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">貳、新約</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、耶穌的工作</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  福音書的作者，基本上繼承了猶太先知對罪的看法，「罪
+                </p>
+
+                <PageTag page={71} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  （<span className="italic">ἁμαρτία</span>）從根本上講是人對上帝的背叛。<sup>110</sup><span style={cite}>（劉宗坤，〈聖經中的「罪」觀念與人的生存的理解〉，《維真學刊》六卷1998第一期，頁54）</span>耶穌用兩種方法，繼續深化人對罪之觀念的工作：（1）指出神所要求的，不僅有外在規範，更主要的是內在思念的純潔。人因憎恨、藐視和情慾而犯罪，縱然未把慾念化作行動；而人若以錯誤動機行正確的事，也是犯罪。「你們也是如此，在人前，外面顯出公義來，裡面卻裝滿了假善和不法（<span className="italic">ἀνομία</span>/anomia）的事」（太廿三28）。（2）嚴厲地譴責罪，顯示罪的問題不能忽視。罪人必須面對罪，否則就要死在自己的罪（<span className="italic">ἁμαρτία</span>）中（約八24）。罪由心生，壞樹結壞果子，褻瀆的話從充滿惡念的心裡出來。並且，「所有犯罪（<span className="italic">ἁμαρτία</span>）的，就是罪（<span className="italic">ἁμαρτία</span>）的奴僕」（約八34）。<sup>111</sup><span style={cite}>（《證主聖經神學辭典〔下〕》，頁904-905）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  神對人的內心有什麼看法呢？馬可福音七章21~22節提到13項人的惡：「因為從裡面，就是從人心裡，發出惡念、苟合、偷盜、兇殺、姦淫、貪婪、邪惡、詭詐、淫蕩、嫉妒、謗瀆、驕傲、狂妄。」不是每個人都犯了這裡面所有的罪，但每個人的心裡都可以找得到罪的種子。當我們在特定的環境下受到刺激時，人就有犯這些罪的潛能。因此神非常強調一個事實──「世人都犯了罪（<span className="italic">ἁμαρτάνω</span>），虧缺了神的榮耀。」（羅三23）<sup>112</sup><span style={cite}>（G. C. Berkouwer, Sin, Translated by Philip C. Holtrop, 110-111）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  然而，基督來不單是要解釋罪，還要饒恕和除掉罪。祂要把百姓從他們的罪惡中拯救出來（太一21；路一77）。祂是罪人的朋友（太九9-13；路十五1-2），祂饒恕各種罪，並把那些承受罪之惡果的人釋放出來（可二1-12；路七36-50）。祂在十字架上，為使罪得赦而流出寶血。十字架同時是罪的頂峰和罪的解決（徒二23-24）。祂背負十字架以完成救贖，顯出罪的深重。祂從死裡復活，
+                </p>
+
+                <PageTag page={72} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  表明罪已經被擊敗。<sup>113</sup><span style={cite}>（G. C. Berkouwer, Sin, Translated by Philip C. Holtrop, 187-188）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  耶穌最關心的，與其說是罪（<span className="italic">ἁμαρτία</span>/hamartia），不如說是罪人（<span className="italic">ἁμαρτωλός</span>/hamartolos），耶穌被稱為是「稅吏和罪人的朋友」（太九10）。耶穌把人的罪與神的愛放在同等重要的位置上。他既看到了人的罪性，也看到了超越這種罪性的希望。耶穌的受難和復活使人得救的希望變成了現實，在此之後，人的罪性和神的愛被十字架事件緊緊地聯繫在一起。<sup>114</sup><span style={cite}>（劉宗坤，〈見前〉，頁54）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  有兩處經文深切的暗示，基督乃是完全地與受苦的人認同，祂在人裡面忍受他們的疼痛。馬太福音廿五35~40說明，他與那些饑餓的、生病的、赤身的、被監禁的人在一起，所以這些事做在他們身上，就是做在基督身上。主耶穌向逼迫教會的掃羅顯現，並問他：「你為什麼逼迫我？」（徒九4）那些迫害基督徒的鞭子、石頭，都落在耶穌的身上。我們不該還要問：「神為什麼讓他受罪呢？」而當問：「神為什麼讓自己受罪呢？」<sup>115</sup><span style={cite}>（保羅‧班德&amp;楊腓力，《神的形像》，頁273-274）</span>
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-3 mb-1 font-semibold">二、使徒保羅的論述</p>
+                <p className="text-gray-700 leading-relaxed">
+                  保羅有關罪的討論，主要記載於羅馬書一至八章。上帝因人類得罪祂和彼此得罪而憤怒（羅一18-32）：「神的忿怒，從天上顯明在一切不虔『不義』（<span className="italic">ἀδικία</span>/adikia）的人身上，就是那些行『不義』（<span className="italic">ἀδικία</span>）阻擋真理的人。」（羅一18）不信是罪的根源。人類不榮耀神，也不感謝神，導致他們拜偶像，變得虛妄和墮落（羅一21-25）。<sup>116</sup><span style={cite}>（斯托得，《羅馬書》，頁95）</span>
+                </p>
+
+                <PageTag page={73} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  當人遠離上帝，首先犯下兩個罪，記載在羅馬書一21：「因為他們雖然知道上帝，卻不當作上帝榮耀祂，也不感謝祂。他們的思念變為虛妄，無知的心就昏暗了。」這兩個罪，第一是拒絕榮耀上帝，第二是不知感恩。即聖經所說的，不當作上帝榮耀祂，也不感謝祂！接著產生的結果是虛空與盲目，如21節下半所說：「思念變為虛妄，無知的心就昏暗了。」
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  保羅下結論，每個人都是罪人，在上帝面前啞口無言：「所以凡有血氣的沒有一個，因行律法能在上帝面前稱義，因為律法本是叫人知罪（<span className="italic">ἁμαρτία</span>）。」（羅三20）亞當和夏娃犯罪不只影響自己，因他們是人類的祖先，他們犯罪代表了全人類。自那時起，罪、罪性和罪的後果損害所有人。每一亞當子孫，都進入這個以罪和死亡為標記的族類中（羅五12-21）。<sup>118</sup><span style={cite}>（巴特，《羅馬書釋義》，頁218-229。馬丁路德，《羅馬書講義》，頁191-200）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  保羅斷言罪（<span className="italic">ἁμαρτία</span>）是一種內在的力量，而不只是行為。任何未得到基督釋放的人，都受到罪的轄制，導致死亡（羅六5-23）。<sup>119</sup><span style={cite}>（馬丁路德，《羅馬書講義》，頁201）</span>從罪中得著拯救，乃是因信耶穌而得稱為義；在基督耶穌裡的人，不再受到譴責了（羅三21至四25，八1-4）。保羅弔詭地說，律法會引發罪：「因為律法是惹動忿怒的，哪裡沒有律法，那裡就沒有『過犯』（<span className="italic">παράβασις</span>/parabasis）。」（羅四15）「我們屬肉體的時候，那因律法而生的『惡』（<span className="italic">ἁμαρτία</span>）慾，就在我們肢體中發動，以致結成死亡的果子。」（羅七5）「叫我死的乃是罪（<span className="italic">ἁμαρτία</span>）。但罪藉著那良善的叫我死，就顯出真是罪（<span className="italic">ἁμαρτία</span>），叫罪因著誡命更顯出是惡（<span className="italic">ἁμαρτωλός</span>）極了。」（羅七13）這種乖僻的反應提醒我們，犯
+                </p>
+
+                <PageTag page={74} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  罪的根是罪性和背叛神（羅七7-25）。<sup>120</sup><span style={cite}>（C. E. B. Cranfield, On Romans and other New Testament Essays, 104-106,118。馬歇爾，《新約神學》，潘秋松等譯，頁295-296）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  保羅‧班德與楊腓力指出，十字架表現了神自己在受苦，祂藉著踏入歷史的層面，與人聯合，讓我們看見祂的受辱、赤裸與痛苦。全能的神只是讓祂兒子為我們受苦嗎？還是祂在基督裡替我們受苦？在我們無法全懂的情況下，神的確自己來到地上死了。「這就是神在基督裡叫世人與自己和好，不將他們的過犯（<span className="italic">παράπτωμα</span>/paraptoma）歸到他們身上，並且將這和好的道理託付了我們。」（林後五19）「你們死在『過犯』（<span className="italic">παράπτωμα</span>）罪惡之中，他叫你們活過來。」（弗二1）<sup>121</sup><span style={cite}>（保羅‧班德&amp;楊腓力，《神的形像》，頁269-270）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  保羅在書信中如此作見證：「我肉體之中沒有良善，因為立志為善由得我，只是行出來由不得我。故此，我所願意的善，我反不做；我所不願意的惡，我倒去做。」（羅七18-19）這是一個必須正視的事實，身為亞當的子孫，我們有分別善惡的能力，甚至也願意行善，但我們沒有行善的能力。因行善的能力在生命樹裡面，也在基督裡，而不在分別善惡樹裡面。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-3 mb-1 font-semibold">三、其他使徒的論述</p>
+                <p className="text-gray-700 leading-relaxed">
+                  其他使徒的書信指出，罪從私慾開始（雅一14，四1-4），而當罪完全長成了，就導向死亡（雅一15）。罪透過不斷重複而取得力量；罪就透過人重犯它，而成為人的習慣、惡癖，最終成為人性格的一部分。人若仿效別人的罪，惡習就會變得制度化，整個社會都會籠罩在欺詐與欺壓之中。這樣，個人的罪會彼此影響，所以與世俗為友，就是與神為敵（雅四4-6）。<sup>122</sup><span style={cite}>（《證主聖經神學辭典〔下〕》，頁905）</span>
+                </p>
+
+                <PageTag page={75} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  神對罪人的審判，古代與今世代的標準是一樣的，就是敬虔與不敬虔之別，也就是敬拜真神與不敬拜真神之別，只是方法不同（以前用洪水，今世代用火）：「神也沒有寬容上古的世代，曾叫洪水臨到那不敬虔（<span className="italic">ἀσεβής</span>/asebes）的世代，卻保護了傳義道的挪亞一家八口。」（彼後二5）「但現在的天地，還是憑著那命存留，直留到不敬虔（<span className="italic">ἀσέβεια</span>）之人受審判遠沉淪的日子，用火焚燒。」（彼後三7）「要在眾人身上行審判，證實那一切不敬虔的人，所妄行一切不敬虔（<span className="italic">ἀσέβεια</span>/asebeia）的事，又證實不敬虔（<span className="italic">ἀσεβής</span>）之罪人所說頂撞他的剛愎話。」（猶15）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  啟示錄更清楚描繪了罪的結局。有一天，神會給罪人判刑（啟二十11-15）；行惡的人會從祂面前被趕出去；魔鬼、牠的同黨、死亡和陰間，都被扔到火湖裡（啟二十10-15）。在火湖裡的人包括：「膽怯的、不信的、可憎的、殺人的、淫亂的、行邪術的、拜偶像的，和一切說謊話的。」（啟廿一8）然後，新天新地會降臨，從此不再受罪困擾（啟廿一至廿二章）。<sup>123</sup><span style={cite}>（G. C. Berkouwer, Sin, Translated by Philip C. Holtrop, 422-423）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  神給人的禮物中最寶貴的是「永恆的生命」，一般人以為這是神造人的時候就已經給的，只因人犯罪才失去「永生」，其實並非如此，從創世記看見，「永生」原是在人之外，人必須經由「吃」，也就是「選擇」，才能得著。生命的原則在罪之上，因此在無罪的新天地裡，生命樹仍然立在那裡，代表基督生命永遠的供應。（啟廿二1-2）神給人生命不是靜態的，而是動態的，在永世裡，藉著基督生命的供應，人要愈來愈像神，這過程沒有停止的一天，是直到永永遠遠的。<sup>124</sup><span style={cite}>（G. C. Berkouwer, Sin, Translated by Philip C. Holtrop, 566-567）</span>
+                </p>
+              </div>
+
+              <PageTag page={76} />
+              <p className="font-bold text-amber-700 mb-2 mt-2">小　結</p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                在舊約裡面，大體而言罪是指外在行為不能遵循神的要求。<span style={heb}>חָטָא</span>（hatta）這字主要是指客觀的犯錯行為，比較不涉及內在動機。舊約的觀念並沒有完全忽視內在的思想和動機，但這些在新約就變得特別顯著，內在動機與外在行為同樣重要。新約<span className="italic">ἁμαρτία</span>（hamartia）的意義比較有內在思想、動機的成分。<sup>125</sup><span style={cite}>（Carl Braaten &amp; Robert Jenson Ed., Christian Dogmatics Vol.1, 373-374）</span>進一步說，罪不單是錯誤的行為和思想，它更包含罪性：一種潛在的內在傾向，使人產生錯誤的行為和思想。因此，我們不單單因為犯罪而成為罪人；我們犯罪乃由於我們是罪人的緣故。<sup>126</sup><span style={cite}>（艾利克森，《基督教神學》卷二，頁171）</span>考慮中文適當的翻譯，可以說我們裡面先有「罪性」或「迷失」了（先有sin），而後在外面才有「罪行」或「過錯」（後有sins，guilt）。<sup>127</sup><span style={cite}>（Carl Braaten &amp; Robert Jenson Ed., Christian Dogmatics Vol.1, 423）</span>
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                總結來說，罪主要有三方面：（1）背離神，（2）違反律法，（3）破壞在律法保護下的各種人與事的關係。罪的本質不是一件事，而是一種對抗的關係。有三個因素使罪的悲劇變得複雜：（1）它充滿整個人，沒有任何層面可以避免，因為罪人的心是腐敗的（詩五十一5；耶十七9；羅八7）。（2）罪惡住在人心裡，而人是滿有神創造的榮耀和神的形像，受委派為神管理世界；人類的思想、計劃和所受的訓練，產生異常的能力，使罪惡變得高深和可怕。（3）罪是驕傲的：它拒絕神和祂的救恩，反而提出虛假的救恩（帖後二2-4）。<sup>128</sup><span style={cite}>（《證主聖經神學辭典〔下〕》，頁906-907）</span>
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                罪是個分離者，罪不僅是人所做不討神喜歡的事，罪是一種阻
+              </p>
+
+              <PageTag page={77} />
+              <p className="text-gray-700 leading-relaxed mt-2">
+                礙，是一種使人癱瘓的毒素，阻止我們長大成人。驕傲、自大、私慾、貪婪，都是毒素，干擾我們與神或與人的關係。罪的結果就是分離：與神、與他人、與自己分離。<sup>129</sup><span style={cite}>（保羅‧班德&amp;楊腓力，《神的形像》，頁71-72）</span>雖然如此，但基督乃是和好的使者，祂消除了我們與神、與他人、與自己之間每天長出來的隔膜。<sup>130</sup><span style={cite}>（保羅‧班德&amp;楊腓力，《神的形像》，頁74）</span>
+              </p>
+            </div>
+
           </div>
         )}
       </div>
