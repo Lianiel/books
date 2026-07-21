@@ -161,6 +161,18 @@ export default function Book29Home() {
               <p className="text-gray-700 leading-relaxed text-sm">
                 出現11次（二4、五1、六9、十1、十一10、十一27、廿五12、廿五19、卅六1、卅六9、卅七2）。這個片語有來歷、後代、兒子、記略等各種翻譯。這片語通常接著一個人名，只有第一處例外，不是人名，而是「天地」。從第二處開始，記載：1. 亞當的後代、2. 挪亞的後代、3. 閃含雅弗的後代、4. 閃的後代、5. 他拉的後代、6. 以實瑪利的後代、7. 以撒的後代、8. 以掃的後代、9. 雅各的後代。<span style={{ fontSize: 'calc(1em - 6px)', color: '#9ca3af' }}>（朗文、狄拉德，《21世紀舊約導論》，頁47-48）</span>
               </p>
+              <div className="mt-3 pt-3 border-t border-indigo-200">
+                <p className="text-gray-800 font-semibold leading-relaxed mb-2">【Toledot公式】</p>
+                <p className="text-gray-700 leading-relaxed text-sm mb-2">
+                  「Toledot公式」是《創世記》中反覆出現的希伯來片語<span dir="rtl">אֵלֶּה תוֹלְדוֹת</span>（elleh toledot），常譯為「這是……的後代」、「……的家譜」或「……的來歷」。
+                </p>
+                <p className="text-gray-700 leading-relaxed text-sm mb-2">
+                  Toledot一詞來自「生、生育」，不只指一個人的子孫名單，也可以指由某個人物、家族或事物所發展出來的後續歷史。因此，「挪亞的後代」不只是列出挪亞的兒子，也引出挪亞、洪水及其家族的故事；「以撒的後代」則主要記載雅各與以掃的發展。
+                </p>
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  這個公式在《創世記》中多次出現，是全書重要的分段標誌，作用類似篇章標題，用來引出下一個家族或救恩歷史的階段。有些學者推測，這些公式可能反映摩西所使用的早期家族記錄；但目前沒有直接證據證明它們是古代文件的作者署名。因此，較穩妥的理解是：Toledot公式首先是《創世記》組織全書內容的重要文學結構。
+                </p>
+              </div>
             </div>
             <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
               <h4 className="font-semibold text-blue-800 mb-2">二、按內容與文學形式的分法</h4>
