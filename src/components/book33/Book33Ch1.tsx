@@ -43,6 +43,9 @@ export default function Book33Ch1() {
                 <span className="font-semibold text-amber-700">壹、希伯來字詞</span>
 
                 <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、常用詞根</p>
+                <p className="text-gray-700 leading-relaxed mb-1" style={heb}>
+                  <span dir="rtl">פשע</span>，<span dir="rtl">עון</span>，<span dir="rtl">חטא</span>
+                </p>
                 <p className="text-gray-700 leading-relaxed mb-3">
                   希伯來文聖經在描述人的悲劇性處境時，使用了豐富的語
                 </p>
