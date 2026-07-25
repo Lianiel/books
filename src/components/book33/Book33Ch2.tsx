@@ -876,6 +876,10 @@ export default function Book33Ch2() {
               </div>
             </div>
 
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-700">
+              本章第四節「諸子的『上帝觀』」與第五節「聖經的『上帝觀』」尚在建置中，將陸續更新。
+            </div>
+
           </div>
         )}
       </div>
