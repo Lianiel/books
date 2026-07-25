@@ -876,8 +876,411 @@ export default function Book33Ch2() {
               </div>
             </div>
 
+            <div>
+              <h3 className="font-bold text-amber-800 text-lg mb-3">第四節　諸子的「上帝觀」</h3>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                諸子以孔子為首，限於篇幅，本節僅討論「論語」、「孟子」、「墨子」、「老子」、「莊子」書中「天、帝、神、道」等有關「上帝」之思想。
+              </p>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">壹、論語中的「天」與「神」</span>
+                <p className="text-gray-700 leading-relaxed mt-2">
+                  孔子是中國的至聖先師，孔子的上帝觀必然影響華人的上帝觀。然而，一般華人對孔子的上帝觀缺乏正確及完整的認識，甚至有很偏差的誤解。有人說，孔子是無神論，因孔子說：「子不語怪力亂神。」孔子為何說這句話？這句話的真義是什麼呢？本段將全面性地從孔子言論的原始文本，進行探究、比較。期能撥雲見日，幫助眾人瞭解孔子的上帝觀，並有助於引導華人來認識真神上帝。
+                </p>
+
+                <PageTag page={150} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、論語中的「天」</p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（一）資料</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  論語有關「天」的記述至少有下面十四條：
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-1">1.「獲罪於天，無所禱也。」（八佾第三）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">2.「子見南子。子路不悅。夫子矢之曰：予所否者，天厭之，天厭之。」（雍也第六）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">3.「子曰：天生德與予，桓魋其如予何。」（述而第七）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">4.「子畏於匡，曰：文王既沒，文不在茲乎？天之將喪斯文也，後死者，不得與於斯文也。天之未喪斯文也，匡人其如予何？」（子罕第九）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">5.「子疾病，子路使門人作家臣。病間，曰：久矣哉，由之行詐也！無臣而為有臣，吾誰欺？欺天乎？」（子罕第九）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">6.「顏淵死。子曰：噫！天喪予，天喪予！」（先進第十一）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">7.「子曰：莫我知也夫？子貢曰：何為其莫知子也？子曰：不怨天，不尤人；下學而上達，知我者，其天乎？」（憲問第十四）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">8.「子曰：予欲無言。子貢曰：子如不言，則小子何述焉？子曰：天何言哉？四時行焉，百物生焉。天何言哉？」（陽貨第十七）</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  9.「子曰：大哉，堯之為君也！巍巍乎，唯天為大，唯堯則之！」（泰伯第八）語譯：「堯作君王，真是偉大崇高，他心中唯有上天為最大，而且只有堯能以上天為準則。」<sup>135</sup><span style={cite}>（謝冰瑩等編譯，《新譯四書讀本》，頁160。毛子水註釋，《論語今註今譯》，頁122）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  10.「天下無道也久矣，天將以夫子為木鐸。」（八佾第三）語譯：「天下混亂已經很久了，上天將你們老師當作警世的木鐸，
+                </p>
+
+                <PageTag page={151} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  垂教世人。」<sup>136</sup><span style={cite}>（謝冰瑩等編譯，《新譯四書讀本》，頁98。毛子水註釋，《論語今註今譯》，頁42-43）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-1">
+                  11.「子貢曰：固天縱之將聖，又多能也。」（子罕第九）譯文：「這是上天縱使他成為聖人，又縱使他多才多藝。」<sup>137</sup><span style={cite}>（謝冰瑩等編譯，《新譯四書讀本》，頁164。毛子水註釋，《論語今註今譯》，頁128）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-1">12.「堯曰：咨！爾舜！天之曆數在爾躬，允執其中！四海困窮，天祿永終。」（堯曰第二十）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">13.「子夏曰：生死有命，富貴在天。」（顏淵第十二）</p>
+                <p className="text-gray-700 leading-relaxed mb-3">14.「子貢曰：夫子之不可及也，猶天之不可階而升也。」（子張第十九）</p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（二）分析</p>
+                <p className="text-gray-700 leading-relaxed">
+                  上引1至9條是孔子所說的話，10至14條是他人講的話。孔子自己及他的學生所說的「天」，應能表達出孔子及當代人對「天」的觀念。這其中大多數是「神性義的天」，1至7條及10至12條的「天」字，從上下文看很明顯是有位格的、神性義的天、主宰之天<sup>138</sup><span style={cite}>（馮友蘭，《中國哲學史》，頁82-83）</span>。8條所說「天何言哉？」一般學者解為自然義的天，但馮友蘭贊成解為主宰之天。<sup>139</sup><span style={cite}>（馮註：或引「天何言哉」之言，以證孔子所言之天為自然之天。然此但讀天「無為而治」耳，不必即以天為自然之天。且以天不言為一命題，即含有天能言而不言之意。否則此命題為無意義。如吾人不說石頭不言，因石頭本非能言之物也。見馮友蘭，《中國哲學史》，頁83）</span>13條「生死有命，富貴在天」的「天」
+                </p>
+
+                <PageTag page={152} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  可解為「天理」或「天運」，亦可解為「上帝」，如聖經所記：「耶穌說，復活在我，生命也在我。」（約十一25）「祂使人貧窮，也使人富足，使人卑微，也使人高貴。」（撒上二7）9條的「天」可解為神性義的天或自然義的天，14條的「天」則必然是自
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  然義的天。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  朱子註論語「獲罪於天，無所禱也」，曾以「理」字詮釋「天」字：「天，即理也。……逆理，則獲罪於矣。」<sup>140</sup><span style={cite}>（朱熹，《四書集註》，頁65）</span>清錢大昕反對朱子的詮釋，以為天不同於理。在他的養新錄卷三，有如下的批評：「宋儒謂性即理，是也；謂天即理，恐未然。獲罪於天，無所禱。謂禱於天，豈禱於理乎？詩云，敬天之怒，畏天之威，理豈有怒與威乎？又云，敬天之渝，理不可言渝也。謂理出於天則可，謂天即理則不可。」<sup>141</sup><span style={cite}>（錢大昕，《十駕齋養新錄》〔一〕，頁49）</span>錢氏此一批評，主要是不贊成朱子除去了孔子的天的神性義。朱子以理說天，是發揮了他自己及宋代理學家對天的觀念，與孔子所說天的原意並不符合。我們可以套用錢氏的疑難方式，提出下列這些疑難：「天厭之，豈理厭之乎？」「天之將喪斯文也，豈理之將喪斯文乎？」「吾誰欺，欺天乎？豈欺理乎？」「天喪予，豈理喪予乎？」「知我者其天乎？豈知我者其理乎？」<sup>142</sup><span style={cite}>（李杜，《中西哲學思想中的天璽與上帝》，頁60）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  牟宗三認為，詩、書上很多處提到天和上帝，雖有人格神的傾向，但不是人們仰慕祈求的對象，與猶太人所說的耶和華人格神，有所不同。他進一步強調孔子的踐「仁」，認為「仁」就是人之所以為人的本質與主宰。人不必仰慕、祈求一個高高在上的人格神之天，只要躬行實踐我生命中本有的道德心之仁，在具體生活中「父子有親，君臣有義，夫婦有別，長幼有序，朋友有信」，「天」的一切便都在這裡了。此之謂「踐仁以知天」。<sup>143</sup><span style={cite}>（牟宗三講，《中國文化的省察─牟宗三演講錄》，頁105-106）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  但是牟宗三在解釋孔子的「知我其天」及「知天命」時也承
+                </p>
+
+                <PageTag page={153} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  認：「孔子的生命與超越者的遙契關係實比較近乎宗教意識，……孔子所說的天比較含有宗教上「人格神」（Personal God）的意味。而因宗教意識屬於超越意識，我們可以稱這種遙契為「超越的」（Transcendent）遙契。否則，「知我其天」等話是無法解釋的。我們可以說，在孔子的踐仁過程中，其所遙契的天實可有兩重意義。從理上說，它是形上的實體；從情上說，它是人格神。而孔子的超越遙契，則似乎偏重後者。」<sup>144</sup><span style={cite}>（牟宗三，《中國哲學的特質》，頁33-34）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  由以上分析，可確知，孔子對天的觀念繼續了詩、書及春秋時人以天為上帝的意義。他與大多數春秋時代的人一樣，都沒有否認天的神性本質。對天帝觀的改變則在天人關係上，這是下一段要繼續探討的。<sup>145</sup><span style={cite}>（李杜，《中西哲學思想中的天璽與上帝》，頁61）</span>
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（三）天人關係的發展</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  詩、書中的上帝基本上只與王者有關係。天降命於有德者為天子。天子代表上帝以治理萬民，亦代表萬民而祭祀上帝。春秋時則由只降命於周天子，而發展至降命於諸侯與卿大夫；到了孔子則發展至與每一個人有關係。在孔子的觀念中，天人關係不再受社會階級的限制，天與每一個人都有關係。上引1.2.3.6.7.8.各條的記述即表示了此一意義。因為「獲罪於天，無所禱也」、「天喪予」、「知我者其天乎？」等皆由個人上說。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  下面有關「天命」的記述亦表示了此一意義。「五十而知天命」（為政第二）<sup>146</sup><span style={cite}>（毛子水註釋，《論語今註今譯》，頁16）</span>「君子有三畏，畏天命，畏大人，畏聖人之言。」（季氏第十六）<sup>147</sup><span style={cite}>（謝冰瑩等編譯，《新譯四書讀本》，頁269。毛子水註釋，《論語今註今譯》，頁260-261）</span>「天命」一詞的涵義，在詩、書時期指的
+                </p>
+
+                <PageTag page={154} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  是上帝對「王」的命定，但孔子在此兩處所說的天命，則是由個人上說，以個人與天有直接的關係。<sup>148</sup><span style={cite}>（李杜，《中西哲學思想中的天璽與上帝》，頁61-62）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  黃孝光指出，儒家本以孔子為代表人物，然而揆諸典籍中，可發現，孔子對「天」的體認，顯然與宋明理學家不同。簡言之，孔子承認「天」是含有意志與位格的存在，故有「天喪予」、「獲罪於天，無所禱也」的說法；而宋儒的「天即理」，卻僅是偏重在其道德的義理性部分加以詮釋。孔子原本擁有的「天」的神秘性、神聖性，到後來的儒者手中就變質了。<sup>149</sup><span style={cite}>（黃孝光，〈中國文化的發展趨勢〉，《華人文化與福音研討會彙報》，頁115）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  牟宗三在談論新舊儒學之分時說到，宋朝以前是周孔並稱，宋朝以後是孔孟並稱。周孔並稱，孔子是堯舜禹湯文武周公之驥尾，但孔孟並稱，則是以孔子為教主。<sup>150</sup><span style={cite}>（牟宗三，《心體與性體》〔第一冊〕，頁13-14）</span>這裡看到一個儒家變質的線索，孔子有著對上帝信仰的根，源自堯舜禹湯文武周公，且集其大成，而成為中國的「至聖」。但新儒家卻沒有看到人的內心對上帝信仰的重要性，乃切除孔子以前的根，而以孔子的表象為根，以孔子作為新的教主，以致所能行出來的就落到下一層了。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  新儒家以為，捨上帝、取心性道德，是一種進步。卻不知這正是猶太人走的老路，猶太人捨上帝而就律法，以致一事無成，這是使徒保羅所下的斷語：「但以色列人追求律法的義，反得不著律法的義。這是什麼緣故呢？是因為他們不憑著信心求，只憑著行為求，他們正跌在那絆腳石上。」（羅九31-32）天主教也曾是如此，他們不以基督為本，另立彼得為第一任教皇，強調聖徒的功德，以致於走到律法主義的老路。
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <PageTag page={155} />
+                <span className="font-semibold text-amber-700 block">二、論語中的「神」</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  據前兩段所述，孔子關於「天」的言論，都是正面、積極的，且能藉之證實孔子擁有對「上帝」的信仰。但關於「神」，則有消極的與積極的兩種表達。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（一）消極的表達</p>
+                <p className="text-gray-700 leading-relaxed mb-1">1.樊遲問知。子曰，「務民之義；敬鬼神而遠之：可謂知矣。」（雍也第六）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">2.「子不語：怪力亂神。」（述而第七）</p>
+                <p className="text-gray-700 leading-relaxed mb-3">3.「季路問事鬼神。子曰，未能事人，焉能事鬼。」（先進第十一）</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  以上三例，「神」字並非獨立存在，而是「鬼神」或「亂神」相連。因此其層次與「天」所代表的「上帝」有所不同。「天」所代表的「上帝」是崇高的、獨立的；與「鬼神」或「亂神」相連的「神」，則是一種「靈界的存在」，並不一定是指「上帝」。這三例，仔細看上下文，可發現各有其特殊意義。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  第1例「敬鬼神」，是回答何謂「知」（知者，智也）<sup>151</sup><span style={cite}>（毛子水註釋，《論語今註今譯》，頁86）</span>。意思是：「想要有智慧、知識，就當敬畏神明而不迷信。」<sup>152</sup><span style={cite}>（馮友蘭，《中國哲學史》，頁84）</span>這樣看來「敬畏神明」並非不重要，而是重要的。正如聖經所說：「敬畏耶和華是智慧的開端」（詩一〇一10），「敬畏耶和華是知識的開端」（箴一7）。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  第2例「子不語：怪力亂神」。以正常的中文來看，「怪力亂神」是兩個詞，而非四個詞。「怪」與「亂」固然可作名詞，但多
+                </p>
+
+                <PageTag page={156} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  數是作形容詞，尤其分別與「力」、「神」這兩個名詞相連，用為形容詞實在是最自然的。所以，孔子不談的是「怪力」與「亂神」，這幾乎就是聖經中的「魔鬼、邪靈」。孔子不談「怪力、亂神」（即魔鬼、邪靈）是非常合理的，若因此說孔子不談有關「神」的事，那就是大大曲解了。從更廣的上下文，已知孔子非常注重「敬神、祭神」，怎會自己與自己矛盾，說「不談神」呢？
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  第3例「季路問事鬼神。子曰，未能事人，焉能事鬼。」季路所問的「事鬼神」，是指「祭祀」之事<sup>153</sup><span style={cite}>（毛子水註釋，《論語今註今譯》，頁165）</span>。孔子回答：「未能事人，焉能事鬼。」一般解為：「孔子不注重祭祀鬼神之事。」其實這句話當解為：「孔子說，祭祀鬼神之事是非常慎重的，人若不會服事人，就還沒有資格祭祀鬼神。」孔子看不看重「祭祀鬼神之事」呢？從別處可得到強有力的正面答案，例如禮記祭器篇所說：「孔子曰，誦詩三百，不足以一獻。一獻之禮，不足以大饗，大饗之禮，不足以大旅，大旅具矣，不足以饗帝。毋輕議禮！」<sup>154</sup><span style={cite}>（王夢鷗註譯，《禮記今註今譯上冊》，頁410）</span>在禮記祭義篇又說：「唯聖人為能饗帝，孝子為能饗親。」<sup>155</sup><span style={cite}>（王夢鷗註譯，《禮記今註今譯下冊》，頁748）</span>這話豈不是與「未能事人，焉能事鬼」互相呼應嗎？二者皆表明祭祀的重要與慎重。若根據「焉能事鬼」這話，推論孔子不看重祭祀之事，那就是完全顛倒了。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（二）積極的表達</p>
+                <p className="text-gray-700 leading-relaxed mb-1">1.「祭如在：祭神如神在。子曰：吾不與祭如不祭。」（八佾第三）</p>
+                <p className="text-gray-700 leading-relaxed">
+                  2.「子曰，禹，吾無閒然矣！菲飲食而致孝乎鬼神；惡衣服而
+                </p>
+
+                <PageTag page={157} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  致美乎黻冕；卑宮室而盡力乎溝洫。禹，吾無閒然矣！」（泰伯第八）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  第1例「祭神如神在」，意思是「祭神時，雖然看不見神，但要相信神就在那裡。」<sup>156</sup><span style={cite}>（毛子水註釋，《論語今註今譯》，頁35）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  第2例「菲飲食而致孝乎鬼神」，意思是「自己飲食菲薄，而對鬼神的祭祀卻很豐厚。」
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  以上兩例皆正面表達祭祀的重要，可看出孔子對祭祀有很高評價。<sup>157</sup><span style={cite}>（黃德理，《孔子與耶穌一論語ＶＳ聖經的軌跡》，頁236-238）</span>並且孔子有靈魂不滅之思想，所以他說：「非其鬼而祭之，諂也。」（為政）又說：「禹，吾無閒然矣！菲飲食而致孝乎鬼神。」（泰伯第八）所謂鬼者，靈魂不滅之祖先也。<sup>158</sup><span style={cite}>（範哲，《先秦諸子學》，頁56）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  另有兩個正面的例子：「子貢欲去告朔之餼羊。子曰：賜也，爾愛其羊；我愛其禮。」（八佾第三）「湯曰，予小子履，敢用玄牡，敢昭告于皇皇后帝：有罪不敢赦；帝臣不蔽。簡在帝心。」（堯曰第二十）這兩例，一為面對當代之事，一為引用古代之事，都表達出孔子對祭祀的看重。
+                </p>
+
+                <p className="font-bold text-amber-700 mb-2">小　結</p>
+                <p className="text-gray-700 leading-relaxed mb-1">
+                  孔子個人與「天」或「上帝」的關係，可歸納為八方面：<sup>159</sup><span style={cite}>（部分參考範哲，《先秦諸子學》，頁55-56）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-1">1.敬天：「吾誰欺？欺天乎？」（子罕第九）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">2.畏天：「君子有三畏，畏天命……」（季氏第十六）</p>
+                <p className="text-gray-700 leading-relaxed">3.祭天：「祭神如神在。子曰：吾不與，祭如不祭。」（八佾第三）</p>
+
+                <PageTag page={158} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1">4.禱天：「獲罪於天，無所禱也。」（八佾第三）「子疾病，子路請禱。……子曰：丘之禱久矣。」（述而第七）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">5.信天：「知我者，其天乎？」（憲問第十四）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">6.賴天：「天生德與予，桓魋其如予何。」（述而第七）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">7.順天：「顏淵死。子曰：噫！天喪予，天喪予！」（先進第十一）</p>
+                <p className="text-gray-700 leading-relaxed mb-3">8.法天：「子曰：予欲無言。……天何言哉？」（陽貨第十七）</p>
+                <p className="text-gray-700 leading-relaxed">
+                  由以上歸納，可以說，孔子乃是一位敬畏上帝、祭禱於上帝、相信仰賴上帝、順服效法上帝的人。孔子是否得救，並不在本文討論範圍，但可以說，孔子的確擁有一份對創造救贖之上帝的信仰。
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">貳、孟子的「帝與天」</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  孟子是孔子以後儒家最重要的人物，他在中國學術思想上有崇高的地位。他的「上帝觀」基本上乃承繼詩經及孔子的觀念，並進一步發展。<sup>160</sup><span style={cite}>（李杜，《中西哲學思想中的天璽與上帝》，頁73）</span>
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、神義性的「帝與天」</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  孟子與孔子一樣，較少說到「帝」，較多說到「天」。說到「帝」都是指「上帝」，說到「天」有不同涵義，其中第一種是神義性的，代表上帝，包括引述前人的話，及自己的陳述，詳列於下。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（一）引述前人的話</p>
+                <p className="text-gray-700 leading-relaxed mb-1">1.「詩云：畏天之威，于時保之。」（梁惠王第一）</p>
+                <p className="text-gray-700 leading-relaxed">2.「書曰：天降下民，作之君，作之師；惟曰：其助上帝，寵</p>
+
+                <PageTag page={159} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1">
+                  之四方，有罪無罪，惟我在，天下曷敢有越闕志。」（梁惠王第一）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-1">3.「太甲曰：天作孽，猶可違，自作孽，不可活。」（公孫丑、離婁）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">4.「孔子曰：大哉堯之為君，惟天為大，惟堯則之，蕩蕩乎民無能名焉。」（滕文公第三）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">5.「詩云：天之方蹶，無然泄泄。」（離婁第四）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">6.「詩云：商之孫子，其麗不億。上帝既命，侯于周服。侯服于周，天命靡常。」（離婁第四）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">7.「泰誓曰：天視自我民視，天聽自我民聽。」（萬章第五）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">8.「天之生此民也，使先知覺後知，使先覺覺後覺。……伊訓曰：天誅造攻自牧宮，朕載自亳。」（萬章第五）</p>
+                <p className="text-gray-700 leading-relaxed mb-3">9.「詩云：天生蒸民，有物有則。」（告子第六）</p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（二）自己的陳述</p>
+                <p className="text-gray-700 leading-relaxed mb-1">1.「以大事小，樂天者也；以小事大，畏天者也。樂天者保天下，畏天者保其國。」（梁惠王第一）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">2.「君子不怨天，不尤人。……孟子曰：五百年必有王者興，其間必有名世者。由周而來，七百有餘歲矣。以其數，則過矣；以其時考之，則可矣。夫天未欲平治天下也；如欲平治天下，當今之世，舍我其誰也？吾何為不豫哉！」（公孫丑第二）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">3.「孟子曰：西子蒙不潔，則人皆掩鼻而過之，雖有惡人，齋戒沐浴，可以事上帝。」（離婁第四）</p>
+                <p className="text-gray-700 leading-relaxed">
+                  4.「萬章曰：堯以天下與舜，有諸？孟子曰：否。天子不能以天下與人。然則舜有天下也，孰與之？曰：天與之。天與之者，諄諄然命之乎？曰：否。天不言，以行與事示之而已矣。曰：以行與事示之者，如之何？曰：天子能薦之於天，不能使天與之天下；諸侯能薦人與天子，不能
+                </p>
+
+                <PageTag page={160} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  使諸侯與之大夫。昔者堯薦舜於天，而天受之；暴之於民，而民受之；……使之主祭而百神享之，是天受之。使之主事而事治，百姓安之。是民受之也。」（萬章第五）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-1">5.「天將降大任於是人也，必先苦其心志，勞其筋骨，餓其體膚，空之其身，行弗亂其所為，所以動心忍性，增益其所不能。」（告子第六）</p>
+                <p className="text-gray-700 leading-relaxed mb-3">6.「存其心，養其性，所以事天也。」（盡心第七）</p>
+                <p className="text-gray-700 leading-relaxed">
+                  上列內容所說的「帝」與「天」都是指「上帝」。孟子將「天子薦人於天」、「諸侯薦人與天子」、「大夫薦人與諸侯」作類比，很清楚表明「天」是有位格、有意志的。他有客觀的「尊天、敬天」思想，但比起孔子，在個人主觀的「天人關係」上則比較少。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-3 mb-1 font-semibold">二、其他意義的「天」</p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（一）運命義的「天」</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  孟子所說的「天」，也有不少是指「天意」，是運命義的「天」。例如：
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-1">1.「君子創業垂統，為可繼也。若夫成功，則天也。」（梁惠王第一）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">2.「行或使之，止或尼之，行止，非人所能也。吾之不遇魯侯，天也。」（梁惠王第一）</p>
+                <p className="text-gray-700 leading-relaxed">3.「舜禹益相去久遠，其子之賢不肖，皆天也，非人之所能為也。」（萬章第五）</p>
+
+                <PageTag page={161} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（二）自然義的天</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  以天為自然，亦是繼承詩、書及孔子的觀念。例如：
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-1">1.「天油然作雲，沛然下雨。」（梁惠王第一）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">2.「天之高也，星辰之遠也。」（離婁第四）</p>
+                <p className="text-gray-700 leading-relaxed mb-3">3.「天時不如地利，地利不如人和。」（公孫丑第二）</p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（三）德義性的天</p>
+                <p className="text-gray-700 leading-relaxed mb-1">1.「仰不愧於天，俯不祚於人。」（盡心第七）</p>
+                <p className="text-gray-700 leading-relaxed mb-3">2.「且天之生物也，使之一本。」（滕文公第三）</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  李杜認為：傳統上，詩、書說「天生蒸民」的「天」乃是神義性的天，而孟子所說「仰不愧於天」的天，乃是自然的天，只強調其為德性的本源。<sup>161</sup><span style={cite}>（李杜，《中西哲學思想中的天璽與上帝》，頁78-79）</span>此種解釋，有其道理，但不一定只能這樣解釋。在聖經中，也有以「自然」代表「上帝」的情況。例如：「我要向山舉目，……我的幫助從造天地的耶和華而來。」（詩一二一1~2）「向山舉目」與「仰天」意思一樣，都面對著大自然，但真正面對的乃是超越大自然的上帝。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  另外，保羅向雅典人傳福音時也說：「祂從一本造出萬族的人，住在全地上。」（徒十七26）與孟子所說：「且天之生物也，使之一本。」意思一樣。此「天」雖可解釋為有德性的自然，但解釋為「上帝」其實更貼切。
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">參、墨子的「天帝觀」</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  墨子以天為有意志的人格神，其意旨可為君王效法。分五方面來看。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、天帝一神觀</p>
+                <p className="text-gray-700 leading-relaxed">
+                  「故昔三代聖王，禹湯文武，欲以天之為政於天子，明說天下
+                </p>
+
+                <PageTag page={162} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  之百姓，故莫不牓牛羊犬彘，絜為粢盛酒醴，以祭祀上帝鬼神，而求祈福於天。」（天志上）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「是故昔世三代之暴君，桀紂幽厲兼惡天下也，從而賦之，移其百姓之意焉，率以詬侮上帝山川鬼神，天以為不從其所愛而惡之，不從其所利而賊之，於是加其罰焉。」（天志下）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  以上兩個引文，都有「上帝」與「天」上下相應，表明二者相同。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">二、天為貴而知者</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「夫天不可為林谷幽閒無人，明必見之。」（天志上）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「故昔三代聖王，禹湯文武，欲以天之為政於天子……。我未嘗聞天之祈福於天子也。我所以知天之為政於天子者也。」（天志上）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「當若天子之貴諸侯……天為貴、天為知而已矣！然則義果自天出矣。」（天志中）
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  「子墨子曰：吾所以知天之貴且知於天子者有矣。曰：天子為善，天能賞之；天子為暴，天能罰之；天子有疾病禍祟，必齋戒沐浴，絜為酒醴粢盛，以祭祀天鬼，則天能除去之。」（天志中）
+                </p>
+
+                <PageTag page={163} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">三、天為主宰者</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「是以天之為寒熱也，調陰陽雨露也，時五穀孰，六畜遂，疾菑戾疫凶饑則不至。」（天志中）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「且吾所以知天之愛民之厚者有矣。曰：以磨為日月星辰，以昭道之；制為四時春秋冬夏，以紀綱之；雷降雪霜雨露以長遂五穀麻絲，使民得而財利之；列為山川谿谷播賦百事，以臨司民之善否：為王公侯伯，使之賞賢而罰暴；賊金木鳥獸從事乎五穀麻絲，以為民衣食之財。自古及今未嘗不有此也。」（天志中）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-1">四、天為賞罰者</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「順天意者兼相愛，交相利，必得賞；反天意者，別相惡，交相賊，必得罰。」（天志上）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「殺一不辜者，必有一不祥。殺不辜者誰也？則人也。予之不祥者誰也？則天也。」（天志上）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「愛人利人順天之意得天之賞者有之；憎人賊人反天意得天之罰者亦有之。」（天志中）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「愛人利人者，天必福之；惡人賊人者，天必禍之。」（法儀）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「昔之聖王禹湯文武，兼愛天下之百姓，率以尊天事鬼，其利多人，故天福之，使立為天子，天下諸侯，皆賓事之。」（法儀）
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">五、天為兼愛者</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「然則何以知天之愛天下之百姓？以其兼而明之。何以知其兼而明之？以其兼而有之。何以知其兼而有之？以其兼而食焉。何以之其兼而食焉？四海之內，粒食之民，莫不牓牛羊犬彘，絜為
+                </p>
+
+                <PageTag page={164} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  粢盛酒醴，以祭於上帝鬼神，……。且吾言殺一不辜者，必有一不祥。殺不辜者誰也？則人也。予之不祥者誰也？則天也。若以天為不愛天下之百姓，則何故以人與相殺而天與之不祥。此我所以知天之愛天下之百姓也。」（天志上）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「今夫天兼天下而愛之，撽遂萬物以利之，若豪之末，無非天之所為也。」（天志中）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  勞思光也指出：「墨子順流行信仰而立說，於是有『天志』觀念；認為有一有意志之『天』，能予人以賞罰。然後再說明『天志』之所向，以為價值標準。此顯然是「人格神」及「權威神」之觀念。」<sup>162</sup><span style={cite}>（勞思光，《中國文化要義新編》，頁31）</span>所以，墨子所說的「天」，乃是神義性的，是有意志
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  的人格神。這位「天」最大的特點在「愛」，「天」以其明知、供應、賞罰，來落實祂的愛。這種愛的能力及行動，與舊約的上帝接近一致。但這無法相比於新約時代上帝兒子基督耶穌的十架之愛。人從一般啟示及舊約的啟示，能知道當效法天去愛，君王效法天而愛民，百姓效法天而愛人。但知道不一定能做到，所以，新約的福音是華人及全人類的需要。基督來了，使舊約律法得以成全，也要使五經諸子的理想得以實現。
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">肆、老莊的「天」與「道」</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  漢代的人以莊子與老子同屬道家，其思想相近。故本段放在一起探討，二人雖也言「天」，但更多轉向「道」的哲學。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、神義性的天</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  老子、莊子對傳統上以天為神的觀念仍有襲用，但不多，如以下諸例：
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-1">「天將救之，以慈衛之。」（老子六十七章）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">「是謂配天，古之極。」（六十八章）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">「天之所惡，孰知其故。」（七十三章）</p>
+                <p className="text-gray-700 leading-relaxed mb-1">「天道無親，常與善人。」（七十九章）</p>
+                <p className="text-gray-700 leading-relaxed mb-3">「知天之所為，知人之所為者，至矣。」（莊子大宗師）<sup>163</sup><span style={cite}>（歐陽景賢、歐陽超穎譯，《莊子譯註》，頁215）</span></p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">二、次於道的天、帝</p>
+                <p className="text-gray-700 leading-relaxed">
+                  莊子思想中的天、帝與詩、書不同，有時天、帝已不是至高神，亦不是獨立於天地之外的主宰者，而是後於道的一種存在。老
+                </p>
+
+                <PageTag page={165} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  子也有這種用法。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「夫道有情有信，無為無形，可傳而不可受，可得而不可見。自本自根，未有天地自古以固存。神鬼神帝生天生地。」（大宗師）神：申也。<sup>164</sup><span style={cite}>（歐陽景賢、歐陽超穎譯，《莊子譯註》，頁237-239）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「南海之帝為儵，北海之帝為忽，中央之帝為渾沌。」（應帝王）<sup>165</sup><span style={cite}>（歐陽景賢、歐陽超穎譯，《莊子譯註》，頁308）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「吾不知其誰之子，象帝之先。」（老子四章）語譯：「我不知誰產生他，他（道）先於一切有形之帝。」<sup>166</sup><span style={cite}>（遠志明，《老子ＶＳ聖經一跨越時空的迎候》，頁77-78）</span>
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">三、作為萬有本源的道</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  老子與莊子更多注重「道」，其為萬有本源，舉例如下：
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「道可道，非常道；名可名，非常名。無，名天地之始；有，名萬物之母。……此兩者，同出而異名。」（一章）語譯：「可用言詞表達的道，就不是永恆之道；可說得出來的名，就不是永恆之名。無，是天地的本始；有，是萬物的根源。……無和有這兩者，同一本源而不同名稱。」<sup>167</sup><span style={cite}>（陳鼓應註釋，《老子今註今譯》，頁47-52）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  「有物混成，先天地生。寂兮寥兮，獨立而不改，周行而不殆，可以為天下母。無不知其名，字之曰道，強為之名曰大。………人法地，地法天，天法道，道法自然。」（二十五章）<sup>168</sup><span style={cite}>（陳鼓應註釋，《老子今註今譯》，頁145）</span>這並不是說，於道之上，還有一個「自然」，為道所取法。「自然」是一種形容，而不是另一種東西，可說是「自然而然」，或「無為」。<sup>169</sup><span style={cite}>（陳鼓應註釋，《老子今註今譯》，頁149）</span>「自然」一詞在《老子》中共出現五次，皆指「自
+                </p>
+
+                <PageTag page={166} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  在本相」，而非指今日所謂的「大自然」。而且道在天地之先，同於天地的「自然」還未存在。因此「道法自然」可譯為：「道純任自然」或「道以自身為法度」。<sup>170</sup><span style={cite}>（遠志明，《老子ＶＳ聖經──跨越時空的迎候》，頁64-66。陳鼓應註釋，《老子今註今譯》，頁150）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「反者道之動，弱者道之用。天下萬物生於有，有生於無。」（四十章）反：返也，復也。<sup>171</sup><span style={cite}>（陳鼓應註釋，《老子今註今譯》，頁201）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「道生一，一生二，二生三，三生萬物。」（四十二章）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「夫道有情有信，無為無形，可傳而不可受，可得而不可見。自本自根，未有天地，自古以固存。神鬼神帝，生天生地。在太極之先而不為高，在六極之下而不為深，先天地生而不為久，長於上古而不為老。」（大宗師）<sup>172</sup><span style={cite}>（歐陽景賢、歐陽超穎譯，《莊子譯註》，頁237）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  聖經箴言有一段話是「智慧」的自白，其特質、工作與老莊所說的「道」相似：「在耶和華造化的起頭，在太初創造萬物之先，就有了我。從亙古、從太初、未有世界以前、我已被立。沒有深淵、沒有大水的泉源、我已生出。大山未曾奠定、小山未有之先、我已生出。耶和華還沒有創造大地、和田野、並世上的土質、我已生出。他立高天、我在那裏、他在淵面的周圍、劃出圓圈、上使穹蒼堅硬、下使淵源穩固、為滄海定出界限、使水不越過他的命令、立定大地的根基。那時、我在他那裏為工師、日日為他所喜愛、常常在他面前踊躍、踊躍在他為人豫備可住之地、也喜悅住在世人之間。眾子阿、現在要聽從我、因為謹守我道的、便為有福。要聽教訓、就得智慧、不可棄絕。聽從我、日日在我門口仰望、在我門框旁邊等候的、那人便為有福。因為尋得我的、就尋得生命、也必蒙
+                </p>
+
+                <PageTag page={167} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  耶和華的恩惠。得罪我的、卻害了自己的性命．恨惡我的、都喜愛死亡。」（箴八22~36）
+                </p>
+
+                <p className="font-bold text-amber-700 mb-2">小　結</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  在老子、莊子所處的社會中，「天」已經逐漸自然化，「神、帝」已經不再是獨一的，而有了許多神、許多帝。因此，他們不以「天」或「帝」為至高神或萬有之源，乃另以「道」來表明萬有之源。<sup>173</sup><span style={cite}>（陳鼓應註釋，《老子今註今譯》，頁145。遠志明，《神州懺悔錄─上帝與五千年中國》，頁105）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  老子、莊子所說的道，與聖經所說的道，甚為相似。遠志明在《神州懺悔錄─上帝與五千年中國》、《老子vs聖經─跨越時空的迎候》二書中給予極正面的解釋，認為老子所說的道即為聖經所說的道。<sup>174</sup><span style={cite}>（遠志明，《老子ＶＳ聖經─跨越時空的迎候》，頁51-60。遠志明，《神州懺悔錄─上帝與五千年中國》，頁100-120）</span>這「道」與聖經中的道是否完全相同？這是一個大課題，本論文不作詳細討論。本文所肯定的是，老子仍有「尊天、敬天」的思想，但不像孔子與「天」有個人關係，老子、莊子轉向探討「道」，這「道」是一個超越性及貫穿性的原則。<sup>175</sup><span style={cite}>（李杜，《中西哲學思想中的天璽與上帝》，頁126-138）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  聖經箴言八章所說的「智慧」，以比喻的方式呈現，因此我們不能完全肯定「智慧」的位格。我們能確知有位格的道：「太初有道，道與上帝同在，道就是上帝」（約一1），乃是由於新約聖經清楚的見證：「道成了肉身，住在我們中間，充充滿滿地有恩典有真理。我們也見過他的榮光，正是父獨生子的榮光。」（約一14）
+                </p>
+              </div>
+            </div>
+
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-700">
-              本章第四節「諸子的『上帝觀』」與第五節「聖經的『上帝觀』」尚在建置中，將陸續更新。
+              本章第五節「聖經的『上帝觀』」尚在建置中，將陸續更新。
             </div>
 
           </div>
