@@ -186,6 +186,103 @@ export default function Book33Ch2() {
               </div>
             </div>
 
+            <div>
+              <h3 className="font-bold text-amber-800 text-lg mb-3">第二節　古文中的「上帝觀」</h3>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                據考古學者考證從中國發掘出來的甲骨文，中外學者幾乎一致承認，中華民族最初便有「昭事上帝」的信仰。中國先民早就相信
+              </p>
+
+              <PageTag page={116} />
+              <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                一位創造天地、主宰萬物、賞善罰惡、聰明正直的上帝，並敬畏而崇拜之。<sup>33</sup><span style={cite}>（童力生，《原道》，頁9；李獵生，《聖經與中國文化》，頁47）</span>這種宗教思想可證諸數量極多的甲骨卜辭及中國各種古籍。<sup>34</sup><span style={cite}>（童力生，《原道》，頁10-11）</span>本節所謂「古文」，主要包括「甲骨文」及「金文」。甲骨文是寫或刻在龜的腹甲、背甲和牛羊肩胛骨上的文字，用於占卜。商朝以前，專用牛羊的肩胛骨，商朝後期，盤庚遷殷以後稱為殷代，這時兼用牛骨及龜骨。<sup>35</sup><span style={cite}>（董作賓，《甲骨學六十年》，頁2）</span>1899年起，從殷代都邑故墟（今河南省安陽縣小屯村）陸續出土十幾萬片<sup>36</sup><span style={cite}>（董作賓，《甲骨學六十年》，頁14,20,135-137）</span>，經多年研究可識別之字，累計約兩千。<sup>37</sup><span style={cite}>（董作賓，《甲骨學六十年》，頁11）</span>中國古人後來也把紀念文字鑄在銅器上，放在宗廟或作為貴族的陪葬品。古人把「銅」叫「金」，因此，這些銅器上的文字叫「金文」。<sup>38</sup><span style={cite}>（周金聲，《基督教與中國文化》，頁371）</span>以下舉例有「上帝、帝」之卜辭、文字，按性質分別說明。
+              </p>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">壹、甲骨文中的「上帝」</span>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、上帝有賜福降災之權柄</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「上帝若，王有又。」<sup>39</sup><span style={cite}>（董作賓，《殷虛文字甲編》第1164塊。中央研究院。1948）</span>「若」同「諾」，「又」即「祐」；譯文：「上帝承諾，王會受到保祐。」
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  「帝其福王。」<sup>40</sup><span style={cite}>（羅振玉編，《殷虛書契後編》，卷下24頁第12塊。1916）</span>「帝其作王禍，帝弗及作王禍。」<sup>41</sup><span style={cite}>（董作賓，《殷虛文字乙編》第1707&amp;4861塊）</span>
+                </p>
+
+                <PageTag page={117} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  「上帝降艱。」<sup>42</sup><span style={cite}>（胡厚宣編，《甲骨續存》，第一卷168塊。1955）</span>譯文：「上帝要降艱難給人民了。」在其他甲骨文又有：「帝其降艱。」<sup>43</sup><span style={cite}>（羅振玉編，《殷虛書契前編》，卷三24頁第四塊）</span>「帝其降我艱。」<sup>44</sup><span style={cite}>（董作賓，《殷虛文字甲編》第766塊）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「既繫於上帝。」「繫」即「繫」；譯文：「這一切都連接於上帝。」<sup>45</sup><span style={cite}>（黃濬編，《鄴中片語》，卷三上第32塊。1942）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  從以上數例可知，殷代人深信上帝有賜福降災之權柄，祂掌管君王與人民的福禍艱難，他們的生活、命運乃是連結於上帝的。這相似於摩西向以色列百姓所宣告的：上帝能賜福，也能降災，在乎百姓是否遵行神的誡命。（申廿八1，15）也像保羅所說：「我們生活、動作、存留都在乎祂。」（徒十七28）並由第一例可看出，當時的君王在上帝前有特殊蒙福的地位，好像以色列王是上帝的受膏者，蒙上帝特別保護：「現在我知道耶和華救護祂的受膏者，必從祂的聖天上應允他，用右手的能力救護他。」（詩二十6）
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">二、上帝以命令掌管天氣風雨</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「帝令雨足年，帝令雨弗及年。」<sup>46</sup><span style={cite}>（羅振玉編，《殷虛書契前編》，卷一50頁第一塊。1931）</span>譯文：「上帝令這一年雨水充足；上帝令這一年雨水不充足。」
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「今三月，帝令多雨。」<sup>47</sup><span style={cite}>（羅振玉編，《殷虛書契前編》，卷三18頁第五塊）</span>「今二月，帝不令雨。」<sup>48</sup><span style={cite}>（劉鶚，《鐵雲藏龜》，123頁第一塊。台北：藝文印書館。1904）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  「翼癸卯，帝其令風；翼癸卯，帝不其令風。」<sup>49</sup><span style={cite}>（董作賓，《殷虛文字乙編》第2452&amp;3094塊。1943）</span>「翼」同「翌」，指「明天、後天、大後天」。<sup>50</sup><span style={cite}>（周金聲，《基督教與中國文化》，頁368）</span>
+                </p>
+
+                <PageTag page={118} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  「帝其于今十三月，令雨；帝其于今一月令雨。」<sup>51</sup><span style={cite}>（董作賓，《殷虛文字乙編》第3283塊）</span>十三月為閏月，「雩」同「啟」，天晴之意。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  由以上數例可知，殷代人深信上帝有權柄掌管天氣。文中的「令」字是很傳神的，相似於聖經中的表達方式：「祂以風為使者，以火焰為僕役。」（詩一〇四4）「因祂一吩咐，狂風就起來，海中的波浪也揚起；……祂使狂風止息，波浪就平靜。」（詩一〇七25，29）「祂擲下冰雹如碎渣，祂發出寒冷，誰能當得起呢。祂一出令，這些就都消化；祂使風颳起，水便流動。」（詩一四七17~18）「耶穌斥責風和海，風和海就大大的平靜了。眾人希奇說，這是怎樣的人，連風和海也聽從他了。」（太八26~27）
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">三、好君王或義人死後到上帝那裡</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「下乙賓于帝，咸不賓于帝。」<sup>52</sup><span style={cite}>（董作賓，《殷虛文字乙編》第7197塊）</span>譯文：「下乙死後可到上帝那裡，咸死後不能到上帝那裡。」
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  「下乙不賓于帝，大甲賓于帝。」<sup>53</sup><span style={cite}>（董作賓，《殷虛文字乙編》第7434塊）</span>譯文：「下乙死後不能到上帝那裡，大甲死後可到上帝那裡。」上帝自稱：「我是亞伯拉罕的上帝、以撒的上帝、雅各的上帝。」（出三15）耶穌根據此說明復活的真理，指出：「上帝是活人的上帝，不是死人的上帝。」意思是亞伯拉罕、以撒、雅各雖然死了，但他們在上帝那裡是活著的（太廿二29~32）。這是以色列人自古所相信的。古時中國人有這種信仰，是巧合，還是有其古老的淵源，來自挪亞？根據聖經，中國人必是（現存人類都是）挪亞的
+                </p>
+
+                <PageTag page={119} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  後代，而挪亞知道以諾與上帝同行三百年，上帝將他取去，永遠與上帝同在（創五24）；也知道曾在伊甸園有生命樹，能使人永遠與上帝在一起。這種對永生的盼望，應是人類共通的，因為都是亞當、挪亞的後裔。他們傳遞生命、信仰，並傳說古史給後代。以色列人有亞伯拉罕起始的眾先知，有多次多方的特殊啟示（來一1），中國人沒有這種先知，所以中國的記載比較不清晰，但仍可看出先祖的同源性。
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">貳、金文中的「上帝」</span>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、上帝保護求告祂的人</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  宗周鐘：「惟皇上帝百神，保余小子。」譯文：「偉大的上帝及眾神（眾天使天軍），保護我這個小子。」「小子」是周代帝王在上帝面前的謙稱，意為「上帝的小兒子」。<sup>54</sup><span style={cite}>（周金聲，《基督教與中國文化》，頁371-372）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  中國有「百神」，並不等於是多神信仰，因上帝在「百神」之上，差遣使用「百神」，所以仍屬一神信仰。正如聖經中的上帝，乃是「萬軍之耶和華」（賽一24）。祂差遣「眾使者」四圍安營保護敬畏神的人（詩三四7）。又說：「耶和華比萬神都大。」（出十八11）「祂在萬神之上當受敬畏。」（代上十六25）又稱上帝為「萬神之神」（但十一36）。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-3 mb-1 font-semibold">二、君王死後在天上監視百姓</p>
+                <p className="text-gray-700 leading-relaxed">
+                  大豐簋：「事喜上帝，文王監在上。」譯文：「事奉我們喜愛的上帝，文王也在天上看著我們。」猶鐘：「先王其嚴，在帝左右。」叔人鐘：「號號成唐，有嚴在帝所。」譯文：「我們對成湯
+                </p>
+
+                <PageTag page={120} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  有畏懼，因為他莊嚴地與上帝同在。」<sup>55</sup><span style={cite}>（周金聲，《基督教與中國文化》，頁272-373）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  中國古人相信好君王在上帝那裡活著，相似於以色列人相信亞伯拉罕、以撒、雅各在上帝那裡活著。然而以色列人雖相信先祖在上帝那裡，卻沒有像中國人那樣，以為先王在看著後代人民。這是中國人的一個偏差──從崇拜上帝延伸至崇拜先王、先祖。但我們看羅馬天主教的發展，即使原是一神信仰，而且有救主耶穌基督的啟示，卻也掉入聖徒崇拜的錯誤裡面，在敬拜、禱告上帝的同時，也敬拜、禱告馬利亞、保羅、彼得……等徒。這與中國人從敬拜上帝延伸至敬拜先王、先祖，何其相似！
+                </p>
+
+                <p className="font-bold text-amber-700 mb-2">小　結</p>
+                <p className="text-gray-700 leading-relaxed">
+                  從以上古文來看，中國人所相信的上帝，可歸納為三方面：（1）上帝的權柄與工作包括賜福降災、掌管天氣、保護屬祂的人；（2）上帝做事的方式是發號施令及差遣使者；（3）上帝所在的地方是實在的，人離開世界可到祂那裡去。<sup>56</sup><span style={cite}>（何星亮著，《中國自然神與自然崇拜》，頁56有相似的歸納）</span>這些特點與聖經所啟示的上帝相當地一致。可幫助我們合理地推測，中國古人相信一位治理世界的上帝。
+                </p>
+              </div>
+            </div>
+
           </div>
         )}
       </div>
