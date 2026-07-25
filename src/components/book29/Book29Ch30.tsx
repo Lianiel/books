@@ -204,6 +204,109 @@ export default function Book29Ch30() {
                 <p className="text-gray-700 leading-relaxed">{q}</p>
               </div>
             ))}
+
+            <div style={{ fontSize: '16px' }} className="mt-2 bg-amber-50 border border-amber-100 rounded-lg p-4 space-y-3 text-gray-700 leading-relaxed">
+              <p className="font-semibold text-amber-700">第一題參考答案</p>
+
+              <div>
+                <p className="font-semibold text-indigo-700 mb-1">一、指天使</p>
+                <p className="mb-2">在約伯記等較早期的經文中，「神的眾子」明顯是指天上的靈界受造者，也就是天使。</p>
+
+                <p className="font-medium text-gray-600">約伯記一章6節</p>
+                <p className="italic mb-1">有一天，神的眾子來侍立在耶和華面前，撒但也來在其中。</p>
+                <p className="mb-2">這裡的「神的眾子」是在耶和華面前侍立的天上眾靈，因此通常理解為天使；撒但也出現在其中。</p>
+
+                <p className="font-medium text-gray-600">約伯記三十八章4、7節</p>
+                <p className="italic mb-1">我立大地根基的時候，你在哪裏呢？你若有聰明，只管說吧！那時，晨星一同歌唱；神的眾子也都歡呼。</p>
+                <p className="mb-2">神立大地根基時，人類尚未被造，但「神的眾子」已經在歡呼，因此這裡不可能是指人，而是指天使。</p>
+
+                <p className="font-medium text-gray-600">詩篇八十九篇6節</p>
+                <p className="italic mb-1">在天空誰能比耶和華呢？神的眾子中，誰能像耶和華呢？</p>
+                <p>經文所描寫的是天空中的群體，所以這裡的「神的眾子」也可理解為天使。他們雖有榮耀，卻不能與耶和華相比。</p>
+              </div>
+
+              <div>
+                <p className="font-semibold text-indigo-700 mb-1">二、指信神的人、神的子民、屬神的百姓</p>
+                <p className="mb-2">「神的兒子」也可以表示與神有立約關係、屬於神的百姓，包括舊約的以色列人，以及新約中信靠基督的人。</p>
+
+                <p className="font-medium text-gray-600">出埃及記四章22節</p>
+                <p className="italic mb-1">你要對法老說：「耶和華這樣說：以色列是我的兒子，我的長子。」</p>
+                <p className="mb-2">這裡雖然使用單數「我的兒子」，卻是指整個以色列民族。重點不是肉身上的生育關係，而是以色列蒙神揀選、與神立約，屬於神。</p>
+
+                <p className="font-medium text-gray-600">何西阿書一章10節</p>
+                <p className="italic mb-1">從前在甚麼地方對他們說：「你們不是我的子民」，將來在那裏必對他們說：「你們是永生神的兒子。」</p>
+                <p className="mb-2">這裡的「永生神的兒子」是指蒙神恢復、重新成為神子民的人。</p>
+
+                <p className="font-medium text-gray-600">羅馬書八章14節</p>
+                <p className="italic mb-1">因為凡被神的靈引導的，都是神的兒子。</p>
+                <p className="mb-2">在新約中，信靠基督、被聖靈引導的人，被稱為神的兒女。</p>
+
+                <p className="font-medium text-gray-600">加拉太書三章26節</p>
+                <p className="italic mb-1">所以，你們因信基督耶穌都是神的兒子。</p>
+                <p className="mb-2">這裡清楚說明，人不是因血統或身分，而是因信基督成為神的兒女。</p>
+
+                <p>因此，這一類用法可以概括為：以色列、信神的人、神的子民或屬神的百姓。</p>
+              </div>
+
+              <div>
+                <p className="font-semibold text-indigo-700 mb-1">三、指君王、審判官或掌權者</p>
+                <p className="mb-2">古代近東的君王常被稱為神明的兒子；聖經有些地方也以「神」或「至高者的兒子」來形容在地上代表神施行治理與審判的人。</p>
+
+                <p className="font-medium text-gray-600">詩篇八十二篇1節</p>
+                <p className="italic mb-1">神站在有權力者的會中，在諸神中行審判。</p>
+                <p className="mb-2">這裡的「諸神」可以理解為地上的審判官或掌權者。他們不是本質上成為神，而是因承擔神所授予的審判職分，以神的權柄治理百姓。</p>
+
+                <p className="font-medium text-gray-600">詩篇八十二篇6節</p>
+                <p className="italic mb-1">我曾說：「你們是神，都是至高者的兒子。」</p>
+                <p className="mb-1">這些人被稱為「至高者的兒子」，但下文隨即指出：</p>
+                <p className="italic mb-1">然而，你們要死，與世人一樣；要仆倒，像王子中的一位。（詩八十二7）</p>
+                <p className="mb-2">可見他們並非真正具有神性，而是地上的君王、審判官或掌權者；他們若不按公義審判，也要受到神的審判。</p>
+
+                <p className="font-medium text-gray-600">約翰福音十章34至35節</p>
+                <p className="mb-1">耶穌引用詩篇八十二篇說：</p>
+                <p className="italic mb-2">你們的律法上豈不是寫着「我曾說你們是神」嗎？經上的話是不能廢的；若那些承受神道的人尚且稱為神……</p>
+                <p className="mb-2">耶穌的引用表明，那些領受神話語、代表神執行權柄的人，可以在職分意義上被稱為「神」，並不是說他們具有神的本質。</p>
+
+                <p className="font-medium text-gray-600">出埃及記二十一章6節；二十二章8至9節</p>
+                <p>這些經文中的「審判官」，希伯來原文使用的是 אֱלֹהִים（Elohim），也就是通常翻譯為「神」的字。這說明地上的審判官因代表神施行審判，在特定語境中可以用「神」或「神的兒子」一類稱號來描述。</p>
+              </div>
+
+              <div>
+                <p className="font-semibold text-indigo-700 mb-2">簡單整理</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse text-left">
+                    <thead>
+                      <tr className="bg-amber-100">
+                        <th className="border border-amber-200 px-3 py-2">用法</th>
+                        <th className="border border-amber-200 px-3 py-2">所指對象</th>
+                        <th className="border border-amber-200 px-3 py-2">主要經文</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="border border-amber-200 px-3 py-2">天使</td>
+                        <td className="border border-amber-200 px-3 py-2">天上的靈界受造者</td>
+                        <td className="border border-amber-200 px-3 py-2">伯一6；三十八4、7；詩八十九6</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-amber-200 px-3 py-2">神的子民</td>
+                        <td className="border border-amber-200 px-3 py-2">以色列及信靠神的人</td>
+                        <td className="border border-amber-200 px-3 py-2">出四22；何一10；羅八14；加三26</td>
+                      </tr>
+                      <tr>
+                        <td className="border border-amber-200 px-3 py-2">掌權者</td>
+                        <td className="border border-amber-200 px-3 py-2">君王、審判官、治理者</td>
+                        <td className="border border-amber-200 px-3 py-2">詩八十二1、6；約十34–35；出二十一6；二十二8–9</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <p>
+                所以，「神的兒子們」不是一個在所有經文中都只能指同一對象的固定稱呼。解釋創世記六章1至4節時，必須再根據經文年代、上下文和整段敘事，判斷它究竟是指天使、屬神的百姓，還是當時的君王與掌權者。莊東傑博士在書中接著正是依照這三種用法，分析創世記六章的三種主要解釋。
+              </p>
+            </div>
           </div>
         )}
       </div>
