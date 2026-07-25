@@ -704,6 +704,176 @@ export default function Book33Ch2() {
                   從以上所引，可清楚看到「祭祀上帝」之禮，在周代當時何等重要。一些學者認為孔子不信仰敬拜上帝，實在是一種片面的曲解。從全部禮記的內容來看，不僅包含對上帝的信仰，而且與聖經所記的祭祀之禮，多所相符。這也是古代華人信仰上帝的明證。
                 </p>
               </div>
+
+              <div>
+                <span className="font-semibold text-amber-700 block">伍、五經上帝觀歸納</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  由以上的資料及解說，可歸納五經中的上帝觀，從「天帝一神觀」、「上帝與人的關係」、「天字的不同涵義」等三方面說明如下：
+                </p>
+
+                <PageTag page={144} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、天帝一神觀<sup>127</sup><span style={cite}>（本段參考整理自：李杜，《中西哲學思想中的天璽與上帝》，頁16-19）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  周人以天帝為至高神，天與帝的德性彼此相同，於詩、書中有明顯的記述。天與帝皆為同一位至高神，而不是不同的兩位神。在詩、書中可從三方面證之：
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（一）天命與帝命同義而可以互用</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  例如，有關文王受命的記述，用了四次天命，二次帝命；甚至詩大雅文王篇在同一節中以天命與帝命並用於文王受命的同一事同一意義上。<sup>128</sup><span style={cite}>（詩大雅文王篇：「穆穆文王，於緝熙敬止，假哉天命，有商孫子，商之孫子，其麗不億，上帝既命，侯於周服，侯服於周，天命靡常。」）</span>
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（二）天與帝合稱或並稱</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  例如，「昊天上帝，則不我遠。」（詩大雅雲漢）「皇天上帝，改厥元子。」（書召誥）「我不敢寧于上帝命，弗永遠念天威。」（書君奭）
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（三）天與帝的德行相同</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  天愛民，帝亦愛民；天降命於有德的人為王，帝亦降命於有德的人為王；天與人感格，帝亦與人感格；天降喪亂以刑罰失德的王，帝亦降喪亂以刑罰失德的王；天歆享王者的祭祀，帝亦歆享王者的祭祀。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">二、上帝與人的關係</p>
+                <p className="text-gray-700 leading-relaxed">
+                  從本節各段，可歸納上帝與人的關係，分成下列五方面。
+                </p>
+
+                <PageTag page={145} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（一）上帝創造人</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  人的本源為何？這是人生一大問題，詩經對此有簡明的回答：人是由天所生。也可以說：人是由上帝所造。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「天生蒸民，有物有則。民之秉彝，好是懿德。」（詩大雅蒸民篇）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「天生蒸民，其命匪諶。」（詩大雅蕩篇）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  《詩大雅蒸民篇》的話，除了說明人的由來外，更成為儒家性善說主要根據之一。<sup>129</sup><span style={cite}>（李杜，《中西哲學思想中的天璽與上帝》，頁21）</span>按聖經所說，上帝照著自己的形像造人（創一27），即使人犯罪後，也仍然有神的形像（創九6）。因此，「民之秉彝，好是懿德」，或「人性本善」，從這一個角度說，乃是對的。而《詩大雅蕩篇》說到「其命匪諶」，意思是「人民的遭遇不確定」，則正好說到「罪惡」所帶來的影響。因此，從另一個角度說，罪惡的普遍存在也是事實。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（二）上帝愛人民</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  上帝是一位愛民的神，五經中有如下的記述：
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「神之弔矣，遺爾多福，民之貿矣，日用飲食。」（詩小雅天保篇）弔：愛憐。遺：賜給。<sup>130</sup><span style={cite}>（馬持盈，《詩經今註今譯》，頁265）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「皇矣上帝，臨下有赫。監視四方，求民之莫。」（詩大雅皇矣篇）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「天亦哀于四方民，其眷命用懋。」（尚書召誥）
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  《尚書召誥》所說的「四方民」指所有的人，中國詩、書中的上帝為超氏族界線的至高神，故其愛普及於所有的人。在中國詩、書
+                </p>
+
+                <PageTag page={146} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  中，上帝的愛藉著有德的王者而表現。上帝降命於有德的人為王，為人民的統治者，以表示上帝的愛。文王的受命即是如此：「維此文王，小心翼翼，昭事上帝，聿懷多福。」（詩大雅大明篇）王為上帝在地上的代表，周人因此稱王為天子。天子代表上帝統治萬民，亦代表萬民祭祀上帝。<sup>131</sup><span style={cite}>（李杜，《中西哲學思想中的天璽與上帝》，頁22-23）</span>此與聖經中的彌賽亞思想相似一神興起大衛、所羅門牧養以色列百姓，最後賜下神子基督作萬民的牧者。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（三）上帝接近人</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  神人感格是天人關係中一個重要的課題。五經中的記述如下：
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「維此王季，帝度其心。」（詩大雅皇矣篇）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「帝謂文王，無然畔援，無然歆羨。」（詩大雅皇矣篇）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「上帝臨女。」（詩大雅大明篇）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  五經中有關天人關係，只限於上帝與祂所感命的王有感格，不是與每一個人都有感格。這與舊約聖經所記相似，僅有挪亞、亞伯拉罕、以撒、雅各、約瑟、摩西、約書亞、撒母耳、大衛……等領袖或先知、祭司與上帝有感格，不是每一個以色列百姓都與上帝有感格。<sup>132</sup><span style={cite}>（李杜，《中西哲學思想中的天璽與上帝》，頁24-25）</span>
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（四）上帝享祭祀</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「我將我享，為羊為牛，維天其右之，儀式刑文王之典，日靖四方，伊嘏文王，記右饗之，我其夙夜，畏天之威，于時保之。」（詩周頌）
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  「聖人亨以享上帝。說以利貞，順乎天而應乎人。」（易下
+                </p>
+
+                <PageTag page={147} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  經）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  依五經所記，上帝歆享人的祭祀與舊約聖經有許多相同點：只有天子可以祭祀上帝，如同以色列人只有少數君王及祭司可以獻祭；二者所用祭物都非常講究，必須沒有瑕疵的牲口才可以，並且都以牛為主要的祭物；祭物固然重要，獻祭的人也很重要。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（五）上帝降福禍</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「天降喪亂，滅我立王。」（詩大雅桑柔）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「天毒降災荒殷邦。」（商書微子）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「有夏多罪，天命殛之。」（商書湯誓）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「惟上帝不常，作善者降之百祥；作不善者降之百殃。」（書伊訓）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  在五經中，上帝清楚人世間的善惡，按善惡給予獎賞與刑罰。特別是根據君王的好壞，決定何時更換朝代。在聖經中，神與人的關係也是如此，世人犯罪，曾降洪水（創六12~13）。以色列犯罪，使之遭受飢荒，甚至被擄（申卅八45，64）。君王犯罪，更換君王（王上十一9~13）。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">三、「天」字的不同涵義</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  周人以「天」與「帝」為一位至高神，但「天」字除了具有神性的涵義外，同時具有其他涵義。可歸納為四種。<sup>133</sup><span style={cite}>（李杜，《中西哲學思想中的天璽與上帝》，頁30-34）</span>
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（一）神義性的天</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  1.連著「命」字以表示一意志者。如天命誅之。（書牧誓）
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  2.作為自動詞的主詞以表示一意志者。如天保爾定。（詩小雅
+                </p>
+
+                <PageTag page={148} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  天保）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  3.作為介系詞的受詞以表示一意志者。如受祿於天。（詩大雅假樂）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  4.作為賓詞以表示一意志者。如畏天之威。（詩周頌我將）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  上引諸記述的天字皆表示了意志性的活動，天既有意志，故天是神。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（二）主宰性的天（天字前面加上某種形容詞）</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「明明上天」（小明），說天的高高在上又明鑑於下。「昊天上帝」（雲漢），「昊天有成命」（周頌），昊天說天的廣大，而此廣大的天即是上帝。「皇天上帝」（書召誥），皇天亦是說天的廣大。上列對天的形容都是就天的形體上說的，但不是要表示天為自然，而是要以自然的特性來描述主宰性的天。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（三）自然義的天</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「有鳥高飛，亦傅於天」（蓼柳）。「崧高維嶽，駿極於天」（崧高）。「天乃雨，反風」（書金滕）。上引諸記述皆是指遍覆在我們之上的穹蒼，與厚載我們的大地相對，故是自然義的天。
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（四）天堂義的天</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「文王在上，於昭於天」（詩大雅文王）。「三后在天」（下武）。「濟濟多士，秉文之德，對越在天」（周頌清廟）。上引第一條是說文王死後，其靈在天上光明常存。第二條是說三王（太王、王季、文王）的靈在天堂與上帝同在。第三條是說周的眾卿大夫秉行文王的德旨以對越其在天上之靈。各條所說皆為天堂義的天。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  五經中的「天」雖有不同涵義，但各涵義彼此關連。「天」
+                </p>
+
+                <PageTag page={149} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  是上帝，「天」是上帝所造的大自然，「天」也是上帝所居之處。聖經中的「天」，也有這種用法，例如：「父親，我得罪了天（上帝）」（路十五18）；「起初神創造天地（宇宙自然）」（創一1）；「我們在天（上帝所居之處）上的父」（太六9）。馬太福音的「天國」（太四17）等於馬可福音的「上帝國」（可一15），此「天」可表「上帝」，亦可表「上帝所在之處」。五經中的「帝」，幾乎皆為「上帝」之意。例如：「古帝命成湯。」（詩商頌玄鳥）鄭玄箋：「古帝，天也。」可見中國人的上帝乃是實質的「君王」、「掌權者」。這與聖經的觀念可說是極為相似的。<sup>134</sup><span style={cite}>（衛聚賢，《中國古史中的上帝觀》，頁50-52）</span>
+                </p>
+              </div>
             </div>
 
           </div>
