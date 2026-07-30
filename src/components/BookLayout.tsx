@@ -217,10 +217,30 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       }
       
       const clone = mainContent.cloneNode(true) as HTMLElement;
-      
+
       clone.querySelectorAll('button').forEach(btn => btn.remove());
       clone.querySelectorAll('[class*="toolbar"]').forEach(el => el.remove());
-      
+
+      // 圖片路徑在頁面上是 /images/... 相對路徑，瀏覽器顯示沒問題，
+      // 但匯出成獨立 docx 檔後沒有網址可以依循，Word 開啟時找不到圖檔。
+      // 這裡把每張圖片轉成 base64 內嵌，讓 docx 檔本身就含有圖片資料。
+      const imgs = Array.from(clone.querySelectorAll('img'));
+      await Promise.all(imgs.map(async (img) => {
+        try {
+          const res = await fetch(img.src);
+          const blob = await res.blob();
+          const dataUrl = await new Promise<string>((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result as string);
+            reader.onerror = reject;
+            reader.readAsDataURL(blob);
+          });
+          img.setAttribute('src', dataUrl);
+        } catch (e) {
+          console.error('圖片轉換失敗，略過:', img.src, e);
+        }
+      }));
+
       const htmlContent = `
         <!DOCTYPE html>
         <html>
