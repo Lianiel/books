@@ -179,33 +179,37 @@ export default function Book29Home() {
               <p className="text-gray-700 leading-relaxed text-sm mb-3">
                 創世記結構的第二種分析法，以內容與文學形式作為考慮。可分為兩大部分：創世記一至十一章，和十二至五十章。前者為人類的歷史／太古時期，包含創造、墮落、洪水、巴別等四個重要事件；後者為族長的歷史／先祖時期，包含亞伯拉罕、以撒、雅各、約瑟等四個重要人物。<span style={{ fontSize: 'calc(1em - 6px)', color: '#9ca3af' }}>（馬有藻，《舊約概論》，頁34-35）</span>相關章次對應如下：
               </p>
-              <div className="border border-blue-200 rounded-lg overflow-hidden" style={{ fontSize: 'calc(1em - 8px)' }}>
-                <div className="text-center font-semibold bg-blue-100 text-blue-900 py-2">表一：創世記的結構與大綱</div>
-                <div className="grid grid-cols-2 text-center font-semibold text-blue-800 bg-blue-50 border-t border-blue-200">
-                  <div className="py-2 border-r border-blue-200">人類的歷史<br />四個重要事件</div>
-                  <div className="py-2">族長的歷史<br />四個重要人物</div>
-                </div>
-                <div className="grid grid-cols-8 text-center text-gray-700 border-t border-blue-200">
-                  <div className="py-2 border-r border-blue-100 font-semibold">創造</div>
-                  <div className="py-2 border-r border-blue-200 font-semibold">墮落</div>
-                  <div className="py-2 border-r border-blue-100 font-semibold">洪水</div>
-                  <div className="py-2 border-r border-blue-200 font-semibold">巴別</div>
-                  <div className="py-2 border-r border-blue-100 font-semibold">亞伯拉罕</div>
-                  <div className="py-2 border-r border-blue-200 font-semibold">以撒</div>
-                  <div className="py-2 border-r border-blue-100 font-semibold">雅各</div>
-                  <div className="py-2 font-semibold">約瑟</div>
-                </div>
-                <div className="grid grid-cols-8 text-center text-gray-600 border-t border-blue-200 bg-white">
-                  <div className="py-2 border-r border-blue-100">1~2章</div>
-                  <div className="py-2 border-r border-blue-200">3~6章</div>
-                  <div className="py-2 border-r border-blue-100">7~9章</div>
-                  <div className="py-2 border-r border-blue-200">10-11章</div>
-                  <div className="py-2 border-r border-blue-100">12~23章</div>
-                  <div className="py-2 border-r border-blue-200">24~26章</div>
-                  <div className="py-2 border-r border-blue-100">27~36章</div>
-                  <div className="py-2">37~50章</div>
-                </div>
-              </div>
+              <table border={1} cellPadding={0} cellSpacing={0} className="w-full border border-blue-200 rounded-lg overflow-hidden border-collapse" style={{ fontSize: 'calc(1em - 8px)' }}>
+                <tbody>
+                  <tr>
+                    <td colSpan={8} className="text-center font-semibold bg-blue-100 text-blue-900 py-2 border border-blue-200">表一：創世記的結構與大綱</td>
+                  </tr>
+                  <tr className="text-center font-semibold text-blue-800 bg-blue-50">
+                    <td colSpan={4} className="py-2 border border-blue-200">人類的歷史<br />四個重要事件</td>
+                    <td colSpan={4} className="py-2 border border-blue-200">族長的歷史<br />四個重要人物</td>
+                  </tr>
+                  <tr className="text-center text-gray-700">
+                    <td className="py-2 border border-blue-200 font-semibold">創造</td>
+                    <td className="py-2 border border-blue-200 font-semibold">墮落</td>
+                    <td className="py-2 border border-blue-200 font-semibold">洪水</td>
+                    <td className="py-2 border border-blue-200 font-semibold">巴別</td>
+                    <td className="py-2 border border-blue-200 font-semibold">亞伯拉罕</td>
+                    <td className="py-2 border border-blue-200 font-semibold">以撒</td>
+                    <td className="py-2 border border-blue-200 font-semibold">雅各</td>
+                    <td className="py-2 border border-blue-200 font-semibold">約瑟</td>
+                  </tr>
+                  <tr className="text-center text-gray-600 bg-white">
+                    <td className="py-2 border border-blue-200">1~2章</td>
+                    <td className="py-2 border border-blue-200">3~6章</td>
+                    <td className="py-2 border border-blue-200">7~9章</td>
+                    <td className="py-2 border border-blue-200">10-11章</td>
+                    <td className="py-2 border border-blue-200">12~23章</td>
+                    <td className="py-2 border border-blue-200">24~26章</td>
+                    <td className="py-2 border border-blue-200">27~36章</td>
+                    <td className="py-2 border border-blue-200">37~50章</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         )}
