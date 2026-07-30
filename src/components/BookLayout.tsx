@@ -218,7 +218,15 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       
       const clone = mainContent.cloneNode(true) as HTMLElement;
 
-      clone.querySelectorAll('button').forEach(btn => btn.remove());
+      // 展開/收合的區塊標題（正文、重點整理、分享題目…）本身是 <button>，
+      // 標題文字就寫在 button 裡面；舊版直接整顆 button 砍掉，連標題文字
+      // 也一起消失了。改成「拆殼」：保留裡面的文字和圖示，只是不再是按鈕。
+      clone.querySelectorAll('button').forEach((btn) => {
+        const div = document.createElement('div');
+        div.innerHTML = btn.innerHTML;
+        div.setAttribute('style', btn.getAttribute('style') || '');
+        btn.replaceWith(div);
+      });
       clone.querySelectorAll('[class*="toolbar"]').forEach(el => el.remove());
 
       // 圖片路徑在頁面上是 /images/... 相對路徑，瀏覽器顯示沒問題，
