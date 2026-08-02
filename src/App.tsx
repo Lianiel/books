@@ -61,6 +61,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book31: '創世以來的奧秘',
   book32: '華人回家',
   book33: '跨越鴻溝',
+  book34: '改變帶來醫治',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -493,6 +494,11 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter2', title: '第2章 中國古代的「上帝觀」', path: '/book33/chapter2' },
     { id: 'chapter3', title: '第3章 儒家的人性觀與罪觀（建置中）', path: '/book33/chapter3' },
   ],
+  book34: [
+    { id: 'home', title: '書本簡介', path: '/book34/home' },
+    { id: 'preface', title: '前言', path: '/book34/preface' },
+    { id: 'chapter1', title: '第1章 恩典與真理', path: '/book34/chapter1' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -530,6 +536,7 @@ const STATIC_BOOKS = [
   { book_id: 'book31', title: '創世以來的奧秘', author: '孫大程　著', description: '自從有天地以來，到底曾發生了什麼重要的事情？本書有系統地探討進化論、地球年齡、宇宙論、創造、伊甸園、大洪水審判、挪亞方舟、地球環境變遷、人類制度、民族遷徙、神的救贖計劃及主再來等奧秘，含105幅精彩珍貴的圖片及照片，並有各式圖表幫助讀者瞭解宇宙的奧秘及人生命的意義。', chapters_count: 12 },
   { book_id: 'book32', title: '華人回家', author: '莊東傑　著', description: '創世記與華人先祖——以聖經創世記一至十一章為經，中國古籍為緯，探討神與創造、人的特性、墮落與拯救、罪惡的蔓延、洪水與方舟、閃的後代六大主題，幫助華人看見信靠真神不是背祖，而是回歸祖先的信仰。', chapters_count: 6 },
   { book_id: 'book33', title: '跨越鴻溝', author: '莊東傑　著', description: '在華人文化處境中詮釋罪——以華人古籍為經，聖經為緯，藉由華人的文化處境，將聖經中「罪」的觀念向華人表達出來，並指出一條華人文化更新之路。與《華人回家》互為姊妹作，可單獨閱讀。', chapters_count: 6 },
+  { book_id: 'book34', title: '改變帶來醫治', author: '亨利·克勞德 博士　著', description: '作者從自己的靈程與專業經驗中，認定了四種需要培養、卻常常缺失的「像神的功能」：與人相連、與人分離（設立界限）、分辨善惡、長大成人。全書按此架構分為五篇十六章，逐一剖析我們在成長中卡住的地方，以及重新學習、得著醫治的具體技巧，每章並穿插大量真實的輔導案例。', chapters_count: 16 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -564,6 +571,7 @@ const colorMap: Record<number, string> = {
   29: 'from-indigo-700 to-blue-900',
   30: 'from-blue-600 to-indigo-600',
   32: 'from-red-700 to-amber-700',
+  34: 'from-cyan-600 to-teal-700',
 };
 
 // ========== 首頁分類 ==========
@@ -579,7 +587,7 @@ const BOOK_CATEGORIES: BookCategory[] = [
   { name: '禱告靈修', icon: '🙏', color: '#7c3aed', bg: '#f5f3ff', bookNumbers: [9, 10, 14, 16] },
   { name: '聖經研讀', icon: '📖', color: '#b45309', bg: '#fffbeb', bookNumbers: [6, 12, 23, 29, 30, 31, 32] },
   { name: '門訓成長', icon: '🌱', color: '#059669', bg: '#f0fdf4', bookNumbers: [5, 7, 19, 21, 22, 26] },
-  { name: '情緒輔導', icon: '💙', color: '#0d9488', bg: '#f0fdfa', bookNumbers: [1, 2, 8, 20, 27, 28] },
+  { name: '情緒輔導', icon: '💙', color: '#0d9488', bg: '#f0fdfa', bookNumbers: [1, 2, 8, 20, 27, 28, 34] },
   { name: '信仰神學', icon: '✝️', color: '#4338ca', bg: '#eef2ff', bookNumbers: [11, 13, 15, 18] },
   { name: '宣教教會', icon: '🌍', color: '#dc2626', bg: '#fff1f2', bookNumbers: [3, 4, 17, 24, 25] },
 ];
@@ -979,6 +987,9 @@ const Book33Intro = lazyWithRetry(() => import('./components/book33/Book33Intro'
 const Book33Ch1 = lazyWithRetry(() => import('./components/book33/Book33Ch1'));
 const Book33Ch2 = lazyWithRetry(() => import('./components/book33/Book33Ch2'));
 const Book33Ch3 = lazyWithRetry(() => import('./components/book33/Book33Ch3'));
+const Book34Home = lazyWithRetry(() => import('./components/book34/Book34Home'));
+const Book34Preface = lazyWithRetry(() => import('./components/book34/Book34Preface'));
+const Book34Ch1 = lazyWithRetry(() => import('./components/book34/Book34Ch1'));
 const Book32Preface = lazyWithRetry(() => import('./components/book32/Book32Preface'));
 const Book32Introduction = lazyWithRetry(() => import('./components/book32/Book32Introduction'));
 const Book32Ch1 = lazyWithRetry(() => import('./components/book32/Book32Ch1'));
@@ -1578,6 +1589,10 @@ const App: React.FC = () => {
         <Route path="/book33/chapter2" element={<BookLayout bookId="book33" chapter="chapter2" chapters={getChaptersForBook('book33')}><Book33Ch2 /></BookLayout>} />
         <Route path="/book33/chapter3" element={<BookLayout bookId="book33" chapter="chapter3" chapters={getChaptersForBook('book33')}><Book33Ch3 /></BookLayout>} />
         <Route path="/book/33" element={<BookLayout bookId="book33" chapter="home" chapters={getChaptersForBook('book33')}><Book33Home /></BookLayout>} />
+        <Route path="/book34/home" element={<BookLayout bookId="book34" chapter="home" chapters={getChaptersForBook('book34')}><Book34Home /></BookLayout>} />
+        <Route path="/book34/preface" element={<BookLayout bookId="book34" chapter="preface" chapters={getChaptersForBook('book34')}><Book34Preface /></BookLayout>} />
+        <Route path="/book34/chapter1" element={<BookLayout bookId="book34" chapter="chapter1" chapters={getChaptersForBook('book34')}><Book34Ch1 /></BookLayout>} />
+        <Route path="/book/34" element={<BookLayout bookId="book34" chapter="home" chapters={getChaptersForBook('book34')}><Book34Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
         <Route path="/" element={
