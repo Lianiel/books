@@ -509,6 +509,7 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter10', title: '第10章 學習設限', path: '/book34/chapter10' },
     { id: 'chapter11', title: '第11章 問題在哪裡？', path: '/book34/chapter11' },
     { id: 'chapter12', title: '第12章 當我們不接納善與惡', path: '/book34/chapter12' },
+    { id: 'chapter13', title: '第13章 學習同時接受善與惡', path: '/book34/chapter13' },
   ],
 };
 
@@ -1012,6 +1013,7 @@ const Book34Ch9 = lazyWithRetry(() => import('./components/book34/Book34Ch9'));
 const Book34Ch10 = lazyWithRetry(() => import('./components/book34/Book34Ch10'));
 const Book34Ch11 = lazyWithRetry(() => import('./components/book34/Book34Ch11'));
 const Book34Ch12 = lazyWithRetry(() => import('./components/book34/Book34Ch12'));
+const Book34Ch13 = lazyWithRetry(() => import('./components/book34/Book34Ch13'));
 const Book32Preface = lazyWithRetry(() => import('./components/book32/Book32Preface'));
 const Book32Introduction = lazyWithRetry(() => import('./components/book32/Book32Introduction'));
 const Book32Ch1 = lazyWithRetry(() => import('./components/book32/Book32Ch1'));
@@ -1625,6 +1627,7 @@ const App: React.FC = () => {
         <Route path="/book34/chapter10" element={<BookLayout bookId="book34" chapter="chapter10" chapters={getChaptersForBook('book34')}><Book34Ch10 /></BookLayout>} />
         <Route path="/book34/chapter11" element={<BookLayout bookId="book34" chapter="chapter11" chapters={getChaptersForBook('book34')}><Book34Ch11 /></BookLayout>} />
         <Route path="/book34/chapter12" element={<BookLayout bookId="book34" chapter="chapter12" chapters={getChaptersForBook('book34')}><Book34Ch12 /></BookLayout>} />
+        <Route path="/book34/chapter13" element={<BookLayout bookId="book34" chapter="chapter13" chapters={getChaptersForBook('book34')}><Book34Ch13 /></BookLayout>} />
         <Route path="/book/34" element={<BookLayout bookId="book34" chapter="home" chapters={getChaptersForBook('book34')}><Book34Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
