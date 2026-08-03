@@ -24,7 +24,7 @@ export default function Book34Home() {
     },
     {
       part: '第五篇', title: '長大成人',
-      chapters: ['第14章　什麼是成人？', '第15章　當我們沒有長大', '第16章　學習長大成人'],
+      chapters: ['第14章　什麼是成人？', '第15章　當我們沒有長大', '第16章　學習長大成熟'],
     },
   ];
 
@@ -111,8 +111,17 @@ export default function Book34Home() {
               </div>
             ))}
             <div className="border-l-4 border-gray-300 pl-4 mt-2">
-              <h3 className="font-semibold text-gray-600">附錄：研讀指引、結論</h3>
-              <p className="text-xs text-gray-400 mt-1">（章節將陸續上線，目前已完成前言、第一章）</p>
+              <h3 className="font-semibold text-gray-600 mb-2">附錄</h3>
+              <ul className="space-y-1">
+                <li className="text-gray-600 text-sm flex items-start gap-2">
+                  <span className="text-gray-400 flex-shrink-0 mt-0.5">‧</span>
+                  <span>研讀指引</span>
+                </li>
+                <li className="text-gray-600 text-sm flex items-start gap-2">
+                  <span className="text-gray-400 flex-shrink-0 mt-0.5">‧</span>
+                  <span>結論</span>
+                </li>
+              </ul>
             </div>
           </div>
         )}
