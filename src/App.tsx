@@ -492,7 +492,7 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'intro', title: '緒論', path: '/book33/intro' },
     { id: 'chapter1', title: '第1章 基督教的罪觀', path: '/book33/chapter1' },
     { id: 'chapter2', title: '第2章 中國古代的「上帝觀」', path: '/book33/chapter2' },
-    { id: 'chapter3', title: '第3章 儒家的人性觀與罪觀（建置中）', path: '/book33/chapter3' },
+    { id: 'chapter3', title: '第3章 儒家的人性觀與罪觀', path: '/book33/chapter3' },
   ],
   book34: [
     { id: 'home', title: '書本簡介', path: '/book34/home' },
