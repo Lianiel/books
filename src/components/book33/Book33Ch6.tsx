@@ -18,10 +18,6 @@ export default function Book33Ch6() {
         <h2 className="text-xl font-semibold text-gray-700">從罪得釋放──華人文化更新之路</h2>
       </div>
 
-      <div className="mb-6 bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-700">
-        ⚠️ 本章之前的「第五章　現代華人與「罪」的關係」尚無截圖來源，暫時跳過，之後補齊截圖後會補上。
-      </div>
-
       {/* 正文 */}
       <div className="mb-6 border border-amber-100 rounded-lg overflow-hidden shadow-sm">
         <button onClick={() => toggleSection('content')} className="w-full px-5 py-3 bg-gradient-to-r from-amber-50 to-red-50 hover:from-amber-100 hover:to-red-100 flex items-center justify-between transition-all">

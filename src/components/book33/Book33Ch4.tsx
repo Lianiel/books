@@ -1072,7 +1072,7 @@ export default function Book33Ch4() {
                 <p className="text-gray-700 leading-relaxed mb-1">執迷不悟：謂走迷了路，不肯覺悟。</p>
                 <p className="text-gray-700 leading-relaxed mb-3">喪盡天良：形容人無良心。<sup>233</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁52-53）</span></p>
                 <p className="text-gray-700 leading-relaxed mb-1">混水摸魚：利用環境混亂，乘機取利。</p>
-                <p className="text-gray-700 leading-relaxed mb-1">順手牽羊：形容在順便中偷娶他人物件。</p>
+                <p className="text-gray-700 leading-relaxed mb-1">順手牽羊：形容在順便中偷取他人物件。</p>
                 <p className="text-gray-700 leading-relaxed mb-1">損人利己：損害別人，增加自己的利益。</p>
                 <p className="text-gray-700 leading-relaxed mb-3">慘無人道：手段殘酷毒辣，毫無人道。<sup>234</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁54-55）</span></p>
                 <p className="text-gray-700 leading-relaxed mb-3">養虎遺患：謂姑息養奸，以遺禍害。語出《史記》。<sup>235</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁117）</span></p>
@@ -1141,23 +1141,21 @@ export default function Book33Ch4() {
               <p className="text-gray-700 leading-relaxed">
                 與耶穌相關的每一個人都不是明顯的兇手，但耶穌因這些人而死，這些人就是「共犯結構」。但事情不是到此為止，這整個「共犯結構」的形成是有原因的，最早的根源在亞當、夏娃犯罪，因此這是「社會性的罪」，也是「世界的罪」。亞當、夏娃造成耶穌的死，全世界所有人都間接造成耶穌的死，包括後來的人也都在這個「共犯結構」及「世界的罪」裡面。
               </p>
-
-              <PageTag page={318} />
-              <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+              <p className="text-gray-700 leading-relaxed">
                 不在現場的我們能說「耶穌的死」與我無關嗎？耶穌說：「這是我的身體，為你們捨的，……這杯是用我血所立的新約，是為你們流出來的。」（路廿二19-20）耶穌實在是因為我們眾人的罪而被釘十字架，我的罪與他的死是相關的。當耶穌再來的時候：「他駕雲降臨！眾目要看見他，連刺他的人也要看見他；地上的萬族要因他哀哭。」刺他的人是指誰呢？不是指羅馬兵，因為末後的日子羅馬兵丁不會在那裡；乃是指有罪的人。所以，萬族都要因他哀哭，這哀哭是為了每個人自己的罪。唯有預先向上帝懺悔的人，才可免於到時悔恨莫及。
               </p>
               <p className="text-gray-700 leading-relaxed">
                 遠志明認為，觀察中國人需要區分兩種真實：歷史真實與文化真實。歷史真實構成中國的肉體，充滿了罪惡與苦難；文化真實構成中國的靈魂，充滿了禮儀與道德。外國人讀到中國的文化真實，於是譽之為禮儀之邦。中國人忍受了歷史真實，於是嘆之為罪孽深重。<sup>249</sup><span style={cite}>（遠志明，《神州懺悔錄——上帝與五千年中國》，頁vii）</span>這樣的分析可為真切。華人離開了上帝，因此掉入各種罪惡之中。在這共通的基調中，以上二至四章偏重歷史性的內容，以下
               </p>
 
-              <PageTag page={319} />
+              <PageTag page={318} />
               <p className="text-gray-700 leading-relaxed mt-2">
                 五至六章則偏重當代性的內容。
               </p>
             </div>
 
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-700">
-              第四章至此全部完結。第五章「現代華人與「罪」的關係」尚在建置中，將陸續更新。
+              第四章至此全部完結。
             </div>
 
           </div>
