@@ -865,8 +865,299 @@ export default function Book33Ch4() {
               </div>
             </div>
 
+            <div>
+              <PageTag page={301} />
+              <h3 className="font-bold text-amber-800 text-lg mb-3">第五節　哲學寓言成語故事</h3>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                在封建社會中，許多不合理的剝削和壓迫的醜惡現象，都在哲學寓言故事中得到即時的反映。<sup>208</sup><span style={cite}>（嚴北溟、嚴捷，《中國哲學寓言故事一》，頁6）</span>在中國的文化古籍中，保存著驚人數量的哲學寓言和成語故事，除了在先秦諸子中比較集中外，大都散見於歷代各類文史典籍和筆記中。<sup>209</sup><span style={cite}>（嚴北溟、嚴捷，《中國哲學寓言故事一》，頁27）</span>這些故事一方面表明華人普遍認知的某些事實，一方面也有很好的提醒作用。本項選擇的成語主要是與「罪」有關的，包括「惡行」與「審判」。藉這些成語及相關故事，可幫助華人明白「罪」在華人當中的嚴重性與普遍性。宋泉盛所介紹的「故事神學」方法，亦可藉此有很好的運用與發揮。<sup>210</sup><span style={cite}>（宋泉盛，《故事神學》，頁5-11）</span>
+              </p>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">壹、與「惡行」有關的成語故事</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、一竅不通</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  商紂王昏庸暴戾，寵愛妃子妲己。叔父比干正言苦諫，妲己
+                </p>
+
+                <PageTag page={302} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  對紂王說：「如果比干是忠臣，何不叫他將胸膛剖開，取出心肝獻給你！」紂王乃賜比干剖胸而死。《呂氏春秋》記載此事，並加註說：「紂心不通，安以為惡，若其一竅通，則比干不殺矣！」後來的人就用「一竅不通」這話來譏刺人家的愚蠢、糊塗。<sup>211</sup><span style={cite}>（《呂氏春秋》。高德沛，《精選歷史成語故事》，頁22-23）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  一竅不通者豈只商紂王而已，凡未能得聖靈重生、與上帝恢復關係者，豈不都是一竅不通？一有機會，就會表現其愚蠢、糊塗、殘暴的一面。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">二、二桃殺三士</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  公孫捷、田開疆、古治子三人是齊景公的侍衛，以勇力搏虎聞名。晏子經過他們，他們皆沒站起來。晏子認為他們態度倨傲，乃要齊景公除去他們三人，教齊景公以二桃餽送他們三人，叫他們按功勞大小而食桃。公孫捷、田開疆都說了自己的功勞，自認不必與別人合吃，就各拿了一個桃子。古治子不服氣，便舉出潛水殺龜救景公那件事。並抽出劍，叫二人將桃子放回。公孫捷與田開疆說：「我們論勇、論功都不及你，取桃不讓，是貪也；然而不死，無勇也。」說完自刎而死。古治子說：「他們二人死，我一人獨活，不仁；誇說自己功勞，使別人蒙羞，不義；恨自己所行，不死無勇。」說完也自刎而死。「二桃殺三士」乃用來指以陰謀債刀殺人。<sup>212</sup><span style={cite}>（張貫鴻，《中國寓言裡的現代智慧》，頁183-187）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  晏子是名相之一，卻也使用如此惡毒之陰謀，去殺害還算有義氣的三個勇士，只因他們似乎對他不恭敬，世界之敗壞可見一斑。
+                </p>
+
+                <PageTag page={303} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">三、十大罪狀</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  春秋時，宋王偃荒淫無道箭射諫言之大臣，曾有一天射死三大臣，從此無人再作聲。齊、楚、魏三國聯軍，派人張貼榜文，寫宋王十大罪狀，使得三國軍隊受到宋國百姓歡迎，毫無攔阻地滅了宋國。這十大罪狀是：1. 謀害哥哥，篡奪王位；2. 欺負弱小，吞滅小國；3. 專憑武力，侵犯大國；4. 對天射箭，得罪上帝；5. 通宵飲酒，不理國政；6. 搶奪婦女，荒淫無能；7. 射死大臣，不聽忠言；8. 自稱為王，妄自尊大；9. 勾結強秦，藐視鄰國；10. 虐待百姓，全無軍道。<sup>213</sup><span style={cite}>（高德沛，《精選歷史成語故事》，頁23-24）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  宋王偃有十大罪狀，世人在上帝面前卻有更多罪狀，上帝審判時的天使天軍比三國聯軍還強大，罪人無可逃避。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">四、危如累卵</p>
+                <p className="text-gray-700 leading-relaxed">
+                  春秋時代，晉靈公為一己享樂，不惜耗費財力、人力，興建九層樓的瓊台。他怕臣子阻止，預先命令不准規勸反對，否則用箭射死。賢士荀息前來拜見，說明來表演技藝，要把十二顆棋子堆起來，上面再加九個雞蛋，而不會坍下來。表演過程中，晉靈公及左右的人，個個屏息靜氣，提心吊膽。當雞蛋一個個疊上去，晉靈公連聲說：「危險！危險！」荀息說：「這有什麼了不起，還有更危險的事呢！」靈公禁不住問道：「你說給我聽聽。」荀息站直身子沈痛地說：「一座九層樓的高台，建造三年沒完工。已弄得國人男無耕種，女無紡織，經濟破產，百姓面黃肌瘦，叫苦連天。一旦外
+                </p>
+
+                <PageTag page={304} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  侮進迫，國家不保，你還能有何安樂享受呢？」晉靈公即承認錯誤，下令停工。此故事出於《史記・范雎傳》，有「秦王之國，危如累卵」之語。<sup>214</sup><span style={cite}>（《史記・范雎傳》。高德沛，《精選歷史成語故事》，頁121-122）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  觀今華人社會（含大陸、台灣），淫亂之風高漲，網路濫交、一夜情、包二奶、召妓，不一而足，婚姻家庭制度頻於崩潰，單親家庭愈來愈多，由於人的罪性，今天許多人的婚姻家庭可謂危如纍卵。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">五、苛政猛於虎</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  孔子過泰山側，有婦人披麻哭於新墳。孔子停下馬車倚車欄傾聽，叫子貢去問情由，說：「聽你的哭聲，像有重大悲傷。」婦人回答：「是的，我的公公被老虎咬死，後來丈夫也被老虎咬死，現在我兒子也被老虎咬死。」孔子問：「為何不搬離此地？」婦人回答：「此地無苛政。」孔子對學生說：「你們要知道，苛政比老虎還凶猛。」老虎要吃人，官吏的橫徵暴斂也要吃人，甚至比老虎還厲害。<sup>215</sup><span style={cite}>（《禮記・檀弓下》。嚴北溟、嚴捷，《中國哲學寓言故事一》，頁17-18）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  人所組成的社會，父母官所掌管的政府，為何會比老虎更可怕？只因為人是罪人。離開上帝的人，一站上權力位置，就很容易濫權。所造成對百姓的傷害，常是難以想像的。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">六、兔死狗烹</p>
+                <p className="text-gray-700 leading-relaxed">
+                  越王句踐的大夫范蠡，付出極大代價，幫助越王復國成功。本可安享榮華富貴，但他選擇引退。後來也託人帶信給昔日同僚文種，勸文種捨棄功名，以免招災禍。信中寫到：「飛鳥盡，良弓藏；狡兔死，走狗烹。」說明人心險惡，與地上君王主子，或可共
+                </p>
+
+                <PageTag page={305} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  患難，但難以共享安樂。<sup>216</sup><span style={cite}>（馮萍，《中國成語故事正編》，頁110-111）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  對人性罪惡如此透測認知如范蠡者，可名節保身；不能如此透測認知者，大多沒好結局，中國歷代開國功臣之遭遇可為明證。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">七、九牛一毛</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  漢武帝時，李陵將軍以寡敵眾，先勝後敗，忍辱投降，伺機立功。皇帝下令殺死李陵的老母、妻子。諸大臣攻擊李陵，唯司馬遷為李陵說話。皇帝聽到他為叛將辯護，即將他便將他關進監牢，處以最殘酷的宮刑。司馬遷曾想一死了之，但知道「死有重於泰山，有輕於鴻毛。」乃忍辱完成《史記》，後來寫信給朋友任少卿，說明他的心跡，其中說到：「假令僕伏法受誅，若九牛一毛，與螻蟻何以異？」<sup>217</sup><span style={cite}>（馮萍，《中國成語故事續編》，頁16-17）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  「九牛一毛」這句話讓我們想到，一個人的生命在暴君或魔鬼手下，可以輕濺如牛毛、螻蟻。但一個人的生命若換成在基督裡，則貴重無比。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">八、一丘之貉</p>
+                <p className="text-gray-700 leading-relaxed">
+                  漢朝清官楊惲，父親楊敞是漢昭帝的丞相，母親為司馬遷的女兒。有一次聽見匈奴降漢的人說，匈奴領袖單于被殺，楊惲便說：「一個不明是非的君王，大臣替他擬好治國策略他不用，使自己白白送命。就像秦朝皇帝一樣，專信任小人，殺害忠貞大臣，結果亡國。如果秦朝不那樣，可能現在還存在。從古到今的君王，都信任小人，就像同一山丘上的貉一樣。」（貉，音合，狀似狐狸）漢宣帝得知這番話，將楊惲免職。<sup>218</sup><span style={cite}>（《前漢書・楊惲傳》。高德沛，《精選歷史成語故事》，頁2-3）</span>
+                </p>
+
+                <PageTag page={306} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  自古君王勇於改過，不信讒言的，能有幾個？豈不都是「一丘之貉」，楊惲只被免職，算是不幸中之大幸了。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">九、草菅人命</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  此成語出自《漢書・賈誼傳》，傳記中說到：「其視殺人，若艾草菅。」艾，用刀割也。菅，茅草的一種。這話指出當時（漢代）那些作父母官的人，對於老百姓的性命，根本不當一回事，隨便判處死刑，把人命當輕賤的茅草一樣割除。後來即用以指當權者濫殺無辜，視人命如草芥。<sup>219</sup><span style={cite}>（《漢書・賈誼傳》。高德沛，《精選歷史成語故事》，頁278-279）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  其實中國歷史中，不僅漢代，而是所有朝代直到現代，都有草菅人命的情形。聖經詩篇九十篇也形容世人的生命像草那樣短命與無奈：「他們如生長的草，早晨發芽生長，晚上割下枯乾。……我們一生的年日是七十歲，若是強壯可到八十歲；但其中所矜誇的不過是勞苦愁煩，轉眼成空，我們便如飛而去。」（詩九十5~10）那是人離開上帝後的光景，但人若回到上帝面前，就能「一生一世歡呼喜樂。」（詩九十14）即使遭到生命威脅，也不必怕，因為耶穌說：「那殺身體不能殺靈魂的，不要怕他們。惟有能把身體和靈魂都滅在地獄裏的，正要怕他。」（太十28）
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">十、煮豆燃萁</p>
+                <p className="text-gray-700 leading-relaxed">
+                  曹操的大兒子曹丕繼承職權，奪取漢家天下，自己作起皇帝，改國號為魏，後人稱他魏文帝。曹丕的弟弟曹植才學好，得百姓愛戴。曹丕既嫉妒又疑懼他，因此想藉故殺他。有一天，曹植來見，曹丕對他說：「我限你走七步路內，作出一首詩，否則就是違抗命令，我要定你罪。」曹植即吟道：「煮豆燃豆萁，豆在釜中泣，本
+                </p>
+
+                <PageTag page={307} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  是同根生，相煎何太急。」曹丕聽此哀感沈痛的詩，乃放下殺弟的念頭。<sup>220</sup><span style={cite}>（馮萍，《中國成語故事正編》，頁14-15）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  為了權位，骨肉之親皆可下手殺害，正是人離開上帝之後的光景。人沒有上帝，以權位為上帝，此權位就超過了親情。
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">貳、與審判有關的成語故事</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、掩耳盜鐘</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  晉國大夫出逃後，有個百姓從他家裡找到一口鐘。這人想將鐘背走，鐘太大不可背，於是想將鐘打碎，乃用木槌擊之，那鐘轟然作響。他恐怕別人聽見來奪這鐘，便趕快用手摀住自己的耳朵。<sup>221</sup><span style={cite}>（《呂氏春秋・自知》。嚴北溟、嚴捷，《中國哲學寓言故事二》，頁137-138。張貫鴻，《中國寓言裡的現代智慧》，頁156-157）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  掩耳盜鐘是自己聽不見，別人仍聽得見。一般人犯罪作惡，並不會如此愚笨，總想辦法會不讓別人發現。然而，上帝的眼目絕不可能被遮掩。從永恆審判的角度來看，人在暗中的惡行，在心中的惡念，以為別人不知，卻沒想到上帝都在鑑察。這豈不也是掩耳盜鐘嗎？
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">二、螳螂捕蟬</p>
+                <p className="text-gray-700 leading-relaxed">
+                  戰國時代，吳王執意攻打楚國，告訴左右大臣：「敢有諫者死！」有一位年輕的侍衛，想勸諫吳王，一連三天早晨拿著彈弓，游於王宮後花園，以致露水沾濕其衣。吳王終於注意到他，便問：「你在這裏做什麼？何苦沾濕衣服？」他回答道：「園中有棵樹，樹上有個蟬，蟬在高處一邊鳴叫一邊喝露水，不知道螳螂在它背
+                </p>
+
+                <PageTag page={308} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  後。螳螂屈身接近，想捕食蟬，卻不知有黃雀在身後逼近它。而黃雀想吃螳螂，卻沒發現彈弓已在下面瞄準它。蟬、螳螂和黃雀都只顧眼前利益，而不顧身後潛伏的禍患。」吳王聽了，明白了自己只顧小利而忽略大禍，便停止了攻楚的計劃。<sup>222</sup><span style={cite}>（劉向，《說苑・正諫篇》。嚴北溟、嚴捷，《中國哲學寓言故事三》，頁95-97）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  所做的貪奪之事，都像螳螂捕蟬。其後的黃雀，可能是惡人，也可能是魔鬼。因魔鬼如同獅子，尋找失去上帝保護的人。（彼前五8）然而惡人、魔鬼政如同黃雀，最終亦要被上帝捆綁、審判。（啟二十2,10）
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">三、鷸蚌相爭</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  有一隻河蚌正在河邊曬太陽，一隻鷸鳥飛來，伸嘴去啄它的肉。河蚌立即合起硬殼，緊緊夾住鷸鳥的長嘴。鷸鳥說：「今天不下雨，明天不下雨，就有死蚌。」河蚌亦對鷸鳥說：「今天不放你出，明天不放你出，就有死鷸。」兩者不肯相讓，漁夫來到，把兩個都捉住了。此寓言說明：雙方相爭，各不相讓，只會兩敗俱傷，使第三者得利。<sup>223</sup><span style={cite}>（《戰國策・燕二》。嚴北溟、嚴捷，《中國哲學寓言故事二》，頁114-115。張貫鴻，《中國寓言裡的現代智慧》，頁174）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  生物界的相爭有第三者，商場有第三者，情場有第三者，國與國戰場也有第三者，如中日戰爭，蘇聯得利。更大的第三者是魔鬼，全世界任何相爭之處，牠都是得利者。人與人相爭，而落入魔鬼手中，值得嗎？並且最後還要面對上帝的審判，做任何事豈能不慎思長遠的後果？
+                </p>
+
+                <PageTag page={309} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">四、五十步笑百步</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  梁惠王說：「我盡心治理國政，河內飢荒，就把人民移往河東，把糧食運到河內救濟不能遷移的人。河東飢荒，也用這辦法。鄰國沒有像我這樣用心的，可是我的人民沒有因此加多，何故？」孟子說：「我以戰事作比方，戰敗的一方倉皇逃命，有的逃一百步而停，有的逃五十步而停，逃五十步的譏笑逃一百步的，你認為如何？」王回答：「不可，都一樣是逃。」孟子說：「王若行仁政，不擾民，使民專注生產，即可豐衣足食，儲備餘糧，不是年歲不好才去救濟。這樣，天下人民就會來歸向你。否則，也不過是五十步笑百步。」這句話即用以指程度或有差異，本質卻無不同。<sup>224</sup><span style={cite}>（高德沛，《精選歷史成語故事》，頁64-65。嚴北溟、嚴捷，《中國哲學寓言故事一》，頁65-66）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  聖經上說：「世人都犯了罪，虧缺了上帝的榮耀。」（羅三23）凡不承認己罪，只看到別人之罪的，豈不是五十步笑百步？
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">五、申子請罪</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  有一天韓昭侯對宰相申子說：「實行法制真不容易。」申子回答：「執行法制要賞罰分明，論功行賞，有能受官。您雖設有法制，但卻聽左右之請託，不照法而行，那要實行法制當然不容易了。」昭侯說：「承蒙指教，我知道怎樣實行法制了。」過些日子，申子為其堂兄求官職。韓昭侯說：「這不像我從你所學的。我要接受你的求官，而違反你的教訓嗎？還是照你的教訓，拒絕你的求官？」申子聽了滿面羞愧，伏地請罪。<sup>225</sup><span style={cite}>（嚴北溟、嚴捷，《中國哲學寓言故事二》，頁46-47）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  申子（申不害）是戰國時代有名的法家，尚且知法違法，會
+                </p>
+
+                <PageTag page={310} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  說不會行。更何況一般人呢？一個人一生中犯了多少過錯，直接、間接傷害了多少人？有一天面對上帝的審判，肯定遠超過自己的想像。一個人若不天天求上帝鑑察，認罪、悔改，怎麼可能行走永生的道路？（詩一三九23~24）
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">六、諱疾忌醫</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  名醫扁鵲見蔡桓侯，站立一會兒，對桓侯說：「您有病在皮膚，不治恐會加深。」桓侯說：「我沒有病。」扁鵲出去後，桓侯說：「醫生喜歡醫治容易治的以誇耀自己的本領。」十日後，扁鵲又來見，說：「您的病已進入肌肉，不治療將更加深。」桓侯不應，扁鵲出，桓侯又不悅。再過十日，扁鵲又來見，說：「您的病已進入腸胃，不治療將更加深。」桓侯又不應，扁鵲出，桓侯又不悅。再過十日，扁鵲望見桓侯，轉身就走。桓侯派人去問他，扁鵲說：「病在皮膚，湯熨可醫；病在肌肉，針灸可醫；病在腸胃，服藥可醫；病在骨髓，無奈何也。現在桓侯的病已深入骨髓，我無法醫治他了。」過五日，桓侯身體疼痛，派人去找扁鵲，扁鵲已逃到秦國。桓侯不久就死了。<sup>226</sup><span style={cite}>（《韓非子・喻老》。嚴北溟、嚴捷，《中國哲學寓言故事二》，頁58-60）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  耶穌說：「健康的人用不著醫生，有病的人才用得著。……我來本不是召義人，乃是召罪人。」（太九12~13）意思是，人承認自己是罪人，才會來接受耶穌的拯救。正如人承認自己有病，才會來接受醫生的治療。今日世人誰沒有靈魂的病呢？若不即時來接受耶穌的醫治，恐怕有一日會像桓侯一樣，悔恨莫及。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">七、貪小利失大利</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  昔蜀侯性貪，秦惠王聞而欲伐之。山澗峻嶮，兵路不通，乃琢石為牛，多與金，日置牛後，號牛糞金，言以遺蜀國。蜀侯貪之，乃斬山填谷，使五丁力士以迎石牛，秦人帥師隨後而至，滅國國身，為天下所笑，以貪小利失其大利也。<sup>227</sup><span style={cite}>（北齊・劉晝《劉子・卷九・貪愛》。高德沛，《精選歷史成語故事》，頁314-315）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  蜀侯造大路迎「金牛」（其實是石牛），結果迎進來的卻是秦國大軍，以致被滅。這種事今天仍不斷在發生，不僅「金光黨」利用人的貪財心理，不斷大有斬獲。一般人也傾其人生，想盡可能的多賺，最終卻失喪了自己的生命。（太十六26）魔鬼正像秦國大軍，等候人自己敞開心，在「金牛」進入的同時，魔鬼也進來佔住人的靈魂，摧殘人的一生。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">八、物腐蟲生</p>
+                <p className="text-gray-700 leading-relaxed">
+                  這句成語最早出於《荀子・勸學篇第一》：「肉腐出蟲，魚枯生蠹。」蠹，音妒，蛀蟲也。後來能成為廣被使用的成語，是從北宋蘇軾在《范增論》裡所說的話開始的。范增原是項梁的謀士，項梁戰死，范增繼而輔佐項梁的姪子項羽。劉邦從各方面造謠中傷范增，項羽中計，逐漸疏遠范增。范增選擇離開項羽，不久病死。項羽終為劉邦所滅。蘇軾談及此事，評道：「物必先腐也，而後蟲
+                </p>
+
+                <PageTag page={311} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  之。人必先疑也，而後讒人之。」意思是：「物體先腐爛了，才會生出蟲來。人對另一人有了疑心，然後才會聽信關於他的謠言、毀謗。」後來「物腐蟲生」即用於說明「禍患的發生，總有內部的原因。本身有弱點，別人才能乘機打擊。」<sup>228</sup><span style={cite}>（《荀子・勸學篇第一》。蘇軾，《范增論》。高德沛，《精選歷史成語故事》，頁225-226）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  一個離開上帝的人，基本上是從內心開始腐化，而後才影響到
+                </p>
+
+                <PageTag page={312} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  整個生活面。所以耶穌說：「樹好，果子也好；樹壞，果子也壞。因為看果子，就可以知道樹。」（太十二33）也如保羅所說：「他們既然故意不認識上帝，上帝就任憑他們存邪僻的心，行那些不合理的事。裝滿了各樣不義、邪惡、貪婪、惡毒，滿心是嫉妒、兇殺、爭競、詭詐、毒恨。」（羅一28~29）
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">九、東窗事發</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  宋朝奸臣秦檜，和金人私通，賣國求榮，乃於一日之內，連下十二道金牌，召回大敗金兵的岳飛，並將他害死。據說秦檜設計陷害岳飛的陰謀都是在他家（太師府）的東窗下，同他妻子王氏一道計畫的。後來，秦檜死了，兒子亦暴病而亡。妻子王氏想知道他們在陰間的情形，方士回報，秦檜在陰間受苦，並說：「我們以前在東窗下的計謀，現在已被揭發。」不久王氏也因病而死。此故事記載於《西湖遊覽志餘》，乃史實加上傳說的寓言故事。以後「東窗事發」一語即用以形容暗中所做或計畫要做的壞事被揭發出來。<sup>229</sup><span style={cite}>（高德沛，《精選歷史成語故事》，頁214-216）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  聖經說：「掩蓋的事，沒有不露出來的；隱藏的事，沒有不被人知道的。」（太十26）有一天在審判台前，每個人都要照著他所行的受上帝審判（啟二十12）。
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">參、更多與「罪」有關的成語</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、與「惡行」有關的成語</p>
+                <p className="text-gray-700 leading-relaxed mb-1">衣冠禽獸：衣冠整齊而品德及壞之人。<sup>230</sup><span style={cite}>（熊光義編輯，《中國成語大辭典》，頁263）</span></p>
+                <PageTag page={313} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1">助紂為虐：幫助惡人做壞事。語出《史記》。</p>
+                <p className="text-gray-700 leading-relaxed mb-1">沐侯而冠：形容有人形而無人性。語出《漢書》。<sup>231</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁49-50）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-3">同流合污：謂隨俗浮沉，與壞人在一起，也跟著學壞。語出《孟子》：同乎流俗，合乎污世。<sup>232</sup><span style={cite}>（熊光義編輯，《中國成語大辭典》，頁71）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-1">狼狽為奸：兩者相助為惡。</p>
+                <p className="text-gray-700 leading-relaxed mb-1">狼心狗肺：形容人心凶惡。</p>
+                <p className="text-gray-700 leading-relaxed mb-1">執迷不悟：謂走迷了路，不肯覺悟。</p>
+                <p className="text-gray-700 leading-relaxed mb-3">喪盡天良：形容人無良心。<sup>233</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁52-53）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-1">混水摸魚：利用環境混亂，乘機取利。</p>
+                <p className="text-gray-700 leading-relaxed mb-1">順手牽羊：形容在順便中偷娶他人物件。</p>
+                <p className="text-gray-700 leading-relaxed mb-1">損人利己：損害別人，增加自己的利益。</p>
+                <p className="text-gray-700 leading-relaxed mb-3">慘無人道：手段殘酷毒辣，毫無人道。<sup>234</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁54-55）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-3">養虎遺患：謂姑息養奸，以遺禍害。語出《史記》。<sup>235</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁117）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-3">沉湎酒色：耽溺於酒與女色。《書》沉湎酒色，敢行暴虐。<sup>236</sup><span style={cite}>（熊光義編輯，《中國成語大辭典》，頁185）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-1">以訛傳訛：本來錯誤的話，傳說出去後，錯誤得更厲害。<sup>237</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁140）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-1">自欺欺人：用昧心瞞己的手段來欺騙他人。</p>
+                <p className="text-gray-700 leading-relaxed mb-1">花言巧語：飾詞欺騙，以不實際的甘言誘惑人。</p>
+                <p className="text-gray-700 leading-relaxed mb-1">信口開河：沒有事實根據，不負言責的說話。</p>
+                <p className="text-gray-700 leading-relaxed mb-3">信口雌黃：無事實根據，隨便批評別人。<sup>238</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁142）</span></p>
+                <p className="text-gray-700 leading-relaxed">指鹿為馬：喻歪曲事實顛倒是非。語出《史記》。<sup>239</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁144）</span></p>
+
+                <PageTag page={314} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">二、與審判有關的成語</p>
+                <p className="text-gray-700 leading-relaxed mb-1">天網恢恢：形容作惡的人，到頭來終究逃不出天譴。語出《老子》：天網恢恢，疏而不漏。<sup>240</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁48）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-3">天理難容：謂窮凶惡極，定遭天譴。<sup>241</sup><span style={cite}>（熊光義編輯，《中國成語大辭典》，頁91）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-3">死有餘辜：形容人罪孽深重，雖一死尚不足蔽其罪。語出《通鑑》。</p>
+                <p className="text-gray-700 leading-relaxed mb-1">多行不義必自斃：多做壞事的人，必無好結果。語出《左傳》。</p>
+                <p className="text-gray-700 leading-relaxed mb-3">作繭自縛：自己所做的事，反而困住自己。<sup>242</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁49-50）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-3">惡貫滿盈：謂積惡甚多，得到應得的報應。《尚書》：商罪貫盈，天命誅之。《傳》紂之為惡，一以貫之，惡貫已滿，天畢其命。<sup>243</sup><span style={cite}>（熊光義編輯，《中國成語大辭典》，頁132）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-1">愧天作人：做了虧心事，對不起天，也對不起人。語出《孟子》：仰不愧於天，俯不作於人，二樂也。</p>
+                <p className="text-gray-700 leading-relaxed mb-1">傷天害理：用殘忍手段害人，有背天理。</p>
+                <p className="text-gray-700 leading-relaxed mb-1">罪惡滔天：作惡之多，高可及天。</p>
+                <p className="text-gray-700 leading-relaxed mb-3">罪不容誅：死有餘辜。語出《漢書》。<sup>244</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁54）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-3">罪魁禍首：領先發動惡事的惡人首領。<sup>245</sup><span style={cite}>（熊光義編輯，《中國成語大辭典》，頁238）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-3">磬竹難書：形容罪狀極多。語出《通鑑》：磬南山之竹，書罪無窮。<sup>246</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁55）</span></p>
+                <p className="text-gray-700 leading-relaxed mb-1">福善禍淫：上天常降福於善人，降禍於惡人。語出《尚書》。<sup>247</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁117）</span></p>
+                <p className="text-gray-700 leading-relaxed">天誅地滅：天地給予懲罰，取其性命。<sup>248</sup><span style={cite}>（高德沛，《中國成語大辭典》，頁140）</span></p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">小結</span>
+                <p className="text-gray-700 leading-relaxed mt-2">
+                  這些成語所表達的「罪」或「惡」，大多中國人耳熟能詳，只要在某種環境下，人很可能就會行其中一部份「罪」或「惡」，所行的事如執迷不悟、損人利己、沈湎酒色、花言巧語等，並不一定會造成「刑法」上的罪，但永恆審判的刑罰卻一定逃脫不了，除非有羔羊基督的寶血塗抹。
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <PageTag page={315} />
+              <h3 className="font-bold text-amber-800 text-lg mb-3">本章結論</h3>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                佛教知道，人性的驕傲、貪心、執著，是苦的來源。吳承恩藉著西遊記，將這事表明。佛教也知道人生的虛幻及共業所帶來的苦，曹雪芹藉著紅樓夢將這事表明。人可以從佛教的教理中，體會出人的罪的嚴重性；也可以從具有佛教思想的民間小說看到人的罪的普遍性。然而解決罪的出路則不在佛教裡面，乃在羔羊的救贖裡，這與中國古時原有的信仰有其相合。
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                佛教既已深入中國民間，可以作為一種人心的預備，因佛教的
+              </p>
+
+              <PageTag page={316} />
+              <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                本質屬乎律法，能叫人知罪，有「訓蒙的師父」之效（加三25）。基督徒若能因勢利導，用福音將感到毫無盼望的百姓從迷惘中引導出來，所能拯救的人數或可跟禪宗、淨土宗的信眾相比，就如基督信仰與西方文化會通之後在西方所吸引的信眾人數一樣。最重要的還不是人數，而是他們信了，真的領受赦罪之恩與復活大能，產生去惡行善的動力，並帶來整體社會的改變。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                紅樓夢所顯示的「共犯結構」及「社會性的罪」，也能用來說明耶穌基督的死。是誰殺了耶穌？羅馬兵丁嗎？的確是他們殺的，但他們只是奉命行事。是巡撫比拉多嗎？的確是，因為他作了最後的判決。然而，他卻在眾人面前洗手表明無辜，說：「流這義人的血，罪不在我，你們承擔吧！」（太廿24）他本想釋放耶穌，無奈眾人的聲音得勝（太廿23）。所以，應該是百姓殺了耶穌！但他們並沒有直接殺耶穌，只是喊叫而已，而且他們是被利用的，真正想置耶穌於死地的乃是祭司長與法利賽人。祭司長與法利賽人罪大惡極嗎？也不盡然。他們有一個善良的動機，是為了避免羅馬人來攻打。約翰如此記載：「祭司長和法利賽人聚集公會，說，這人行好些神蹟，我們怎麼辦呢？若這樣由著他，人人都要信他，羅馬人也要來奪我們的地土和我們的百姓。內中有一個人，名叫該亞法，本年作大祭司，對他們說，你們不知道甚麼。獨不想一個人替百姓死，免得通國滅亡，就是你們的益處。」（約十一47-50）
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                一般人認為罪魁禍首是猶大，因他出賣耶穌。其實猶大並沒有希望耶穌死。當他看見耶穌被定罪，就後悔了（太廿七3）。猶大的動機最多只有兩個：第一個是貪財，但所貪的不過是三十塊銀錢而已（太廿六14~16），比起現今許多官商勾結者，實在是小巫見大巫，他們收受賄賂、圖利財團，導致廣大人民受害。第二個可能的動機是，為了逼耶穌與官方攤牌，進行革命。猶大的動機若是如此，當然也是錯的，但並非十惡不赦。比起眾多經常作錯決策的官
+              </p>
+
+              <PageTag page={317} />
+              <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                員，還算情有可原。現今官員的種種錯誤決策早已造成數不清的天災人禍，許多人因此家破人亡。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                門徒們有沒有罪？當然有！彼得未能「捨身取義」，而是「貪生怕死」，三次不認主。其他門徒則比彼得更可惡，老師被抓，竟然全部逃之夭夭，不像彼得還遠遠跟著。他們的懦弱，使得耶穌名符其實成為待宰的羔羊，毫無生存的機會。
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                與耶穌相關的每一個人都不是明顯的兇手，但耶穌因這些人而死，這些人就是「共犯結構」。但事情不是到此為止，這整個「共犯結構」的形成是有原因的，最早的根源在亞當、夏娃犯罪，因此這是「社會性的罪」，也是「世界的罪」。亞當、夏娃造成耶穌的死，全世界所有人都間接造成耶穌的死，包括後來的人也都在這個「共犯結構」及「世界的罪」裡面。
+              </p>
+
+              <PageTag page={318} />
+              <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                不在現場的我們能說「耶穌的死」與我無關嗎？耶穌說：「這是我的身體，為你們捨的，……這杯是用我血所立的新約，是為你們流出來的。」（路廿二19-20）耶穌實在是因為我們眾人的罪而被釘十字架，我的罪與他的死是相關的。當耶穌再來的時候：「他駕雲降臨！眾目要看見他，連刺他的人也要看見他；地上的萬族要因他哀哭。」刺他的人是指誰呢？不是指羅馬兵，因為末後的日子羅馬兵丁不會在那裡；乃是指有罪的人。所以，萬族都要因他哀哭，這哀哭是為了每個人自己的罪。唯有預先向上帝懺悔的人，才可免於到時悔恨莫及。
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                遠志明認為，觀察中國人需要區分兩種真實：歷史真實與文化真實。歷史真實構成中國的肉體，充滿了罪惡與苦難；文化真實構成中國的靈魂，充滿了禮儀與道德。外國人讀到中國的文化真實，於是譽之為禮儀之邦。中國人忍受了歷史真實，於是嘆之為罪孽深重。<sup>249</sup><span style={cite}>（遠志明，《神州懺悔錄——上帝與五千年中國》，頁vii）</span>這樣的分析可為真切。華人離開了上帝，因此掉入各種罪惡之中。在這共通的基調中，以上二至四章偏重歷史性的內容，以下
+              </p>
+
+              <PageTag page={319} />
+              <p className="text-gray-700 leading-relaxed mt-2">
+                五至六章則偏重當代性的內容。
+              </p>
+            </div>
+
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-700">
-              本章第五節「哲學寓言成語故事」尚在建置中，將陸續更新。
+              第四章至此全部完結。第五章「現代華人與「罪」的關係」尚在建置中，將陸續更新。
             </div>
 
           </div>
