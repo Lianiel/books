@@ -421,11 +421,195 @@ export default function Book33Ch6() {
                 <p className="text-gray-700 leading-relaxed">
                   猶太人幾千年來擁有摩西的律法，自認為高人一等。他們對摩西律法非常熟悉，可是熟悉摩西律法不等於已經行了摩西的律法，知道並不等於行出來（羅二13）。猶太人自認比外邦人聖潔，而法
                 </p>
+
+                <PageTag page={388} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  利賽人又自認比一般猶太人更聖潔。其實法利賽人只是比較熟悉律法而已，並不能真正行出律法，耶穌就指責這些法利賽人是假冒為善的人。主耶穌來世上有一個任務，就是將自己的百姓從罪惡中救出來。這樣的信息多數猶太人不能了解，他們會想：「我們已經有了摩西的律法，已經是聖潔的族類，只需要彌賽亞來救我們脫離羅馬帝國的統治，怎麼會是救我們脫離罪惡呢？」
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  華人跟猶太人很像，猶太人有摩西律法，華人有四書五經、孔孟之道。華人自認為是禮義之邦，很會講忠孝仁義，就以為已經行了忠孝仁義，這跟猶太人沒什麼兩樣。華人有關仁義道德的文化資產，超過全世界其他的民族，跟猶太人並駕齊驅。但華人真正的仁義道德就像耶穌所責備的法利賽人一樣，是假冒為善的。韋政通也批評儒家把修養功夫看得太輕易了，以致道德實踐流於虛玄。<sup>48</sup><span style={cite}>（韋政通，《儒家與現代化》，頁7-13）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  耶穌對法利賽人說：「你們若承認瞎了眼，就沒有罪了；但如今你們說，我們能看見，所以你們的罪還在。」（約九41）這話也同樣是對華人說的。曾任馬列理論教授的范學德如此體會：「當我不承認我是罪人時，我也就拒絕了耶穌。一個不懺悔罪的人，走不到耶穌的面前。因耶穌來到世上，本是來召罪人的。……創始成終的天父啊！我聽到了你親切的話。我感激你拯救我而讓你的獨生子死在十字架上。我感激你不因我一再拒絕你而拋棄我、定我的罪，反而引導我與你相遇。我感激你賜我一個永恆的家。回首往事，如煙，如夢，如幻。多少次在靜靜的深夜中，我向慈愛的救主低聲訴說，主啊，我就是你要尋的罪人，原諒我吧，我來遲了。」<sup>49</sup><span style={cite}>（范學德，《我為什麼不願成為基督徒》，頁10,163,184。《海外校園進深特刊》1997一期(1997.03)）</span>
+                </p>
+
+                <PageTag page={389} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">二、人需要悔罪</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  人需要悔罪，才能領受上帝赦罪的恩典。但中國人近兩千年來，基本上缺乏悔罪意識，許多類型化的小說形成了拒絕承擔罪責的公式，舉例如下：話本小說模式──罪在前世（訓誡意識），罪不在我（向前世討冤債）。譴責小說模式──罪在社會（針砭意識），罪不在我（向社會討回鬼債）。革命小說模式──罪在敵人（清算意識），罪不在我（向「歷史罪人」討回血債）。傷痕小說模式──罪在時代（控訴意識），罪不在我（向時代討回冤債）。這些模式都把罪惡歸於外在的力量，而不承認自己的責任。<sup>50</sup><span style={cite}>（劉再復、林崗，《罪與文學——關於文學懺悔意識與靈魂維度的考察》，頁162-163）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  中國人對自身問題的反省批判功能是麻木的，而又隨便批判別人，因此會把自己當前的不好歸咎於「世風日下」，把國家的不好歸咎於「外來的歪風」；把自己反對的舊事物說成是「封建」的，把自己不喜歡的外來事物說成是「帝國主義」的。<sup>51</sup><span style={cite}>（孫隆基，《中國文化的深層結構》，頁404）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  劉再復、林崗認為，《紅樓夢》可說是中國古代小說唯一具有深刻懺悔意識的作品。<sup>52</sup><span style={cite}>（劉再復、林崗，《罪與文學——關於文學懺悔意識與靈魂維度的考察》，頁195）</span>這在本書四章二節貳項已有詳細探討。除此外，劉再復、林崗也提出了文化大革命之後巴金的悔罪，值得我們深思。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（一）如何面對文革——巴金的榜樣</p>
+                <p className="text-gray-700 leading-relaxed">
+                  噩夢般的「文化大革命」過去多年，人們不大願意重提災難的過去。難得有巴金這樣的人物，真誠的悔罪。他以八年時間寫成五集《隨想錄》。在《隨想錄》裡，巴金不是從追究「禍首」的角度
+                </p>
+
+                <PageTag page={390} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  去挖掘「文革」的根源，他追究的是，在大災難裡自己應當承擔什麼道德責任。他體悟到，「文革」是民族的「共同犯罪」，災難的發生不只是由於某些無恥小人，而是因為多數人在恐懼中喪失了良知，背離了善。災難發生了，每個人都有責任，不論別人承認或逃避，巴金清楚承認自己的道德責任。<sup>53</sup><span style={cite}>（劉再復、林崗，《罪與文學——關於文學懺悔意識與靈魂維度的考察》，頁42-43）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  巴金追悔到底的第一件事，就是「說真話」。他為自己幾十年來說了那麼多假話而追悔，那麼多假話讓自己的心靈蒙上了塵垢。巴金追悔的第二件事是對比自己更早蒙受不幸的人表示歉意。因為內心恐懼，謀求自保，自己也曾向身陷絕境的人丟過石頭，雖屬無奈，終究是參與了作惡，他為當年的「助紂為虐」，表達悔恨。知識份子的軟弱、恐懼和無能，無形中縱容了那場災難。迫害者與被迫害者可以是不同的角色，但可能是同一個人。既是迫害者，又是被迫害者，在不同時候、不同場合，扮演不同角色。因而形成全體的「共同犯罪」。<sup>54</sup><span style={cite}>（劉再復、林崗，《罪與文學——關於文學懺悔意識與靈魂維度的考察》，頁44-46）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  悔罪不會使歷史的罪惡消失，但能使悔罪的人有一個新的開始。若有更多中國人像巴金一樣，中國社會與文化或許有更新轉化的可能。但這只是第一步，因為巴金的懺悔是對著良心，不是對著上帝。唯有對著上帝的懺悔，才能得到真正的赦免，除去靈魂中的重擔，進而走出一條更新的路。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  中國文學在描寫社會衝突和解釋衝突的原因時，常把全部罪惡歸於全部一個具體的「壞人」身上，尋找某一兇手，以達到善有善報、惡有惡報的結果，而缺少對罪惡的共同承擔，即理解人間的任何罪惡都與人類靈魂的普遍性缺陷相關。<sup>55</sup><span style={cite}>（劉再復、林崗，《罪與文學——關於文學懺悔意識與靈魂維度的考察》，頁151）</span>西方的文化或文學作品
+                </p>
+
+                <PageTag page={391} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  裡，相對地充滿許多悔罪意識，例如，第四世紀奧古斯丁的《懺悔錄》、十八世紀盧梭的《懺悔錄》、十九世紀托爾斯泰的《懺悔錄》。<sup>56</sup><span style={cite}>（劉再復、林崗，《罪與文學——關於文學懺悔意識與靈魂維度的考察》，頁64,68）</span>還有，托爾斯泰的《復活》、喬伊斯的《一個青年藝術家的自畫像》、伯爾的《列車正點到達》、陀思妥耶夫斯基的《罪與罰》等等。它們都有一個共通點，就是面對良知責任的懺悔意識。而這良知責任的背後，其實是上帝，因為這些作品的產生主要是受基督教教義及大量基督徒在社會中發揮的影響。一個沒有上帝的國度，良知自然衰微；一個有上帝的國度，良知則是敏銳的。<sup>57</sup><span style={cite}>（劉再復、林崗，《罪與文學——關於文學懺悔意識與靈魂維度的考察》，頁69-76。葉爾米洛夫，《陀思妥耶夫斯基論》，頁146。劉再復、林崗，〈懺悔文學論〉，《哲學雜誌創刊號》1992.5，頁89）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（二）如何面對別人的罪——從陳進興談起</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  台灣有一位陳進興，與人夥同綁架藝人白冰冰的女兒，又強暴許多女子，後來被槍決了。槍決之前在獄中信了耶穌，做了道歉，捐出器官，留下信仰告白。許多人，包括基督徒與非基督徒，對他的悔改有各種評論，質疑他是否可以被原諒。白冰冰是受害者，她選擇不原諒陳進興；南非武宜一家也是受害者，他們則選擇原諒陳進興，並向他表達上帝的愛。其實大多數未直接受害的人，最重要有兩個角度要思想。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">1. 在別人的罪過上看見自己的責任</p>
+                <p className="text-gray-700 leading-relaxed">
+                  最應該思想、檢討的是：「我們的社會出了什麼問題，以至於產生陳進興這樣的人。」陳進興有他自己的責任，他已在死刑中承擔了，但社會也有責任。看陳進興的背景，可知他的母親十八歲未婚生子，又遭男友離棄。陳進興在母腹中已被父母拒絕，出生後
+                </p>
+
+                <PageTag page={392} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  由祖母扶養長大，從小得不到父母的愛。他的變壞，父母絕對有責任。很可能，在另一個時空，同樣一種性衝動，未婚生子，又產生了另一個陳進興。而這種性衝動是怎麼來的，整體社會在鼓勵或縱容性開放方面其實有很大的責任，包括各種色情業者、報章雜誌、限制級電影、寫真集、有線電視台業者等等。就如托爾斯泰寫《懺悔錄》，在書中作者意識到自己進入魔鬼特權階層的共犯結構，參與了製造底層奴隸苦難的罪惡，有意無意地成為「犧牲千萬生靈」的共謀。<sup>58</sup><span style={cite}>（劉再復、林崗，《罪與文學——關於文學懺悔意識與靈魂維度的考察》，頁68）</span>此外，許多父母不夠愛孩子，或採取打罵教育的方式，也可能產生不愛回家的不良少年，進一步若再被黑道利用，就離陳進興不遠了。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">2. 在別人的罪過上看見自己的罪過</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  我個人是否比陳進興更聖潔？耶穌說，心裡動淫念的，已經犯了淫亂了；隨意動怒罵人的，也是殺人了（太五21~22，27~28）。常從思想、言語的罪認起，可使自己避免進一步犯罪。反之，常自覺聖潔的人，可能會落在罪惡試探中而不自覺，至終犯了大罪。除了耶穌，世上沒有真正的義人，我們原都在罪惡之中。我未做陳進興所做之事，但也做了許多在上帝看似相似的事。若沒有基督的贖罪，我所面對的永死，其可怕程度，乃遠超過陳進興在地上所受的死刑。我們斷不以陳進興為無罪，但也不鼓勵人以為自己「罪不至於死」。不管陳進興或我們任何人，唯一可免死的得救之路乃在基督，而不在自己。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  一個充滿淫亂、罪惡的社會、國家，若不悔改，將會產生更多害人的陳進興。福音是目前唯一的出路，福音可以改變像陳進興的人，福音也可以改變「製造」陳進興的人。需要更多基督徒興起，
+                </p>
+
+                <PageTag page={393} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  更早一步去幫助許多兒童、青少年及其父母，使更多靈魂得救，社會更加詳和。
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">貳、慈父與浪子</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  路加福音十五章11~32節有一個「浪子回頭」的故事，這比喻常被稱為「福音中的福音」。<sup>59</sup><span style={cite}>（霍維斯，《耶穌的比喻》，頁116）</span>這故事可說是全世界篇幅最短、內容最豐富的小說。它講到上帝與人之間那永恆之愛的故事。看這故事的情節有人會很訝異地說：「世上有這麼悖逆的兒子嗎？」「有這麼好甚至有點笨的父親嗎？」「這父親似乎太溺愛、縱容孩子。」人很難明白這是一種什麼樣的愛，但天父就是這樣愛我們！不管地上有沒有這樣的父親，但我們有這樣的天父！<sup>60</sup><span style={cite}>（歐果維，《天國奧秘的揭曉》，頁2）</span>十字架的福音在人看是愚拙的，卻是上帝的智慧（林前一23~24）。在浪子回頭的故事裡，不僅浪子是主角，更重要的主角是這位充滿慈愛的父親。<sup>61</sup><span style={cite}>（J. Dwight Pentecost, The Parables of Jesus, 102. Jeremias, Joachim. The parables of Jesus, 128）</span>這是自私、苦難、悔改的比喻，也是愛、饒恕、喜樂的比喻。說明天父上帝在祂的愛裡，用恩典尋回失喪的人。<sup>62</sup><span style={cite}>（唐崇平，《主耶穌的比喻》，頁112）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、浪子的悖逆</p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（一）貪心</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「小兒子對父親說，父親請你把我應得的家業分給我！」（路十五12a）猶太人十八歲成人才具備領受產業的資格，並且二十歲前結婚。所以小兒子那時大概是十八歲，可領受產業但仍未
+                </p>
+
+                <PageTag page={394} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  結婚。<sup>63</sup><span style={cite}>（霍維斯，《耶穌的比喻》，頁118）</span>可能他之前就聽說遠方有一個花花綠綠的世界，所以一滿十八歲就請求父親把產業分給他，好出去享樂。「他父親就把產業分給他們。」（路十五12b）父親把產業分給小兒子與大兒子。根據當時法律，父親還在世時，可提前把產業分配給兒子們，但兒子只可管理使用，不可處分財產，父親仍保有使用及處分權。這是法律對父親的保障，使父親在分完家產後，不至於被兒子趕出家門。<sup>64</sup><span style={cite}>（Jeremias, Joachim. The parables of Jesus, 128-129）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（二）強奪</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  這家庭提前分產業，根據申命記廿一16~17，長子應得雙倍產業，所以產業三分之一給小兒子，三分之二給大兒子，但整個產業仍是父子共有的。然而「過了不多幾日，小兒子就把他一切所有的，都收拾起來，往遠方去了。」（路十五13）「收拾」不只是整理行李，而是把與父親共有的產業拍賣成金銀，到遠方去花天酒地，所以他犯了強奪的罪。<sup>65</sup><span style={cite}>（霍維斯，《耶穌的比喻》，頁122）</span>父親容許小兒子這樣做，正如上帝給人自由意志，人卻偏行己路。而這是愛的代價。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（三）背親</p>
+                <p className="text-gray-700 leading-relaxed">
+                  小兒子「往遠方去了」，當時住在巴勒斯坦的猶太人有五十萬人，移民在其他國家的有四百萬人。<sup>66</sup><span style={cite}>（Jeremias, Joachim. The parables of Jesus, 129）</span>遠方可能是其他國家，在那裡有同鄉，有老朋友，也會結交許多新朋友。小兒子只顧自己，又落入享樂及罪惡之中，完全不顧念父親會漸慢年老，需要他的照
+                </p>
+
+                <PageTag page={395} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  顧。他犯了背親的罪。<sup>67</sup><span style={cite}>（Shillington, V. George. Jesus and his Parables——interpreting the parables of Jesus today, 152）</span>所謂「遠方」，不單是地理的位置，也是心靈的光景，背棄了父親，背棄了信仰。<sup>68</sup><span style={cite}>（歐果維，《天國奧秘的揭曉》，頁4）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（四）淫亂</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  小兒子「任意放蕩」，也就是道德敗壞、玩女人、行淫亂。他的哥哥在他回來後向父親說：「你這個兒子和娼妓吞盡了你的產業。」哥哥說這話，可能是因為小兒子在外面放蕩，被遠親或朋友看見而把消息傳回來，使他們知道小兒子將財產花在女人身上。<sup>69</sup><span style={cite}>（霍維斯，《耶穌的比喻》，頁126）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（五）敗家</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  小兒子在遠方，除了任意放蕩外，更「浪費貲財，耗盡了一切所有的」。這樣說來，他應該是全世界最壞的兒子了，然而這其實是世人的寫照。世人曾經從上帝那裡領受了全地作產業，卻把它糟蹋了。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  世人為了滿足自己的慾望（貪心），而把與上帝共有的產業據為己有（強奪）、進而否認上帝（背親）、敗壞道德（淫亂），又把地球幾乎破壞殆盡（敗家）。導致空氣、水污染、森林面積減少、沙漠面積擴大等等。人類第一個浪子是亞當、夏娃。他們想要自由，選擇背叛神。但他們治理全地的結果是世界充滿戰爭、貧窮和飢荒。華人及整個人類也像那個浪子。
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">二、浪子的受苦</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（一）窮困</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「那地大遭饑荒，以致於他就窮苦起來。」「饑荒」可以是天災或人禍。主前一六九年至主後七十年之間，耶路撒冷地區共發生了十次天災引起的饑荒。「饑荒」這字眼能令猶太人顫抖。<sup>70</sup><span style={cite}>（霍維斯，《耶穌的比喻》，頁126）</span>中國大陸的長江、黃河河道及湖泊都愈來愈小，以致每年都有水災，並因為儲水量太少而又有旱災。台灣的河流也被阻塞、污染，又有很多土石流，因為人濫伐、濫墾。這乃是人禍。這浪子會窮困是因為他濫用資源，就像今天的人們一樣。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（二）孤單</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  小兒子不僅貧窮，並且極其孤單，這是他過去所沒有嚐過的滋味。當他擁有大把金子、銀子時，酒肉朋友都會在他身邊。一段日子後，所有金錢都花光了，朋友也一個個離開了。他曾經認為每天和父親、哥哥在一起很沒趣，等這些朋友走了之後，才覺得和父親、哥哥在一起是何等的好。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（三）受辱</p>
+                <p className="text-gray-700 leading-relaxed">
+                  沒有錢之後，他去投靠一個養豬的，於是他被打發到田裡去。那養豬的主人不給他東西吃，又虐待、羞辱他。本來小兒子在家就
+                </p>
+
+                <PageTag page={396} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  不做事，到了外地不太會做事，必常會被責備、羞辱。他離開父親，原是為了得自由，如今卻落在新主人手下，更加沒有自由。<sup>71</sup><span style={cite}>（歐果維，《天國奧秘的揭曉》，頁7）</span>如同現在的青少年離家出走，可能落到黑道朋友的手上，在貧窮、孤單之外，還要受到許多侮辱和剝削。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（四）飢餓</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「他恨不得拿豬所吃的豆莢充飢，也沒有人給他。」一個人餓到想吃豬所吃的東西，可見他是多麼的飢餓。他做得稍微不合主人的心，就被處罰沒有飯吃，所以他活在極端的飢餓狀態中，而仍得不著吃的。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（五）污穢</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  養豬這件事是得罪神的。在舊約中，豬代表不潔淨，所以猶太人不吃豬肉。他們不僅不吃豬肉，也絕不養豬。猶太法典他勒目寫到：「願養豬的人都被詛咒。」<sup>72</sup><span style={cite}>（巴克萊，《路加福音註釋》，頁247）</span>這可以說明當時猶太人去養豬，是何等污穢的事。按規定養豬的人不可以去會堂參加安息日禮拜。一個養豬的人自絕於同胞，也自絕於上帝。這就如同一個人離開上帝，落在魔鬼撒但手上被凌虐。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  這浪子受了種種的苦，包括窮困、孤單、受辱、飢餓、污穢，這時終於醒悟過來。這是他從苦難、詛咒、逆境中轉回的關鍵。這情節告訴我們，所遭遇的外在問題，迫使我們認清自己裡面的問題：沒有天父上帝，生命是殘破污穢的。<sup>73</sup><span style={cite}>（歐果維，《天國奧秘的揭曉》，頁8）</span>
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">三、浪子的悔改</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  上帝是何等慈愛，正如同這浪子的父親那樣慈愛，完全無條件的接納我們。但人必須有悔改的意識與行動。路加福音十五章三個
+                </p>
+
+                <PageTag page={397} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  比喻，都說到失而復得，兩次強調「一個罪人『悔改』，在天上也要這樣為他歡喜。」（路十五7，10）<sup>74</sup><span style={cite}>（James Montgomery Boice, The Parables of Jesus, 53）</span>浪子的失落有其過程，回轉也有其過程，從醒悟，到認罪，到走回家。<sup>75</sup><span style={cite}>（James Montgomery Boice, The Parables of Jesus, 54。頁21）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（一）認清罪惡的可怕</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  小兒子「醒悟」過來，認清自己的過去，也認清現今罪惡的可怕後果。<sup>76</sup><span style={cite}>（Shillington, V. George, Jesus and his Parables——interpreting the parables of Jesus today, 155）</span>他說：「我倒在這裡餓死嗎？」他知道如果還停留在這罪惡的環境中，必定要客死他鄉，死前也見不到他父親。這是多麼可怕的事情！
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（二）認知苦難的緣由</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  他也認知這苦難的緣由是他自己悖逆的罪，這一切苦難都是他的罪所帶來的，所以他想對父親認罪說：「父親！我得罪了天，又得罪了你。從今以後，我不配稱為你的兒子，把我當作一個雇工吧！」<sup>77</sup><span style={cite}>（Boice, James Montgomery, The Parables of Jesus, 54）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（三）知道父親的豐盛</p>
+                <p className="text-gray-700 leading-relaxed">
+                  除了有消極面的認知，他還需要有積極面的認知。很多人知道自己的罪，知道自己無路可走了，卻不知道天父上帝的豐盛和慈愛，以至於沒有回轉到上帝面前。以賣耶穌的猶大為例，他知道自己的罪，但不知道上帝的慈愛，以致去上吊自殺。這浪子不僅知道自己的罪，也知道父親的豐盛，他說：「我父親有多少的雇工，口
+                </p>
+
+                <PageTag page={398} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  糧有餘。」所以他決定回去父親那裡。<sup>78</sup><span style={cite}>（Tolbert, Mary Ann, Perspectives On The Parable, 102）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（四）相信父親的慈愛</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  他也相信父親的慈愛，回去後即使不作兒子，作雇工也好過在這裡養豬。作雇工和作僕人不一樣。僕人的地位僅次於兒子，可以受到類似兒子的待遇。當僕人願意一生跟隨主人時，就在耳垂上打洞作記號，主人會一生待僕人像兒子一樣。雇工是臨時性的，表現不佳，隨時可以解雇。即使如此，回去作雇工也強過在這裡養豬，因父親是好主人。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（五）付諸實際的行動</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  很多人知道天父的慈愛，但沒有行動；知道作基督徒很好，但沒有來教會、沒有讀聖經、沒有向神禱告、親近神，最終還是得不到父神的豐盛與慈愛。小兒子將悔改的心付諸實際行動：「於是起來，往他父親那裡去。」終於能重新得著父親的愛。所以除了要知道罪惡的可怕，認清苦難的緣由，知道神的豐富和慈愛，最後更要付諸行動，走回父的家中。<sup>79</sup><span style={cite}>（施達雄，《耶穌所講的比喻》，頁255。Boice, James Montgomery, The Parables of Jesus, 55）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  這就是浪子的三個生命歷程：他的悖逆，他的受苦，和他的悔改。小兒子過去太低估罪惡的轄制力，太高估自己的道德自主性，以為可以作自己的主人。但現在他領悟了，願意回到天父家中。人不可能作自己的主人，人只有兩種選擇，一是作撒但與世界的奴役；一是作天父家中的兒子。
+                </p>
               </div>
             </div>
 
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-700">
-              第六章第二節「浪子回頭」及後續內容尚在建置中，將陸續更新。
+              第六章第三節「天人合一」及後續內容尚在建置中，將陸續更新。
             </div>
 
           </div>
