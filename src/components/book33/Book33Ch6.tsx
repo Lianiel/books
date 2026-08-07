@@ -13,7 +13,7 @@ export default function Book33Ch6() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <PageTag page={364} />
+        <PageTag page={365} />
         <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-red-700 to-amber-700 bg-clip-text text-transparent">第六章</h1>
         <h2 className="text-xl font-semibold text-gray-700">從罪得釋放──華人文化更新之路</h2>
       </div>
@@ -31,16 +31,6 @@ export default function Book33Ch6() {
           <div className="p-5 bg-white space-y-6">
 
             <div>
-              <p className="text-gray-700 leading-relaxed">
-                中國人只有功利原則，不講普遍正義，以成敗論英雄，以強人為依歸。這種民族心理，從根本上阻礙著現代化民主化的進程。眼下無論大陸還是台灣，上上下下不擇手段追求成功享樂的風氣，便是這一陳舊民族心理的投射。中國人若不面對上帝認罪悔改，等待在未來的，必是更深重的災難和痛苦。<sup>111</sup><span style={cite}>（遠志明，《神州懺悔錄——上帝與五千年中國》，頁288-289）</span>
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                重塑國民性格，不是不可能的，只要華人能看見自己離開上帝的事實，願意回轉到上帝面前，得到基督裡的新生命，而有動力來實行聖經的真理，也自然能落實中國歷代聖賢的教導，而產生新的中國人。昔日歐洲的蠻夷之邦，被改造成為紳士、淑女，差派數以萬計的宣教士深入蠻荒，去傳播上帝的愛，這一切皆因接受了基督的救贖。中華民族若能承認自己的迷失，接受基督的救贖，也能被改造發出上帝的榮耀。下一章將更多探討這個重點。
-              </p>
-            </div>
-
-            <div>
-              <PageTag page={365} />
               <h3 className="font-bold text-amber-800 text-lg mb-3">第六章　從罪得釋放──華人文化更新之路</h3>
               <p className="text-gray-700 leading-relaxed mb-3">
                 從以上五章的探討分析，可看到華人離開上帝而活在罪中的光景，也可以看到中華文化與基督教思想之間，有印證及加乘的關係，中華文化能印證及充實基督教思想，基督教思想也能印證及補充中華文化。華人如何從「罪」中得釋放呢？華人文化如何更新呢？這是本章要嘗試回答的。因此本章第一節整理「中國文化與基督教思想的關係」，第二節至第四節接著進深探討第一節所提出的三個角度。首先是「浪子回頭」──放下驕傲，承認自己的「罪」，走回天父的家；接著藉因信稱義的福音，領受「天人合一」的恩典；最後與眾聖徒同走成聖的道路，達「內聖外王」之境。本章所探討的課題，在華人傳統思想中，原都是自力的，但要從罪中得釋放，則需要加上外力，也就是上帝的恩典、基督的贖罪、聖靈的大能，這也是本章探討的重點。
@@ -535,6 +525,7 @@ export default function Book33Ch6() {
                 </p>
               </div>
 
+              <PageTag page={396} />
               <div className="mb-4">
                 <span className="font-semibold text-amber-700 block">二、浪子的受苦</span>
                 <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（一）窮困</p>
@@ -546,13 +537,13 @@ export default function Book33Ch6() {
                   小兒子不僅貧窮，並且極其孤單，這是他過去所沒有嚐過的滋味。當他擁有大把金子、銀子時，酒肉朋友都會在他身邊。一段日子後，所有金錢都花光了，朋友也一個個離開了。他曾經認為每天和父親、哥哥在一起很沒趣，等這些朋友走了之後，才覺得和父親、哥哥在一起是何等的好。
                 </p>
                 <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（三）受辱</p>
-                <p className="text-gray-700 leading-relaxed">
-                  沒有錢之後，他去投靠一個養豬的，於是他被打發到田裡去。那養豬的主人不給他東西吃，又虐待、羞辱他。本來小兒子在家就
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  沒有錢之後，他去投靠一個養豬的，於是他被打發到田裡去。那養豬的主人不給他東西吃，又虐待、羞辱他。本來小兒子在家就不做事，到了外地不太會做事，必常會被責備、羞辱。他離開父親，原是為了得自由，如今卻落在新主人手下，更加沒有自由。<sup>71</sup><span style={cite}>（歐果維，《天國奧秘的揭曉》，頁7）</span>
                 </p>
 
-                <PageTag page={396} />
+                <PageTag page={397} />
                 <p className="text-gray-700 leading-relaxed mt-2 mb-3">
-                  不做事，到了外地不太會做事，必常會被責備、羞辱。他離開父親，原是為了得自由，如今卻落在新主人手下，更加沒有自由。<sup>71</sup><span style={cite}>（歐果維，《天國奧秘的揭曉》，頁7）</span>如同現在的青少年離家出走，可能落到黑道朋友的手上，在貧窮、孤單之外，還要受到許多侮辱和剝削。
+                  如同現在的青少年離家出走，可能落到黑道朋友的手上，在貧窮、孤單之外，還要受到許多侮辱和剝削。
                 </p>
                 <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（四）飢餓</p>
                 <p className="text-gray-700 leading-relaxed mb-3">
@@ -573,7 +564,7 @@ export default function Book33Ch6() {
                   上帝是何等慈愛，正如同這浪子的父親那樣慈愛，完全無條件的接納我們。但人必須有悔改的意識與行動。路加福音十五章三個
                 </p>
 
-                <PageTag page={397} />
+                <PageTag page={398} />
                 <p className="text-gray-700 leading-relaxed mt-2 mb-3">
                   比喻，都說到失而復得，兩次強調「一個罪人『悔改』，在天上也要這樣為他歡喜。」（路十五7，10）<sup>74</sup><span style={cite}>（James Montgomery Boice, The Parables of Jesus, 53）</span>浪子的失落有其過程，回轉也有其過程，從醒悟，到認罪，到走回家。<sup>75</sup><span style={cite}>（James Montgomery Boice, The Parables of Jesus, 54。頁21）</span>
                 </p>
@@ -590,7 +581,7 @@ export default function Book33Ch6() {
                   除了有消極面的認知，他還需要有積極面的認知。很多人知道自己的罪，知道自己無路可走了，卻不知道天父上帝的豐盛和慈愛，以至於沒有回轉到上帝面前。以賣耶穌的猶大為例，他知道自己的罪，但不知道上帝的慈愛，以致去上吊自殺。這浪子不僅知道自己的罪，也知道父親的豐盛，他說：「我父親有多少的雇工，口
                 </p>
 
-                <PageTag page={398} />
+                <PageTag page={399} />
                 <p className="text-gray-700 leading-relaxed mt-2 mb-3">
                   糧有餘。」所以他決定回去父親那裡。<sup>78</sup><span style={cite}>（Tolbert, Mary Ann, Perspectives On The Parable, 102）</span>
                 </p>
@@ -1237,7 +1228,7 @@ export default function Book33Ch6() {
                   嚴行指出，今天的中國，把科學純粹當成是知識與技術，是「第一生產力」。但科學更深刻之處在於，它是一種世界觀、人文素養、心靈的境界。科學精神是以分析精神，用推理方法，去尋找事物的原因。上帝是世界的原因，上帝構成宇宙因果鏈條的頂點。所以，科學的本質，尤其是理論科學、基礎科學，是為了解讀上帝的奧秘。科學作為人在此岸世界的一種探尋努力，是人接近上帝的一種方式。科學永遠不可能完全地解讀上帝的奧秘，「科學無止境」這一觀念的背後，是人的有限性與上帝的無限。<sup>167</sup><span style={cite}>（嚴行，〈中國文化與基督精神（上）〉，《海外校園》70期（2005/04），頁20）</span>
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  西方科學家起初研究科學，主要是要更認識上帝，而實用的效果則隨之而來。例如，愛因斯坦提出相對論，原只是想通過這研究，來了解宇宙的本質和奧秘。結果相對論改變了世界，現在的核技術就來自於他著名的質能轉化公式E＝MC<sup>2</sup>。萊特兄弟做飛機試驗時，沒想到飛機能運人運貨，成為世界一種重要的運輸工具。也
+                  西方科學家起初研究科學，主要是要更認識上帝，而實用的效果則隨之而來。例如，愛因斯坦提出相對論，原只是想通過這研究，來了解宇宙的本質和奧秘。結果相對論改變了世界，現在的核技術就來自於他著名的質能轉化公式E＝MC²。萊特兄弟做飛機試驗時，沒想到飛機能運人運貨，成為世界一種重要的運輸工具。也
                 </p>
 
                 <PageTag page={437} />
