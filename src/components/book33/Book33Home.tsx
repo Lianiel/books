@@ -114,7 +114,7 @@ export default function Book33Home() {
                 </ul>
               </div>
             ))}
-            <p className="text-xs text-gray-400 pt-2">※ 目前已上架：推薦序、自序、緒論、第一至四章。第五、六章陸續建置中。</p>
+            <p className="text-xs text-gray-400 pt-2">※ 全書已上架：推薦序、自序、緒論、第一至六章、結論、參考書目。</p>
           </div>
         )}
       </div>
