@@ -606,10 +606,622 @@ export default function Book33Ch6() {
                   這就是浪子的三個生命歷程：他的悖逆，他的受苦，和他的悔改。小兒子過去太低估罪惡的轄制力，太高估自己的道德自主性，以為可以作自己的主人。但現在他領悟了，願意回到天父家中。人不可能作自己的主人，人只有兩種選擇，一是作撒但與世界的奴役；一是作天父家中的兒子。
                 </p>
               </div>
+
+              <PageTag page={400} />
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">四、父親的慈愛</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（一）長久的等待</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  父親把產業分給兒子，小兒子卻帶著產業離家出走了。但父親仍然接納他，原諒他，天天等待他回來。所以當他回家時，父親遠遠的就看見兒子的身影，趕快「跑」過去抱他。對一個老人而言，這是很不尋常的，表明極大的愛。<sup>80</sup><span style={cite}>（Tolbert, Mary Ann, Perspectives On The Parable, 108）</span>父親沒有懊惱兒子把他的產業花光，而是心疼他的受苦。父親注目的焦點不是金錢，而是兒子，只要兒子能回來就好。<sup>81</sup><span style={cite}>（J. Dwight Pentecost, The Parables of Jesus, 104）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（二）主動的接納</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  雖然這兒子曾經養豬，全身充滿污穢，但父親不管這些，不僅跑去抱他，甚至還親他，親吻也代表饒恕接納<sup>82</sup><span style={cite}>（Jeremias, Joachim. The parables of Jesus, 130）</span>，這就是神對世人的愛。「他沒有按我們的罪過待我們，也沒有照我們的罪孽報應我們。」（詩一〇三10~11）主耶穌來到世上時，也擁抱污穢的罪人，與稅吏、妓女在一起。法利賽人逼問耶穌，耶穌就講這個浪子的比喻，因為主耶穌正像這位父親。主來尋找拯救失喪的人，主動接近罪人，擁抱、親吻罪人。「唯有基督在我們還作罪人的時候，為我們死，神的愛就在此向我們顯明了。」（羅五8）<sup>83</sup><span style={cite}>（施達雄，《耶穌所講的比喻》，頁256。）</span>
+                </p>
+
+                <PageTag page={401} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（三）完全的尊榮</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  不僅如此，父親還吩咐僕人趕快拿上好的袍子給小兒子穿上，把戒指戴在他指頭上，把鞋穿在他腳上。雇工是不穿鞋的，僕人是不戴戒指的，也沒有上好的袍子可穿。父親沒有把他當雇工，也不把他當僕人，而是讓他作兒子，給他最尊貴的身份。<sup>84</sup><span style={cite}>（J. Dwight Pentecost, The Parables of Jesus, 105）</span>悔改信主之人在神面前所得的地位正是如此，如羅馬書八15所說：「你們所受的不是奴僕的心，仍舊害怕。所受的乃是兒子的心，因此我們呼叫『阿爸父。』聖靈與我們的心同證我們是神的兒女。」這地位是藉主耶穌的救贖賜給我們的。主耶穌在十架上為我們承擔一切悖逆的代價，而把兒子的身份給了我們。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（四）大大的歡慶</p>
+                <p className="text-gray-700 leading-relaxed">
+                  父親宰了肥牛犢一起快樂慶祝。在路加福音十五章中，耶穌講了三個比喻，其共同點就是為失而復得歡喜快樂。天父看見罪人悔改，是祂最快樂的事。甚至在第三個比喻中，分別對僕人及大兒子二次（路十五24，32）講到小兒子是死而復活、失而又得的，理當歡喜快樂。<sup>85</sup><span style={cite}>（Crossan, John Dominic. In Parables, 73-74）</span>這比喻告訴我們，天父上帝尋找失喪的人，上帝接待凡回轉到祂面前的人為蒙福的兒子。<sup>86</sup><span style={cite}>（J. Dwight Pentecost, The Parables of Jesus, 頁105）</span>中華民族這個浪子，不管過去做了多少讓神傷心的事，只要悔改，回到天父的面前，這就是天父最快樂的事情了。
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">小結</span>
+                <p className="text-gray-700 leading-relaxed mt-2">
+                  很多宣教士到非洲、南美洲、亞洲尋找浪子，像耶穌一樣去尋找拯救失喪的人，甚至犧牲生命，有好多宣教士因此埋葬在中國。從個人的角度來說，浪子包括每一個未信主的人，從國家民族的角度來說，中華民族整體也是浪子。王永信牧師寫〈中華民族的最後轉捩點〉一文，對中國呼喊說：「中國啊，中國！巴不得今天也有神的僕人站起來向你宣告，你爭戰的日子滿了，你的罪孽赦免了。你為自己一切的罪，從耶和華手中加倍受罰。四千多年來，你犯的罪夠深了，你受的苦也夠多了，你漂蕩的日子夠久了。回家吧，中國，回家吧！你可曾知道自從你以自足、自滿和自義的心情離家出走直到今天，你在天上的慈父每日每夜開著門，張開雙手，等候你回來！遊子還鄉，倦鳥知返，中國啊，歸來！」<sup>87</sup><span style={cite}>（王永信，《中華民族的最後轉捩點》，頁12。王永信，〈中華民族的最後轉捩點（五）〉，《真理報》117期，2003.6，頁6）</span>願華人同胞都能早日歸向主！
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <PageTag page={402} />
+              <h3 className="font-bold text-amber-800 text-lg mb-3">第三節　天人合一</h3>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                從中國先秦諸子的「天人之辨」，到漢代思想家、政治家董仲舒的「天人為一」，再到宋代理學家們的「萬物一體」論，「天人合一」的理念可說是中華傳統文化的重要內涵，是中國人內心深處的願望。這個願望能否實現呢？根據本書第五章的探討，清楚看到華人在這方面是失敗的。本節要從另一方向指出華人可達到「天人合一」的道路。
+              </p>
+
+              <PageTag page={403} />
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">壹、天人合一的意義</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  李申從《四庫全書》中共找到二百餘條明確表述「天人合一」的材料。發現「天人合一」中的「天」包含著如下內容：1. 天是可以與人發生感應關係的存在；2. 天是賦予人以吉凶禍福的存在；3. 天是人們敬畏、事奉的對象；4. 天是主宰王朝命運的存在（天命之天）；5. 天是賦予人仁義禮智本性的存在。<sup>88</sup><span style={cite}>（《科學與社會》網站http://gwzz.blogbus.com/logs/2004/12/550437.html）</span>馮友蘭歸納天有五義：1. 物質之天，2. 主宰之天，3. 運命之天，4. 自然之天，5. 義理之天。<sup>89</sup><span style={cite}>（馮友蘭，《中國哲學史》，頁55）</span>這些研究成果與本論文第二章的結論大致相同。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  關於天人合一，董仲舒的名言是：「天亦有喜怒之氣，哀樂之心，與人相副。以類合之，天人一也。」（春秋繁露‧陰陽義）<sup>90</sup><span style={cite}>（漢董仲舒撰，《春秋繁露》‧陰陽義第四十九。鍾肇鵬，《春秋繁露校釋》(校補本)，頁767）</span>在董仲舒那裡，天是有喜怒哀樂的天，也是可以和人感應、能給人吉凶禍福的天。董氏又說：「王者配天，謂其道。天有四時，王有四政，四政若四時，通類也，天人所同有也。」<sup>91</sup><span style={cite}>（漢董仲舒撰，《春秋繁露》‧四時之副第五十五。鍾肇鵬，《春秋繁露校釋》(校補本)，頁797）</span>在他那裡，「天人一」的「一」，是「一類」的意思。董仲舒為了論證天人可以感應，首先需要論證天與人同類。這是天人合一的現實背景。董氏論證天人同類的方法，叫做「天人相副」。即，人是天的副本，是天的「拷貝」。比如，天是圓的，所以人的頭圓；地是方的，所以人的腳方。人有雙眼，因為天有日月；人有四肢，因為天有四季；人有喜怒哀樂，因為天有陰晴。天有三百六十六日，所以人骨
+                </p>
+
+                <PageTag page={404} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  有三百六十六節等等。<sup>92</sup><span style={cite}>（宋其正，《天人合一論》，頁41）</span>董仲舒所說的「天人相副」，與聖經所說「人照著上帝的形像受造」（創一27），意思相當接近。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  總括中國古今思想，天人合一可包括「人與上天相通」、「人與天理一致」、「人與自然和諧」三個層次。「人與上天相通」是古聖的經驗與信仰，至孔子仍有此種信仰<sup>93</sup><span style={cite}>（詳見本論文第二章四節肆項：論語中的「天」與「神」）</span>；「人與天理一致」是孔子之後諸儒努力的目標；「人與自然和諧」合於老莊的思想，也合於現代「生態環保」的課題。<sup>94</sup><span style={cite}>（宋其正，《天人合一論》，頁14-23）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  從聖經看，也有這三層意思：一是人從上帝得永存的靈魂，作為愛的器皿，當與上帝在靈裡相通；二是人按上帝形像受造，當活出上帝樣式；三是人受託管理世界，當與自然萬物和諧。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  現代人為了生存，開始注重「人與自然和諧」的生態環保課題。然而少數人先天下之憂而憂，多數人卻繼續破壞生態、環境、自然。其實「人與自然和諧」的基礎乃是「人與天理一致」，人心若不合天理，所表現的就是自我中心，以致成為社會人際與自然環境的破壞者。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  古今中外，都有聖賢哲人注重「人與天理一致」，然而也是少數人大聲疾呼，多數人偏行己路。其實「人與天理一致」的基礎乃是「人與上天相通」。人若不接受聖靈的重生、引導，也很難真正在行事上與天理一致。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  在正確的次序上，必須先有第一層的「天人合一」，也就是「人與上天相通」、「靈性的天人合一」，上帝與人的靈之間有對談、相通。基督徒所經歷及實踐的聖靈充滿、祈禱向主說話、讀經聆聽主話，都屬這一層。而後可以有第二層的「天人合一」，也就
+                </p>
+
+                <PageTag page={405} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  是「人與天理一致」、「義理的天人合一」。人靠著聖靈行主道，結出「聖靈的果子」，而有品格的修養、倫理道德的實踐。最後可以有第三層的「天人合一」，也就是「人與自然和諧」、「自然的天人合一」，人領受上帝的智慧，執行治理全地的使命。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  第一層的合一是內在生命的相通，第二層的合一是外在行為的相配，第三層的合一是使命的執行。人需要先有第一層的合一，而後才能有第二層、第三層的合一。這三層的合一都要有真神信仰作基礎。聖經說：「世人都犯了罪，虧缺了上帝的榮耀。」（羅三23）指出人因為離開上帝，失去第一層的合一，因此也就達不到第二層、第三層的合一，無法與上帝的聖潔、公義相配，也無法治理上帝託付的世界。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  華人在古時仍追求第一層「天人合一」，如五經所記載的，也如本書第二章探討所得的結論。那時期，天是有位格的，也常被稱為上帝。這與挪士所做的相似：「那時人才求告耶和華的名。」（創四26）也與挪亞所做的相似：「挪亞為耶和華築了一座壇，拿各類潔淨的牲畜、飛鳥，獻在壇上為燔祭。」（創八20）雖然人已經犯了罪，離開了上帝，但藉著禱告、獻祭，仍能與上帝相交。在中國，直到孔子，仍有這方面的經歷，如孔子自己所見證的：「丘之禱久矣。」孔子之後，第一層天人合一就幾乎完全失去了。只剩下第二層天人合一的概念，這正是董仲舒所表達的「天人相副」，也是朱子所說的道心人心合一。然而因為失去了第一層天人合一，也就很難實行第二層及第三層天人合一了。而成為二千多年來，華人倫理道德每下愈況、政治、科學今不如古的情形。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  本節以下將集中探討第一種天人合一的實現，下一節「內聖外王」將較多探討第二層與第三層天人合一的實現。
+                </p>
+              </div>
+
+              <PageTag page={406} />
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">貳、基督救贖帶來天人合一</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  第一層的「天人合一」是藉著基督救贖而達成的。消極方面除去上帝的怒氣與審判，積極方面能與上帝相交，以上帝為樂。（羅五11）聖經從舊約到新約都啟示如何與神和好的真理。在中國也有這真理的影子，主要是本書二章三節肆項及五章二節壹項已探討的「禮記中的祭祀」、「祭天大典」，本節進一步說明這真理的本體。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  基督降生，帶來初步的「天人合一」，這事首先在基督耶穌身上成為事實，因為基督是完全的神，也是完全的人。<sup>95</sup><span style={cite}>（黃汝·傅瑞勒，《聖經系統神學研究》，頁209,217）</span>正如先知以賽亞所預言的：「因有一嬰孩為我們而生；有一子賜給我們。政權必擔在他的肩頭上；他名稱為奇妙策士、全能的上帝、永在的父、和平的君。」（賽九6）也如使徒馬太所見證的：「耶穌基督降生的事記在下面：他母親馬利亞已經許配了約瑟，還沒有迎娶，馬利亞就從聖靈懷了孕。……這一切的事成就是要應驗主藉先知所說的話說，必有童女懷孕生子；人要稱他的名為以馬內利（以馬內利繙出來就是神與我們同在）。」（太一18、22-23）基督是神，祂降生為人，就使「神與人同在」實現了，也就是使「天人合一」實現了。但「神與人同在」及「天人合一」不只在基督身上，還要給每一個人，這就需要基督給世人的救贖。為達此目的，基督也必須是完全的神及完全的人。因為祂是人，才能為人贖罪；祂是神，所以才能完全無罪，且死而復活，使贖罪之效能及於全人類。<sup>96</sup><span style={cite}>（斯托德，《當代基督十架》，頁201-216）</span>正如保羅所說：「這福音是上帝從前藉眾先知在聖經上所應許的，論到祂
+                </p>
+
+                <PageTag page={407} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  兒子我主耶穌基督。按肉體說，是從大衛後裔生的；按聖善的靈說，因從死裡復活，以大能顯明是上帝的兒子。」（羅一2~4）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  基督的十架救贖，帶給世人「天人合一」的恩典。因為人有罪，聖潔的神不能與有罪的人相合。基督為人流血捨命，用寶血洗淨人的罪，人成為無罪，而後才能與神和好，得著上帝的同在。<sup>97</sup><span style={cite}>（斯托德，《當代基督十架》，頁151）</span>正如保羅所說：「惟有基督在我們還作罪人的時候為我們死，神的愛就在此向我們顯明了。現在我們既靠著他的血稱義，就更要藉著他免去神的忿怒。因為我們作仇敵的時候，且藉著神兒子的死，得與神和好；既已和好，就更要因他的生得救了。」（羅五8-10）彼得也引用舊約的預言宣告說：「他是你們匠人所棄的石頭，已成了房角的頭塊石頭。除他以外，別無拯救。因為在天下人間，沒有賜下別的名，我們可以靠著得救。」（詩一一八22-24，徒四11-12）。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  過去兩千年來，基督教基本上有三種對救贖的解說，一是「得勝的基督說」：人在撒但的權勢之下，基督在十架上擊敗撒但，使人從撒但的權勢中得釋放。正如希伯來書所說：「兒女既同有血肉之體，他也照樣親自成了血肉之體，特要藉著死敗壞那掌死權的，就是魔鬼，並要釋放那些一生因怕死而為奴僕的人。」（來二14-15）第二是「贖罪說」：罪觸犯了上帝的公義，如果不予懲罰，公義則不得伸張；然而透過基督在十字架上的死，上帝同時顯明了祂的憐憫與公義。<sup>98</sup><span style={cite}>（十一世紀的安瑟倫說：「罪人虧欠了神，因為他犯了罪，是他無法償還的，可是他若不償還，就不能得救。……沒有人能夠如此償還，除了神自己以外，可是除了人以外，沒有人應該償還；否則就不是人在償還。所以，必須由神而人的那位來償還。……那位做此償還的，必須是完全的神和完全的人，因為除了真正的神以外，沒有人能付，而除了真正的人以外，沒有一位當付。」以上引自斯托德，《當代基督十架》，頁160）</span>正如施洗約翰所說：「看哪，神的羔羊，除去世人罪孽的！」（約一29）及使徒約翰所說：「他為我們的罪作了挽
+                </p>
+
+                <PageTag page={408} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  回祭，不是單為我們的罪，也是為普天下人的罪。」（約壹二2）第三是「道德影響論」：基督救贖性的死亡顯明了上帝的愛，也彰顯基督是我們的榜樣，而使信徒心中產生信心與愛。正如使徒保羅所說：「原來基督的愛激勵我們；因我們想，一人既替眾人死，眾人就都死了；並且他替眾人死，是叫那些活著的人不再為自己活，乃是替他們死而復活的主活。」（林後五14-15）基督教主流思想，以前二種解說為主，但第三種也可以成為附帶意義。<sup>99</sup><span style={cite}>（黃汝·傅瑞勒，《聖經系統神學研究》，頁228-238）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  十字架是基督教宣揚的中心，十字架深刻、主動地顯明了上帝的愛，使信心成為可能；它也顯明了律法的重要性，以及悖逆上帝所設立之秩序與結構的嚴重性。十字架聲明，且保守了上帝律法的聖潔，同時又顯明了祂無限量、超越的愛。<sup>100</sup><span style={cite}>（黃汝‧傅瑞勒，《聖經系統神學研究》，頁238）</span>因著基督在十字架上的救贖，上帝已將「天人合一」的恩典給人，但在人這一邊，也需要以信心來接受，才能成為事實。這是下一項要表達的。
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">參、因信稱義達致天人合一</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  「因信稱義」是「罪人因著神的恩典藉著信靠基督而得以被上帝赦罪稱義」之簡稱<sup>101</sup><span style={cite}>（柯白珍，《稱義與成聖》，頁71。另根據羅馬書一16~17，三21~24，加拉太書三8~14，以弗所書一8等經文）</span>，這是新約的一個重要焦點，也是十六世紀宗教改革的主要重點。馬丁路德極重視因信稱義，視它為最基本的信條，是基督教教義的總結，是基督教最寶貴的產業，把我們的信仰與其他宗教區分出來。<sup>102</sup><span style={cite}>（保羅‧阿爾托依兹（Paul Althaus），《馬丁路德神學》，頁309）</span>路德生命的轉捩點發生在他對聖經裡「義」字意義的新發現，他在苦索羅馬書中「義」之真義時，發現「義」不只是上帝的要求，更是上帝的恩典。這個啟示使他看見的
+                </p>
+
+                <PageTag page={409} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  是上帝的仁愛與赦免，而不是上帝的怒氣與審判。因信稱義的福音不只是路德個人的發現而已，更是上帝藉著教會向普世宣告的奇異恩典及偉大禮物。<sup>103</sup><span style={cite}>（俞繼斌，〈因信稱義與今日教會〉，《基督教論壇報》2353期(2004/10/23~25)，11版）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  「因信稱義」至少包含三個命題：1.上帝是公義的，2.人是罪人，3.上帝稱祂的罪人為義。<sup>104</sup><span style={cite}>（Alister E McGrath, Iustitia Dei—A History of the Christian doctrine of Justification, second edition, 5）</span>公義的上帝稱罪人為義，這件事本身是矛盾的。解決之道是神子基督耶穌以公義之身在十架上受死，替罪人承擔一切罪刑。<sup>105</sup><span style={cite}>（克爾，《路德神學類編》，頁65）</span>正如保羅所說：「上帝使那無罪的替我們成為罪，好叫我們在他裡面成為上帝的義。」（林後五21）所以因信稱義的前提，必須先有道成肉身，也就是神成為人，為人類被釘十字架，成為贖罪祭。但人也必須接受、信靠基督，才能得著這恩典。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  關於因信稱義，十六世紀宗教改革時，信義宗教會與天主教會有不同的詮釋，現今則已相當程度地達成共識，1997年信義宗教會和天主教會發表了有關稱義教義的聯合聲明（Joint Declaration on the Doctrine of Justification），其中說道：「我們一同宣認上帝藉恩典赦免罪，同時把人從罪束縛的力量中釋放出來，賜予人在基督內的新生命。當人懷著信分享在基督內的生命時，上帝不再追究他們的罪咎，反而透過聖靈，在他們內心激發愛心。上帝恩典行動的這兩面是不可分割的，因為人是藉著信結合在基督內，基督成了我們的義。上帝恩典的這兩面就是：罪的赦免和上帝自己在救恩中的臨在。天主教和信義宗共同宣認這點。」<sup>106</sup><span style={cite}>（〈信義宗教會和天主教會有關成義／稱義教義的聯合聲明〉，宋惠芬譯，1997）</span>在這聲明中也清楚看到，「天人合一」的恩典藉著基督的救恩加給了信的人。
+                </p>
+
+                <PageTag page={410} />
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  與「因信稱義」密切相關的一段經文羅馬書三22~24，其和合本譯文如下：「上帝的義，因信耶穌基督加給一切相信的人，並沒有分別。因為世人都犯了罪，虧缺了上帝的榮耀；如今卻蒙上帝的恩典，因基督耶穌的救贖，就白白地稱義。」香港信義宗神學院周兆真博士認為22節比較準確的翻譯是：「上帝的義，因耶穌基督的『信』，加給一切『信』的人，並沒有分別。」在這裡「信」的意思不是頭腦的相信，而是信實、順服、委身的態度與行動。我們的「信」乃是效法基督的「信」，這樣的因信稱義能帶來上帝與人的
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  合一，也能促進人與人的和諧。<sup>107</sup><span style={cite}>（周兆真，〈「因信稱義」的再思〉，《神學與生活》第廿七期特刊，2004，頁119-125）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  總結來說，人信基督而稱義，同時得到重生，上帝就藉著聖靈內住在人裡面（約三8，羅八9~11），人也成為上帝的兒女。（約一12）從法律的角度，人得稱義（羅三21~28）；從生命的角度，人得永生（約三16）；從關係的角度，人與神和好（羅五11）；從地位的角度，人作神的兒女（約一12）；從職分的角度，人成為神的使者（林後五20~21）。這一切，都是由於基督為人贖罪，也是由於聖靈使人重生。這正是「天人合一」的實際。
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">肆、分享因信稱義的福音</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、《四律》與《福音橋》</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  用學園傳道會的四律，同時結合「福音橋」的例證，能在華人文化處境中將「因信稱義」的福音講明，這對華人應是合適的傳福音工具。<sup>108</sup><span style={cite}>（《四律》：台北：中國學園傳道會編印發行。《福音橋》：台北：中華民國聖經公會出版）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  第一律：「神愛你，並且為你的生命有一個奇妙的計畫。」這句話說到神的愛與神的計畫。
+                </p>
+
+                <PageTag page={411} />
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  神的愛：「神愛世人，甚至將祂的獨生子賜給我們，叫一切信祂的不至滅亡，反得永生。」（約三16）「神既不愛惜自己的兒子，為我們眾人捨了，豈不把萬物和祂一同白白的賜給我們嗎？」（羅八32）神將祂的愛子賜給我們，並將萬物賜給我們。每一天我們呼吸的空氣、所吃的飯、所看到的一切，都有神的愛，祂是如此慷慨地把一切都賜給我們。正如中國俗話所說：「人是天生地養的。」<sup>109</sup><span style={cite}>（《福音橋》，頁1）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  神的計畫：神為我們有美好的計畫。主耶穌說：「我來了是要叫人得生命，並且得的更豐盛。」（更有意義的生活）（約十
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  10）主的話也說：「叫一切信祂的，不至滅亡，反得永生。」不是人死後才得到永生，乃是人信了耶穌後，馬上就有永生，這永生就是豐盛的生命，是神的生命。神的生命是永恆的、無限的、聖潔的、豐盛的。人信靠耶穌基督，所得到的就是這種生命。為什麼大多數人沒有經驗到這種豐盛的生命呢？因為：
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  第二律：「人因有罪，而與神隔絕，所以不能知道並經驗神的愛，和神為他生命的計畫。」
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  人有罪：聖經說：「因為世人都犯了罪，虧缺神的榮耀。」（羅三23）中國俗話也說：「鼻孔向下的，沒有一個好人。」<sup>110</sup><span style={cite}>（《福音橋》，頁5）</span>人原有神的榮耀，但當人離開神後，偏行己路，就失去神的榮耀，也不再有真正的喜樂。什麼是罪？就是離開神、背逆神，不關心神、不思想神、不走神要人走的路。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  與神隔絕：「罪的工價乃是死。」（羅六23）死不是消失或不存在，而是隔絕、分離。一個人的靈魂離開了他的身體，這是肉身
+                </p>
+
+                <PageTag page={412} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  的死。一個人與神隔絕，靈魂失去神的同在，雖能呼吸、吃東西，但不能享受屬天的豐盛，這是靈性的死。聖潔的神與有罪的人當中有深淵隔絕。人不斷用自己的方法，就如善行、道德、宗教、哲學等，來尋求上帝和豐盛的生命，但是總得不著。第三律告訴我們這難題唯一的答案：
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  第三律：「耶穌基督是上帝為人的罪所預備的唯一辦法。藉著祂，人可以知道並經歷神的愛和神為人生命的計畫。」
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  耶穌為我們死：「唯有基督在我們還作罪人的時候，為我們死，上帝的愛就在此向我們顯明了。」（羅五8）而且耶穌從死裡復活：「基督照聖經所說，為我們死了，而且埋葬了，又照聖經所說第三天復活了，並且顯給磯法看，後來又顯給十二使徒看，後來一時顯給五百多弟兄看。」（林前十五3~6）耶穌的死擔當了人的罪，耶穌的復活帶給人新生命，他的死與復活完全解決了我們的問題。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  耶穌基督是唯一的道路。耶穌說：「我就是道路、真理、生命，若不藉著我，沒有人能到父那裡去。」（約十四6）為何說耶穌基督是唯一的道路？其實可以客觀比較每一個宗教所說的及他們所做的：第一、除了耶穌基督以外，沒有一位是為人類的罪而死，釋迦摩尼、默罕慕德、孔子的死，都不是為人類的罪死。第二、除了耶穌基督以外，沒有一位教主復活，釋迦摩尼、默罕慕德、孔子都沒有復活。第三、他們的宣稱不同。釋迦摩尼是悟道者，他在尋找真理。但耶穌說：「我就是道路、真理、生命。」（約十五6）默罕慕德宣稱是先知，但耶穌宣稱是上帝的兒子，與上帝原為一。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  神差祂的兒子耶穌基督，為人的罪死在十字架上，成為上帝與人中間的橋樑，溝通了兩者之間的深淵。十字架是人類歷史上最殘酷的刑罰，耶穌是上帝的羔羊，成為贖罪祭，除去人的罪。如同中國字「義」所表達的，「羊」在「我」上面，使我成為「義」。也
+                </p>
+
+                <PageTag page={413} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  如「犧」所表達的，「牛」、「羊」為我犧牲，使我得贖罪。<sup>111</sup><span style={cite}>（《福音橋》，頁8）</span>只知道以上三個定律還不夠……
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  第四律：「我們必須親自接受耶穌基督作救主和生命的主，這樣才能知道並經驗神的愛和神為我們生命的計畫。」
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  我們必須接受基督：「凡接待祂的人，就是信祂名的人，祂就賜他們權柄作上帝的兒女。」（約一12）我們藉著信心接受基督：「你們得救是本乎恩，也因著信，這並不是出於自己，乃是神所賜的，也不是出於行為，免得有人自誇。」（弗二8~9）我們必須親自邀請基督進入心中。耶穌說：「看哪！我站在門外叩門，若有聽見我聲音就開門的，我要進到他裡面去。」（啟三20）信心不單單是理智的同意，或情感的經驗，最重要的是意志的抉擇，包括從自我轉向上帝，求基督赦免我的罪，請基督進入我的生命，使我成為上帝的兒女。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  聖經所說的信心不只是理智的相信而已，而是生命連結的關係。信耶穌不只是同意以上所說的一切，乃是真誠接受耶穌作救
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  主。唯有當人願意請耶穌住到心裡，讓耶穌的生命成為自己的生命，這才是真正的信心。所以信耶穌就是接受耶穌住在心裡，接受了耶穌就有了耶穌，有了耶穌就有永生，因永生在耶穌裡面。<sup>112</sup><span style={cite}>（《福音橋》，頁15）</span>現在就可以藉著禱告接受基督。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  《四律》的後面還有「得救的確據」、「屬靈生命長進的建議」、「參加教會的重要」等。最後問：你願意將這四個屬靈的定律告訴別人嗎？<sup>113</sup><span style={cite}>（《四律》，頁11-15）</span>
+                </p>
+
+                <PageTag page={414} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">二、《滿福寶》</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  台北真理堂設計了一個本土化的傳福音工具《滿福寶》小冊，對華人有很好的效果。一般人傳福音，可能會碰到四個問題：第一，把福音講得非常教義化，卻跟生活沒有關係。第二，傳福音時總是著眼在要人認罪悔改。第三，大部分佈道材料是一次過的材料。第四，慕道友不會禱告，不懂得依靠神的大能。真理堂同工針對這些作改良，所設計的內容如下：<sup>114</sup><span style={cite}>（台北真理堂製作，《滿福寶》，頁2-17）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  什麼是滿福寶？滿福寶就是福音，福音就是好消息，是報告上帝為我們做的事，而最重要的事是，神差遣祂的獨生愛子耶穌基督道成肉身，為我們死在十字架上，藉著這件事，帶來極豐盛的祝福，因此我們稱之為「滿福寶」，是滿滿的祝福，這些祝福有：一、病得醫治，二、心靈平安，三、家庭和樂，四、凡事富足，五、罪得赦免，六、得著永生，七、聖靈充滿。想要多得著滿福寶中這七種多而又多的祝福嗎？這七項祝福你最希望得到哪一項呢？（人通常會選其中一項，就可翻至相關頁繼續閱讀、禱告）限於篇幅，以下僅列舉家庭和樂、罪得赦免二個內容：
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（一）家庭和樂</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  三位一體真神（聖父、聖子、聖靈）本是合一的神，當然也願意幫助我們活在一個合一、和樂的生活中。相關經文如下：「他必使父親的心轉向兒女，兒女的心轉向父親，免得我來咒詛遍地。」（瑪四6）「因他使我們和睦，將兩下合而為一，拆毀了中間隔斷的牆。」（弗二14）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  家庭和樂的禱告四個步驟：
+                </p>
+
+                <PageTag page={415} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  1.感謝：親愛的天父，謝謝您願意幫助我。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  2.邀請：天父，我需要您的幫助，我願意接受耶穌做我的救主，邀請耶穌進到我心裡永遠與我同在。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  3.祈求：主啊！我將家庭中所有的困難都交給您，請您幫助我，使我家中的衝突能得到好的解決，溝通能得到改善；也讓我們能夠彼此付出真誠的關心、真實的彼此相愛。我願意饒恕家人對我的任何傷害，也願意饒恕因為其他親戚而帶來的傷害。主啊！求赦免我一切知道或不知道的罪，不讓罪阻斷了耶穌要給我的家庭和樂。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  4.誠心：奉耶穌的名禱告，阿們（誠心所願）。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">（二）罪得赦免</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  無論是心裡、口裡、行為上的罪，只要我們向上帝認罪，並接受耶穌的救恩，上帝必赦免我們一切的過犯，洗淨我們一切的不義。因為耶穌已經為我們釘死在十字架上，使我們的罪得赦免。相關經文如下：「我們藉這愛子的血得蒙救贖，過犯得以赦免，乃是照他豐富的恩典。」（弗一7）「當我們死在過犯中的時候，便叫我們與基督一同活過來。你們得救是本乎恩。」（弗二5）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  罪得赦免的禱告四個步驟：
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  1.感謝：親愛的天父，謝謝您願意幫助我。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  2.邀請：天父，我需要您的幫助，我願意接受耶穌做我的救主，邀請耶穌進到我心裡永遠與我同在。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  3.祈求：主啊！求您赦免我一切的過犯，我知道我的心思、言語、行為常常得罪您也傷害到別人，求您赦免我，特別求您赦免我曾經犯過的_（什麼罪），傷害過（什麼人），並求您醫治我因犯罪而有的心靈不平安、疾病、失眠等。求您賜我信心和能力不再犯罪，並有勇氣和機會請求對方的饒恕。
+                </p>
+
+                <PageTag page={416} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  4.誠心：奉耶穌的名禱告，阿們（誠心所願）。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  藉著以上七種祝福相關的經文及禱文，人們很容易會開始接受其中一種祝福。禱告之後，告訴他一個口訣：「我愛滿福寶，照著唸就好，三餐勤服用，好處不得了。」然後把這本冊子送給他，請他回去繼續禱告。這就是用滿福寶個人談道的方法。然後是跟進，可邀約說：「從這週開始，我很願意每週帶你禱告其中一個祝福。」於是以電話或見面方式，每週帶他讀滿福寶中的經文，並禱告一個祝福。這樣可以跟進七週。這本冊子的設計不只為個人談道，更是為多次的跟進。在跟進之中，可進一步邀他上初信造就課程，及參加教會的聚會。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  《滿福寶》的作法，合乎兩個原則：一是把福音講得更清楚、更具體，也合乎華人的性情。另一是更多運用依靠神的大能，讓慕道友直接經驗神。正因為如此，滿福寶帶來四個果效：
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  第一、《滿福寶》不是跟人辨論教義和邏輯，而是讓人從需要中真實經驗福音的大能。第二、《滿福寶》讓人先經驗神的恩典，之後再帶他認罪。第三、《滿福寶》不只是做一次的佈道工具，更是很好持續跟進的材料。第四、《滿福寶》是幫助人獨處時自己禱告，學習持續依靠神的大能。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  《滿福寶》後面還有「得著滿福寶的四個步驟」：一、要知道~上帝愛我。二、要承認~人有罪。三、要明白~耶穌的死擔當
+                </p>
+
+                <PageTag page={417} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  我的罪。四、要接受~耶穌作救主。最後有「持續得著滿福寶的三個關鍵」：一、信而受洗，二、與有信心的基督徒常在一起，三、持續禱告、等候。<sup>115</sup><span style={cite}>（《滿福寶》，頁18-21）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  《滿福寶》的效果非常好，有很多見證在網路上。<sup>116</sup><span style={cite}>（http://www.sblog.com.tw/fullblessings/index.php）</span>因為有
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  《滿福寶》，傳福音變的很容易，弟兄姊妹也比較不害怕，甚至有不少年長者，也常常買《滿福寶》來傳福音。有一位年長者，用了之後還寫了一首打油詩，其中一段是這樣：「我愛滿福寶，七福樣樣要，凡事交託主，心中沒煩惱。」
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  除此之外，王武聰所寫的《台灣本土化談道的探討》、《認祖歸宗‧敬拜真神》，吳安邦所寫的《收割莊稼囉》<sup>117</sup><span style={cite}>（以上三本皆為天恩出版社出版，詳見參考書目。）</span>，葉明所寫的《祭祖與輪迴》、《禁忌與沖煞》、《在基督裡闢邪妙方》<sup>118</sup><span style={cite}>（以上三本皆為大光傳播有限公司出版，詳見參考書目。）</span>，馬有藻所寫的《福到迷除──從宗教到福音》<sup>119</sup><span style={cite}>（此為台灣中國信徒佈道會出版，詳見參考書目。）</span>等，都是很好的本土佈道內容，可幫助華人明白福音。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">小結</p>
+                <p className="text-gray-700 leading-relaxed">
+                  天人合一的理想，仍然在華人的思想中、血脈中、習俗中。在學術殿堂，談論道德修養，這是內在生命；在民間信仰，持守對天神的依賴，這是外在生活。歷經數千年，華人的期待並未得著真正的滿足。但今日在基督裡，既能得著內在生命的改變，也能得著外在生活的保護。在天人合一的恩典裡，上帝既在我們的裡面改變我們，也在我們的周遭保護我們。願華人都能敞開心門來領受。
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-amber-800 text-lg mb-3">第四節　內聖外王</h3>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                根據上一節所探討，從聖經真理的角度看，人必須先有「靈性的天人合一」，而後才能有「義理的天人合一」，這是「內聖」；
+              </p>
+
+              <PageTag page={418} />
+              <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                有了前二者，最後才能有「自然的天人合一」，也就是以上帝所賜的智慧能力治理上帝所託付的世界，這是「外王」。本節先談儒家「內聖外王」的理想及現代學者的省思，而後再從聖經的角度，探討「內聖外王」的實踐。
+              </p>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">壹、儒家內聖外王的理想</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、古聖王的素描</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  孔子在《論語》的其中五篇，提到堯、舜、禹、稷、文王、周公，是聖王思想的雛形。《孟子》七篇則每篇都提到古帝，且加進了商湯和武王兩位古帝及孔子，內容更多、更具體。韋政通歸納整理了古聖王的特質、表現。節錄如下：<sup>120</sup><span style={cite}>（李亦園、楊國樞，《中國人的性格》，頁7-15。韋政通，《儒家與現代中國》，頁8-18）</span>
+                </p>
+
+                <div className="overflow-x-auto mb-3">
+                  <table className="w-full text-sm border-collapse border border-amber-200">
+                    <caption className="text-left text-xs text-gray-500 mb-1">表一：堯帝</caption>
+                    <thead><tr className="bg-amber-50"><th className="border border-amber-200 p-2 text-left w-16">特質</th><th className="border border-amber-200 p-2 text-left">表現</th><th className="border border-amber-200 p-2 text-left w-24">出處</th></tr></thead>
+                    <tbody>
+                      <tr><td rowSpan={4} className="border border-amber-200 p-2 font-semibold bg-amber-50 align-top">內聖</td><td className="border border-amber-200 p-2">欽明文思安安，允恭克讓，克明俊德。</td><td className="border border-amber-200 p-2">書堯典</td></tr>
+                      <tr><td className="border border-amber-200 p-2">堯率天下以仁。</td><td className="border border-amber-200 p-2">大學</td></tr>
+                      <tr><td className="border border-amber-200 p-2">其仁如天，其知如神。富而不驕，貴而不豫。</td><td className="border border-amber-200 p-2">大戴記五帝德</td></tr>
+                      <tr><td className="border border-amber-200 p-2">德潤洽。</td><td className="border border-amber-200 p-2">淮南子泰族訓</td></tr>
+                      <tr><td rowSpan={5} className="border border-amber-200 p-2 font-semibold bg-amber-50 align-top">外王</td><td className="border border-amber-200 p-2">光被四表，協和萬邦。</td><td className="border border-amber-200 p-2">書堯典</td></tr>
+                      <tr><td className="border border-amber-200 p-2">堯之治天下，使民心親。</td><td className="border border-amber-200 p-2">莊子天運</td></tr>
+                      <tr><td className="border border-amber-200 p-2">堯之所以王天下者，正諸侯者，此（尚賢）亦其法已。</td><td className="border border-amber-200 p-2">墨子尚賢中</td></tr>
+                      <tr><td className="border border-amber-200 p-2">堯治天下，南撫交阯，北降幽都，東西至日所出入，莫不賓服。</td><td className="border border-amber-200 p-2">墨子節用中</td></tr>
+                      <tr><td className="border border-amber-200 p-2">堯治天下，政教平。</td><td className="border border-amber-200 p-2">淮南子泰族訓</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <PageTag page={419} />
+                <div className="overflow-x-auto mb-3">
+                  <table className="w-full text-sm border-collapse border border-amber-200">
+                    <caption className="text-left text-xs text-gray-500 mb-1">表二：舜帝</caption>
+                    <thead><tr className="bg-amber-50"><th className="border border-amber-200 p-2 text-left w-16">特質</th><th className="border border-amber-200 p-2 text-left">表現</th><th className="border border-amber-200 p-2 text-left w-24">出處</th></tr></thead>
+                    <tbody>
+                      <tr><td rowSpan={3} className="border border-amber-200 p-2 font-semibold bg-amber-50 align-top">內聖</td><td className="border border-amber-200 p-2">巍巍乎，舜之有天下也，而不與焉。</td><td className="border border-amber-200 p-2">論語泰伯</td></tr>
+                      <tr><td className="border border-amber-200 p-2">大舜有大焉，善與人同，舍己從人，樂取於人以為善。</td><td className="border border-amber-200 p-2">孟子公孫丑上</td></tr>
+                      <tr><td className="border border-amber-200 p-2">天下大悅而將歸己；視天下悅而歸己，猶草芥也，惟舜為然。</td><td className="border border-amber-200 p-2">孟子離婁下</td></tr>
+                      <tr><td rowSpan={2} className="border border-amber-200 p-2 font-semibold bg-amber-50 align-top">外王</td><td className="border border-amber-200 p-2">流共工於幽州，放驩兜於崇山，竄三苗於三危，殛鯀于羽山，四罪（除）而天下咸服。</td><td className="border border-amber-200 p-2">書舜典</td></tr>
+                      <tr><td className="border border-amber-200 p-2">無為而治者，其舜也與！</td><td className="border border-amber-200 p-2">論語衛靈</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="overflow-x-auto mb-3">
+                  <table className="w-full text-sm border-collapse border border-amber-200">
+                    <caption className="text-left text-xs text-gray-500 mb-1">表三：禹王</caption>
+                    <thead><tr className="bg-amber-50"><th className="border border-amber-200 p-2 text-left w-16">特質</th><th className="border border-amber-200 p-2 text-left">表現</th><th className="border border-amber-200 p-2 text-left w-24">出處</th></tr></thead>
+                    <tbody>
+                      <tr><td rowSpan={4} className="border border-amber-200 p-2 font-semibold bg-amber-50 align-top">內聖</td><td className="border border-amber-200 p-2">禹聞善言則拜。</td><td className="border border-amber-200 p-2">孟子公孫丑上</td></tr>
+                      <tr><td className="border border-amber-200 p-2">禹惡旨酒，而好善言。</td><td className="border border-amber-200 p-2">孟子離婁下</td></tr>
+                      <tr><td className="border border-amber-200 p-2">禹思天下有溺者，猶己溺之也。</td><td className="border border-amber-200 p-2">孟子離婁下</td></tr>
+                      <tr><td className="border border-amber-200 p-2">禹之行水也，行其所無事也。</td><td className="border border-amber-200 p-2">孟子離婁下</td></tr>
+                      <tr><td rowSpan={5} className="border border-amber-200 p-2 font-semibold bg-amber-50 align-top">外王</td><td className="border border-amber-200 p-2">其克詰爾戎兵以涉禹之跡，方行天下至於海表，罔不有服。</td><td className="border border-amber-200 p-2">書立政</td></tr>
+                      <tr><td className="border border-amber-200 p-2">禹舉益於陰方之中，授之政，九州成。</td><td className="border border-amber-200 p-2">墨子尚賢上</td></tr>
+                      <tr><td className="border border-amber-200 p-2">禹既克有三苗，焉磨為山川，別物上下，鄉制四極，而神民不違，天下乃靜。</td><td className="border border-amber-200 p-2">墨子非攻下</td></tr>
+                      <tr><td className="border border-amber-200 p-2">美哉禹功，明德遠矣！微禹，吾其魚乎！吾與子弁冕端委以治民臨諸侯，禹之力也。</td><td className="border border-amber-200 p-2">左傳昭公</td></tr>
+                      <tr><td className="border border-amber-200 p-2">禹合諸侯於塗山，執玉帛者萬國。</td><td className="border border-amber-200 p-2">左傳哀公</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <PageTag page={420} />
+                <div className="overflow-x-auto mb-3">
+                  <table className="w-full text-sm border-collapse border border-amber-200">
+                    <caption className="text-left text-xs text-gray-500 mb-1">表四：湯王</caption>
+                    <thead><tr className="bg-amber-50"><th className="border border-amber-200 p-2 text-left w-16">特質</th><th className="border border-amber-200 p-2 text-left">表現</th><th className="border border-amber-200 p-2 text-left w-24">出處</th></tr></thead>
+                    <tbody>
+                      <tr><td rowSpan={2} className="border border-amber-200 p-2 font-semibold bg-amber-50 align-top">內聖</td><td className="border border-amber-200 p-2">湯執中。</td><td className="border border-amber-200 p-2">孟子離婁下</td></tr>
+                      <tr><td className="border border-amber-200 p-2">唯仁者能以大事小，是故湯事葛。</td><td className="border border-amber-200 p-2">孟子梁惠王下</td></tr>
+                      <tr><td rowSpan={4} className="border border-amber-200 p-2 font-semibold bg-amber-50 align-top">外王</td><td className="border border-amber-200 p-2">昔有成湯，自彼氐羌莫敢不來享，莫不敢來王，約商是常。</td><td className="border border-amber-200 p-2">詩商頌</td></tr>
+                      <tr><td className="border border-amber-200 p-2">伊尹相湯以王於天下。</td><td className="border border-amber-200 p-2">孟子萬章上</td></tr>
+                      <tr><td className="border border-amber-200 p-2">臣閭七十里為政於天下者，湯是也。</td><td className="border border-amber-200 p-2">孟子梁惠王下</td></tr>
+                      <tr><td className="border border-amber-200 p-2">湯武革命，順乎天而應乎人。</td><td className="border border-amber-200 p-2">易革彖傳</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="overflow-x-auto mb-3">
+                  <table className="w-full text-sm border-collapse border border-amber-200">
+                    <caption className="text-left text-xs text-gray-500 mb-1">表五：文王</caption>
+                    <thead><tr className="bg-amber-50"><th className="border border-amber-200 p-2 text-left w-16">特質</th><th className="border border-amber-200 p-2 text-left">表現</th><th className="border border-amber-200 p-2 text-left w-24">出處</th></tr></thead>
+                    <tbody>
+                      <tr><td rowSpan={3} className="border border-amber-200 p-2 font-semibold bg-amber-50 align-top">內聖</td><td className="border border-amber-200 p-2">穆穆文王，於緝熙敬止。</td><td className="border border-amber-200 p-2">詩大雅</td></tr>
+                      <tr><td className="border border-amber-200 p-2">雝雝在宮，肅肅在廟，不顯亦臨，無射亦保。</td><td className="border border-amber-200 p-2">詩大雅</td></tr>
+                      <tr><td className="border border-amber-200 p-2">文王之德之純，純亦不已。</td><td className="border border-amber-200 p-2">中庸</td></tr>
+                      <tr><td rowSpan={3} className="border border-amber-200 p-2 font-semibold bg-amber-50 align-top">外王</td><td className="border border-amber-200 p-2">文王懷保小民，惠鮮鰥寡，自朝至於日中昃，不遑暇食，用咸和萬民。</td><td className="border border-amber-200 p-2">書無逸</td></tr>
+                      <tr><td className="border border-amber-200 p-2">文王若日若月乍照光於四方，於西土。</td><td className="border border-amber-200 p-2">墨子兼愛下</td></tr>
+                      <tr><td className="border border-amber-200 p-2">文王之治岐也，耕者九一，仕者世祿，關市譏而不征，澤梁無禁，罪人不孥，關寡孤獨四者，天下之窮民而無告者，文王發政施仁，必先斯四者。</td><td className="border border-amber-200 p-2">孟子梁惠王下</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <PageTag page={421} />
+                <div className="overflow-x-auto mb-3">
+                  <table className="w-full text-sm border-collapse border border-amber-200">
+                    <caption className="text-left text-xs text-gray-500 mb-1">表六：武王</caption>
+                    <thead><tr className="bg-amber-50"><th className="border border-amber-200 p-2 text-left w-16">特質</th><th className="border border-amber-200 p-2 text-left">表現</th><th className="border border-amber-200 p-2 text-left w-24">出處</th></tr></thead>
+                    <tbody>
+                      <tr><td rowSpan={3} className="border border-amber-200 p-2 font-semibold bg-amber-50 align-top">內聖</td><td className="border border-amber-200 p-2">武王不泄邇，不忘遠。</td><td className="border border-amber-200 p-2">孟子離婁下</td></tr>
+                      <tr><td className="border border-amber-200 p-2">武有七德：禁暴、戢兵、保大、定功、安民、和眾、豐財。</td><td className="border border-amber-200 p-2">左宣公十二年</td></tr>
+                      <tr><td className="border border-amber-200 p-2">命召公釋箕子之囚，命畢公釋百姓之囚，表商容之閭。命南宮括散鹿臺之財，發鉅橋之粟，以振貧弱萌隸。</td><td className="border border-amber-200 p-2">周本紀</td></tr>
+                      <tr><td rowSpan={4} className="border border-amber-200 p-2 font-semibold bg-amber-50 align-top">外王</td><td className="border border-amber-200 p-2">武王踐功，既已克服，成帝之來，分主諸神，祀紂先王，通維四夷，而天下莫不賓乘，襲湯之緒，此即武王之所以誅紂也。</td><td className="border border-amber-200 p-2">墨子非攻</td></tr>
+                      <tr><td className="border border-amber-200 p-2">謹權量、度法度、修廢官，四方之政行焉。</td><td className="border border-amber-200 p-2">論語堯曰</td></tr>
+                      <tr><td className="border border-amber-200 p-2">興滅國、繼絕世、舉逸民，天下之民歸心焉。</td><td className="border border-amber-200 p-2">論語堯曰</td></tr>
+                      <tr><td className="border border-amber-200 p-2">綏萬邦，屢豐年。</td><td className="border border-amber-200 p-2">詩周頌</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="overflow-x-auto mb-3">
+                  <table className="w-full text-sm border-collapse border border-amber-200">
+                    <caption className="text-left text-xs text-gray-500 mb-1">表七：周公</caption>
+                    <thead><tr className="bg-amber-50"><th className="border border-amber-200 p-2 text-left w-16">特質</th><th className="border border-amber-200 p-2 text-left">表現</th><th className="border border-amber-200 p-2 text-left w-24">出處</th></tr></thead>
+                    <tbody>
+                      <tr><td rowSpan={3} className="border border-amber-200 p-2 font-semibold bg-amber-50 align-top">內聖</td><td className="border border-amber-200 p-2">周公，古聖人也。</td><td className="border border-amber-200 p-2">孟子公孫丑下</td></tr>
+                      <tr><td className="border border-amber-200 p-2">周公其盛乎，身貴而愈恭，家富而愈儉，勝敵而愈戒。</td><td className="border border-amber-200 p-2">荀子儒效</td></tr>
+                      <tr><td className="border border-amber-200 p-2">周公懼乎顯，故君子慎其獨也。</td><td className="border border-amber-200 p-2">淮南子氾論訓</td></tr>
+                      <tr><td rowSpan={2} className="border border-amber-200 p-2 font-semibold bg-amber-50 align-top">外王</td><td className="border border-amber-200 p-2">周公初基，作新大邑于東國洛，四方民大和會。侯甸男邦，采衛百工，播民和見，士于周。</td><td className="border border-amber-200 p-2">書康誥</td></tr>
+                      <tr><td className="border border-amber-200 p-2">晉韓宣適魯，見易象與魯春秋曰：周禮盡在魯矣。吾乃知周公之德與周之所以王也。</td><td className="border border-amber-200 p-2">左昭二年</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <PageTag page={422} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">二、內聖外王的意義</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  孔子認為政治乃道德的延伸，不主張以法與刑的統治，所以他說：「克己復禮為仁。一日克己復禮，天下歸仁焉。」（論語顏淵第十二）<sup>121</sup><span style={cite}>（謝冰瑩等編譯，《新譯四書讀本》，頁199）</span>又說：「道之以政，齊之以刑，民免而無恥；道之以德，齊之以禮，有恥且格。」（論語為政第二）<sup>122</sup><span style={cite}>（謝冰瑩等編譯，《新譯四書讀本》，頁77）</span>孟子亦相信政治為倫理道德之延伸，所以他說：「老吾老以及人之老，幼吾幼以及人之幼，治天下可運於掌……故推恩足以保四海。」（孟子梁惠王上）<sup>123</sup><span style={cite}>（謝冰瑩等編譯，《新譯四書讀本》，頁326）</span>又說：「人皆有不忍人之心。先王有不忍人之心，斯有不忍人之政矣。以不忍人之心，行不忍人之政，治天下可運之掌上。」（孟子公孫丑上）<sup>124</sup><span style={cite}>（謝冰瑩等編譯，《新譯四書讀本》，頁381）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  除了孔子、孟子之外，墨子、荀子也對聖王觀念的塑造，做了不少工作。墨子說：「昔者三代之聖王，禹、湯、文、武、百里之
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  諸侯也，說忠行義，取天下。」（墨子魯問）<sup>125</sup><span style={cite}>（李漁叔註譯，《墨子今註今譯》，頁371）</span>荀子說：「今人之性惡，必將待聖王之治，禮義之化，然後皆出於治，合於善也。」（荀子性惡篇）<sup>126</sup><span style={cite}>（熊公哲註釋，《荀子今註今譯》，頁484）</span>又說：「聖也者，盡倫者也；王也者，盡制也者；兩盡者，足以為天下極矣。」（荀子解蔽篇）<sup>127</sup><span style={cite}>（熊公哲註釋，《荀子今註今譯》，頁441-442）</span>孟子論王的意義，著重「以德定王」，荀子論聖的意義，著重「以王定聖」。孔、孟對內聖、外王二者的意義，未做明顯的區分，好像內聖一面如完成，外王一面也就自然跟著完成。但荀子察覺到二者有根本的
+                </p>
+                <PageTag page={423} />
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  差異，故有「盡倫」、「盡制」的區分，前者是主觀的，後者是客觀的，聖王則代表主客觀的統一。<sup>128</sup><span style={cite}>（韋政通，《儒家與現代中國》，頁25）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  循著荀子的軌跡向前走，將內聖外王之學建立一理論體系化的是《禮記大學篇》，《大學》的三綱領與八條目，對先秦儒家而言，代表內聖外王之學的一個完成。<sup>129</sup><span style={cite}>（李亦園、楊國樞，《中國人的性格》，頁21）</span>《大學》有三綱領：明明德、親民、止於至善，及八條目：格物、致知、誠意、正心、修身、齊家、治國、平天下。三綱領中，「明明德」關乎內聖、「親民」關乎外王，「止於至善」關乎內聖外王；八條目中，前五條目指內聖，後三條目則指外王。<sup>130</sup><span style={cite}>（劉述先，〈論儒家「內聖外王」之理想〉，《哲學與文化》15卷2期，1988.2，頁26）</span>王陽明闡釋曰：「大人者以天地萬物為一體，其視天下為一家也，中國猶一人也。……明明德者，立其天地萬物一體之體也；親民者，達其天地萬物一體之用也；故明明德必在於親民，而親民乃所以明其明德也。」（大學問）<sup>131</sup><span style={cite}>（謝廷傑彙本重編，《王陽明全書》，頁119-120）</span>明明德與親民的關係，乃體用的關係。<sup>132</sup><span style={cite}>（劉述先，〈論儒家「內聖外王」之理想〉，《哲學與文化》15卷2期，1988.2，頁30）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  明清之際的黃宗羲對「內聖外王」的理念，有其更加成熟的獨到見解。他以內聖為基礎開展外王，認為事功必本於仁義道德，事功不能自外於仁義，仁義亦不能無事功之延展，二者不能分途。且認為人倫日用之細瑣雜務皆經世之學，儒者不可不知。以德性指引知性，而不是以德性壓抑知性。所以他一方面講求道德理想，一方面又講求客觀實用知識，以客觀知性精神成就外王理想。<sup>133</sup><span style={cite}>（陳文章，《黃宗羲內聖外王思想之研究》，頁170-177）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  黃宗羲認三代之政、聖王之統為政治最高境界，認為王道是可以被實現的目標。論王霸之別，說到：「王霸之分，不在事功，
+                </p>
+
+                <PageTag page={424} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  而在心術，事功本於心術者，所謂「由仁義行」，王道也；只從跡上模仿，雖件件是王者之事，所謂「行仁義」者霸也。」<sup>134</sup><span style={cite}>（(清)姚江黃宗羲，《孟子師說》卷一，齊桓晉文之事章）</span>如何實現「王道」？黃宗羲在《明夷待訪錄》中有明確交代<sup>135</sup><span style={cite}>（可參見本論文五章一節肆項）</span>，此書內容兼及治國要項，舉凡君臣、法、相、學校、取士、建都、方鎮、田制、兵制、財計、胥吏、奄宦都一一提出自己的獨特見解。內有古代傳統民本思想之精華，將民本思想發揮到極致；對後來的民主思想發展具有啟蒙功能。<sup>136</sup><span style={cite}>（陳文章，《黃宗羲內聖外王思想之研究》，頁178-186）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">三、內聖外王的困難——現代學者的省思</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  雖然中國人對內聖外王有崇高的理想，但在歷史上，自春秋以後，幾乎都沒辦法實現。時至今日，對於「如何重建現代化之中國」，部分學者仍然提出，以中國儒家「內聖外王」為思維重心，將中國現代化之可能性放在儒學「內聖通外王」之可能性上。<sup>137</sup><span style={cite}>（陳文章，《黃宗羲內聖外王思想之研究》，頁259-260）</span>回應這觀念，有幾個不同的看法。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  陳弱水認為個人的道德修養絕對不能成為理想政治、社會秩序之基礎，而以道德修養作為塑造「聖君」形像，不但未能達到理想要求，反而淪為專制君主作最有力的合法性護衛。<sup>138</sup><span style={cite}>（陳弱水，《內聖外王觀念的原始糾結與儒家政治思想的根本疑難》，頁160-161）</span>這主張的認知基礎是認為人性有惡的一面，有墮落陷溺之可能，如由此而造成不良政治行為，「聖王」之治將無以發揮必然防治功能。因此最合理方法仍須從制度面著手。道德要求亦有其需要，但只是輔助性質。<sup>139</sup><span style={cite}>（陳弱水，《內聖外王觀念的原始糾結與儒家政治思想的根本疑難》，頁163-164）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  林毓生（殷海光之後的自由主義代言人）認為，道德不能成為
+                </p>
+
+                <PageTag page={425} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  政治之基礎，「聖王」之說不可能實現，亦不符民主原則。<sup>140</sup><span style={cite}>（林毓生，《思想與人物》，頁277-292）</span>西方之能發展民主，重點在於政教分離，從「政」的觀點確立人的有限性，所以以人建立的社會（涵蓋政府），必須受到限制，受到相對制衡，而開出法治；從「教」的觀點確立神的無限性，所以教會負責內在精神而不干預政治。而中國傳統卻是「政教合一」忽略人的有限性，將政治領袖絕對化、神格化，權力未加制衡限制，容易導致專制、極權。<sup>141</sup><span style={cite}>（林毓生，《政治秩序與多元社會》，頁95-98）</span>他提出「創造的轉化」作為接續傳統與現代之理念進路。「創造的轉化」可以將某些優質理念與現代化民主政治進行「接枝」，如「仁」的觀念可以發展為人權平等觀念；道德自主性觀念可以發展為現代化民主自由觀念；黃宗羲的「有治法而後有治人」觀念可發展出以「制度」為優先之民主制度觀。<sup>142</sup><span style={cite}>（林毓生，《思想與人物》，頁282,284,336）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  張灝也主張「內聖外王」無法發展為民主政治，此不只是形式觀念之誤差，而是深層意識結構有以致之。西方民主政治之基礎源於基督教之幽暗意識，即對人性之罪惡黑暗有相當深刻而確定的認知，亦因對人性有限性之確認，而發展出外在之客觀制度，便於政治權力加以防範限制使不氾濫。而儒家內聖思想超越意識太強，幽暗意識太弱，因此其批判精神與抗議精神不夠徹底，無法轉成客觀化制衡，而只發展成樂觀的道德理想主義與政治上之烏托邦傾向。<sup>143</sup><span style={cite}>（張灝，《幽暗意識與民主傳統》，頁3-32）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  所謂「幽暗意識」，是發自人性中或宇宙中與始俱來的種種黑暗勢力的正視和省悟。在儒家傳統中，幽暗意識與成德意識（例
+                </p>
+
+                <PageTag page={426} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  如：人皆可以為堯舜）同時存在，互為表裡。但基督教與儒家表現幽暗意識的方式和蘊含的強弱有差異，基督教是做正面的透視與直接的彰顯，而儒家是間接的映襯與側面的影射。<sup>144</sup><span style={cite}>（張灝，《幽暗意識與民主傳統》，頁27-28）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  柏楊說：「明王朝皇帝每天清晨都要讀《資治通鑑》，但明王朝的皇帝群，卻一蟹不如一蟹。因為權力可以使人愚不可及，以致看不見鏡子。……從《資治通鑑》，至少可以瞭解，中國政治思想中，沒有民主思想。人民最奢侈的盼望，不過出現聖君賢相。而如何出現聖君賢相，傳統的方法，是依靠他們的自我克制──品德。這就遇到困難，蓋只有另一個權力制衡，才能使人循規蹈矩。品德絕不可恃，因權力可以敗壞品德。」<sup>145</sup><span style={cite}>（柏楊，《柏楊版資治通鑑》(第一冊)，頁13）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  綜上所述，中國歷史上產生許多暴君、昏君，並有物極必反的弒君、起義。所付出的代價，輕者社會動盪、飢貧交迫，重者烽火連天、血流成河。實在是因為君王、百姓都在罪中。若不重視這事實，內聖外王的理想斷不可能實現。遠志明指出：「現代民主制度的思想淵源，是基督教文明大信條的奇妙結合：人之有罪無一例外，人之尊嚴無一例外。唯有每一個人直接面對上帝時才能發生出來。」<sup>146</sup><span style={cite}>（遠志明，《神州懺悔錄──上帝與五千年中國》，頁207）</span>這才是真正可行的內聖外王之道。
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">貳、基督教內聖外王的原則</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、基督為內聖外王的榜樣</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  基督耶穌的一生，是內聖外王的榜樣。基督有完美的品格及充足的智慧，並且完全地順服上帝、倚靠聖靈。他降為至卑，而後升
+                </p>
+
+                <PageTag page={427} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  為至高；他先作眾人之僕，而後成為萬王之王、萬主之主。腓利比書二章對這過程有詳細的描述：「你們當以基督耶穌的心為心：他本有神的形像，不以自己與神同等為強奪的；反倒虛己，取了奴僕的形像，成為人的樣式；既有人的樣式，就自己卑微，存心順服，以至於死，且死在十字架上。所以，神將他升為至高，又賜給他那超乎萬名之上的名，叫一切在天上的、地上的，和地底下的，因耶穌的名無不屈膝，無口不稱耶穌基督為主，使榮耀歸與父神。」（腓二5-11）
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  基督耶穌先用三十年的時間，作兒子、兄長、木匠、牧人，並且精讀聖經，十二歲就能與聖殿中的教師討論對答，他所做的正如《大學》所說的「格物、致知、正心、誠意、修身」，也如孔子所說的「三十而立」。而後他出來傳道，先呼召帶領十二位門徒，如同帶領一個家庭一樣。而後有七十個門徒、五百個門徒（林前十五6）。他傳道、醫病、趕鬼，彰顯神的大能，也以話語及純全的品格見證天國（太四17,23，約三31-32，路廿三41-47）。最後他在十字架流血捨命，成就贖罪工作。第三天從死裡復活，用許多的憑據將自己活活的顯給門徒們看，四十天之久向他們顯現，講說神國的事（徒一3）。並將大使命託付給門徒：「天上地下所有的權柄都賜給我了。所以，你們要去，使萬民作我的門徒，奉父、子、聖靈的名給他們施洗（或作：給他們施洗，歸於父、子、聖靈的名）。凡我所吩咐你們的，都教訓他們遵守，我就常與你們同在，直到世界的末了。」（太廿八18-20）這是《大學》所說的「齊家、治國、平天下」。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  基督耶穌升天後坐在高天至大者的右邊，並以他權能的命令托住萬有（來一3）；保羅也見證說：「（上帝）使他從死裡復活，叫他在天上坐在自己的右邊，遠超過一切執政的、掌權的、有能的、主治的，和一切有名的；不但今世的，連來世的也都超過
+                </p>
+
+                <PageTag page={428} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  了。又將萬有服在他的腳下，使他為教會作萬有之首。」（弗一20-22）這是他現在的掌權。基督不但是教會之首，他也是宇宙之主。上帝的右邊不是指方位，而是象徵性的表達，表示權柄。他坐在上帝右邊的主要任務是建立教會，制勝陰間的權柄（太十六18），毀滅魔鬼一切權勢，普遍建立天國，最後將國度交給天父上帝（林前十五24-26）。<sup>147</sup><span style={cite}>（任以撒，《系統神學》，頁152,159）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  將來，基督還要降臨這地，以可見的國度，在全地掌權。這方面有許多預言的經文，如馬太所記：「當人子在他榮耀裡，同著眾天使降臨的時候，要坐在他榮耀的寶座上。萬民都要聚集在他面前。他要把他們分別出來，好像牧羊的分別綿羊山羊一般，把綿羊安置在右邊，山羊在左邊。於是王要向那右邊的說，你們這蒙我父賜福的，可來承受那創世以來為你們所預備的國。」（太廿五31-34）及約翰所說：「第七位天使吹號，天上就有大聲音說：世上的國成了我主和主基督的國；他要作王，直到永永遠遠。」（啟十一15）「在頭一次復活有分的有福了，聖潔了！第二次的死在他們身上沒有權柄。他們必作神和基督的祭司，並要與基督一同作王一千年。」（啟二十6）這是「平天下」更完全的實現。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">二、基督徒效法基督而能內聖外王</p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  基督的掌權作王在他傳道時已經開始，但他說：「我的國不屬這世界。」（約十八36）又說：「我為此而生，也為此來到世間，特為給真理作見證。凡屬真理的人就聽我的話。」（約十八38）所以這是真理的國度。在基督真理裡面的人就屬這國度，並能開始操練作王。以真理應用在生活、工作的各個層面。基督的十架有兩面，一面是基督的死，一面是基督的復活。當我們從基督的死進入
+                </p>
+
+                <PageTag page={429} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  時，必然也會經歷基督的復活。應用在工作、事奉上，就是以僕人的心態來執行君王的權柄，基督在世事奉的榜樣正是如此。所以主耶穌說：「誰願為首，就必作你們的僕人。正如人子來，不是要受人的服事，乃是要服事人。」（太二十27-28）保羅也說：「我們這至暫至輕的苦楚，要為我們成就極重無比的永遠的榮耀。」（林後四17）斯托德在《當代基督十字架》一書中說：「受苦與服事、苦難與使命密不可分。我們在耶穌身上清楚看明這點，他是最卓越的受苦僕人，但我們必須牢記，僕人把亮光帶給萬國的使命，要教會來完成。因此，教會也和救主一樣，受苦與服事必須攜手並進。」<sup>148</sup><span style={cite}>（斯托德，《當代基督十架》，頁436）</span>這正是基督徒內聖外王的實現。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  順服倚靠上帝，在內聖外王的成就上，是非常重要的。基督在世時也作了榜樣──凡事順服父的旨意，父所做的事祂才做。（約五19-20）連基督也不單獨做事，我們更不能單獨做事，而要凡事與神同工，並且儘量與人同工。如何與神同工？主耶穌有明確的指示，最重要是關於「禱告」與「聖靈」。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  在禱告方面，主耶穌說：「凡你們在地上所捆綁的，在天上也要捆綁；凡你們在地上所釋放的，在天上也要釋放。」（太十八18）教會在地上有權柄，能捆綁魔鬼撒但，也能釋放人的心靈。至於如何實現這權柄呢？主清楚地告訴我們：「若是你們中間有兩個人在地上，同心合意的求什麼事，我在天上的父，必為他們成全。」（太十八19）藉著同心合意禱告，我們便能捆綁和釋放，因為天上的父會為我們成全。這時天上地下是相通的，「禱告」成為聯接兩處的橋樑。因此，在工作、事奉的過程中，禱告是非常重要的。<sup>149</sup><span style={cite}>（林壎亮，《教會增長秘訣》，頁47-49）</span>
+                </p>
+
+                <PageTag page={430} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  在聖靈方面，主耶穌說：「我要求父，父就另外賜給你們一位保惠師，叫祂永遠與你們同在，就是真理的聖靈。」（約十五16-17）「但聖靈降臨在你們身上，你們就必得著能力，……」（徒一8）神國度的擴展、建立是一項艱鉅的使命，若沒有聖靈能力，不可能完成。<sup>150</sup><span style={cite}>（白立德，《聖靈──超然生活之鑰》，頁208）</span>保羅強調：「靠著聖靈，隨時多方禱告、祈求。」（弗六18）猶大也指出：「在聖靈裡禱告。」（猶20）禱告需要聖靈，禱告也帶出聖靈的工作。初代教會是從禱告開始的，也是從聖靈開始的。所以上帝國度的擴展要從禱告與聖靈開始。誠如孫德生在《屬靈領袖》一書中所說：
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3 pl-4 border-l-2 border-amber-200 italic">
+                  禱告所要做的是超人的工作，靠人力是不夠的，必須靠聖靈的力量，祂是禱告的聖靈，也是有力的聖靈。單靠人的心智和意志力，只能做屬人的事，但在聖靈裡禱告，就會有超人的才能力量。<sup>151</sup><span style={cite}>（孫德生，《屬靈領袖》，頁94）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  殷思重在《屬靈領袖的塑造》一書中也強調：
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3 pl-4 border-l-2 border-amber-200 italic">
+                  領導是一種影響別人的力量。屬靈領袖不可靠自己的力量來影響別人；而且有些人和事根本不是凡人之力所能改變的。只有神才能改變。所以屬靈領袖必須憑信心，靠禱告來領導。<sup>152</sup><span style={cite}>（殷思重，《屬靈領袖的塑造》，頁96）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  因此，作王領導必須與神同工，而最具體的方式就是凡事禱告，求聖靈動工；也在一切工作之先，求問神的旨意，做神所要做的。正如詩一二七篇一節所說：「若不是耶和華建造房屋，建造的人就枉然勞力；若不是耶和華看守城池，看守的人就枉然儆醒。」
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <span className="font-semibold text-amber-700 block">參、基督教內聖外王的實現</span>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">一、從舊約時代到宗教改革</p>
+
+                <PageTag page={431} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  內聖外王本是聖經中的思想，亞當、夏娃按著神的形像被造，若選擇吃生命樹的果子，天天連結於上帝，這是內聖，接著必能按照上帝的託付，治理全地，這是外王。（創一26~28，二7~17）然而亞當、夏娃犯罪墮落了，所以不再能適任管理全地，而且其後代子孫，罪惡愈來愈多，最終全人類被洪水所滅，只有挪亞一家八口得救。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  洪水之後的世界，人類仍然在罪惡之中，但有少數人，存敬畏上帝的心，承認自己的罪，藉獻祭贖罪，並遵行上帝的法則，因此在其任內全部或部分時日，能有內聖外王的實際。例如，中華民族有黃帝、堯、舜、禹、湯、文、武、周公等，希伯來民族有撒母耳、大衛、所羅門、約沙法、約阿施、烏西雅、約坦、希西家、約西亞、尼希米、所羅巴伯等。中國的歷史，沒有記載中華民族「聖王」的「惡事」，但在聖經，則清楚記載了希伯來民族君王的「惡事」。這是「人」寫書與「聖靈」寫書的不同。因此也造成兩個文化對「罪」的敏感度不同。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  出自希伯來民族的基督信仰，保有對罪的敏感，且有聖靈的能力，因此使內聖外王成為可能。出自中華民族的儒家文化，則因為失去對罪的敏感，也失去對上帝的倚靠，以致不再有內聖外王的實現。在儒家裡面，孔子、孟子、荀子、劉蕺山、黃宗羲等人都對罪有相當大的敏感度，但畢竟在儒家的發展裡面，上帝最多只是自然啟示的一部分，無法帶給人得勝的力量。所以一般人學習儒家，就是學習律法，即使知罪，也無力勝罪。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  基督信仰下的內聖外王，實現在第一至四世紀的教會裡，
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  並影響了羅馬帝國，改造了歐洲與北非的文化。第五世紀以後教會
+                </p>
+
+                <PageTag page={432} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  的靈性逐漸走下坡，因為基督教成為羅馬帝國的國教，教會逐漸失去對罪的敏感與聖靈的能力。第十六世紀宗教改革，重新認真看待罪，馬丁路德、加爾文都清楚認知人的全然墮落。以致能夠靠著上帝的恩典，在教會及國家社會中實現內聖外王。瑞士、德國、北歐、英國、北美的轉化，都受到宗教改革的影響。如楊懋春所說：<sup>153</sup><span style={cite}>（楊懋春，〈中國的家族主義與國民性格〉。李亦園、楊國樞，《中國人的性格》，頁139-140）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3 pl-4 border-l-2 border-amber-200 italic">
+                  有很多實例顯示，國民性格之形成、變化，是由一位或幾位民族大宗師以其宗教倫理、人生哲學，經其門弟子推展調和，使容納於大眾的思想、情操，見行於日常生活。且對高層人士與普通民眾，均有實際利益，歷經數代而不變。此宗教倫理或人生哲學，就逐漸成為一個國族的國民性格。基督教改革之教父路德、加爾文，對歐洲、北美洲之影響即是。經數百年的浸潤，改革教派的倫理與哲學已成了北歐、英國、北美國家的國民性格。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  路德的神學是以因信稱義──赦罪福音──為中心的神學。並不是說因信稱義是各神學課題中最重要的一項，乃是以「因信稱義」為鑰匙，去解開各神學領域，並成為各神學領域的基礎。<sup>154</sup><span style={cite}>（其他神學如加爾文的神學是以「神的主權」為基礎，林道亮牧師的神學是以「神的國度」為中心，去探討各個不同的神學課題，這是神學方法的不同。）</span>路德的思想彷彿玫瑰花的花瓣一樣，連結於同一中心，像陽光一樣由光源發散出來，這中心是赦罪的福音。<sup>155</sup><span style={cite}>（蕭治．霍萊，《信與愛》，頁26）</span>以「成聖」生活為例，「行義」是重要的，但若沒有持續在因信稱義的恩典中，則無行義的可能。<sup>156</sup><span style={cite}>（蕭治．霍萊，《信與愛》，頁33。另參看柯白珍，《稱義與成聖》，頁300。德國神學家何理博士將此總括為兩句話：（1）除非成聖繼續踐回稱義，不免要墜入法利賽主義和狂妄的誇大。（2）但當我們緊握那判斷人和饒恕人的旗幟，那麼成聖才有真實的謙卑和活力。）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  馬丁路德把基督徒描寫成既是義人，同時又是罪人（simul Justus et peccator）。基督徒是義人，是因為上帝對罪的赦免，即
+                </p>
+
+                <PageTag page={433} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  因基督之故，上帝裁定，接受人為義；但就人本身而言，即就現在作為人的存在而言，人是罪人。後者是在沒有基督的情況下僅就我本身而言，前者是就基督已為我代贖而言。不是部分義人、部分罪人，而是完全的罪人，又完全是義的。路德的說法還有另一方面的意思。只要基督藉著信，有力地在人心中工作，而此人藉著聖靈能力對自我舊人開戰，那他就是義的；但只要他同時仍保留「肉身」，會與他抗爭，會死，他就仍是個人。這種矛盾關係是一生之久的。<sup>157</sup><span style={cite}>（保羅‧阿爾托依兹，《馬丁路德神學》，頁333-335）</span>有著這種意識，能使人保持對罪的敏感與對上帝的倚靠，因此能夠幫助西方基督教世界相當程度地實現內聖外王。
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-2 mb-1 font-semibold">二、約翰衛斯理的影響</p>
+                <p className="text-gray-700 leading-relaxed">
+                  十八世紀英國的約翰衛斯理，更是一個以信仰改造國家社會的
+                </p>
+
+                <PageTag page={434} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  明顯實例。上帝使用約翰衛斯理與查理衛斯理兄弟兩人，使當時英國的教會得到靈性的大覺醒。他們所領導的復興運動，將當時的教會提高至新的水準之上，並且間接地拯救了英格蘭脫離全國性的重大危機。這運動並不是一種政治力量，乃是超自然的大能與道德的力量。<sup>158</sup><span style={cite}>（白光照，「序」，約翰衛斯理，《基督徒的全德》，陳承仲譯，頁i）</span>從今天觀之可發現，因著英國人民在基督生命中的改變，近代民主與科學肇始於英國，而影響中國、東南亞的宣教士也最多來自英國。
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  衛斯理的神學屬於亞米念主義，可以稱為「福音派的神人合作說」。他堅持聖經的權威、靠恩因信稱義、信徒皆祭司等更正教原則，同時強調自由意志和完全成聖。雖與「神恩獨作說」有衝突而引起爭議，但並未失去「唯獨恩典」的立場，對英國及普世教會均有極大正面的貢獻。<sup>159</sup><span style={cite}>（奧爾森，《神學的故事》，頁560-561,609-613）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  衛斯理關於「基督徒的完全（全德）」的第一篇短論，出版於1739年，標題「一個循道者的品格」（The Characters of a
+                </p>
+
+                <PageTag page={435} />
+                <p className="text-gray-700 leading-relaxed mt-2 mb-3">
+                  Methodist），內容包括：1. 盡心、盡意、盡性、盡力愛主上帝。2. 在上帝面前恆久地充滿喜樂、平安。3. 因有永生的盼望，而凡事向主感謝。4. 不住地禱告，隨時隨地心向著上帝。5. 因愛上帝而愛人如己，為仇敵禱告。6. 心為純潔，因愛除去驕傲只存謙卑。7. 一生目標不按己意，只按上帝意思。8. 因愛神而謹守神誡命，遵行祂旨意。9. 為榮耀上帝而獻上自己所有的一切。10. 無論何處做何事，都為榮耀上帝。11. 全力奔向前面路程，不受流俗阻擋。<sup>160</sup><span style={cite}>（約翰衛斯理，《基督徒的完全》，毛衛東譯，頁12-17。《基督徒的全德》，陳承仲譯，頁12-17）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  約翰衛斯理所說的完全或成聖，需要人的努力，應當以全然順服的心，虔誠遵守一切誡命，時刻保持警醒，勤勉克己，每日捨己背十字架，懇切地禱告禁食，嚴格遵守上帝的一切儀規。只要藉著信心就可以得到成聖，但如果不按照神的方法來尋求，神不會把信心賜給我們。禱告是特別需要的：「你們得不著，是因為你們不求。」（雅四2）<sup>161</sup><span style={cite}>（約翰衛斯理，《基督徒的完全》，毛衛東譯，頁85-86。《基督徒的全德》，陳承仲譯，頁95）</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  約翰衛斯理強調，「完全」沒有程度之分（no perfection of
+                </p>
+              </div>
             </div>
 
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-700">
-              第六章第三節「天人合一」及後續內容尚在建置中，將陸續更新。
+              第六章第四節「內聖外王」（三、近代基督徒的外王表現，尚未寫入）及後續內容尚在建置中，將陸續更新。
             </div>
 
           </div>
