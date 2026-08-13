@@ -131,7 +131,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   // TTS 狀態
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [speechRate, setSpeechRate] = useState(0.5);
+  const [speechRate, setSpeechRate] = useState(1.0);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const speechQueueRef = useRef<string[]>([]);
   const speechIndexRef = useRef(0);
