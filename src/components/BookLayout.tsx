@@ -115,6 +115,18 @@ const expandScriptureRefs = (text: string): string => {
   });
 };
 
+// 朗讀發音修正：
+// ・卅 → 三十、廿 → 二十（否則語音會唸不出來或唸錯）
+// ・「地」統一唸成 ㄉㄧˋ（與「弟」同音）—— 經文語境中「地」幾乎都是「土地／大地」之意，
+//   語音引擎常誤唸成輕聲「˙ㄉㄜ」（助詞音），此處統一改成 dì。
+//   注意：少數作助詞的「地」（例如「慢慢地走」「深深地愛」）也會被一起改成 dì。
+const fixSpeechPronunciation = (text: string): string => {
+  return text
+    .replace(/卅/g, '三十')
+    .replace(/廿/g, '二十')
+    .replace(/地/g, '帝');
+};
+
 const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, children }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -517,7 +529,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     if (!mainContent) return;
     const rawTextContent = (mainContent as HTMLElement).innerText.trim();
     if (!rawTextContent) return;
-    const textContent = expandScriptureRefs(rawTextContent);
+    const textContent = fixSpeechPronunciation(expandScriptureRefs(rawTextContent));
 
     speechStopRef.current = false;
     window.speechSynthesis.cancel();
