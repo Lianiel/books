@@ -62,6 +62,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book32: '華人回家',
   book33: '跨越鴻溝',
   book34: '改變帶來醫治',
+  book35: '初級代禱學',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -521,6 +522,16 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'appendix', title: '附錄 研讀指引', path: '/book34/appendix' },
     { id: 'conclusion', title: '結論', path: '/book34/conclusion' },
   ],
+  book35: [
+    { id: 'home', title: '書本簡介', path: '/book35/home' },
+    { id: 'preface', title: '序言', path: '/book35/preface' },
+    { id: 'chapter1', title: '第一講 認識神就是經歷神', path: '/book35/chapter1' },
+    { id: 'chapter2', title: '第二講 需要神兩刃的利劍', path: '/book35/chapter2' },
+    { id: 'chapter3', title: '第三講 禱告是關乎神自己', path: '/book35/chapter3' },
+    { id: 'chapter4', title: '第四講 聖經啟示的禱告類型', path: '/book35/chapter4' },
+    { id: 'chapter5', title: '第五講 在主裡學習保持謙卑', path: '/book35/chapter5' },
+    { id: 'chapter6', title: '第六講 回應成為祭司的呼召', path: '/book35/chapter6' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -559,6 +570,7 @@ const STATIC_BOOKS = [
   { book_id: 'book32', title: '華人回家', author: '莊東傑　著', description: '創世記與華人先祖——以聖經創世記一至十一章為經，中國古籍為緯，探討神與創造、人的特性、墮落與拯救、罪惡的蔓延、洪水與方舟、閃的後代六大主題，幫助華人看見信靠真神不是背祖，而是回歸祖先的信仰。', chapters_count: 6 },
   { book_id: 'book33', title: '跨越鴻溝', author: '莊東傑　著', description: '在華人文化處境中詮釋罪——以華人古籍為經，聖經為緯，藉由華人的文化處境，將聖經中「罪」的觀念向華人表達出來，並指出一條華人文化更新之路。與《華人回家》互為姊妹作，可單獨閱讀。', chapters_count: 6 },
   { book_id: 'book34', title: '改變帶來醫治', author: '亨利·克勞德 博士　著', description: '作者從自己的靈程與專業經驗中，認定了四種需要培養、卻常常缺失的「像神的功能」：與人相連、與人分離（設立界限）、分辨善惡、長大成人。全書按此架構分為五篇十六章，逐一剖析我們在成長中卡住的地方，以及重新學習、得著醫治的具體技巧，每章並穿插大量真實的輔導案例。', chapters_count: 16 },
+  { book_id: 'book35', title: '初級代禱學', author: '妮塔·強生　著　／　阿木歌　編譯', description: '妮塔·強生牧師給初級代禱者的入門教程，以六堂講道實錄的形式，從「認識神就是經歷神」出發，依序談到爭戰禱告的兩刃利劍、禱告如何回歸以神自己為中心、聖經中不同類型的禱告、在主裡學習謙卑，最後回應成為祭司的呼召。每一講穿插大量真實的服事見證與親自示範的禱告詞，直指禱告最核心的根基：先認識神、明白神的心意，再把神的旨意禱告出來。', chapters_count: 6 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -606,7 +618,7 @@ interface BookCategory {
 }
 
 const BOOK_CATEGORIES: BookCategory[] = [
-  { name: '禱告靈修', icon: '🙏', color: '#7c3aed', bg: '#f5f3ff', bookNumbers: [9, 10, 14, 16] },
+  { name: '禱告靈修', icon: '🙏', color: '#7c3aed', bg: '#f5f3ff', bookNumbers: [9, 10, 14, 16, 35] },
   { name: '聖經研讀', icon: '📖', color: '#b45309', bg: '#fffbeb', bookNumbers: [6, 12, 23, 29, 30, 31, 32] },
   { name: '門訓成長', icon: '🌱', color: '#059669', bg: '#f0fdf4', bookNumbers: [5, 7, 19, 21, 22, 26] },
   { name: '情緒輔導', icon: '💙', color: '#0d9488', bg: '#f0fdfa', bookNumbers: [1, 2, 8, 20, 27, 28, 34] },
@@ -1034,6 +1046,14 @@ const Book34Ch15 = lazyWithRetry(() => import('./components/book34/Book34Ch15'))
 const Book34Ch16 = lazyWithRetry(() => import('./components/book34/Book34Ch16'));
 const Book34Appendix = lazyWithRetry(() => import('./components/book34/Book34Appendix'));
 const Book34Conclusion = lazyWithRetry(() => import('./components/book34/Book34Conclusion'));
+const Book35Home = lazyWithRetry(() => import('./components/book35/Book35Home'));
+const Book35Preface = lazyWithRetry(() => import('./components/book35/Book35Preface'));
+const Book35Ch1 = lazyWithRetry(() => import('./components/book35/Book35Ch1'));
+const Book35Ch2 = lazyWithRetry(() => import('./components/book35/Book35Ch2'));
+const Book35Ch3 = lazyWithRetry(() => import('./components/book35/Book35Ch3'));
+const Book35Ch4 = lazyWithRetry(() => import('./components/book35/Book35Ch4'));
+const Book35Ch5 = lazyWithRetry(() => import('./components/book35/Book35Ch5'));
+const Book35Ch6 = lazyWithRetry(() => import('./components/book35/Book35Ch6'));
 const Book32Preface = lazyWithRetry(() => import('./components/book32/Book32Preface'));
 const Book32Introduction = lazyWithRetry(() => import('./components/book32/Book32Introduction'));
 const Book32Ch1 = lazyWithRetry(() => import('./components/book32/Book32Ch1'));
@@ -1658,6 +1678,15 @@ const App: React.FC = () => {
         <Route path="/book34/chapter16" element={<BookLayout bookId="book34" chapter="chapter16" chapters={getChaptersForBook('book34')}><Book34Ch16 /></BookLayout>} />
         <Route path="/book34/appendix" element={<BookLayout bookId="book34" chapter="appendix" chapters={getChaptersForBook('book34')}><Book34Appendix /></BookLayout>} />
         <Route path="/book34/conclusion" element={<BookLayout bookId="book34" chapter="conclusion" chapters={getChaptersForBook('book34')}><Book34Conclusion /></BookLayout>} />
+        <Route path="/book35/home" element={<BookLayout bookId="book35" chapter="home" chapters={getChaptersForBook('book35')}><Book35Home /></BookLayout>} />
+        <Route path="/book35/preface" element={<BookLayout bookId="book35" chapter="preface" chapters={getChaptersForBook('book35')}><Book35Preface /></BookLayout>} />
+        <Route path="/book35/chapter1" element={<BookLayout bookId="book35" chapter="chapter1" chapters={getChaptersForBook('book35')}><Book35Ch1 /></BookLayout>} />
+        <Route path="/book35/chapter2" element={<BookLayout bookId="book35" chapter="chapter2" chapters={getChaptersForBook('book35')}><Book35Ch2 /></BookLayout>} />
+        <Route path="/book35/chapter3" element={<BookLayout bookId="book35" chapter="chapter3" chapters={getChaptersForBook('book35')}><Book35Ch3 /></BookLayout>} />
+        <Route path="/book35/chapter4" element={<BookLayout bookId="book35" chapter="chapter4" chapters={getChaptersForBook('book35')}><Book35Ch4 /></BookLayout>} />
+        <Route path="/book35/chapter5" element={<BookLayout bookId="book35" chapter="chapter5" chapters={getChaptersForBook('book35')}><Book35Ch5 /></BookLayout>} />
+        <Route path="/book35/chapter6" element={<BookLayout bookId="book35" chapter="chapter6" chapters={getChaptersForBook('book35')}><Book35Ch6 /></BookLayout>} />
+        <Route path="/book/35" element={<BookLayout bookId="book35" chapter="home" chapters={getChaptersForBook('book35')}><Book35Home /></BookLayout>} />
         <Route path="/book/34" element={<BookLayout bookId="book34" chapter="home" chapters={getChaptersForBook('book34')}><Book34Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
