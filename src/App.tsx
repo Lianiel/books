@@ -64,6 +64,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book34: '改變帶來醫治',
   book35: '初級代禱學',
   book36: '深度禱告學',
+  book37: '復興的奧秘',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -552,6 +553,15 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter14', title: '第十四講 成為基督的新婦', path: '/book36/chapter14' },
     { id: 'chapter15', title: '第十五講 預備自己和教會來盛裝神', path: '/book36/chapter15' },
   ],
+  book37: [
+    { id: 'home', title: '書本簡介', path: '/book37/home' },
+    { id: 'preface', title: '序言：看見了就是你的', path: '/book37/preface' },
+    { id: 'chapter1', title: '第一講 神賜下復興的目的', path: '/book37/chapter1' },
+    { id: 'chapter2', title: '第二講 單單愛主你的神', path: '/book37/chapter2' },
+    { id: 'chapter3', title: '第三講 在愛中行事的信心', path: '/book37/chapter3' },
+    { id: 'chapter4', title: '第四講 存謙卑的心與神同行', path: '/book37/chapter4' },
+    { id: 'chapter5', title: '第五講 讓耶穌透過你活出來', path: '/book37/chapter5' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -592,6 +602,7 @@ const STATIC_BOOKS = [
   { book_id: 'book34', title: '改變帶來醫治', author: '亨利·克勞德 博士　著', description: '作者從自己的靈程與專業經驗中，認定了四種需要培養、卻常常缺失的「像神的功能」：與人相連、與人分離（設立界限）、分辨善惡、長大成人。全書按此架構分為五篇十六章，逐一剖析我們在成長中卡住的地方，以及重新學習、得著醫治的具體技巧，每章並穿插大量真實的輔導案例。', chapters_count: 16 },
   { book_id: 'book35', title: '初級代禱學', author: '妮塔·強生　著　／　阿木歌　編譯', description: '妮塔·強生牧師給初級代禱者的入門教程，以六堂講道實錄的形式，從「認識神就是經歷神」出發，依序談到爭戰禱告的兩刃利劍、禱告如何回歸以神自己為中心、聖經中不同類型的禱告、在主裡學習謙卑，最後回應成為祭司的呼召。每一講穿插大量真實的服事見證與親自示範的禱告詞，直指禱告最核心的根基：先認識神、明白神的心意，再把神的旨意禱告出來。', chapters_count: 6 },
   { book_id: 'book36', title: '深度禱告學', author: '妮塔·強生　著　／　阿木歌　編譯', description: '《初級代禱學》的姊妹篇，妮塔·強生牧師十五堂深度講道實錄。從與神親密的關係出發，經歷屬靈爭戰的教訓、四種生產式的禱告、為國家代禱的呼召，深入主禱文逐句的禱告操練，最終指向與主合一、成為基督新婦的呼召。內容涵蓋大量個人異象與服事見證，是進深代禱者裝備自己、預備盛裝神的重要教材。', chapters_count: 15 },
+  { book_id: 'book37', title: '復興的奧秘', author: '妮塔·強生　著　／　阿木歌　編譯', description: '妮塔·強生牧師五堂講道實錄，聚焦「得到復興之後如何持守它」。從神賜下復興的目的出發，依序談到單單愛主你的神、在愛中行事的信心、存謙卑的心與神同行，最終指向讓耶穌透過你活出來。作者以自身失敗的經歷坦誠分享，提醒讀者復興的能力之外，品格、謙卑與神聖的愛才是持守恩膏的關鍵。', chapters_count: 5 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -639,7 +650,7 @@ interface BookCategory {
 }
 
 const BOOK_CATEGORIES: BookCategory[] = [
-  { name: '禱告靈修', icon: '🙏', color: '#7c3aed', bg: '#f5f3ff', bookNumbers: [9, 10, 14, 16, 35, 36] },
+  { name: '禱告靈修', icon: '🙏', color: '#7c3aed', bg: '#f5f3ff', bookNumbers: [9, 10, 14, 16, 35, 36, 37] },
   { name: '聖經研讀', icon: '📖', color: '#b45309', bg: '#fffbeb', bookNumbers: [6, 12, 23, 29, 30, 31, 32] },
   { name: '門訓成長', icon: '🌱', color: '#059669', bg: '#f0fdf4', bookNumbers: [5, 7, 19, 21, 22, 26] },
   { name: '情緒輔導', icon: '💙', color: '#0d9488', bg: '#f0fdfa', bookNumbers: [1, 2, 8, 20, 27, 28, 34] },
@@ -1092,6 +1103,13 @@ const Book36Ch12 = lazyWithRetry(() => import('./components/book36/Book36Ch12'))
 const Book36Ch13 = lazyWithRetry(() => import('./components/book36/Book36Ch13'));
 const Book36Ch14 = lazyWithRetry(() => import('./components/book36/Book36Ch14'));
 const Book36Ch15 = lazyWithRetry(() => import('./components/book36/Book36Ch15'));
+const Book37Home = lazyWithRetry(() => import('./components/book37/Book37Home'));
+const Book37Preface = lazyWithRetry(() => import('./components/book37/Book37Preface'));
+const Book37Ch1 = lazyWithRetry(() => import('./components/book37/Book37Ch1'));
+const Book37Ch2 = lazyWithRetry(() => import('./components/book37/Book37Ch2'));
+const Book37Ch3 = lazyWithRetry(() => import('./components/book37/Book37Ch3'));
+const Book37Ch4 = lazyWithRetry(() => import('./components/book37/Book37Ch4'));
+const Book37Ch5 = lazyWithRetry(() => import('./components/book37/Book37Ch5'));
 const Book32Preface = lazyWithRetry(() => import('./components/book32/Book32Preface'));
 const Book32Introduction = lazyWithRetry(() => import('./components/book32/Book32Introduction'));
 const Book32Ch1 = lazyWithRetry(() => import('./components/book32/Book32Ch1'));
@@ -1743,6 +1761,14 @@ const App: React.FC = () => {
         <Route path="/book36/chapter14" element={<BookLayout bookId="book36" chapter="chapter14" chapters={getChaptersForBook('book36')}><Book36Ch14 /></BookLayout>} />
         <Route path="/book36/chapter15" element={<BookLayout bookId="book36" chapter="chapter15" chapters={getChaptersForBook('book36')}><Book36Ch15 /></BookLayout>} />
         <Route path="/book/36" element={<BookLayout bookId="book36" chapter="home" chapters={getChaptersForBook('book36')}><Book36Home /></BookLayout>} />
+        <Route path="/book37/home" element={<BookLayout bookId="book37" chapter="home" chapters={getChaptersForBook('book37')}><Book37Home /></BookLayout>} />
+        <Route path="/book37/preface" element={<BookLayout bookId="book37" chapter="preface" chapters={getChaptersForBook('book37')}><Book37Preface /></BookLayout>} />
+        <Route path="/book37/chapter1" element={<BookLayout bookId="book37" chapter="chapter1" chapters={getChaptersForBook('book37')}><Book37Ch1 /></BookLayout>} />
+        <Route path="/book37/chapter2" element={<BookLayout bookId="book37" chapter="chapter2" chapters={getChaptersForBook('book37')}><Book37Ch2 /></BookLayout>} />
+        <Route path="/book37/chapter3" element={<BookLayout bookId="book37" chapter="chapter3" chapters={getChaptersForBook('book37')}><Book37Ch3 /></BookLayout>} />
+        <Route path="/book37/chapter4" element={<BookLayout bookId="book37" chapter="chapter4" chapters={getChaptersForBook('book37')}><Book37Ch4 /></BookLayout>} />
+        <Route path="/book37/chapter5" element={<BookLayout bookId="book37" chapter="chapter5" chapters={getChaptersForBook('book37')}><Book37Ch5 /></BookLayout>} />
+        <Route path="/book/37" element={<BookLayout bookId="book37" chapter="home" chapters={getChaptersForBook('book37')}><Book37Home /></BookLayout>} />
         <Route path="/book/34" element={<BookLayout bookId="book34" chapter="home" chapters={getChaptersForBook('book34')}><Book34Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
