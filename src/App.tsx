@@ -65,6 +65,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book35: '初級代禱學',
   book36: '深度禱告學',
   book37: '復興的奧秘',
+  book38: '隨時的幫助',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -562,6 +563,23 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter4', title: '第四講 存謙卑的心與神同行', path: '/book37/chapter4' },
     { id: 'chapter5', title: '第五講 讓耶穌透過你活出來', path: '/book37/chapter5' },
   ],
+  book38: [
+    { id: 'home', title: '書本簡介', path: '/book38/home' },
+    { id: 'preface', title: '序', path: '/book38/preface' },
+    { id: 'chapter1', title: '第一章 誰是聖靈？', path: '/book38/chapter1' },
+    { id: 'chapter2', title: '第二章 與我同行', path: '/book38/chapter2' },
+    { id: 'chapter3', title: '第三章 揚起船帆', path: '/book38/chapter3' },
+    { id: 'chapter4', title: '第四章 心中的哀嘆', path: '/book38/chapter4' },
+    { id: 'chapter5', title: '第五章 救恩的確據', path: '/book38/chapter5' },
+    { id: 'chapter6', title: '第六章 平息一切混亂', path: '/book38/chapter6' },
+    { id: 'chapter7', title: '第七章 如何聆聽神的聲音', path: '/book38/chapter7' },
+    { id: 'chapter8', title: '第八章 點燃靈魂', path: '/book38/chapter8' },
+    { id: 'chapter9', title: '第九章 滴滿脂油的路徑', path: '/book38/chapter9' },
+    { id: 'chapter10', title: '第十章 活水湧流', path: '/book38/chapter10' },
+    { id: 'chapter11', title: '第十一章 放膽講論神的道', path: '/book38/chapter11' },
+    { id: 'chapter12', title: '第十二章 釋放你的潛力', path: '/book38/chapter12' },
+    { id: 'chapter13', title: '第十三章 讓枯骨得著氣息', path: '/book38/chapter13' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -603,6 +621,7 @@ const STATIC_BOOKS = [
   { book_id: 'book35', title: '初級代禱學', author: '妮塔·強生　著　／　阿木歌　編譯', description: '妮塔·強生牧師給初級代禱者的入門教程，以六堂講道實錄的形式，從「認識神就是經歷神」出發，依序談到爭戰禱告的兩刃利劍、禱告如何回歸以神自己為中心、聖經中不同類型的禱告、在主裡學習謙卑，最後回應成為祭司的呼召。每一講穿插大量真實的服事見證與親自示範的禱告詞，直指禱告最核心的根基：先認識神、明白神的心意，再把神的旨意禱告出來。', chapters_count: 6 },
   { book_id: 'book36', title: '深度禱告學', author: '妮塔·強生　著　／　阿木歌　編譯', description: '《初級代禱學》的姊妹篇，妮塔·強生牧師十五堂深度講道實錄。從與神親密的關係出發，經歷屬靈爭戰的教訓、四種生產式的禱告、為國家代禱的呼召，深入主禱文逐句的禱告操練，最終指向與主合一、成為基督新婦的呼召。內容涵蓋大量個人異象與服事見證，是進深代禱者裝備自己、預備盛裝神的重要教材。', chapters_count: 15 },
   { book_id: 'book37', title: '復興的奧秘', author: '妮塔·強生　著　／　阿木歌　編譯', description: '妮塔·強生牧師五堂講道實錄，聚焦「得到復興之後如何持守它」。從神賜下復興的目的出發，依序談到單單愛主你的神、在愛中行事的信心、存謙卑的心與神同行，最終指向讓耶穌透過你活出來。作者以自身失敗的經歷坦誠分享，提醒讀者復興的能力之外，品格、謙卑與神聖的愛才是持守恩膏的關鍵。', chapters_count: 5 },
+  { book_id: 'book38', title: '隨時的幫助', author: '陸可鐸　著', description: '國際暢銷書作家陸可鐸探討聖靈位格與工作的著作，共十三章。從「誰是聖靈？」出發，依序談到與聖靈同行、聖靈的代求、救恩的確據、平息焦慮、聆聽神的聲音、聖靈如火煉淨生命、聖靈的膏抹、活水江河的復興、放膽講論神的道、屬靈恩賜，最終以「讓枯骨得著氣息」的呼召作結。文字溫暖貼近生活，適合在疲憊的日子裡倚靠聖靈恢復活力。', chapters_count: 13 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -650,7 +669,7 @@ interface BookCategory {
 }
 
 const BOOK_CATEGORIES: BookCategory[] = [
-  { name: '禱告靈修', icon: '🙏', color: '#7c3aed', bg: '#f5f3ff', bookNumbers: [9, 10, 14, 16, 35, 36, 37] },
+  { name: '禱告靈修', icon: '🙏', color: '#7c3aed', bg: '#f5f3ff', bookNumbers: [9, 10, 14, 16, 35, 36, 37, 38] },
   { name: '聖經研讀', icon: '📖', color: '#b45309', bg: '#fffbeb', bookNumbers: [6, 12, 23, 29, 30, 31, 32] },
   { name: '門訓成長', icon: '🌱', color: '#059669', bg: '#f0fdf4', bookNumbers: [5, 7, 19, 21, 22, 26] },
   { name: '情緒輔導', icon: '💙', color: '#0d9488', bg: '#f0fdfa', bookNumbers: [1, 2, 8, 20, 27, 28, 34] },
@@ -1110,6 +1129,21 @@ const Book37Ch2 = lazyWithRetry(() => import('./components/book37/Book37Ch2'));
 const Book37Ch3 = lazyWithRetry(() => import('./components/book37/Book37Ch3'));
 const Book37Ch4 = lazyWithRetry(() => import('./components/book37/Book37Ch4'));
 const Book37Ch5 = lazyWithRetry(() => import('./components/book37/Book37Ch5'));
+const Book38Home = lazyWithRetry(() => import('./components/book38/Book38Home'));
+const Book38Preface = lazyWithRetry(() => import('./components/book38/Book38Preface'));
+const Book38Ch1 = lazyWithRetry(() => import('./components/book38/Book38Ch1'));
+const Book38Ch2 = lazyWithRetry(() => import('./components/book38/Book38Ch2'));
+const Book38Ch3 = lazyWithRetry(() => import('./components/book38/Book38Ch3'));
+const Book38Ch4 = lazyWithRetry(() => import('./components/book38/Book38Ch4'));
+const Book38Ch5 = lazyWithRetry(() => import('./components/book38/Book38Ch5'));
+const Book38Ch6 = lazyWithRetry(() => import('./components/book38/Book38Ch6'));
+const Book38Ch7 = lazyWithRetry(() => import('./components/book38/Book38Ch7'));
+const Book38Ch8 = lazyWithRetry(() => import('./components/book38/Book38Ch8'));
+const Book38Ch9 = lazyWithRetry(() => import('./components/book38/Book38Ch9'));
+const Book38Ch10 = lazyWithRetry(() => import('./components/book38/Book38Ch10'));
+const Book38Ch11 = lazyWithRetry(() => import('./components/book38/Book38Ch11'));
+const Book38Ch12 = lazyWithRetry(() => import('./components/book38/Book38Ch12'));
+const Book38Ch13 = lazyWithRetry(() => import('./components/book38/Book38Ch13'));
 const Book32Preface = lazyWithRetry(() => import('./components/book32/Book32Preface'));
 const Book32Introduction = lazyWithRetry(() => import('./components/book32/Book32Introduction'));
 const Book32Ch1 = lazyWithRetry(() => import('./components/book32/Book32Ch1'));
@@ -1769,6 +1803,22 @@ const App: React.FC = () => {
         <Route path="/book37/chapter4" element={<BookLayout bookId="book37" chapter="chapter4" chapters={getChaptersForBook('book37')}><Book37Ch4 /></BookLayout>} />
         <Route path="/book37/chapter5" element={<BookLayout bookId="book37" chapter="chapter5" chapters={getChaptersForBook('book37')}><Book37Ch5 /></BookLayout>} />
         <Route path="/book/37" element={<BookLayout bookId="book37" chapter="home" chapters={getChaptersForBook('book37')}><Book37Home /></BookLayout>} />
+        <Route path="/book38/home" element={<BookLayout bookId="book38" chapter="home" chapters={getChaptersForBook('book38')}><Book38Home /></BookLayout>} />
+        <Route path="/book38/preface" element={<BookLayout bookId="book38" chapter="preface" chapters={getChaptersForBook('book38')}><Book38Preface /></BookLayout>} />
+        <Route path="/book38/chapter1" element={<BookLayout bookId="book38" chapter="chapter1" chapters={getChaptersForBook('book38')}><Book38Ch1 /></BookLayout>} />
+        <Route path="/book38/chapter2" element={<BookLayout bookId="book38" chapter="chapter2" chapters={getChaptersForBook('book38')}><Book38Ch2 /></BookLayout>} />
+        <Route path="/book38/chapter3" element={<BookLayout bookId="book38" chapter="chapter3" chapters={getChaptersForBook('book38')}><Book38Ch3 /></BookLayout>} />
+        <Route path="/book38/chapter4" element={<BookLayout bookId="book38" chapter="chapter4" chapters={getChaptersForBook('book38')}><Book38Ch4 /></BookLayout>} />
+        <Route path="/book38/chapter5" element={<BookLayout bookId="book38" chapter="chapter5" chapters={getChaptersForBook('book38')}><Book38Ch5 /></BookLayout>} />
+        <Route path="/book38/chapter6" element={<BookLayout bookId="book38" chapter="chapter6" chapters={getChaptersForBook('book38')}><Book38Ch6 /></BookLayout>} />
+        <Route path="/book38/chapter7" element={<BookLayout bookId="book38" chapter="chapter7" chapters={getChaptersForBook('book38')}><Book38Ch7 /></BookLayout>} />
+        <Route path="/book38/chapter8" element={<BookLayout bookId="book38" chapter="chapter8" chapters={getChaptersForBook('book38')}><Book38Ch8 /></BookLayout>} />
+        <Route path="/book38/chapter9" element={<BookLayout bookId="book38" chapter="chapter9" chapters={getChaptersForBook('book38')}><Book38Ch9 /></BookLayout>} />
+        <Route path="/book38/chapter10" element={<BookLayout bookId="book38" chapter="chapter10" chapters={getChaptersForBook('book38')}><Book38Ch10 /></BookLayout>} />
+        <Route path="/book38/chapter11" element={<BookLayout bookId="book38" chapter="chapter11" chapters={getChaptersForBook('book38')}><Book38Ch11 /></BookLayout>} />
+        <Route path="/book38/chapter12" element={<BookLayout bookId="book38" chapter="chapter12" chapters={getChaptersForBook('book38')}><Book38Ch12 /></BookLayout>} />
+        <Route path="/book38/chapter13" element={<BookLayout bookId="book38" chapter="chapter13" chapters={getChaptersForBook('book38')}><Book38Ch13 /></BookLayout>} />
+        <Route path="/book/38" element={<BookLayout bookId="book38" chapter="home" chapters={getChaptersForBook('book38')}><Book38Home /></BookLayout>} />
         <Route path="/book/34" element={<BookLayout bookId="book34" chapter="home" chapters={getChaptersForBook('book34')}><Book34Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
