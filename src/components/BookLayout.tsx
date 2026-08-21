@@ -344,9 +344,60 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     parts: string[];
   }
 
+  // 整本書匯出的其中一步：擷取「目前頁面」的內容、存回進度，並導向下一章，
+  // 或者（已是最後一章）合併所有內容產生 docx 下載。呼叫時機有兩種：
+  // 1. 使用者剛按下「整本書」按鈕，且當下頁面剛好就是第一個要擷取的章節
+  //    （書沒有獨立首頁、按鈕出現在第一章本身時），這種情況不會實際換路由，
+  //    所以要在原地直接執行這一步，不能依賴下面那個掛載時觸發的 useEffect。
+  // 2. 每次換到下一章、BookLayout 重新掛載時，由 useEffect 偵測到進行中的匯出並接續。
+  const runExportStep = async (state: BookExportState) => {
+    setIsBookExporting(true);
+    setExportProgress({ current: state.index + 1, total: state.paths.length });
+
+    // 延遲時間要蓋過章節元件掛載渲染 + 自動展開所有區塊（500ms 計時器）
+    await new Promise(resolve => setTimeout(resolve, 800));
+
+    try {
+      const innerHtml = await captureMainAsHtml();
+      // 每一章自己的內容裡已經有標題（如「第二講」「單單愛主你的神」），
+      // 這裡不再另外加一個標題，只在非第一章前面插入分頁，避免標題重複兩次。
+      const pageBreak = state.index > 0 ? '<div style="page-break-before:always;"></div>' : '';
+      const wrapped = `${pageBreak}${innerHtml}`;
+      const newParts = [...state.parts, wrapped];
+      const nextIndex = state.index + 1;
+
+      if (nextIndex < state.paths.length) {
+        sessionStorage.setItem(BOOK_EXPORT_STATE_KEY, JSON.stringify({ ...state, index: nextIndex, parts: newParts }));
+        navigate(state.paths[nextIndex]);
+      } else {
+        const bookTitle = BOOK_TITLES[bookId] || bookId;
+        const htmlContent = wrapDocxHtml(`<h1 style="text-align:center;">${bookTitle}</h1>${newParts.join('')}`);
+        await downloadDocxBlob(htmlContent, `${sanitizeFilename(bookTitle)}.docx`);
+
+        sessionStorage.removeItem(BOOK_EXPORT_STATE_KEY);
+        setIsBookExporting(false);
+        setExportProgress(null);
+        alert('整本書 Word 已下載!');
+
+        // 有些較舊的書沒有獨立的「書本簡介」頁（chapters 陣列裡沒有 id 為 'home' 的項目），
+        // 這種情況就退回導到章節清單的第一項，而不是完全不導航。
+        const returnPath = chapters.find(c => c.id === 'home')?.path || chapters[0]?.path;
+        if (returnPath && returnPath !== location.pathname) navigate(returnPath);
+      }
+    } catch (error) {
+      console.error('整本書匯出失敗:', error);
+      sessionStorage.removeItem(BOOK_EXPORT_STATE_KEY);
+      setIsBookExporting(false);
+      setExportProgress(null);
+      alert('整本書匯出失敗，請稍後再試');
+    }
+  };
+
   // 匯出整本書 Word：依序造訪每一章、擷取內容後合併成一個 docx。
   // 因為每次換章節，BookLayout 都是全新掛載的元件實例（react-router 換路由不保留 state），
-  // 所以進度必須存在 sessionStorage 裡，靠下面那個 useEffect 在每次掛載時接續執行。
+  // 所以進度必須存在 sessionStorage 裡，靠下面那個 useEffect 在每次掛載時接續執行——
+  // 除非第一個要擷取的章節就是目前所在的頁面，這種情況導航是原地不動的無效導航，
+  // 不會觸發重新掛載，因此要改成直接呼叫 runExportStep 立刻在原地執行第一步。
   const handleExportWholeBook = () => {
     const targets = chapters.filter(c => c.id !== 'home');
     if (targets.length === 0) {
@@ -360,15 +411,19 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       index: 0,
       parts: [],
     };
-    sessionStorage.setItem(BOOK_EXPORT_STATE_KEY, JSON.stringify(state));
-    setIsBookExporting(true);
-    setExportProgress({ current: 1, total: targets.length });
-    navigate(targets[0].path);
+
+    if (targets[0].path === location.pathname) {
+      runExportStep(state);
+    } else {
+      sessionStorage.setItem(BOOK_EXPORT_STATE_KEY, JSON.stringify(state));
+      setIsBookExporting(true);
+      setExportProgress({ current: 1, total: targets.length });
+      navigate(targets[0].path);
+    }
   };
 
   // 整本書匯出的接續邏輯：每次掛載時檢查 sessionStorage 是否有屬於這本書、
-  // 且目前頁面正是預期章節的匯出進度，若有就擷取內容、存回進度、導向下一章；
-  // 全部章節擷取完後合併成一個 docx 下載，並清掉進度、導回書本首頁。
+  // 且目前頁面正是預期章節的匯出進度，若有就接續執行 runExportStep。
   useEffect(() => {
     const raw = sessionStorage.getItem(BOOK_EXPORT_STATE_KEY);
     if (!raw) return;
@@ -396,46 +451,13 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
       return;
     }
 
-    setIsBookExporting(true);
-    setExportProgress({ current: state.index + 1, total: state.paths.length });
-
-    // 延遲時間要蓋過章節元件掛載渲染 + 自動展開所有區塊（500ms 計時器）
-    const timer = setTimeout(async () => {
-      try {
-        const innerHtml = await captureMainAsHtml();
-        // 每一章自己的內容裡已經有標題（如「第二講」「單單愛主你的神」），
-        // 這裡不再另外加一個標題，只在非第一章前面插入分頁，避免標題重複兩次。
-        const pageBreak = state.index > 0 ? '<div style="page-break-before:always;"></div>' : '';
-        const wrapped = `${pageBreak}${innerHtml}`;
-        const newParts = [...state.parts, wrapped];
-        const nextIndex = state.index + 1;
-
-        if (nextIndex < state.paths.length) {
-          sessionStorage.setItem(BOOK_EXPORT_STATE_KEY, JSON.stringify({ ...state, index: nextIndex, parts: newParts }));
-          navigate(state.paths[nextIndex]);
-        } else {
-          const bookTitle = BOOK_TITLES[bookId] || bookId;
-          const htmlContent = wrapDocxHtml(`<h1 style="text-align:center;">${bookTitle}</h1>${newParts.join('')}`);
-          await downloadDocxBlob(htmlContent, `${sanitizeFilename(bookTitle)}.docx`);
-
-          sessionStorage.removeItem(BOOK_EXPORT_STATE_KEY);
-          setIsBookExporting(false);
-          setExportProgress(null);
-          alert('整本書 Word 已下載!');
-
-          const homePath = chapters.find(c => c.id === 'home')?.path;
-          if (homePath && homePath !== location.pathname) navigate(homePath);
-        }
-      } catch (error) {
-        console.error('整本書匯出失敗:', error);
-        sessionStorage.removeItem(BOOK_EXPORT_STATE_KEY);
-        setIsBookExporting(false);
-        setExportProgress(null);
-        alert('整本書匯出失敗，請稍後再試');
-      }
-    }, 800);
-
-    return () => clearTimeout(timer);
+    let cancelled = false;
+    (async () => {
+      if (!cancelled) await runExportStep(state);
+    })();
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname, bookId]);
 
@@ -985,7 +1007,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
               <span className="hidden sm:inline">Word</span>
             </button>
 
-            {chapter === 'home' && (
+            {(chapter === 'home' || currentIndex === 0) && (
               <button
                 onClick={handleExportWholeBook}
                 disabled={isBookExporting}
