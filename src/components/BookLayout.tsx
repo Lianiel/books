@@ -244,6 +244,25 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     });
     clone.querySelectorAll('[class*="toolbar"]').forEach(el => el.remove());
 
+    // 「編號 + 文字」並排區塊（反思問題的「1.」、重點總結的圓圈編號）在網頁上是靠
+    // flex 排版讓編號和內文並排在同一行，但 docx 轉換不支援 flex，會各自斷成獨立的行。
+    // 這裡把符合「flex 容器裡剛好兩個子元素：一個純數字的 <span> + 一個 <p>」的區塊，
+    // 直接合併成一個「編號. 內文」的段落，讓匯出結果跟網頁上看到的排版一致。
+    Array.from(clone.querySelectorAll('div, li')).forEach((container) => {
+      const el = container as HTMLElement;
+      if (!el.className || typeof el.className !== 'string' || !el.className.includes('flex')) return;
+      const children = Array.from(el.children) as HTMLElement[];
+      if (children.length !== 2) return;
+      const [label, content] = children;
+      if (label.tagName !== 'SPAN' || content.tagName !== 'P') return;
+      const labelText = (label.textContent || '').trim();
+      if (!/^\d{1,3}\.?$/.test(labelText)) return;
+      const prefix = labelText.endsWith('.') ? labelText : `${labelText}.`;
+      const merged = document.createElement('p');
+      merged.innerHTML = `<strong>${prefix}</strong>&nbsp;${content.innerHTML}`;
+      el.replaceWith(merged);
+    });
+
     // 圖片路徑在頁面上是 /images/... 相對路徑，瀏覽器顯示沒問題，
     // 但匯出成獨立 docx 檔後沒有網址可以依循，Word 開啟時找不到圖檔。
     // 這裡把每張圖片轉成 base64 內嵌，讓 docx 檔本身就含有圖片資料。
@@ -284,6 +303,9 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     </html>
   `;
 
+  // 檔名不能出現的字元（Windows/Mac 都會擋），書名/章節名理論上不會有，但保險起見還是過濾一次
+  const sanitizeFilename = (name: string): string => name.replace(/[\\/:*?"<>|]/g, '').trim();
+
   const downloadDocxBlob = async (htmlContent: string, filename: string) => {
     const { asBlob } = await import('html-docx-js-typescript');
     const blob = await asBlob(htmlContent);
@@ -302,7 +324,9 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   const handleExportWord = async () => {
     try {
       const innerHtml = await captureMainAsHtml();
-      await downloadDocxBlob(wrapDocxHtml(innerHtml), `${bookId}_${chapter}.docx`);
+      const bookTitle = sanitizeFilename(BOOK_TITLES[bookId] || bookId);
+      const chapterTitle = sanitizeFilename(currentChapter?.title || chapter);
+      await downloadDocxBlob(wrapDocxHtml(innerHtml), `${bookTitle}_${chapterTitle}.docx`);
       alert('Word 檔案已下載!');
     } catch (error) {
       console.error('匯出失敗:', error);
@@ -392,7 +416,7 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
         } else {
           const bookTitle = BOOK_TITLES[bookId] || bookId;
           const htmlContent = wrapDocxHtml(`<h1 style="text-align:center;">${bookTitle}</h1>${newParts.join('')}`);
-          await downloadDocxBlob(htmlContent, `${bookId}_全書.docx`);
+          await downloadDocxBlob(htmlContent, `${sanitizeFilename(bookTitle)}.docx`);
 
           sessionStorage.removeItem(BOOK_EXPORT_STATE_KEY);
           setIsBookExporting(false);
