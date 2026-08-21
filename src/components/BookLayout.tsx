@@ -379,8 +379,10 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     const timer = setTimeout(async () => {
       try {
         const innerHtml = await captureMainAsHtml();
-        const chapterTitle = state.titles[state.index];
-        const wrapped = `<h1 style="page-break-before:always;color:#1e40af;">${chapterTitle}</h1>${innerHtml}`;
+        // 每一章自己的內容裡已經有標題（如「第二講」「單單愛主你的神」），
+        // 這裡不再另外加一個標題，只在非第一章前面插入分頁，避免標題重複兩次。
+        const pageBreak = state.index > 0 ? '<div style="page-break-before:always;"></div>' : '';
+        const wrapped = `${pageBreak}${innerHtml}`;
         const newParts = [...state.parts, wrapped];
         const nextIndex = state.index + 1;
 
