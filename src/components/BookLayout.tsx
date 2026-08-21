@@ -172,6 +172,10 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
   // 筆記編輯框
   const [noteEditor, setNoteEditor] = useState<{ id: string; value: string } | null>(null);
 
+  // 整本書 Word 匯出（跨章節導航，用 sessionStorage 讓進度撐過每次換頁的元件重新掛載）
+  const [isBookExporting, setIsBookExporting] = useState(false);
+  const [exportProgress, setExportProgress] = useState<{ current: number; total: number } | null>(null);
+
   // 讀者登入（跨裝置同步畫重點用）
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [readerPhone, setReaderPhoneState] = useState<string | null>(() => getReaderPhone());
@@ -219,83 +223,195 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
     });
   };
   
-  // 匯出 Word
+  // 把目前頁面 <main> 內容處理成可放進 docx 的 HTML 片段：拆掉按鈕外殼保留文字、
+  // 移除工具列，並把圖片轉成 base64 內嵌（單章匯出、整本書匯出共用這段邏輯）
+  const captureMainAsHtml = async (): Promise<string> => {
+    const mainContent = document.querySelector('main');
+    if (!mainContent) {
+      throw new Error('找不到內容區域');
+    }
+
+    const clone = mainContent.cloneNode(true) as HTMLElement;
+
+    // 展開/收合的區塊標題（正文、重點整理、分享題目…）本身是 <button>，
+    // 標題文字就寫在 button 裡面；舊版直接整顆 button 砍掉，連標題文字
+    // 也一起消失了。改成「拆殼」：保留裡面的文字和圖示，只是不再是按鈕。
+    clone.querySelectorAll('button').forEach((btn) => {
+      const div = document.createElement('div');
+      div.innerHTML = btn.innerHTML;
+      div.setAttribute('style', btn.getAttribute('style') || '');
+      btn.replaceWith(div);
+    });
+    clone.querySelectorAll('[class*="toolbar"]').forEach(el => el.remove());
+
+    // 圖片路徑在頁面上是 /images/... 相對路徑，瀏覽器顯示沒問題，
+    // 但匯出成獨立 docx 檔後沒有網址可以依循，Word 開啟時找不到圖檔。
+    // 這裡把每張圖片轉成 base64 內嵌，讓 docx 檔本身就含有圖片資料。
+    const imgs = Array.from(clone.querySelectorAll('img'));
+    await Promise.all(imgs.map(async (img) => {
+      try {
+        const res = await fetch(img.src);
+        const blob = await res.blob();
+        const dataUrl = await new Promise<string>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result as string);
+          reader.onerror = reject;
+          reader.readAsDataURL(blob);
+        });
+        img.setAttribute('src', dataUrl);
+      } catch (e) {
+        console.error('圖片轉換失敗，略過:', img.src, e);
+      }
+    }));
+
+    return clone.innerHTML;
+  };
+
+  const wrapDocxHtml = (bodyHtml: string): string => `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <style>
+        body { font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif; }
+        h1, h2, h3 { color: #1e40af; }
+        p { line-height: 1.6; margin-bottom: 0.5em; }
+      </style>
+    </head>
+    <body>
+      ${bodyHtml}
+    </body>
+    </html>
+  `;
+
+  const downloadDocxBlob = async (htmlContent: string, filename: string) => {
+    const { asBlob } = await import('html-docx-js-typescript');
+    const blob = await asBlob(htmlContent);
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  // 匯出單章 Word
   const handleExportWord = async () => {
     try {
-      const mainContent = document.querySelector('main');
-      if (!mainContent) {
-        alert('找不到內容區域');
-        return;
-      }
-      
-      const clone = mainContent.cloneNode(true) as HTMLElement;
-
-      // 展開/收合的區塊標題（正文、重點整理、分享題目…）本身是 <button>，
-      // 標題文字就寫在 button 裡面；舊版直接整顆 button 砍掉，連標題文字
-      // 也一起消失了。改成「拆殼」：保留裡面的文字和圖示，只是不再是按鈕。
-      clone.querySelectorAll('button').forEach((btn) => {
-        const div = document.createElement('div');
-        div.innerHTML = btn.innerHTML;
-        div.setAttribute('style', btn.getAttribute('style') || '');
-        btn.replaceWith(div);
-      });
-      clone.querySelectorAll('[class*="toolbar"]').forEach(el => el.remove());
-
-      // 圖片路徑在頁面上是 /images/... 相對路徑，瀏覽器顯示沒問題，
-      // 但匯出成獨立 docx 檔後沒有網址可以依循，Word 開啟時找不到圖檔。
-      // 這裡把每張圖片轉成 base64 內嵌，讓 docx 檔本身就含有圖片資料。
-      const imgs = Array.from(clone.querySelectorAll('img'));
-      await Promise.all(imgs.map(async (img) => {
-        try {
-          const res = await fetch(img.src);
-          const blob = await res.blob();
-          const dataUrl = await new Promise<string>((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onloadend = () => resolve(reader.result as string);
-            reader.onerror = reject;
-            reader.readAsDataURL(blob);
-          });
-          img.setAttribute('src', dataUrl);
-        } catch (e) {
-          console.error('圖片轉換失敗，略過:', img.src, e);
-        }
-      }));
-
-      const htmlContent = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="UTF-8">
-          <style>
-            body { font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif; }
-            h1, h2, h3 { color: #1e40af; }
-            p { line-height: 1.6; margin-bottom: 0.5em; }
-          </style>
-        </head>
-        <body>
-          ${clone.innerHTML}
-        </body>
-        </html>
-      `;
-      
-      const { asBlob } = await import('html-docx-js-typescript');
-      const blob = await asBlob(htmlContent);
-      
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `${bookId}_${chapter}.docx`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      
+      const innerHtml = await captureMainAsHtml();
+      await downloadDocxBlob(wrapDocxHtml(innerHtml), `${bookId}_${chapter}.docx`);
       alert('Word 檔案已下載!');
     } catch (error) {
       console.error('匯出失敗:', error);
       alert('匯出失敗,請稍後再試');
     }
   };
+
+  const BOOK_EXPORT_STATE_KEY = 'bookExportState';
+
+  interface BookExportState {
+    bookId: string;
+    paths: string[];
+    titles: string[];
+    index: number;
+    parts: string[];
+  }
+
+  // 匯出整本書 Word：依序造訪每一章、擷取內容後合併成一個 docx。
+  // 因為每次換章節，BookLayout 都是全新掛載的元件實例（react-router 換路由不保留 state），
+  // 所以進度必須存在 sessionStorage 裡，靠下面那個 useEffect 在每次掛載時接續執行。
+  const handleExportWholeBook = () => {
+    const targets = chapters.filter(c => c.id !== 'home');
+    if (targets.length === 0) {
+      alert('本書尚無章節內容可匯出');
+      return;
+    }
+    const state: BookExportState = {
+      bookId,
+      paths: targets.map(t => t.path),
+      titles: targets.map(t => t.title),
+      index: 0,
+      parts: [],
+    };
+    sessionStorage.setItem(BOOK_EXPORT_STATE_KEY, JSON.stringify(state));
+    setIsBookExporting(true);
+    setExportProgress({ current: 1, total: targets.length });
+    navigate(targets[0].path);
+  };
+
+  // 整本書匯出的接續邏輯：每次掛載時檢查 sessionStorage 是否有屬於這本書、
+  // 且目前頁面正是預期章節的匯出進度，若有就擷取內容、存回進度、導向下一章；
+  // 全部章節擷取完後合併成一個 docx 下載，並清掉進度、導回書本首頁。
+  useEffect(() => {
+    const raw = sessionStorage.getItem(BOOK_EXPORT_STATE_KEY);
+    if (!raw) return;
+
+    let state: BookExportState;
+    try {
+      state = JSON.parse(raw);
+    } catch {
+      sessionStorage.removeItem(BOOK_EXPORT_STATE_KEY);
+      return;
+    }
+
+    if (state.bookId !== bookId) {
+      // 進度屬於別本書（例如中途放棄後開了別本書），清掉避免卡住
+      sessionStorage.removeItem(BOOK_EXPORT_STATE_KEY);
+      return;
+    }
+
+    const expectedPath = state.paths[state.index];
+    if (!expectedPath || location.pathname !== expectedPath) {
+      // 使用者中途手動跳走或狀態不一致，放棄這次匯出
+      sessionStorage.removeItem(BOOK_EXPORT_STATE_KEY);
+      setIsBookExporting(false);
+      setExportProgress(null);
+      return;
+    }
+
+    setIsBookExporting(true);
+    setExportProgress({ current: state.index + 1, total: state.paths.length });
+
+    // 延遲時間要蓋過章節元件掛載渲染 + 自動展開所有區塊（500ms 計時器）
+    const timer = setTimeout(async () => {
+      try {
+        const innerHtml = await captureMainAsHtml();
+        const chapterTitle = state.titles[state.index];
+        const wrapped = `<h1 style="page-break-before:always;color:#1e40af;">${chapterTitle}</h1>${innerHtml}`;
+        const newParts = [...state.parts, wrapped];
+        const nextIndex = state.index + 1;
+
+        if (nextIndex < state.paths.length) {
+          sessionStorage.setItem(BOOK_EXPORT_STATE_KEY, JSON.stringify({ ...state, index: nextIndex, parts: newParts }));
+          navigate(state.paths[nextIndex]);
+        } else {
+          const bookTitle = BOOK_TITLES[bookId] || bookId;
+          const htmlContent = wrapDocxHtml(`<h1 style="text-align:center;">${bookTitle}</h1>${newParts.join('')}`);
+          await downloadDocxBlob(htmlContent, `${bookId}_全書.docx`);
+
+          sessionStorage.removeItem(BOOK_EXPORT_STATE_KEY);
+          setIsBookExporting(false);
+          setExportProgress(null);
+          alert('整本書 Word 已下載!');
+
+          const homePath = chapters.find(c => c.id === 'home')?.path;
+          if (homePath && homePath !== location.pathname) navigate(homePath);
+        }
+      } catch (error) {
+        console.error('整本書匯出失敗:', error);
+        sessionStorage.removeItem(BOOK_EXPORT_STATE_KEY);
+        setIsBookExporting(false);
+        setExportProgress(null);
+        alert('整本書匯出失敗，請稍後再試');
+      }
+    }, 800);
+
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname, bookId]);
 
   // 自動展開所有區塊（頁面載入或切換章節時）
   useEffect(() => {
@@ -568,7 +684,14 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-      
+
+      {/* ========== 整本書匯出進度提示 ========== */}
+      {isBookExporting && exportProgress && (
+        <div className="fixed top-0 left-0 right-0 z-[60] bg-purple-700 text-white text-center py-2 px-3 text-xs sm:text-sm font-semibold shadow-lg">
+          正在匯出整本書 Word...（第 {exportProgress.current} / {exportProgress.total} 章）請勿關閉此頁面
+        </div>
+      )}
+
       {/* ========== 頂部章節導航條 ========== */}
       <div className="sticky top-0 z-50 bg-gradient-to-r from-pink-300 to-pink-400 shadow-lg" style={{ paddingTop: 'max(env(safe-area-inset-top), 20px)' }}>
         <div className="max-w-7xl mx-auto px-2 sm:px-4 py-2 sm:py-3">
@@ -828,12 +951,25 @@ const BookLayout: React.FC<BookLayoutProps> = ({ bookId, chapter, chapters, chil
             
             <button
               onClick={handleExportWord}
-              className="flex items-center gap-1 bg-indigo-600 hover:bg-indigo-700 text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm"
-              title="匯出 Word 文件"
+              disabled={isBookExporting}
+              className="flex items-center gap-1 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm"
+              title="匯出本章 Word 文件"
             >
               <Download className="w-4 h-4" />
               <span className="hidden sm:inline">Word</span>
             </button>
+
+            {chapter === 'home' && (
+              <button
+                onClick={handleExportWholeBook}
+                disabled={isBookExporting}
+                className="flex items-center gap-1 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-2 sm:px-3 py-1.5 rounded-lg transition-colors font-semibold shadow-lg text-xs sm:text-sm"
+                title="依序造訪每一章並合併匯出整本書 Word 文件"
+              >
+                <Download className="w-4 h-4" />
+                <span className="hidden sm:inline">{isBookExporting ? '匯出中...' : '整本書'}</span>
+              </button>
+            )}
           </div>
 
           {/* 中間:TTS 控制 + 語速 */}
