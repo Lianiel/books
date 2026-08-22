@@ -14,6 +14,7 @@ const chapters = [
   { path: '/book39/chapter9', title: '第九章　追求成聖——衛斯理倫理學' },
   { path: '/book39/chapter10', title: '第十章　聖言與聖傳——天主教倫理學' },
   { path: '/book39/chapter11', title: '第十一章　培養倫理道德習慣——德行倫理學' },
+  { path: '/book39/chapter12', title: '第十二章　尼布爾式理想主義——務實倫理學' },
 ];
 
 export default function Book39Home() {
@@ -28,7 +29,7 @@ export default function Book39Home() {
         <p className="text-gray-700 leading-relaxed">
           本書從基督教信仰出發，系統性地探討倫理道德判斷的基礎與方法。全書分為多個部分，從導論建立基本概念與判斷方法，繼而深入聖經倫理（舊約、新約），並逐步展開各項具體倫理議題的討論。作者林鴻信教授長期任教於台灣神學院系統神學領域，本書以扎實的神學反思、豐富的原典引註，並大量結合台灣與華人文化處境的實例，是深入認識基督教倫理學的重要著作。
         </p>
-        <p className="text-gray-500 text-sm mt-3">目前已上線：第一部「導論」（第一、二章）、第二部「聖經」（第三章舊約、第四章新約）、第三部「傳統」（第五至十章，已全部完結）、第四部「類型」第十一章（德行倫理學）。全書後續章節將陸續增補。</p>
+        <p className="text-gray-500 text-sm mt-3">目前已上線：第一部「導論」（第一、二章）、第二部「聖經」（第三章舊約、第四章新約）、第三部「傳統」（第五至十章，已全部完結）、第四部「類型」（第十一章德行倫理學、第十二章務實倫理學）。全書後續章節將陸續增補。</p>
       </div>
 
       <div className="space-y-3">
