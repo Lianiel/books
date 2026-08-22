@@ -585,6 +585,7 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'home', title: '書本簡介', path: '/book39/home' },
     { id: 'chapter1', title: '第一章 導論', path: '/book39/chapter1' },
     { id: 'chapter2', title: '第二章 如何做倫理道德判斷？', path: '/book39/chapter2' },
+    { id: 'chapter3', title: '第三章 聖經倫理學I（舊約）', path: '/book39/chapter3' },
   ],
 };
 
@@ -1157,6 +1158,7 @@ const Book38Ch13 = lazyWithRetry(() => import('./components/book38/Book38Ch13'))
 const Book39Home = lazyWithRetry(() => import('./components/book39/Book39Home'));
 const Book39Ch1 = lazyWithRetry(() => import('./components/book39/Book39Ch1'));
 const Book39Ch2 = lazyWithRetry(() => import('./components/book39/Book39Ch2'));
+const Book39Ch3 = lazyWithRetry(() => import('./components/book39/Book39Ch3'));
 const Book32Preface = lazyWithRetry(() => import('./components/book32/Book32Preface'));
 const Book32Introduction = lazyWithRetry(() => import('./components/book32/Book32Introduction'));
 const Book32Ch1 = lazyWithRetry(() => import('./components/book32/Book32Ch1'));
@@ -1835,6 +1837,7 @@ const App: React.FC = () => {
         <Route path="/book39/home" element={<BookLayout bookId="book39" chapter="home" chapters={getChaptersForBook('book39')}><Book39Home /></BookLayout>} />
         <Route path="/book39/chapter1" element={<BookLayout bookId="book39" chapter="chapter1" chapters={getChaptersForBook('book39')}><Book39Ch1 /></BookLayout>} />
         <Route path="/book39/chapter2" element={<BookLayout bookId="book39" chapter="chapter2" chapters={getChaptersForBook('book39')}><Book39Ch2 /></BookLayout>} />
+        <Route path="/book39/chapter3" element={<BookLayout bookId="book39" chapter="chapter3" chapters={getChaptersForBook('book39')}><Book39Ch3 /></BookLayout>} />
         <Route path="/book/39" element={<BookLayout bookId="book39" chapter="home" chapters={getChaptersForBook('book39')}><Book39Home /></BookLayout>} />
         <Route path="/book/34" element={<BookLayout bookId="book34" chapter="home" chapters={getChaptersForBook('book34')}><Book34Home /></BookLayout>} />
 
