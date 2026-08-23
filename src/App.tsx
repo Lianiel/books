@@ -67,6 +67,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book37: '復興的奧秘',
   book38: '隨時的幫助',
   book39: '基督教倫理學',
+  book40: '原來十誡這麼重要',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -602,6 +603,10 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter17', title: '第十七章 生命倫理', path: '/book39/chapter17' },
     { id: 'chapter18', title: '第十八章 總結', path: '/book39/chapter18' },
   ],
+  book40: [
+    { id: 'home', title: '書本簡介', path: '/book40/home' },
+    { id: 'preface', title: '前言', path: '/book40/preface' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -645,6 +650,7 @@ const STATIC_BOOKS = [
   { book_id: 'book37', title: '復興的奧秘', author: '妮塔·強生　著　／　阿木歌　編譯', description: '妮塔·強生牧師五堂講道實錄，聚焦「得到復興之後如何持守它」。從神賜下復興的目的出發，依序談到單單愛主你的神、在愛中行事的信心、存謙卑的心與神同行，最終指向讓耶穌透過你活出來。作者以自身失敗的經歷坦誠分享，提醒讀者復興的能力之外，品格、謙卑與神聖的愛才是持守恩膏的關鍵。', chapters_count: 5 },
   { book_id: 'book38', title: '隨時的幫助', author: '陸可鐸　著', description: '國際暢銷書作家陸可鐸探討聖靈位格與工作的著作，共十三章。從「誰是聖靈？」出發，依序談到與聖靈同行、聖靈的代求、救恩的確據、平息焦慮、聆聽神的聲音、聖靈如火煉淨生命、聖靈的膏抹、活水江河的復興、放膽講論神的道、屬靈恩賜，最終以「讓枯骨得著氣息」的呼召作結。文字溫暖貼近生活，適合在疲憊的日子裡倚靠聖靈恢復活力。', chapters_count: 13 },
   { book_id: 'book39', title: '基督教倫理學', author: '林鴻信　著', description: '從基督教信仰出發的系統性倫理學著作，系統梳理導論、聖經倫理（舊約、新約）、歷代傳統（奧古斯丁、路德、加爾文、重洗派、衛斯理、天主教）、三大類型（德行、務實、責任倫理學）、現代倫理學（潘霍華、路易斯、巴特、莫特曼）、生命倫理及全書總結，共十八章全部完結。內容扎實嚴謹，引註詳盡，大量結合台灣與華人文化處境的實例。', chapters_count: 18 },
+  { book_id: 'book40', title: '原來十誡這麼重要', author: '王天佑　著', description: '從基督教倫理學的角度重新詮釋十誡的現代意義，先建立倫理學基本觀念（律法主義的誤區、準則/處境/動機三個判斷觀點），再逐條深入闡釋十誡內容，結合大量生活實例與釋經原則，說明十誡是使人得自由、活出幸福人生的美好指引。（連載中，目前已上線前言）', chapters_count: 12 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -694,7 +700,7 @@ interface BookCategory {
 
 const BOOK_CATEGORIES: BookCategory[] = [
   { name: '禱告靈修', icon: '🙏', color: '#7c3aed', bg: '#f5f3ff', bookNumbers: [9, 10, 14, 16, 35, 36, 37, 38] },
-  { name: '聖經研讀', icon: '📖', color: '#b45309', bg: '#fffbeb', bookNumbers: [6, 12, 23, 29, 30, 31, 32] },
+  { name: '聖經研讀', icon: '📖', color: '#b45309', bg: '#fffbeb', bookNumbers: [6, 12, 23, 29, 30, 31, 32, 40] },
   { name: '門訓成長', icon: '🌱', color: '#059669', bg: '#f0fdf4', bookNumbers: [5, 7, 19, 21, 22, 26] },
   { name: '情緒輔導', icon: '💙', color: '#0d9488', bg: '#f0fdfa', bookNumbers: [1, 2, 8, 20, 27, 28, 34] },
   { name: '信仰神學', icon: '✝️', color: '#4338ca', bg: '#eef2ff', bookNumbers: [11, 13, 15, 18, 39] },
@@ -1189,6 +1195,8 @@ const Book39Ch15 = lazyWithRetry(() => import('./components/book39/Book39Ch15'))
 const Book39Ch16 = lazyWithRetry(() => import('./components/book39/Book39Ch16'));
 const Book39Ch17 = lazyWithRetry(() => import('./components/book39/Book39Ch17'));
 const Book39Ch18 = lazyWithRetry(() => import('./components/book39/Book39Ch18'));
+const Book40Home = lazyWithRetry(() => import('./components/book40/Book40Home'));
+const Book40Preface = lazyWithRetry(() => import('./components/book40/Book40Preface'));
 const Book32Preface = lazyWithRetry(() => import('./components/book32/Book32Preface'));
 const Book32Introduction = lazyWithRetry(() => import('./components/book32/Book32Introduction'));
 const Book32Ch1 = lazyWithRetry(() => import('./components/book32/Book32Ch1'));
@@ -1884,6 +1892,9 @@ const App: React.FC = () => {
         <Route path="/book39/chapter17" element={<BookLayout bookId="book39" chapter="chapter17" chapters={getChaptersForBook('book39')}><Book39Ch17 /></BookLayout>} />
         <Route path="/book39/chapter18" element={<BookLayout bookId="book39" chapter="chapter18" chapters={getChaptersForBook('book39')}><Book39Ch18 /></BookLayout>} />
         <Route path="/book/39" element={<BookLayout bookId="book39" chapter="home" chapters={getChaptersForBook('book39')}><Book39Home /></BookLayout>} />
+        <Route path="/book40/home" element={<BookLayout bookId="book40" chapter="home" chapters={getChaptersForBook('book40')}><Book40Home /></BookLayout>} />
+        <Route path="/book40/preface" element={<BookLayout bookId="book40" chapter="preface" chapters={getChaptersForBook('book40')}><Book40Preface /></BookLayout>} />
+        <Route path="/book/40" element={<BookLayout bookId="book40" chapter="home" chapters={getChaptersForBook('book40')}><Book40Home /></BookLayout>} />
         <Route path="/book/34" element={<BookLayout bookId="book34" chapter="home" chapters={getChaptersForBook('book34')}><Book34Home /></BookLayout>} />
 
         {/* ========== 首頁 ========== */}
