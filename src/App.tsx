@@ -599,6 +599,7 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter14', title: '第十四章 為主抉擇——潘霍華倫理學', path: '/book39/chapter14' },
     { id: 'chapter15', title: '第十五章 文學家的視域——路易斯倫理學', path: '/book39/chapter15' },
     { id: 'chapter16', title: '第十六章 現代基督教倫理學——從巴特到莫特曼', path: '/book39/chapter16' },
+    { id: 'chapter17', title: '第十七章 生命倫理', path: '/book39/chapter17' },
   ],
 };
 
@@ -1185,6 +1186,7 @@ const Book39Ch13 = lazyWithRetry(() => import('./components/book39/Book39Ch13'))
 const Book39Ch14 = lazyWithRetry(() => import('./components/book39/Book39Ch14'));
 const Book39Ch15 = lazyWithRetry(() => import('./components/book39/Book39Ch15'));
 const Book39Ch16 = lazyWithRetry(() => import('./components/book39/Book39Ch16'));
+const Book39Ch17 = lazyWithRetry(() => import('./components/book39/Book39Ch17'));
 const Book32Preface = lazyWithRetry(() => import('./components/book32/Book32Preface'));
 const Book32Introduction = lazyWithRetry(() => import('./components/book32/Book32Introduction'));
 const Book32Ch1 = lazyWithRetry(() => import('./components/book32/Book32Ch1'));
@@ -1877,6 +1879,7 @@ const App: React.FC = () => {
         <Route path="/book39/chapter14" element={<BookLayout bookId="book39" chapter="chapter14" chapters={getChaptersForBook('book39')}><Book39Ch14 /></BookLayout>} />
         <Route path="/book39/chapter15" element={<BookLayout bookId="book39" chapter="chapter15" chapters={getChaptersForBook('book39')}><Book39Ch15 /></BookLayout>} />
         <Route path="/book39/chapter16" element={<BookLayout bookId="book39" chapter="chapter16" chapters={getChaptersForBook('book39')}><Book39Ch16 /></BookLayout>} />
+        <Route path="/book39/chapter17" element={<BookLayout bookId="book39" chapter="chapter17" chapters={getChaptersForBook('book39')}><Book39Ch17 /></BookLayout>} />
         <Route path="/book/39" element={<BookLayout bookId="book39" chapter="home" chapters={getChaptersForBook('book39')}><Book39Home /></BookLayout>} />
         <Route path="/book/34" element={<BookLayout bookId="book34" chapter="home" chapters={getChaptersForBook('book34')}><Book34Home /></BookLayout>} />
 
