@@ -600,6 +600,7 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter15', title: '第十五章 文學家的視域——路易斯倫理學', path: '/book39/chapter15' },
     { id: 'chapter16', title: '第十六章 現代基督教倫理學——從巴特到莫特曼', path: '/book39/chapter16' },
     { id: 'chapter17', title: '第十七章 生命倫理', path: '/book39/chapter17' },
+    { id: 'chapter18', title: '第十八章 總結', path: '/book39/chapter18' },
   ],
 };
 
@@ -643,7 +644,7 @@ const STATIC_BOOKS = [
   { book_id: 'book36', title: '深度禱告學', author: '妮塔·強生　著　／　阿木歌　編譯', description: '《初級代禱學》的姊妹篇，妮塔·強生牧師十五堂深度講道實錄。從與神親密的關係出發，經歷屬靈爭戰的教訓、四種生產式的禱告、為國家代禱的呼召，深入主禱文逐句的禱告操練，最終指向與主合一、成為基督新婦的呼召。內容涵蓋大量個人異象與服事見證，是進深代禱者裝備自己、預備盛裝神的重要教材。', chapters_count: 15 },
   { book_id: 'book37', title: '復興的奧秘', author: '妮塔·強生　著　／　阿木歌　編譯', description: '妮塔·強生牧師五堂講道實錄，聚焦「得到復興之後如何持守它」。從神賜下復興的目的出發，依序談到單單愛主你的神、在愛中行事的信心、存謙卑的心與神同行，最終指向讓耶穌透過你活出來。作者以自身失敗的經歷坦誠分享，提醒讀者復興的能力之外，品格、謙卑與神聖的愛才是持守恩膏的關鍵。', chapters_count: 5 },
   { book_id: 'book38', title: '隨時的幫助', author: '陸可鐸　著', description: '國際暢銷書作家陸可鐸探討聖靈位格與工作的著作，共十三章。從「誰是聖靈？」出發，依序談到與聖靈同行、聖靈的代求、救恩的確據、平息焦慮、聆聽神的聲音、聖靈如火煉淨生命、聖靈的膏抹、活水江河的復興、放膽講論神的道、屬靈恩賜，最終以「讓枯骨得著氣息」的呼召作結。文字溫暖貼近生活，適合在疲憊的日子裡倚靠聖靈恢復活力。', chapters_count: 13 },
-  { book_id: 'book39', title: '基督教倫理學', author: '林鴻信　著', description: '從基督教信仰出發的系統性倫理學著作，探討倫理道德判斷的基礎與方法，深入聖經倫理（舊約、新約），並展開各項具體倫理議題的討論。內容扎實嚴謹，引註詳盡，大量結合台灣與華人文化處境的實例。（連載中，目前已上線第一部「導論」）', chapters_count: 18 },
+  { book_id: 'book39', title: '基督教倫理學', author: '林鴻信　著', description: '從基督教信仰出發的系統性倫理學著作，系統梳理導論、聖經倫理（舊約、新約）、歷代傳統（奧古斯丁、路德、加爾文、重洗派、衛斯理、天主教）、三大類型（德行、務實、責任倫理學）、現代倫理學（潘霍華、路易斯、巴特、莫特曼）、生命倫理及全書總結，共十八章全部完結。內容扎實嚴謹，引註詳盡，大量結合台灣與華人文化處境的實例。', chapters_count: 18 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -1187,6 +1188,7 @@ const Book39Ch14 = lazyWithRetry(() => import('./components/book39/Book39Ch14'))
 const Book39Ch15 = lazyWithRetry(() => import('./components/book39/Book39Ch15'));
 const Book39Ch16 = lazyWithRetry(() => import('./components/book39/Book39Ch16'));
 const Book39Ch17 = lazyWithRetry(() => import('./components/book39/Book39Ch17'));
+const Book39Ch18 = lazyWithRetry(() => import('./components/book39/Book39Ch18'));
 const Book32Preface = lazyWithRetry(() => import('./components/book32/Book32Preface'));
 const Book32Introduction = lazyWithRetry(() => import('./components/book32/Book32Introduction'));
 const Book32Ch1 = lazyWithRetry(() => import('./components/book32/Book32Ch1'));
@@ -1880,6 +1882,7 @@ const App: React.FC = () => {
         <Route path="/book39/chapter15" element={<BookLayout bookId="book39" chapter="chapter15" chapters={getChaptersForBook('book39')}><Book39Ch15 /></BookLayout>} />
         <Route path="/book39/chapter16" element={<BookLayout bookId="book39" chapter="chapter16" chapters={getChaptersForBook('book39')}><Book39Ch16 /></BookLayout>} />
         <Route path="/book39/chapter17" element={<BookLayout bookId="book39" chapter="chapter17" chapters={getChaptersForBook('book39')}><Book39Ch17 /></BookLayout>} />
+        <Route path="/book39/chapter18" element={<BookLayout bookId="book39" chapter="chapter18" chapters={getChaptersForBook('book39')}><Book39Ch18 /></BookLayout>} />
         <Route path="/book/39" element={<BookLayout bookId="book39" chapter="home" chapters={getChaptersForBook('book39')}><Book39Home /></BookLayout>} />
         <Route path="/book/34" element={<BookLayout bookId="book34" chapter="home" chapters={getChaptersForBook('book34')}><Book34Home /></BookLayout>} />
 
