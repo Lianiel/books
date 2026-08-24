@@ -16,6 +16,7 @@ const chapters = [
   { path: '/book40/chapter10', title: '第十章　第六誡（下）：不可殺人——安樂死、墮胎與迦南人' },
   { path: '/book40/chapter11', title: '第十一章　第七誡（一）：不可姦淫——婚前性行為' },
   { path: '/book40/chapter12', title: '第十二章　第七誡（二）：不可姦淫——婚外情' },
+  { path: '/book40/chapter13', title: '第十三章　第七誡（三）：不可姦淫——通姦除罪問題' },
 ];
 
 export default function Book40Home() {
@@ -31,7 +32,7 @@ export default function Book40Home() {
         <p className="text-gray-700 leading-relaxed">
           本書從基督教倫理學的角度，重新詮釋十誡的現代意義。作者先建立基督教倫理學的基本觀念——何謂倫理、律法主義的誤區、學習倫理學應有的態度，以及「準則、處境、動機」三個判斷倫理問題的觀點，再逐條深入闡釋十誡的內容，結合大量生活實例與釋經原則，說明十誡不是捆綁人的重擔，而是使人得著真自由、活出幸福人生的美好指引。
         </p>
-        <p className="text-gray-500 text-sm mt-3">目前已上線：前言、第一至十二章（含第七誡「婚前性行為」「婚外情」）。全書後續章節（第七誡其餘子題：通姦除罪、離婚再婚、同性戀，與第八至十誡）將陸續增補。</p>
+        <p className="text-gray-500 text-sm mt-3">目前已上線：前言、第一至十三章（含第七誡「婚前性行為」「婚外情」「通姦除罪問題」）。全書後續章節（第七誡其餘子題：離婚再婚、同性戀，與第八至十誡）將陸續增補。</p>
       </div>
 
       <div className="space-y-3">
