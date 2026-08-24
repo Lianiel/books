@@ -7,6 +7,7 @@ const chapters = [
   { path: '/book40/chapter1', title: '第一章　基督教倫理學概論' },
   { path: '/book40/chapter2', title: '第二章　倫理三大觀點應用實例' },
   { path: '/book40/chapter3', title: '第三章　從十誡看倫理（一）——十誡緒論' },
+  { path: '/book40/chapter4', title: '第四章　第一誡：除了耶和華以外，你不可有別的神' },
 ];
 
 export default function Book40Home() {
@@ -22,7 +23,7 @@ export default function Book40Home() {
         <p className="text-gray-700 leading-relaxed">
           本書從基督教倫理學的角度，重新詮釋十誡的現代意義。作者先建立基督教倫理學的基本觀念——何謂倫理、律法主義的誤區、學習倫理學應有的態度，以及「準則、處境、動機」三個判斷倫理問題的觀點，再逐條深入闡釋十誡的內容，結合大量生活實例與釋經原則，說明十誡不是捆綁人的重擔，而是使人得著真自由、活出幸福人生的美好指引。
         </p>
-        <p className="text-gray-500 text-sm mt-3">目前已上線：前言、第一章「基督教倫理學概論」、第二章「倫理三大觀點應用實例」、第三章「從十誡看倫理（一）——十誡緒論」。全書後續章節（第一誡至第十誡逐條詳解）將陸續增補。</p>
+        <p className="text-gray-500 text-sm mt-3">目前已上線：前言、第一章「基督教倫理學概論」、第二章「倫理三大觀點應用實例」、第三章「十誡緒論」、第四章「第一誡」。全書後續章節（第二誡至第十誡）將陸續增補。</p>
       </div>
 
       <div className="space-y-3">
