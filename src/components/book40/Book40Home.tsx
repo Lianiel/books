@@ -20,6 +20,7 @@ const chapters = [
   { path: '/book40/chapter14', title: '第十四章　第七誡（四）：不可姦淫——離婚' },
   { path: '/book40/chapter15', title: '第十五章　第七誡（五）：不可姦淫——再婚與跨信仰婚姻' },
   { path: '/book40/chapter16', title: '第十六章　第七誡（六）：不可姦淫——同性戀' },
+  { path: '/book40/chapter17', title: '第十七章　第八誡：不可偷盜——基督徒的錢財觀' },
 ];
 
 export default function Book40Home() {
@@ -35,7 +36,7 @@ export default function Book40Home() {
         <p className="text-gray-700 leading-relaxed">
           本書從基督教倫理學的角度，重新詮釋十誡的現代意義。作者先建立基督教倫理學的基本觀念——何謂倫理、律法主義的誤區、學習倫理學應有的態度，以及「準則、處境、動機」三個判斷倫理問題的觀點，再逐條深入闡釋十誡的內容，結合大量生活實例與釋經原則，說明十誡不是捆綁人的重擔，而是使人得著真自由、活出幸福人生的美好指引。
         </p>
-        <p className="text-gray-500 text-sm mt-3">目前已上線：前言、第一至十六章，第七誡「不可姦淫」六個子題已全部完結。全書後續章節（第八至十誡）將陸續增補。</p>
+        <p className="text-gray-500 text-sm mt-3">目前已上線：前言、第一至十七章，第七誡「不可姦淫」六個子題已全部完結，第八誡「不可偷盜」也已上線。全書後續章節（第九至十誡）將陸續增補。</p>
       </div>
 
       <div className="space-y-3">
