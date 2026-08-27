@@ -34,6 +34,11 @@ const chapters = [
   { path: '/book41/chapter28', title: '第四部 4-2　融入榮辱感於訓練中' },
   { path: '/book41/chapter29', title: '第四部 4-3　融入榮辱感於實踐中' },
   { path: '/book41/chapter30', title: '第四部 4-4　結論：信徒無虧缺的榮耀' },
+  { path: '/book41/chapter31', title: '附錄一　如何透過閱讀聖經察覺榮辱感' },
+  { path: '/book41/chapter32', title: '附錄二　H/S-1到H/S-5：榮辱動力的認知層次' },
+  { path: '/book41/chapter33', title: '附錄三　「耶穌生平」涉及不潔／羞辱的故事' },
+  { path: '/book41/chapter34', title: '附錄四　從基督救贖經文中發現「無限資源」的動力' },
+  { path: '/book41/chapter35', title: '附錄五　啟示錄中的榮辱感分析' },
 ];
 
 export default function Book41Home() {
@@ -49,7 +54,7 @@ export default function Book41Home() {
         <p className="text-gray-700 leading-relaxed">
           當慚愧受辱的處境令人絕望時，我們可以等待什麼樣的好消息？本書根植於聖經，整全地教導讀者在思考福音時，如何在當代社會中適切地融入「榮耀與羞辱」的處境化福音動力——這既是西方世界經常錯失的思維，也是信徒對福音認知的關鍵缺口。作者長年投身國際宣教機構Mission ONE，結合豐富的跨文化實務經驗與紮實的學術研究，剖析聖經中無所不在卻長期被神學界忽略的榮辱動力，說明多數世界的福音處境，如何比西方熟悉的「罪疚與清白」框架，更貼近舊約與新約社會的文化底色。
         </p>
-        <p className="text-gray-500 text-sm mt-3">全書共四部（洞悉、隱視、形塑、遍傳）及五篇附錄，前言及四部正文（第一部6節、第二部10節、第三部10節、第四部4節，共30章）已全部完結上線。</p>
+        <p className="text-gray-500 text-sm mt-3">全書共四部（洞悉、隱視、形塑、遍傳）及五篇附錄，前言、四部正文（第一部6節、第二部10節、第三部10節、第四部4節）與五篇附錄，共35章，已全部完結上線。</p>
       </div>
 
       <div className="space-y-3">
