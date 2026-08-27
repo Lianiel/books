@@ -656,6 +656,10 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter24', title: '第三部 3-8　福音為「名字／親屬關係／血統」的動力所形塑？', path: '/book41/chapter24' },
     { id: 'chapter25', title: '第三部 3-9　福音為「潔淨」的動力所形塑？', path: '/book41/chapter25' },
     { id: 'chapter26', title: '第三部 3-10　福音為「榮耀地位的逆轉」所形塑？', path: '/book41/chapter26' },
+    { id: 'chapter27', title: '第四部 4-1　融入榮辱感於目標中', path: '/book41/chapter27' },
+    { id: 'chapter28', title: '第四部 4-2　融入榮辱感於訓練中', path: '/book41/chapter28' },
+    { id: 'chapter29', title: '第四部 4-3　融入榮辱感於實踐中', path: '/book41/chapter29' },
+    { id: 'chapter30', title: '第四部 4-4　結論：信徒無虧缺的榮耀', path: '/book41/chapter30' },
   ],
 };
 
@@ -701,7 +705,7 @@ const STATIC_BOOKS = [
   { book_id: 'book38', title: '隨時的幫助', author: '陸可鐸　著', description: '國際暢銷書作家陸可鐸探討聖靈位格與工作的著作，共十三章。從「誰是聖靈？」出發，依序談到與聖靈同行、聖靈的代求、救恩的確據、平息焦慮、聆聽神的聲音、聖靈如火煉淨生命、聖靈的膏抹、活水江河的復興、放膽講論神的道、屬靈恩賜，最終以「讓枯骨得著氣息」的呼召作結。文字溫暖貼近生活，適合在疲憊的日子裡倚靠聖靈恢復活力。', chapters_count: 13 },
   { book_id: 'book39', title: '基督教倫理學', author: '林鴻信　著', description: '從基督教信仰出發的系統性倫理學著作，系統梳理導論、聖經倫理（舊約、新約）、歷代傳統（奧古斯丁、路德、加爾文、重洗派、衛斯理、天主教）、三大類型（德行、務實、責任倫理學）、現代倫理學（潘霍華、路易斯、巴特、莫特曼）、生命倫理及全書總結，共十八章全部完結。內容扎實嚴謹，引註詳盡，大量結合台灣與華人文化處境的實例。', chapters_count: 18 },
   { book_id: 'book40', title: '原來十誡這麼重要', author: '王天佑　著', description: '從基督教倫理學的角度重新詮釋十誡的現代意義，先建立倫理學基本觀念（律法主義的誤區、準則/處境/動機三個判斷觀點），再逐條深入闡釋十誡內容（第七誡因篇幅龐大細分六個子題探討），結合大量生活實例與釋經原則，說明十誡不是捆綁人的重擔，而是使人得自由、活出幸福人生的美好指引，全書十九章全部完結。', chapters_count: 19 },
-  { book_id: 'book41', title: '世界等待的福音', author: '沃爾納．米胥克（Werner Mischke）　著', description: '探討聖經中榮耀與羞辱的核心文化價值，指出西方以「罪疚/清白」為主的福音框架，如何忽略了更貼近多數世界（亞、非、拉丁美洲及中東）文化處境的「榮辱」動力。全書分四部（洞悉、隱視、形塑、遍傳）剖析榮辱感如何形塑聖經敘事與普世宣教策略，結合大量跨文化實例與學術研究，是跨文化宣教與處境化神學的重要著作。目前已完成前言、第一部「洞悉」（6節）、第二部「隱視」（全10節）與第三部「形塑」（全10節，逐一探討十種榮辱動力如何形塑全球福音的呈現方式），連載中。', chapters_count: 27 },
+  { book_id: 'book41', title: '世界等待的福音', author: '沃爾納．米胥克（Werner Mischke）　著', description: '探討聖經中榮耀與羞辱的核心文化價值，指出西方以「罪疚/清白」為主的福音框架，如何忽略了更貼近多數世界（亞、非、拉丁美洲及中東）文化處境的「榮辱」動力。全書分四部（洞悉、隱視、形塑、遍傳）剖析榮辱感如何形塑聖經敘事與普世宣教策略、訓練與實踐，結合大量跨文化實例與學術研究，是跨文化宣教與處境化神學的重要著作。全書前言及四部正文（共30章）已全部完結上線。', chapters_count: 31 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -1295,6 +1299,10 @@ const Book41Ch23 = lazyWithRetry(() => import('./components/book41/Book41Ch23'))
 const Book41Ch24 = lazyWithRetry(() => import('./components/book41/Book41Ch24'));
 const Book41Ch25 = lazyWithRetry(() => import('./components/book41/Book41Ch25'));
 const Book41Ch26 = lazyWithRetry(() => import('./components/book41/Book41Ch26'));
+const Book41Ch27 = lazyWithRetry(() => import('./components/book41/Book41Ch27'));
+const Book41Ch28 = lazyWithRetry(() => import('./components/book41/Book41Ch28'));
+const Book41Ch29 = lazyWithRetry(() => import('./components/book41/Book41Ch29'));
+const Book41Ch30 = lazyWithRetry(() => import('./components/book41/Book41Ch30'));
 const Book32Preface = lazyWithRetry(() => import('./components/book32/Book32Preface'));
 const Book32Introduction = lazyWithRetry(() => import('./components/book32/Book32Introduction'));
 const Book32Ch1 = lazyWithRetry(() => import('./components/book32/Book32Ch1'));
@@ -2039,6 +2047,10 @@ const App: React.FC = () => {
         <Route path="/book41/chapter24" element={<BookLayout bookId="book41" chapter="chapter24" chapters={getChaptersForBook('book41')}><Book41Ch24 /></BookLayout>} />
         <Route path="/book41/chapter25" element={<BookLayout bookId="book41" chapter="chapter25" chapters={getChaptersForBook('book41')}><Book41Ch25 /></BookLayout>} />
         <Route path="/book41/chapter26" element={<BookLayout bookId="book41" chapter="chapter26" chapters={getChaptersForBook('book41')}><Book41Ch26 /></BookLayout>} />
+        <Route path="/book41/chapter27" element={<BookLayout bookId="book41" chapter="chapter27" chapters={getChaptersForBook('book41')}><Book41Ch27 /></BookLayout>} />
+        <Route path="/book41/chapter28" element={<BookLayout bookId="book41" chapter="chapter28" chapters={getChaptersForBook('book41')}><Book41Ch28 /></BookLayout>} />
+        <Route path="/book41/chapter29" element={<BookLayout bookId="book41" chapter="chapter29" chapters={getChaptersForBook('book41')}><Book41Ch29 /></BookLayout>} />
+        <Route path="/book41/chapter30" element={<BookLayout bookId="book41" chapter="chapter30" chapters={getChaptersForBook('book41')}><Book41Ch30 /></BookLayout>} />
         <Route path="/book/41" element={<BookLayout bookId="book41" chapter="home" chapters={getChaptersForBook('book41')}><Book41Home /></BookLayout>} />
         <Route path="/book/40" element={<BookLayout bookId="book40" chapter="home" chapters={getChaptersForBook('book40')}><Book40Home /></BookLayout>} />
         <Route path="/book/34" element={<BookLayout bookId="book34" chapter="home" chapters={getChaptersForBook('book34')}><Book34Home /></BookLayout>} />
