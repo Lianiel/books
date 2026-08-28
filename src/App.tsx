@@ -69,6 +69,7 @@ export const BOOK_TITLES: Record<string, string> = {
   book39: '基督教倫理學',
   book40: '原來十誡這麼重要',
   book41: '世界等待的福音',
+  book42: '本土化談道',
 };
 
 export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
@@ -666,6 +667,21 @@ export const BOOK_CHAPTERS: Record<string, ChapterInfo[]> = {
     { id: 'chapter34', title: '附錄四　從基督救贖經文中發現「無限資源」的動力', path: '/book41/chapter34' },
     { id: 'chapter35', title: '附錄五　啟示錄中的榮辱感分析', path: '/book41/chapter35' },
   ],
+  book42: [
+    { id: 'home', title: '書本簡介', path: '/book42/home' },
+    { id: 'chapter1', title: '緒論　台灣宣教策略之再思', path: '/book42/chapter1' },
+    { id: 'chapter2', title: '第一篇1　道成肉身的宣教原理', path: '/book42/chapter2' },
+    { id: 'chapter3', title: '第一篇2　初代教會的談道法', path: '/book42/chapter3' },
+    { id: 'chapter4', title: '第一篇3　台灣本土文化的適應', path: '/book42/chapter4' },
+    { id: 'chapter5', title: '第二篇4　啟示的神', path: '/book42/chapter5' },
+    { id: 'chapter6', title: '第二篇5　復和之道', path: '/book42/chapter6' },
+    { id: 'chapter7', title: '第二篇6　耶穌是神', path: '/book42/chapter7' },
+    { id: 'chapter8', title: '第三篇7　依靠聖靈', path: '/book42/chapter8' },
+    { id: 'chapter9', title: '第三篇8　領受聖靈', path: '/book42/chapter9' },
+    { id: 'chapter10', title: '第三篇9　心靈醫治', path: '/book42/chapter10' },
+    { id: 'chapter11', title: '總結　台灣宣教策略之再思', path: '/book42/chapter11' },
+    { id: 'chapter12', title: '附錄　本土化宣教實例——苦難中的福音', path: '/book42/chapter12' },
+  ],
 };
 
 // ========== 靜態首頁備援資料 ==========
@@ -711,6 +727,7 @@ const STATIC_BOOKS = [
   { book_id: 'book39', title: '基督教倫理學', author: '林鴻信　著', description: '從基督教信仰出發的系統性倫理學著作，系統梳理導論、聖經倫理（舊約、新約）、歷代傳統（奧古斯丁、路德、加爾文、重洗派、衛斯理、天主教）、三大類型（德行、務實、責任倫理學）、現代倫理學（潘霍華、路易斯、巴特、莫特曼）、生命倫理及全書總結，共十八章全部完結。內容扎實嚴謹，引註詳盡，大量結合台灣與華人文化處境的實例。', chapters_count: 18 },
   { book_id: 'book40', title: '原來十誡這麼重要', author: '王天佑　著', description: '從基督教倫理學的角度重新詮釋十誡的現代意義，先建立倫理學基本觀念（律法主義的誤區、準則/處境/動機三個判斷觀點），再逐條深入闡釋十誡內容（第七誡因篇幅龐大細分六個子題探討），結合大量生活實例與釋經原則，說明十誡不是捆綁人的重擔，而是使人得自由、活出幸福人生的美好指引，全書十九章全部完結。', chapters_count: 19 },
   { book_id: 'book41', title: '世界等待的福音', author: '沃爾納．米胥克（Werner Mischke）　著', description: '探討聖經中榮耀與羞辱的核心文化價值，指出西方以「罪疚/清白」為主的福音框架，如何忽略了更貼近多數世界（亞、非、拉丁美洲及中東）文化處境的「榮辱」動力。全書分四部（洞悉、隱視、形塑、遍傳）剖析榮辱感如何形塑聖經敘事與普世宣教策略、訓練與實踐，結合大量跨文化實例與學術研究，是跨文化宣教與處境化神學的重要著作。全書前言、四部正文與五篇附錄（共35章）已全部完結上線。', chapters_count: 36 },
+  { book_id: 'book42', title: '本土化談道', author: '王武聰　牧師　著', description: '道成肉身的福音策略（增訂版）。作者結合十四年三地牧會的談道心得，寫成台福神學院牧教學博士論文整理出版，主張談道策略是「先認同、再說服」：分三大篇探討本土化談道的神學基礎（道成肉身的宣教原理、初代教會談道法、台灣本土文化的適應）、福音內容（啟示的神、復和之道、耶穌是神）、屬靈爭戰（依靠聖靈、領受聖靈、心靈醫治），並在附錄以九二一大地震的實際牧養見證，示範本土化宣教的具體落實。全書緒論、三篇正文九章、總結與附錄，共十二章，已全部完結上線。', chapters_count: 13 },
 ];
 
 const colorMap: Record<number, string> = {
@@ -747,6 +764,7 @@ const colorMap: Record<number, string> = {
   32: 'from-red-700 to-amber-700',
   34: 'from-cyan-600 to-teal-700',
   39: 'from-slate-800 to-blue-900',
+  42: 'from-lime-700 to-emerald-800',
 };
 
 // ========== 首頁分類 ==========
@@ -764,7 +782,7 @@ const BOOK_CATEGORIES: BookCategory[] = [
   { name: '門訓成長', icon: '🌱', color: '#059669', bg: '#f0fdf4', bookNumbers: [5, 7, 19, 21, 22, 26] },
   { name: '情緒輔導', icon: '💙', color: '#0d9488', bg: '#f0fdfa', bookNumbers: [1, 2, 8, 20, 27, 28, 34] },
   { name: '信仰神學', icon: '✝️', color: '#4338ca', bg: '#eef2ff', bookNumbers: [11, 13, 15, 18, 39] },
-  { name: '宣教教會', icon: '🌍', color: '#dc2626', bg: '#fff1f2', bookNumbers: [3, 4, 17, 24, 25, 41] },
+  { name: '宣教教會', icon: '🌍', color: '#dc2626', bg: '#fff1f2', bookNumbers: [3, 4, 17, 24, 25, 41, 42] },
 ];
 
 // ========== Book 1 章節（懶加載） ==========
@@ -1313,6 +1331,21 @@ const Book41Ch32 = lazyWithRetry(() => import('./components/book41/Book41Ch32'))
 const Book41Ch33 = lazyWithRetry(() => import('./components/book41/Book41Ch33'));
 const Book41Ch34 = lazyWithRetry(() => import('./components/book41/Book41Ch34'));
 const Book41Ch35 = lazyWithRetry(() => import('./components/book41/Book41Ch35'));
+
+// ========== Book 42 章節（懶加載） ==========
+const Book42Home = lazyWithRetry(() => import('./components/book42/Book42Home'));
+const Book42Ch1 = lazyWithRetry(() => import('./components/book42/Book42Ch1'));
+const Book42Ch2 = lazyWithRetry(() => import('./components/book42/Book42Ch2'));
+const Book42Ch3 = lazyWithRetry(() => import('./components/book42/Book42Ch3'));
+const Book42Ch4 = lazyWithRetry(() => import('./components/book42/Book42Ch4'));
+const Book42Ch5 = lazyWithRetry(() => import('./components/book42/Book42Ch5'));
+const Book42Ch6 = lazyWithRetry(() => import('./components/book42/Book42Ch6'));
+const Book42Ch7 = lazyWithRetry(() => import('./components/book42/Book42Ch7'));
+const Book42Ch8 = lazyWithRetry(() => import('./components/book42/Book42Ch8'));
+const Book42Ch9 = lazyWithRetry(() => import('./components/book42/Book42Ch9'));
+const Book42Ch10 = lazyWithRetry(() => import('./components/book42/Book42Ch10'));
+const Book42Ch11 = lazyWithRetry(() => import('./components/book42/Book42Ch11'));
+const Book42Ch12 = lazyWithRetry(() => import('./components/book42/Book42Ch12'));
 const Book32Preface = lazyWithRetry(() => import('./components/book32/Book32Preface'));
 const Book32Introduction = lazyWithRetry(() => import('./components/book32/Book32Introduction'));
 const Book32Ch1 = lazyWithRetry(() => import('./components/book32/Book32Ch1'));
@@ -2067,6 +2100,20 @@ const App: React.FC = () => {
         <Route path="/book41/chapter34" element={<BookLayout bookId="book41" chapter="chapter34" chapters={getChaptersForBook('book41')}><Book41Ch34 /></BookLayout>} />
         <Route path="/book41/chapter35" element={<BookLayout bookId="book41" chapter="chapter35" chapters={getChaptersForBook('book41')}><Book41Ch35 /></BookLayout>} />
         <Route path="/book/41" element={<BookLayout bookId="book41" chapter="home" chapters={getChaptersForBook('book41')}><Book41Home /></BookLayout>} />
+        <Route path="/book42/home" element={<BookLayout bookId="book42" chapter="home" chapters={getChaptersForBook('book42')}><Book42Home /></BookLayout>} />
+        <Route path="/book42/chapter1" element={<BookLayout bookId="book42" chapter="chapter1" chapters={getChaptersForBook('book42')}><Book42Ch1 /></BookLayout>} />
+        <Route path="/book42/chapter2" element={<BookLayout bookId="book42" chapter="chapter2" chapters={getChaptersForBook('book42')}><Book42Ch2 /></BookLayout>} />
+        <Route path="/book42/chapter3" element={<BookLayout bookId="book42" chapter="chapter3" chapters={getChaptersForBook('book42')}><Book42Ch3 /></BookLayout>} />
+        <Route path="/book42/chapter4" element={<BookLayout bookId="book42" chapter="chapter4" chapters={getChaptersForBook('book42')}><Book42Ch4 /></BookLayout>} />
+        <Route path="/book42/chapter5" element={<BookLayout bookId="book42" chapter="chapter5" chapters={getChaptersForBook('book42')}><Book42Ch5 /></BookLayout>} />
+        <Route path="/book42/chapter6" element={<BookLayout bookId="book42" chapter="chapter6" chapters={getChaptersForBook('book42')}><Book42Ch6 /></BookLayout>} />
+        <Route path="/book42/chapter7" element={<BookLayout bookId="book42" chapter="chapter7" chapters={getChaptersForBook('book42')}><Book42Ch7 /></BookLayout>} />
+        <Route path="/book42/chapter8" element={<BookLayout bookId="book42" chapter="chapter8" chapters={getChaptersForBook('book42')}><Book42Ch8 /></BookLayout>} />
+        <Route path="/book42/chapter9" element={<BookLayout bookId="book42" chapter="chapter9" chapters={getChaptersForBook('book42')}><Book42Ch9 /></BookLayout>} />
+        <Route path="/book42/chapter10" element={<BookLayout bookId="book42" chapter="chapter10" chapters={getChaptersForBook('book42')}><Book42Ch10 /></BookLayout>} />
+        <Route path="/book42/chapter11" element={<BookLayout bookId="book42" chapter="chapter11" chapters={getChaptersForBook('book42')}><Book42Ch11 /></BookLayout>} />
+        <Route path="/book42/chapter12" element={<BookLayout bookId="book42" chapter="chapter12" chapters={getChaptersForBook('book42')}><Book42Ch12 /></BookLayout>} />
+        <Route path="/book/42" element={<BookLayout bookId="book42" chapter="home" chapters={getChaptersForBook('book42')}><Book42Home /></BookLayout>} />
         <Route path="/book/40" element={<BookLayout bookId="book40" chapter="home" chapters={getChaptersForBook('book40')}><Book40Home /></BookLayout>} />
         <Route path="/book/34" element={<BookLayout bookId="book34" chapter="home" chapters={getChaptersForBook('book34')}><Book34Home /></BookLayout>} />
 
